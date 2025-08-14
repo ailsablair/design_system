@@ -138,47 +138,14 @@ export const CustomText: Story = {
 
 // Interactive showcase showing all states
 export const AllStates: Story = {
-  render: () => {
-    return (
-      <div style={{ 
-        display: 'flex', 
-        flexWrap: 'wrap', 
-        gap: '16px', 
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '20px'
-      }}>
-        <div style={{ textAlign: 'center' }}>
-          <PrimaryButton state="default" label="Default" />
-          <p style={{ margin: '8px 0 0 0', fontSize: '12px', color: '#666' }}>Default</p>
-        </div>
-        <div style={{ textAlign: 'center' }}>
-          <PrimaryButton state="hover" label="Hover" />
-          <p style={{ margin: '8px 0 0 0', fontSize: '12px', color: '#666' }}>Hover</p>
-        </div>
-        <div style={{ textAlign: 'center' }}>
-          <PrimaryButton state="pressed" label="Pressed" />
-          <p style={{ margin: '8px 0 0 0', fontSize: '12px', color: '#666' }}>Pressed</p>
-        </div>
-        <div style={{ textAlign: 'center' }}>
-          <PrimaryButton state="focused" label="Focused" />
-          <p style={{ margin: '8px 0 0 0', fontSize: '12px', color: '#666' }}>Focused</p>
-        </div>
-        <div style={{ textAlign: 'center' }}>
-          <PrimaryButton state="loading" label="Loading" />
-          <p style={{ margin: '8px 0 0 0', fontSize: '12px', color: '#666' }}>Loading</p>
-        </div>
-        <div style={{ textAlign: 'center' }}>
-          <PrimaryButton state="disabled" label="Disabled" />
-          <p style={{ margin: '8px 0 0 0', fontSize: '12px', color: '#666' }}>Disabled</p>
-        </div>
-      </div>
-    );
+  args: {
+    state: 'default',
+    label: 'All States Example',
   },
   parameters: {
     docs: {
       description: {
-        story: 'A showcase of all button states side by side for easy comparison.',
+        story: 'Use the controls to test different states and configurations of the primary button.',
       },
     },
   },
