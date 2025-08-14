@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { fn } from 'storybook/test';
+import { fn } from 'storybook';
 
-import { Button } from './Button';
+import { Button } from './button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Example/Button',
-  component: Button,
+  title: 'echo/button',
+  component: button,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
@@ -26,29 +26,29 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const primary: Story = {
   args: {
     primary: true,
-    label: 'Button',
+    label: 'button',
   },
 };
 
-export const Secondary: Story = {
+export const secondary: Story = {
   args: {
-    label: 'Button',
+    label: 'button',
   },
 };
 
-export const Large: Story = {
+export const large: Story = {
   args: {
     size: 'large',
-    label: 'Button',
+    label: 'button',
   },
 };
 
-export const Small: Story = {
+export const small: Story = {
   args: {
     size: 'small',
-    label: 'Button',
+    label: 'button',
   },
 };
