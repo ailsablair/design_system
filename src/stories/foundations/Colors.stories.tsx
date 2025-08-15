@@ -367,6 +367,44 @@ export const PrimaryColors: Story = {
           { name: 'Sky Blue 950', color: '#082F49', cssVar: 'var(--primary-sky-blue-950)', description: 'Maximum contrast' },
         ]}
       />
+
+      <ColorPalette
+        title="Yellow Palette (Complete Spectrum)"
+        description="Full spectrum yellow palette with comprehensive tints and shades for attention, highlights, warnings, and themed interfaces."
+        colors={[
+          { name: 'Yellow 25', color: '#FFFEF5', cssVar: 'var(--primary-yellow-25)', description: 'Lightest warm tint' },
+          { name: 'Yellow 50', color: '#FEFCE8', cssVar: 'var(--primary-yellow-50)', description: 'Very light yellow backgrounds' },
+          { name: 'Yellow 100', color: '#FEF9C3', cssVar: 'var(--primary-yellow-100)', description: 'Light yellow accents' },
+          { name: 'Yellow 200', color: '#FEF08A', cssVar: 'var(--primary-yellow-200)', description: 'Subtle yellow highlights' },
+          { name: 'Yellow 300', color: '#FDE047', cssVar: 'var(--primary-yellow-300)', description: 'Light attention color' },
+          { name: 'Yellow 400', color: '#FACC15', cssVar: 'var(--primary-yellow-400)', description: 'Medium yellow emphasis' },
+          { name: 'Yellow 500', color: '#EAB308', cssVar: 'var(--primary-yellow-500)', description: 'Primary yellow warning color' },
+          { name: 'Yellow 600', color: '#CA8A04', cssVar: 'var(--primary-yellow-600)', description: 'Darker yellow states' },
+          { name: 'Yellow 700', color: '#A16207', cssVar: 'var(--primary-yellow-700)', description: 'Deep yellow emphasis' },
+          { name: 'Yellow 800', color: '#854D0E', cssVar: 'var(--primary-yellow-800)', description: 'Dark yellow text' },
+          { name: 'Yellow 900', color: '#713F12', cssVar: 'var(--primary-yellow-900)', description: 'Darkest yellow shade' },
+          { name: 'Yellow 950', color: '#422006', cssVar: 'var(--primary-yellow-950)', description: 'Maximum contrast' },
+        ]}
+      />
+
+      <ColorPalette
+        title="Seafoam Green Palette (Complete Range)"
+        description="Comprehensive seafoam green palette with full tints and shades for nature themes, growth indicators, and positive actions."
+        colors={[
+          { name: 'Seafoam 25', color: '#F6FEF9', cssVar: 'var(--primary-seafoam-25)', description: 'Lightest nature tint' },
+          { name: 'Seafoam 50', color: '#ECFDF5', cssVar: 'var(--primary-seafoam-50)', description: 'Very light green backgrounds' },
+          { name: 'Seafoam 100', color: '#D1FAE5', cssVar: 'var(--primary-seafoam-100)', description: 'Light green accents' },
+          { name: 'Seafoam 200', color: '#A7F3D0', cssVar: 'var(--primary-seafoam-200)', description: 'Subtle green highlights' },
+          { name: 'Seafoam 300', color: '#6EE7B7', cssVar: 'var(--primary-seafoam-300)', description: 'Light positive color' },
+          { name: 'Seafoam 400', color: '#34D399', cssVar: 'var(--primary-seafoam-400)', description: 'Medium green emphasis' },
+          { name: 'Seafoam 500', color: '#10B981', cssVar: 'var(--primary-seafoam-500)', description: 'Primary success/growth color' },
+          { name: 'Seafoam 600', color: '#059669', cssVar: 'var(--primary-seafoam-600)', description: 'Darker green states' },
+          { name: 'Seafoam 700', color: '#047857', cssVar: 'var(--primary-seafoam-700)', description: 'Deep green emphasis' },
+          { name: 'Seafoam 800', color: '#065F46', cssVar: 'var(--primary-seafoam-800)', description: 'Dark green text' },
+          { name: 'Seafoam 900', color: '#064E3B', cssVar: 'var(--primary-seafoam-900)', description: 'Darkest green shade' },
+          { name: 'Seafoam 950', color: '#022C22', cssVar: 'var(--primary-seafoam-950)', description: 'Maximum contrast' },
+        ]}
+      />
     </div>
   ),
 };
