@@ -29,6 +29,20 @@
   --spacing-stroke-3px: 3px;
   --spacing-stroke-4px: 4px;
 
+  /* === ICON SIZE TOKENS === */
+  --icon-size-xs: 12px;
+  --icon-size-sm: 14px;
+  --icon-size-md: 16px;
+  --icon-size-lg: 20px;
+  --icon-size-xl: 24px;
+  --icon-size-2xl: 32px;
+
+  /* === ICON OPACITY TOKENS === */
+  --icon-opacity-subtle: 0.4;
+  --icon-opacity-medium: 0.6;
+  --icon-opacity-strong: 0.7;
+  --icon-opacity-full: 1.0;
+
   /* === PRIMARY COLOR PALETTE === */
   --primary-blue-dark-blue: #191E3C;
   --primary-blue-blue: #2F42BD;
