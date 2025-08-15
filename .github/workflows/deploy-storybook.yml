@@ -39,6 +39,13 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Verify environment
+        run: |
+          echo "Node.js version: $(node --version)"
+          echo "npm version: $(npm --version)"
+          echo "Current directory: $(pwd)"
+          echo "Package.json exists: $([ -f package.json ] && echo 'Yes' || echo 'No')"
+
       - name: Install dependencies
         run: npm ci
 
