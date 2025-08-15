@@ -198,3 +198,8 @@ export const BaseColors: Story = {
     </div>
   ),
 };
+
+// ⛔ REJECTED STORY - DO NOT REINSTALL
+// The "UsageGuidelines" story was permanently rejected in Chromatic Build 21
+// See REJECTED_STORIES.md for full documentation
+// export const UsageGuidelines: Story = { ... } // ❌ BANNED
