@@ -72,104 +72,9 @@ export const Wordmark: Story = {
   },
 };
 
-export const AllVariants: Story = {
-  render: () => (
-    <div style={{ 
-      display: 'grid',
-      gridTemplateColumns: 'repeat(3, 1fr)',
-      gap: '2rem',
-      alignItems: 'center',
-      textAlign: 'center'
-    }}>
-      <div>
-        <Logo variant="logomark" color="brand" size="medium" />
-        <p style={{ marginTop: '0.5rem', fontSize: '0.875rem', color: '#6b7280' }}>Logomark</p>
-      </div>
-      <div>
-        <Logo variant="wordmark" color="dark-blue" size="medium" />
-        <p style={{ marginTop: '0.5rem', fontSize: '0.875rem', color: '#6b7280' }}>Wordmark</p>
-      </div>
-      <div>
-        <Logo variant="full" color="brand" size="medium" />
-        <p style={{ marginTop: '0.5rem', fontSize: '0.875rem', color: '#6b7280' }}>Full Logo</p>
-      </div>
-    </div>
-  ),
-};
 
-export const ColorVariations: Story = {
-  render: () => (
-    <div style={{ 
-      display: 'grid',
-      gridTemplateColumns: 'repeat(2, 1fr)',
-      gap: '2rem',
-      alignItems: 'center'
-    }}>
-      <div style={{ textAlign: 'center' }}>
-        <Logo variant="full" color="brand" size="medium" />
-        <p style={{ marginTop: '0.5rem', fontSize: '0.875rem', color: '#6b7280' }}>Brand (Multi-color)</p>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <Logo variant="full" color="dark-blue" size="medium" />
-        <p style={{ marginTop: '0.5rem', fontSize: '0.875rem', color: '#6b7280' }}>Dark Blue</p>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <Logo variant="full" color="sky-blue" size="medium" />
-        <p style={{ marginTop: '0.5rem', fontSize: '0.875rem', color: '#6b7280' }}>Sky Blue</p>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <Logo variant="full" color="black" size="medium" />
-        <p style={{ marginTop: '0.5rem', fontSize: '0.875rem', color: '#6b7280' }}>Black</p>
-      </div>
-    </div>
-  ),
-};
 
-export const OnDarkBackground: Story = {
-  render: () => (
-    <div style={{ 
-      backgroundColor: '#1f2937',
-      padding: '2rem',
-      borderRadius: '8px',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    }}>
-      <Logo variant="full" color="white" size="large" />
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'White logo variant for use on dark backgrounds',
-      },
-    },
-  },
-};
 
-export const SizeComparison: Story = {
-  render: () => (
-    <div style={{ 
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '2rem',
-      alignItems: 'center'
-    }}>
-      <div style={{ textAlign: 'center' }}>
-        <Logo variant="full" color="brand" size="small" />
-        <p style={{ marginTop: '0.5rem', fontSize: '0.875rem', color: '#6b7280' }}>Small</p>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <Logo variant="full" color="brand" size="medium" />
-        <p style={{ marginTop: '0.5rem', fontSize: '0.875rem', color: '#6b7280' }}>Medium</p>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <Logo variant="full" color="brand" size="large" />
-        <p style={{ marginTop: '0.5rem', fontSize: '0.875rem', color: '#6b7280' }}>Large</p>
-      </div>
-    </div>
-  ),
-};
 
 export const CustomSize: Story = {
   args: {
@@ -185,37 +90,4 @@ export const CustomSize: Story = {
       },
     },
   },
-};
-
-export const LogomarkVariations: Story = {
-  render: () => (
-    <div style={{ 
-      display: 'grid',
-      gridTemplateColumns: 'repeat(5, 1fr)',
-      gap: '1.5rem',
-      alignItems: 'center',
-      textAlign: 'center'
-    }}>
-      <div>
-        <Logo variant="logomark" color="brand" size="medium" />
-        <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', color: '#6b7280' }}>Brand</p>
-      </div>
-      <div>
-        <Logo variant="logomark" color="dark-blue" size="medium" />
-        <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', color: '#6b7280' }}>Dark Blue</p>
-      </div>
-      <div>
-        <Logo variant="logomark" color="sky-blue" size="medium" />
-        <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', color: '#6b7280' }}>Sky Blue</p>
-      </div>
-      <div>
-        <Logo variant="logomark" color="black" size="medium" />
-        <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', color: '#6b7280' }}>Black</p>
-      </div>
-      <div style={{ backgroundColor: '#1f2937', padding: '1rem', borderRadius: '6px' }}>
-        <Logo variant="logomark" color="white" size="medium" />
-        <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', color: '#d1d5db' }}>White</p>
-      </div>
-    </div>
-  ),
 };
