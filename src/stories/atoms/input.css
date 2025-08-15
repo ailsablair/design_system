@@ -98,22 +98,22 @@
 .input-container.focus,
 .input-container.typing {
   border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
-  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+  box-shadow: var(--shadow-focus);
 }
 
 .input-container.error {
   border: var(--spacing-stroke-2px) solid var(--status-red);
-  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+  box-shadow: var(--shadow-focus);
 }
 
 .input-container.warning {
   border: var(--spacing-stroke-2px) solid var(--status-orange);
-  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+  box-shadow: var(--shadow-focus);
 }
 
 .input-container.success {
   border: var(--spacing-stroke-2px) solid var(--status-green);
-  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+  box-shadow: var(--shadow-focus);
 }
 
 .input-container.disabled {
