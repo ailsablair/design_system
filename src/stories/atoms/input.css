@@ -57,6 +57,8 @@
   background: var(--base-white);
   transition: all var(--transition-fast);
   position: relative;
+  contain: layout style;
+  will-change: auto;
 }
 
 .input-container.small {
@@ -266,6 +268,12 @@
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
+}
+
+/* Prevent layout shifts during animation */
+.input-cursor {
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .input-actions {
