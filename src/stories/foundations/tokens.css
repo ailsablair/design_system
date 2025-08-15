@@ -1,0 +1,133 @@
+:root {
+  /* === SPACING TOKENS === */
+  --spacing-sizing-2px: 2px;
+  --spacing-sizing-4px: 4px;
+  --spacing-sizing-8px: 8px;
+  --spacing-sizing-12px: 12px;
+  --spacing-sizing-16px: 16px;
+  --spacing-sizing-20px: 20px;
+  --spacing-sizing-24px: 24px;
+  --spacing-sizing-32px: 32px;
+  --spacing-sizing-40px: 40px;
+  --spacing-sizing-48px: 48px;
+  --spacing-sizing-56px: 56px;
+  --spacing-sizing-64px: 64px;
+
+  /* === BORDER RADIUS TOKENS === */
+  --spacing-radius-2px: 2px;
+  --spacing-radius-4px: 4px;
+  --spacing-radius-6px: 6px;
+  --spacing-radius-8px: 8px;
+  --spacing-radius-12px: 12px;
+  --spacing-radius-16px: 16px;
+  --spacing-radius-full: 9999px;
+
+  /* === STROKE/BORDER TOKENS === */
+  --spacing-stroke-0-5px: 0.5px;
+  --spacing-stroke-1px: 1px;
+  --spacing-stroke-2px: 2px;
+  --spacing-stroke-3px: 3px;
+  --spacing-stroke-4px: 4px;
+
+  /* === PRIMARY COLOR PALETTE === */
+  --primary-blue-dark-blue: #191E3C;
+  --primary-blue-blue: #2F42BD;
+  --primary-blue-blue-100: #E8EBFA;
+  --primary-blue-blue-200: #C5CAED;
+  --primary-blue-blue-300: #95A0E5;
+  --primary-blue-blue-400: #6171DF;
+  --primary-blue-blue-500: #2F42BD;
+  --primary-blue-blue-600: #253699;
+  --primary-blue-blue-700: #1B2B75;
+  --primary-blue-blue-800: #121F51;
+  --primary-blue-blue-900: #0A142D;
+
+  /* === NEUTRAL GRAY PALETTE === */
+  --neutral-gray-gray-50: #F9FAFB;
+  --neutral-gray-gray-100: #F3F4F6;
+  --neutral-gray-gray-200: #E5E7EB;
+  --neutral-gray-gray-300: #D2D5DA;
+  --neutral-gray-gray-400: #9CA3AF;
+  --neutral-gray-gray-500: #6B7280;
+  --neutral-gray-gray-600: #4B5563;
+  --neutral-gray-gray-700: #374151;
+  --neutral-gray-gray-800: #1F2937;
+  --neutral-gray-gray-900: #111827;
+
+  /* === BASE COLORS === */
+  --base-white: #FFFFFF;
+  --base-black: #000000;
+  --base-transparent: transparent;
+
+  /* === SEMANTIC COLORS === */
+  --semantic-success: #10B981;
+  --semantic-success-light: #D1FAE5;
+  --semantic-warning: #F59E0B;
+  --semantic-warning-light: #FEF3C7;
+  --semantic-error: #EF4444;
+  --semantic-error-light: #FEE2E2;
+  --semantic-info: #3B82F6;
+  --semantic-info-light: #DBEAFE;
+
+  /* === TYPOGRAPHY TOKENS === */
+  --type-typeface-archivo: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --type-typeface-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Font Sizes */
+  --type-size-xs: 12px;
+  --type-size-sm: 14px;
+  --type-size-base: 16px;
+  --type-size-lg: 18px;
+  --type-size-xl: 20px;
+  --type-size-2xl: 24px;
+  --type-size-3xl: 30px;
+  --type-size-4xl: 36px;
+  --type-size-5xl: 48px;
+  --type-size-6xl: 60px;
+
+  /* Font Weights */
+  --type-weight-light: 300;
+  --type-weight-regular: 400;
+  --type-weight-medium: 500;
+  --type-weight-semibold: 600;
+  --type-weight-bold: 700;
+  --type-weight-extrabold: 800;
+
+  /* Line Heights */
+  --type-line-height-tight: 1.25;
+  --type-line-height-normal: 1.5;
+  --type-line-height-relaxed: 1.75;
+  --type-line-height-label: 22px;
+
+  /* Letter Spacing */
+  --type-letter-spacing-tight: -0.025em;
+  --type-letter-spacing-normal: 0em;
+  --type-letter-spacing-wide: 0.025em;
+  --type-letter-spacing-archivo-label: 0.15px;
+
+  /* === SHADOW TOKENS === */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+  /* === Z-INDEX TOKENS === */
+  --z-index-0: 0;
+  --z-index-10: 10;
+  --z-index-20: 20;
+  --z-index-30: 30;
+  --z-index-40: 40;
+  --z-index-50: 50;
+  --z-index-modal: 1000;
+  --z-index-popover: 1010;
+  --z-index-tooltip: 1020;
+  --z-index-notification: 1030;
+
+  /* === TRANSITION TOKENS === */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+  --transition-bounce: 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
