@@ -402,7 +402,22 @@ export const NeutralColors: Story = {
 export const SemanticColors: Story = {
   render: () => (
     <div>
-      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '2rem' }}>Semantic Colors</h2>
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '2rem' }}>Semantic & Status Colors</h2>
+
+      <div style={{
+        padding: '1.5rem',
+        backgroundColor: '#fef3c7',
+        borderRadius: '8px',
+        marginBottom: '2rem',
+        border: '1px solid #f59e0b'
+      }}>
+        <h3 style={{ fontSize: '1.125rem', fontWeight: '600', marginBottom: '0.5rem', color: '#92400e' }}>
+          💡 Usage Guidelines for Status Colors
+        </h3>
+        <p style={{ color: '#92400e', fontSize: '0.875rem', margin: 0 }}>
+          Use <strong>Echo Status Colors</strong> for form validation and UI feedback. Use <strong>Extended Status Palettes</strong> for themed interfaces, data visualization, and complex state management.
+        </p>
+      </div>
       
       <ColorPalette
         title="Success Colors"
@@ -432,15 +447,20 @@ export const SemanticColors: Story = {
       />
 
       <ColorPalette
-        title="Status Colors (Echo Specific)"
-        description="Echo-specific status colors for validation states and feedback"
+        title="Echo Status Colors (Primary Validation)"
+        description="Core branded status colors for form validation, alerts, and user feedback in the Echo design system."
         colors={[
-          { name: 'Status Red', color: '#CE2031', cssVar: 'var(--status-red)', description: 'Error validation state' },
-          { name: 'Status Orange', color: '#EE5622', cssVar: 'var(--status-orange)', description: 'Warning validation state' },
-          { name: 'Status Green', color: '#70CC67', cssVar: 'var(--status-green)', description: 'Success validation state' },
-          { name: 'Status Dark Green', color: '#227F1A', cssVar: 'var(--status-dark-green)', description: 'Success message text' },
+          { name: 'Status Red', color: '#CE2031', cssVar: 'var(--status-red)', description: 'Primary error state for form validation' },
+          { name: 'Status Orange', color: '#EE5622', cssVar: 'var(--status-orange)', description: 'Primary warning state for cautions' },
+          { name: 'Status Green', color: '#70CC67', cssVar: 'var(--status-green)', description: 'Primary success state for confirmations' },
+          { name: 'Status Dark Green', color: '#227F1A', cssVar: 'var(--status-dark-green)', description: 'Success message text and emphasis' },
         ]}
       />
+
+      <div style={{ marginTop: '3rem', marginBottom: '2rem' }}>
+        <h3 style={{ fontSize: '1.25rem', fontWeight: '600', marginBottom: '1rem' }}>Standard Semantic Colors</h3>
+        <p style={{ color: '#6b7280', marginBottom: '1.5rem' }}>Traditional semantic colors for general purpose feedback and information.</p>
+      </div>
       
       <ColorPalette
         title="Info Colors"
