@@ -743,6 +743,52 @@ export const DesignTokensUsage: Story = {
               Using --base-peach-cream-* palette for warm, subtle backgrounds.
             </p>
           </div>
+
+          <div style={{
+            padding: '1.5rem',
+            backgroundColor: 'var(--secondary-navy-light)',
+            border: '1px solid var(--secondary-navy)',
+            borderRadius: '8px'
+          }}>
+            <h5 style={{
+              color: 'var(--secondary-navy)',
+              fontSize: '1rem',
+              fontWeight: '600',
+              marginBottom: '0.5rem'
+            }}>
+              🔷 Secondary Navy
+            </h5>
+            <p style={{
+              color: 'var(--secondary-navy)',
+              fontSize: '0.875rem',
+              margin: 0
+            }}>
+              Using --secondary-navy-* palette for professional themes.
+            </p>
+          </div>
+
+          <div style={{
+            padding: '1.5rem',
+            backgroundColor: 'var(--status-purple-light)',
+            border: '1px solid var(--status-purple)',
+            borderRadius: '8px'
+          }}>
+            <h5 style={{
+              color: 'var(--status-purple)',
+              fontSize: '1rem',
+              fontWeight: '600',
+              marginBottom: '0.5rem'
+            }}>
+              💜 Status Purple
+            </h5>
+            <p style={{
+              color: 'var(--status-purple)',
+              fontSize: '0.875rem',
+              margin: 0
+            }}>
+              Using --status-purple-* for special features and highlights.
+            </p>
+          </div>
         </div>
       </div>
     </div>
