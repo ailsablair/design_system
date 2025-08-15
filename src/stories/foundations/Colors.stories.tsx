@@ -109,6 +109,14 @@ export const PrimaryColors: Story = {
           { name: 'Dark Blue', color: '#191E3C', cssVar: 'var(--primary-blue-dark-blue)' },
         ]}
       />
+
+      <ColorPalette
+        title="Sky Blue Palette"
+        description="Sky blue is used for focus states, active elements, and interactive feedback in the Echo design system."
+        colors={[
+          { name: 'Sky Blue', color: '#0BA7EA', cssVar: 'var(--primary-sky-blue-sky-blue)', description: 'Primary focus and interactive state color' },
+        ]}
+      />
     </div>
   ),
 };
@@ -169,6 +177,17 @@ export const SemanticColors: Story = {
           { name: 'Error Light', color: '#FEE2E2', cssVar: 'var(--semantic-error-light)' },
         ]}
       />
+
+      <ColorPalette
+        title="Status Colors (Echo Specific)"
+        description="Echo-specific status colors for validation states and feedback"
+        colors={[
+          { name: 'Status Red', color: '#CE2031', cssVar: 'var(--status-red)', description: 'Error validation state' },
+          { name: 'Status Orange', color: '#EE5622', cssVar: 'var(--status-orange)', description: 'Warning validation state' },
+          { name: 'Status Green', color: '#70CC67', cssVar: 'var(--status-green)', description: 'Success validation state' },
+          { name: 'Status Dark Green', color: '#227F1A', cssVar: 'var(--status-dark-green)', description: 'Success message text' },
+        ]}
+      />
       
       <ColorPalette
         title="Info Colors"
@@ -192,7 +211,15 @@ export const BaseColors: Story = {
         description="Pure colors for high contrast"
         colors={[
           { name: 'White', color: '#FFFFFF', cssVar: 'var(--base-white)' },
-          { name: 'Black', color: '#000000', cssVar: 'var(--base-black)' },
+          { name: 'Black', color: '#1C1C1C', cssVar: 'var(--base-black)', description: 'Updated Echo black for text and interfaces' },
+        ]}
+      />
+
+      <ColorPalette
+        title="Secondary Colors"
+        description="Secondary colors for subtle elements and support content"
+        colors={[
+          { name: 'Blue Gray', color: '#61607C', cssVar: 'var(--secondary-blue-gray)', description: 'Placeholder text and secondary content' },
         ]}
       />
     </div>
