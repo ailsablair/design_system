@@ -177,20 +177,20 @@ export const ColorSystemOverview: Story = {
             🎨 Primary Palettes
           </h3>
           <p style={{ color: '#6b7280', marginBottom: '1rem', fontSize: '0.875rem' }}>
-            44 tokens for brand identity and key interface elements
+            110 tokens for brand identity and key interface elements with comprehensive tints and shades
           </p>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
               <strong>Blue:</strong> Traditional brand colors (10 tokens)
             </li>
             <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
-              <strong>Sky Blue:</strong> Interactive states (11 tokens)
+              <strong>Sky Blue:</strong> Interactive states with extensive tints (24 tokens)
             </li>
             <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
-              <strong>Yellow:</strong> Attention & highlights (11 tokens)
+              <strong>Yellow:</strong> Attention & highlights with full spectrum (25 tokens)
             </li>
             <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
-              <strong>Seafoam Green:</strong> Growth & nature (11 tokens)
+              <strong>Seafoam Green:</strong> Growth & nature with complete range (24 tokens)
             </li>
             <li style={{ fontSize: '0.875rem' }}>
               <strong>Dark Blue:</strong> Accent color (1 token)
