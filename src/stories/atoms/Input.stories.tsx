@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Input } from './Input';
+import { Input, TagData } from './Input';
 
 const meta: Meta<typeof Input> = {
   title: 'Atoms/Input',
@@ -8,7 +8,7 @@ const meta: Meta<typeof Input> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Input component with validation states and interactive elements based on Echo design system.',
+        component: 'Enhanced Input component with leading icons, tag functionality, multiple sizes, and validation states based on Echo design system.',
       },
     },
   },
@@ -16,8 +16,18 @@ const meta: Meta<typeof Input> = {
   argTypes: {
     state: {
       control: { type: 'select' },
-      options: ['default', 'error', 'warning', 'success'],
+      options: ['default', 'focus', 'typing', 'error', 'warning', 'success'],
       description: 'Visual state of the input',
+    },
+    variant: {
+      control: { type: 'select' },
+      options: ['simple', 'tags'],
+      description: 'Input variant type',
+    },
+    size: {
+      control: { type: 'select' },
+      options: ['small', 'default', 'large'],
+      description: 'Size variant of the input',
     },
     type: {
       control: { type: 'select' },
@@ -28,63 +38,307 @@ const meta: Meta<typeof Input> = {
       control: { type: 'boolean' },
       description: 'Show close/clear button',
     },
+    showLeadingIcon: {
+      control: { type: 'boolean' },
+      description: 'Show leading alarm icon',
+    },
+    showDropdown: {
+      control: { type: 'boolean' },
+      description: 'Show dropdown chevron (for tags variant)',
+    },
     disabled: {
       control: { type: 'boolean' },
       description: 'Disabled state',
     },
   },
   args: {
-    placeholder: 'This is a filled input',
+    placeholder: 'Placeholder text',
     showClose: true,
+    showLeadingIcon: true,
+    showDropdown: false,
     disabled: false,
+    variant: 'simple',
+    size: 'default',
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const sampleTags: TagData[] = [
+  { id: '1', label: 'Label' },
+  { id: '2', label: 'Label' },
+];
+
+// Simple Input Stories
 export const Default: Story = {
   args: {
     label: 'Input name',
     state: 'default',
+    variant: 'simple',
   },
 };
 
-export const Error: Story = {
+export const SmallFilled: Story = {
   args: {
     label: 'Input name',
+    size: 'small',
+    state: 'default',
+    value: 'This is a filled input',
+    variant: 'simple',
+  },
+};
+
+export const SmallTyping: Story = {
+  args: {
+    label: 'Input name',
+    size: 'small',
+    state: 'typing',
+    value: 'This is me typin|',
+    variant: 'simple',
+  },
+};
+
+export const DefaultPlaceholder: Story = {
+  args: {
+    label: 'Input name',
+    size: 'default',
+    state: 'default',
+    variant: 'simple',
+  },
+};
+
+export const DefaultError: Story = {
+  args: {
+    label: 'Input name',
+    size: 'default',
     state: 'error',
+    value: 'This is a filled input',
     message: 'This is an error associated with the input',
+    variant: 'simple',
   },
 };
 
-export const Warning: Story = {
+export const DefaultWarning: Story = {
   args: {
     label: 'Input name',
+    size: 'default',
     state: 'warning',
+    value: 'This is a filled input',
     message: 'This is a warning associated with the input',
+    variant: 'simple',
   },
 };
 
-export const Success: Story = {
+export const DefaultSuccess: Story = {
   args: {
     label: 'Input name',
+    size: 'default',
     state: 'success',
+    value: 'This is a filled input',
     message: 'This is a success associated with the input',
+    variant: 'simple',
   },
 };
 
-export const WithoutLabel: Story = {
+export const DefaultFocus: Story = {
   args: {
-    state: 'default',
+    label: 'Input name',
+    size: 'default',
+    state: 'focus',
+    placeholder: '|',
+    variant: 'simple',
   },
 };
 
-export const Disabled: Story = {
+export const DefaultTyping: Story = {
+  args: {
+    label: 'Input name',
+    size: 'default',
+    state: 'typing',
+    value: 'This is me typin|',
+    variant: 'simple',
+  },
+};
+
+export const DefaultFilled: Story = {
+  args: {
+    label: 'Input name',
+    size: 'default',
+    state: 'default',
+    value: 'This is a filled input',
+    variant: 'simple',
+  },
+};
+
+export const LargePlaceholder: Story = {
+  args: {
+    label: 'Input name',
+    size: 'large',
+    state: 'default',
+    variant: 'simple',
+  },
+};
+
+export const LargeError: Story = {
+  args: {
+    label: 'Input name',
+    size: 'large',
+    state: 'error',
+    value: 'This is a filled input',
+    message: 'This is an error associated with the input',
+    variant: 'simple',
+  },
+};
+
+export const LargeWarning: Story = {
+  args: {
+    label: 'Input name',
+    size: 'large',
+    state: 'warning',
+    value: 'This is a filled input',
+    message: 'This is a warning associated with the input',
+    variant: 'simple',
+  },
+};
+
+export const LargeSuccess: Story = {
+  args: {
+    label: 'Input name',
+    size: 'large',
+    state: 'success',
+    value: 'This is a filled input',
+    message: 'This is a success associated with the input',
+    variant: 'simple',
+  },
+};
+
+export const LargeFilled: Story = {
+  args: {
+    label: 'Input name',
+    size: 'large',
+    state: 'default',
+    value: 'This is a filled input',
+    variant: 'simple',
+  },
+};
+
+export const LargeFocus: Story = {
+  args: {
+    label: 'Input name',
+    size: 'large',
+    state: 'focus',
+    placeholder: '|',
+    variant: 'simple',
+  },
+};
+
+export const LargeTyping: Story = {
+  args: {
+    label: 'Input name',
+    size: 'large',
+    state: 'typing',
+    value: 'This is me typin|',
+    variant: 'simple',
+  },
+};
+
+export const SmallFocus: Story = {
+  args: {
+    label: 'Input name',
+    size: 'small',
+    state: 'focus',
+    placeholder: '|',
+    variant: 'simple',
+  },
+};
+
+export const SmallDefault: Story = {
+  args: {
+    label: 'Input name',
+    size: 'small',
+    state: 'default',
+    variant: 'simple',
+  },
+};
+
+export const SmallError: Story = {
+  args: {
+    label: 'Input name',
+    size: 'small',
+    state: 'error',
+    value: 'This is a filled input',
+    message: 'This is an error associated with the input',
+    variant: 'simple',
+  },
+};
+
+export const SmallWarning: Story = {
+  args: {
+    label: 'Input name',
+    size: 'small',
+    state: 'warning',
+    value: 'This is a filled input',
+    message: 'This is a warning associated with the input',
+    variant: 'simple',
+  },
+};
+
+export const SmallSuccess: Story = {
+  args: {
+    label: 'Input name',
+    size: 'small',
+    state: 'success',
+    value: 'This is a filled input',
+    message: 'This is a success associated with the input',
+    variant: 'simple',
+  },
+};
+
+// Tag Input Stories
+export const TagsSmallFocus: Story = {
+  args: {
+    label: 'Input name',
+    size: 'small',
+    state: 'focus',
+    variant: 'tags',
+    tags: sampleTags,
+    showDropdown: true,
+    placeholder: '|',
+  },
+};
+
+export const TagsDefaultFocus: Story = {
+  args: {
+    label: 'Input name',
+    size: 'default',
+    state: 'focus',
+    variant: 'tags',
+    tags: sampleTags,
+    showDropdown: true,
+    placeholder: '|',
+  },
+};
+
+export const TagsLargeFocus: Story = {
+  args: {
+    label: 'Input name',
+    size: 'large',
+    state: 'focus',
+    variant: 'tags',
+    tags: sampleTags,
+    showDropdown: true,
+    placeholder: '|',
+  },
+};
+
+// States without icons or close buttons
+export const WithoutLeadingIcon: Story = {
   args: {
     label: 'Input name',
     state: 'default',
-    disabled: true,
+    showLeadingIcon: false,
+    variant: 'simple',
   },
 };
 
@@ -93,13 +347,23 @@ export const WithoutCloseButton: Story = {
     label: 'Input name',
     state: 'default',
     showClose: false,
+    variant: 'simple',
   },
 };
 
-export const CustomValue: Story = {
+export const Disabled: Story = {
   args: {
     label: 'Input name',
     state: 'default',
-    value: 'Custom input value',
+    disabled: true,
+    value: 'Disabled input value',
+    variant: 'simple',
+  },
+};
+
+export const WithoutLabel: Story = {
+  args: {
+    state: 'default',
+    variant: 'simple',
   },
 };
