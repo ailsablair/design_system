@@ -504,9 +504,14 @@ export const BaseColors: Story = {
 
       <ColorPalette
         title="Secondary Colors"
-        description="Secondary colors for subtle elements and support content"
+        description="Secondary colors for subtle elements, support content, and alternative themes"
         colors={[
           { name: 'Blue Gray', color: '#61607C', cssVar: 'var(--secondary-blue-gray)', description: 'Placeholder text and secondary content' },
+          { name: 'Blue Gray Light', color: '#C8C7D1', cssVar: 'var(--secondary-blue-gray-light)', description: 'Light backgrounds and subtle borders' },
+          { name: 'Navy', color: '#294086', cssVar: 'var(--secondary-navy)', description: 'Professional dark blue for headers and emphasis' },
+          { name: 'Navy Light', color: '#C8D2E4', cssVar: 'var(--secondary-navy-light)', description: 'Light navy backgrounds and accents' },
+          { name: 'Teal Light', color: '#BDE3ED', cssVar: 'var(--secondary-teal-light)', description: 'Calm accent color for info sections' },
+          { name: 'Teal Very Light', color: '#E8F5F5', cssVar: 'var(--secondary-teal-very-light)', description: 'Subtle background tint for calm sections' },
         ]}
       />
     </div>
