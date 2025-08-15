@@ -42,6 +42,9 @@
   --primary-blue-blue-800: #121F51;
   --primary-blue-blue-900: #0A142D;
 
+  /* === SKY BLUE PALETTE === */
+  --primary-sky-blue-sky-blue: #0BA7EA;
+
   /* === NEUTRAL GRAY PALETTE === */
   --neutral-gray-gray-50: #F9FAFB;
   --neutral-gray-gray-100: #F3F4F6;
@@ -56,8 +59,11 @@
 
   /* === BASE COLORS === */
   --base-white: #FFFFFF;
-  --base-black: #000000;
+  --base-black: #1C1C1C;
   --base-transparent: transparent;
+
+  /* === SECONDARY COLORS === */
+  --secondary-blue-gray: #61607C;
 
   /* === SEMANTIC COLORS === */
   --semantic-success: #10B981;
@@ -69,9 +75,16 @@
   --semantic-info: #3B82F6;
   --semantic-info-light: #DBEAFE;
 
+  /* === STATUS COLORS (Echo Specific) === */
+  --status-red: #CE2031;
+  --status-orange: #EE5622;
+  --status-green: #70CC67;
+  --status-dark-green: #227F1A;
+
   /* === TYPOGRAPHY TOKENS === */
   --type-typeface-archivo: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --type-typeface-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --type-typeface-roboto-flex: 'Roboto Flex', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Font Sizes */
   --type-size-xs: 12px;
@@ -112,6 +125,7 @@
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --shadow-focus: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
 
   /* === Z-INDEX TOKENS === */
   --z-index-0: 0;
