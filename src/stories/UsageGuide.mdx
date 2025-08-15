@@ -1,0 +1,603 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Design System/Usage Guide" />
+
+# Usage Guide
+
+This comprehensive guide helps developers implement the Echo Design System effectively in their projects. Follow these patterns and examples for consistent, accessible, and performant implementations.
+
+## 🚀 Getting Started
+
+### Installation & Setup
+
+#### 1. Project Setup
+```bash
+# Clone or access the design system
+git clone [repository-url]
+cd design_system
+
+# Install dependencies
+npm install
+
+# Start Storybook for development
+npm run storybook
+```
+
+#### 2. Import Components
+```tsx
+// Import individual components
+import { Input, Textarea, Tag } from './components';
+
+// Import types
+import type { InputProps, TextareaProps, TagProps } from './components';
+```
+
+#### 3. Import Design Tokens
+```css
+/* Import design tokens in your CSS */
+@import './stories/foundations/tokens.css';
+
+/* Use tokens in your styles */
+.my-component {
+  color: var(--primary-sky-blue-500);
+  padding: var(--spacing-sizing-16px);
+  border-radius: var(--spacing-radius-8px);
+}
+```
+
+## 🎨 Design Tokens Usage
+
+### Color Implementation
+
+#### Primary Colors
+```tsx
+// Use primary colors for brand elements and key actions
+<Button style={{ backgroundColor: 'var(--primary-sky-blue-500)' }}>
+  Primary Action
+</Button>
+
+// Status colors for feedback
+<Alert style={{ borderColor: 'var(--status-green-500)' }}>
+  Success message
+</Alert>
+```
+
+#### Comprehensive Palette Usage
+```css
+/* Light theme variations */
+.card {
+  background: var(--primary-sky-blue-50);
+  border: 1px solid var(--primary-sky-blue-200);
+  color: var(--primary-sky-blue-800);
+}
+
+/* Dark theme variations */
+.card-dark {
+  background: var(--primary-sky-blue-900);
+  border: 1px solid var(--primary-sky-blue-700);
+  color: var(--primary-sky-blue-100);
+}
+```
+
+#### Status Color Patterns
+```tsx
+// Error states
+<Input 
+  state="error" 
+  message="Please enter a valid email"
+  // Uses --status-red-500 for border
+  // Uses --status-red for message text
+/>
+
+// Success confirmation
+<div style={{ 
+  backgroundColor: 'var(--status-green-50)',
+  borderColor: 'var(--status-green-200)',
+  color: 'var(--status-green-800)'
+}}>
+  ✓ Changes saved successfully
+</div>
+```
+
+### Typography Implementation
+
+#### Font Usage
+```css
+/* Headings and labels */
+.heading {
+  font-family: var(--type-typeface-archivo);
+  font-weight: var(--type-weight-medium);
+  font-size: var(--type-archivo-label-lg);
+  line-height: var(--type-line-height-label-lg);
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg);
+}
+
+/* Body text and content */
+.body-text {
+  font-family: var(--type-typeface-roboto-flex);
+  font-weight: var(--type-weight-regular);
+  font-size: var(--type-roboto-flex-body);
+  line-height: var(--type-line-height-body);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body);
+}
+```
+
+### Spacing & Layout
+```css
+/* Standard spacing patterns */
+.component {
+  /* Use 8px grid system */
+  padding: var(--spacing-sizing-16px);
+  margin-bottom: var(--spacing-sizing-24px);
+  gap: var(--spacing-sizing-8px);
+  
+  /* Consistent border radius */
+  border-radius: var(--spacing-radius-8px);
+  
+  /* Standard shadows */
+  box-shadow: var(--shadow-md);
+}
+```
+
+## 🧩 Component Usage Patterns
+
+### Input Component
+
+#### Basic Implementation
+```tsx
+import { Input } from './components';
+
+// Simple text input
+<Input
+  label="Email Address"
+  placeholder="Enter your email"
+  size="default"
+  state="default"
+/>
+```
+
+#### Advanced Features
+```tsx
+// Input with validation and leading icon
+<Input
+  label="Search"
+  placeholder="Type to search..."
+  size="large"
+  state="focus"
+  showLeadingIcon={true}
+  variant="simple"
+  message="Start typing to see results"
+/>
+
+// Tag-based input for multiple selections
+<Input
+  label="Skills"
+  variant="tags"
+  size="default"
+  tags={[
+    { id: '1', label: 'React' },
+    { id: '2', label: 'TypeScript' },
+    { id: '3', label: 'Design Systems' }
+  ]}
+  placeholder="Add a skill..."
+/>
+```
+
+#### Form Integration
+```tsx
+const [email, setEmail] = useState('');
+const [emailError, setEmailError] = useState('');
+
+const validateEmail = (value: string) => {
+  const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  setEmailError(isValid ? '' : 'Please enter a valid email address');
+  return isValid;
+};
+
+<Input
+  label="Email"
+  value={email}
+  onChange={(e) => {
+    setEmail(e.target.value);
+    validateEmail(e.target.value);
+  }}
+  state={emailError ? 'error' : email ? 'filled' : 'default'}
+  message={emailError}
+  required
+/>
+```
+
+### Textarea Component
+
+#### Basic Implementation
+```tsx
+import { Textarea } from './components';
+
+// Standard textarea
+<Textarea
+  label="Description"
+  placeholder="Tell us about yourself..."
+  rows={4}
+  size="default"
+/>
+```
+
+#### Enhanced Features
+```tsx
+// Large textarea with character counting
+<Textarea
+  label="Feedback"
+  size="large"
+  minHeight={120}
+  maxHeight={300}
+  resize="vertical"
+  state="focus"
+  message="Share your detailed feedback"
+/>
+```
+
+### Tag Component
+
+#### Basic Tags
+```tsx
+import { Tag } from './components';
+
+// Simple tag
+<Tag
+  label="React"
+  variant="primary"
+  size="default"
+/>
+
+// Removable tag
+<Tag
+  label="JavaScript"
+  variant="light-gray"
+  size="small"
+  showClose={true}
+  onRemove={() => console.log('Tag removed')}
+/>
+```
+
+#### Tag Lists
+```tsx
+const [selectedTags, setSelectedTags] = useState([
+  { id: '1', label: 'Design' },
+  { id: '2', label: 'Development' },
+  { id: '3', label: 'Testing' }
+]);
+
+const removeTag = (tagId: string) => {
+  setSelectedTags(tags => tags.filter(tag => tag.id !== tagId));
+};
+
+<div style={{ display: 'flex', gap: 'var(--spacing-sizing-8px)', flexWrap: 'wrap' }}>
+  {selectedTags.map(tag => (
+    <Tag
+      key={tag.id}
+      label={tag.label}
+      variant="secondary"
+      size="default"
+      showClose={true}
+      onRemove={() => removeTag(tag.id)}
+    />
+  ))}
+</div>
+```
+
+## 📱 Responsive Implementation
+
+### Breakpoint Handling
+```css
+/* Mobile-first responsive design */
+.form-container {
+  padding: var(--spacing-sizing-16px);
+}
+
+@media (min-width: 768px) {
+  .form-container {
+    padding: var(--spacing-sizing-24px);
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-container {
+    padding: var(--spacing-sizing-32px);
+    max-width: 800px;
+  }
+}
+```
+
+### Component Size Adaptation
+```tsx
+// Responsive component sizing
+const useResponsiveSize = () => {
+  const [size, setSize] = useState<'small' | 'default' | 'large'>('default');
+  
+  useEffect(() => {
+    const updateSize = () => {
+      if (window.innerWidth < 768) {
+        setSize('small');
+      } else if (window.innerWidth < 1024) {
+        setSize('default');
+      } else {
+        setSize('large');
+      }
+    };
+    
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+  
+  return size;
+};
+
+// Usage in component
+const ResponsiveForm = () => {
+  const size = useResponsiveSize();
+  
+  return (
+    <form>
+      <Input label="Name" size={size} />
+      <Textarea label="Message" size={size} />
+    </form>
+  );
+};
+```
+
+## ⚡ Performance Best Practices
+
+### Efficient Rendering
+```tsx
+// Use React.memo for components that don't change often
+const OptimizedTag = React.memo(({ label, onRemove }: TagProps) => {
+  return (
+    <Tag
+      label={label}
+      onRemove={onRemove}
+      variant="light-gray"
+    />
+  );
+});
+
+// Use useCallback for event handlers
+const TagList = ({ tags }: { tags: TagData[] }) => {
+  const handleRemove = useCallback((tagId: string) => {
+    // Removal logic
+  }, []);
+  
+  return (
+    <div>
+      {tags.map(tag => (
+        <OptimizedTag
+          key={tag.id}
+          label={tag.label}
+          onRemove={() => handleRemove(tag.id)}
+        />
+      ))}
+    </div>
+  );
+};
+```
+
+### CSS Performance
+```css
+/* Use CSS containment for better performance */
+.component-container {
+  contain: layout style;
+  will-change: auto;
+}
+
+/* Hardware-accelerated animations */
+.animated-element {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+```
+
+## 🔧 Common Patterns & Recipes
+
+### Form Validation Pattern
+```tsx
+interface FormData {
+  email: string;
+  message: string;
+  tags: string[];
+}
+
+interface FormErrors {
+  [key: string]: string;
+}
+
+const ContactForm = () => {
+  const [formData, setFormData] = useState<FormData>({
+    email: '',
+    message: '',
+    tags: []
+  });
+  
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const validateField = (name: string, value: any) => {
+    let error = '';
+    
+    switch (name) {
+      case 'email':
+        if (!value) error = 'Email is required';
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) 
+          error = 'Please enter a valid email';
+        break;
+      case 'message':
+        if (!value) error = 'Message is required';
+        else if (value.length < 10) 
+          error = 'Message must be at least 10 characters';
+        break;
+    }
+    
+    setErrors(prev => ({ ...prev, [name]: error }));
+    return !error;
+  };
+  
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Validate all fields
+    const isValid = Object.keys(formData).every(key => 
+      validateField(key, formData[key as keyof FormData])
+    );
+    
+    if (isValid) {
+      try {
+        // Submit form data
+        await submitForm(formData);
+        // Success handling
+      } catch (error) {
+        // Error handling
+      }
+    }
+    
+    setIsSubmitting(false);
+  };
+  
+  return (
+    <form onSubmit={handleSubmit}>
+      <Input
+        label="Email"
+        value={formData.email}
+        onChange={(e) => {
+          const value = e.target.value;
+          setFormData(prev => ({ ...prev, email: value }));
+          validateField('email', value);
+        }}
+        state={errors.email ? 'error' : formData.email ? 'filled' : 'default'}
+        message={errors.email}
+        required
+      />
+      
+      <Textarea
+        label="Message"
+        value={formData.message}
+        onChange={(e) => {
+          const value = e.target.value;
+          setFormData(prev => ({ ...prev, message: value }));
+          validateField('message', value);
+        }}
+        state={errors.message ? 'error' : formData.message ? 'filled' : 'default'}
+        message={errors.message}
+        rows={4}
+        required
+      />
+      
+      <button type="submit" disabled={isSubmitting}>
+        {isSubmitting ? 'Submitting...' : 'Submit'}
+      </button>
+    </form>
+  );
+};
+```
+
+### Search with Tags Pattern
+```tsx
+const SearchWithTags = () => {
+  const [query, setQuery] = useState('');
+  const [selectedTags, setSelectedTags] = useState<TagData[]>([]);
+  
+  const addTag = (tagLabel: string) => {
+    if (tagLabel && !selectedTags.find(tag => tag.label === tagLabel)) {
+      const newTag = {
+        id: Date.now().toString(),
+        label: tagLabel
+      };
+      setSelectedTags(prev => [...prev, newTag]);
+      setQuery('');
+    }
+  };
+  
+  const removeTag = (tagId: string) => {
+    setSelectedTags(prev => prev.filter(tag => tag.id !== tagId));
+  };
+  
+  return (
+    <div>
+      <Input
+        label="Search"
+        variant="tags"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        onKeyPress={(e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            addTag(query);
+          }
+        }}
+        tags={selectedTags}
+        placeholder="Type and press Enter to add tags..."
+        showLeadingIcon={true}
+      />
+      
+      {selectedTags.length > 0 && (
+        <div style={{ marginTop: 'var(--spacing-sizing-16px)' }}>
+          <h3>Selected Filters:</h3>
+          <div style={{ 
+            display: 'flex', 
+            gap: 'var(--spacing-sizing-8px)', 
+            flexWrap: 'wrap' 
+          }}>
+            {selectedTags.map(tag => (
+              <Tag
+                key={tag.id}
+                label={tag.label}
+                variant="primary"
+                showClose={true}
+                onRemove={() => removeTag(tag.id)}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+```
+
+## 🧪 Testing Recommendations
+
+### Unit Testing
+```tsx
+import { render, screen, fireEvent } from '@testing-library/react';
+import { Input } from './Input';
+
+test('displays error state correctly', () => {
+  render(
+    <Input
+      label="Email"
+      state="error"
+      message="Invalid email"
+    />
+  );
+  
+  expect(screen.getByLabelText('Email')).toHaveClass('error');
+  expect(screen.getByText('Invalid email')).toBeInTheDocument();
+});
+```
+
+### Accessibility Testing
+```tsx
+import { axe, toHaveNoViolations } from 'jest-axe';
+
+expect.extend(toHaveNoViolations);
+
+test('component is accessible', async () => {
+  const { container } = render(<Input label="Test" />);
+  const results = await axe(container);
+  expect(results).toHaveNoViolations();
+});
+```
+
+---
+
+*This guide is continuously updated with new patterns and best practices. For specific implementation questions or custom use cases, please refer to the component documentation in Storybook or reach out to the design system team.*
