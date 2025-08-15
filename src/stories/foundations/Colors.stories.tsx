@@ -226,6 +226,65 @@ export const BaseColors: Story = {
   ),
 };
 
+export const ExtendedStatusColors: Story = {
+  render: () => (
+    <div>
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '2rem' }}>Extended Status Colors</h2>
+
+      <ColorPalette
+        title="Red Status Palette"
+        description="Complete red palette for error states, danger zones, and critical alerts"
+        colors={[
+          { name: 'Red 50', color: '#FEF2F2', cssVar: 'var(--status-red-50)' },
+          { name: 'Red 100', color: '#FEE2E2', cssVar: 'var(--status-red-100)' },
+          { name: 'Red 200', color: '#FECACA', cssVar: 'var(--status-red-200)' },
+          { name: 'Red 300', color: '#FCA5A5', cssVar: 'var(--status-red-300)' },
+          { name: 'Red 400', color: '#F87171', cssVar: 'var(--status-red-400)' },
+          { name: 'Red 500', color: '#CE2031', cssVar: 'var(--status-red-500)', description: 'Primary error color' },
+          { name: 'Red 600', color: '#B91C1C', cssVar: 'var(--status-red-600)' },
+          { name: 'Red 700', color: '#991B1B', cssVar: 'var(--status-red-700)' },
+          { name: 'Red 800', color: '#7F1D1D', cssVar: 'var(--status-red-800)' },
+          { name: 'Red 900', color: '#701A1A', cssVar: 'var(--status-red-900)' },
+        ]}
+      />
+
+      <ColorPalette
+        title="Orange Status Palette"
+        description="Complete orange palette for warning states and attention-requiring elements"
+        colors={[
+          { name: 'Orange 50', color: '#FFF7ED', cssVar: 'var(--status-orange-50)' },
+          { name: 'Orange 100', color: '#FFEDD5', cssVar: 'var(--status-orange-100)' },
+          { name: 'Orange 200', color: '#FED7AA', cssVar: 'var(--status-orange-200)' },
+          { name: 'Orange 300', color: '#FDBA74', cssVar: 'var(--status-orange-300)' },
+          { name: 'Orange 400', color: '#FB923C', cssVar: 'var(--status-orange-400)' },
+          { name: 'Orange 500', color: '#EE5622', cssVar: 'var(--status-orange-500)', description: 'Primary warning color' },
+          { name: 'Orange 600', color: '#EA580C', cssVar: 'var(--status-orange-600)' },
+          { name: 'Orange 700', color: '#C2410C', cssVar: 'var(--status-orange-700)' },
+          { name: 'Orange 800', color: '#9A3412', cssVar: 'var(--status-orange-800)' },
+          { name: 'Orange 900', color: '#7C2D12', cssVar: 'var(--status-orange-900)' },
+        ]}
+      />
+
+      <ColorPalette
+        title="Green Status Palette"
+        description="Complete green palette for success states, confirmations, and positive feedback"
+        colors={[
+          { name: 'Green 50', color: '#F0FDF4', cssVar: 'var(--status-green-50)' },
+          { name: 'Green 100', color: '#DCFCE7', cssVar: 'var(--status-green-100)' },
+          { name: 'Green 200', color: '#BBF7D0', cssVar: 'var(--status-green-200)' },
+          { name: 'Green 300', color: '#86EFAC', cssVar: 'var(--status-green-300)' },
+          { name: 'Green 400', color: '#4ADE80', cssVar: 'var(--status-green-400)' },
+          { name: 'Green 500', color: '#70CC67', cssVar: 'var(--status-green-500)', description: 'Primary success color' },
+          { name: 'Green 600', color: '#227F1A', cssVar: 'var(--status-green-600)', description: 'Success text color' },
+          { name: 'Green 700', color: '#15803D', cssVar: 'var(--status-green-700)' },
+          { name: 'Green 800', color: '#166534', cssVar: 'var(--status-green-800)' },
+          { name: 'Green 900', color: '#14532D', cssVar: 'var(--status-green-900)' },
+        ]}
+      />
+    </div>
+  ),
+};
+
 // ⛔ REJECTED STORY - DO NOT REINSTALL
 // The "UsageGuidelines" story was permanently rejected in Chromatic Build 21
 // See REJECTED_STORIES.md for full documentation
