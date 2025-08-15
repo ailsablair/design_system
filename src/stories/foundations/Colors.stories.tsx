@@ -360,21 +360,39 @@ export const NeutralColors: Story = {
   render: () => (
     <div>
       <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '2rem' }}>Neutral Colors</h2>
-      
+
       <ColorPalette
-        title="Neutral Grays"
-        description="Neutral grays provide the foundation for text, backgrounds, and subtle interface elements."
+        title="Standard Neutral Grays"
+        description="Core neutral grays for text, backgrounds, and interface elements with proven contrast ratios."
         colors={[
-          { name: 'Gray 900', color: '#111827', cssVar: 'var(--neutral-gray-gray-900)' },
-          { name: 'Gray 800', color: '#1F2937', cssVar: 'var(--neutral-gray-gray-800)' },
-          { name: 'Gray 700', color: '#374151', cssVar: 'var(--neutral-gray-gray-700)' },
-          { name: 'Gray 600', color: '#4B5563', cssVar: 'var(--neutral-gray-gray-600)' },
-          { name: 'Gray 500', color: '#6B7280', cssVar: 'var(--neutral-gray-gray-500)' },
-          { name: 'Gray 400', color: '#9CA3AF', cssVar: 'var(--neutral-gray-gray-400)' },
-          { name: 'Gray 300', color: '#D2D5DA', cssVar: 'var(--neutral-gray-gray-300)' },
-          { name: 'Gray 200', color: '#E5E7EB', cssVar: 'var(--neutral-gray-gray-200)' },
-          { name: 'Gray 100', color: '#F3F4F6', cssVar: 'var(--neutral-gray-gray-100)' },
-          { name: 'Gray 50', color: '#F9FAFB', cssVar: 'var(--neutral-gray-gray-50)' },
+          { name: 'Gray 900', color: '#111827', cssVar: 'var(--neutral-gray-gray-900)', description: 'Primary text on light backgrounds' },
+          { name: 'Gray 800', color: '#1F2937', cssVar: 'var(--neutral-gray-gray-800)', description: 'Secondary text, emphasized content' },
+          { name: 'Gray 700', color: '#374151', cssVar: 'var(--neutral-gray-gray-700)', description: 'Muted text, form labels' },
+          { name: 'Gray 600', color: '#4B5563', cssVar: 'var(--neutral-gray-gray-600)', description: 'Subdued text, icons' },
+          { name: 'Gray 500', color: '#6B7280', cssVar: 'var(--neutral-gray-gray-500)', description: 'Placeholder text, subtle borders' },
+          { name: 'Gray 400', color: '#9CA3AF', cssVar: 'var(--neutral-gray-gray-400)', description: 'Disabled elements, light borders' },
+          { name: 'Gray 300', color: '#D2D5DA', cssVar: 'var(--neutral-gray-gray-300)', description: 'Form borders, dividers' },
+          { name: 'Gray 200', color: '#E5E7EB', cssVar: 'var(--neutral-gray-gray-200)', description: 'Subtle backgrounds, table borders' },
+          { name: 'Gray 100', color: '#F3F4F6', cssVar: 'var(--neutral-gray-gray-100)', description: 'Light backgrounds, hover states' },
+          { name: 'Gray 50', color: '#F9FAFB', cssVar: 'var(--neutral-gray-gray-50)', description: 'Lightest backgrounds, page backgrounds' },
+        ]}
+      />
+
+      <ColorPalette
+        title="Extended Base Grays"
+        description="Additional neutral variations for complex interfaces and enhanced design flexibility."
+        colors={[
+          { name: 'Base Gray 950', color: '#020617', cssVar: 'var(--base-gray-950)', description: 'Maximum contrast, dark themes' },
+          { name: 'Base Gray 900', color: '#0F172A', cssVar: 'var(--base-gray-900)', description: 'Near black, high contrast text' },
+          { name: 'Base Gray 800', color: '#1E293B', cssVar: 'var(--base-gray-800)', description: 'Dark backgrounds, cards' },
+          { name: 'Base Gray 700', color: '#334155', cssVar: 'var(--base-gray-700)', description: 'Dark theme text, emphasized elements' },
+          { name: 'Base Gray 600', color: '#475569', cssVar: 'var(--base-gray-600)', description: 'Medium contrast text' },
+          { name: 'Base Gray 500', color: '#64748B', cssVar: 'var(--base-gray-500)', description: 'Balanced neutral, icons' },
+          { name: 'Base Gray 400', color: '#94A3B8', cssVar: 'var(--base-gray-400)', description: 'Lighter text, subtle elements' },
+          { name: 'Base Gray 300', color: '#CBD5E1', cssVar: 'var(--base-gray-300)', description: 'Light borders, separators' },
+          { name: 'Base Gray 200', color: '#E2E8F0', cssVar: 'var(--base-gray-200)', description: 'Subtle backgrounds' },
+          { name: 'Base Gray 100', color: '#F1F5F9', cssVar: 'var(--base-gray-100)', description: 'Very light backgrounds' },
+          { name: 'Base Gray 50', color: '#F8FAFC', cssVar: 'var(--base-gray-50)', description: 'Lightest possible backgrounds' },
         ]}
       />
     </div>
