@@ -389,20 +389,20 @@ export const PrimaryColors: Story = {
 
       <ColorPalette
         title="Seafoam Green Palette (Complete Range)"
-        description="Comprehensive seafoam green palette with full tints and shades for nature themes, growth indicators, and positive actions."
+        description="Comprehensive seafoam green palette with full tints and shades for nature themes, growth indicators, and positive actions. Centered around the correct base color #8BBF9F."
         colors={[
-          { name: 'Seafoam 25', color: '#F6FEF9', cssVar: 'var(--primary-seafoam-25)', description: 'Lightest nature tint' },
-          { name: 'Seafoam 50', color: '#ECFDF5', cssVar: 'var(--primary-seafoam-50)', description: 'Very light green backgrounds' },
-          { name: 'Seafoam 100', color: '#D1FAE5', cssVar: 'var(--primary-seafoam-100)', description: 'Light green accents' },
-          { name: 'Seafoam 200', color: '#A7F3D0', cssVar: 'var(--primary-seafoam-200)', description: 'Subtle green highlights' },
-          { name: 'Seafoam 300', color: '#6EE7B7', cssVar: 'var(--primary-seafoam-300)', description: 'Light positive color' },
-          { name: 'Seafoam 400', color: '#34D399', cssVar: 'var(--primary-seafoam-400)', description: 'Medium green emphasis' },
-          { name: 'Seafoam 500', color: '#10B981', cssVar: 'var(--primary-seafoam-500)', description: 'Primary success/growth color' },
-          { name: 'Seafoam 600', color: '#059669', cssVar: 'var(--primary-seafoam-600)', description: 'Darker green states' },
-          { name: 'Seafoam 700', color: '#047857', cssVar: 'var(--primary-seafoam-700)', description: 'Deep green emphasis' },
-          { name: 'Seafoam 800', color: '#065F46', cssVar: 'var(--primary-seafoam-800)', description: 'Dark green text' },
-          { name: 'Seafoam 900', color: '#064E3B', cssVar: 'var(--primary-seafoam-900)', description: 'Darkest green shade' },
-          { name: 'Seafoam 950', color: '#022C22', cssVar: 'var(--primary-seafoam-950)', description: 'Maximum contrast' },
+          { name: 'Seafoam 25', color: '#F7FBF9', cssVar: 'var(--primary-seafoam-25)', description: 'Lightest seafoam tint' },
+          { name: 'Seafoam 50', color: '#EFF7F3', cssVar: 'var(--primary-seafoam-50)', description: 'Very light seafoam backgrounds' },
+          { name: 'Seafoam 100', color: '#DFEEE7', cssVar: 'var(--primary-seafoam-100)', description: 'Light seafoam accents' },
+          { name: 'Seafoam 200', color: '#CFE5DB', cssVar: 'var(--primary-seafoam-200)', description: 'Subtle seafoam highlights' },
+          { name: 'Seafoam 300', color: '#BFDDCF', cssVar: 'var(--primary-seafoam-300)', description: 'Light nature color' },
+          { name: 'Seafoam 400', color: '#AFD4C3', cssVar: 'var(--primary-seafoam-400)', description: 'Medium seafoam emphasis' },
+          { name: 'Seafoam 500', color: '#8BBF9F', cssVar: 'var(--primary-seafoam-500)', description: 'Primary seafoam/nature color' },
+          { name: 'Seafoam 600', color: '#73A78D', cssVar: 'var(--primary-seafoam-600)', description: 'Darker seafoam states' },
+          { name: 'Seafoam 700', color: '#5B8F7B', cssVar: 'var(--primary-seafoam-700)', description: 'Deep seafoam emphasis' },
+          { name: 'Seafoam 800', color: '#437769', cssVar: 'var(--primary-seafoam-800)', description: 'Dark seafoam text' },
+          { name: 'Seafoam 900', color: '#2B5F57', cssVar: 'var(--primary-seafoam-900)', description: 'Darkest seafoam shade' },
+          { name: 'Seafoam 950', color: '#134745', cssVar: 'var(--primary-seafoam-950)', description: 'Maximum contrast' },
         ]}
       />
     </div>
