@@ -8,7 +8,45 @@ const meta: Meta<typeof Textarea> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Textarea component with multiple sizes, validation states, and interactive elements based on Echo design system.',
+        component: `
+# Textarea Component
+
+A comprehensive multi-line text input component built on the Echo design system, perfect for longer form content like descriptions, comments, and messages.
+
+## Key Features
+
+### Size Variants
+- **Small**: Compact design for space-constrained layouts
+- **Default**: Standard comfortable sizing for most use cases
+- **Large**: Prominent sizing with enhanced readability
+
+### Complete State Management
+- **Default**: Ready for user interaction with placeholder text
+- **Focus**: Clear visual indication of active textarea
+- **Typing**: Real-time cursor animation and interaction feedback
+- **Filled**: Visual distinction between empty and populated fields
+- **Error**: Validation failure with descriptive error messaging
+- **Warning**: Caution states with helpful user guidance
+- **Success**: Confirmation of valid input with positive feedback
+
+### Enhanced Functionality
+- **Flexible Sizing**: Configurable rows, min/max height, and resize behavior
+- **Clear Button**: Optional close/clear functionality for quick content removal
+- **Message Support**: Built-in validation messaging system
+- **Label Integration**: Semantic label association for accessibility
+
+### Performance & Accessibility
+- **ResizeObserver Optimization**: Smooth performance without layout thrashing
+- **CSS Containment**: Efficient rendering with layout and style containment
+- **Hardware Acceleration**: GPU-accelerated cursor animations
+- **Screen Reader Support**: Proper ARIA attributes and semantic markup
+- **Keyboard Navigation**: Full functionality without mouse interaction
+
+### Design System Integration
+- Uses comprehensive Echo design tokens for consistent styling
+- Responsive design adapts to all screen sizes
+- Consistent with Input and Tag components for unified form experiences
+        `,
       },
     },
   },
