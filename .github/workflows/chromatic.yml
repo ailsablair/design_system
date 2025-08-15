@@ -1,0 +1,54 @@
+name: 'Chromatic'
+
+# Event for the workflow to run on
+on:
+  # Runs on pushes targeting the main branch
+  push:
+    branches: [ main, mystic-garden ]
+  # Runs on pull requests targeting the main branch
+  pull_request:
+    branches: [ main, mystic-garden ]
+
+# List of jobs
+jobs:
+  chromatic-deployment:
+    # Operating System
+    runs-on: ubuntu-latest
+    # Job steps
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 👈 Required to retrieve git history
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Verify environment
+        run: |
+          echo "Node.js version: $(node --version)"
+          echo "npm version: $(npm --version)"
+          echo "Current directory: $(pwd)"
+          echo "Package.json exists: $([ -f package.json ] && echo 'Yes' || echo 'No')"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Storybook (test)
+        run: |
+          echo "Testing Storybook build before Chromatic..."
+          npm run build-storybook
+          echo "Storybook build successful!"
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@latest
+        with:
+          # Chromatic project token
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          # Auto-accept changes on main branch
+          autoAcceptChanges: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/mystic-garden' }}
+          # Exit with code 0 when there are changes (don't fail the build)
+          exitZeroOnChanges: true

@@ -1,0 +1,262 @@
+:root {
+  /* === SPACING TOKENS === */
+  --spacing-sizing-2px: 2px;
+  --spacing-sizing-4px: 4px;
+  --spacing-sizing-8px: 8px;
+  --spacing-sizing-12px: 12px;
+  --spacing-sizing-16px: 16px;
+  --spacing-sizing-20px: 20px;
+  --spacing-sizing-24px: 24px;
+  --spacing-sizing-32px: 32px;
+  --spacing-sizing-40px: 40px;
+  --spacing-sizing-48px: 48px;
+  --spacing-sizing-56px: 56px;
+  --spacing-sizing-64px: 64px;
+
+  /* === BORDER RADIUS TOKENS === */
+  --spacing-radius-2px: 2px;
+  --spacing-radius-4px: 4px;
+  --spacing-radius-6px: 6px;
+  --spacing-radius-8px: 8px;
+  --spacing-radius-12px: 12px;
+  --spacing-radius-16px: 16px;
+  --spacing-radius-full: 9999px;
+
+  /* === STROKE/BORDER TOKENS === */
+  --spacing-stroke-0-5px: 0.5px;
+  --spacing-stroke-1px: 1px;
+  --spacing-stroke-2px: 2px;
+  --spacing-stroke-3px: 3px;
+  --spacing-stroke-4px: 4px;
+
+  /* === PRIMARY COLOR PALETTE === */
+  --primary-blue-dark-blue: #191E3C;
+  --primary-blue-blue: #2F42BD;
+  --primary-blue-blue-100: #E8EBFA;
+  --primary-blue-blue-200: #C5CAED;
+  --primary-blue-blue-300: #95A0E5;
+  --primary-blue-blue-400: #6171DF;
+  --primary-blue-blue-500: #2F42BD;
+  --primary-blue-blue-600: #253699;
+  --primary-blue-blue-700: #1B2B75;
+  --primary-blue-blue-800: #121F51;
+  --primary-blue-blue-900: #0A142D;
+
+  /* === SKY BLUE PALETTE === */
+  --primary-sky-blue-50: #F0FBFF;
+  --primary-sky-blue-100: #E0F6FE;
+  --primary-sky-blue-200: #BAEAFD;
+  --primary-sky-blue-300: #7DD3FC;
+  --primary-sky-blue-400: #38BDF8;
+  --primary-sky-blue-500: #0BA7EA;
+  --primary-sky-blue-600: #0284C7;
+  --primary-sky-blue-700: #0369A1;
+  --primary-sky-blue-800: #075985;
+  --primary-sky-blue-900: #0C4A6E;
+  --primary-sky-blue-950: #082F49;
+
+  /* Legacy Sky Blue (maintain backward compatibility) */
+  --primary-sky-blue-sky-blue: #0BA7EA;
+
+  /* === NEUTRAL GRAY PALETTE === */
+  --neutral-gray-gray-50: #F9FAFB;
+  --neutral-gray-gray-100: #F3F4F6;
+  --neutral-gray-gray-200: #E5E7EB;
+  --neutral-gray-gray-300: #D2D5DA;
+  --neutral-gray-gray-400: #9CA3AF;
+  --neutral-gray-gray-500: #6B7280;
+  --neutral-gray-gray-600: #4B5563;
+  --neutral-gray-gray-700: #374151;
+  --neutral-gray-gray-800: #1F2937;
+  --neutral-gray-gray-900: #111827;
+
+  /* === BASE COLORS === */
+  --base-white: #FFFFFF;
+  --base-black: #1C1C1C;
+  --base-transparent: transparent;
+
+  /* === EXTENDED BASE COLORS === */
+  --base-gray-50: #F8FAFC;
+  --base-gray-100: #F1F5F9;
+  --base-gray-200: #E2E8F0;
+  --base-gray-300: #CBD5E1;
+  --base-gray-400: #94A3B8;
+  --base-gray-500: #64748B;
+  --base-gray-600: #475569;
+  --base-gray-700: #334155;
+  --base-gray-800: #1E293B;
+  --base-gray-900: #0F172A;
+  --base-gray-950: #020617;
+
+  /* Pure Base Colors */
+  --base-pure-white: #FFFFFF;
+  --base-pure-black: #000000;
+  --base-pure-gray: #808080;
+
+  /* === PRIMARY YELLOW PALETTE === */
+  --primary-yellow-50: #FEFCE8;
+  --primary-yellow-100: #FEF9C3;
+  --primary-yellow-200: #FEF08A;
+  --primary-yellow-300: #FDE047;
+  --primary-yellow-400: #FACC15;
+  --primary-yellow-500: #EAB308;
+  --primary-yellow-600: #CA8A04;
+  --primary-yellow-700: #A16207;
+  --primary-yellow-800: #854D0E;
+  --primary-yellow-900: #713F12;
+  --primary-yellow-950: #422006;
+
+  /* === PRIMARY SEAFOAM GREEN PALETTE === */
+  --primary-seafoam-50: #ECFDF5;
+  --primary-seafoam-100: #D1FAE5;
+  --primary-seafoam-200: #A7F3D0;
+  --primary-seafoam-300: #6EE7B7;
+  --primary-seafoam-400: #34D399;
+  --primary-seafoam-500: #10B981;
+  --primary-seafoam-600: #059669;
+  --primary-seafoam-700: #047857;
+  --primary-seafoam-800: #065F46;
+  --primary-seafoam-900: #064E3B;
+  --primary-seafoam-950: #022C22;
+
+  /* === SECONDARY COLORS === */
+  --secondary-blue-gray: #61607C;
+
+  /* === SEMANTIC COLORS === */
+  --semantic-success: #10B981;
+  --semantic-success-light: #D1FAE5;
+  --semantic-warning: #F59E0B;
+  --semantic-warning-light: #FEF3C7;
+  --semantic-error: #EF4444;
+  --semantic-error-light: #FEE2E2;
+  --semantic-info: #3B82F6;
+  --semantic-info-light: #DBEAFE;
+
+  /* === STATUS COLORS (Echo Specific) === */
+  --status-red: #CE2031;
+  --status-orange: #EE5622;
+  --status-green: #70CC67;
+  --status-dark-green: #227F1A;
+
+  /* === EXTENDED STATUS PALETTES === */
+  /* Red Status Palette */
+  --status-red-50: #FEF2F2;
+  --status-red-100: #FEE2E2;
+  --status-red-200: #FECACA;
+  --status-red-300: #FCA5A5;
+  --status-red-400: #F87171;
+  --status-red-500: #CE2031;
+  --status-red-600: #B91C1C;
+  --status-red-700: #991B1B;
+  --status-red-800: #7F1D1D;
+  --status-red-900: #701A1A;
+
+  /* Orange Status Palette */
+  --status-orange-50: #FFF7ED;
+  --status-orange-100: #FFEDD5;
+  --status-orange-200: #FED7AA;
+  --status-orange-300: #FDBA74;
+  --status-orange-400: #FB923C;
+  --status-orange-500: #EE5622;
+  --status-orange-600: #EA580C;
+  --status-orange-700: #C2410C;
+  --status-orange-800: #9A3412;
+  --status-orange-900: #7C2D12;
+
+  /* Green Status Palette */
+  --status-green-50: #F0FDF4;
+  --status-green-100: #DCFCE7;
+  --status-green-200: #BBF7D0;
+  --status-green-300: #86EFAC;
+  --status-green-400: #4ADE80;
+  --status-green-500: #70CC67;
+  --status-green-600: #227F1A;
+  --status-green-700: #15803D;
+  --status-green-800: #166534;
+  --status-green-900: #14532D;
+
+  /* === TYPOGRAPHY TOKENS === */
+  --type-typeface-archivo: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --type-typeface-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --type-typeface-roboto-flex: 'Roboto Flex', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Font Sizes */
+  --type-size-xs: 12px;
+  --type-size-sm: 14px;
+  --type-size-base: 16px;
+  --type-size-lg: 18px;
+  --type-size-xl: 20px;
+  --type-size-2xl: 24px;
+  --type-size-3xl: 30px;
+  --type-size-4xl: 36px;
+  --type-size-5xl: 48px;
+  --type-size-6xl: 60px;
+
+  /* Figma Specific Typography Tokens */
+  --type-archivo-label-sm: 14px;
+  --type-archivo-label: 16px;
+  --type-archivo-label-lg: 18px;
+  --type-archivo-footnote: 13px;
+  --type-roboto-flex-body-sm: 14px;
+  --type-roboto-flex-body: 16px;
+  --type-roboto-flex-body-lg: 18px;
+
+  /* Font Weights */
+  --type-weight-light: 300;
+  --type-weight-regular: 400;
+  --type-weight-medium: 500;
+  --type-weight-semibold: 600;
+  --type-weight-bold: 700;
+  --type-weight-extrabold: 800;
+
+  /* Line Heights */
+  --type-line-height-tight: 1.25;
+  --type-line-height-normal: 1.5;
+  --type-line-height-relaxed: 1.75;
+  --type-line-height-label: 22px;
+  --type-line-height-label-sm: 17px;
+  --type-line-height-label-lg: 24px;
+  --type-line-height-footnote: 15px;
+  --type-line-height-body-sm: 16px;
+  --type-line-height-body: 20px;
+  --type-line-height-body-lg: 22px;
+
+  /* Letter Spacing */
+  --type-letter-spacing-tight: -0.025em;
+  --type-letter-spacing-normal: 0em;
+  --type-letter-spacing-wide: 0.025em;
+  --type-letter-spacing-archivo-label: 0.15px;
+  --type-letter-spacing-archivo-label-sm: 0.15px;
+  --type-letter-spacing-archivo-label-lg: 0.15px;
+  --type-letter-spacing-archivo-footnote: 0.2px;
+  --type-letter-spacing-roboto-flex-body-sm: -0.15px;
+  --type-letter-spacing-roboto-flex-body: 0.05px;
+  --type-letter-spacing-roboto-flex-body-lg: -0.15px;
+
+  /* === SHADOW TOKENS === */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --shadow-focus: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+
+  /* === Z-INDEX TOKENS === */
+  --z-index-0: 0;
+  --z-index-10: 10;
+  --z-index-20: 20;
+  --z-index-30: 30;
+  --z-index-40: 40;
+  --z-index-50: 50;
+  --z-index-modal: 1000;
+  --z-index-popover: 1010;
+  --z-index-tooltip: 1020;
+  --z-index-notification: 1030;
+
+  /* === TRANSITION TOKENS === */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+  --transition-bounce: 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}

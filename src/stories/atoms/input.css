@@ -1,0 +1,418 @@
+@import '../foundations/tokens.css';
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+}
+
+.input-wrapper.small {
+  gap: var(--spacing-sizing-4px);
+}
+
+.input-wrapper.default {
+  gap: var(--spacing-sizing-4px);
+}
+
+.input-wrapper.large {
+  gap: var(--spacing-sizing-4px);
+}
+
+.input-label {
+  font-family: var(--type-typeface-archivo);
+  font-weight: var(--type-weight-medium);
+  color: var(--base-black);
+  margin: 0;
+}
+
+.input-label.small {
+  font-size: var(--type-size-sm);
+  line-height: 17px;
+  letter-spacing: 0.15px;
+  padding: var(--spacing-sizing-2px);
+}
+
+.input-label.default {
+  font-size: var(--type-size-base);
+  line-height: var(--type-line-height-label);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
+  padding: var(--spacing-sizing-4px);
+}
+
+.input-label.large {
+  font-size: var(--type-size-lg);
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  padding: var(--spacing-sizing-4px);
+}
+
+.input-container {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--spacing-radius-2px);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+  background: var(--base-white);
+  transition: all var(--transition-fast);
+  position: relative;
+  contain: layout style;
+  will-change: auto;
+}
+
+.input-container.small {
+  padding: var(--spacing-sizing-8px);
+}
+
+.input-container.default {
+  height: 44px;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
+}
+
+.input-container.large {
+  height: 54px;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
+}
+
+.input-container.tags.small {
+  min-height: 32px;
+  height: auto;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
+  align-items: center;
+  gap: var(--spacing-sizing-12px);
+}
+
+.input-container.tags.default {
+  min-height: 44px;
+  height: auto;
+  padding: var(--spacing-sizing-2px) var(--spacing-sizing-8px);
+}
+
+.input-container.tags.large {
+  min-height: 54px;
+  height: auto;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
+  gap: var(--spacing-sizing-12px);
+}
+
+.input-container:focus-within,
+.input-container.focus,
+.input-container.typing {
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
+  box-shadow: var(--shadow-focus);
+}
+
+.input-container.error {
+  border: var(--spacing-stroke-2px) solid var(--status-red);
+  box-shadow: var(--shadow-focus);
+}
+
+.input-container.warning {
+  border: var(--spacing-stroke-2px) solid var(--status-orange);
+  box-shadow: var(--shadow-focus);
+}
+
+.input-container.success {
+  border: var(--spacing-stroke-2px) solid var(--status-green);
+  box-shadow: var(--shadow-focus);
+}
+
+.input-container.disabled {
+  background-color: var(--neutral-gray-gray-50);
+  border-color: var(--neutral-gray-gray-200);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.input-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.input-content.small {
+  gap: var(--spacing-sizing-4px);
+}
+
+.input-content.default {
+  gap: var(--spacing-sizing-4px);
+}
+
+.input-content.large {
+  gap: var(--spacing-sizing-8px);
+}
+
+.input-leading-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.input-leading-icon.small {
+  width: 14px;
+  height: 14px;
+}
+
+.input-leading-icon.default {
+  width: 16px;
+  height: 16px;
+}
+
+.input-leading-icon.large {
+  width: 20px;
+  height: 20px;
+}
+
+.input-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.input-tags.small {
+  gap: var(--spacing-sizing-4px);
+}
+
+.input-tags.default {
+  gap: var(--spacing-sizing-4px);
+}
+
+.input-tags.large {
+  gap: var(--spacing-sizing-4px);
+}
+
+.input-field-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.input-field {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--type-typeface-roboto-flex);
+  font-weight: var(--type-weight-regular);
+  color: var(--base-black);
+  padding: 0;
+  min-width: 0;
+  width: 100%;
+  flex: 1;
+}
+
+.input-field.small {
+  font-size: var(--type-size-sm);
+  line-height: 16px;
+  letter-spacing: -0.15px;
+}
+
+.input-field.default {
+  font-size: var(--type-size-base);
+  line-height: 20px;
+  letter-spacing: 0.05px;
+}
+
+.input-field.large {
+  font-size: var(--type-size-lg);
+  line-height: 22px;
+  letter-spacing: -0.15px;
+}
+
+.input-field::placeholder {
+  color: var(--secondary-blue-gray);
+}
+
+.input-field.tags::placeholder {
+  color: transparent;
+}
+
+.input-field:focus::placeholder {
+  color: var(--secondary-blue-gray);
+}
+
+.input-field:disabled {
+  cursor: not-allowed;
+  color: var(--neutral-gray-gray-400);
+}
+
+.input-cursor {
+  color: var(--secondary-blue-gray);
+  font-family: var(--type-typeface-roboto-flex);
+  font-weight: var(--type-weight-regular);
+  animation: blink 1s infinite;
+}
+
+.input-cursor.small {
+  font-size: var(--type-size-sm);
+  line-height: 16px;
+  letter-spacing: -0.15px;
+}
+
+.input-cursor.default {
+  font-size: var(--type-size-base);
+  line-height: 20px;
+  letter-spacing: 0.05px;
+}
+
+.input-cursor.large {
+  font-size: var(--type-size-lg);
+  line-height: 22px;
+  letter-spacing: -0.15px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Prevent layout shifts during animation */
+.input-cursor {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.input-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.input-actions.small,
+.input-actions.default,
+.input-actions.large {
+  gap: var(--spacing-sizing-4px);
+}
+
+.input-close-button,
+.input-dropdown-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--secondary-blue-gray);
+  transition: all var(--transition-fast);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.input-close-button.small,
+.input-dropdown-button.small {
+  width: 14px;
+  height: 14px;
+}
+
+.input-close-button.default,
+.input-dropdown-button.default {
+  width: 16px;
+  height: 16px;
+}
+
+.input-close-button.large,
+.input-dropdown-button.large {
+  width: 20px;
+  height: 20px;
+}
+
+.input-close-button:hover,
+.input-dropdown-button:hover {
+  opacity: 1;
+}
+
+.input-close-button:focus,
+.input-dropdown-button:focus {
+  outline: 2px solid var(--primary-sky-blue-sky-blue);
+  outline-offset: 1px;
+  border-radius: var(--spacing-radius-2px);
+}
+
+.input-container.disabled .input-close-button,
+.input-container.disabled .input-dropdown-button {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.input-message {
+  font-family: var(--type-typeface-archivo);
+  font-weight: var(--type-weight-light);
+  margin: 0;
+  width: 300px;
+}
+
+.input-message.small,
+.input-message.default,
+.input-message.large {
+  font-size: var(--type-archivo-footnote);
+  line-height: var(--type-line-height-footnote);
+  letter-spacing: var(--type-letter-spacing-archivo-footnote);
+}
+
+.input-message.error {
+  color: var(--status-red);
+}
+
+.input-message.warning {
+  color: var(--status-orange);
+}
+
+.input-message.success {
+  color: var(--status-dark-green);
+}
+
+/* State-specific text colors for typing display */
+.input-container.typing .input-field {
+  color: var(--base-black);
+}
+
+.input-container.focus .input-field {
+  color: var(--base-black);
+}
+
+/* Hide placeholder when typing in tags mode */
+.input-container.tags.typing .input-field::placeholder,
+.input-container.tags.focus .input-field::placeholder {
+  color: transparent;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .input-wrapper {
+    max-width: 100%;
+  }
+  
+  .input-container {
+    width: 100%;
+  }
+  
+  .input-message {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .input-container.large {
+    height: 44px;
+    padding: var(--spacing-sizing-4px) var(--spacing-sizing-6px);
+  }
+  
+  .input-field.large {
+    font-size: var(--type-size-base);
+  }
+  
+  .input-leading-icon.large {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .input-close-button.large,
+  .input-dropdown-button.large {
+    width: 16px;
+    height: 16px;
+  }
+}
