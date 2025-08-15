@@ -1,0 +1,57 @@
+<style>
+  /* Global styles to prevent ResizeObserver loops in Storybook */
+  
+  /* Improve Storybook docs rendering performance */
+  .docs-story, 
+  .sbdocs-wrapper,
+  .sbdocs-content {
+    contain: layout style;
+    transform: translateZ(0);
+  }
+  
+  /* Prevent layout thrashing in MDX docs */
+  .sbdocs .sb-story {
+    contain: layout;
+    will-change: auto;
+  }
+  
+  /* Optimize code blocks and large content areas */
+  pre, 
+  code,
+  .prismjs {
+    contain: strict;
+    overflow: auto;
+  }
+  
+  /* Improve table rendering in docs */
+  table {
+    contain: layout style;
+    table-layout: fixed;
+  }
+  
+  /* Prevent infinite resize loops on images */
+  img {
+    contain: size layout;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Optimize Storybook's own UI elements */
+  .sidebar-container,
+  .main-container {
+    contain: layout;
+  }
+  
+  /* Fix for MDX content rendering */
+  .mdx-content {
+    contain: layout style;
+    overflow-wrap: break-word;
+  }
+  
+  /* Performance optimization for story previews */
+  .sb-show-main {
+    contain: layout;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+</style>
