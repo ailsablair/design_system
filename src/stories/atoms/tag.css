@@ -98,21 +98,21 @@
 }
 
 .tag-label.small .tag-text {
-  font-size: var(--type-size-sm);
-  line-height: 17px;
-  letter-spacing: 0.15px;
+  font-size: var(--type-archivo-label-sm);
+  line-height: var(--type-line-height-label-sm);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
 }
 
 .tag-label.default .tag-text {
-  font-size: var(--type-size-base);
+  font-size: var(--type-archivo-label);
   line-height: var(--type-line-height-label);
   letter-spacing: var(--type-letter-spacing-archivo-label);
 }
 
 .tag-label.large .tag-text {
-  font-size: var(--type-size-lg);
-  line-height: 24px;
-  letter-spacing: 0.15px;
+  font-size: var(--type-archivo-label-lg);
+  line-height: var(--type-line-height-label-lg);
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg);
 }
 
 .tag-close-button {
@@ -170,6 +170,6 @@
   }
   
   .tag-label.large .tag-text {
-    font-size: var(--type-size-base);
+    font-size: var(--type-archivo-label);
   }
 }
