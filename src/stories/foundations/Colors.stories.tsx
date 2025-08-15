@@ -493,6 +493,16 @@ export const BaseColors: Story = {
       />
 
       <ColorPalette
+        title="Peach Cream Base Colors"
+        description="Warm neutral colors for softer backgrounds and subtle design elements"
+        colors={[
+          { name: 'Peach Cream 50', color: '#FFFAF2', cssVar: 'var(--base-peach-cream-50)', description: 'Warmest light background, subtle sections' },
+          { name: 'Peach Cream 100', color: '#FFF4E5', cssVar: 'var(--base-peach-cream-100)', description: 'Warm background, cards, containers' },
+          { name: 'Peach Cream 200', color: '#E6DCCE', cssVar: 'var(--base-peach-cream-200)', description: 'Warm borders, dividers, subtle emphasis' },
+        ]}
+      />
+
+      <ColorPalette
         title="Secondary Colors"
         description="Secondary colors for subtle elements and support content"
         colors={[
