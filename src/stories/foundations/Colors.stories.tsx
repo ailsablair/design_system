@@ -558,6 +558,147 @@ export const ExtendedStatusColors: Story = {
   ),
 };
 
+export const DesignTokensUsage: Story = {
+  render: () => (
+    <div>
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '2rem' }}>Design Tokens Usage Examples</h2>
+
+      <div style={{
+        padding: '1.5rem',
+        backgroundColor: '#fef3c7',
+        borderRadius: '8px',
+        marginBottom: '2rem',
+        border: '1px solid #f59e0b'
+      }}>
+        <h3 style={{ fontSize: '1.125rem', fontWeight: '600', marginBottom: '0.5rem', color: '#92400e' }}>
+          💡 Implementation Guide
+        </h3>
+        <p style={{ color: '#92400e', fontSize: '0.875rem', margin: 0 }}>
+          These examples show how to use the 67 design tokens in real CSS and components. Copy the patterns below for consistent theming.
+        </p>
+      </div>
+
+      <div style={{ marginBottom: '3rem' }}>
+        <h3 style={{ fontSize: '1.25rem', fontWeight: '600', marginBottom: '1.5rem' }}>CSS Implementation Examples</h3>
+
+        <div style={{
+          backgroundColor: '#0f172a',
+          color: 'white',
+          padding: '1.5rem',
+          borderRadius: '8px',
+          fontFamily: 'Monaco, Consolas, "Lucida Console", monospace',
+          fontSize: '0.875rem',
+          lineHeight: '1.6',
+          marginBottom: '2rem',
+          overflow: 'auto'
+        }}>
+          <div style={{ color: '#94a3b8', marginBottom: '0.5rem' }}>/* Primary button using Sky Blue palette */</div>
+          <div><span style={{ color: '#f1c40f' }}>.btn-primary</span> {'{'}</div>
+          <div style={{ paddingLeft: '1rem' }}>
+            <div><span style={{ color: '#38bdf8' }}>background:</span> <span style={{ color: '#10b981' }}>var(--primary-sky-blue-500)</span>;</div>
+            <div><span style={{ color: '#38bdf8' }}>color:</span> <span style={{ color: '#10b981' }}>var(--base-white)</span>;</div>
+            <div><span style={{ color: '#38bdf8' }}>border:</span> <span style={{ color: '#10b981' }}>1px solid var(--primary-sky-blue-600)</span>;</div>
+          </div>
+          <div>{'}'}</div>
+
+          <div style={{ marginTop: '1rem', color: '#94a3b8', marginBottom: '0.5rem' }}>/* Success using Extended Green palette */</div>
+          <div><span style={{ color: '#f1c40f' }}>.alert-success</span> {'{'}</div>
+          <div style={{ paddingLeft: '1rem' }}>
+            <div><span style={{ color: '#38bdf8' }}>background:</span> <span style={{ color: '#10b981' }}>var(--status-green-50)</span>;</div>
+            <div><span style={{ color: '#38bdf8' }}>border:</span> <span style={{ color: '#10b981' }}>1px solid var(--status-green-200)</span>;</div>
+            <div><span style={{ color: '#38bdf8' }}>color:</span> <span style={{ color: '#10b981' }}>var(--status-green-800)</span>;</div>
+          </div>
+          <div>{'}'}</div>
+        </div>
+
+        <h4 style={{ fontSize: '1.125rem', fontWeight: '600', marginBottom: '1rem' }}>Live Token Examples</h4>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+          <div style={{
+            padding: '1.5rem',
+            backgroundColor: 'var(--primary-sky-blue-50)',
+            border: '1px solid var(--primary-sky-blue-200)',
+            borderRadius: '8px'
+          }}>
+            <h5 style={{
+              color: 'var(--primary-sky-blue-800)',
+              fontSize: '1rem',
+              fontWeight: '600',
+              marginBottom: '0.5rem'
+            }}>
+              🎨 Sky Blue Theme
+            </h5>
+            <p style={{
+              color: 'var(--primary-sky-blue-700)',
+              fontSize: '0.875rem',
+              marginBottom: '1rem'
+            }}>
+              Using --primary-sky-blue-* tokens.
+            </p>
+            <button style={{
+              backgroundColor: 'var(--primary-sky-blue-500)',
+              color: 'var(--base-white)',
+              border: '1px solid var(--primary-sky-blue-600)',
+              padding: '0.5rem 1rem',
+              borderRadius: '4px',
+              fontSize: '0.875rem',
+              cursor: 'pointer'
+            }}>
+              Primary Action
+            </button>
+          </div>
+
+          <div style={{
+            padding: '1.5rem',
+            backgroundColor: 'var(--status-green-50)',
+            border: '1px solid var(--status-green-200)',
+            borderRadius: '8px'
+          }}>
+            <h5 style={{
+              color: 'var(--status-green-800)',
+              fontSize: '1rem',
+              fontWeight: '600',
+              marginBottom: '0.5rem'
+            }}>
+              ✅ Success State
+            </h5>
+            <p style={{
+              color: 'var(--status-green-700)',
+              fontSize: '0.875rem',
+              margin: 0
+            }}>
+              Using --status-green-* extended palette for success feedback.
+            </p>
+          </div>
+
+          <div style={{
+            padding: '1.5rem',
+            backgroundColor: 'var(--primary-yellow-50)',
+            border: '1px solid var(--primary-yellow-200)',
+            borderRadius: '8px'
+          }}>
+            <h5 style={{
+              color: 'var(--primary-yellow-800)',
+              fontSize: '1rem',
+              fontWeight: '600',
+              marginBottom: '0.5rem'
+            }}>
+              ⚡ Yellow Accent
+            </h5>
+            <p style={{
+              color: 'var(--primary-yellow-700)',
+              fontSize: '0.875rem',
+              margin: 0
+            }}>
+              Using --primary-yellow-* palette for attention-grabbing elements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  ),
+};
+
 // ⛔ REJECTED STORY - DO NOT REINSTALL
 // The "UsageGuidelines" story was permanently rejected in Chromatic Build 21
 // See REJECTED_STORIES.md for full documentation
