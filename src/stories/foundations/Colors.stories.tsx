@@ -56,7 +56,7 @@ All colors follow consistent naming conventions:
 
 ✅ **WCAG 2.1 AA Compliance**: All color combinations meet minimum contrast ratios
 ✅ **Color Independence**: Information is never conveyed through color alone
-✅ **Focus Indicators**: High contrast focus states for keyboard navigation
+��� **Focus Indicators**: High contrast focus states for keyboard navigation
 ✅ **Screen Reader Support**: Semantic color naming and proper markup
 
 ## Usage Guidelines
@@ -476,8 +476,8 @@ export const SemanticColors: Story = {
         title="Success Colors"
         description="Positive states and confirmations"
         colors={[
-          { name: 'Success', color: '#10B981', cssVar: 'var(--semantic-success)' },
-          { name: 'Success Light', color: '#D1FAE5', cssVar: 'var(--semantic-success-light)' },
+          { name: 'Success', color: '#8BBF9F', cssVar: 'var(--semantic-success)', description: 'Updated to match correct seafoam green' },
+          { name: 'Success Light', color: '#EFF7F3', cssVar: 'var(--semantic-success-light)', description: 'Light background for success states' },
         ]}
       />
       
