@@ -37,8 +37,8 @@ const meta = {
       description: 'Whether the button is disabled',
     },
   },
-  args: { 
-    onClick: fn(),
+  args: {
+    onClick: () => console.log('Button clicked'),
   },
 } satisfies Meta<typeof PrimaryButton>;
 
