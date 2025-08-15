@@ -1,0 +1,281 @@
+@import '../foundations/tokens.css';
+
+.textarea-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-4px);
+  width: 100%;
+  max-width: 400px;
+}
+
+.textarea-wrapper.small {
+  gap: var(--spacing-sizing-4px);
+}
+
+.textarea-wrapper.default {
+  gap: var(--spacing-sizing-4px);
+}
+
+.textarea-wrapper.large {
+  gap: var(--spacing-sizing-4px);
+}
+
+.textarea-label {
+  font-family: var(--type-typeface-archivo);
+  font-weight: var(--type-weight-medium);
+  line-height: var(--type-line-height-label);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
+  color: var(--base-black);
+  margin: 0;
+  padding: var(--spacing-sizing-2px);
+}
+
+.textarea-label.small {
+  font-size: var(--type-size-sm);
+  line-height: 17px;
+  letter-spacing: 0.15px;
+  padding: var(--spacing-sizing-2px);
+}
+
+.textarea-label.default {
+  font-size: var(--type-size-base);
+  line-height: var(--type-line-height-label);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
+  padding: var(--spacing-sizing-4px);
+}
+
+.textarea-label.large {
+  font-size: var(--type-size-lg);
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  padding: var(--spacing-sizing-4px);
+}
+
+.textarea-container {
+  position: relative;
+  display: flex;
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+  border-radius: var(--spacing-radius-2px);
+  background-color: var(--base-white);
+  transition: all var(--transition-fast);
+  padding: var(--spacing-sizing-8px);
+  min-height: 80px;
+}
+
+.textarea-container:focus-within {
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
+  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+}
+
+.textarea-container.error {
+  border: var(--spacing-stroke-2px) solid var(--status-red);
+  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+}
+
+.textarea-container.warning {
+  border: var(--spacing-stroke-2px) solid var(--status-orange);
+  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+}
+
+.textarea-container.success {
+  border: var(--spacing-stroke-2px) solid var(--status-green);
+  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+}
+
+.textarea-container.disabled {
+  background-color: var(--neutral-gray-gray-50);
+  border-color: var(--neutral-gray-gray-200);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.textarea-field {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--type-typeface-roboto-flex);
+  font-weight: var(--type-weight-regular);
+  color: var(--base-black);
+  padding: 0;
+  min-width: 0;
+  resize: vertical;
+  width: 100%;
+}
+
+.textarea-field.small {
+  font-size: var(--type-size-sm);
+  line-height: 16px;
+  letter-spacing: -0.15px;
+}
+
+.textarea-field.default {
+  font-size: var(--type-size-base);
+  line-height: 20px;
+  letter-spacing: 0.05px;
+}
+
+.textarea-field.large {
+  font-size: var(--type-size-lg);
+  line-height: 22px;
+  letter-spacing: -0.15px;
+}
+
+.textarea-field::placeholder {
+  color: var(--secondary-blue-gray);
+}
+
+.textarea-field:focus::placeholder {
+  color: var(--neutral-gray-gray-500);
+}
+
+.textarea-field:disabled {
+  cursor: not-allowed;
+  color: var(--neutral-gray-gray-400);
+}
+
+.textarea-close-button {
+  position: absolute;
+  top: var(--spacing-sizing-8px);
+  right: var(--spacing-sizing-8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: var(--spacing-radius-4px);
+  color: var(--secondary-blue-gray);
+  transition: all var(--transition-fast);
+  padding: var(--spacing-sizing-2px);
+}
+
+.textarea-close-button.small {
+  width: 14px;
+  height: 14px;
+}
+
+.textarea-close-button.default {
+  width: 16px;
+  height: 16px;
+}
+
+.textarea-close-button.large {
+  width: 20px;
+  height: 20px;
+}
+
+.textarea-close-button:hover {
+  background-color: var(--neutral-gray-gray-100);
+  color: var(--neutral-gray-gray-600);
+}
+
+.textarea-close-button:focus {
+  outline: 2px solid var(--primary-sky-blue-sky-blue);
+  outline-offset: 1px;
+}
+
+.textarea-container.disabled .textarea-close-button {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.textarea-resize-handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 2px;
+  padding: 0;
+  pointer-events: none;
+}
+
+.resize-line {
+  background-color: var(--neutral-gray-gray-400);
+  height: 0px;
+  border-top: 1px solid var(--neutral-gray-gray-400);
+}
+
+.resize-line-1 {
+  width: 13px;
+}
+
+.resize-line-2 {
+  width: 8px;
+}
+
+.resize-line-3 {
+  width: 3px;
+}
+
+.textarea-message {
+  font-family: var(--type-typeface-archivo);
+  font-weight: var(--type-weight-light);
+  margin: 0;
+  width: 100%;
+}
+
+.textarea-message.small {
+  font-size: var(--type-archivo-footnote);
+  line-height: var(--type-line-height-footnote);
+  letter-spacing: var(--type-letter-spacing-archivo-footnote);
+}
+
+.textarea-message.default {
+  font-size: var(--type-archivo-footnote);
+  line-height: var(--type-line-height-footnote);
+  letter-spacing: var(--type-letter-spacing-archivo-footnote);
+}
+
+.textarea-message.large {
+  font-size: var(--type-archivo-footnote);
+  line-height: var(--type-line-height-footnote);
+  letter-spacing: var(--type-letter-spacing-archivo-footnote);
+}
+
+.textarea-message.error {
+  color: var(--status-red);
+}
+
+.textarea-message.warning {
+  color: var(--status-orange);
+}
+
+.textarea-message.success {
+  color: var(--status-dark-green);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .textarea-wrapper {
+    max-width: 100%;
+  }
+  
+  .textarea-container {
+    padding: var(--spacing-sizing-8px);
+  }
+}
+
+@media (max-width: 480px) {
+  .textarea-container {
+    padding: var(--spacing-sizing-6px);
+  }
+  
+  .textarea-field.small {
+    font-size: var(--type-size-sm);
+  }
+  
+  .textarea-field.default {
+    font-size: var(--type-size-sm);
+  }
+  
+  .textarea-field.large {
+    font-size: var(--type-size-base);
+  }
+}
