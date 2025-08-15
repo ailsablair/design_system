@@ -14,11 +14,11 @@ Our comprehensive color system includes **151 design tokens** organized into sem
 
 ## Color System Overview
 
-### 🎨 Primary Palettes (44 tokens)
+### 🎨 Primary Palettes (110 tokens)
 - **Blue Palette**: Traditional brand colors (10 tokens)
-- **Sky Blue Palette**: Interactive states and focus indicators (11 tokens)
-- **Yellow Palette**: Attention, highlights, and warnings (11 tokens)
-- **Seafoam Green Palette**: Nature, growth, and positive actions (11 tokens)
+- **Sky Blue Palette**: Interactive states and focus indicators (24 tokens)
+- **Yellow Palette**: Attention, highlights, and warnings (25 tokens)
+- **Seafoam Green Palette**: Nature, growth, and positive actions (24 tokens)
 - **Dark Blue**: Accent brand color (1 token)
 
 ### 🔘 Neutral & Base Colors (17 tokens)
