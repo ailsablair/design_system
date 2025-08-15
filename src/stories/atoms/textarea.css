@@ -6,6 +6,7 @@
   width: 100%;
   max-width: 308px;
   position: relative;
+  contain: layout;
 }
 
 .textarea-wrapper.small {
@@ -67,6 +68,7 @@
   align-items: center;
   flex-shrink: 0;
   position: relative;
+  contain: layout style;
 }
 
 .textarea-area.small {
@@ -96,6 +98,8 @@
   position: absolute;
   left: 0;
   top: 0;
+  contain: layout style;
+  will-change: auto;
 }
 
 .textarea-container.focus,
@@ -263,6 +267,12 @@
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
+}
+
+/* Prevent layout shifts during animation */
+.textarea-cursor {
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .textarea-close-button {
