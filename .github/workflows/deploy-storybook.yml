@@ -43,7 +43,24 @@ jobs:
         run: npm ci
 
       - name: Build Storybook
-        run: npm run build-storybook
+        run: |
+          echo "Building Storybook..."
+          npm run build-storybook
+          echo "Build completed. Checking output directory..."
+          ls -la storybook-static/
+          echo "Storybook build successful!"
+
+      - name: Verify build output
+        run: |
+          if [ ! -d "storybook-static" ]; then
+            echo "Error: storybook-static directory not found!"
+            exit 1
+          fi
+          if [ ! -f "storybook-static/index.html" ]; then
+            echo "Error: index.html not found in storybook-static!"
+            exit 1
+          fi
+          echo "Build verification successful!"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
