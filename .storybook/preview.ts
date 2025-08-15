@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react\';\nimport \'./docs.css';
 
 // Enhanced global error handler to suppress ResizeObserver loop warnings
 // This is a common Storybook issue and doesn't affect functionality
