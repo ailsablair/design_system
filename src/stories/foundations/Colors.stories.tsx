@@ -10,7 +10,7 @@ const meta: Meta = {
         component: `
 # Echo Design System Color Foundation
 
-Our comprehensive color system includes **67 design tokens** organized into semantic palettes that ensure accessibility, consistency, and visual hierarchy across all interfaces.
+Our comprehensive color system includes **70 design tokens** organized into semantic palettes that ensure accessibility, consistency, and visual hierarchy across all interfaces.
 
 ## Color System Overview
 
@@ -229,7 +229,7 @@ export const ColorSystemOverview: Story = {
           backgroundColor: '#f9fafb'
         }}>
           <h3 style={{ fontSize: '1.25rem', fontWeight: '600', marginBottom: '1rem', color: '#1f2937' }}>
-            ⚠️ Status & Feedback
+            ⚠�� Status & Feedback
           </h3>
           <p style={{ color: '#6b7280', marginBottom: '1rem', fontSize: '0.875rem' }}>
             43 tokens for validation states and user feedback
@@ -699,7 +699,7 @@ export const DesignTokensUsage: Story = {
   ),
 };
 
-// ⛔ REJECTED STORY - DO NOT REINSTALL
+// ��� REJECTED STORY - DO NOT REINSTALL
 // The "UsageGuidelines" story was permanently rejected in Chromatic Build 21
 // See REJECTED_STORIES.md for full documentation
 // export const UsageGuidelines: Story = { ... } // ❌ BANNED
