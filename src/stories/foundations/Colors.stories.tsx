@@ -350,10 +350,21 @@ export const PrimaryColors: Story = {
       />
 
       <ColorPalette
-        title="Sky Blue Palette"
-        description="Sky blue is used for focus states, active elements, and interactive feedback in the Echo design system."
+        title="Sky Blue Palette (Extended Tints & Shades)"
+        description="Comprehensive sky blue palette with extensive tints and shades for interactive states, focus indicators, and themed interfaces."
         colors={[
-          { name: 'Sky Blue', color: '#0BA7EA', cssVar: 'var(--primary-sky-blue-sky-blue)', description: 'Primary focus and interactive state color' },
+          { name: 'Sky Blue 25', color: '#F8FEFF', cssVar: 'var(--primary-sky-blue-25)', description: 'Lightest tint for backgrounds' },
+          { name: 'Sky Blue 50', color: '#F0FBFF', cssVar: 'var(--primary-sky-blue-50)', description: 'Very light backgrounds' },
+          { name: 'Sky Blue 100', color: '#E0F6FE', cssVar: 'var(--primary-sky-blue-100)', description: 'Light backgrounds' },
+          { name: 'Sky Blue 200', color: '#BAEAFD', cssVar: 'var(--primary-sky-blue-200)', description: 'Subtle accents' },
+          { name: 'Sky Blue 300', color: '#7DD3FC', cssVar: 'var(--primary-sky-blue-300)', description: 'Light interactive elements' },
+          { name: 'Sky Blue 400', color: '#38BDF8', cssVar: 'var(--primary-sky-blue-400)', description: 'Hover states' },
+          { name: 'Sky Blue 500', color: '#0BA7EA', cssVar: 'var(--primary-sky-blue-500)', description: 'Primary interactive color' },
+          { name: 'Sky Blue 600', color: '#0284C7', cssVar: 'var(--primary-sky-blue-600)', description: 'Pressed states' },
+          { name: 'Sky Blue 700', color: '#0369A1', cssVar: 'var(--primary-sky-blue-700)', description: 'Dark themes' },
+          { name: 'Sky Blue 800', color: '#075985', cssVar: 'var(--primary-sky-blue-800)', description: 'Deep emphasis' },
+          { name: 'Sky Blue 900', color: '#0C4A6E', cssVar: 'var(--primary-sky-blue-900)', description: 'Darkest usable shade' },
+          { name: 'Sky Blue 950', color: '#082F49', cssVar: 'var(--primary-sky-blue-950)', description: 'Maximum contrast' },
         ]}
       />
     </div>
