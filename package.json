@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_3b449a46cc629ec"
+    "chromatic": "npx chromatic --project-token=chpt_3b449a46cc629ec",
+    "chromatic:ci": "npx chromatic --project-token=chpt_3b449a46cc629ec --exit-zero-on-changes",
+    "deploy": "npm run build-storybook && npm run chromatic:ci"
   },
   "dependencies": {
     "react": "^19.1.1",
