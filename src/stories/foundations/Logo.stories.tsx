@@ -72,10 +72,6 @@ export const Wordmark: Story = {
   },
 };
 
-
-
-
-
 export const CustomSize: Story = {
   args: {
     variant: 'full',
