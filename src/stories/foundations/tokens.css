@@ -75,6 +75,11 @@
   --base-black: #1C1C1C;
   --base-transparent: transparent;
 
+  /* === PEACH CREAM BASE COLORS === */
+  --base-peach-cream-50: #FFFAF2;
+  --base-peach-cream-100: #FFF4E5;
+  --base-peach-cream-200: #E6DCCE;
+
   /* === EXTENDED BASE COLORS === */
   --base-gray-50: #F8FAFC;
   --base-gray-100: #F1F5F9;
