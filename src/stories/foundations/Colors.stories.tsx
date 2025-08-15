@@ -707,6 +707,29 @@ export const DesignTokensUsage: Story = {
               Using --primary-yellow-* palette for attention-grabbing elements.
             </p>
           </div>
+
+          <div style={{
+            padding: '1.5rem',
+            backgroundColor: 'var(--base-peach-cream-50)',
+            border: '1px solid var(--base-peach-cream-200)',
+            borderRadius: '8px'
+          }}>
+            <h5 style={{
+              color: 'var(--neutral-gray-gray-800)',
+              fontSize: '1rem',
+              fontWeight: '600',
+              marginBottom: '0.5rem'
+            }}>
+              🧡 Peach Cream Base
+            </h5>
+            <p style={{
+              color: 'var(--neutral-gray-gray-700)',
+              fontSize: '0.875rem',
+              margin: 0
+            }}>
+              Using --base-peach-cream-* palette for warm, subtle backgrounds.
+            </p>
+          </div>
         </div>
       </div>
     </div>
