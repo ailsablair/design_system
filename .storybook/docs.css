@@ -1,0 +1,149 @@
+/* Storybook Documentation Optimization CSS */
+/* Prevents ResizeObserver loops in MDX documentation */
+
+/* Global containment for documentation */
+.docs-story,
+.sbdocs-wrapper,
+.sbdocs-content,
+.sbdocs-preview {
+  contain: layout style;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Code block optimization */
+.docs-story pre,
+.sbdocs pre,
+code[class*="language-"] {
+  contain: strict;
+  overflow: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  transform: translateZ(0);
+}
+
+/* Table optimization for documentation */
+.docs-story table,
+.sbdocs table {
+  contain: layout style;
+  table-layout: fixed;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* MDX content optimization */
+.mdx-content,
+.docs-page {
+  contain: layout;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Form example optimization */
+.docs-story form,
+.sbdocs form {
+  contain: layout;
+  max-width: 100%;
+}
+
+/* Large content containers */
+.docs-story div[style*="display: flex"],
+.docs-story div[style*="grid"] {
+  contain: layout;
+}
+
+/* Component preview optimization */
+.sb-story {
+  contain: layout style;
+  will-change: auto;
+}
+
+/* Image and media optimization */
+.docs-story img,
+.sbdocs img,
+.docs-story video {
+  contain: size layout;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Typography optimization */
+.docs-story h1,
+.docs-story h2,
+.docs-story h3,
+.docs-story h4,
+.docs-story h5,
+.docs-story h6 {
+  contain: layout;
+  line-height: 1.2;
+}
+
+/* Prevent layout shifts during font loading */
+.docs-story {
+  font-display: swap;
+}
+
+/* List optimization */
+.docs-story ul,
+.docs-story ol {
+  contain: layout;
+  overflow-wrap: break-word;
+}
+
+/* Button and interactive element optimization */
+.docs-story button,
+.docs-story input,
+.docs-story textarea,
+.docs-story select {
+  contain: layout style;
+  will-change: auto;
+}
+
+/* Specific fixes for complex examples */
+.usage-example,
+.code-example {
+  contain: layout style;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+/* Responsive container optimization */
+@media (max-width: 768px) {
+  .docs-story,
+  .sbdocs-content {
+    contain: layout;
+    overflow-x: hidden;
+  }
+  
+  .docs-story pre,
+  .docs-story code {
+    font-size: 0.875rem;
+    overflow-x: auto;
+  }
+}
+
+/* Animation optimization */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateZ(0); }
+  to { opacity: 1; transform: translateZ(0); }
+}
+
+.docs-story {
+  animation: fadeIn 0.3s ease-in-out;
+  transform: translateZ(0);
+}
+
+/* Prevent scrollbar-induced layout shifts */
+.docs-story::-webkit-scrollbar {
+  width: 8px;
+}
+
+.docs-story::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.docs-story::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
