@@ -8,7 +8,7 @@ const meta: Meta<typeof Textarea> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Textarea component with validation states, multiple sizes, and interactive elements based on Echo design system.',
+        component: 'Textarea component with multiple sizes, validation states, and interactive elements based on Echo design system.',
       },
     },
   },
@@ -16,7 +16,7 @@ const meta: Meta<typeof Textarea> = {
   argTypes: {
     state: {
       control: { type: 'select' },
-      options: ['default', 'error', 'warning', 'success'],
+      options: ['default', 'filled', 'focus', 'typing', 'error', 'warning', 'success'],
       description: 'Visual state of the textarea',
     },
     size: {
@@ -55,14 +55,8 @@ const meta: Meta<typeof Textarea> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  args: {
-    label: 'Input name',
-    state: 'default',
-  },
-};
-
-export const Small: Story = {
+// Small Size Stories
+export const SmallDefault: Story = {
   args: {
     label: 'Input name',
     size: 'small',
@@ -70,7 +64,131 @@ export const Small: Story = {
   },
 };
 
-export const Large: Story = {
+export const SmallFilled: Story = {
+  args: {
+    label: 'Input name',
+    size: 'small',
+    state: 'filled',
+    value: 'This is a filled input',
+  },
+};
+
+export const SmallFocus: Story = {
+  args: {
+    label: 'Input name',
+    size: 'small',
+    state: 'focus',
+    placeholder: '|',
+  },
+};
+
+export const SmallTyping: Story = {
+  args: {
+    label: 'Input name',
+    size: 'small',
+    state: 'typing',
+    value: 'This is me typin|',
+  },
+};
+
+export const SmallError: Story = {
+  args: {
+    label: 'Input name',
+    size: 'small',
+    state: 'error',
+    value: 'This is a filled input',
+    message: 'This is an error associated with the input',
+  },
+};
+
+export const SmallWarning: Story = {
+  args: {
+    label: 'Input name',
+    size: 'small',
+    state: 'warning',
+    value: 'This is a filled input',
+    message: 'This is a warning associated with the input',
+  },
+};
+
+export const SmallSuccess: Story = {
+  args: {
+    label: 'Input name',
+    size: 'small',
+    state: 'success',
+    value: 'This is a filled input',
+    message: 'This is a success associated with the input',
+  },
+};
+
+// Default Size Stories
+export const Default: Story = {
+  args: {
+    label: 'Input name',
+    size: 'default',
+    state: 'default',
+  },
+};
+
+export const DefaultFilled: Story = {
+  args: {
+    label: 'Input name',
+    size: 'default',
+    state: 'filled',
+    value: 'This is a filled input',
+  },
+};
+
+export const DefaultFocus: Story = {
+  args: {
+    label: 'Input name',
+    size: 'default',
+    state: 'focus',
+    placeholder: '|',
+  },
+};
+
+export const DefaultTyping: Story = {
+  args: {
+    label: 'Input name',
+    size: 'default',
+    state: 'typing',
+    value: 'This is me typin|',
+  },
+};
+
+export const DefaultError: Story = {
+  args: {
+    label: 'Input name',
+    size: 'default',
+    state: 'error',
+    value: 'This is a filled input',
+    message: 'This is an error associated with the input',
+  },
+};
+
+export const DefaultWarning: Story = {
+  args: {
+    label: 'Input name',
+    size: 'default',
+    state: 'warning',
+    value: 'This is a filled input',
+    message: 'This is a warning associated with the input',
+  },
+};
+
+export const DefaultSuccess: Story = {
+  args: {
+    label: 'Input name',
+    size: 'default',
+    state: 'success',
+    value: 'This is a filled input',
+    message: 'This is a success associated with the input',
+  },
+};
+
+// Large Size Stories
+export const LargeDefault: Story = {
   args: {
     label: 'Input name',
     size: 'large',
@@ -78,56 +196,64 @@ export const Large: Story = {
   },
 };
 
-export const Filled: Story = {
+export const LargeFilled: Story = {
   args: {
     label: 'Input name',
+    size: 'large',
+    state: 'filled',
     value: 'This is a filled input',
-    state: 'default',
   },
 };
 
-export const Focus: Story = {
+export const LargeFocus: Story = {
   args: {
     label: 'Input name',
-    value: '',
-    state: 'default',
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Focused state with blue border and shadow. Click on the textarea to see the focus state.',
-      },
-    },
+    size: 'large',
+    state: 'focus',
+    placeholder: '|',
   },
 };
 
-export const Error: Story = {
+export const LargeTyping: Story = {
   args: {
     label: 'Input name',
-    value: 'This is a filled input',
+    size: 'large',
+    state: 'typing',
+    value: 'This is me typin|',
+  },
+};
+
+export const LargeError: Story = {
+  args: {
+    label: 'Input name',
+    size: 'large',
     state: 'error',
+    value: 'This is a filled input',
     message: 'This is an error associated with the input',
   },
 };
 
-export const Warning: Story = {
+export const LargeWarning: Story = {
   args: {
     label: 'Input name',
-    value: 'This is a filled input',
+    size: 'large',
     state: 'warning',
+    value: 'This is a filled input',
     message: 'This is a warning associated with the input',
   },
 };
 
-export const Success: Story = {
+export const LargeSuccess: Story = {
   args: {
     label: 'Input name',
-    value: 'This is a filled input',
+    size: 'large',
     state: 'success',
+    value: 'This is a filled input',
     message: 'This is a success associated with the input',
   },
 };
 
+// Additional Variants
 export const WithoutLabel: Story = {
   args: {
     state: 'default',
@@ -156,33 +282,5 @@ export const NoResize: Story = {
     label: 'Input name',
     state: 'default',
     resize: 'none',
-  },
-};
-
-export const HorizontalResize: Story = {
-  args: {
-    label: 'Input name',
-    state: 'default',
-    resize: 'horizontal',
-  },
-};
-
-export const LargeError: Story = {
-  args: {
-    label: 'Input name',
-    size: 'large',
-    value: 'This is a filled input',
-    state: 'error',
-    message: 'This is an error associated with the input',
-  },
-};
-
-export const SmallSuccess: Story = {
-  args: {
-    label: 'Input name',
-    size: 'small',
-    value: 'This is a filled input',
-    state: 'success',
-    message: 'This is a success associated with the input',
   },
 };

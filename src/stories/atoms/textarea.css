@@ -3,7 +3,6 @@
 .textarea-wrapper {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sizing-4px);
   width: 100%;
   max-width: 400px;
 }
@@ -23,11 +22,8 @@
 .textarea-label {
   font-family: var(--type-typeface-archivo);
   font-weight: var(--type-weight-medium);
-  line-height: var(--type-line-height-label);
-  letter-spacing: var(--type-letter-spacing-archivo-label);
   color: var(--base-black);
   margin: 0;
-  padding: var(--spacing-sizing-2px);
 }
 
 .textarea-label.small {
@@ -51,18 +47,45 @@
   padding: var(--spacing-sizing-4px);
 }
 
-.textarea-container {
-  position: relative;
+.textarea-area {
   display: flex;
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
-  border-radius: var(--spacing-radius-2px);
-  background-color: var(--base-white);
-  transition: all var(--transition-fast);
-  padding: var(--spacing-sizing-8px);
-  min-height: 80px;
+  width: 300px;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-.textarea-container:focus-within {
+.textarea-area.small {
+  padding: 0 0.121px 0.121px 0;
+}
+
+.textarea-area.default {
+  padding: 0;
+}
+
+.textarea-area.large {
+  padding: 0;
+}
+
+.textarea-container {
+  display: flex;
+  width: 300px;
+  height: 80px;
+  min-height: 60px;
+  padding: var(--spacing-sizing-8px);
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: var(--spacing-radius-2px);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+  background: var(--base-white);
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.textarea-container.focus,
+.textarea-container.typing {
   border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
   box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
 }
@@ -89,8 +112,27 @@
   cursor: not-allowed;
 }
 
-.textarea-field {
+.textarea-content {
+  display: flex;
+  align-items: center;
   flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
+.textarea-content.small {
+  gap: var(--spacing-sizing-4px);
+}
+
+.textarea-content.default {
+  gap: var(--spacing-sizing-4px);
+}
+
+.textarea-content.large {
+  gap: var(--spacing-sizing-8px);
+}
+
+.textarea-field {
   border: none;
   outline: none;
   background: transparent;
@@ -99,8 +141,10 @@
   color: var(--base-black);
   padding: 0;
   min-width: 0;
-  resize: vertical;
   width: 100%;
+  flex: 1;
+  resize: none;
+  overflow: hidden;
 }
 
 .textarea-field.small {
@@ -125,13 +169,87 @@
   color: var(--secondary-blue-gray);
 }
 
-.textarea-field:focus::placeholder {
-  color: var(--neutral-gray-gray-500);
-}
-
 .textarea-field:disabled {
   cursor: not-allowed;
   color: var(--neutral-gray-gray-400);
+}
+
+.textarea-display {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-family: var(--type-typeface-roboto-flex);
+  font-weight: var(--type-weight-regular);
+}
+
+.textarea-display.small {
+  font-size: var(--type-size-sm);
+  line-height: 16px;
+  letter-spacing: -0.15px;
+}
+
+.textarea-display.default {
+  font-size: var(--type-size-base);
+  line-height: 20px;
+  letter-spacing: 0.05px;
+}
+
+.textarea-display.large {
+  font-size: var(--type-size-lg);
+  line-height: 22px;
+  letter-spacing: -0.15px;
+}
+
+.textarea-text {
+  color: var(--base-black);
+}
+
+.textarea-text.small {
+  font-size: var(--type-size-sm);
+  line-height: 16px;
+  letter-spacing: -0.15px;
+}
+
+.textarea-text.default {
+  font-size: var(--type-size-base);
+  line-height: 20px;
+  letter-spacing: 0.05px;
+}
+
+.textarea-text.large {
+  font-size: var(--type-size-lg);
+  line-height: 22px;
+  letter-spacing: -0.15px;
+}
+
+.textarea-cursor {
+  color: var(--neutral-gray-gray-500);
+  font-family: var(--type-typeface-roboto-flex);
+  font-weight: var(--type-weight-regular);
+  animation: blink 1s infinite;
+}
+
+.textarea-cursor.small {
+  font-size: var(--type-size-sm);
+  line-height: 16px;
+  letter-spacing: -0.15px;
+}
+
+.textarea-cursor.default {
+  font-size: var(--type-size-base);
+  line-height: 20px;
+  letter-spacing: 0.05px;
+}
+
+.textarea-cursor.large {
+  font-size: var(--type-size-lg);
+  line-height: 22px;
+  letter-spacing: -0.15px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
 .textarea-close-button {
@@ -141,14 +259,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
   border: none;
   background: transparent;
   cursor: pointer;
-  border-radius: var(--spacing-radius-4px);
   color: var(--secondary-blue-gray);
   transition: all var(--transition-fast);
-  padding: var(--spacing-sizing-2px);
+  opacity: 0.6;
+  flex-shrink: 0;
 }
 
 .textarea-close-button.small {
@@ -167,18 +284,18 @@
 }
 
 .textarea-close-button:hover {
-  background-color: var(--neutral-gray-gray-100);
-  color: var(--neutral-gray-gray-600);
+  opacity: 1;
 }
 
 .textarea-close-button:focus {
   outline: 2px solid var(--primary-sky-blue-sky-blue);
   outline-offset: 1px;
+  border-radius: var(--spacing-radius-2px);
 }
 
 .textarea-container.disabled .textarea-close-button {
   cursor: not-allowed;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .textarea-resize-handle {
@@ -218,21 +335,11 @@
   font-family: var(--type-typeface-archivo);
   font-weight: var(--type-weight-light);
   margin: 0;
-  width: 100%;
+  width: 300px;
 }
 
-.textarea-message.small {
-  font-size: var(--type-archivo-footnote);
-  line-height: var(--type-line-height-footnote);
-  letter-spacing: var(--type-letter-spacing-archivo-footnote);
-}
-
-.textarea-message.default {
-  font-size: var(--type-archivo-footnote);
-  line-height: var(--type-line-height-footnote);
-  letter-spacing: var(--type-letter-spacing-archivo-footnote);
-}
-
+.textarea-message.small,
+.textarea-message.default,
 .textarea-message.large {
   font-size: var(--type-archivo-footnote);
   line-height: var(--type-line-height-footnote);
@@ -251,14 +358,31 @@
   color: var(--status-dark-green);
 }
 
+/* Special styling for typing state */
+.textarea-container.typing .textarea-text {
+  color: var(--base-black);
+}
+
+.textarea-container.typing .textarea-cursor {
+  color: var(--neutral-gray-gray-500);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .textarea-wrapper {
     max-width: 100%;
   }
   
+  .textarea-area {
+    width: 100%;
+  }
+  
   .textarea-container {
-    padding: var(--spacing-sizing-8px);
+    width: 100%;
+  }
+  
+  .textarea-message {
+    width: 100%;
   }
 }
 
@@ -267,15 +391,12 @@
     padding: var(--spacing-sizing-6px);
   }
   
-  .textarea-field.small {
-    font-size: var(--type-size-sm);
-  }
-  
-  .textarea-field.default {
-    font-size: var(--type-size-sm);
-  }
-  
   .textarea-field.large {
     font-size: var(--type-size-base);
+  }
+  
+  .textarea-close-button.large {
+    width: 16px;
+    height: 16px;
   }
 }
