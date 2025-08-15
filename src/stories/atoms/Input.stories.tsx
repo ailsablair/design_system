@@ -8,7 +8,46 @@ const meta: Meta<typeof Input> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Enhanced Input component with leading icons, tag functionality, multiple sizes, and validation states based on Echo design system.',
+        component: `
+# Input Component
+
+The Input component is a comprehensive form element built on the Echo design system with extensive customization options and built-in accessibility features.
+
+## Key Features
+
+### Multiple Variants
+- **Simple Input**: Traditional text input with optional leading icons
+- **Tag Input**: Multi-select input with tag functionality for complex data entry
+
+### Size Options
+- **Small**: Compact design for dense layouts (height: 32px)
+- **Default**: Standard comfortable sizing (height: 44px)
+- **Large**: Prominent sizing for emphasis (height: 54px)
+
+### Comprehensive States
+- **Default**: Ready for user interaction
+- **Focus**: Active input with clear visual indication
+- **Typing**: Real-time feedback during text entry
+- **Filled**: Distinguishes populated from empty fields
+- **Error**: Validation failure with descriptive messaging
+- **Warning**: Caution states with helpful guidance
+- **Success**: Confirmation of valid input
+
+### Advanced Features
+- **Leading Icons**: Optional icons for context and branding
+- **Tag Management**: Add, display, and remove multiple selections
+- **Validation Integration**: Built-in error, warning, and success states
+- **Responsive Design**: Adapts to all screen sizes and devices
+- **Accessibility**: Full keyboard navigation and screen reader support
+
+### Design Token Integration
+Uses the comprehensive Echo color palette with 67+ design tokens for consistent theming and customization.
+
+### Performance Optimizations
+- CSS containment for efficient rendering
+- Hardware-accelerated animations
+- Optimized for React 19 and modern browsers
+        `,
       },
     },
   },
