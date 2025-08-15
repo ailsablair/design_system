@@ -7,7 +7,74 @@ const meta: Meta = {
     layout: 'padded',
     docs: {
       description: {
-        component: 'Our design system uses a carefully crafted color palette that ensures accessibility, consistency, and visual hierarchy across all interfaces.',
+        component: `
+# Echo Design System Color Foundation
+
+Our comprehensive color system includes **67 design tokens** organized into semantic palettes that ensure accessibility, consistency, and visual hierarchy across all interfaces.
+
+## Color System Overview
+
+### 🎨 Primary Palettes (44 tokens)
+- **Blue Palette**: Traditional brand colors (10 tokens)
+- **Sky Blue Palette**: Interactive states and focus indicators (11 tokens)
+- **Yellow Palette**: Attention, highlights, and warnings (11 tokens)
+- **Seafoam Green Palette**: Nature, growth, and positive actions (11 tokens)
+- **Dark Blue**: Accent brand color (1 token)
+
+### 🔘 Neutral & Base Colors (14 tokens)
+- **Neutral Grays**: Professional neutral palette (10 tokens)
+- **Extended Base Grays**: Additional neutral variations (11 tokens)
+- **Pure Base Colors**: High contrast colors (3 tokens)
+
+### ⚠️ Status & Feedback Colors (43 tokens)
+- **Echo Status Colors**: Branded validation colors (4 tokens)
+- **Extended Red Palette**: Error states and critical alerts (10 tokens)
+- **Extended Orange Palette**: Warning states and attention (10 tokens)
+- **Extended Green Palette**: Success states and confirmations (10 tokens)
+- **Semantic Colors**: Additional feedback colors (8 tokens)
+- **Info Colors**: Informational content (2 tokens)
+
+## Design Token Architecture
+
+All colors follow consistent naming conventions:
+
+\`\`\`css
+/* Primary color palettes */
+--primary-[color]-[weight]     /* 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950 */
+
+/* Base and neutral colors */
+--base-gray-[weight]           /* Extended neutral grays */
+--neutral-gray-gray-[weight]   /* Standard neutral grays */
+
+/* Status and feedback */
+--status-[color]-[weight]      /* Extended status palettes */
+--semantic-[type]              /* Standard semantic colors */
+\`\`\`
+
+## Accessibility Standards
+
+✅ **WCAG 2.1 AA Compliance**: All color combinations meet minimum contrast ratios
+✅ **Color Independence**: Information is never conveyed through color alone
+✅ **Focus Indicators**: High contrast focus states for keyboard navigation
+✅ **Screen Reader Support**: Semantic color naming and proper markup
+
+## Usage Guidelines
+
+### When to Use Each Palette
+
+- **Primary Colors**: Brand elements, key actions, navigation
+- **Status Colors**: Form validation, alerts, feedback messages
+- **Neutral Colors**: Text, backgrounds, borders, subtle elements
+- **Extended Palettes**: Themed interfaces, data visualization, complex states
+
+### Color Token Selection
+
+- **50-200**: Light backgrounds, subtle accents
+- **300-400**: Secondary elements, disabled states
+- **500-600**: Primary elements, default states
+- **700-800**: High emphasis, dark themes
+- **900-950**: Maximum contrast, text on light backgrounds
+        `,
       },
     },
   },
