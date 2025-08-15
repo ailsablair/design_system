@@ -87,3 +87,13 @@ export const CustomSize: Story = {
     },
   },
 };
+
+// ⛔ REJECTED STORIES - DO NOT REINSTALL
+// The following 5 stories were permanently rejected in Chromatic Build 21
+// See REJECTED_STORIES.md for full documentation
+
+// export const AllVariants: Story = { ... } // ❌ BANNED
+// export const ColorVariations: Story = { ... } // ❌ BANNED
+// export const OnDarkBackground: Story = { ... } // ❌ BANNED
+// export const SizeComparison: Story = { ... } // ❌ BANNED
+// export const LogomarkVariations: Story = { ... } // ❌ BANNED
