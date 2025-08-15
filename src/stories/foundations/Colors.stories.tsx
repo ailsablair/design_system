@@ -208,7 +208,7 @@ export const ColorSystemOverview: Story = {
             🔘 Neutral & Base Colors
           </h3>
           <p style={{ color: '#6b7280', marginBottom: '1rem', fontSize: '0.875rem' }}>
-            14 tokens for text, backgrounds, and structural elements
+            17 tokens for text, backgrounds, and structural elements
           </p>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
@@ -217,8 +217,11 @@ export const ColorSystemOverview: Story = {
             <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
               <strong>Base Grays:</strong> Extended neutrals (11 tokens)
             </li>
-            <li style={{ fontSize: '0.875rem' }}>
+            <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
               <strong>Pure Colors:</strong> High contrast (3 tokens)
+            </li>
+            <li style={{ fontSize: '0.875rem' }}>
+              <strong>Peach Cream:</strong> Warm neutrals (3 tokens)
             </li>
           </ul>
         </div>
