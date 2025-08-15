@@ -101,22 +101,22 @@
 .textarea-container.focus,
 .textarea-container.typing {
   border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
-  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+  box-shadow: var(--shadow-focus);
 }
 
 .textarea-container.error {
   border: var(--spacing-stroke-2px) solid var(--status-red);
-  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+  box-shadow: var(--shadow-focus);
 }
 
 .textarea-container.warning {
   border: var(--spacing-stroke-2px) solid var(--status-orange);
-  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+  box-shadow: var(--shadow-focus);
 }
 
 .textarea-container.success {
   border: var(--spacing-stroke-2px) solid var(--status-green);
-  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+  box-shadow: var(--shadow-focus);
 }
 
 .textarea-container.disabled {
@@ -364,7 +364,7 @@
 
 /* Additional styling for specific size containers */
 .textarea-wrapper.small .textarea-area {
-  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+  box-shadow: var(--shadow-focus);
 }
 
 .textarea-container.focus .textarea-area,
@@ -372,7 +372,7 @@
 .textarea-container.error .textarea-area,
 .textarea-container.warning .textarea-area,
 .textarea-container.success .textarea-area {
-  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+  box-shadow: var(--shadow-focus);
 }
 
 /* Responsive adjustments */
