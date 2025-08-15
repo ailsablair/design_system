@@ -126,6 +126,11 @@
 
   /* === SECONDARY COLORS === */
   --secondary-blue-gray: #61607C;
+  --secondary-blue-gray-light: #C8C7D1;
+  --secondary-navy: #294086;
+  --secondary-navy-light: #C8D2E4;
+  --secondary-teal-light: #BDE3ED;
+  --secondary-teal-very-light: #E8F5F5;
 
   /* === SEMANTIC COLORS === */
   --semantic-success: #10B981;
