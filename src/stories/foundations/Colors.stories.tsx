@@ -155,6 +155,174 @@ const ColorPalette = ({
   </div>
 );
 
+export const ColorSystemOverview: Story = {
+  render: () => (
+    <div>
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '2rem' }}>Complete Color System Overview</h2>
+
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+        gap: '2rem',
+        marginBottom: '3rem'
+      }}>
+        <div style={{
+          padding: '1.5rem',
+          border: '1px solid #e5e7eb',
+          borderRadius: '8px',
+          backgroundColor: '#f9fafb'
+        }}>
+          <h3 style={{ fontSize: '1.25rem', fontWeight: '600', marginBottom: '1rem', color: '#1f2937' }}>
+            🎨 Primary Palettes
+          </h3>
+          <p style={{ color: '#6b7280', marginBottom: '1rem', fontSize: '0.875rem' }}>
+            44 tokens for brand identity and key interface elements
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+            <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
+              <strong>Blue:</strong> Traditional brand colors (10 tokens)
+            </li>
+            <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
+              <strong>Sky Blue:</strong> Interactive states (11 tokens)
+            </li>
+            <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
+              <strong>Yellow:</strong> Attention & highlights (11 tokens)
+            </li>
+            <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
+              <strong>Seafoam Green:</strong> Growth & nature (11 tokens)
+            </li>
+            <li style={{ fontSize: '0.875rem' }}>
+              <strong>Dark Blue:</strong> Accent color (1 token)
+            </li>
+          </ul>
+        </div>
+
+        <div style={{
+          padding: '1.5rem',
+          border: '1px solid #e5e7eb',
+          borderRadius: '8px',
+          backgroundColor: '#f9fafb'
+        }}>
+          <h3 style={{ fontSize: '1.25rem', fontWeight: '600', marginBottom: '1rem', color: '#1f2937' }}>
+            🔘 Neutral & Base Colors
+          </h3>
+          <p style={{ color: '#6b7280', marginBottom: '1rem', fontSize: '0.875rem' }}>
+            14 tokens for text, backgrounds, and structural elements
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+            <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
+              <strong>Neutral Grays:</strong> Standard grays (10 tokens)
+            </li>
+            <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
+              <strong>Base Grays:</strong> Extended neutrals (11 tokens)
+            </li>
+            <li style={{ fontSize: '0.875rem' }}>
+              <strong>Pure Colors:</strong> High contrast (3 tokens)
+            </li>
+          </ul>
+        </div>
+
+        <div style={{
+          padding: '1.5rem',
+          border: '1px solid #e5e7eb',
+          borderRadius: '8px',
+          backgroundColor: '#f9fafb'
+        }}>
+          <h3 style={{ fontSize: '1.25rem', fontWeight: '600', marginBottom: '1rem', color: '#1f2937' }}>
+            ⚠️ Status & Feedback
+          </h3>
+          <p style={{ color: '#6b7280', marginBottom: '1rem', fontSize: '0.875rem' }}>
+            43 tokens for validation states and user feedback
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+            <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
+              <strong>Echo Status:</strong> Branded validation (4 tokens)
+            </li>
+            <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
+              <strong>Extended Red:</strong> Error states (10 tokens)
+            </li>
+            <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
+              <strong>Extended Orange:</strong> Warnings (10 tokens)
+            </li>
+            <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
+              <strong>Extended Green:</strong> Success states (10 tokens)
+            </li>
+            <li style={{ fontSize: '0.875rem' }}>
+              <strong>Semantic & Info:</strong> Additional feedback (9 tokens)
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div style={{
+        padding: '2rem',
+        backgroundColor: '#0f172a',
+        borderRadius: '12px',
+        color: 'white',
+        marginBottom: '2rem'
+      }}>
+        <h3 style={{ fontSize: '1.25rem', fontWeight: '600', marginBottom: '1.5rem', color: 'white' }}>
+          🏗️ Design Token Architecture
+        </h3>
+        <div style={{
+          fontFamily: 'Monaco, Consolas, "Lucida Console", monospace',
+          fontSize: '0.875rem',
+          lineHeight: '1.6'
+        }}>
+          <div style={{ marginBottom: '1rem' }}>
+            <div style={{ color: '#94a3b8', marginBottom: '0.25rem' }}>/* Primary color palettes */</div>
+            <div style={{ color: '#38bdf8' }}>--primary-[color]-[weight]</div>
+            <div style={{ color: '#94a3b8', fontSize: '0.75rem' }}>Example: --primary-sky-blue-500</div>
+          </div>
+          <div style={{ marginBottom: '1rem' }}>
+            <div style={{ color: '#94a3b8', marginBottom: '0.25rem' }}>/* Base and neutral colors */</div>
+            <div style={{ color: '#38bdf8' }}>--base-gray-[weight]</div>
+            <div style={{ color: '#94a3b8', fontSize: '0.75rem' }}>Example: --base-gray-500</div>
+          </div>
+          <div>
+            <div style={{ color: '#94a3b8', marginBottom: '0.25rem' }}>/* Status and feedback */</div>
+            <div style={{ color: '#38bdf8' }}>--status-[color]-[weight]</div>
+            <div style={{ color: '#94a3b8', fontSize: '0.75rem' }}>Example: --status-red-500</div>
+          </div>
+        </div>
+      </div>
+
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+        gap: '1rem',
+        padding: '1.5rem',
+        backgroundColor: '#f0f9ff',
+        borderRadius: '8px',
+        border: '1px solid #0ea5e9'
+      }}>
+        <div>
+          <h4 style={{ fontSize: '1rem', fontWeight: '600', marginBottom: '0.5rem', color: '#0c4a6e' }}>
+            ✅ Accessibility Standards
+          </h4>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '0.875rem', color: '#0c4a6e' }}>
+            <li style={{ marginBottom: '0.25rem' }}>WCAG 2.1 AA Compliance</li>
+            <li style={{ marginBottom: '0.25rem' }}>4.5:1 minimum contrast ratios</li>
+            <li style={{ marginBottom: '0.25rem' }}>Color-independent design</li>
+            <li>High contrast focus states</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style={{ fontSize: '1rem', fontWeight: '600', marginBottom: '0.5rem', color: '#0c4a6e' }}>
+            🎯 Usage Guidelines
+          </h4>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '0.875rem', color: '#0c4a6e' }}>
+            <li style={{ marginBottom: '0.25rem' }}>50-200: Light backgrounds</li>
+            <li style={{ marginBottom: '0.25rem' }}>300-400: Secondary elements</li>
+            <li style={{ marginBottom: '0.25rem' }}>500-600: Primary elements</li>
+            <li>700-950: High emphasis text</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  ),
+};
+
 export const PrimaryColors: Story = {
   render: () => (
     <div>
