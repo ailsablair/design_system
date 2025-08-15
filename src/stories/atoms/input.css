@@ -1,0 +1,189 @@
+@import '../foundations/tokens.css';
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-8px);
+  width: 100%;
+  max-width: 400px;
+}
+
+.input-label {
+  font-family: var(--type-typeface-inter);
+  font-size: var(--type-size-base);
+  font-weight: var(--type-weight-medium);
+  line-height: var(--type-line-height-normal);
+  color: var(--neutral-gray-gray-900);
+  margin: 0;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-12px);
+  padding: var(--spacing-sizing-12px) var(--spacing-sizing-16px);
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-200);
+  border-radius: var(--spacing-radius-8px);
+  background-color: var(--base-white);
+  transition: all var(--transition-fast);
+}
+
+.input-container:focus-within {
+  border-color: var(--primary-blue-blue-500);
+  box-shadow: 0 0 0 3px rgba(47, 66, 189, 0.1);
+}
+
+.input-container.error {
+  border-color: var(--semantic-error);
+}
+
+.input-container.error:focus-within {
+  border-color: var(--semantic-error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.input-container.warning {
+  border-color: var(--semantic-warning);
+}
+
+.input-container.warning:focus-within {
+  border-color: var(--semantic-warning);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+.input-container.success {
+  border-color: var(--semantic-success);
+}
+
+.input-container.success:focus-within {
+  border-color: var(--semantic-success);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.input-container.disabled {
+  background-color: var(--neutral-gray-gray-50);
+  border-color: var(--neutral-gray-gray-200);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.input-container.error .input-icon {
+  color: var(--semantic-error);
+}
+
+.input-container.warning .input-icon {
+  color: var(--semantic-warning);
+}
+
+.input-container.success .input-icon {
+  color: var(--semantic-success);
+}
+
+.input-field {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--type-typeface-inter);
+  font-size: var(--type-size-base);
+  font-weight: var(--type-weight-regular);
+  line-height: var(--type-line-height-normal);
+  color: var(--neutral-gray-gray-900);
+  padding: 0;
+  min-width: 0;
+}
+
+.input-field::placeholder {
+  color: var(--neutral-gray-gray-500);
+}
+
+.input-field:disabled {
+  cursor: not-allowed;
+  color: var(--neutral-gray-gray-400);
+}
+
+.input-close-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: var(--spacing-radius-4px);
+  color: var(--neutral-gray-gray-400);
+  transition: all var(--transition-fast);
+}
+
+.input-close-button:hover {
+  background-color: var(--neutral-gray-gray-100);
+  color: var(--neutral-gray-gray-600);
+}
+
+.input-close-button:focus {
+  outline: 2px solid var(--primary-blue-blue-500);
+  outline-offset: 1px;
+}
+
+.input-container.disabled .input-close-button {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.input-message {
+  font-family: var(--type-typeface-inter);
+  font-size: var(--type-size-sm);
+  font-weight: var(--type-weight-regular);
+  line-height: var(--type-line-height-normal);
+  margin: 0;
+}
+
+.input-message.error {
+  color: var(--semantic-error);
+}
+
+.input-message.warning {
+  color: var(--semantic-warning);
+}
+
+.input-message.success {
+  color: var(--semantic-success);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .input-wrapper {
+    max-width: 100%;
+  }
+  
+  .input-container {
+    padding: var(--spacing-sizing-12px) var(--spacing-sizing-14px);
+  }
+  
+  .input-field {
+    font-size: var(--type-size-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .input-container {
+    padding: var(--spacing-sizing-10px) var(--spacing-sizing-12px);
+    gap: var(--spacing-sizing-8px);
+  }
+  
+  .input-field {
+    font-size: var(--type-size-sm);
+  }
+}
