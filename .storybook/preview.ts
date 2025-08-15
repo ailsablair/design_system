@@ -1,19 +1,53 @@
 import type { Preview } from '@storybook/react';
 
-// Global error handler to suppress ResizeObserver loop warnings
+// Enhanced global error handler to suppress ResizeObserver loop warnings
 // This is a common Storybook issue and doesn't affect functionality
-const resizeObserverLoopErrRe = /^[^(ResizeObserver loop limit exceeded)]/;
 const originalError = window.console.error;
+const originalWarn = window.console.warn;
+
+// Comprehensive ResizeObserver error patterns
+const resizeObserverPatterns = [
+  'ResizeObserver loop completed with undelivered notifications',
+  'ResizeObserver loop limit exceeded',
+  'ResizeObserver callback threw an exception',
+];
+
+const isResizeObserverError = (message: any): boolean => {
+  if (typeof message !== 'string') return false;
+  return resizeObserverPatterns.some(pattern => message.includes(pattern));
+};
+
+// Enhanced error suppression
 window.console.error = (...args) => {
   const firstArg = args[0];
-  const isResizeObserverLoopError = 
-    typeof firstArg === 'string' && 
-    firstArg.includes('ResizeObserver loop completed with undelivered notifications');
-  
-  if (!isResizeObserverLoopError) {
+  if (!isResizeObserverError(firstArg)) {
     originalError(...args);
   }
 };
+
+// Also suppress warnings related to ResizeObserver
+window.console.warn = (...args) => {
+  const firstArg = args[0];
+  if (!isResizeObserverError(firstArg)) {
+    originalWarn(...args);
+  }
+};
+
+// Handle uncaught ResizeObserver errors
+window.addEventListener('error', (event) => {
+  if (isResizeObserverError(event.message)) {
+    event.preventDefault();
+    return false;
+  }
+});
+
+// Handle unhandled promise rejections from ResizeObserver
+window.addEventListener('unhandledrejection', (event) => {
+  if (isResizeObserverError(event.reason)) {
+    event.preventDefault();
+    return false;
+  }
+});
 
 const preview: Preview = {
   parameters: {
@@ -25,6 +59,10 @@ const preview: Preview = {
     },
     docs: {
       defaultName: 'Documentation',
+      // Enhanced docs configuration for better MDX rendering
+      source: {
+        type: 'code',
+      },
     },
     layout: 'centered',
     viewport: {
