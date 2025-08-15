@@ -455,9 +455,17 @@ export const SemanticColors: Story = {
         description="Core branded status colors for form validation, alerts, and user feedback in the Echo design system."
         colors={[
           { name: 'Status Red', color: '#CE2031', cssVar: 'var(--status-red)', description: 'Primary error state for form validation' },
+          { name: 'Status Red Light', color: '#FBEBEB', cssVar: 'var(--status-red-light)', description: 'Light error backgrounds and subtle alerts' },
           { name: 'Status Orange', color: '#EE5622', cssVar: 'var(--status-orange)', description: 'Primary warning state for cautions' },
+          { name: 'Status Orange Alt', color: '#F4A403', cssVar: 'var(--status-orange-alt)', description: 'Alternative warning color for variety' },
+          { name: 'Status Dark Orange', color: '#D07C06', cssVar: 'var(--status-dark-orange)', description: 'Deeper warning emphasis and text' },
           { name: 'Status Green', color: '#70CC67', cssVar: 'var(--status-green)', description: 'Primary success state for confirmations' },
+          { name: 'Status Green Light', color: '#F2FFF1', cssVar: 'var(--status-green-light)', description: 'Light success backgrounds and subtle confirmations' },
           { name: 'Status Dark Green', color: '#227F1A', cssVar: 'var(--status-dark-green)', description: 'Success message text and emphasis' },
+          { name: 'Status Purple', color: '#5D2C82', cssVar: 'var(--status-purple)', description: 'Special status for features and highlights' },
+          { name: 'Status Purple Light', color: '#FBF7FF', cssVar: 'var(--status-purple-light)', description: 'Light purple backgrounds for feature sections' },
+          { name: 'Status Info Blue', color: '#366F97', cssVar: 'var(--status-info-blue)', description: 'Informational content and neutral messages' },
+          { name: 'Status Info Blue Light', color: '#F5FCFF', cssVar: 'var(--status-info-blue-light)', description: 'Light info backgrounds and help sections' },
         ]}
       />
 
