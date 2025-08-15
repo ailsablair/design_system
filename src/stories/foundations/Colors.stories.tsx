@@ -10,7 +10,7 @@ const meta: Meta = {
         component: `
 # Echo Design System Color Foundation
 
-Our comprehensive color system includes **70 design tokens** organized into semantic palettes that ensure accessibility, consistency, and visual hierarchy across all interfaces.
+Our comprehensive color system includes **85 design tokens** organized into semantic palettes that ensure accessibility, consistency, and visual hierarchy across all interfaces.
 
 ## Color System Overview
 
