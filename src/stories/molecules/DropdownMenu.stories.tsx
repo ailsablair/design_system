@@ -22,7 +22,7 @@ const meta: Meta<typeof DropdownMenu> = {
     },
     type: {
       control: 'select',
-      options: ['default', 'submenu'],
+      options: ['default', 'submenu', 'sectioned', 'sectioned-submenu'],
       description: 'Type of menu',
     },
     width: {
