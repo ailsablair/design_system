@@ -216,7 +216,7 @@ export const Default: Story = {
 // Material UI icons showcase 
 export const MaterialUIIcons: Story = {
   render: () => {
-    const materialIcons: { name: MaterialIconName; category: string }[] = [
+    const materialIcons: { name: MaterialIconFilledName; category: string }[] = [
       // Navigation
       { name: 'home', category: 'Navigation' },
       { name: 'menu', category: 'Navigation' },
