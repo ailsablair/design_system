@@ -50,7 +50,7 @@ const ForumIcon = ({ size = 'default' }: { size?: 'small' | 'default' | 'large' 
 
 const BackArrowIcon = ({ size = 'default' }: { size?: 'small' | 'default' | 'large' }) => {
   const iconSize = size === 'small' ? '18' : size === 'large' ? '28' : '24';
-  
+
   return (
     <svg width={iconSize} height={iconSize} viewBox={`0 0 ${iconSize} ${iconSize}`} fill="none" xmlns="http://www.w3.org/2000/svg">
       {size === 'small' ? (
@@ -59,6 +59,22 @@ const BackArrowIcon = ({ size = 'default' }: { size?: 'small' | 'default' | 'lar
         <path d="M23.3335 10.4999V17.4999H14.0002V23.1466L4.85352 13.9999L14.0002 4.85327V10.4999H23.3335Z" fill="#0BA7EA"/>
       ) : (
         <path d="M20.0002 8.99991V14.9999H12.0002V19.8399L4.16016 11.9999L12.0002 4.15991V8.99991H20.0002Z" fill="#0BA7EA"/>
+      )}
+    </svg>
+  );
+};
+
+const ChevronRightIcon = ({ size = 'default' }: { size?: 'small' | 'default' | 'large' }) => {
+  const iconSize = size === 'small' ? '18' : size === 'large' ? '28' : '24';
+
+  return (
+    <svg width={iconSize} height={iconSize} viewBox={`0 0 ${iconSize} ${iconSize}`} fill="none" xmlns="http://www.w3.org/2000/svg">
+      {size === 'small' ? (
+        <path d="M11.293 9L7.50098 12.791L7.14746 12.4355L10.2305 9.35352L10.584 9L10.2314 8.64648L7.14844 5.55762L7.5 5.20703L11.293 9Z" fill="#9CA3AF" stroke="#9CA3AF"/>
+      ) : size === 'large' ? (
+        <path d="M10.0215 19.3433L15.3648 14L10.0215 8.645L11.6665 7L18.6665 14L11.6665 21L10.0215 19.3433Z" fill="#9CA3AF"/>
+      ) : (
+        <path d="M15.293 12L10.001 17.291L9.29492 16.5811L13.5234 12.3535L13.877 12L13.5234 11.6465L9.2959 7.41016L10 6.70703L15.293 12Z" fill="#9CA3AF" stroke="#9CA3AF"/>
       )}
     </svg>
   );
