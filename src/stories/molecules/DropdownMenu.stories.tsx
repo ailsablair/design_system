@@ -53,6 +53,20 @@ const submenuItems = [
   { label: 'Submenu item', showLeadingIcon: true },
 ];
 
+const sectionedItems = [
+  { label: 'Section name', type: 'section' as const, showLeadingIcon: false },
+  { label: 'Menu item', showLeadingIcon: true },
+  { label: 'Menu item', showLeadingIcon: true },
+  { label: 'Menu item', showLeadingIcon: true },
+];
+
+const sectionedSubmenuItems = [
+  { label: 'Back', sectionName: 'Section name', type: 'sub-section' as const, showLeadingIcon: true },
+  { label: 'Submenu item', showLeadingIcon: true },
+  { label: 'Submenu item', showLeadingIcon: true },
+  { label: 'Submenu item', showLeadingIcon: true },
+];
+
 export const Default: Story = {
   args: {
     items: defaultItems,
