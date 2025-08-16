@@ -1,0 +1,70 @@
+@import '../foundations/tokens.css';
+
+.dropdown-menu {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: var(--base-white);
+  box-shadow: 0 5px 10px 0 rgba(39, 39, 39, 0.10);
+  border-radius: var(--spacing-radius-6px);
+  overflow: hidden;
+  position: relative;
+  z-index: var(--z-index-popover);
+}
+
+.dropdown-menu.small {
+  border-radius: var(--spacing-radius-4px);
+}
+
+.dropdown-menu.large {
+  border-radius: var(--spacing-radius-8px);
+}
+
+/* Position variants for absolute positioning */
+.dropdown-menu.absolute {
+  position: absolute;
+}
+
+.dropdown-menu.fixed {
+  position: fixed;
+}
+
+/* Animation support */
+.dropdown-menu.animated {
+  transition: all var(--transition-normal);
+  transform-origin: top center;
+}
+
+.dropdown-menu.animated.entering {
+  opacity: 0;
+  transform: scale(0.95) translateY(-8px);
+}
+
+.dropdown-menu.animated.entered {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.dropdown-menu.animated.exiting {
+  opacity: 0;
+  transform: scale(0.95) translateY(-8px);
+}
+
+/* Focus management */
+.dropdown-menu:focus {
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    width: 100% !important;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dropdown-menu {
+    max-width: 280px;
+  }
+}
