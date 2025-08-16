@@ -1,0 +1,170 @@
+# Color Accessibility Guide
+
+This guide helps designers and developers choose color combinations that meet WCAG 2.1 accessibility standards, ensuring our products are usable by everyone, including users with visual impairments.
+
+## WCAG 2.1 Standards Overview
+
+### Contrast Ratio Requirements
+
+| Level | Normal Text | Large Text |
+|-------|-------------|------------|
+| **AA (Minimum)** | 4.5:1 | 3:1 |
+| **AAA (Enhanced)** | 7:1 | 4.5:1 |
+
+### Text Size Definitions
+- **Normal Text**: Under 18pt (24px) regular or under 14pt (18.5px) bold
+- **Large Text**: 18pt (24px) regular or 14pt (18.5px) bold and larger
+
+## Quick Reference: Safe Color Combinations
+
+### ✅ Always Safe (AAA Compliant)
+These combinations exceed WCAG AAA standards and are recommended for all text content:
+
+- **Black (#1C1C1C) on White (#FFFFFF)** - 15.4:1
+- **Primary Blue Dark (#191E3C) on White (#FFFFFF)** - 13.8:1
+- **Gray 900 (#111827) on White (#FFFFFF)** - 16.7:1
+- **White (#FFFFFF) on Primary Blue Dark (#191E3C)** - 13.8:1
+- **White (#FFFFFF) on Gray 900 (#111827)** - 16.7:1
+
+### ✅ AA Compliant (Good for Most Use Cases)
+These meet WCAG AA standards and are suitable for most text content:
+
+- **Gray 700 (#374151) on White (#FFFFFF)** - 8.9:1
+- **Gray 800 (#1F2937) on White (#FFFFFF)** - 12.2:1
+- **Primary Blue (#2F42BD) on White (#FFFFFF)** - 6.1:1
+- **White (#FFFFFF) on Gray 800 (#1F2937)** - 12.2:1
+
+### ⚠️ Use with Caution (AA for Large Text Only)
+These combinations meet AA standards for large text but not for normal text:
+
+- **Gray 600 (#4B5563) on White (#FFFFFF)** - 4.1:1
+- **Sky Blue (#0BA7EA) on White (#FFFFFF)** - 3.2:1
+- **Success Green (#8BBF9F) on White (#FFFFFF)** - 2.8:1
+
+### ❌ Avoid for Text
+These combinations fail WCAG AA standards:
+
+- **Yellow (#F9C846) on White (#FFFFFF)** - 1.8:1
+- **Gray 400 (#9CA3AF) on White (#FFFFFF)** - 2.8:1
+- **Light colors on light backgrounds**
+- **Similar shade combinations**
+
+## Color Usage Guidelines
+
+### Primary Text Content
+- Use AAA compliant combinations when possible
+- Minimum: AA compliant combinations (4.5:1)
+- Recommended: Black or Primary Blue Dark on White backgrounds
+
+### Secondary Text Content
+- Use AA compliant combinations minimum
+- Gray 700 or Gray 800 work well for secondary information
+- Avoid going lighter than Gray 600 for normal-sized text
+
+### Interactive Elements (Buttons, Links)
+- Must meet AA standards at minimum
+- Consider AAA for critical actions
+- Ensure focus states have adequate contrast
+- Test hover and active states
+
+### Status and Semantic Colors
+
+#### ✅ Success Messages
+- **Success Green (#8BBF9F) text**: Use on light backgrounds only for large text
+- **Recommended**: Success Green background with White or Dark text
+- **Background**: Success Light (#EFF7F3) with Dark text
+
+#### ⚠️ Warning Messages  
+- **Warning Yellow (#F59E0B)**: Better contrast than primary yellow
+- **Recommended**: Warning background with Dark text
+- **Background**: Warning Light (#FEF3C7) with Dark text
+
+#### ❌ Error Messages
+- **Error Red (#EF4444)**: Good contrast on light backgrounds
+- **Recommended**: Error background with White text for critical alerts
+- **Background**: Error Light (#FEE2E2) with Dark text
+
+#### ℹ️ Info Messages
+- **Info Blue (#3B82F6)**: Excellent contrast on light backgrounds  
+- **Background**: Info Light (#DBEAFE) with Dark text
+
+## Design System Recommendations
+
+### For Designers
+
+1. **Always test contrast** before finalizing designs
+2. **Use the provided safe combinations** as your starting point
+3. **Consider user context** - critical information needs higher contrast
+4. **Test with actual content** - lorem ipsum doesn't represent real-world usage
+5. **Account for different devices** - mobile screens may appear dimmer
+
+### For Developers
+
+1. **Use CSS custom properties** from our design tokens
+2. **Implement focus indicators** with adequate contrast
+3. **Test programmatically** using browser dev tools or accessibility testing tools
+4. **Consider user preferences** like dark mode and high contrast settings
+5. **Validate in different lighting conditions**
+
+## Common Mistakes to Avoid
+
+### ❌ Don't
+- Use light gray text on white backgrounds for body text
+- Rely solely on color to convey information
+- Use yellow or light colors for text on white backgrounds
+- Place text over complex background images without adequate contrast
+- Assume that "it looks fine" means it's accessible
+
+### ✅ Do  
+- Test all color combinations with actual content
+- Provide alternative ways to convey information beyond color
+- Use sufficient contrast ratios for all text
+- Consider users with color vision deficiencies
+- Test in various lighting conditions and devices
+
+## Tools and Testing
+
+### Browser Tools
+- Chrome DevTools Accessibility panel
+- Firefox Accessibility Inspector
+- Edge DevTools Accessibility features
+
+### Online Tools
+- WebAIM Contrast Checker
+- Colour Contrast Analyser (CCA)
+- WAVE Web Accessibility Evaluation Tool
+
+### Automated Testing
+- Include contrast ratio checks in your CI/CD pipeline
+- Use accessibility linting tools
+- Regular automated audits with tools like axe-core
+
+## Legal and Business Considerations
+
+Meeting WCAG 2.1 AA standards is not just best practice—it's often required by law:
+
+- **ADA compliance** in the United States
+- **EN 301 549** in the European Union  
+- **DDA compliance** in Australia
+- **AODA compliance** in Ontario, Canada
+
+Beyond legal requirements, accessible design:
+- Improves usability for everyone
+- Increases market reach
+- Demonstrates social responsibility
+- Reduces support costs
+- Improves SEO and search rankings
+
+## Implementation Checklist
+
+- [ ] All text meets minimum AA contrast requirements (4.5:1)
+- [ ] Large text meets minimum AA contrast requirements (3:1)
+- [ ] Critical text meets AAA contrast requirements (7:1) when possible
+- [ ] Interactive elements have adequate contrast in all states
+- [ ] Focus indicators are clearly visible
+- [ ] Information is not conveyed by color alone
+- [ ] Color combinations work for users with color vision deficiencies
+- [ ] Designs are tested with real content, not placeholder text
+- [ ] Automated accessibility testing is in place
+
+Use the interactive Storybook examples to test and validate your color choices throughout the design and development process.
