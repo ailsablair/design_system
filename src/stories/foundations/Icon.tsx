@@ -110,32 +110,6 @@ export const Icon: React.FC<IconProps> = ({
   const sizeValue = getSizeValue(size);
   const opacityValue = getOpacityValue(opacity);
 
-  // Check if it's a custom icon
-  const CustomIconComponent = customIconComponents[name as CustomIconName];
-  if (CustomIconComponent) {
-    return (
-      <span
-        className={`echo-icon echo-icon-custom ${className}`}
-        role="img"
-        aria-label={ariaLabel || `${name} icon`}
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          width: sizeValue,
-          height: sizeValue,
-        }}
-        {...props}
-      >
-        <CustomIconComponent 
-          size={sizeValue} 
-          color={color} 
-          opacity={opacityValue}
-        />
-      </span>
-    );
-  }
-
   // Check if it's a Material Design icon from Figma
   const MaterialDesignIconComponent = materialDesignIconComponents[name as MaterialDesignIconName];
   if (MaterialDesignIconComponent) {
