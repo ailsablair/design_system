@@ -345,3 +345,49 @@ export const CompactHorizontal: Story = {
     },
   },
 };
+
+export const WordmarkShowcase: Story = {
+  render: () => (
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '2rem',
+      padding: '2rem',
+      fontFamily: 'var(--font-family-base, sans-serif)'
+    }}>
+      <div style={{
+        textAlign: 'center',
+        padding: '3rem 1rem',
+        backgroundColor: 'var(--base-white, #ffffff)',
+        borderRadius: 'var(--spacing-radius-8px, 8px)',
+        border: '1px solid var(--neutral-gray-gray-200, #e5e7eb)'
+      }}>
+        <Logo variant="wordmark" color="dark-blue" size="large" />
+      </div>
+      <div style={{
+        textAlign: 'center',
+        padding: '3rem 1rem',
+        backgroundColor: 'var(--base-white, #ffffff)',
+        borderRadius: 'var(--spacing-radius-8px, 8px)',
+        border: '1px solid var(--neutral-gray-gray-200, #e5e7eb)'
+      }}>
+        <Logo variant="wordmark" color="sky-blue" size="large" />
+      </div>
+      <div style={{
+        textAlign: 'center',
+        padding: '3rem 1rem',
+        backgroundColor: 'var(--primary-blue-dark-blue, #191E3C)',
+        borderRadius: 'var(--spacing-radius-8px, 8px)'
+      }}>
+        <Logo variant="wordmark" color="white" size="large" />
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'ECHO wordmark variations showing different color treatments inspired by the Figma designs.',
+      },
+    },
+  },
+};
