@@ -121,7 +121,7 @@
 .input-container.disabled {
   background-color: var(--neutral-gray-gray-50);
   border-color: var(--neutral-gray-gray-200);
-  opacity: 0.6;
+  opacity: var(--opacity-medium);
   cursor: not-allowed;
 }
 
