@@ -184,7 +184,7 @@ The component automatically detects icon type:
         'view-gallery-outline', 'chat-plus-outline', 'folder-search-outline', 'tooltip-text-outline',
         'handshake-outline', 'clipboard-list-outline'
       ],
-      description: 'Icon name (custom, Material UI filled/outlined/two-tone, or Material Design)',
+      description: 'Icon name (Material UI filled/outlined/two-tone, or Material Design)',
     },
     size: {
       control: { type: 'select' },
