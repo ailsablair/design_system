@@ -12,19 +12,11 @@ const meta: Meta<typeof Icon> = {
     docs: {
       description: {
         component: `
-The Echo Design System icon library provides a comprehensive collection of **300+ UI icons** combining custom SVG icons
-with the complete Material UI Icons library and Material Design Icons. All icons use standardized sizing, colors, and
+The Echo Design System icon library provides a comprehensive collection of **295+ UI icons** from
+the complete Material UI Icons library and Material Design Icons. All icons use standardized sizing, colors, and
 opacity levels through design tokens.
 
-## Icon Libraries (300+ Total Icons)
-
-### Custom Icons (5 icons)
-Hand-crafted SVG icons designed specifically for the Echo Design System:
-- **alarm**: Custom notification bell icon
-- **close-circle**: Circular close icon with background
-- **close-custom**: Simple X close icon
-- **chevron-up-custom**: Upward pointing chevron
-- **chevron-down-custom**: Downward pointing chevron
+## Icon Libraries (295+ Total Icons)
 
 ### Material UI Filled Icons (100+ icons)
 Standard solid Material Design icons:
