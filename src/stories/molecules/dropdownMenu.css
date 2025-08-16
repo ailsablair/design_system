@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: flex-start;
   background: var(--base-white);
-  box-shadow: 0 5px 10px 0 rgba(39, 39, 39, 0.10);
+  box-shadow: var(--shadow-dropdown);
   border-radius: var(--spacing-radius-6px);
   overflow: hidden;
   position: relative;
@@ -36,18 +36,18 @@
 }
 
 .dropdown-menu.animated.entering {
-  opacity: 0;
-  transform: scale(0.95) translateY(-8px);
+  opacity: var(--opacity-disabled);
+  transform: var(--transform-scale-down) var(--transform-slide-up);
 }
 
 .dropdown-menu.animated.entered {
-  opacity: 1;
-  transform: scale(1) translateY(0);
+  opacity: var(--opacity-full);
+  transform: var(--transform-scale-1) var(--transform-translate-y-0);
 }
 
 .dropdown-menu.animated.exiting {
-  opacity: 0;
-  transform: scale(0.95) translateY(-8px);
+  opacity: var(--opacity-disabled);
+  transform: var(--transform-scale-down) var(--transform-slide-up);
 }
 
 /* Focus management */
@@ -59,12 +59,12 @@
 @media (max-width: 768px) {
   .dropdown-menu {
     width: 100% !important;
-    max-width: 300px;
+    max-width: var(--sizing-width-300);
   }
 }
 
 @media (max-width: 480px) {
   .dropdown-menu {
-    max-width: 280px;
+    max-width: var(--sizing-width-280);
   }
 }
