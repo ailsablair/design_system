@@ -6,6 +6,50 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 All notable changes to the Echo Design System are documented here.
 
+## [2.1.0] - 2024 Icon Library Expansion
+
+### 🎯 Added - Comprehensive Icon System
+
+#### Material Design Icons Collection (18+ New Icons)
+- **High-Quality Outline Icons**: Extracted from Figma Material Design collection
+  - `rocket-outline`, `chat-plus-outline`, `star-plus-outline`
+  - `file-export-outline`, `folder-search-outline`, `clipboard-list-outline`
+  - `account-settings-outline`, `account-cog-outline`, `handshake-outline`
+  - `tooltip-text-outline`, `view-gallery-outline`, `emoticon-cool-outline`
+  - `arrow-bottom-right-bold-outline`, `map-marker-star-outline`
+  - `movie-cog-outline`, `coffee-outline`, `message-badge-outline`
+  - `pentagon-outline` and more
+
+#### Enhanced Icon Component Architecture
+- **Universal Icon Support**: Single component handles Custom, Material UI, and Material Design icons
+- **Automatic Type Detection**: Component intelligently determines icon source
+- **Consistent API**: Same props and styling across all icon types
+- **Design Token Integration**: All icons use standardized sizing and opacity tokens
+
+#### Icon Design Tokens
+- **Size Tokens**: Added `--icon-size-xs` through `--icon-size-2xl` (12px-32px)
+- **Opacity Tokens**: Added `--icon-opacity-subtle` through `--icon-opacity-full`
+- **Systematic Scaling**: Consistent sizing across all device breakpoints
+
+#### Storybook Integration
+- **Complete Icon Dropdown**: All 68+ icons available in Storybook controls
+- **Organized Categories**: Icons grouped by Custom, Material UI, and Material Design
+- **Interactive Documentation**: Live examples and usage patterns
+- **Real-World Examples**: Practical integration with buttons, inputs, and UI components
+
+### 🧩 Enhanced - Icon Library Features
+
+#### Icon Type Support
+- ✅ **Custom Icons (5)**: Echo-specific hand-crafted SVG icons
+- ✅ **Material UI Icons (45+)**: Complete Material Design icon collection
+- ✅ **Material Design Icons (18+)**: Additional Figma-sourced outline icons
+- ✅ **Type Safety**: Full TypeScript support with proper icon name types
+
+#### Performance Optimizations
+- ✅ **Tree Shaking**: Only imported icons are included in bundle
+- ✅ **SVG Optimization**: Minimal SVG markup for fast rendering
+- ✅ **Component Caching**: Efficient React component structure
+
 ## [2.0.0] - 2024 Major Release
 
 ### 🎨 Added - Comprehensive Color System
