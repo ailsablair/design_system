@@ -171,6 +171,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
     >
       {renderIcon()}
       {renderContent()}
+      {renderTrailingIcon()}
     </div>
   );
 };
