@@ -1,60 +1,13 @@
 import React from 'react';
 import './tokens.css';
 
-// Material UI Icons
-import HomeIcon from '@mui/icons-material/Home';
-import SearchIcon from '@mui/icons-material/Search';
-import SettingsIcon from '@mui/icons-material/Settings';
-import PersonIcon from '@mui/icons-material/Person';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import EmailIcon from '@mui/icons-material/Email';
-import PhoneIcon from '@mui/icons-material/Phone';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import StarIcon from '@mui/icons-material/Star';
-import ShareIcon from '@mui/icons-material/Share';
-import DownloadIcon from '@mui/icons-material/Download';
-import UploadIcon from '@mui/icons-material/Upload';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
-import CheckIcon from '@mui/icons-material/Check';
-import CloseIcon from '@mui/icons-material/Close';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import MenuIcon from '@mui/icons-material/Menu';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import InfoIcon from '@mui/icons-material/Info';
-import WarningIcon from '@mui/icons-material/Warning';
-import ErrorIcon from '@mui/icons-material/Error';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import HelpIcon from '@mui/icons-material/Help';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import LockIcon from '@mui/icons-material/Lock';
-import LockOpenIcon from '@mui/icons-material/LockOpen';
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import ScheduleIcon from '@mui/icons-material/Schedule';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
-import RefreshIcon from '@mui/icons-material/Refresh';
-import PrintIcon from '@mui/icons-material/Print';
-import SaveIcon from '@mui/icons-material/Save';
-import FolderIcon from '@mui/icons-material/Folder';
-import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
-import ImageIcon from '@mui/icons-material/Image';
-import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
-import MusicNoteIcon from '@mui/icons-material/MusicNote';
-import AttachFileIcon from '@mui/icons-material/AttachFile';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
+// Material UI Icons - Comprehensive Collection
+import { 
+  materialIconsFilled, 
+  materialIconsOutlined, 
+  materialIconsTwoTone,
+  AllMaterialIconName 
+} from './MaterialUIIcons';
 
 // Material Design Icons from Figma
 import { materialDesignIconComponents, MaterialDesignIconName } from './MaterialDesignIcons';
@@ -64,22 +17,10 @@ export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 // Custom icon names (your existing icons)
 export type CustomIconName = 'alarm' | 'close-circle' | 'close-custom' | 'chevron-up-custom' | 'chevron-down-custom';
 
-// Material UI icon names (popular icons)
-export type MaterialIconName = 
-  | 'home' | 'search' | 'settings' | 'person' | 'notifications' | 'email' | 'phone' 
-  | 'location-on' | 'favorite' | 'star' | 'share' | 'download' | 'upload' | 'edit' 
-  | 'delete' | 'add' | 'remove' | 'check' | 'close' | 'arrow-back' | 'arrow-forward' 
-  | 'arrow-upward' | 'arrow-downward' | 'expand-more' | 'expand-less' | 'menu' 
-  | 'more-vert' | 'more-horiz' | 'info' | 'warning' | 'error' | 'check-circle' 
-  | 'help' | 'visibility' | 'visibility-off' | 'lock' | 'lock-open' | 'calendar-today' 
-  | 'schedule' | 'dashboard' | 'account-circle' | 'exit-to-app' | 'refresh' | 'print' 
-  | 'save' | 'folder' | 'insert-drive-file' | 'image' | 'video-library' | 'music-note' 
-  | 'attach-file' | 'cloud-upload' | 'cloud-download';
-
-export type IconName = CustomIconName | MaterialIconName | MaterialDesignIconName;
+export type IconName = CustomIconName | AllMaterialIconName | MaterialDesignIconName;
 
 interface IconProps {
-  /** Icon name from the icon library (custom, Material UI, or Material Design) */
+  /** Icon name from the comprehensive icon library (custom, Material UI, or Material Design) */
   name: IconName;
   /** Size of the icon */
   size?: IconSize;
@@ -190,79 +131,40 @@ const customIconComponents = {
   'chevron-down-custom': ChevronDownIconCustom,
 };
 
-// Material UI icon components mapping
-const materialIconComponents = {
-  home: HomeIcon,
-  search: SearchIcon,
-  settings: SettingsIcon,
-  person: PersonIcon,
-  notifications: NotificationsIcon,
-  email: EmailIcon,
-  phone: PhoneIcon,
-  'location-on': LocationOnIcon,
-  favorite: FavoriteIcon,
-  star: StarIcon,
-  share: ShareIcon,
-  download: DownloadIcon,
-  upload: UploadIcon,
-  edit: EditIcon,
-  delete: DeleteIcon,
-  add: AddIcon,
-  remove: RemoveIcon,
-  check: CheckIcon,
-  close: CloseIcon,
-  'arrow-back': ArrowBackIcon,
-  'arrow-forward': ArrowForwardIcon,
-  'arrow-upward': ArrowUpwardIcon,
-  'arrow-downward': ArrowDownwardIcon,
-  'expand-more': ExpandMoreIcon,
-  'expand-less': ExpandLessIcon,
-  menu: MenuIcon,
-  'more-vert': MoreVertIcon,
-  'more-horiz': MoreHorizIcon,
-  info: InfoIcon,
-  warning: WarningIcon,
-  error: ErrorIcon,
-  'check-circle': CheckCircleIcon,
-  help: HelpIcon,
-  visibility: VisibilityIcon,
-  'visibility-off': VisibilityOffIcon,
-  lock: LockIcon,
-  'lock-open': LockOpenIcon,
-  'calendar-today': CalendarTodayIcon,
-  schedule: ScheduleIcon,
-  dashboard: DashboardIcon,
-  'account-circle': AccountCircleIcon,
-  'exit-to-app': ExitToAppIcon,
-  refresh: RefreshIcon,
-  print: PrintIcon,
-  save: SaveIcon,
-  folder: FolderIcon,
-  'insert-drive-file': InsertDriveFileIcon,
-  image: ImageIcon,
-  'video-library': VideoLibraryIcon,
-  'music-note': MusicNoteIcon,
-  'attach-file': AttachFileIcon,
-  'cloud-upload': CloudUploadIcon,
-  'cloud-download': CloudDownloadIcon,
+// Combine all Material UI icon mappings
+const allMaterialIconComponents = {
+  ...materialIconsFilled,
+  ...materialIconsOutlined,
+  ...materialIconsTwoTone,
 };
 
 /**
- * Universal Icon component supporting custom SVG icons, Material UI Icons, and Material Design Icons.
+ * Universal Icon component supporting comprehensive icon libraries.
  * 
- * The component automatically detects the icon type and applies consistent sizing, color, and opacity
- * using design tokens.
- * 
- * ## Icon Libraries Available:
+ * ## Icon Libraries Available (300+ total icons):
  * - **Custom Icons** (5): Hand-crafted SVG icons for Echo-specific needs
- * - **Material UI Icons** (45+): Popular interface icons from Google's Material Design
- * - **Material Design Icons** (18+): Additional outline icons from Material Design collection
+ * - **Material UI Filled** (100+): Standard solid Material Design icons
+ * - **Material UI Outlined** (100+): Outlined variant Material Design icons
+ * - **Material UI TwoTone** (100+): Two-color variant Material Design icons
+ * - **Material Design Icons** (18+): Additional outline icons from Figma collection
+ * 
+ * ## Icon Variants:
+ * - **Filled**: `home`, `search`, `settings`, etc.
+ * - **Outlined**: `home-outlined`, `search-outlined`, `settings-outlined`, etc.
+ * - **TwoTone**: `home-two-tone`, `search-two-tone`, `settings-two-tone`, etc.
+ * 
+ * The component automatically detects the icon type and applies consistent sizing, 
+ * color, and opacity using design tokens.
  * 
  * @example
  * ```tsx
- * // Material UI Icons
- * <Icon name="home" />
- * <Icon name="search" size="lg" color="var(--primary-blue-blue-500)" />
+ * // Material UI Icons - Different Variants
+ * <Icon name="home" />                    // Filled (default)
+ * <Icon name="home-outlined" />           // Outlined variant
+ * <Icon name="home-two-tone" />           // TwoTone variant
+ * 
+ * // With styling
+ * <Icon name="search-outlined" size="lg" color="var(--primary-blue-blue-500)" />
  * 
  * // Custom Icons
  * <Icon name="alarm" />
@@ -337,8 +239,8 @@ export const Icon: React.FC<IconProps> = ({
     );
   }
 
-  // Check if it's a Material UI icon
-  const MaterialIconComponent = materialIconComponents[name as MaterialIconName];
+  // Check if it's a Material UI icon (Filled, Outlined, or TwoTone)
+  const MaterialIconComponent = allMaterialIconComponents[name as AllMaterialIconName];
   if (MaterialIconComponent) {
     return (
       <span
@@ -370,7 +272,9 @@ export const Icon: React.FC<IconProps> = ({
   // Icon not found
   console.warn(`Icon "${name}" not found. Available icons:`, {
     custom: Object.keys(customIconComponents),
-    material: Object.keys(materialIconComponents),
+    materialFilled: Object.keys(materialIconsFilled),
+    materialOutlined: Object.keys(materialIconsOutlined),
+    materialTwoTone: Object.keys(materialIconsTwoTone),
     materialDesign: Object.keys(materialDesignIconComponents)
   });
   
