@@ -1,0 +1,261 @@
+/* Toggle Container */
+.toggle-container {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.toggle-container.disabled {
+  cursor: not-allowed;
+}
+
+/* Toggle Track - the background slider area */
+.toggle-track {
+  position: relative;
+  border-radius: var(--spacing-radius-full);
+  transition: var(--transition-normal);
+  display: flex;
+  align-items: center;
+}
+
+/* Small size track */
+.toggle-track.small {
+  width: 32px;
+  height: 18px;
+  background: var(--neutral-gray-gray-200);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-800);
+}
+
+.toggle-track.small.enabled {
+  background: var(--primary-sky-blue-500);
+  border-color: var(--primary-sky-blue-800);
+  justify-content: flex-end;
+  padding-right: 2px;
+}
+
+.toggle-track.small.disabled-toggle {
+  background: var(--neutral-gray-gray-200);
+  border-color: var(--neutral-gray-gray-300);
+  justify-content: flex-start;
+  padding-left: 2px;
+}
+
+/* Default size track */
+.toggle-track.default {
+  width: 44px;
+  height: 24px;
+  background: var(--neutral-gray-gray-200);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-800);
+}
+
+.toggle-track.default.enabled {
+  background: var(--primary-sky-blue-500);
+  border-color: var(--primary-sky-blue-800);
+  justify-content: flex-end;
+  padding-right: 2px;
+}
+
+.toggle-track.default.disabled-toggle {
+  background: var(--neutral-gray-gray-200);
+  border-color: var(--neutral-gray-gray-300);
+  justify-content: flex-start;
+  padding-left: 2px;
+}
+
+/* Large size track */
+.toggle-track.large {
+  width: 56px;
+  height: 28px;
+  background: var(--neutral-gray-gray-200);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-800);
+}
+
+.toggle-track.large.enabled {
+  background: var(--primary-sky-blue-500);
+  border-color: var(--primary-sky-blue-800);
+  justify-content: flex-end;
+  padding-right: 2px;
+}
+
+.toggle-track.large.disabled-toggle {
+  background: var(--neutral-gray-gray-200);
+  border-color: var(--neutral-gray-gray-300);
+  justify-content: flex-start;
+  padding-left: 2px;
+}
+
+/* Hidden input */
+.toggle-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Toggle Thumb - the sliding circle */
+.toggle-thumb {
+  background: var(--base-white);
+  border-radius: var(--spacing-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-normal);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-800);
+  position: relative;
+}
+
+/* Small size thumb */
+.toggle-thumb.small {
+  width: 14px;
+  height: 14px;
+}
+
+.toggle-thumb.small.disabled-toggle {
+  border-color: var(--neutral-gray-gray-300);
+}
+
+/* Default size thumb */
+.toggle-thumb.default {
+  width: 18px;
+  height: 18px;
+}
+
+.toggle-thumb.default.disabled-toggle {
+  border-color: var(--neutral-gray-gray-300);
+}
+
+/* Large size thumb */
+.toggle-thumb.large {
+  width: 22px;
+  height: 22px;
+}
+
+.toggle-thumb.large.disabled-toggle {
+  border-color: var(--neutral-gray-gray-300);
+}
+
+/* Toggle Icon */
+.toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--status-dark-green);
+}
+
+.toggle-container.disabled-toggle .toggle-icon {
+  color: var(--neutral-gray-gray-300);
+}
+
+.toggle-container:not(.enabled) .toggle-icon {
+  color: var(--status-red);
+}
+
+/* State variations */
+/* Hover state */
+.toggle-container.hover:not(.disabled) .toggle-track,
+.toggle-container:hover:not(.disabled) .toggle-track {
+  background: var(--primary-sky-blue-50);
+}
+
+.toggle-container.hover:not(.disabled) .toggle-track.enabled,
+.toggle-container:hover:not(.disabled) .toggle-track.enabled {
+  background: var(--primary-sky-blue-500);
+}
+
+.toggle-container.hover:not(.disabled) .toggle-thumb,
+.toggle-container:hover:not(.disabled) .toggle-thumb {
+  background: var(--primary-sky-blue-50);
+}
+
+.toggle-container.hover:not(.disabled) .toggle-thumb.enabled,
+.toggle-container:hover:not(.disabled) .toggle-thumb.enabled {
+  background: var(--primary-sky-blue-50);
+}
+
+/* Focused state */
+.toggle-container.focused:not(.disabled) .toggle-track,
+.toggle-input:focus + .toggle-track {
+  background: var(--primary-sky-blue-50);
+}
+
+.toggle-container.focused:not(.disabled) .toggle-track.enabled,
+.toggle-input:focus + .toggle-track.enabled {
+  background: var(--primary-sky-blue-500);
+}
+
+.toggle-container.focused:not(.disabled) .toggle-thumb,
+.toggle-input:focus + .toggle-thumb {
+  background: var(--primary-sky-blue-50);
+}
+
+.toggle-container.focused:not(.disabled) .toggle-thumb.enabled,
+.toggle-input:focus + .toggle-thumb.enabled {
+  background: var(--primary-sky-blue-50);
+}
+
+/* Pressed state */
+.toggle-container.pressed:not(.disabled) .toggle-track.enabled {
+  background: var(--primary-sky-blue-800);
+}
+
+.toggle-container.pressed:not(.disabled) .toggle-track:not(.enabled) {
+  background: var(--neutral-gray-gray-200);
+}
+
+.toggle-container.pressed:not(.disabled) .toggle-thumb.enabled {
+  background: var(--primary-sky-blue-800);
+}
+
+.toggle-container.pressed:not(.disabled) .toggle-thumb:not(.enabled) {
+  background: var(--status-red);
+  border-color: var(--neutral-gray-gray-300);
+}
+
+.toggle-container.pressed:not(.disabled) .toggle-thumb.enabled .toggle-icon {
+  color: var(--primary-sky-blue-75);
+}
+
+.toggle-container.pressed:not(.disabled) .toggle-thumb:not(.enabled) .toggle-icon {
+  color: var(--base-white);
+}
+
+/* Disabled state */
+.toggle-container.disabled .toggle-track {
+  background: var(--neutral-gray-gray-200);
+  border-color: var(--neutral-gray-gray-300);
+}
+
+.toggle-container.disabled .toggle-thumb {
+  border-color: var(--neutral-gray-gray-300);
+}
+
+.toggle-container.disabled .toggle-icon {
+  color: var(--neutral-gray-gray-300);
+}
+
+/* Focus outline for accessibility */
+.toggle-input:focus-visible + .toggle-track {
+  outline: 2px solid var(--primary-sky-blue-500);
+  outline-offset: 2px;
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  .toggle-track {
+    border-width: var(--spacing-stroke-2px);
+  }
+  
+  .toggle-thumb {
+    border-width: var(--spacing-stroke-2px);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .toggle-track,
+  .toggle-thumb {
+    transition: none;
+  }
+}
