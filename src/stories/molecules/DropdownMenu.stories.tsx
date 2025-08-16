@@ -98,8 +98,8 @@ const submenuItems = [
 
 const sectionedItems = [
   { label: 'Section name', type: 'section' as const, showLeadingIcon: false },
-  { label: 'Menu item', showLeadingIcon: true },
-  { label: 'Menu item', showLeadingIcon: true },
+  { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
+  { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
   { label: 'Menu item', showLeadingIcon: true },
 ];
 
