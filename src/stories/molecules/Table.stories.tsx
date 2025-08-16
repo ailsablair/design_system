@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Table, TableColumn, TableData } from './Table';
 
 const meta: Meta<typeof Table> = {
-  title: 'Design System/Molecules/Table',
+  title: 'Molecules/Table',
   component: Table,
   parameters: {
     layout: 'padded',
