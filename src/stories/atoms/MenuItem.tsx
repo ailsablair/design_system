@@ -18,6 +18,8 @@ export interface MenuItemProps {
   showLeadingIcon?: boolean;
   /** Custom icon (if not provided, uses default forum icon) */
   icon?: React.ReactNode;
+  /** Show trailing chevron icon for expandable items */
+  showTrailingIcon?: boolean;
   /** Disabled state */
   disabled?: boolean;
   /** Additional CSS classes */
