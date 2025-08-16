@@ -66,17 +66,17 @@
 }
 
 .input-container.default {
-  height: 44px;
+  height: var(--sizing-height-44);
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
 }
 
 .input-container.large {
-  height: 54px;
+  height: var(--sizing-height-54);
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
 }
 
 .input-container.tags.small {
-  min-height: 32px;
+  min-height: var(--sizing-min-height-32);
   height: auto;
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
   align-items: center;
