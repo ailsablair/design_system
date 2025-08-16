@@ -1,5 +1,6 @@
 import React from 'react';
-import { MenuItem, MenuItemProps } from '../atoms/MenuItem';
+import { MenuItem } from '../atoms/MenuItem';
+import type { MenuItemProps } from '../atoms/MenuItem';
 import './dropdownMenu.css';
 
 export interface DropdownMenuProps {
