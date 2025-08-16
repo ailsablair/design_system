@@ -14,11 +14,11 @@ export interface LogoProps {
   height?: number;
 }
 
-const LogomarkSVG = ({ color, width = 100, height = 96 }: { color: string; width: number; height: number }) => {
+const LogomarkSVG = ({ color, width = 250, height = 240 }: { color: string; width: number; height: number }) => {
   const getFillColors = () => {
     switch (color) {
       case 'white':
-        return { primary: 'white', secondary: 'white', tertiary: 'white' };
+        return { primary: '#FFFFFF', secondary: '#FFFFFF', tertiary: '#FFFFFF' };
       case 'sky-blue':
         return { primary: '#0BA7EA', secondary: '#0BA7EA', tertiary: '#0BA7EA' };
       case 'dark-blue':
@@ -34,17 +34,17 @@ const LogomarkSVG = ({ color, width = 100, height = 96 }: { color: string; width
   const colors = getFillColors();
 
   return (
-    <svg width={width} height={height} viewBox="0 0 290 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M167.352 259.988C115.327 259.988 71.1049 220.681 65.4611 168.311L64.231 156.917L156.306 152.083L151.241 55.1626L162.058 54.5947C218.497 51.6101 266.891 95.2553 269.858 151.842C272.813 208.428 229.278 256.882 172.803 259.855C170.982 259.952 169.161 260 167.364 260L167.352 259.988ZM89.0375 177.338C98.3956 214.192 132.681 240.207 171.657 238.165C216.205 235.833 250.551 197.614 248.223 152.965C246.077 112.003 213.781 79.6556 174.045 76.4052L179.074 172.601L89.0375 177.326V177.338Z" fill={colors.primary}/>
-      <path d="M21.275 117.199L20.467 109.538C20.3102 108.052 20.1896 106.553 20.1052 105.055C19.0198 83.5344 26.3641 62.8718 40.7752 46.8855C55.1984 30.8992 74.964 21.4983 96.442 20.4108L104.558 20L109.237 112.74L21.275 117.199ZM89.1701 37.5813C75.1931 40.0584 62.4944 47.0788 52.8227 57.7968C42.2344 69.5418 36.4217 84.4406 36.2408 100.137L92.185 97.2973L89.1701 37.5692V37.5813Z" fill={colors.secondary}/>
-      <path d="M50.3022 144.181L49.3616 135.239C49.2048 133.729 49.0722 132.206 48.9998 130.672C47.8903 108.789 55.3552 87.7877 70.0196 71.5235C84.684 55.2714 104.787 45.7013 126.615 44.6018L136.082 44.1184L140.905 139.565L50.3022 144.157V144.181ZM118.137 64.7689C105.053 67.4272 93.1859 74.1577 84.0689 84.2715C74.0233 95.4123 68.3795 109.441 67.873 124.28L121.007 121.585L118.137 64.7689Z" fill={colors.tertiary}/>
+    <svg width={width} height={height} viewBox="0 0 250 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M147.352 239.988C95.3272 239.988 51.1049 200.681 45.4611 148.311L44.231 136.917L136.306 132.083L131.241 35.1626L142.058 34.5947C198.497 31.6101 246.891 75.2553 249.858 131.842C252.813 188.428 209.278 236.882 152.803 239.855C150.982 239.952 149.161 240 147.364 240L147.352 239.988ZM69.0375 157.338C78.3956 194.192 112.681 220.207 151.657 218.165C196.205 215.833 230.551 177.614 228.223 132.965C226.077 92.0028 193.781 59.6556 154.045 56.4052L159.074 152.601L69.0375 157.326V157.338Z" fill={colors.primary}/>
+      <path d="M1.27495 97.1987L0.466962 89.5378C0.310188 88.0516 0.189592 86.5532 0.105176 85.0549C-0.980182 63.5344 6.36407 42.8718 20.7752 26.8855C35.1984 10.8992 54.964 1.49834 76.442 0.410835L84.5581 0L89.2372 92.7399L1.27495 97.1987ZM69.1701 17.5813C55.1931 20.0584 42.4944 27.0788 32.8227 37.7968C22.2344 49.5418 16.4217 64.4406 16.2408 80.1369L72.185 77.2973L69.1701 17.5692V17.5813Z" fill={colors.secondary}/>
+      <path d="M30.3022 124.181L29.3616 115.239C29.2048 113.729 29.0722 112.206 28.9998 110.672C27.8903 88.7886 35.3552 67.7877 50.0196 51.5235C64.684 35.2714 84.7872 25.7013 106.615 24.6018L116.082 24.1184L120.905 119.565L30.3022 124.157V124.181ZM98.1371 44.7689C85.0525 47.4272 73.1859 54.1577 64.0689 64.2715C54.0233 75.4123 48.3795 89.4411 47.873 104.28L101.007 101.585L98.1371 44.7689Z" fill={colors.tertiary}/>
     </svg>
   );
 };
 
-const WordmarkSVG = ({ color, width = 234, height = 58 }: { color: string; width: number; height: number }) => {
-  const fillColor = color === 'white' ? 'white' : 
-                   color === 'sky-blue' ? '#0BA7EA' : 
+const WordmarkSVG = ({ color, width = 680, height = 168 }: { color: string; width: number; height: number }) => {
+  const fillColor = color === 'white' ? '#FFFFFF' :
+                   color === 'sky-blue' ? '#0BA7EA' :
                    color === 'black' ? '#1C1C1C' : '#191E3C';
 
   return (
@@ -94,13 +94,13 @@ export const Logo = ({
 }: LogoProps) => {
   const getSizeDimensions = () => {
     if (width && height) return { width, height };
-    
+
     const sizeMap = {
-      small: { logomark: { width: 60, height: 58 }, wordmark: { width: 140, height: 35 }, full: { width: 200, height: 75 } },
-      medium: { logomark: { width: 100, height: 96 }, wordmark: { width: 234, height: 58 }, full: { width: 334, height: 125 } },
-      large: { logomark: { width: 145, height: 140 }, wordmark: { width: 340, height: 84 }, full: { width: 485, height: 180 } }
+      small: { logomark: { width: 80, height: 77 }, wordmark: { width: 200, height: 49 }, full: { width: 280, height: 100 } },
+      medium: { logomark: { width: 125, height: 120 }, wordmark: { width: 340, height: 84 }, full: { width: 465, height: 150 } },
+      large: { logomark: { width: 185, height: 178 }, wordmark: { width: 510, height: 126 }, full: { width: 695, height: 220 } }
     };
-    
+
     return sizeMap[size][variant];
   };
 
