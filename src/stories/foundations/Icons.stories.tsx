@@ -16,7 +16,7 @@ The Echo Design System icon library provides a comprehensive collection of **300
 with the complete Material UI Icons library and Material Design Icons. All icons use standardized sizing, colors, and
 opacity levels through design tokens.
 
-## Icon Libraries
+## Icon Libraries (300+ Total Icons)
 
 ### Custom Icons (5 icons)
 Hand-crafted SVG icons designed specifically for the Echo Design System:
