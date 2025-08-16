@@ -11,8 +11,9 @@ const meta: Meta<typeof Icon> = {
     docs: {
       description: {
         component: `
-The Echo Design System icon library provides a comprehensive set of UI icons combining custom SVG icons 
-with Material UI Icons. All icons use standardized sizing, colors, and opacity levels through design tokens.
+The Echo Design System icon library provides a comprehensive set of UI icons combining custom SVG icons
+with Material UI Icons and Material Design Icons. All icons use standardized sizing, colors, and opacity
+levels through design tokens.
 
 ## Icon Libraries
 
@@ -35,6 +36,16 @@ Industry-standard icons from Google's Material Design system:
 - **System**: settings, help, info, warning, error, check-circle
 - **Time**: calendar-today, schedule
 - **Cloud**: cloud-upload, cloud-download
+
+### Material Design Icons (18+ icons)
+High-quality outline icons extracted from Figma Material Design collection:
+- **Advanced Actions**: rocket-outline, chat-plus-outline, star-plus-outline
+- **File Operations**: file-export-outline, folder-search-outline, clipboard-list-outline
+- **User Management**: account-settings-outline, account-cog-outline, handshake-outline
+- **UI Elements**: tooltip-text-outline, view-gallery-outline, emoticon-cool-outline
+- **Navigation**: arrow-bottom-right-bold-outline, map-marker-star-outline
+- **Media**: movie-cog-outline, coffee-outline, message-badge-outline
+- **Shapes**: pentagon-outline
 
 ## Design Tokens
 
