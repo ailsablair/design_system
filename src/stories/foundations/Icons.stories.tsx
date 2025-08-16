@@ -12,9 +12,9 @@ const meta: Meta<typeof Icon> = {
     docs: {
       description: {
         component: `
-The Echo Design System icon library provides a comprehensive set of UI icons combining custom SVG icons
-with Material UI Icons and Material Design Icons. All icons use standardized sizing, colors, and opacity
-levels through design tokens.
+The Echo Design System icon library provides a comprehensive collection of **300+ UI icons** combining custom SVG icons
+with the complete Material UI Icons library and Material Design Icons. All icons use standardized sizing, colors, and
+opacity levels through design tokens.
 
 ## Icon Libraries
 
