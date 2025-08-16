@@ -83,7 +83,7 @@ export const Toggle: React.FC<ToggleProps> = ({
   onClick,
   'aria-label': ariaLabel,
 }) => {
-  const toggleId = id || `toggle-${Math.random().toString(36).substr(2, 9)}`;
+  const toggleId = id || `toggle-${Math.random().toString(36).substring(2, 11)}`;
   
   // Determine the actual state based on props
   const actualState = disabled ? 'disabled' : state;

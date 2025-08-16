@@ -60,7 +60,7 @@ export const Slider: React.FC<SliderProps> = ({
   onInput,
   'aria-label': ariaLabel,
 }) => {
-  const sliderId = id || `slider-${Math.random().toString(36).substr(2, 9)}`;
+  const sliderId = id || `slider-${Math.random().toString(36).substring(2, 11)}`;
   
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!disabled && onChange) {
