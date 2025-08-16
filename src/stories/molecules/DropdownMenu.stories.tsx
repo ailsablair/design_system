@@ -84,8 +84,8 @@ type Story = StoryObj<typeof meta>;
 
 const defaultItems = [
   { label: 'Menu item', showLeadingIcon: true },
-  { label: 'Menu item', showLeadingIcon: true },
-  { label: 'Menu item', showLeadingIcon: true },
+  { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
+  { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
   { label: 'Menu item', showLeadingIcon: true },
 ];
 
