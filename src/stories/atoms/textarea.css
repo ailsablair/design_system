@@ -62,8 +62,8 @@
 
 .textarea-area {
   display: flex;
-  width: 300px;
-  height: 80px;
+  width: var(--sizing-width-300);
+  height: var(--sizing-height-80);
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
@@ -72,22 +72,22 @@
 }
 
 .textarea-area.small {
-  padding: 0 0.121px 0.121px 0;
+  padding: var(--spacing-sizing-0) var(--spacing-sizing-0-121px) var(--spacing-sizing-0-121px) var(--spacing-sizing-0);
 }
 
 .textarea-area.default {
-  padding: 0;
+  padding: var(--spacing-sizing-0);
 }
 
 .textarea-area.large {
-  padding: 0;
+  padding: var(--spacing-sizing-0);
 }
 
 .textarea-container {
   display: flex;
-  width: 300px;
-  height: 80px;
-  min-height: 60px;
+  width: var(--sizing-width-300);
+  height: var(--sizing-height-80);
+  min-height: var(--sizing-min-height-60);
   padding: var(--spacing-sizing-8px);
   justify-content: space-between;
   align-items: flex-start;
@@ -96,8 +96,8 @@
   border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
   background: var(--base-white);
   position: absolute;
-  left: 0;
-  top: 0;
+  left: var(--spacing-sizing-0);
+  top: var(--spacing-sizing-0);
   contain: layout style;
   will-change: auto;
 }
