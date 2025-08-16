@@ -26,17 +26,32 @@ Hand-crafted SVG icons designed specifically for the Echo Design System:
 - **chevron-up-custom**: Upward pointing chevron
 - **chevron-down-custom**: Downward pointing chevron
 
-### Material UI Icons (45+ icons)
-Industry-standard icons from Google's Material Design system:
-- **Navigation**: home, menu, arrow-back, arrow-forward, dashboard
-- **Actions**: search, edit, delete, add, remove, refresh, save
-- **Communication**: email, phone, notifications, share
-- **Content**: star, favorite, download, upload, attach-file
-- **Files**: folder, insert-drive-file, image, video-library, music-note
-- **User**: person, account-circle, lock, visibility, exit-to-app
-- **System**: settings, help, info, warning, error, check-circle
-- **Time**: calendar-today, schedule
-- **Cloud**: cloud-upload, cloud-download
+### Material UI Filled Icons (100+ icons)
+Standard solid Material Design icons:
+- **Navigation**: home, search, dashboard, menu, arrow-back, arrow-forward, directions, map, place
+- **Actions**: add, remove, edit, delete, save, refresh, download, upload, share, print, build, settings
+- **Communication**: email, phone, notifications, chat, comment, forum, send, inbox, drafts
+- **Content**: star, favorite, bookmark, trending-up, history, assignment, description, list, view-list
+- **Files & Media**: folder, insert-drive-file, image, photo, photo-library, video-library, music-note
+- **User & Account**: person, account-circle, account-box, group, work, exit-to-app, lock, visibility
+- **System & Status**: info, warning, error, check-circle, help, bug-report, code, security, verified
+- **Time & Analytics**: calendar-today, schedule, bar-chart, pie-chart, timeline
+- **Commerce**: shopping-cart, payment
+- **Network**: language, public, wifi, bluetooth, battery-full, signal-cellular-alt
+- **Media Controls**: play-arrow, pause, stop, skip-next, volume-up, mic, videocam, camera-alt
+- **Design**: color-lens, palette, brush, format-paint
+
+### Material UI Outlined Icons (100+ icons)
+Outlined variant of all Material Design icons:
+- Same categories as Filled, but with -outlined suffix
+- Examples: home-outlined, search-outlined, settings-outlined, star-outlined
+- Clean, modern appearance with outline styling
+
+### Material UI TwoTone Icons (100+ icons)
+Two-color variant of all Material Design icons:
+- Same categories as Filled, but with -two-tone suffix
+- Examples: home-two-tone, search-two-tone, settings-two-tone, star-two-tone
+- Enhanced visual depth with dual-color treatment
 
 ### Material Design Icons (18+ icons)
 High-quality outline icons extracted from Figma Material Design collection:
