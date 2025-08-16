@@ -393,7 +393,9 @@
   /* === TRANSFORM TOKENS === */
   --transform-scale-up: scale(1.1);
   --transform-scale-down: scale(0.95);
+  --transform-scale-1: scale(1);
   --transform-slide-up: translateY(-8px);
+  --transform-translate-y-0: translateY(0);
   --transform-rotate-360: rotate(360deg);
 
   /* === COMPONENT SHADOWS === */
