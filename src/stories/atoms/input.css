@@ -28,8 +28,8 @@
 
 .input-label.small {
   font-size: var(--type-size-sm);
-  line-height: 17px;
-  letter-spacing: 0.15px;
+  line-height: var(--type-line-height-label-sm);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
   padding: var(--spacing-sizing-2px);
 }
 
@@ -42,14 +42,14 @@
 
 .input-label.large {
   font-size: var(--type-size-lg);
-  line-height: 24px;
-  letter-spacing: 0.15px;
+  line-height: var(--type-line-height-label-lg);
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg);
   padding: var(--spacing-sizing-4px);
 }
 
 .input-container {
   display: flex;
-  width: 300px;
+  width: var(--sizing-width-300);
   justify-content: space-between;
   align-items: center;
   border-radius: var(--spacing-radius-2px);
