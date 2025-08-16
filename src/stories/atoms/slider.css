@@ -191,8 +191,8 @@
 
 /* Firefox Slider Thumb */
 .slider-input::-moz-range-thumb {
-  width: 12px;
-  height: 12px;
+  width: var(--sizing-slider-thumb-small);
+  height: var(--sizing-slider-thumb-small);
   border-radius: var(--spacing-radius-full);
   background: var(--primary-sky-blue-500);
   cursor: pointer;
@@ -201,13 +201,13 @@
 }
 
 .slider-input.default::-moz-range-thumb {
-  width: 14px;
-  height: 14px;
+  width: var(--sizing-slider-thumb-default);
+  height: var(--sizing-slider-thumb-default);
 }
 
 .slider-input.large::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
+  width: var(--sizing-slider-thumb-large);
+  height: var(--sizing-slider-thumb-large);
 }
 
 .slider-input::-moz-range-thumb:hover {
