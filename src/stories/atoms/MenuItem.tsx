@@ -89,6 +89,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
   state = 'default',
   showLeadingIcon = true,
   icon,
+  showTrailingIcon = false,
   disabled = false,
   className = '',
   onClick,
