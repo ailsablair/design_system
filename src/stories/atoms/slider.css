@@ -97,17 +97,17 @@
 }
 
 .slider-track.small {
-  height: 4px;
+  height: var(--sizing-slider-track-small);
   border-radius: var(--spacing-radius-2px);
 }
 
 .slider-track.default {
-  height: 6px;
+  height: var(--sizing-slider-track-default);
   border-radius: var(--spacing-radius-2px);
 }
 
 .slider-track.large {
-  height: 8px;
+  height: var(--sizing-slider-track-large);
   border-radius: var(--spacing-radius-full);
 }
 
