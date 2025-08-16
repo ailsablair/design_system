@@ -235,15 +235,15 @@
 }
 
 .slider-input.small::-moz-range-track {
-  height: 4px;
+  height: var(--sizing-slider-track-small);
 }
 
 .slider-input.default::-moz-range-track {
-  height: 6px;
+  height: var(--sizing-slider-track-default);
 }
 
 .slider-input.large::-moz-range-track {
-  height: 8px;
+  height: var(--sizing-slider-track-large);
   border-radius: var(--spacing-radius-full);
 }
 
