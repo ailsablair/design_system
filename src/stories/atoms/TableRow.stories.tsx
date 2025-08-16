@@ -3,7 +3,7 @@ import { TableRow, TableCell } from './TableRow';
 import './tableRow.css';
 
 const meta: Meta<typeof TableRow> = {
-  title: 'Design System/Components/TableRow',
+  title: 'Atoms/TableRow',
   component: TableRow,
   parameters: {
     layout: 'padded',
