@@ -47,6 +47,10 @@ const meta: Meta<typeof MenuItem> = {
       control: 'boolean',
       description: 'Show leading icon',
     },
+    showTrailingIcon: {
+      control: 'boolean',
+      description: 'Show trailing chevron icon for expandable items',
+    },
     disabled: {
       control: 'boolean',
       description: 'Disabled state',
