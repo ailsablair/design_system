@@ -25,7 +25,7 @@
   font-family: var(--type-typeface-archivo);
   font-weight: var(--type-weight-medium);
   color: var(--base-black);
-  margin: 0;
+  margin: var(--spacing-sizing-0);
   display: flex;
   align-items: center;
 }
@@ -34,30 +34,30 @@
   font-size: var(--type-archivo-label-sm);
   line-height: var(--type-line-height-label-sm);
   letter-spacing: var(--type-letter-spacing-archivo-label-sm);
-  padding: 2px;
-  gap: 4px;
-  width: 76px;
-  height: 14px;
+  padding: var(--spacing-sizing-2px);
+  gap: var(--spacing-sizing-4px);
+  width: var(--sizing-width-76);
+  height: var(--sizing-height-14);
 }
 
 .textarea-label.default {
   font-size: var(--type-archivo-label);
   line-height: var(--type-line-height-label);
   letter-spacing: var(--type-letter-spacing-archivo-label);
-  padding: 4px;
-  gap: 6px;
-  width: 91px;
-  height: 19px;
+  padding: var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-6px);
+  width: var(--sizing-width-91);
+  height: var(--sizing-height-19);
 }
 
 .textarea-label.large {
   font-size: var(--type-archivo-label-lg);
   line-height: var(--type-line-height-label-lg);
   letter-spacing: var(--type-letter-spacing-archivo-label-lg);
-  padding: 4px;
-  gap: 8px;
-  width: 101px;
-  height: 20px;
+  padding: var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-8px);
+  width: var(--sizing-width-101);
+  height: var(--sizing-height-20);
 }
 
 .textarea-area {
