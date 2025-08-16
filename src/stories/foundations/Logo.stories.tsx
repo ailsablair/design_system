@@ -8,7 +8,7 @@ const meta: Meta<typeof Logo> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'The ECHO logo is available in multiple variants and color schemes. The logomark features a distinctive circular design with geometric elements. Use the appropriate variant based on your layout needs and ensure proper contrast for accessibility.',
+        component: 'The ECHO logo is available in multiple variants and color schemes. The logomark features a distinctive circular design with geometric elements representing growth and innovation. Use the appropriate variant based on your layout needs and ensure proper contrast for accessibility.',
       },
     },
   },
@@ -21,7 +21,7 @@ const meta: Meta<typeof Logo> = {
     },
     color: {
       control: 'select',
-      options: ['brand', 'dark-blue', 'sky-blue', 'white', 'black'],
+      options: ['brand', 'brand-dark', 'dark-blue', 'sky-blue', 'white', 'black'],
       description: 'Color scheme for the logo',
     },
     size: {
@@ -76,35 +76,33 @@ export const CustomSize: Story = {
   args: {
     variant: 'full',
     color: 'brand',
-    width: 500,
-    height: 200,
+    width: 600,
+    height: 220,
   },
   parameters: {
     docs: {
       description: {
-        story: 'Custom width and height override the size presets',
+        story: 'Custom width and height override the size presets for specific layout requirements.',
       },
     },
   },
 };
 
-// ✅ RESTORED STORIES - Previously rejected, now improved for better visual testing
-
 export const AllVariants: Story = {
   render: () => (
     <div style={{
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-      gap: '2rem',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+      gap: '3rem',
       padding: '2rem',
-      fontFamily: 'var(--font-family-base, sans-serif)'
+      fontFamily: 'var(--type-typeface-roboto-flex, sans-serif)'
     }}>
       <div style={{ textAlign: 'center' }}>
         <h3 style={{
-          marginBottom: '1rem',
-          fontSize: '1rem',
+          marginBottom: '1.5rem',
+          fontSize: '1.125rem',
           fontWeight: '600',
-          color: 'var(--neutral-gray-gray-900, #1f2937)'
+          color: 'var(--base-black, #1c1c1c)'
         }}>
           Full Logo
         </h3>
@@ -112,10 +110,10 @@ export const AllVariants: Story = {
       </div>
       <div style={{ textAlign: 'center' }}>
         <h3 style={{
-          marginBottom: '1rem',
-          fontSize: '1rem',
+          marginBottom: '1.5rem',
+          fontSize: '1.125rem',
           fontWeight: '600',
-          color: 'var(--neutral-gray-gray-900, #1f2937)'
+          color: 'var(--base-black, #1c1c1c)'
         }}>
           Logomark Only
         </h3>
@@ -123,10 +121,10 @@ export const AllVariants: Story = {
       </div>
       <div style={{ textAlign: 'center' }}>
         <h3 style={{
-          marginBottom: '1rem',
-          fontSize: '1rem',
+          marginBottom: '1.5rem',
+          fontSize: '1.125rem',
           fontWeight: '600',
-          color: 'var(--neutral-gray-gray-900, #1f2937)'
+          color: 'var(--base-black, #1c1c1c)'
         }}>
           Wordmark Only
         </h3>
@@ -143,27 +141,39 @@ export const AllVariants: Story = {
   },
 };
 
-export const ColorVariations: Story = {
+export const LogomarkVariations: Story = {
   render: () => (
     <div style={{
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-      gap: '1.5rem',
+      gap: '2rem',
       padding: '2rem',
-      fontFamily: 'var(--font-family-base, sans-serif)'
+      fontFamily: 'var(--type-typeface-roboto-flex, sans-serif)'
     }}>
-      {['brand', 'dark-blue', 'sky-blue', 'black'].map((colorScheme) => (
-        <div key={colorScheme} style={{ textAlign: 'center' }}>
-          <h4 style={{
-            marginBottom: '1rem',
-            fontSize: '0.875rem',
-            fontWeight: '500',
-            color: 'var(--neutral-gray-gray-700, #374151)',
-            textTransform: 'capitalize'
+      {[
+        { color: 'brand', label: 'Brand' },
+        { color: 'dark-blue', label: 'Dark Blue' },
+        { color: 'sky-blue', label: 'Sky Blue' },
+        { color: 'black', label: 'Black' }
+      ].map(({ color, label }) => (
+        <div key={color} style={{ textAlign: 'center' }}>
+          <div style={{
+            padding: '2rem 1rem',
+            backgroundColor: color === 'white' ? 'var(--neutral-gray-gray-100)' : 'var(--base-white)',
+            borderRadius: 'var(--spacing-radius-8px)',
+            border: '1px solid var(--neutral-gray-gray-200)',
+            marginBottom: '1rem'
           }}>
-            {colorScheme.replace('-', ' ')}
-          </h4>
-          <Logo variant="full" color={colorScheme as any} size="small" />
+            <Logo variant="logomark" color={color as any} size="medium" />
+          </div>
+          <p style={{
+            fontSize: '0.875rem',
+            color: 'var(--neutral-gray-gray-600)',
+            fontWeight: '500',
+            margin: 0
+          }}>
+            {label}
+          </p>
         </div>
       ))}
     </div>
@@ -171,48 +181,89 @@ export const ColorVariations: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Logo in different color schemes: brand colors, dark blue, sky blue, and black.',
+        story: 'Logomark variations in different colors from the Figma designs. The logomark features overlapping circular elements in the brand color scheme.',
       },
     },
   },
 };
 
-export const OnDarkBackground: Story = {
+export const WordmarkVariations: Story = {
   render: () => (
     <div style={{
-      backgroundColor: 'var(--primary-blue-dark-blue, #191E3C)',
-      padding: '3rem',
-      borderRadius: 'var(--spacing-radius-8px, 8px)',
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'center',
-      gap: '2rem'
+      gap: '2rem',
+      padding: '2rem',
+      fontFamily: 'var(--type-typeface-roboto-flex, sans-serif)'
     }}>
-      <h3 style={{
-        color: 'white',
-        marginBottom: '1rem',
-        fontSize: '1.25rem',
-        fontWeight: '600',
-        fontFamily: 'var(--font-family-base, sans-serif)'
-      }}>
-        Logo on Dark Background
-      </h3>
-      <Logo variant="full" color="white" size="medium" />
-      <p style={{
-        color: 'rgba(255, 255, 255, 0.8)',
-        textAlign: 'center',
-        fontSize: '0.875rem',
-        fontFamily: 'var(--font-family-base, sans-serif)',
-        margin: 0
-      }}>
-        White logo variant for use on dark backgrounds
-      </p>
+      {[
+        { color: 'dark-blue', bg: 'var(--base-white)', border: true },
+        { color: 'sky-blue', bg: 'var(--base-white)', border: true },
+        { color: 'black', bg: 'var(--base-white)', border: true },
+        { color: 'white', bg: 'var(--primary-blue-dark-blue)', border: false }
+      ].map(({ color, bg, border }) => (
+        <div key={color} style={{
+          textAlign: 'center',
+          padding: '3rem 2rem',
+          backgroundColor: bg,
+          borderRadius: 'var(--spacing-radius-8px)',
+          border: border ? '1px solid var(--neutral-gray-gray-200)' : 'none'
+        }}>
+          <Logo variant="wordmark" color={color as any} size="large" />
+        </div>
+      ))}
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'White logo variant designed for use on dark backgrounds to ensure proper contrast and visibility.',
+        story: 'ECHO wordmark in different color variations as shown in the Figma designs.',
+      },
+    },
+  },
+};
+
+export const FullLogoShowcase: Story = {
+  render: () => (
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+      gap: '2rem',
+      padding: '2rem',
+      fontFamily: 'var(--type-typeface-roboto-flex, sans-serif)'
+    }}>
+      {[
+        { color: 'brand', label: 'Brand', bg: 'var(--base-white)', textColor: 'var(--base-black)' },
+        { color: 'brand-dark', label: 'Brand Dark', bg: 'var(--base-white)', textColor: 'var(--base-black)' },
+        { color: 'dark-blue', label: 'Dark Blue', bg: 'var(--base-white)', textColor: 'var(--base-black)' },
+        { color: 'sky-blue', label: 'Sky Blue', bg: 'var(--base-white)', textColor: 'var(--base-black)' },
+        { color: 'white', label: 'White', bg: 'var(--primary-blue-dark-blue)', textColor: 'white' }
+      ].map(({ color, label, bg, textColor }) => (
+        <div key={color} style={{
+          textAlign: 'center',
+          padding: '2rem',
+          backgroundColor: bg,
+          borderRadius: 'var(--spacing-radius-12px)',
+          border: bg === 'var(--base-white)' ? '1px solid var(--neutral-gray-gray-200)' : 'none'
+        }}>
+          <h4 style={{
+            marginBottom: '2rem',
+            fontSize: '1rem',
+            fontWeight: '600',
+            color: textColor,
+            margin: '0 0 2rem 0'
+          }}>
+            {label}
+          </h4>
+          <Logo variant="full" color={color as any} size="medium" />
+        </div>
+      ))}
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Full logo combinations as represented in the Figma designs, showing logomark and wordmark together.',
       },
     },
   },
@@ -225,23 +276,23 @@ export const SizeComparison: Story = {
       flexDirection: 'column',
       gap: '2rem',
       padding: '2rem',
-      fontFamily: 'var(--font-family-base, sans-serif)'
+      fontFamily: 'var(--type-typeface-roboto-flex, sans-serif)'
     }}>
       {['small', 'medium', 'large'].map((logoSize) => (
         <div key={logoSize} style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '2rem',
-          padding: '1rem',
-          borderRadius: 'var(--spacing-radius-6px, 6px)',
-          backgroundColor: 'var(--base-white, #ffffff)',
-          border: '1px solid var(--neutral-gray-gray-200, #e5e7eb)'
+          gap: '3rem',
+          padding: '2rem',
+          borderRadius: 'var(--spacing-radius-8px)',
+          backgroundColor: 'var(--base-white)',
+          border: '1px solid var(--neutral-gray-gray-200)'
         }}>
-          <div style={{ minWidth: '80px' }}>
+          <div style={{ minWidth: '100px' }}>
             <span style={{
-              fontSize: '0.875rem',
-              fontWeight: '500',
-              color: 'var(--neutral-gray-gray-700, #374151)',
+              fontSize: '1rem',
+              fontWeight: '600',
+              color: 'var(--neutral-gray-gray-700)',
               textTransform: 'capitalize'
             }}>
               {logoSize}
@@ -255,138 +306,138 @@ export const SizeComparison: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Comparison of logo sizes: small, medium, and large. Use appropriate sizes based on your layout needs.',
+        story: 'Logo size comparison: small, medium, and large. Choose appropriate sizes based on your layout and hierarchy needs.',
       },
     },
   },
 };
 
-export const LogomarkVariations: Story = {
+export const ResponsiveUsage: Story = {
+  render: () => (
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '2rem',
+      padding: '2rem',
+      fontFamily: 'var(--type-typeface-roboto-flex, sans-serif)'
+    }}>
+      <div style={{
+        padding: '1.5rem 2rem',
+        backgroundColor: 'var(--base-white)',
+        borderRadius: 'var(--spacing-radius-8px)',
+        border: '1px solid var(--neutral-gray-gray-200)',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      }}>
+        <span style={{ 
+          fontSize: '0.875rem', 
+          color: 'var(--neutral-gray-gray-600)',
+          fontWeight: '500'
+        }}>
+          Desktop Header
+        </span>
+        <Logo variant="full" color="brand" size="small" />
+      </div>
+      
+      <div style={{
+        padding: '1rem',
+        backgroundColor: 'var(--base-white)',
+        borderRadius: 'var(--spacing-radius-8px)',
+        border: '1px solid var(--neutral-gray-gray-200)',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      }}>
+        <span style={{ 
+          fontSize: '0.875rem', 
+          color: 'var(--neutral-gray-gray-600)',
+          fontWeight: '500'
+        }}>
+          Mobile Header
+        </span>
+        <Logo variant="logomark" color="brand" size="small" />
+      </div>
+      
+      <div style={{
+        padding: '3rem 2rem',
+        backgroundColor: 'var(--neutral-gray-gray-50)',
+        borderRadius: 'var(--spacing-radius-8px)',
+        textAlign: 'center'
+      }}>
+        <span style={{ 
+          fontSize: '0.875rem', 
+          color: 'var(--neutral-gray-gray-600)',
+          fontWeight: '500',
+          display: 'block',
+          marginBottom: '2rem'
+        }}>
+          Hero Section
+        </span>
+        <Logo variant="full" color="brand" size="large" />
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Responsive logo usage examples showing how different variants work in various contexts and screen sizes.',
+      },
+    },
+  },
+};
+
+export const OnDarkBackground: Story = {
   render: () => (
     <div style={{
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
       gap: '2rem',
-      padding: '2rem',
-      fontFamily: 'var(--font-family-base, sans-serif)'
-    }}>
-      {['brand', 'dark-blue', 'sky-blue', 'black'].map((colorScheme) => (
-        <div key={colorScheme} style={{ textAlign: 'center' }}>
-          <Logo variant="logomark" color={colorScheme as any} size="medium" />
-          <p style={{
-            marginTop: '1rem',
-            fontSize: '0.75rem',
-            color: 'var(--neutral-gray-gray-600, #4b5563)',
-            textTransform: 'capitalize',
-            margin: '1rem 0 0 0'
-          }}>
-            {colorScheme.replace('-', ' ')}
-          </p>
-        </div>
-      ))}
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Logomark variations in different colors. The logomark features a circular design with geometric elements and can be used independently when space is limited.',
-      },
-    },
-  },
-};
-
-export const CompactHorizontal: Story = {
-  render: () => (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '1.5rem',
-      padding: '2rem',
-      fontFamily: 'var(--font-family-base, sans-serif)',
-      backgroundColor: 'var(--base-white, #ffffff)'
-    }}>
-      <h3 style={{
-        fontSize: '1rem',
-        fontWeight: '600',
-        color: 'var(--neutral-gray-gray-900, #1f2937)',
-        margin: 0
-      }}>
-        Compact Horizontal Layouts
-      </h3>
-      <div style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        gap: '2rem',
-        padding: '1rem',
-        backgroundColor: 'var(--neutral-gray-gray-50, #f9fafb)',
-        borderRadius: 'var(--spacing-radius-6px, 6px)'
-      }}>
-        <Logo variant="full" color="brand" size="small" />
-        <Logo variant="full" color="dark-blue" size="small" />
-        <Logo variant="full" color="sky-blue" size="small" />
-        <Logo variant="full" color="black" size="small" />
-      </div>
-      <p style={{
-        fontSize: '0.875rem',
-        color: 'var(--neutral-gray-gray-600, #4b5563)',
-        margin: 0,
-        lineHeight: '1.5'
-      }}>
-        Small horizontal logo layouts ideal for headers, navigation bars, and compact spaces.
-      </p>
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Compact horizontal logo arrangements perfect for navigation bars, headers, and spaces with height constraints.',
-      },
-    },
-  },
-};
-
-export const WordmarkShowcase: Story = {
-  render: () => (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '2rem',
-      padding: '2rem',
-      fontFamily: 'var(--font-family-base, sans-serif)'
+      padding: '2rem'
     }}>
       <div style={{
-        textAlign: 'center',
-        padding: '3rem 1rem',
-        backgroundColor: 'var(--base-white, #ffffff)',
-        borderRadius: 'var(--spacing-radius-8px, 8px)',
-        border: '1px solid var(--neutral-gray-gray-200, #e5e7eb)'
+        backgroundColor: 'var(--primary-blue-dark-blue)',
+        padding: '3rem 2rem',
+        borderRadius: 'var(--spacing-radius-12px)',
+        textAlign: 'center'
       }}>
-        <Logo variant="wordmark" color="dark-blue" size="large" />
+        <h3 style={{
+          color: 'white',
+          marginBottom: '2rem',
+          fontSize: '1.125rem',
+          fontWeight: '600',
+          fontFamily: 'var(--type-typeface-roboto-flex, sans-serif)',
+          margin: '0 0 2rem 0'
+        }}>
+          Full Logo
+        </h3>
+        <Logo variant="full" color="white" size="medium" />
       </div>
+      
       <div style={{
-        textAlign: 'center',
-        padding: '3rem 1rem',
-        backgroundColor: 'var(--base-white, #ffffff)',
-        borderRadius: 'var(--spacing-radius-8px, 8px)',
-        border: '1px solid var(--neutral-gray-gray-200, #e5e7eb)'
+        backgroundColor: 'var(--neutral-gray-gray-900)',
+        padding: '3rem 2rem',
+        borderRadius: 'var(--spacing-radius-12px)',
+        textAlign: 'center'
       }}>
-        <Logo variant="wordmark" color="sky-blue" size="large" />
-      </div>
-      <div style={{
-        textAlign: 'center',
-        padding: '3rem 1rem',
-        backgroundColor: 'var(--primary-blue-dark-blue, #191E3C)',
-        borderRadius: 'var(--spacing-radius-8px, 8px)'
-      }}>
-        <Logo variant="wordmark" color="white" size="large" />
+        <h3 style={{
+          color: 'white',
+          marginBottom: '2rem',
+          fontSize: '1.125rem',
+          fontWeight: '600',
+          fontFamily: 'var(--type-typeface-roboto-flex, sans-serif)',
+          margin: '0 0 2rem 0'
+        }}>
+          Logomark Only
+        </h3>
+        <Logo variant="logomark" color="white" size="medium" />
       </div>
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'ECHO wordmark variations showing different color treatments inspired by the Figma designs.',
+        story: 'White logo variants designed for use on dark backgrounds to ensure proper contrast and accessibility.',
       },
     },
   },
