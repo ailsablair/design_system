@@ -14,10 +14,7 @@ import { materialDesignIconComponents, MaterialDesignIconName } from './Material
 
 export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
-// Custom icon names (your existing icons)
-export type CustomIconName = 'alarm' | 'close-circle' | 'close-custom' | 'chevron-up-custom' | 'chevron-down-custom';
-
-export type IconName = CustomIconName | AllMaterialIconName | MaterialDesignIconName;
+export type IconName = AllMaterialIconName | MaterialDesignIconName;
 
 interface IconProps {
   /** Icon name from the comprehensive icon library (custom, Material UI, or Material Design) */
