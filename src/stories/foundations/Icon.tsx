@@ -68,8 +68,7 @@ const allMaterialIconComponents = {
 /**
  * Universal Icon component supporting comprehensive icon libraries.
  * 
- * ## Icon Libraries Available (300+ total icons):
- * - **Custom Icons** (5): Hand-crafted SVG icons for Echo-specific needs
+ * ## Icon Libraries Available (295+ total icons):
  * - **Material UI Filled** (100+): Standard solid Material Design icons
  * - **Material UI Outlined** (100+): Outlined variant Material Design icons
  * - **Material UI TwoTone** (100+): Two-color variant Material Design icons
