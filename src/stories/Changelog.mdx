@@ -6,6 +6,29 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 All notable changes to the Echo Design System are documented here.
 
+## [2.2.0] - 2024 Icon Library Streamlining
+
+### 🧹 Removed - Custom Icons Cleanup
+
+#### Custom Icon Removal (5 Icons Deprecated)
+- **Removed Custom Icons**: Eliminated all 5 hand-crafted SVG icons for library consistency
+  - Removed: `alarm`, `close-circle`, `close-custom`, `chevron-up-custom`, `chevron-down-custom`
+  - **Reason**: Streamline icon library to focus on industry-standard Material UI icons
+  - **Migration**: Use equivalent Material UI icons (e.g., `notifications` for `alarm`, `close` for custom close variants)
+
+#### Library Optimization
+- **Icon Count**: Reduced from 300+ to 295+ icons (focused on Material UI standards)
+- **Type Safety**: Simplified TypeScript types by removing `CustomIconName`
+- **Performance**: Reduced bundle size by eliminating custom SVG components
+- **Consistency**: All icons now follow Material Design guidelines
+
+### 📚 Updated - Documentation
+
+#### Storybook Integration
+- **Removed Custom Icons Story**: Eliminated dedicated custom icons showcase
+- **Updated Dropdown**: Removed custom icons from icon selector (295+ options remain)
+- **Streamlined Documentation**: Focused on Material UI and Material Design icons only
+
 ## [2.1.0] - 2024 Icon Library Expansion
 
 ### 🎯 Added - Comprehensive Icon System
@@ -42,7 +65,7 @@ All notable changes to the Echo Design System are documented here.
 #### Icon Type Support
 - ✅ **Custom Icons (5)**: Echo-specific hand-crafted SVG icons
 - ✅ **Material UI Icons (45+)**: Complete Material Design icon collection
-- ✅ **Material Design Icons (18+)**: Additional Figma-sourced outline icons
+- �� **Material Design Icons (18+)**: Additional Figma-sourced outline icons
 - ✅ **Type Safety**: Full TypeScript support with proper icon name types
 
 #### Performance Optimizations
