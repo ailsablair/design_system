@@ -84,13 +84,13 @@
 }
 
 .input-container.tags.default {
-  min-height: 44px;
+  min-height: var(--sizing-min-height-44);
   height: auto;
   padding: var(--spacing-sizing-2px) var(--spacing-sizing-8px);
 }
 
 .input-container.tags.large {
-  min-height: 54px;
+  min-height: var(--sizing-min-height-54);
   height: auto;
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
   gap: var(--spacing-sizing-12px);
