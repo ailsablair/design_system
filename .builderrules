@@ -1,24 +1,10 @@
 # Builder.io AI Development Rules
 
-## CRITICAL: Rejected Storybook Stories
-
-⛔ **NEVER** reinstall these permanently rejected stories:
-
-1. Colors: UsageGuidelines 
-2. Logo: AllVariants
-3. Logo: ColorVariations  
-4. Logo: OnDarkBackground
-5. Logo: SizeComparison
-6. Logo: LogomarkVariations
-
-These stories were rejected in Chromatic Build 21 and are PERMANENTLY BANNED.
-See REJECTED_STORIES.md for full documentation.
-
 ## Story Development Rules
 
-- Only create NEW stories that don't replicate rejected content
-- Always check REJECTED_STORIES.md before adding stories
-- Test all new stories in Chromatic before considering them complete
+- Create comprehensive stories that showcase all component variants and states
+- Always check existing patterns before adding new stories
+- Test all new stories in Chromatic to ensure visual consistency
 - Use existing approved stories as templates for new ones
 
 ## Design Token Usage
@@ -36,6 +22,6 @@ See REJECTED_STORIES.md for full documentation.
 
 ## Visual Testing
 
-- All stories must pass Chromatic visual testing
-- Rejected stories indicate fundamental design issues
-- Never attempt to modify and re-add rejected stories under new names
+- All stories should demonstrate comprehensive component usage
+- Stories should showcase different states, variants, and configurations
+- Focus on creating stories that provide value for design system documentation
