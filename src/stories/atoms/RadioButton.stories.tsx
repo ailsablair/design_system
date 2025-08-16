@@ -3,7 +3,7 @@ import React from 'react';
 import { RadioButton } from './RadioButton';
 
 const meta: Meta<typeof RadioButton> = {
-  title: 'Atoms/RadioButton',
+  title: 'Design System/Components/RadioButton',
   component: RadioButton,
   parameters: {
     layout: 'centered',
