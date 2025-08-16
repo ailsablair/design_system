@@ -349,6 +349,17 @@
   --sizing-min-height-44: 44px;
   --sizing-min-height-54: 54px;
 
+  /* Toggle specific dimensions */
+  --sizing-toggle-small-width: 32px;
+  --sizing-toggle-small-height: 18px;
+  --sizing-toggle-default-width: 44px;
+  --sizing-toggle-default-height: 24px;
+  --sizing-toggle-large-width: 56px;
+  --sizing-toggle-large-height: 28px;
+  --sizing-toggle-thumb-small: 14px;
+  --sizing-toggle-thumb-default: 18px;
+  --sizing-toggle-thumb-large: 22px;
+
   /* === TRANSFORM TOKENS === */
   --transform-scale-up: scale(1.1);
   --transform-scale-down: scale(0.95);
