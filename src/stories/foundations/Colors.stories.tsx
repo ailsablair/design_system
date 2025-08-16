@@ -844,7 +844,262 @@ export const DesignTokensUsage: Story = {
   ),
 };
 
-// ⛔ REJECTED STORY - DO NOT REINSTALL
-// The "UsageGuidelines" story was permanently rejected in Chromatic Build 21
-// See REJECTED_STORIES.md for full documentation
-// export const UsageGuidelines: Story = { ... } // ❌ BANNED
+// ✅ RESTORED STORY - Previously rejected, now improved for better visual testing
+
+export const UsageGuidelines: Story = {
+  render: () => (
+    <div style={{ fontFamily: 'var(--font-family-base, sans-serif)' }}>
+      <h2 style={{
+        fontSize: '1.75rem',
+        fontWeight: '700',
+        marginBottom: '1.5rem',
+        color: 'var(--neutral-gray-gray-900, #1f2937)'
+      }}>
+        Color Usage Guidelines
+      </h2>
+
+      {/* Primary Colors Guidelines */}
+      <section style={{ marginBottom: '3rem' }}>
+        <h3 style={{
+          fontSize: '1.25rem',
+          fontWeight: '600',
+          marginBottom: '1rem',
+          color: 'var(--neutral-gray-gray-800, #1f2937)'
+        }}>
+          Primary Colors
+        </h3>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '1.5rem',
+          marginBottom: '2rem'
+        }}>
+          <div style={{
+            padding: '1.5rem',
+            backgroundColor: 'var(--primary-blue-blue-50, #eff6ff)',
+            border: '1px solid var(--primary-blue-blue-200, #bfdbfe)',
+            borderRadius: '8px'
+          }}>
+            <div style={{
+              width: '40px',
+              height: '40px',
+              backgroundColor: 'var(--primary-blue-blue-500, #3b82f6)',
+              borderRadius: '6px',
+              marginBottom: '1rem'
+            }}></div>
+            <h4 style={{
+              fontSize: '1rem',
+              fontWeight: '600',
+              marginBottom: '0.5rem',
+              color: 'var(--primary-blue-blue-800, #1e40af)'
+            }}>
+              Blue Palette
+            </h4>
+            <p style={{
+              fontSize: '0.875rem',
+              color: 'var(--primary-blue-blue-700, #1d4ed8)',
+              margin: 0
+            }}>
+              Primary brand colors for buttons, links, and key interface elements.
+            </p>
+          </div>
+
+          <div style={{
+            padding: '1.5rem',
+            backgroundColor: 'var(--primary-sky-blue-50, #f0f9ff)',
+            border: '1px solid var(--primary-sky-blue-200, #bae6fd)',
+            borderRadius: '8px'
+          }}>
+            <div style={{
+              width: '40px',
+              height: '40px',
+              backgroundColor: 'var(--primary-sky-blue-500, #0ea5e9)',
+              borderRadius: '6px',
+              marginBottom: '1rem'
+            }}></div>
+            <h4 style={{
+              fontSize: '1rem',
+              fontWeight: '600',
+              marginBottom: '0.5rem',
+              color: 'var(--primary-sky-blue-800, #075985)'
+            }}>
+              Sky Blue Palette
+            </h4>
+            <p style={{
+              fontSize: '0.875rem',
+              color: 'var(--primary-sky-blue-700, #0369a1)',
+              margin: 0
+            }}>
+              Interactive states, focus indicators, and secondary actions.
+            </p>
+          </div>
+
+          <div style={{
+            padding: '1.5rem',
+            backgroundColor: 'var(--primary-seafoam-50, #ecfdf5)',
+            border: '1px solid var(--primary-seafoam-200, #bbf7d0)',
+            borderRadius: '8px'
+          }}>
+            <div style={{
+              width: '40px',
+              height: '40px',
+              backgroundColor: 'var(--primary-seafoam-500, #8BBF9F)',
+              borderRadius: '6px',
+              marginBottom: '1rem'
+            }}></div>
+            <h4 style={{
+              fontSize: '1rem',
+              fontWeight: '600',
+              marginBottom: '0.5rem',
+              color: 'var(--primary-seafoam-800, #065f46)'
+            }}>
+              Seafoam Palette
+            </h4>
+            <p style={{
+              fontSize: '0.875rem',
+              color: 'var(--primary-seafoam-700, #047857)',
+              margin: 0
+            }}>
+              Success states, positive actions, and nature-themed content.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Status Colors Guidelines */}
+      <section style={{ marginBottom: '3rem' }}>
+        <h3 style={{
+          fontSize: '1.25rem',
+          fontWeight: '600',
+          marginBottom: '1rem',
+          color: 'var(--neutral-gray-gray-800, #1f2937)'
+        }}>
+          Status & Feedback Colors
+        </h3>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: '1rem'
+        }}>
+          {[
+            { name: 'Success', color: 'var(--semantic-success, #10b981)', bg: 'var(--semantic-success-light, #ecfdf5)', use: 'Form validation, confirmations' },
+            { name: 'Warning', color: 'var(--semantic-warning, #f59e0b)', bg: 'var(--semantic-warning-light, #fef3c7)', use: 'Caution, pending states' },
+            { name: 'Error', color: 'var(--semantic-error, #ef4444)', bg: 'var(--semantic-error-light, #fee2e2)', use: 'Errors, destructive actions' },
+            { name: 'Info', color: 'var(--semantic-info, #3b82f6)', bg: '#eff6ff', use: 'Information, neutral feedback' }
+          ].map((status) => (
+            <div key={status.name} style={{
+              padding: '1.25rem',
+              backgroundColor: status.bg,
+              borderRadius: '6px',
+              border: `1px solid ${status.color}20`
+            }}>
+              <div style={{
+                width: '24px',
+                height: '24px',
+                backgroundColor: status.color,
+                borderRadius: '4px',
+                marginBottom: '0.75rem'
+              }}></div>
+              <h5 style={{
+                fontSize: '0.875rem',
+                fontWeight: '600',
+                marginBottom: '0.25rem',
+                color: status.color
+              }}>
+                {status.name}
+              </h5>
+              <p style={{
+                fontSize: '0.75rem',
+                color: 'var(--neutral-gray-gray-600, #4b5563)',
+                margin: 0
+              }}>
+                {status.use}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Best Practices */}
+      <section style={{ marginBottom: '3rem' }}>
+        <h3 style={{
+          fontSize: '1.25rem',
+          fontWeight: '600',
+          marginBottom: '1rem',
+          color: 'var(--neutral-gray-gray-800, #1f2937)'
+        }}>
+          Best Practices
+        </h3>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '1.5rem'
+        }}>
+          <div style={{
+            padding: '1.5rem',
+            backgroundColor: 'var(--base-white, #ffffff)',
+            border: '1px solid var(--neutral-gray-gray-200, #e5e7eb)',
+            borderRadius: '8px'
+          }}>
+            <h4 style={{
+              fontSize: '1rem',
+              fontWeight: '600',
+              marginBottom: '1rem',
+              color: 'var(--semantic-success, #10b981)'
+            }}>
+              ✅ Do
+            </h4>
+            <ul style={{
+              fontSize: '0.875rem',
+              color: 'var(--neutral-gray-gray-700, #374151)',
+              paddingLeft: '1.25rem',
+              margin: 0
+            }}>
+              <li style={{ marginBottom: '0.5rem' }}>Use design tokens instead of hardcoded colors</li>
+              <li style={{ marginBottom: '0.5rem' }}>Maintain 4.5:1 contrast ratio for text</li>
+              <li style={{ marginBottom: '0.5rem' }}>Use semantic colors for consistent meaning</li>
+              <li>Test colors with accessibility tools</li>
+            </ul>
+          </div>
+
+          <div style={{
+            padding: '1.5rem',
+            backgroundColor: 'var(--base-white, #ffffff)',
+            border: '1px solid var(--neutral-gray-gray-200, #e5e7eb)',
+            borderRadius: '8px'
+          }}>
+            <h4 style={{
+              fontSize: '1rem',
+              fontWeight: '600',
+              marginBottom: '1rem',
+              color: 'var(--semantic-error, #ef4444)'
+            }}>
+              ❌ Don't
+            </h4>
+            <ul style={{
+              fontSize: '0.875rem',
+              color: 'var(--neutral-gray-gray-700, #374151)',
+              paddingLeft: '1.25rem',
+              margin: 0
+            }}>
+              <li style={{ marginBottom: '0.5rem' }}>Use colors as the only way to convey information</li>
+              <li style={{ marginBottom: '0.5rem' }}>Mix color tokens from different palettes randomly</li>
+              <li style={{ marginBottom: '0.5rem' }}>Hardcode hex values in components</li>
+              <li>Ignore contrast requirements for accessibility</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Comprehensive guidelines for using the Echo Design System color palette effectively and accessibly.',
+      },
+    },
+  },
+};
