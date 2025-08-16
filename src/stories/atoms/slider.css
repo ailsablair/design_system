@@ -7,7 +7,7 @@
 }
 
 .slider-container.disabled {
-  opacity: 0.6;
+  opacity: var(--opacity-medium);
   cursor: not-allowed;
 }
 
@@ -56,18 +56,18 @@
 }
 
 .number-dot.small {
-  width: 4px;
-  height: 4px;
+  width: var(--sizing-slider-dot-small);
+  height: var(--sizing-slider-dot-small);
 }
 
 .number-dot.default {
-  width: 6px;
-  height: 6px;
+  width: var(--sizing-slider-dot-default);
+  height: var(--sizing-slider-dot-default);
 }
 
 .number-dot.large {
-  width: 8px;
-  height: 8px;
+  width: var(--sizing-slider-dot-large);
+  height: var(--sizing-slider-dot-large);
 }
 
 /* Track Container */
