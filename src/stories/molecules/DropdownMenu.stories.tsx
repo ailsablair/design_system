@@ -36,6 +36,49 @@ const meta: Meta<typeof DropdownMenu> = {
   },
 };
 
+// Sectioned Menu
+export const SectionedMenu: Story = {
+  args: {
+    items: sectionedItems,
+    size: 'default',
+    type: 'sectioned',
+  },
+};
+
+// Sectioned Submenu
+export const SectionedSubmenu: Story = {
+  args: {
+    items: sectionedSubmenuItems,
+    size: 'default',
+    type: 'sectioned-submenu',
+  },
+};
+
+// Extended Menus - All Sizes
+export const ExtendedMenuSizes: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Small Sectioned</h4>
+        <DropdownMenu items={sectionedItems} size="small" type="sectioned" />
+        <DropdownMenu items={sectionedSubmenuItems} size="small" type="sectioned-submenu" />
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Default Sectioned</h4>
+        <DropdownMenu items={sectionedItems} size="default" type="sectioned" />
+        <DropdownMenu items={sectionedSubmenuItems} size="default" type="sectioned-submenu" />
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Large Sectioned</h4>
+        <DropdownMenu items={sectionedItems} size="large" type="sectioned" />
+        <DropdownMenu items={sectionedSubmenuItems} size="large" type="sectioned-submenu" />
+      </div>
+    </div>
+  ),
+};
+
 export default meta;
 type Story = StoryObj<typeof meta>;
 
