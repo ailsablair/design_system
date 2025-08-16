@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './table.css';
+import '../atoms/tableRow.css';
 import { TableRow, TableCell, TableRowProps } from '../atoms/TableRow';
 
 export interface TableColumn {
