@@ -342,7 +342,7 @@
   font-family: var(--type-typeface-archivo);
   font-weight: var(--type-weight-light);
   margin: 0;
-  width: 300px;
+  width: var(--sizing-width-300);
 }
 
 .input-message.small,
