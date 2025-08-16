@@ -151,6 +151,14 @@ export const MenuItem: React.FC<MenuItemProps> = ({
     );
   };
 
+  const renderTrailingIcon = () => {
+    if (!showTrailingIcon || type === 'section' || type === 'back' || type === 'sub-section') {
+      return null;
+    }
+
+    return <ChevronRightIcon size={size} />;
+  };
+
   return (
     <div 
       className={`menu-item ${size} ${position} ${type} ${state} ${disabled ? 'disabled' : ''} ${className}`}
