@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta = {
-  title: 'Foundations/Overview',
+  title: 'Design System/Foundations/Overview',
   parameters: {
     layout: 'padded',
     docs: {
