@@ -378,6 +378,17 @@
   --sizing-toggle-thumb-default: 18px;
   --sizing-toggle-thumb-large: 22px;
 
+  /* Slider specific dimensions */
+  --sizing-slider-track-small: 4px;
+  --sizing-slider-track-default: 6px;
+  --sizing-slider-track-large: 8px;
+  --sizing-slider-thumb-small: 12px;
+  --sizing-slider-thumb-default: 14px;
+  --sizing-slider-thumb-large: 16px;
+  --sizing-slider-dot-small: 4px;
+  --sizing-slider-dot-default: 6px;
+  --sizing-slider-dot-large: 8px;
+
   /* === TRANSFORM TOKENS === */
   --transform-scale-up: scale(1.1);
   --transform-scale-down: scale(0.95);
