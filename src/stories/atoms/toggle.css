@@ -237,8 +237,8 @@
 
 /* Focus outline for accessibility */
 .toggle-input:focus-visible + .toggle-track {
-  outline: 2px solid var(--primary-sky-blue-500);
-  outline-offset: 2px;
+  outline: var(--spacing-sizing-2px) solid var(--primary-sky-blue-500);
+  outline-offset: var(--spacing-sizing-2px);
 }
 
 /* High contrast support */
