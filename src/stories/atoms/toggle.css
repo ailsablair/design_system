@@ -65,8 +65,8 @@
 
 /* Large size track */
 .toggle-track.large {
-  width: 56px;
-  height: 28px;
+  width: var(--sizing-toggle-large-width);
+  height: var(--sizing-toggle-large-height);
   background: var(--neutral-gray-gray-200);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-800);
 }
@@ -75,14 +75,14 @@
   background: var(--primary-sky-blue-500);
   border-color: var(--primary-sky-blue-800);
   justify-content: flex-end;
-  padding-right: 2px;
+  padding-right: var(--spacing-sizing-2px);
 }
 
 .toggle-track.large.disabled-toggle {
   background: var(--neutral-gray-gray-200);
   border-color: var(--neutral-gray-gray-300);
   justify-content: flex-start;
-  padding-left: 2px;
+  padding-left: var(--spacing-sizing-2px);
 }
 
 /* Hidden input */
