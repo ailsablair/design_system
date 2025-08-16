@@ -1,7 +1,11 @@
 :root {
   /* === SPACING TOKENS === */
+  --spacing-sizing-0: 0;
+  --spacing-sizing-0-121px: 0.121px;
+  --spacing-sizing-1px: 1px;
   --spacing-sizing-2px: 2px;
   --spacing-sizing-4px: 4px;
+  --spacing-sizing-6px: 6px;
   --spacing-sizing-8px: 8px;
   --spacing-sizing-12px: 12px;
   --spacing-sizing-16px: 16px;
