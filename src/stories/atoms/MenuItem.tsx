@@ -4,12 +4,14 @@ import './menuItem.css';
 export interface MenuItemProps {
   /** Menu item label text */
   label: string;
+  /** Section name for sub-section type */
+  sectionName?: string;
   /** Size variant */
   size?: 'small' | 'default' | 'large';
   /** Position in menu */
   position?: 'top' | 'default' | 'bottom' | 'submenu-top';
   /** Menu item type */
-  type?: 'simple' | 'back';
+  type?: 'simple' | 'back' | 'section' | 'sub-section';
   /** Item state */
   state?: 'default' | 'hover' | 'focus' | 'active' | 'disabled';
   /** Show leading icon */
@@ -62,6 +64,7 @@ const BackArrowIcon = ({ size = 'default' }: { size?: 'small' | 'default' | 'lar
 
 export const MenuItem: React.FC<MenuItemProps> = ({
   label,
+  sectionName,
   size = 'default',
   position = 'default',
   type = 'simple',
@@ -93,15 +96,40 @@ export const MenuItem: React.FC<MenuItemProps> = ({
   };
 
   const renderIcon = () => {
+    if (type === 'section') return null;
     if (!showLeadingIcon) return null;
-    
+
     if (icon) return icon;
-    
-    if (type === 'back') {
+
+    if (type === 'back' || type === 'sub-section') {
       return <BackArrowIcon size={size} />;
     }
-    
+
     return <ForumIcon size={size} />;
+  };
+
+  const renderContent = () => {
+    if (type === 'section') {
+      return (
+        <div className={`menu-item-section ${size}`}>
+          {label}
+        </div>
+      );
+    }
+
+    if (type === 'sub-section') {
+      return (
+        <div className={`menu-item-subsection ${size}`}>
+          {sectionName || label}
+        </div>
+      );
+    }
+
+    return (
+      <div className={`menu-item-label ${size}`}>
+        {label}
+      </div>
+    );
   };
 
   return (
@@ -115,9 +143,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
       aria-disabled={disabled}
     >
       {renderIcon()}
-      <div className={`menu-item-label ${size}`}>
-        {label}
-      </div>
+      {renderContent()}
     </div>
   );
 };
