@@ -330,4 +330,31 @@
   --transition-normal: 250ms ease-in-out;
   --transition-slow: 350ms ease-in-out;
   --transition-bounce: 350ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* === OPACITY TOKENS === */
+  --opacity-disabled: 0.3;
+  --opacity-subtle: 0.4;
+  --opacity-medium: 0.6;
+  --opacity-strong: 0.7;
+  --opacity-high: 0.9;
+  --opacity-full: 1.0;
+
+  /* === SIZING TOKENS (Component Dimensions) === */
+  --sizing-width-300: 300px;
+  --sizing-height-32: 32px;
+  --sizing-height-44: 44px;
+  --sizing-height-54: 54px;
+  --sizing-height-80: 80px;
+  --sizing-min-height-32: 32px;
+  --sizing-min-height-44: 44px;
+  --sizing-min-height-54: 54px;
+
+  /* === TRANSFORM TOKENS === */
+  --transform-scale-up: scale(1.1);
+  --transform-scale-down: scale(0.95);
+  --transform-slide-up: translateY(-8px);
+  --transform-rotate-360: rotate(360deg);
+
+  /* === COMPONENT SHADOWS === */
+  --shadow-dropdown: 0 5px 10px 0 rgba(39, 39, 39, 0.10);
 }
