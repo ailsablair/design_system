@@ -289,7 +289,58 @@ export const LogomarkVariations: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Logomark variations in different colors. The logomark can be used independently when space is limited.',
+        story: 'Logomark variations in different colors. The logomark features a circular design with geometric elements and can be used independently when space is limited.',
+      },
+    },
+  },
+};
+
+export const CompactHorizontal: Story = {
+  render: () => (
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '1.5rem',
+      padding: '2rem',
+      fontFamily: 'var(--font-family-base, sans-serif)',
+      backgroundColor: 'var(--base-white, #ffffff)'
+    }}>
+      <h3 style={{
+        fontSize: '1rem',
+        fontWeight: '600',
+        color: 'var(--neutral-gray-gray-900, #1f2937)',
+        margin: 0
+      }}>
+        Compact Horizontal Layouts
+      </h3>
+      <div style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        gap: '2rem',
+        padding: '1rem',
+        backgroundColor: 'var(--neutral-gray-gray-50, #f9fafb)',
+        borderRadius: 'var(--spacing-radius-6px, 6px)'
+      }}>
+        <Logo variant="full" color="brand" size="small" />
+        <Logo variant="full" color="dark-blue" size="small" />
+        <Logo variant="full" color="sky-blue" size="small" />
+        <Logo variant="full" color="black" size="small" />
+      </div>
+      <p style={{
+        fontSize: '0.875rem',
+        color: 'var(--neutral-gray-gray-600, #4b5563)',
+        margin: 0,
+        lineHeight: '1.5'
+      }}>
+        Small horizontal logo layouts ideal for headers, navigation bars, and compact spaces.
+      </p>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Compact horizontal logo arrangements perfect for navigation bars, headers, and spaces with height constraints.',
       },
     },
   },
