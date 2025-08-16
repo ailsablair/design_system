@@ -341,6 +341,14 @@
 
   /* === SIZING TOKENS (Component Dimensions) === */
   --sizing-width-300: 300px;
+  --sizing-width-308: 308px;
+  --sizing-width-76: 76px;
+  --sizing-width-91: 91px;
+  --sizing-width-101: 101px;
+  --sizing-height-14: 14px;
+  --sizing-height-15: 15px;
+  --sizing-height-19: 19px;
+  --sizing-height-20: 20px;
   --sizing-height-32: 32px;
   --sizing-height-44: 44px;
   --sizing-height-54: 54px;
@@ -348,6 +356,12 @@
   --sizing-min-height-32: 32px;
   --sizing-min-height-44: 44px;
   --sizing-min-height-54: 54px;
+  --sizing-min-height-60: 60px;
+  --sizing-top-106: 106px;
+  --sizing-top-111: 111px;
+  --sizing-top-112: 112px;
+  --sizing-auto: auto;
+  --sizing-flex-1: 1;
 
   /* Toggle specific dimensions */
   --sizing-toggle-small-width: 32px;
