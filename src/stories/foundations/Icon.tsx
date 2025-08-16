@@ -2,11 +2,14 @@ import React from 'react';
 import './tokens.css';
 
 // Material UI Icons - Comprehensive Collection
-import { 
-  materialIconsFilled, 
-  materialIconsOutlined, 
+import {
+  materialIconsFilled,
+  materialIconsOutlined,
   materialIconsTwoTone,
-  AllMaterialIconName 
+  AllMaterialIconName,
+  MaterialIconFilledName,
+  MaterialIconOutlinedName,
+  MaterialIconTwoToneName
 } from './MaterialUIIcons';
 
 // Material Design Icons from Figma
@@ -15,6 +18,10 @@ import { materialDesignIconComponents, MaterialDesignIconName } from './Material
 export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
 export type IconName = AllMaterialIconName | MaterialDesignIconName;
+
+// Re-export types for stories
+export type { AllMaterialIconName, MaterialIconFilledName, MaterialIconOutlinedName, MaterialIconTwoToneName };
+export type { MaterialDesignIconName };
 
 interface IconProps {
   /** Icon name from the comprehensive icon library (Material UI or Material Design) */
