@@ -108,8 +108,8 @@
 
 /* Small size thumb */
 .toggle-thumb.small {
-  width: 14px;
-  height: 14px;
+  width: var(--sizing-toggle-thumb-small);
+  height: var(--sizing-toggle-thumb-small);
 }
 
 .toggle-thumb.small.disabled-toggle {
@@ -118,8 +118,8 @@
 
 /* Default size thumb */
 .toggle-thumb.default {
-  width: 18px;
-  height: 18px;
+  width: var(--sizing-toggle-thumb-default);
+  height: var(--sizing-toggle-thumb-default);
 }
 
 .toggle-thumb.default.disabled-toggle {
@@ -128,8 +128,8 @@
 
 /* Large size thumb */
 .toggle-thumb.large {
-  width: 22px;
-  height: 22px;
+  width: var(--sizing-toggle-thumb-large);
+  height: var(--sizing-toggle-thumb-large);
 }
 
 .toggle-thumb.large.disabled-toggle {
