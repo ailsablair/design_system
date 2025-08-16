@@ -3,7 +3,7 @@ import React from 'react';
 import { MenuItem } from './MenuItem';
 
 const meta: Meta<typeof MenuItem> = {
-  title: 'Atoms/MenuItem',
+  title: 'Design System/Components/MenuItem',
   component: MenuItem,
   parameters: {
     layout: 'centered',
