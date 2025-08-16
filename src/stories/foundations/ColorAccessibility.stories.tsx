@@ -11,7 +11,7 @@ import {
 } from './ColorAccessibility';
 
 const meta: Meta = {
-  title: 'Foundations/Color Accessibility',
+  title: 'Design System/Foundations/Color Accessibility',
   parameters: {
     layout: 'padded',
     docs: {
