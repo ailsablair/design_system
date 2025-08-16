@@ -407,14 +407,14 @@
   .textarea-message.default,
   .textarea-message.large {
     position: relative;
-    left: auto;
-    top: auto;
+    left: var(--sizing-auto);
+    top: var(--sizing-auto);
   }
 }
 
 @media (max-width: 480px) {
   .textarea-container {
-    padding: 6px;
+    padding: var(--spacing-sizing-6px);
   }
 
   .textarea-field.large {
@@ -422,7 +422,7 @@
   }
 
   .textarea-close-button.large {
-    width: 16px;
-    height: 16px;
+    width: var(--icon-size-md);
+    height: var(--icon-size-md);
   }
 }
