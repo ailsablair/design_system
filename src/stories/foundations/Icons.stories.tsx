@@ -5,7 +5,7 @@ import { MaterialIconFilledName, MaterialIconOutlinedName, MaterialIconTwoToneNa
 import './tokens.css';
 
 const meta: Meta<typeof Icon> = {
-  title: 'Design System/Foundations/Icons',
+  title: 'Foundations/Icons',
   component: Icon,
   parameters: {
     layout: 'centered',
