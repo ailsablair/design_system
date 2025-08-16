@@ -165,11 +165,11 @@
 .menu-item.focus:not(.disabled) {
   outline: 2px solid var(--primary-sky-blue-500);
   outline-offset: -2px;
-  background: var(--neutral-gray-gray-50);
+  background: var(--primary-sky-blue-50);
 }
 
 .menu-item.active:not(.disabled) {
-  background: var(--neutral-gray-gray-100);
+  background: var(--primary-sky-blue-100);
 }
 
 .menu-item.disabled {
