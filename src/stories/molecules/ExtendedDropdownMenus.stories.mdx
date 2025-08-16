@@ -1,0 +1,242 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/blocks';
+import { DropdownMenu } from './DropdownMenu';
+import { MenuItem } from '../atoms/MenuItem';
+
+<Meta 
+  title="Molecules/Extended Dropdown Menus" 
+  component={DropdownMenu}
+/>
+
+# Extended Dropdown Menus
+
+Extended dropdown menus provide enhanced navigation with section headers, sub-section navigation, and improved organization for complex menu structures.
+
+## Features
+
+- **Section Headers**: Organize menu items with labeled sections
+- **Sub-section Navigation**: Navigate through hierarchical content with contextual back buttons
+- **Size Variants**: Small, default, and large sizes available
+- **Responsive Design**: Adapts to different screen sizes
+- **Accessibility**: Full keyboard navigation and screen reader support
+
+## Section Headers
+
+Section headers provide clear organization within dropdown menus by grouping related items under descriptive labels.
+
+<Canvas>
+  <Story
+    name="Section Headers"
+    args={{
+      items: [
+        { label: 'Section name', type: 'section', showLeadingIcon: false },
+        { label: 'Menu item', showLeadingIcon: true },
+        { label: 'Menu item', showLeadingIcon: true },
+        { label: 'Menu item', showLeadingIcon: true },
+      ],
+      size: 'default',
+      type: 'sectioned',
+    }}
+  >
+    {(args) => <DropdownMenu {...args} />}
+  </Story>
+</Canvas>
+
+## Sub-section Navigation
+
+Sub-section navigation includes contextual back buttons that display the parent section name, making navigation more intuitive.
+
+<Canvas>
+  <Story
+    name="Sub-section Navigation"
+    args={{
+      items: [
+        { label: 'Back', sectionName: 'Section name', type: 'sub-section', showLeadingIcon: true },
+        { label: 'Submenu item', showLeadingIcon: true },
+        { label: 'Submenu item', showLeadingIcon: true },
+        { label: 'Submenu item', showLeadingIcon: true },
+      ],
+      size: 'default',
+      type: 'sectioned-submenu',
+    }}
+  >
+    {(args) => <DropdownMenu {...args} />}
+  </Story>
+</Canvas>
+
+## Size Variations
+
+Extended dropdown menus are available in three sizes: small, default, and large.
+
+### Small Size
+
+<Canvas>
+  <Story
+    name="Small Extended Menu"
+    args={{
+      items: [
+        { label: 'Section name', type: 'section', showLeadingIcon: false },
+        { label: 'Menu item', showLeadingIcon: true },
+        { label: 'Menu item', showLeadingIcon: true },
+        { label: 'Menu item', showLeadingIcon: true },
+      ],
+      size: 'small',
+      type: 'sectioned',
+    }}
+  >
+    {(args) => <DropdownMenu {...args} />}
+  </Story>
+</Canvas>
+
+### Large Size
+
+<Canvas>
+  <Story
+    name="Large Extended Menu"
+    args={{
+      items: [
+        { label: 'Section name', type: 'section', showLeadingIcon: false },
+        { label: 'Menu item', showLeadingIcon: true },
+        { label: 'Menu item', showLeadingIcon: true },
+        { label: 'Menu item', showLeadingIcon: true },
+      ],
+      size: 'large',
+      type: 'sectioned',
+    }}
+  >
+    {(args) => <DropdownMenu {...args} />}
+  </Story>
+</Canvas>
+
+## Complete Size Comparison
+
+<Canvas>
+  <Story name="All Extended Sizes">
+    {() => (
+      <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+          <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Small</h4>
+          <DropdownMenu 
+            items={[
+              { label: 'Section name', type: 'section', showLeadingIcon: false },
+              { label: 'Menu item', showLeadingIcon: true },
+              { label: 'Menu item', showLeadingIcon: true },
+              { label: 'Menu item', showLeadingIcon: true },
+            ]} 
+            size="small" 
+            type="sectioned" 
+          />
+          <DropdownMenu 
+            items={[
+              { label: 'Back', sectionName: 'Section name', type: 'sub-section', showLeadingIcon: true },
+              { label: 'Submenu item', showLeadingIcon: true },
+              { label: 'Submenu item', showLeadingIcon: true },
+              { label: 'Submenu item', showLeadingIcon: true },
+            ]} 
+            size="small" 
+            type="sectioned-submenu" 
+          />
+        </div>
+        
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+          <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Default</h4>
+          <DropdownMenu 
+            items={[
+              { label: 'Section name', type: 'section', showLeadingIcon: false },
+              { label: 'Menu item', showLeadingIcon: true },
+              { label: 'Menu item', showLeadingIcon: true },
+              { label: 'Menu item', showLeadingIcon: true },
+            ]} 
+            size="default" 
+            type="sectioned" 
+          />
+          <DropdownMenu 
+            items={[
+              { label: 'Back', sectionName: 'Section name', type: 'sub-section', showLeadingIcon: true },
+              { label: 'Submenu item', showLeadingIcon: true },
+              { label: 'Submenu item', showLeadingIcon: true },
+              { label: 'Submenu item', showLeadingIcon: true },
+            ]} 
+            size="default" 
+            type="sectioned-submenu" 
+          />
+        </div>
+        
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+          <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Large</h4>
+          <DropdownMenu 
+            items={[
+              { label: 'Section name', type: 'section', showLeadingIcon: false },
+              { label: 'Menu item', showLeadingIcon: true },
+              { label: 'Menu item', showLeadingIcon: true },
+              { label: 'Menu item', showLeadingIcon: true },
+            ]} 
+            size="large" 
+            type="sectioned" 
+          />
+          <DropdownMenu 
+            items={[
+              { label: 'Back', sectionName: 'Section name', type: 'sub-section', showLeadingIcon: true },
+              { label: 'Submenu item', showLeadingIcon: true },
+              { label: 'Submenu item', showLeadingIcon: true },
+              { label: 'Submenu item', showLeadingIcon: true },
+            ]} 
+            size="large" 
+            type="sectioned-submenu" 
+          />
+        </div>
+      </div>
+    )}
+  </Story>
+</Canvas>
+
+## Usage Guidelines
+
+### When to Use Section Headers
+
+- Group related functionality (e.g., "File Operations", "View Options")
+- Organize large menus with many items
+- Provide clear visual hierarchy
+- Improve navigation in complex interfaces
+
+### When to Use Sub-section Navigation
+
+- Multi-level navigation structures
+- Settings or configuration menus
+- File/folder navigation
+- Hierarchical content organization
+
+### Best Practices
+
+1. **Keep section names concise** - Use 1-3 words when possible
+2. **Logical grouping** - Group related items under appropriate sections
+3. **Consistent sizing** - Use the same size variant throughout related menus
+4. **Clear hierarchy** - Make parent-child relationships obvious
+5. **Accessibility** - Ensure keyboard navigation works smoothly
+
+## API Reference
+
+### MenuItem Props (Extended)
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `type` | `'simple' \| 'back' \| 'section' \| 'sub-section'` | `'simple'` | Type of menu item |
+| `sectionName` | `string` | - | Section name for sub-section type |
+| `showLeadingIcon` | `boolean` | `true` | Show leading icon (automatically false for section headers) |
+
+### DropdownMenu Props (Extended)
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `type` | `'default' \| 'submenu' \| 'sectioned' \| 'sectioned-submenu'` | `'default'` | Menu type |
+| `items` | `MenuItemProps[]` | - | Array of menu items including sections |
+
+## Technical Implementation
+
+The extended dropdown menus build upon the existing MenuItem and DropdownMenu components by:
+
+1. **Adding new item types**: `section` and `sub-section`
+2. **Enhancing navigation**: Contextual back buttons with section names  
+3. **Improving styling**: Specialized CSS for section headers
+4. **Maintaining compatibility**: All existing functionality preserved
+
+This design ensures seamless integration with existing code while providing powerful new capabilities for complex navigation scenarios.
