@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { Table, TableColumn, TableData } from './Table';
+import { Table } from './Table';
+import type { TableColumn, TableData } from './Table';
 
 const meta: Meta<typeof Table> = {
   title: 'Molecules/Table',
