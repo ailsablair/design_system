@@ -73,7 +73,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   className = '',
   onChange,
 }) => {
-  const checkboxId = id || `checkbox-${Math.random().toString(36).substr(2, 9)}`;
+  const checkboxId = id || `checkbox-${Math.random().toString(36).substring(2, 11)}`;
   
   // Determine the actual state based on props
   const actualState = disabled ? 'disabled' : indeterminate ? 'indeterminate' : checked ? 'checked' : state;

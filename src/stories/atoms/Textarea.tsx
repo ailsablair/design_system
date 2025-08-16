@@ -79,7 +79,7 @@ export const Textarea: React.FC<TextareaProps> = ({
   onFocus,
   onBlur,
 }) => {
-  const textareaId = id || `textarea-${Math.random().toString(36).substr(2, 9)}`;
+  const textareaId = id || `textarea-${Math.random().toString(36).substring(2, 11)}`;
   const isFocused = state === 'focus' || state === 'typing';
   const isTyping = state === 'typing';
   const isFilled = state === 'filled' || (value !== undefined && value !== '');

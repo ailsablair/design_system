@@ -130,7 +130,7 @@ export const Input: React.FC<InputProps> = ({
   onFocus,
   onBlur,
 }) => {
-  const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
+  const inputId = id || `input-${Math.random().toString(36).substring(2, 11)}`;
   const isFocused = state === 'focus' || state === 'typing';
   const isTyping = state === 'typing';
   const isFilled = variant === 'simple' && (value !== undefined && value !== '');

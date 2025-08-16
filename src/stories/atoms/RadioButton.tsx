@@ -50,7 +50,7 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
   className = '',
   onChange,
 }) => {
-  const radioId = id || `radio-${Math.random().toString(36).substr(2, 9)}`;
+  const radioId = id || `radio-${Math.random().toString(36).substring(2, 11)}`;
   
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!disabled && onChange) {
