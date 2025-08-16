@@ -56,6 +56,9 @@ import AttachFileIcon from '@mui/icons-material/AttachFile';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 
+// Material Design Icons from Figma
+import { materialDesignIconComponents, MaterialDesignIconName } from './MaterialDesignIcons';
+
 export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
 // Custom icon names (your existing icons)
@@ -73,10 +76,10 @@ export type MaterialIconName =
   | 'save' | 'folder' | 'insert-drive-file' | 'image' | 'video-library' | 'music-note' 
   | 'attach-file' | 'cloud-upload' | 'cloud-download';
 
-export type IconName = CustomIconName | MaterialIconName;
+export type IconName = CustomIconName | MaterialIconName | MaterialDesignIconName;
 
 interface IconProps {
-  /** Icon name from the icon library (custom or Material UI) */
+  /** Icon name from the icon library (custom, Material UI, or Material Design) */
   name: IconName;
   /** Size of the icon */
   size?: IconSize;
@@ -245,10 +248,15 @@ const materialIconComponents = {
 };
 
 /**
- * Universal Icon component supporting both custom SVG icons and Material UI Icons.
+ * Universal Icon component supporting custom SVG icons, Material UI Icons, and Material Design Icons.
  * 
- * The component automatically detects whether to use a custom icon or Material UI icon
- * and applies consistent sizing, color, and opacity using design tokens.
+ * The component automatically detects the icon type and applies consistent sizing, color, and opacity
+ * using design tokens.
+ * 
+ * ## Icon Libraries Available:
+ * - **Custom Icons** (5): Hand-crafted SVG icons for Echo-specific needs
+ * - **Material UI Icons** (45+): Popular interface icons from Google's Material Design
+ * - **Material Design Icons** (18+): Additional outline icons from Material Design collection
  * 
  * @example
  * ```tsx
@@ -259,6 +267,10 @@ const materialIconComponents = {
  * // Custom Icons
  * <Icon name="alarm" />
  * <Icon name="close-circle" size="sm" opacity="strong" />
+ * 
+ * // Material Design Icons
+ * <Icon name="rocket-outline" />
+ * <Icon name="chat-plus-outline" size="xl" color="var(--semantic-success-500)" />
  * ```
  */
 export const Icon: React.FC<IconProps> = ({
@@ -291,6 +303,32 @@ export const Icon: React.FC<IconProps> = ({
         {...props}
       >
         <CustomIconComponent 
+          size={sizeValue} 
+          color={color} 
+          opacity={opacityValue}
+        />
+      </span>
+    );
+  }
+
+  // Check if it's a Material Design icon from Figma
+  const MaterialDesignIconComponent = materialDesignIconComponents[name as MaterialDesignIconName];
+  if (MaterialDesignIconComponent) {
+    return (
+      <span
+        className={`echo-icon echo-icon-material-design ${className}`}
+        role="img"
+        aria-label={ariaLabel || `${name} icon`}
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: sizeValue,
+          height: sizeValue,
+        }}
+        {...props}
+      >
+        <MaterialDesignIconComponent 
           size={sizeValue} 
           color={color} 
           opacity={opacityValue}
@@ -332,7 +370,8 @@ export const Icon: React.FC<IconProps> = ({
   // Icon not found
   console.warn(`Icon "${name}" not found. Available icons:`, {
     custom: Object.keys(customIconComponents),
-    material: Object.keys(materialIconComponents)
+    material: Object.keys(materialIconComponents),
+    materialDesign: Object.keys(materialDesignIconComponents)
   });
   
   return null;
