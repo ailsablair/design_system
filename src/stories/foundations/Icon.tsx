@@ -5,7 +5,9 @@ import './tokens.css';
 import {
   materialIconsFilled,
   materialIconsOutlined,
-  materialIconsTwoTone,
+  materialIconsTwoTone
+} from './MaterialUIIcons';
+import type {
   AllMaterialIconName,
   MaterialIconFilledName,
   MaterialIconOutlinedName,
@@ -13,7 +15,8 @@ import {
 } from './MaterialUIIcons';
 
 // Material Design Icons from Figma
-import { materialDesignIconComponents, MaterialDesignIconName } from './MaterialDesignIcons';
+import { materialDesignIconComponents } from './MaterialDesignIcons';
+import type { MaterialDesignIconName } from './MaterialDesignIcons';
 
 export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
