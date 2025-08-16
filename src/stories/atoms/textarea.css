@@ -307,48 +307,48 @@
 }
 
 .textarea-close-button:focus {
-  outline: 2px solid var(--primary-sky-blue-sky-blue);
-  outline-offset: 1px;
+  outline: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
+  outline-offset: var(--spacing-sizing-1px);
   border-radius: var(--spacing-radius-2px);
 }
 
 .textarea-container.disabled .textarea-close-button {
   cursor: not-allowed;
-  opacity: 0.3;
+  opacity: var(--opacity-disabled);
 }
 
 
 .textarea-message {
   font-family: var(--type-typeface-archivo);
   font-weight: var(--type-weight-light);
-  margin: 0;
-  width: 300px;
+  margin: var(--spacing-sizing-0);
+  width: var(--sizing-width-300);
   position: absolute;
-  height: 15px;
+  height: var(--sizing-height-15);
 }
 
 .textarea-message.small {
   font-size: var(--type-archivo-footnote);
   line-height: var(--type-line-height-footnote);
   letter-spacing: var(--type-letter-spacing-archivo-footnote);
-  left: 4px;
-  top: 106px;
+  left: var(--spacing-sizing-4px);
+  top: var(--sizing-top-106);
 }
 
 .textarea-message.default {
   font-size: var(--type-archivo-footnote);
   line-height: var(--type-line-height-footnote);
   letter-spacing: var(--type-letter-spacing-archivo-footnote);
-  left: 4px;
-  top: 111px;
+  left: var(--spacing-sizing-4px);
+  top: var(--sizing-top-111);
 }
 
 .textarea-message.large {
   font-size: var(--type-archivo-footnote);
   line-height: var(--type-line-height-footnote);
   letter-spacing: var(--type-letter-spacing-archivo-footnote);
-  left: 4px;
-  top: 112px;
+  left: var(--spacing-sizing-4px);
+  top: var(--sizing-top-112);
 }
 
 .textarea-message.error {
