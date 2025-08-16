@@ -92,9 +92,6 @@ const allMaterialIconComponents = {
  * // With styling
  * <Icon name="search-outlined" size="lg" color="var(--primary-blue-blue-500)" />
  * 
- * // Custom Icons
- * <Icon name="alarm" />
- * <Icon name="close-circle" size="sm" opacity="strong" />
  * 
  * // Material Design Icons
  * <Icon name="rocket-outline" />
