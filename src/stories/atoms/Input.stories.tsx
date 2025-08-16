@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Input, TagData } from './Input';
+import { Input } from './Input';
+import type { TagData } from './Input';
 
 const meta: Meta<typeof Input> = {
   title: 'Atoms/Input',
