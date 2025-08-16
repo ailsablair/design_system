@@ -31,8 +31,12 @@ const meta: Meta<typeof MenuItem> = {
     },
     type: {
       control: 'select',
-      options: ['simple', 'back'],
+      options: ['simple', 'back', 'section', 'sub-section'],
       description: 'Type of menu item',
+    },
+    sectionName: {
+      control: 'text',
+      description: 'Section name for sub-section type',
     },
     state: {
       control: 'select',
@@ -52,6 +56,51 @@ const meta: Meta<typeof MenuItem> = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+
+// Section Header
+export const SectionHeader: Story = {
+  args: {
+    label: 'Section name',
+    type: 'section',
+    size: 'default',
+    position: 'top',
+    showLeadingIcon: false,
+  },
+};
+
+// Sub-section Header
+export const SubSectionHeader: Story = {
+  args: {
+    label: 'Back',
+    sectionName: 'Section name',
+    type: 'sub-section',
+    size: 'default',
+    position: 'submenu-top',
+    showLeadingIcon: true,
+  },
+};
+
+// Section Headers by Size
+export const SectionSizes: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '276px' }}>
+      <MenuItem label="Section name" type="section" size="small" position="top" showLeadingIcon={false} />
+      <MenuItem label="Section name" type="section" size="default" position="top" showLeadingIcon={false} />
+      <MenuItem label="Section name" type="section" size="large" position="top" showLeadingIcon={false} />
+    </div>
+  ),
+};
+
+// Sub-section Headers by Size
+export const SubSectionSizes: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '276px' }}>
+      <MenuItem label="Back" sectionName="Section name" type="sub-section" size="small" position="submenu-top" />
+      <MenuItem label="Back" sectionName="Section name" type="sub-section" size="default" position="submenu-top" />
+      <MenuItem label="Back" sectionName="Section name" type="sub-section" size="large" position="submenu-top" />
+    </div>
+  ),
+};
 
 export const Default: Story = {
   args: {
