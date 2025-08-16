@@ -126,7 +126,7 @@
 .textarea-container.disabled {
   background-color: var(--neutral-gray-gray-50);
   border-color: var(--neutral-gray-gray-200);
-  opacity: 0.6;
+  opacity: var(--opacity-medium);
   cursor: not-allowed;
 }
 
@@ -283,27 +283,27 @@
   background: transparent;
   cursor: pointer;
   color: var(--secondary-blue-gray);
-  opacity: 0.6;
+  opacity: var(--opacity-medium);
   flex-shrink: 0;
 }
 
 .textarea-close-button.small {
-  width: 14px;
-  height: 14px;
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
 }
 
 .textarea-close-button.default {
-  width: 16px;
-  height: 16px;
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
 }
 
 .textarea-close-button.large {
-  width: 20px;
-  height: 20px;
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
 }
 
 .textarea-close-button:hover {
-  opacity: 1;
+  opacity: var(--opacity-full);
 }
 
 .textarea-close-button:focus {
