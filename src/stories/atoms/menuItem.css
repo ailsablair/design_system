@@ -150,11 +150,11 @@
 }
 
 .menu-item.hover:not(.disabled) {
-  background: var(--primary-sky-blue-sky-blue-50);
+  background: var(--primary-sky-blue-50);
 }
 
 .menu-item.hover:not(.disabled) .menu-item-label {
-  color: var(--primary-sky-blue-dark-sky-blue);
+  color: var(--primary-sky-blue-800);
   font-weight: var(--type-weight-semibold);
 }
 
