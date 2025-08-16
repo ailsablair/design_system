@@ -109,9 +109,6 @@ The component automatically detects icon type:
     name: {
       control: { type: 'select' },
       options: [
-        // Custom icons (5)
-        'alarm', 'close-circle', 'close-custom', 'chevron-up-custom', 'chevron-down-custom',
-
         // Material UI Filled icons (100+)
         'home', 'search', 'dashboard', 'menu', 'arrow-back', 'arrow-forward', 'arrow-upward', 'arrow-downward',
         'expand-more', 'expand-less', 'directions', 'map', 'place', 'location-on', 'add', 'remove', 'edit',
