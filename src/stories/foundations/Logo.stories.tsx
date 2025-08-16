@@ -8,7 +8,7 @@ const meta: Meta<typeof Logo> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'The Echo logo is available in multiple variants and color schemes. Use the appropriate variant based on your layout needs and ensure proper contrast for accessibility.',
+        component: 'The ECHO logo is available in multiple variants and color schemes. The logomark features a distinctive circular design with geometric elements. Use the appropriate variant based on your layout needs and ensure proper contrast for accessibility.',
       },
     },
   },
