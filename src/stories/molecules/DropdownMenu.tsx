@@ -8,7 +8,7 @@ export interface DropdownMenuProps {
   /** Size variant */
   size?: 'small' | 'default' | 'large';
   /** Menu type */
-  type?: 'default' | 'submenu';
+  type?: 'default' | 'submenu' | 'sectioned' | 'sectioned-submenu';
   /** Width of the menu */
   width?: number;
   /** Show menu */
@@ -52,17 +52,17 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({
 
   const getMenuItemPosition = (index: number): MenuItemProps['position'] => {
     if (items.length === 1) {
-      return type === 'submenu' ? 'submenu-top' : 'top';
+      return (type === 'submenu' || type === 'sectioned-submenu') ? 'submenu-top' : 'top';
     }
-    
+
     if (index === 0) {
-      return type === 'submenu' ? 'submenu-top' : 'top';
+      return (type === 'submenu' || type === 'sectioned-submenu') ? 'submenu-top' : 'top';
     }
-    
+
     if (index === items.length - 1) {
       return 'bottom';
     }
-    
+
     return 'default';
   };
 
@@ -97,7 +97,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({
     >
       {items.map((item, index) => {
         const itemPosition = getMenuItemPosition(index);
-        const isBackButton = type === 'submenu' && index === 0 && item.type === 'back';
+        const isBackButton = (type === 'submenu' || type === 'sectioned-submenu') && index === 0 && (item.type === 'back' || item.type === 'sub-section');
         
         return (
           <MenuItem
