@@ -67,7 +67,7 @@
   border-radius: var(--spacing-radius-6px);
 }
 
-/* Color variants - Default/Gray */
+/* Color variants - Default (Sky Blue Brand) */
 .checkbox-visual.default {
   border-color: var(--neutral-gray-gray-400);
   color: var(--base-white);
@@ -75,8 +75,8 @@
 
 .checkbox-visual.default.checked,
 .checkbox-visual.default.indeterminate {
-  background: var(--neutral-gray-gray-600);
-  border-color: var(--neutral-gray-gray-600);
+  background: var(--primary-sky-blue-500);
+  border-color: var(--primary-sky-blue-500);
 }
 
 /* Primary/Blue variant */
@@ -153,7 +153,7 @@
 
 /* Hover states */
 .checkbox-container:hover .checkbox-visual:not(.disabled) {
-  border-color: var(--neutral-gray-gray-600);
+  border-color: var(--primary-sky-blue-600);
 }
 
 .checkbox-container:hover .checkbox-visual.primary:not(.disabled) {
