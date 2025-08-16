@@ -3,6 +3,9 @@ import './table.css';
 import '../atoms/tableRow.css';
 import { TableRow, TableCell, TableRowProps } from '../atoms/TableRow';
 
+// Re-export TableRowProps for external use
+export type { TableRowProps };
+
 export interface TableColumn {
   /** Column key */
   key: string;
