@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Icon, IconName, IconSize, CustomIconName, MaterialIconName } from './Icon';
+import { MaterialDesignIconName } from './MaterialDesignIcons';
 import './tokens.css';
 
 const meta: Meta<typeof Icon> = {
