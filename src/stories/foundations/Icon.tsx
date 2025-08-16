@@ -168,7 +168,6 @@ export const Icon: React.FC<IconProps> = ({
 
   // Icon not found
   console.warn(`Icon "${name}" not found. Available icons:`, {
-    custom: Object.keys(customIconComponents),
     materialFilled: Object.keys(materialIconsFilled),
     materialOutlined: Object.keys(materialIconsOutlined),
     materialTwoTone: Object.keys(materialIconsTwoTone),
