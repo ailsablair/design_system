@@ -17,7 +17,7 @@ export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 export type IconName = AllMaterialIconName | MaterialDesignIconName;
 
 interface IconProps {
-  /** Icon name from the comprehensive icon library (custom, Material UI, or Material Design) */
+  /** Icon name from the comprehensive icon library (Material UI or Material Design) */
   name: IconName;
   /** Size of the icon */
   size?: IconSize;
