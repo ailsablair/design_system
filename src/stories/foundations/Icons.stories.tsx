@@ -82,14 +82,28 @@ The component automatically detects icon type:
     name: {
       control: { type: 'select' },
       options: [
-        // Custom icons
+        // Custom icons (5)
         'alarm', 'close-circle', 'close-custom', 'chevron-up-custom', 'chevron-down-custom',
-        // Popular Material UI icons
-        'home', 'search', 'settings', 'person', 'notifications', 'email', 'phone', 
-        'favorite', 'star', 'edit', 'delete', 'add', 'close', 'menu', 'info', 
-        'warning', 'error', 'check-circle', 'dashboard', 'calendar-today'
+
+        // Material UI icons (45+) - Complete list
+        'home', 'search', 'settings', 'person', 'notifications', 'email', 'phone',
+        'location-on', 'favorite', 'star', 'share', 'download', 'upload', 'edit',
+        'delete', 'add', 'remove', 'check', 'close', 'arrow-back', 'arrow-forward',
+        'arrow-upward', 'arrow-downward', 'expand-more', 'expand-less', 'menu',
+        'more-vert', 'more-horiz', 'info', 'warning', 'error', 'check-circle',
+        'help', 'visibility', 'visibility-off', 'lock', 'lock-open', 'calendar-today',
+        'schedule', 'dashboard', 'account-circle', 'exit-to-app', 'refresh', 'print',
+        'save', 'folder', 'insert-drive-file', 'image', 'video-library', 'music-note',
+        'attach-file', 'cloud-upload', 'cloud-download',
+
+        // Material Design icons from Figma (18+)
+        'emoticon-cool-outline', 'message-badge-outline', 'map-marker-star-outline',
+        'movie-cog-outline', 'star-plus-outline', 'pentagon-outline', 'file-export-outline',
+        'account-settings-outline', 'arrow-bottom-right-bold-outline', 'account-cog-outline',
+        'rocket-outline', 'coffee-outline', 'view-gallery-outline', 'chat-plus-outline',
+        'folder-search-outline', 'tooltip-text-outline', 'handshake-outline', 'clipboard-list-outline'
       ],
-      description: 'Icon name (custom or Material UI)',
+      description: 'Icon name (custom, Material UI, or Material Design)',
     },
     size: {
       control: { type: 'select' },
