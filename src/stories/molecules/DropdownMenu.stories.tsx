@@ -2,6 +2,35 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { DropdownMenu } from './DropdownMenu';
 
+// Define all data constants first
+const defaultItems = [
+  { label: 'Menu item', showLeadingIcon: true },
+  { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
+  { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
+  { label: 'Menu item', showLeadingIcon: true },
+];
+
+const submenuItems = [
+  { label: 'Back', type: 'back' as const, showLeadingIcon: true },
+  { label: 'Submenu item', showLeadingIcon: true },
+  { label: 'Submenu item', showLeadingIcon: true },
+  { label: 'Submenu item', showLeadingIcon: true },
+];
+
+const sectionedItems = [
+  { label: 'Section name', type: 'section' as const, showLeadingIcon: false },
+  { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
+  { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
+  { label: 'Menu item', showLeadingIcon: true },
+];
+
+const sectionedSubmenuItems = [
+  { label: 'Back', sectionName: 'Section name', type: 'sub-section' as const, showLeadingIcon: true },
+  { label: 'Submenu item', showLeadingIcon: true },
+  { label: 'Submenu item', showLeadingIcon: true },
+  { label: 'Submenu item', showLeadingIcon: true },
+];
+
 const meta: Meta<typeof DropdownMenu> = {
   title: 'Molecules/DropdownMenu',
   component: DropdownMenu,
@@ -35,6 +64,9 @@ const meta: Meta<typeof DropdownMenu> = {
     },
   },
 };
+
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 // Sectioned Menu
 export const SectionedMenu: Story = {
@@ -78,37 +110,6 @@ export const ExtendedMenuSizes: Story = {
     </div>
   ),
 };
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-const defaultItems = [
-  { label: 'Menu item', showLeadingIcon: true },
-  { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
-  { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
-  { label: 'Menu item', showLeadingIcon: true },
-];
-
-const submenuItems = [
-  { label: 'Back', type: 'back' as const, showLeadingIcon: true },
-  { label: 'Submenu item', showLeadingIcon: true },
-  { label: 'Submenu item', showLeadingIcon: true },
-  { label: 'Submenu item', showLeadingIcon: true },
-];
-
-const sectionedItems = [
-  { label: 'Section name', type: 'section' as const, showLeadingIcon: false },
-  { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
-  { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
-  { label: 'Menu item', showLeadingIcon: true },
-];
-
-const sectionedSubmenuItems = [
-  { label: 'Back', sectionName: 'Section name', type: 'sub-section' as const, showLeadingIcon: true },
-  { label: 'Submenu item', showLeadingIcon: true },
-  { label: 'Submenu item', showLeadingIcon: true },
-  { label: 'Submenu item', showLeadingIcon: true },
-];
 
 export const Default: Story = {
   args: {
