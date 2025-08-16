@@ -175,12 +175,12 @@
 
 .slider-input::-webkit-slider-thumb:hover {
   background: var(--primary-sky-blue-600);
-  transform: scale(1.1);
+  transform: var(--transform-scale-up);
 }
 
 .slider-input::-webkit-slider-thumb:active {
   background: var(--primary-sky-blue-700);
-  transform: scale(0.95);
+  transform: var(--transform-scale-down);
 }
 
 .slider-input:disabled::-webkit-slider-thumb {
@@ -212,12 +212,12 @@
 
 .slider-input::-moz-range-thumb:hover {
   background: var(--primary-sky-blue-600);
-  transform: scale(1.1);
+  transform: var(--transform-scale-up);
 }
 
 .slider-input::-moz-range-thumb:active {
   background: var(--primary-sky-blue-700);
-  transform: scale(0.95);
+  transform: var(--transform-scale-down);
 }
 
 .slider-input:disabled::-moz-range-thumb {
@@ -253,18 +253,18 @@
 
 /* Focus styles for accessibility */
 .slider-input:focus-visible {
-  outline: 2px solid var(--primary-sky-blue-500);
-  outline-offset: 2px;
+  outline: var(--spacing-stroke-2px) solid var(--primary-sky-blue-500);
+  outline-offset: var(--spacing-sizing-2px);
 }
 
 .slider-input:focus-visible::-webkit-slider-thumb {
-  outline: 2px solid var(--primary-sky-blue-500);
-  outline-offset: 2px;
+  outline: var(--spacing-stroke-2px) solid var(--primary-sky-blue-500);
+  outline-offset: var(--spacing-sizing-2px);
 }
 
 .slider-input:focus-visible::-moz-range-thumb {
-  outline: 2px solid var(--primary-sky-blue-500);
-  outline-offset: 2px;
+  outline: var(--spacing-stroke-2px) solid var(--primary-sky-blue-500);
+  outline-offset: var(--spacing-sizing-2px);
 }
 
 /* High contrast support */
