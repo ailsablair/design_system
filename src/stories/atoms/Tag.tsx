@@ -47,6 +47,7 @@ export const Tag: React.FC<TagProps> = ({
   size = 'default',
   variant = 'light-gray',
   showClose = true,
+  light = false,
   disabled = false,
   className = '',
   onRemove,
