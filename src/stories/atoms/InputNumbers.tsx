@@ -145,6 +145,7 @@ export const InputNumbers: React.FC<InputNumbersProps> = ({
   const [internalValue, setInternalValue] = useState(value);
   const [isFocused, setIsFocused] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout>();
 
   // Use effect to sync with external state prop
   React.useEffect(() => {
@@ -158,6 +159,15 @@ export const InputNumbers: React.FC<InputNumbersProps> = ({
       setInternalValue(value);
     }
   }, [value, internalValue]);
+
+  // Cleanup timeout on unmount
+  React.useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const currentValue = value !== undefined ? value : internalValue;
   const isAtMin = currentValue <= min;
