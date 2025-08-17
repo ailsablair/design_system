@@ -157,21 +157,21 @@ export const InputNumbers: React.FC<InputNumbersProps> = ({
   const isAtMax = currentValue >= max;
   const showTrashIcon = currentValue === 1;
 
-  const handleIncrement = () => {
+  const handleIncrement = React.useCallback(() => {
     if (disabled || isAtMax) return;
     const newValue = Math.min(currentValue + step, max);
     setInternalValue(newValue);
     if (onChange) onChange(newValue);
     if (onIncrement) onIncrement();
-  };
+  }, [disabled, isAtMax, currentValue, step, max, onChange, onIncrement]);
 
-  const handleDecrement = () => {
+  const handleDecrement = React.useCallback(() => {
     if (disabled || isAtMin) return;
     const newValue = Math.max(currentValue - step, min);
     setInternalValue(newValue);
     if (onChange) onChange(newValue);
     if (onDecrement) onDecrement();
-  };
+  }, [disabled, isAtMin, currentValue, step, min, onChange, onDecrement]);
 
   const handleFocus = React.useCallback(() => {
     if (!disabled && state !== 'focus') {
