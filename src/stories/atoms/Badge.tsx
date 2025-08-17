@@ -7,13 +7,15 @@ export interface BadgeProps {
   /** Color variant */
   color?: 'blue' | 'cyan' | 'orange' | 'gray' | 'purple' | 'green' | 'red' | 'yellow' | 'black';
   /** Size variant for dots */
-  size?: 'small' | 'medium' | 'large';
+  size?: 'xs' | 'small' | 'medium' | 'large' | 'xl' | 'xxl';
   /** Count value for count badges */
   count?: number;
   /** Max count before showing + */
   maxCount?: number;
   /** Show badge */
   show?: boolean;
+  /** Light style variant (for outline/light background style) */
+  light?: boolean;
   /** Additional CSS classes */
   className?: string;
 }
