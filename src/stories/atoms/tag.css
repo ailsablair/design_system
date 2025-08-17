@@ -38,7 +38,7 @@
   line-height: var(--type-line-height-label-lg);
 }
 
-/* Primary color variants - Filled styles (from Figma) */
+/* Primary color variants - Filled styles (matching Figma) */
 .tag.blue {
   background: var(--primary-blue-blue-500);
   border-color: var(--primary-blue-blue-500);
@@ -57,7 +57,7 @@
   color: var(--base-white);
 }
 
-/* Primary color variants - Light styles (from Figma) */
+/* Primary color variants - Light styles (using proper tokens) */
 .tag.blue.light {
   background: var(--primary-blue-blue-50);
   border-color: var(--primary-blue-blue-200);
@@ -76,7 +76,7 @@
   color: var(--primary-purple-700);
 }
 
-/* Functional color variants - Filled styles (from Figma) */
+/* Functional color variants - Filled styles (matching Figma) */
 .tag.orange {
   background: var(--functional-orange-orange-500);
   border-color: var(--functional-orange-orange-500);
@@ -101,7 +101,7 @@
   color: var(--base-white);
 }
 
-/* Functional color variants - Light styles (from Figma) */
+/* Functional color variants - Light styles (using proper tokens) */
 .tag.orange.light {
   background: var(--functional-orange-orange-50);
   border-color: var(--functional-orange-orange-200);
@@ -145,7 +145,7 @@
   color: var(--base-white);
 }
 
-/* Legacy/backwards compatibility */
+/* Legacy/backwards compatibility variants */
 .tag.light-gray {
   background: var(--neutral-gray-gray-50);
   border-color: var(--neutral-gray-gray-300);
@@ -173,6 +173,7 @@
   transform: var(--transform-scale-up);
 }
 
+/* Filled variant hover states */
 .tag.blue.clickable:hover {
   background: var(--primary-blue-blue-600);
   border-color: var(--primary-blue-blue-600);
