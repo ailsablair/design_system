@@ -580,6 +580,249 @@ export const CompleteFigmaShowcase: Story = {
           </div>
         </div>
 
+        {/* Tags Components Section */}
+        <div style={{ marginBottom: '64px' }}>
+          <h2 style={{
+            fontSize: '24px',
+            fontWeight: '500',
+            color: 'var(--base-black)',
+            marginBottom: '24px',
+            paddingBottom: '8px',
+            borderBottom: '1px solid var(--neutral-gray-gray-200)'
+          }}>
+            Tag Components
+          </h2>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '32px',
+            alignItems: 'start'
+          }}>
+            {/* All Colors */}
+            <div>
+              <h3 style={{
+                fontSize: '18px',
+                fontWeight: '500',
+                color: 'var(--secondary-blue-gray)',
+                marginBottom: '20px'
+              }}>
+                All Color Variants
+              </h3>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
+                {['light-gray', 'primary', 'secondary', 'blue', 'cyan', 'orange', 'gray', 'purple', 'green', 'red', 'yellow', 'black'].map(color => (
+                  <Tag key={color} label={color.charAt(0).toUpperCase() + color.slice(1)} variant={color as any} />
+                ))}
+              </div>
+            </div>
+
+            {/* Without Close Buttons */}
+            <div>
+              <h3 style={{
+                fontSize: '18px',
+                fontWeight: '500',
+                color: 'var(--secondary-blue-gray)',
+                marginBottom: '20px'
+              }}>
+                Without Close Buttons
+              </h3>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
+                {['blue', 'cyan', 'orange', 'gray', 'purple', 'green', 'red', 'yellow', 'black'].map(color => (
+                  <Tag key={color} label={color.charAt(0).toUpperCase() + color.slice(1)} variant={color as any} showClose={false} />
+                ))}
+              </div>
+            </div>
+
+            {/* Size Variants */}
+            <div>
+              <h3 style={{
+                fontSize: '18px',
+                fontWeight: '500',
+                color: 'var(--secondary-blue-gray)',
+                marginBottom: '20px'
+              }}>
+                Size Variants
+              </h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {['small', 'default', 'large'].map(size => (
+                  <div key={size} style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                    <span style={{ minWidth: '60px', fontSize: '12px', color: '#666', textTransform: 'capitalize' }}>{size}:</span>
+                    <Tag label="Blue" variant="blue" size={size as any} />
+                    <Tag label="Green" variant="green" size={size as any} />
+                    <Tag label="Red" variant="red" size={size as any} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Badge Components Section */}
+        <div style={{ marginBottom: '64px' }}>
+          <h2 style={{
+            fontSize: '24px',
+            fontWeight: '500',
+            color: 'var(--base-black)',
+            marginBottom: '24px',
+            paddingBottom: '8px',
+            borderBottom: '1px solid var(--neutral-gray-gray-200)'
+          }}>
+            Badge Components
+          </h2>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '32px',
+            alignItems: 'start'
+          }}>
+            {/* Dot Badges */}
+            <div>
+              <h3 style={{
+                fontSize: '18px',
+                fontWeight: '500',
+                color: 'var(--secondary-blue-gray)',
+                marginBottom: '20px'
+              }}>
+                Notification Dots
+              </h3>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', alignItems: 'center' }}>
+                {['blue', 'cyan', 'orange', 'gray', 'purple', 'green', 'red', 'yellow', 'black'].map(color => (
+                  <div key={color} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+                    <Badge variant="dot" color={color as any} size="medium" />
+                    <span style={{ fontSize: '10px', color: '#666' }}>{color}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Count Badges */}
+            <div>
+              <h3 style={{
+                fontSize: '18px',
+                fontWeight: '500',
+                color: 'var(--secondary-blue-gray)',
+                marginBottom: '20px'
+              }}>
+                Count Badges
+              </h3>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', alignItems: 'center' }}>
+                <Badge variant="count" color="red" size="small" count={3} />
+                <Badge variant="count" color="blue" size="medium" count={12} />
+                <Badge variant="count" color="green" size="large" count={99} />
+                <Badge variant="count" color="orange" size="medium" count={150} maxCount={99} />
+              </div>
+            </div>
+
+            {/* Badge Sizes */}
+            <div>
+              <h3 style={{
+                fontSize: '18px',
+                fontWeight: '500',
+                color: 'var(--secondary-blue-gray)',
+                marginBottom: '20px'
+              }}>
+                Size Comparison
+              </h3>
+              <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+                  <Badge variant="dot" color="blue" size="small" />
+                  <span style={{ fontSize: '10px', color: '#666' }}>Small</span>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+                  <Badge variant="dot" color="blue" size="medium" />
+                  <span style={{ fontSize: '10px', color: '#666' }}>Medium</span>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+                  <Badge variant="dot" color="blue" size="large" />
+                  <span style={{ fontSize: '10px', color: '#666' }}>Large</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* InputNumbers Components Section */}
+        <div style={{ marginBottom: '64px' }}>
+          <h2 style={{
+            fontSize: '24px',
+            fontWeight: '500',
+            color: 'var(--base-black)',
+            marginBottom: '24px',
+            paddingBottom: '8px',
+            borderBottom: '1px solid var(--neutral-gray-gray-200)'
+          }}>
+            Input Numbers Components
+          </h2>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '32px',
+            alignItems: 'start'
+          }}>
+            {/* Default Type */}
+            <div>
+              <h3 style={{
+                fontSize: '18px',
+                fontWeight: '500',
+                color: 'var(--secondary-blue-gray)',
+                marginBottom: '20px'
+              }}>
+                Default Type - All Sizes
+              </h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <InputNumbers type="default" size="small" value={1} />
+                <InputNumbers type="default" size="default" value={5} />
+                <InputNumbers type="default" size="large" value={10} />
+              </div>
+            </div>
+
+            {/* Simple Type */}
+            <div>
+              <h3 style={{
+                fontSize: '18px',
+                fontWeight: '500',
+                color: 'var(--secondary-blue-gray)',
+                marginBottom: '20px'
+              }}>
+                Simple Type - All Sizes
+              </h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <InputNumbers type="simple" size="small" value={2} />
+                <InputNumbers type="simple" size="default" value={7} />
+                <InputNumbers type="simple" size="large" value={15} />
+              </div>
+            </div>
+
+            {/* Different States */}
+            <div>
+              <h3 style={{
+                fontSize: '18px',
+                fontWeight: '500',
+                color: 'var(--secondary-blue-gray)',
+                marginBottom: '20px'
+              }}>
+                Component States
+              </h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div>
+                  <h4 style={{ fontSize: '14px', fontWeight: '500', color: '#666', margin: '0 0 8px 0' }}>Default State</h4>
+                  <InputNumbers type="default" size="default" value={3} />
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '14px', fontWeight: '500', color: '#666', margin: '0 0 8px 0' }}>Disabled State</h4>
+                  <InputNumbers type="default" size="default" value={3} disabled={true} />
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '14px', fontWeight: '500', color: '#666', margin: '0 0 8px 0' }}>With Custom Range</h4>
+                  <InputNumbers type="default" size="default" value={50} min={0} max={100} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Date/Time Input Components Section */}
         <div style={{ marginBottom: '64px' }}>
           <h2 style={{
