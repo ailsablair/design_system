@@ -27,6 +27,7 @@ export const Badge: React.FC<BadgeProps> = ({
   count = 0,
   maxCount = 99,
   show = true,
+  light = false,
   className = '',
 }) => {
   if (!show) return null;
