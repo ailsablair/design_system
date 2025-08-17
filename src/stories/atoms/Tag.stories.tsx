@@ -32,16 +32,11 @@ const meta: Meta<typeof Tag> = {
       control: { type: 'boolean' },
       description: 'Disabled state',
     },
-    light: {
-      control: { type: 'boolean' },
-      description: 'Light style variant (for outline/light background style)',
-    },
   },
   args: {
     label: 'Label',
     showClose: true,
     disabled: false,
-    light: false,
     size: 'default',
     variant: 'light-gray',
   },
