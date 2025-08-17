@@ -4,7 +4,7 @@ import { Slider } from '../atoms/Slider';
 import { DateTimeInput } from '../atoms/DateTimeInput';
 
 const meta: Meta = {
-  title: 'Design System/Figma Design Showcase',
+  title: 'Design System/Figma Implementation Showcase',
   parameters: {
     layout: 'fullscreen',
     docs: {
