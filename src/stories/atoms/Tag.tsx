@@ -10,6 +10,8 @@ export interface TagProps {
   variant?: 'light-gray' | 'primary' | 'secondary' | 'blue' | 'cyan' | 'orange' | 'gray' | 'purple' | 'green' | 'red' | 'yellow' | 'black';
   /** Show close button */
   showClose?: boolean;
+  /** Light style variant (for outline/light background style) */
+  light?: boolean;
   /** Disabled state */
   disabled?: boolean;
   /** Additional CSS classes */
