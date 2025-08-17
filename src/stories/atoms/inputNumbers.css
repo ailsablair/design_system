@@ -222,6 +222,7 @@
 
 .input-numbers-button:active:not(:disabled) {
   transform: scale(0.95);
+  transform-origin: center;
 }
 
 /* Value Display */
