@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Toggle } from '../atoms/Toggle';
 import { Slider } from '../atoms/Slider';
+import { DateTimeInput } from '../atoms/DateTimeInput';
 
 const meta: Meta = {
   title: 'Design System/Figma Design Showcase',
@@ -8,7 +9,7 @@ const meta: Meta = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Complete showcase of UI elements exactly as shown in the Figma design. Features toggle components with labels and progressive slider displays.',
+        component: 'Complete showcase of UI elements exactly as shown in the Figma design. Features toggle components with labels, progressive slider displays, and comprehensive date/time input components.',
       },
     },
   },
