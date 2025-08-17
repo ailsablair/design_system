@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Slider } from './Slider';
 
 const meta: Meta<typeof Slider> = {
-  title: 'Design System/Progressive Slider',
+  title: 'Design System/Atoms/Progressive Slider',
   component: Slider,
   parameters: {
     layout: 'centered',
@@ -56,11 +56,12 @@ const SliderRow = ({
   }
   
   return (
-    <div style={{ 
-      display: 'flex', 
+    <div style={{
+      display: 'flex',
       alignItems: 'flex-end',
-      gap: '0px',
-      width: 'fit-content'
+      gap: '2px',
+      width: 'fit-content',
+      marginBottom: '8px'
     }}>
       {sliders}
     </div>
