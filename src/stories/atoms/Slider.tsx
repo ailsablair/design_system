@@ -61,10 +61,15 @@ export const Slider: React.FC<SliderProps> = ({
   'aria-label': ariaLabel,
 }) => {
   const sliderId = id || `slider-${Math.random().toString(36).substring(2, 11)}`;
+  const [sliderValue, setSliderValue] = React.useState(value);
   
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (!disabled && onChange) {
-      onChange(event);
+    if (!disabled) {
+      const newValue = parseFloat(event.target.value);
+      setSliderValue(newValue);
+      if (onChange) {
+        onChange(event);
+      }
     }
   };
 
@@ -74,8 +79,21 @@ export const Slider: React.FC<SliderProps> = ({
     }
   };
 
+  const handleDotClick = (dotValue: number) => {
+    if (!disabled) {
+      setSliderValue(dotValue);
+      // Create a synthetic event for onChange
+      const event = {
+        target: { value: dotValue.toString() }
+      } as React.ChangeEvent<HTMLInputElement>;
+      if (onChange) {
+        onChange(event);
+      }
+    }
+  };
+
   // Calculate percentage for styling
-  const percentage = ((value - min) / (max - min)) * 100;
+  const percentage = ((sliderValue - min) / (max - min)) * 100;
 
   return (
     <div className={`slider-container ${size} ${filled ? 'filled' : 'unfilled'} ${disabled ? 'disabled' : ''} ${className}`}>
@@ -84,11 +102,18 @@ export const Slider: React.FC<SliderProps> = ({
           <span className={`number-text ${size} ${filled ? 'filled' : 'unfilled'}`}>
             {startValue}
           </span>
-          <div className={`number-dot start ${size}`}></div>
+          <button
+            type="button"
+            className={`number-dot start ${size} ${disabled ? 'disabled' : ''}`}
+            onClick={() => handleDotClick(min)}
+            disabled={disabled}
+            aria-label={`Set slider to ${startValue}`}
+          />
         </div>
       )}
       
       <div className={`slider-track-container ${size}`}>
+        <div className={`slider-track ${size} ${filled ? 'filled' : 'unfilled'}`}></div>
         <input
           id={sliderId}
           type="range"
@@ -96,19 +121,13 @@ export const Slider: React.FC<SliderProps> = ({
           min={min}
           max={max}
           step={step}
-          value={value}
+          value={sliderValue}
           disabled={disabled}
           onChange={handleChange}
           onInput={handleInput}
           className={`slider-input ${size} ${filled ? 'filled' : 'unfilled'}`}
           aria-label={ariaLabel}
-          style={{
-            background: filled 
-              ? `linear-gradient(to right, var(--primary-sky-blue-800) ${percentage}%, var(--neutral-gray-gray-200) ${percentage}%)`
-              : undefined
-          }}
         />
-        <div className={`slider-track ${size} ${filled ? 'filled' : 'unfilled'}`}></div>
       </div>
       
       {showEnd && showNumber && (
@@ -116,7 +135,13 @@ export const Slider: React.FC<SliderProps> = ({
           <span className={`number-text ${size} ${filled ? 'filled' : 'unfilled'}`}>
             {endValue}
           </span>
-          <div className={`number-dot end ${size}`}></div>
+          <button
+            type="button"
+            className={`number-dot end ${size} ${disabled ? 'disabled' : ''}`}
+            onClick={() => handleDotClick(max)}
+            disabled={disabled}
+            aria-label={`Set slider to ${endValue}`}
+          />
         </div>
       )}
     </div>
