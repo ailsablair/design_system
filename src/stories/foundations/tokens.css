@@ -262,6 +262,55 @@
   --status-green-800: #166534;
   --status-green-900: #14532D;
 
+  /* === FUNCTIONAL COLOR PALETTES === */
+  /* Functional Orange Palette */
+  --functional-orange-orange-50: #FFF7ED;
+  --functional-orange-orange-100: #FFEDD5;
+  --functional-orange-orange-200: #FED7AA;
+  --functional-orange-orange-300: #FDBA74;
+  --functional-orange-orange-400: #FB923C;
+  --functional-orange-orange-500: #F97316;
+  --functional-orange-orange-600: #EA580C;
+  --functional-orange-orange-700: #C2410C;
+  --functional-orange-orange-800: #9A3412;
+  --functional-orange-orange-900: #7C2D12;
+
+  /* Functional Green Palette */
+  --functional-green-green-50: #F0FDF4;
+  --functional-green-green-100: #DCFCE7;
+  --functional-green-green-200: #BBF7D0;
+  --functional-green-green-300: #86EFAC;
+  --functional-green-green-400: #4ADE80;
+  --functional-green-green-500: #22C55E;
+  --functional-green-green-600: #16A34A;
+  --functional-green-green-700: #15803D;
+  --functional-green-green-800: #166534;
+  --functional-green-green-900: #14532D;
+
+  /* Functional Red Palette */
+  --functional-red-red-50: #FEF2F2;
+  --functional-red-red-100: #FEE2E2;
+  --functional-red-red-200: #FECACA;
+  --functional-red-red-300: #FCA5A5;
+  --functional-red-red-400: #F87171;
+  --functional-red-red-500: #EF4444;
+  --functional-red-red-600: #DC2626;
+  --functional-red-red-700: #B91C1C;
+  --functional-red-red-800: #991B1B;
+  --functional-red-red-900: #7F1D1D;
+
+  /* Functional Yellow Palette */
+  --functional-yellow-yellow-50: #FEFCE8;
+  --functional-yellow-yellow-100: #FEF9C3;
+  --functional-yellow-yellow-200: #FEF08A;
+  --functional-yellow-yellow-300: #FDE047;
+  --functional-yellow-yellow-400: #FACC15;
+  --functional-yellow-yellow-500: #EAB308;
+  --functional-yellow-yellow-600: #CA8A04;
+  --functional-yellow-yellow-700: #A16207;
+  --functional-yellow-yellow-800: #854D0E;
+  --functional-yellow-yellow-900: #713F12;
+
   /* === TYPOGRAPHY TOKENS === */
   --type-typeface-archivo: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --type-typeface-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
