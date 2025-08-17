@@ -152,6 +152,13 @@ export const InputNumbers: React.FC<InputNumbersProps> = ({
     setIsPressed(state === 'pressed');
   }, [state]);
 
+  // Sync internal value with prop value to prevent conflicts
+  React.useEffect(() => {
+    if (value !== undefined && value !== internalValue) {
+      setInternalValue(value);
+    }
+  }, [value, internalValue]);
+
   const currentValue = value !== undefined ? value : internalValue;
   const isAtMin = currentValue <= min;
   const isAtMax = currentValue >= max;
