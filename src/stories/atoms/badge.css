@@ -8,6 +8,7 @@
   box-sizing: border-box;
   position: relative;
   flex-shrink: 0;
+  transition: all var(--transition-fast);
 }
 
 /* Dot variant */
@@ -72,7 +73,7 @@
   font-size: var(--type-archivo-label);
 }
 
-/* Color variants - Primary colors */
+/* Color variants - Primary colors (matching Figma) */
 .badge.blue {
   background-color: var(--primary-blue-blue-500);
 }
@@ -85,7 +86,7 @@
   background-color: var(--primary-purple-500);
 }
 
-/* Color variants - Functional colors */
+/* Color variants - Functional colors (matching Figma) */
 .badge.orange {
   background-color: var(--functional-orange-orange-500);
 }
@@ -99,10 +100,10 @@
 }
 
 .badge.yellow {
-  background-color: var(--functional-yellow-yellow-500);
+  background-color: var(--functional-yellow-yellow-400);
 }
 
-/* Color variants - Neutral colors */
+/* Color variants - Neutral colors (matching Figma) */
 .badge.gray {
   background-color: var(--neutral-gray-gray-500);
 }
@@ -111,7 +112,7 @@
   background-color: var(--base-black);
 }
 
-/* Light variants for dots when needed */
+/* Light variants for dots when needed (from Figma light colors) */
 .badge.dot.blue.light {
   background-color: var(--primary-blue-blue-100);
 }
@@ -144,9 +145,24 @@
   background-color: var(--neutral-gray-gray-200);
 }
 
+/* Additional sizes for dots to match Figma */
+.badge.dot.xs {
+  width: var(--spacing-sizing-4px);
+  height: var(--spacing-sizing-4px);
+}
+
+.badge.dot.xl {
+  width: var(--spacing-sizing-16px);
+  height: var(--spacing-sizing-16px);
+}
+
+.badge.dot.xxl {
+  width: var(--spacing-sizing-20px);
+  height: var(--spacing-sizing-20px);
+}
+
 /* Animation for appearing/disappearing */
 .badge {
-  transition: all var(--transition-fast);
   opacity: var(--opacity-full);
   transform: var(--transform-scale-1);
 }
@@ -173,4 +189,41 @@
 
 .badge.interactive:active {
   transform: var(--transform-scale-down);
+}
+
+/* Specific hover states for each color */
+.badge.blue.interactive:hover {
+  background-color: var(--primary-blue-blue-600);
+}
+
+.badge.cyan.interactive:hover {
+  background-color: var(--primary-sky-blue-600);
+}
+
+.badge.purple.interactive:hover {
+  background-color: var(--primary-purple-600);
+}
+
+.badge.orange.interactive:hover {
+  background-color: var(--functional-orange-orange-600);
+}
+
+.badge.green.interactive:hover {
+  background-color: var(--functional-green-green-600);
+}
+
+.badge.red.interactive:hover {
+  background-color: var(--functional-red-red-600);
+}
+
+.badge.yellow.interactive:hover {
+  background-color: var(--functional-yellow-yellow-500);
+}
+
+.badge.gray.interactive:hover {
+  background-color: var(--neutral-gray-gray-600);
+}
+
+.badge.black.interactive:hover {
+  opacity: var(--opacity-high);
 }
