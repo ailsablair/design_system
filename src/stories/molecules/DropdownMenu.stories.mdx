@@ -1,0 +1,197 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { DropdownMenu } from './DropdownMenu';
+
+<Meta title="Molecules/DropdownMenu/Documentation" />
+
+# Dropdown Menu Components
+
+The dropdown menu system consists of two main components that work together to create flexible, accessible menu interfaces.
+
+## Components Overview
+
+### MenuItem (Atom)
+The base building block for individual menu items. Supports icons, labels, different states, and accessibility features.
+
+### DropdownMenu (Molecule)
+A container component that organizes multiple MenuItems into a cohesive dropdown interface with proper spacing, borders, and shadows.
+
+## Live Examples
+
+### Basic Menu
+
+<Canvas>
+  <Story name="Basic Menu Example">
+    <DropdownMenu 
+      items={[
+        { label: 'Menu item', showLeadingIcon: true },
+        { label: 'Menu item', showLeadingIcon: true },
+        { label: 'Menu item', showLeadingIcon: true },
+        { label: 'Menu item', showLeadingIcon: true },
+      ]} 
+      size="default" 
+      type="default" 
+    />
+  </Story>
+</Canvas>
+
+### Submenu with Back Navigation
+
+<Canvas>
+  <Story name="Submenu Example">
+    <DropdownMenu 
+      items={[
+        { label: 'Back', type: 'back', showLeadingIcon: true },
+        { label: 'Submenu item', showLeadingIcon: true, state: 'hover' },
+        { label: 'Submenu item', showLeadingIcon: true },
+        { label: 'Submenu item', showLeadingIcon: true },
+      ]} 
+      size="default" 
+      type="submenu" 
+    />
+  </Story>
+</Canvas>
+
+### Size Variations
+
+<Canvas>
+  <Story name="Size Variations">
+    <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+      <div>
+        <h4 style={{ margin: '0 0 8px 0', fontSize: '12px', color: '#666' }}>Small</h4>
+        <DropdownMenu 
+          items={[
+            { label: 'Menu item', showLeadingIcon: true },
+            { label: 'Menu item', showLeadingIcon: true },
+            { label: 'Menu item', showLeadingIcon: true },
+          ]} 
+          size="small" 
+        />
+      </div>
+      <div>
+        <h4 style={{ margin: '0 0 8px 0', fontSize: '12px', color: '#666' }}>Default</h4>
+        <DropdownMenu 
+          items={[
+            { label: 'Menu item', showLeadingIcon: true },
+            { label: 'Menu item', showLeadingIcon: true },
+            { label: 'Menu item', showLeadingIcon: true },
+          ]} 
+          size="default" 
+        />
+      </div>
+      <div>
+        <h4 style={{ margin: '0 0 8px 0', fontSize: '12px', color: '#666' }}>Large</h4>
+        <DropdownMenu 
+          items={[
+            { label: 'Menu item', showLeadingIcon: true },
+            { label: 'Menu item', showLeadingIcon: true },
+            { label: 'Menu item', showLeadingIcon: true },
+          ]} 
+          size="large" 
+        />
+      </div>
+    </div>
+  </Story>
+</Canvas>
+
+## Features
+
+- **Multiple Sizes**: Small, default, and large variants
+- **Menu Types**: Regular menus and submenus with back navigation
+- **Interactive States**: Default, hover, focus, active, and disabled
+- **Accessibility**: Full keyboard navigation and screen reader support
+- **Responsive Design**: Adapts to different screen sizes
+- **Customizable**: Support for custom icons and styling
+
+## Design Specifications
+
+Based on the Figma designs, the dropdown menus follow these specifications:
+
+### Dimensions
+- **Small**: 32px height per item, 4px border radius
+- **Default**: 44px height per item, 6px border radius  
+- **Large**: 52px height per item, 8px border radius
+
+### Spacing
+- **Small**: 8px internal padding, 8px icon gap
+- **Default**: 8px vertical, 12px horizontal padding, 8px icon gap
+- **Large**: 8px vertical, 12px horizontal padding, 12px icon gap
+
+### Typography
+- **Small**: 14px Roboto Flex, 16px line height
+- **Default**: 16px Roboto Flex, 20px line height
+- **Large**: 18px Roboto Flex, 22px line height
+
+### Colors
+- **Background**: White (#FFFFFF)
+- **Text**: Black (#1C1C1C)
+- **Icons**: Gray (#6D7280)
+- **Borders**: Light gray (#D2D5DA)
+- **Hover**: Light gray background (#F9FAFB)
+
+## Best Practices
+
+### When to Use
+- **Navigation menus**: Primary and secondary navigation
+- **Context menus**: Right-click or action-triggered menus
+- **Select dropdowns**: Custom dropdown selectors
+- **Action menus**: Lists of available actions
+
+### Accessibility Guidelines
+- Always provide proper ARIA labels and roles
+- Ensure keyboard navigation works (arrow keys, Enter, Escape)
+- Maintain proper focus management
+- Use appropriate color contrast ratios
+- Provide clear visual focus indicators
+
+### Layout Considerations
+- Position menus to avoid viewport overflow
+- Consider mobile responsiveness
+- Use appropriate z-index for overlay positioning
+- Maintain consistent spacing and alignment
+
+## API Reference
+
+### MenuItem Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `label` | `string` | - | Menu item text label |
+| `size` | `'small' \| 'default' \| 'large'` | `'default'` | Size variant |
+| `position` | `'top' \| 'default' \| 'bottom' \| 'submenu-top'` | `'default'` | Position in menu |
+| `type` | `'simple' \| 'back' \| 'section' \| 'sub-section'` | `'simple'` | Item type |
+| `state` | `'default' \| 'hover' \| 'focus' \| 'active' \| 'disabled'` | `'default'` | Visual state |
+| `showLeadingIcon` | `boolean` | `true` | Show leading icon |
+| `icon` | `React.ReactNode` | - | Custom icon element |
+| `disabled` | `boolean` | `false` | Disabled state |
+| `onClick` | `() => void` | - | Click handler |
+
+### DropdownMenu Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `items` | `MenuItemProps[]` | - | Array of menu items |
+| `size` | `'small' \| 'default' \| 'large'` | `'default'` | Size variant |
+| `type` | `'default' \| 'submenu' \| 'sectioned' \| 'sectioned-submenu'` | `'default'` | Menu type |
+| `width` | `number` | `276` | Menu width in pixels |
+| `isVisible` | `boolean` | `true` | Visibility state |
+| `position` | `object` | - | Absolute positioning |
+| `onClose` | `() => void` | - | Close handler |
+| `onItemClick` | `(index, item) => void` | - | Item click handler |
+
+## Implementation Notes
+
+### State Management
+- Use controlled components for complex interactions
+- Implement proper state lifting for parent-child communication
+- Handle keyboard events at the menu level
+
+### Performance
+- Use React.memo for menu items when dealing with large lists
+- Implement virtualization for extremely long menus
+- Optimize re-renders with proper key props
+
+### Testing
+- Test keyboard navigation thoroughly
+- Verify screen reader compatibility
+- Test on various screen sizes and devices
+- Validate focus management and escape handling
