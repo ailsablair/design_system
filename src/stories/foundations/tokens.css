@@ -156,6 +156,18 @@
   --primary-yellow-950: #422006;
   --primary-yellow-975: #2A1404;
 
+  /* === PRIMARY PURPLE PALETTE === */
+  --primary-purple-50: #FAF5FF;
+  --primary-purple-100: #F3E8FF;
+  --primary-purple-200: #E9D5FF;
+  --primary-purple-300: #D8B4FE;
+  --primary-purple-400: #C084FC;
+  --primary-purple-500: #A855F7;
+  --primary-purple-600: #9333EA;
+  --primary-purple-700: #7C3AED;
+  --primary-purple-800: #6B21A8;
+  --primary-purple-900: #581C87;
+
   /* === PRIMARY SEAFOAM GREEN PALETTE === */
   --primary-seafoam-25: #F7FBF9;
   --primary-seafoam-50: #EFF7F3;
