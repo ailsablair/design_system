@@ -1,3 +1,5 @@
+@import '../foundations/tokens.css';
+
 /* Slider Container */
 .slider-container {
   display: flex;
@@ -39,6 +41,7 @@
   letter-spacing: var(--type-letter-spacing-archivo-label-sm);
   color: var(--base-black);
   text-align: center;
+  margin: 0;
 }
 
 .number-text.filled {
@@ -49,10 +52,29 @@
   font-weight: var(--type-weight-light);
 }
 
-/* Number Dots */
+/* Number Dots - Now clickable buttons */
 .number-dot {
+  border: none;
+  padding: 0;
   border-radius: var(--spacing-radius-full);
   background: var(--primary-sky-blue-500);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.number-dot:hover:not(.disabled) {
+  background: var(--primary-sky-blue-600);
+  transform: var(--transform-scale-up);
+}
+
+.number-dot:active:not(.disabled) {
+  background: var(--primary-sky-blue-700);
+  transform: var(--transform-scale-down);
+}
+
+.number-dot.disabled {
+  background: var(--neutral-gray-gray-400);
+  cursor: not-allowed;
 }
 
 .number-dot.small {
@@ -74,6 +96,7 @@
 .slider-track-container {
   position: relative;
   flex: 1;
+  min-width: 100px;
 }
 
 .slider-track-container.small {
@@ -93,7 +116,8 @@
   width: 100%;
   border-radius: var(--spacing-radius-2px);
   position: absolute;
-  top: var(--spacing-sizing-0);
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .slider-track.small {
@@ -119,7 +143,7 @@
   background: var(--neutral-gray-gray-200);
 }
 
-/* Slider Input */
+/* Slider Input - Hidden native slider */
 .slider-input {
   -webkit-appearance: none;
   appearance: none;
@@ -130,8 +154,11 @@
   border: none;
   cursor: pointer;
   border-radius: inherit;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: var(--z-index-10);
+  opacity: 0; /* Hide the default slider appearance */
 }
 
 .slider-input.small {
@@ -150,119 +177,45 @@
   cursor: not-allowed;
 }
 
-/* Webkit Slider Thumb */
+/* Remove all native slider styling */
 .slider-input::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: var(--sizing-slider-thumb-small);
-  height: var(--sizing-slider-thumb-small);
-  border-radius: var(--spacing-radius-full);
-  background: var(--primary-sky-blue-500);
-  cursor: pointer;
+  width: 0;
+  height: 0;
+  background: transparent;
   border: none;
-  transition: var(--transition-normal);
+  cursor: pointer;
 }
 
-.slider-input.default::-webkit-slider-thumb {
-  width: var(--sizing-slider-thumb-default);
-  height: var(--sizing-slider-thumb-default);
-}
-
-.slider-input.large::-webkit-slider-thumb {
-  width: var(--sizing-slider-thumb-large);
-  height: var(--sizing-slider-thumb-large);
-}
-
-.slider-input::-webkit-slider-thumb:hover {
-  background: var(--primary-sky-blue-600);
-  transform: var(--transform-scale-up);
-}
-
-.slider-input::-webkit-slider-thumb:active {
-  background: var(--primary-sky-blue-700);
-  transform: var(--transform-scale-down);
-}
-
-.slider-input:disabled::-webkit-slider-thumb {
-  background: var(--neutral-gray-gray-400);
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* Firefox Slider Thumb */
 .slider-input::-moz-range-thumb {
-  width: var(--sizing-slider-thumb-small);
-  height: var(--sizing-slider-thumb-small);
-  border-radius: var(--spacing-radius-full);
-  background: var(--primary-sky-blue-500);
+  width: 0;
+  height: 0;
+  background: transparent;
+  border: none;
   cursor: pointer;
+}
+
+.slider-input::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
   border: none;
-  transition: var(--transition-normal);
 }
 
-.slider-input.default::-moz-range-thumb {
-  width: var(--sizing-slider-thumb-default);
-  height: var(--sizing-slider-thumb-default);
-}
-
-.slider-input.large::-moz-range-thumb {
-  width: var(--sizing-slider-thumb-large);
-  height: var(--sizing-slider-thumb-large);
-}
-
-.slider-input::-moz-range-thumb:hover {
-  background: var(--primary-sky-blue-600);
-  transform: var(--transform-scale-up);
-}
-
-.slider-input::-moz-range-thumb:active {
-  background: var(--primary-sky-blue-700);
-  transform: var(--transform-scale-down);
-}
-
-.slider-input:disabled::-moz-range-thumb {
-  background: var(--neutral-gray-gray-400);
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* Firefox Slider Track */
 .slider-input::-moz-range-track {
-  width: 100%;
-  border-radius: var(--spacing-radius-2px);
-  background: var(--neutral-gray-gray-200);
+  background: transparent;
   border: none;
-}
-
-.slider-input.small::-moz-range-track {
-  height: var(--sizing-slider-track-small);
-}
-
-.slider-input.default::-moz-range-track {
-  height: var(--sizing-slider-track-default);
-}
-
-.slider-input.large::-moz-range-track {
-  height: var(--sizing-slider-track-large);
-  border-radius: var(--spacing-radius-full);
-}
-
-.slider-input.filled::-moz-range-track {
-  background: var(--primary-sky-blue-800);
 }
 
 /* Focus styles for accessibility */
 .slider-input:focus-visible {
   outline: var(--spacing-stroke-2px) solid var(--primary-sky-blue-500);
   outline-offset: var(--spacing-sizing-2px);
+  border-radius: var(--spacing-radius-2px);
 }
 
-.slider-input:focus-visible::-webkit-slider-thumb {
-  outline: var(--spacing-stroke-2px) solid var(--primary-sky-blue-500);
-  outline-offset: var(--spacing-sizing-2px);
-}
-
-.slider-input:focus-visible::-moz-range-thumb {
+.number-dot:focus-visible {
   outline: var(--spacing-stroke-2px) solid var(--primary-sky-blue-500);
   outline-offset: var(--spacing-sizing-2px);
 }
@@ -273,29 +226,16 @@
     border: var(--spacing-stroke-1px) solid var(--base-black);
   }
   
-  .slider-input::-webkit-slider-thumb {
-    border: var(--spacing-stroke-2px) solid var(--base-black);
-  }
-  
-  .slider-input::-moz-range-thumb {
+  .number-dot {
     border: var(--spacing-stroke-2px) solid var(--base-black);
   }
 }
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-  .slider-input::-webkit-slider-thumb,
-  .slider-input::-moz-range-thumb {
+  .number-dot {
     transition: none;
   }
-}
-
-/* Hide default track on WebKit browsers */
-.slider-input::-webkit-slider-runnable-track {
-  -webkit-appearance: none;
-  appearance: none;
-  background: transparent;
-  border: none;
 }
 
 /* Prevent text selection on slider */
