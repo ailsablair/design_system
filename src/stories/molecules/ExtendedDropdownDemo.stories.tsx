@@ -3,7 +3,7 @@ import React from 'react';
 import { DropdownMenu } from './DropdownMenu';
 
 const meta: Meta<typeof DropdownMenu> = {
-  title: 'Molecules/Extended Dropdown Menus',
+  title: 'Molecules/DropdownMenu/Extended Examples',
   component: DropdownMenu,
   parameters: {
     layout: 'centered',
