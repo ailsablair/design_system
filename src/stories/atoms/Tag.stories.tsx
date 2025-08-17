@@ -21,7 +21,7 @@ const meta: Meta<typeof Tag> = {
     },
     variant: {
       control: { type: 'select' },
-      options: ['light-gray', 'primary', 'secondary'],
+      options: ['light-gray', 'primary', 'secondary', 'blue', 'cyan', 'orange', 'gray', 'purple', 'green', 'red', 'yellow', 'black'],
       description: 'Color variant of the tag',
     },
     showClose: {
