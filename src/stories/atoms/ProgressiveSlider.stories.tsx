@@ -59,9 +59,9 @@ const SliderRow = ({
     <div style={{
       display: 'flex',
       alignItems: 'flex-end',
-      gap: '2px',
+      gap: '0px',
       width: 'fit-content',
-      marginBottom: '8px'
+      marginBottom: '12px'
     }}>
       {sliders}
     </div>
