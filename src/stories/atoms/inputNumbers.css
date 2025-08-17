@@ -263,17 +263,18 @@
 @media (max-width: 768px) {
   .input-numbers-wrapper {
     max-width: 100%;
+    contain: layout style;
   }
-  
+
   .input-numbers-container.default.default,
   .input-numbers-container.default.large {
-    width: 100%;
     min-width: 280px;
+    max-width: 100%;
   }
-  
+
   .input-numbers-container.default.small {
-    width: 100%;
     min-width: 260px;
+    max-width: 100%;
   }
 }
 
