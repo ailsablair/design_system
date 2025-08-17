@@ -45,6 +45,60 @@
   color: var(--base-white);
 }
 
+/* New color variants from Figma */
+.tag.blue {
+  background: var(--primary-blue-blue-100);
+  border-color: var(--primary-blue-blue-300);
+}
+
+.tag.cyan {
+  background: var(--primary-sky-blue-sky-blue-100, #e0f7ff);
+  border-color: var(--primary-sky-blue-sky-blue-300, #38bdf8);
+}
+
+.tag.orange {
+  background: var(--functional-orange-orange-100);
+  border-color: var(--functional-orange-orange-300);
+}
+
+.tag.gray {
+  background: var(--neutral-gray-gray-100);
+  border-color: var(--neutral-gray-gray-300);
+}
+
+.tag.purple {
+  background: var(--primary-purple-purple-100);
+  border-color: var(--primary-purple-purple-300);
+}
+
+.tag.green {
+  background: var(--functional-green-green-100);
+  border-color: var(--functional-green-green-300);
+}
+
+.tag.red {
+  background: var(--functional-red-red-100);
+  border-color: var(--functional-red-red-300);
+}
+
+.tag.yellow {
+  background: var(--functional-yellow-yellow-100);
+  border-color: var(--functional-yellow-yellow-300);
+}
+
+.tag.black {
+  background: var(--base-black);
+  border-color: var(--neutral-gray-gray-800);
+}
+
+.tag.black .tag-text {
+  color: var(--base-white);
+}
+
+.tag.black .tag-close-button {
+  color: var(--base-white);
+}
+
 .tag.clickable {
   cursor: pointer;
 }
@@ -58,6 +112,42 @@
 }
 
 .tag.secondary.clickable:hover {
+  opacity: 0.9;
+}
+
+.tag.blue.clickable:hover {
+  background: var(--primary-blue-blue-200);
+}
+
+.tag.cyan.clickable:hover {
+  background: var(--primary-sky-blue-sky-blue-200, #bae6fd);
+}
+
+.tag.orange.clickable:hover {
+  background: var(--functional-orange-orange-200);
+}
+
+.tag.gray.clickable:hover {
+  background: var(--neutral-gray-gray-200);
+}
+
+.tag.purple.clickable:hover {
+  background: var(--primary-purple-purple-200);
+}
+
+.tag.green.clickable:hover {
+  background: var(--functional-green-green-200);
+}
+
+.tag.red.clickable:hover {
+  background: var(--functional-red-red-200);
+}
+
+.tag.yellow.clickable:hover {
+  background: var(--functional-yellow-yellow-200);
+}
+
+.tag.black.clickable:hover {
   opacity: 0.9;
 }
 
