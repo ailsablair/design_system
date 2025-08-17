@@ -1,0 +1,159 @@
+@import '../foundations/tokens.css';
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Dot variant */
+.badge.dot {
+  border: none;
+}
+
+.badge.dot.small {
+  width: 6px;
+  height: 6px;
+}
+
+.badge.dot.medium {
+  width: 8px;
+  height: 8px;
+}
+
+.badge.dot.large {
+  width: 12px;
+  height: 12px;
+}
+
+/* Count variant */
+.badge.count {
+  min-width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  padding: 0 var(--spacing-sizing-4px);
+  border: 2px solid var(--base-white);
+}
+
+.badge.count.small {
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  padding: 0 var(--spacing-sizing-2px);
+}
+
+.badge.count.large {
+  min-width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  padding: 0 var(--spacing-sizing-6px);
+}
+
+/* Badge count text */
+.badge-count {
+  font-family: var(--type-typeface-archivo);
+  font-weight: var(--type-weight-medium);
+  font-size: var(--type-archivo-label-sm);
+  line-height: 1;
+  color: var(--base-white);
+  text-align: center;
+}
+
+.badge.count.small .badge-count {
+  font-size: 10px;
+}
+
+.badge.count.large .badge-count {
+  font-size: var(--type-archivo-label);
+}
+
+/* Color variants */
+.badge.blue {
+  background-color: var(--primary-blue-blue-500);
+}
+
+.badge.cyan {
+  background-color: var(--primary-sky-blue-sky-blue);
+}
+
+.badge.orange {
+  background-color: var(--functional-orange-orange-500);
+}
+
+.badge.gray {
+  background-color: var(--neutral-gray-gray-500);
+}
+
+.badge.purple {
+  background-color: var(--primary-purple-purple-500);
+}
+
+.badge.green {
+  background-color: var(--functional-green-green-500);
+}
+
+.badge.red {
+  background-color: var(--functional-red-red-500);
+}
+
+.badge.yellow {
+  background-color: var(--functional-yellow-yellow-500);
+}
+
+.badge.black {
+  background-color: var(--base-black);
+}
+
+/* Light variants for dots when needed */
+.badge.dot.blue.light {
+  background-color: var(--primary-blue-blue-100);
+}
+
+.badge.dot.cyan.light {
+  background-color: var(--primary-sky-blue-sky-blue-100, #e0f7ff);
+}
+
+.badge.dot.orange.light {
+  background-color: var(--functional-orange-orange-100);
+}
+
+.badge.dot.gray.light {
+  background-color: var(--neutral-gray-gray-200);
+}
+
+.badge.dot.purple.light {
+  background-color: var(--primary-purple-purple-100);
+}
+
+.badge.dot.green.light {
+  background-color: var(--functional-green-green-100);
+}
+
+.badge.dot.red.light {
+  background-color: var(--functional-red-red-100);
+}
+
+.badge.dot.yellow.light {
+  background-color: var(--functional-yellow-yellow-100);
+}
+
+/* Animation for appearing/disappearing */
+.badge {
+  transition: all var(--transition-fast);
+  opacity: 1;
+  transform: scale(1);
+}
+
+.badge:not(.show) {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+/* Focus styles for accessibility */
+.badge:focus-visible {
+  outline: 2px solid var(--primary-blue-blue-500);
+  outline-offset: 2px;
+}
