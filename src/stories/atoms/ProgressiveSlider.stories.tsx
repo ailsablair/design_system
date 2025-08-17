@@ -59,11 +59,20 @@ const SliderRow = ({
     <div style={{
       display: 'flex',
       alignItems: 'flex-end',
-      gap: '0px',
       width: 'fit-content',
       marginBottom: '12px'
     }}>
-      {sliders}
+      {sliders.map((slider, index) => (
+        <div
+          key={index}
+          style={{
+            marginRight: index < sliders.length - 1 ? '-8px' : '0',
+            zIndex: sliders.length - index
+          }}
+        >
+          {slider}
+        </div>
+      ))}
     </div>
   );
 };
