@@ -51,6 +51,17 @@ window.addEventListener('unhandledrejection', (event) => {
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        order: [
+          'Design System',
+          'Foundations',
+          'Atoms',
+          'Molecules',
+          '*' // Everything else
+        ],
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
