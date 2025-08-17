@@ -2,6 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Toggle } from '../atoms/Toggle';
 import { Slider } from '../atoms/Slider';
 import { DateTimeInput } from '../atoms/DateTimeInput';
+import { Tag } from '../atoms/Tag';
+import { Badge } from '../atoms/Badge';
+import { InputNumbers } from '../atoms/InputNumbers';
 
 const meta: Meta = {
   title: 'Foundations/Figma Implementation Showcase',
@@ -493,7 +496,7 @@ export const CompleteFigmaShowcase: Story = {
             fontWeight: '300',
             margin: 0
           }}>
-            All UI components as designed in Figma - Toggles, Sliders, and Date/Time Inputs
+            All UI components as designed in Figma - Toggles, Sliders, Date/Time Inputs, Tags, Badges, and Input Numbers
           </p>
         </div>
 
