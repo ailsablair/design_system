@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { DateTimeInput } from './DateTimeInput';
 
 const meta: Meta<typeof DateTimeInput> = {
-  title: 'Design System/Atoms/DateTimeInput',
+  title: 'Atoms/DateTimeInput',
   component: DateTimeInput,
   parameters: {
     layout: 'centered',

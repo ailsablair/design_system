@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Slider } from './Slider';
 
 const meta: Meta<typeof Slider> = {
-  title: 'Design System/Atoms/Progressive Slider',
+  title: 'Atoms/Progressive Slider',
   component: Slider,
   parameters: {
     layout: 'centered',
