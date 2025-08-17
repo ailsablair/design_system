@@ -41,6 +41,7 @@ const meta: Meta<typeof Tag> = {
     label: 'Label',
     showClose: true,
     disabled: false,
+    light: false,
     size: 'default',
     variant: 'light-gray',
   },
