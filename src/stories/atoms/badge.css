@@ -4,9 +4,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: var(--spacing-radius-full);
   box-sizing: border-box;
   position: relative;
+  flex-shrink: 0;
 }
 
 /* Dot variant */
@@ -15,40 +16,40 @@
 }
 
 .badge.dot.small {
-  width: 6px;
-  height: 6px;
+  width: var(--spacing-sizing-6px);
+  height: var(--spacing-sizing-6px);
 }
 
 .badge.dot.medium {
-  width: 8px;
-  height: 8px;
+  width: var(--spacing-sizing-8px);
+  height: var(--spacing-sizing-8px);
 }
 
 .badge.dot.large {
-  width: 12px;
-  height: 12px;
+  width: var(--spacing-sizing-12px);
+  height: var(--spacing-sizing-12px);
 }
 
 /* Count variant */
 .badge.count {
-  min-width: 20px;
-  height: 20px;
-  border-radius: 10px;
+  min-width: var(--spacing-sizing-20px);
+  height: var(--spacing-sizing-20px);
+  border-radius: var(--spacing-radius-full);
   padding: 0 var(--spacing-sizing-4px);
-  border: 2px solid var(--base-white);
+  border: var(--spacing-stroke-2px) solid var(--base-white);
 }
 
 .badge.count.small {
-  min-width: 16px;
-  height: 16px;
-  border-radius: 8px;
+  min-width: var(--spacing-sizing-16px);
+  height: var(--spacing-sizing-16px);
+  border-radius: var(--spacing-radius-full);
   padding: 0 var(--spacing-sizing-2px);
 }
 
 .badge.count.large {
-  min-width: 24px;
-  height: 24px;
-  border-radius: 12px;
+  min-width: var(--spacing-sizing-24px);
+  height: var(--spacing-sizing-24px);
+  border-radius: var(--spacing-radius-full);
   padding: 0 var(--spacing-sizing-6px);
 }
 
@@ -60,17 +61,18 @@
   line-height: 1;
   color: var(--base-white);
   text-align: center;
+  white-space: nowrap;
 }
 
 .badge.count.small .badge-count {
-  font-size: 10px;
+  font-size: var(--type-size-xs);
 }
 
 .badge.count.large .badge-count {
   font-size: var(--type-archivo-label);
 }
 
-/* Color variants */
+/* Color variants - Primary colors */
 .badge.blue {
   background-color: var(--primary-blue-blue-500);
 }
@@ -79,16 +81,13 @@
   background-color: var(--primary-sky-blue-sky-blue);
 }
 
+.badge.purple {
+  background-color: var(--primary-purple-500);
+}
+
+/* Color variants - Functional colors */
 .badge.orange {
   background-color: var(--functional-orange-orange-500);
-}
-
-.badge.gray {
-  background-color: var(--neutral-gray-gray-500);
-}
-
-.badge.purple {
-  background-color: var(--primary-purple-purple-500);
 }
 
 .badge.green {
@@ -103,6 +102,11 @@
   background-color: var(--functional-yellow-yellow-500);
 }
 
+/* Color variants - Neutral colors */
+.badge.gray {
+  background-color: var(--neutral-gray-gray-500);
+}
+
 .badge.black {
   background-color: var(--base-black);
 }
@@ -113,19 +117,15 @@
 }
 
 .badge.dot.cyan.light {
-  background-color: var(--primary-sky-blue-sky-blue-100, #e0f7ff);
+  background-color: var(--primary-sky-blue-100);
+}
+
+.badge.dot.purple.light {
+  background-color: var(--primary-purple-100);
 }
 
 .badge.dot.orange.light {
   background-color: var(--functional-orange-orange-100);
-}
-
-.badge.dot.gray.light {
-  background-color: var(--neutral-gray-gray-200);
-}
-
-.badge.dot.purple.light {
-  background-color: var(--primary-purple-purple-100);
 }
 
 .badge.dot.green.light {
@@ -140,20 +140,37 @@
   background-color: var(--functional-yellow-yellow-100);
 }
 
+.badge.dot.gray.light {
+  background-color: var(--neutral-gray-gray-200);
+}
+
 /* Animation for appearing/disappearing */
 .badge {
   transition: all var(--transition-fast);
-  opacity: 1;
-  transform: scale(1);
+  opacity: var(--opacity-full);
+  transform: var(--transform-scale-1);
 }
 
 .badge:not(.show) {
   opacity: 0;
-  transform: scale(0.8);
+  transform: var(--transform-scale-down);
 }
 
 /* Focus styles for accessibility */
 .badge:focus-visible {
-  outline: 2px solid var(--primary-blue-blue-500);
-  outline-offset: 2px;
+  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue-500);
+  outline-offset: var(--spacing-sizing-2px);
+}
+
+/* Hover effects for interactive badges */
+.badge.interactive {
+  cursor: pointer;
+}
+
+.badge.interactive:hover {
+  transform: var(--transform-scale-up);
+}
+
+.badge.interactive:active {
+  transform: var(--transform-scale-down);
 }
