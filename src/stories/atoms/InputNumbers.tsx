@@ -63,7 +63,6 @@ const PlusIcon = ({ size = 'default', disabled = false, focused = false, pressed
   const iconSize = size === 'small' ? '18' : size === 'large' ? '26' : '22';
   const fillColor = disabled ? '#9CA3AF' : '#2F42BD';
   const strokeColor = focused ? '#0BA7EA' : pressed ? '#04435E' : undefined;
-  const strokeWidth = (focused || pressed) ? (size === 'large' ? '3' : '2') : undefined;
   const opacity = disabled ? '0.3' : '1';
 
   if (focused || pressed) {
@@ -156,16 +155,16 @@ export const InputNumbers: React.FC<InputNumbersProps> = ({
     if (disabled || isAtMax) return;
     const newValue = Math.min(currentValue + step, max);
     setInternalValue(newValue);
-    onChange?.(newValue);
-    onIncrement?();
+    if (onChange) onChange(newValue);
+    if (onIncrement) onIncrement();
   };
 
   const handleDecrement = () => {
     if (disabled || isAtMin) return;
     const newValue = Math.max(currentValue - step, min);
     setInternalValue(newValue);
-    onChange?.(newValue);
-    onDecrement?();
+    if (onChange) onChange(newValue);
+    if (onDecrement) onDecrement();
   };
 
   const handleFocus = () => {
