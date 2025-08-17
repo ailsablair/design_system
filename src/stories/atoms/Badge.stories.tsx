@@ -25,7 +25,7 @@ const meta: Meta<typeof Badge> = {
     },
     size: {
       control: 'select',
-      options: ['small', 'medium', 'large'],
+      options: ['xs', 'small', 'medium', 'large', 'xl', 'xxl'],
       description: 'Size variant (for dots and counts)',
     },
     count: {
