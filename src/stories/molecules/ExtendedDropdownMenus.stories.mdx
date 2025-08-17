@@ -1,5 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import { DropdownMenu } from './DropdownMenu';
+import { Meta } from "@storybook/addon-docs/blocks";
 
 <Meta title="Molecules/DropdownMenu/Extended Documentation" />
 
@@ -7,172 +6,67 @@ import { DropdownMenu } from './DropdownMenu';
 
 Extended dropdown menus provide enhanced navigation with section headers, sub-section navigation, and improved organization for complex menu structures.
 
-## Features
+## Advanced Features
 
-- **Section Headers**: Organize menu items with labeled sections
+- **Section Headers**: Organize menu items with labeled sections for better categorization
 - **Sub-section Navigation**: Navigate through hierarchical content with contextual back buttons  
-- **Size Variants**: Small, default, and large sizes available
-- **Responsive Design**: Adapts to different screen sizes
-- **Accessibility**: Full keyboard navigation and screen reader support
+- **Size Variants**: Small, default, and large sizes available for different interface contexts
+- **Responsive Design**: Adapts to different screen sizes while maintaining usability
+- **Accessibility**: Full keyboard navigation and comprehensive screen reader support
 
-## Live Examples
+## Menu Types
 
-### Small Size with Sections
+### Sectioned Menus
+Use sectioned menus to organize large sets of menu items into logical groups. Section headers provide clear visual separation and improve navigation efficiency.
 
-<Canvas>
-  <Story name="Small Grouped Example">
-    <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
-      <DropdownMenu 
-        items={[
-          { label: 'Section name', type: 'section', showLeadingIcon: false },
-          { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
-          { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
-          { label: 'Menu item', showLeadingIcon: true },
-        ]} 
-        size="small" 
-        type="sectioned" 
-      />
-      <DropdownMenu 
-        items={[
-          { label: 'Back', sectionName: 'Section name', type: 'sub-section', showLeadingIcon: true },
-          { label: 'Submenu item', showLeadingIcon: true, state: 'hover' },
-          { label: 'Submenu item', showLeadingIcon: true },
-          { label: 'Submenu item', showLeadingIcon: true },
-        ]} 
-        size="small" 
-        type="sectioned-submenu" 
-      />
-    </div>
-  </Story>
-</Canvas>
+### Submenu Navigation
+When implementing multi-level navigation, use the submenu variant with back navigation to maintain user context and provide clear pathways between menu levels.
 
-### Default Size with Sections
+### Combined Patterns
+For complex interfaces, combine sectioned menus with submenu navigation to create sophisticated information architectures that remain intuitive to users.
 
-<Canvas>
-  <Story name="Default Grouped Example">
-    <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-      <DropdownMenu 
-        items={[
-          { label: 'Section name', type: 'section', showLeadingIcon: false },
-          { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
-          { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
-          { label: 'Menu item', showLeadingIcon: true },
-        ]} 
-        size="default" 
-        type="sectioned" 
-      />
-      <DropdownMenu 
-        items={[
-          { label: 'Back', sectionName: 'Section name', type: 'sub-section', showLeadingIcon: true },
-          { label: 'Submenu item', showLeadingIcon: true, state: 'hover' },
-          { label: 'Submenu item', showLeadingIcon: true },
-          { label: 'Submenu item', showLeadingIcon: true },
-        ]} 
-        size="default" 
-        type="sectioned-submenu" 
-      />
-    </div>
-  </Story>
-</Canvas>
+## Size Considerations
 
-### Large Size with Sections
+### Small Size
+- Best for dense interfaces where space is limited
+- Maintains readability while maximizing content density
+- Ideal for secondary navigation elements
 
-<Canvas>
-  <Story name="Large Grouped Example">
-    <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-      <DropdownMenu 
-        items={[
-          { label: 'Section name', type: 'section', showLeadingIcon: false },
-          { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
-          { label: 'Menu item', showLeadingIcon: true, showTrailingIcon: true },
-          { label: 'Menu item', showLeadingIcon: true },
-        ]} 
-        size="large" 
-        type="sectioned" 
-      />
-      <DropdownMenu 
-        items={[
-          { label: 'Back', sectionName: 'Section name', type: 'sub-section', showLeadingIcon: true },
-          { label: 'Submenu item', showLeadingIcon: true, state: 'hover' },
-          { label: 'Submenu item', showLeadingIcon: true },
-          { label: 'Submenu item', showLeadingIcon: true },
-        ]} 
-        size="large" 
-        type="sectioned-submenu" 
-      />
-    </div>
-  </Story>
-</Canvas>
+### Default Size
+- Optimal for most general-purpose implementations
+- Balances readability with interface efficiency
+- Recommended for primary navigation scenarios
 
-## Section Headers
+### Large Size
+- Best for touch interfaces and accessibility requirements
+- Provides enhanced target areas for interaction
+- Ideal for interfaces prioritizing ease of use
 
-Section headers provide clear organization within dropdown menus by grouping related items under descriptive labels.
+## Implementation Patterns
 
-These headers use the `type="section"` prop and automatically:
-- Hide leading icons
-- Center the text
-- Apply bold typography
-- Disable hover states
+### Progressive Disclosure
+Use submenu navigation to implement progressive disclosure patterns, revealing additional options only when needed while keeping the primary interface clean.
 
-## Sub-section Navigation
+### Contextual Navigation
+Implement context-aware menu structures where the available options change based on the current user context or application state.
 
-Sub-section navigation includes contextual back buttons that display the parent section name, making navigation more intuitive.
+### Hierarchical Organization
+Create logical hierarchies using section headers and submenu navigation to organize complex feature sets into digestible chunks.
 
-These use the `type="sub-section"` prop and include:
-- Back arrow icon
-- Section name display
-- Proper navigation context
-- Consistent styling
+## Accessibility Considerations
 
-## Usage Guidelines
+Extended dropdown menus maintain full accessibility support including:
+- Keyboard navigation with arrow keys, Enter, and Escape
+- Screen reader announcements for section changes and navigation context
+- Focus management during menu transitions
+- ARIA attributes for proper semantic structure
 
-### When to Use Section Headers
+## Best Practices for Extended Menus
 
-- Group related functionality (e.g., "File Operations", "View Options")
-- Organize large menus with many items
-- Provide clear visual hierarchy
-- Improve navigation in complex interfaces
+1. **Logical Grouping**: Group related functionality under meaningful section headers
+2. **Consistent Navigation**: Use consistent back navigation patterns across all submenus
+3. **Clear Context**: Provide clear visual and textual indicators of current menu context
+4. **Efficient Pathways**: Design menu structures that minimize the number of levels users must navigate
+5. **Predictable Behavior**: Ensure menu behavior is consistent across all sections and levels
 
-### When to Use Sub-section Navigation
-
-- Multi-level navigation structures
-- Settings or configuration menus
-- File/folder navigation
-- Hierarchical content organization
-
-### Best Practices
-
-1. **Keep section names concise** - Use 1-3 words when possible
-2. **Logical grouping** - Group related items under appropriate sections
-3. **Consistent sizing** - Use the same size variant throughout related menus
-4. **Clear hierarchy** - Make parent-child relationships obvious
-5. **Accessibility** - Ensure keyboard navigation works smoothly
-
-## API Reference
-
-### MenuItem Props (Extended)
-
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `type` | `'simple' \| 'back' \| 'section' \| 'sub-section'` | `'simple'` | Type of menu item |
-| `sectionName` | `string` | - | Section name for sub-section type |
-| `showLeadingIcon` | `boolean` | `true` | Show leading icon (automatically false for section headers) |
-| `showTrailingIcon` | `boolean` | `false` | Show trailing chevron for expandable items |
-
-### DropdownMenu Props (Extended)
-
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `type` | `'default' \| 'submenu' \| 'sectioned' \| 'sectioned-submenu'` | `'default'` | Menu type |
-| `items` | `MenuItemProps[]` | - | Array of menu items including sections |
-
-## Technical Implementation
-
-The extended dropdown menus build upon the existing MenuItem and DropdownMenu components by:
-
-1. **Adding new item types**: `section` and `sub-section`
-2. **Enhancing navigation**: Contextual back buttons with section names  
-3. **Improving styling**: Specialized CSS for section headers
-4. **Maintaining compatibility**: All existing functionality preserved
-
-This design ensures seamless integration with existing code while providing powerful new capabilities for complex navigation scenarios.
+Refer to the story examples to see these extended patterns implemented with real content and interaction models.

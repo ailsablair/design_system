@@ -1,5 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import { Table } from './Table';
+import { Meta } from "@storybook/addon-docs/blocks";
 
 <Meta title="Molecules/Table/Documentation" />
 
@@ -11,191 +10,101 @@ The Table building blocks provide a comprehensive set of components for displayi
 
 The table system follows atomic design principles:
 
-- **Atoms**: `TableRow` and `TableCell` - Basic building blocks
-- **Molecules**: `Table` - Complete table with header, body, and features
+- **Atoms**: `TableRow` and `TableCell` - Basic building blocks for individual table elements
+- **Molecules**: `Table` - Complete table implementation with header, body, and advanced features
 
-## Live Examples
-
-### Basic Table
-
-<Canvas>
-  <Story name="Basic Example">
-    <Table 
-      columns={[
-        { key: 'name', title: 'Name' },
-        { key: 'status', title: 'Status', type: 'status' },
-        { key: 'email', title: 'Email' },
-      ]} 
-      data={[
-        { id: '1', name: 'John Doe', status: 'active', email: 'john@example.com' },
-        { id: '2', name: 'Jane Smith', status: 'pending', email: 'jane@example.com' },
-        { id: '3', name: 'Bob Johnson', status: 'inactive', email: 'bob@example.com' },
-      ]} 
-      showSelection 
-      showActions 
-    />
-  </Story>
-</Canvas>
-
-### Interactive Table with Selection
-
-<Canvas>
-  <Story name="Interactive Example">
-    <Table 
-      columns={[
-        { key: 'name', title: 'Name' },
-        { key: 'status', title: 'Status', type: 'status' },
-        { key: 'role', title: 'Role' },
-      ]} 
-      data={[
-        { id: '1', name: 'Alice Cooper', status: 'active', role: 'Admin' },
-        { id: '2', name: 'David Miller', status: 'pending', role: 'User' },
-        { id: '3', name: 'Sarah Wilson', status: 'active', role: 'Editor' },
-        { id: '4', name: 'Mike Brown', status: 'inactive', role: 'User' },
-      ]} 
-      showSelection 
-      showActions 
-      selectedRows={['1', '3']}
-    />
-  </Story>
-</Canvas>
-
-## Components
+## Component Architecture
 
 ### TableRow (Atom)
-A table row component with selection, actions, and multiple states.
-
-**Features:**
-- Selection checkbox
-- Action buttons (edit, delete, duplicate)
-- Visual states (default, hover, selected, disabled)
-- Size variants (compact, default, comfortable)
-- Status indicators
+The foundational row component that supports:
+- Multiple visual states (default, hover, selected, disabled)
+- Flexible cell content with proper alignment
+- Responsive behavior across screen sizes
+- Accessibility features for screen readers
 
 ### TableCell (Atom)
-Individual cell component used within table rows.
-
-**Features:**
-- Text alignment options
-- Status indicators with color-coded dots
-- Custom width support
-- Content type variants
+Individual cell components that provide:
+- Text content with proper typography
+- Icon support for enhanced data visualization
+- Alignment options (left, center, right)
+- State inheritance from parent rows
 
 ### Table (Molecule)
-Complete table component built using TableRow and TableCell atoms.
+The complete table implementation featuring:
+- Sortable column headers with visual indicators
+- Selectable rows with checkbox controls
+- Pagination controls for large datasets
+- Responsive design with horizontal scrolling
+- Comprehensive keyboard navigation
 
-**Features:**
-- Column configuration with custom renderers
-- Bulk row selection with "select all"
-- Interactive action buttons
-- Loading and empty states
-- Responsive design
-- Size variants
-- Accessibility support
+## Features
 
-## Usage Examples
+### Data Display
+- Clean, scannable layout for tabular information
+- Consistent typography and spacing throughout
+- Support for mixed content types (text, numbers, icons)
+- Responsive column behavior
 
-### Basic Table
-```tsx
-import { Table } from './molecules/Table';
+### Interaction States
+- **Hover Effects**: Visual feedback for row-level interactions
+- **Selection States**: Clear indication of selected rows
+- **Disabled States**: Proper styling for inactive data
+- **Focus Management**: Keyboard navigation support
 
-const columns = [
-  { key: 'name', title: 'Name' },
-  { key: 'status', title: 'Status', type: 'status' },
-];
+### Sorting and Organization
+- Column header sorting with visual indicators
+- Ascending and descending sort options
+- Persistent sort state across interactions
+- Clear visual feedback for current sort column
 
-const data = [
-  { id: '1', name: 'John Doe', status: 'active' },
-  { id: '2', name: 'Jane Smith', status: 'pending' },
-];
+### Selection and Actions
+- Individual row selection with checkboxes
+- Bulk selection with header controls
+- Action states that respect selection context
+- Clear selection indicators
 
-<Table 
-  columns={columns} 
-  data={data} 
-  showSelection 
-  showActions 
-/>
-```
+## Usage Guidelines
 
-### Custom Rendering
-```tsx
-const columns = [
-  {
-    key: 'user',
-    title: 'User',
-    render: (value, record) => (
-      <div>
-        <strong>{value}</strong>
-        <br />
-        <small>{record.email}</small>
-      </div>
-    ),
-  },
-];
-```
+### Data Organization
+Structure your table data to prioritize the most important information in the leftmost columns. Use consistent data types within columns for better scannability.
 
-### Interactive Table
-```tsx
-const [selectedRows, setSelectedRows] = useState([]);
+### Column Configuration
+- **Essential Columns**: Always visible columns containing primary data
+- **Secondary Columns**: Additional information that can be hidden on smaller screens
+- **Action Columns**: Dedicated space for row-level actions, typically right-aligned
 
-<Table
-  columns={columns}
-  data={data}
-  selectedRows={selectedRows}
-  onSelectionChange={setSelectedRows}
-  onEdit={(record) => console.log('Edit:', record)}
-  onDelete={(record) => console.log('Delete:', record)}
-  onDuplicate={(record) => console.log('Duplicate:', record)}
-/>
-```
+### Responsive Behavior
+Tables automatically adapt to smaller screens by:
+- Prioritizing essential columns
+- Implementing horizontal scroll for additional data
+- Maintaining usability across all device sizes
 
-## Design Tokens
+## Best Practices
 
-The components use the design system's tokens for consistent styling:
+1. **Data Hierarchy**: Organize columns by importance, left to right
+2. **Consistent Formatting**: Use consistent data formatting within columns
+3. **Clear Headers**: Provide descriptive, scannable column headers
+4. **Appropriate Density**: Balance information density with readability
+5. **Action Clarity**: Make row-level and bulk actions clearly distinguishable
+6. **Loading States**: Implement proper loading indicators for dynamic data
+7. **Empty States**: Provide helpful messaging when tables contain no data
 
-- **Spacing**: Uses `--spacing-sizing-*` tokens for padding and dimensions
-- **Colors**: Uses semantic color tokens for status indicators and states
-- **Typography**: Uses `--type-*` tokens for consistent text styling
-- **Borders**: Uses `--spacing-radius-*` and `--spacing-stroke-*` tokens
+## Accessibility Features
 
-## States
+The table components include comprehensive accessibility support:
+- Proper semantic markup with table, th, and td elements
+- ARIA labels for sortable column headers
+- Keyboard navigation for all interactive elements
+- Screen reader announcements for state changes
+- High contrast support for visual accessibility
 
-### Row States
-- **Default**: Normal appearance
-- **Hover**: Highlighted background on mouse over
-- **Selected**: Blue background with checkbox checked
-- **Disabled**: Reduced opacity, no interactions
+## Implementation Notes
 
-### Status Indicators
-- **Active**: Green dot and text
-- **Inactive**: Gray dot and text  
-- **Pending**: Yellow dot and text
-- **Error**: Red dot and text
-- **Success**: Green dot and text
+Tables are designed to handle:
+- Dynamic data loading and updates
+- Large datasets with pagination
+- Complex data types and formatting
+- Integration with existing design systems
+- Cross-browser compatibility
 
-## Accessibility
-
-The components include:
-- Proper ARIA labels
-- Keyboard navigation support
-- Screen reader compatibility
-- High contrast mode support
-- Focus indicators
-
-## Responsive Design
-
-Tables adapt to different screen sizes:
-- **Desktop**: Full feature set with all columns visible
-- **Tablet**: Horizontal scrolling for overflow content
-- **Mobile**: Compressed spacing and smaller action buttons
-
-## Building Block Integration
-
-These table components follow the Figma design patterns and integrate seamlessly with the existing design system:
-
-- Uses the same Icon component for action buttons
-- Consistent with Input and other form components
-- Follows the same naming conventions and structure
-- Compatible with existing CSS tokens and variables
-
-The table components are designed to be flexible building blocks that can be combined and customized for various data display needs while maintaining design consistency.
+Refer to the story examples to see complete implementations with realistic data and interaction patterns.
