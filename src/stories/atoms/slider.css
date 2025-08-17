@@ -19,6 +19,7 @@
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-sizing-8px);
+  position: relative;
 }
 
 .slider-number.small {
@@ -60,6 +61,7 @@
   background: var(--primary-sky-blue-500);
   cursor: pointer;
   transition: all var(--transition-fast);
+  align-self: center;
 }
 
 .number-dot:hover:not(.disabled) {
