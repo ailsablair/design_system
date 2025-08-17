@@ -67,8 +67,8 @@ export const Tag: React.FC<TagProps> = ({
   };
 
   return (
-    <div 
-      className={`tag ${size} ${variant} ${disabled ? 'disabled' : ''} ${onClick ? 'clickable' : ''} ${className}`}
+    <div
+      className={`tag ${size} ${variant} ${light ? 'light' : ''} ${disabled ? 'disabled' : ''} ${onClick ? 'clickable' : ''} ${className}`}
       onClick={handleClick}
     >
       <div className={`tag-label ${size}`}>
