@@ -153,7 +153,7 @@
 }
 
 .tag.primary {
-  background: var(--primary-blue-blue-50);
+  background: var(--primary-blue-blue-100);
   border-color: var(--primary-blue-blue-200);
   color: var(--primary-blue-blue-700);
 }
