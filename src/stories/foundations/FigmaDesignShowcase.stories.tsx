@@ -18,181 +18,79 @@ export default meta;
 type Story = StoryObj;
 
 export const TagVariantsShowcase: Story = {
-  name: 'Tag/Badge Components - Exact Figma Design',
+  name: 'Tag/Badge Components - Figma Design',
   render: () => (
     <div style={{ padding: '24px', fontFamily: 'Archivo, sans-serif', backgroundColor: '#FFFFFF' }}>
-      <h2 style={{ marginBottom: '32px', fontSize: '18px', fontWeight: '600', color: '#1F2937' }}>Tag Components - Exact Figma Design</h2>
+      <h2 style={{ marginBottom: '32px', fontSize: '18px', fontWeight: '600', color: '#1F2937' }}>Tag Components - Figma Design</h2>
       
-      {/* Row 1: Small Filled Tags */}
-      <div style={{ marginBottom: '16px' }}>
-        <h3 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '500', color: '#6B7280' }}>Small Filled Tags</h3>
+      {/* Small Tags */}
+      <div style={{ marginBottom: '24px' }}>
+        <h3 style={{ marginBottom: '16px', fontSize: '14px', fontWeight: '500', color: '#6B7280' }}>Small Tags</h3>
         <div style={{ 
           display: 'flex', 
           flexWrap: 'wrap', 
-          gap: '6px',
+          gap: '8px',
           alignItems: 'center'
         }}>
           <Tag label="Label" size="small" variant="blue" showClose={false} />
           <Tag label="Label" size="small" variant="cyan" showClose={false} />
           <Tag label="Label" size="small" variant="yellow" showClose={false} />
           <Tag label="Label" size="small" variant="black" showClose={false} />
-          <Tag label="Label" size="small" variant="blue" />
           <Tag label="Label" size="small" variant="purple" showClose={false} />
-          <Tag label="Label" size="small" variant="cyan" />
-          <Tag label="Label" size="small" variant="blue" />
-          <Tag label="Label" size="small" variant="cyan" />
-          <Tag label="Label" size="small" variant="yellow" />
-          <Tag label="Label" size="small" variant="black" />
-          <Tag label="Label" size="small" variant="purple" />
-          <Tag label="Label" size="small" variant="cyan" />
           <Tag label="Label" size="small" variant="green" showClose={false} />
           <Tag label="Label" size="small" variant="red" showClose={false} />
+          <Tag label="Label" size="small" variant="orange" showClose={false} />
+          <Tag label="Label" size="small" variant="gray" showClose={false} />
         </div>
       </div>
 
-      {/* Row 2: Default Filled Tags */}
-      <div style={{ marginBottom: '16px' }}>
-        <h3 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '500', color: '#6B7280' }}>Default Filled Tags</h3>
+      {/* Default Tags */}
+      <div style={{ marginBottom: '24px' }}>
+        <h3 style={{ marginBottom: '16px', fontSize: '14px', fontWeight: '500', color: '#6B7280' }}>Default Tags</h3>
         <div style={{ 
           display: 'flex', 
           flexWrap: 'wrap', 
-          gap: '6px',
+          gap: '8px',
           alignItems: 'center'
         }}>
           <Tag label="Label" size="default" variant="blue" showClose={false} />
           <Tag label="Label" size="default" variant="cyan" showClose={false} />
           <Tag label="Label" size="default" variant="yellow" showClose={false} />
           <Tag label="Label" size="default" variant="black" showClose={false} />
-          <Tag label="Label" size="default" variant="blue" />
           <Tag label="Label" size="default" variant="purple" showClose={false} />
-          <Tag label="Label" size="default" variant="cyan" />
-          <Tag label="Label" size="default" variant="blue" />
-          <Tag label="Label" size="default" variant="cyan" />
-          <Tag label="Label" size="default" variant="yellow" />
-          <Tag label="Label" size="default" variant="black" />
-          <Tag label="Label" size="default" variant="purple" />
-          <Tag label="Label" size="default" variant="cyan" />
           <Tag label="Label" size="default" variant="green" showClose={false} />
           <Tag label="Label" size="default" variant="red" showClose={false} />
+          <Tag label="Label" size="default" variant="orange" showClose={false} />
+          <Tag label="Label" size="default" variant="gray" showClose={false} />
         </div>
       </div>
 
-      {/* Row 3: Large Filled Tags */}
-      <div style={{ marginBottom: '16px' }}>
-        <h3 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '500', color: '#6B7280' }}>Large Filled Tags</h3>
+      {/* Large Tags */}
+      <div style={{ marginBottom: '32px' }}>
+        <h3 style={{ marginBottom: '16px', fontSize: '14px', fontWeight: '500', color: '#6B7280' }}>Large Tags</h3>
         <div style={{ 
           display: 'flex', 
           flexWrap: 'wrap', 
-          gap: '6px',
+          gap: '8px',
           alignItems: 'center'
         }}>
           <Tag label="Label" size="large" variant="blue" showClose={false} />
           <Tag label="Label" size="large" variant="cyan" showClose={false} />
           <Tag label="Label" size="large" variant="yellow" showClose={false} />
           <Tag label="Label" size="large" variant="black" showClose={false} />
-          <Tag label="Label" size="large" variant="blue" />
           <Tag label="Label" size="large" variant="purple" showClose={false} />
-          <Tag label="Label" size="large" variant="cyan" />
-          <Tag label="Label" size="large" variant="blue" />
-          <Tag label="Label" size="large" variant="cyan" />
-          <Tag label="Label" size="large" variant="yellow" />
-          <Tag label="Label" size="large" variant="black" />
-          <Tag label="Label" size="large" variant="purple" />
-          <Tag label="Label" size="large" variant="cyan" />
           <Tag label="Label" size="large" variant="green" showClose={false} />
           <Tag label="Label" size="large" variant="red" showClose={false} />
+          <Tag label="Label" size="large" variant="orange" showClose={false} />
+          <Tag label="Label" size="large" variant="gray" showClose={false} />
         </div>
       </div>
 
-      {/* Row 4: Small Light Tags */}
-      <div style={{ marginBottom: '16px' }}>
-        <h3 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '500', color: '#6B7280' }}>Small Light Tags</h3>
-        <div style={{ 
-          display: 'flex', 
-          flexWrap: 'wrap', 
-          gap: '6px',
-          alignItems: 'center'
-        }}>
-          <Tag label="Label" size="small" variant="blue" light showClose={false} />
-          <Tag label="Label" size="small" variant="cyan" light showClose={false} />
-          <Tag label="Label" size="small" variant="yellow" light showClose={false} />
-          <Tag label="Label" size="small" variant="gray" light showClose={false} />
-          <Tag label="Label" size="small" variant="blue" light />
-          <Tag label="Label" size="small" variant="purple" light showClose={false} />
-          <Tag label="Label" size="small" variant="cyan" light />
-          <Tag label="Label" size="small" variant="blue" light />
-          <Tag label="Label" size="small" variant="cyan" light />
-          <Tag label="Label" size="small" variant="yellow" light />
-          <Tag label="Label" size="small" variant="gray" light />
-          <Tag label="Label" size="small" variant="purple" light />
-          <Tag label="Label" size="small" variant="cyan" light />
-          <Tag label="Label" size="small" variant="green" light showClose={false} />
-          <Tag label="Label" size="small" variant="red" light showClose={false} />
-        </div>
-      </div>
-
-      {/* Row 5: Default Light Tags */}
-      <div style={{ marginBottom: '32px' }}>
-        <h3 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '500', color: '#6B7280' }}>Default Light Tags</h3>
-        <div style={{ 
-          display: 'flex', 
-          flexWrap: 'wrap', 
-          gap: '6px',
-          alignItems: 'center'
-        }}>
-          <Tag label="Label" size="default" variant="blue" light showClose={false} />
-          <Tag label="Label" size="default" variant="cyan" light showClose={false} />
-          <Tag label="Label" size="default" variant="yellow" light showClose={false} />
-          <Tag label="Label" size="default" variant="gray" light showClose={false} />
-          <Tag label="Label" size="default" variant="blue" light />
-          <Tag label="Label" size="default" variant="purple" light showClose={false} />
-          <Tag label="Label" size="default" variant="cyan" light />
-          <Tag label="Label" size="default" variant="blue" light />
-          <Tag label="Label" size="default" variant="cyan" light />
-          <Tag label="Label" size="default" variant="yellow" light />
-          <Tag label="Label" size="default" variant="gray" light />
-          <Tag label="Label" size="default" variant="purple" light />
-          <Tag label="Label" size="default" variant="cyan" light />
-          <Tag label="Label" size="default" variant="green" light showClose={false} />
-          <Tag label="Label" size="default" variant="red" light showClose={false} />
-        </div>
-      </div>
-
-      <h2 style={{ marginBottom: '24px', fontSize: '18px', fontWeight: '600', color: '#1F2937' }}>Status Indicators - Exact Figma Design</h2>
+      <h2 style={{ marginBottom: '24px', fontSize: '18px', fontWeight: '600', color: '#1F2937' }}>Badge Components - Figma Design</h2>
       
-      {/* Dot indicators matching Figma layout */}
-      <div style={{ marginBottom: '16px' }}>
-        <h3 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '500', color: '#6B7280' }}>Extra Small Dots (4px)</h3>
-        <div style={{ 
-          display: 'flex', 
-          gap: '16px',
-          alignItems: 'center',
-          flexWrap: 'wrap'
-        }}>
-          <Badge variant="dot" size="xs" color="blue" />
-          <Badge variant="dot" size="xs" color="cyan" />
-          <Badge variant="dot" size="xs" color="green" />
-          <Badge variant="dot" size="xs" color="gray" />
-          <Badge variant="dot" size="xs" color="yellow" />
-          <Badge variant="dot" size="xs" color="orange" />
-          <Badge variant="dot" size="xs" color="black" />
-          <Badge variant="dot" size="xs" color="gray" light />
-          <Badge variant="dot" size="xs" color="gray" light />
-          <Badge variant="dot" size="xs" color="gray" light />
-          <Badge variant="dot" size="xs" color="gray" light />
-          <Badge variant="dot" size="xs" color="gray" light />
-          <Badge variant="dot" size="xs" color="gray" light />
-          <Badge variant="dot" size="xs" color="gray" light />
-          <Badge variant="dot" size="xs" color="red" />
-          <Badge variant="dot" size="xs" color="green" />
-          <Badge variant="dot" size="xs" color="orange" />
-          <Badge variant="dot" size="xs" color="blue" />
-          <Badge variant="dot" size="xs" color="purple" />
-        </div>
-      </div>
-
-      <div style={{ marginBottom: '16px' }}>
-        <h3 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '500', color: '#6B7280' }}>Small Dots (6px)</h3>
+      {/* Small Dots */}
+      <div style={{ marginBottom: '24px' }}>
+        <h3 style={{ marginBottom: '16px', fontSize: '14px', fontWeight: '500', color: '#6B7280' }}>Small Dots (6px)</h3>
         <div style={{ 
           display: 'flex', 
           gap: '16px',
@@ -206,23 +104,14 @@ export const TagVariantsShowcase: Story = {
           <Badge variant="dot" size="small" color="yellow" />
           <Badge variant="dot" size="small" color="orange" />
           <Badge variant="dot" size="small" color="black" />
-          <Badge variant="dot" size="small" color="gray" light />
-          <Badge variant="dot" size="small" color="gray" light />
-          <Badge variant="dot" size="small" color="gray" light />
-          <Badge variant="dot" size="small" color="gray" light />
-          <Badge variant="dot" size="small" color="gray" light />
-          <Badge variant="dot" size="small" color="gray" light />
-          <Badge variant="dot" size="small" color="gray" light />
           <Badge variant="dot" size="small" color="red" />
-          <Badge variant="dot" size="small" color="green" />
-          <Badge variant="dot" size="small" color="orange" />
-          <Badge variant="dot" size="small" color="blue" />
           <Badge variant="dot" size="small" color="purple" />
         </div>
       </div>
 
-      <div style={{ marginBottom: '16px' }}>
-        <h3 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '500', color: '#6B7280' }}>Medium Dots (8px)</h3>
+      {/* Medium Dots */}
+      <div style={{ marginBottom: '24px' }}>
+        <h3 style={{ marginBottom: '16px', fontSize: '14px', fontWeight: '500', color: '#6B7280' }}>Medium Dots (8px)</h3>
         <div style={{ 
           display: 'flex', 
           gap: '16px',
@@ -236,23 +125,14 @@ export const TagVariantsShowcase: Story = {
           <Badge variant="dot" size="medium" color="yellow" />
           <Badge variant="dot" size="medium" color="orange" />
           <Badge variant="dot" size="medium" color="black" />
-          <Badge variant="dot" size="medium" color="gray" light />
-          <Badge variant="dot" size="medium" color="gray" light />
-          <Badge variant="dot" size="medium" color="gray" light />
-          <Badge variant="dot" size="medium" color="gray" light />
-          <Badge variant="dot" size="medium" color="gray" light />
-          <Badge variant="dot" size="medium" color="gray" light />
-          <Badge variant="dot" size="medium" color="gray" light />
           <Badge variant="dot" size="medium" color="red" />
-          <Badge variant="dot" size="medium" color="green" />
-          <Badge variant="dot" size="medium" color="orange" />
-          <Badge variant="dot" size="medium" color="blue" />
           <Badge variant="dot" size="medium" color="purple" />
         </div>
       </div>
 
+      {/* Large Dots */}
       <div style={{ marginBottom: '24px' }}>
-        <h3 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '500', color: '#6B7280' }}>Large Dots (12px)</h3>
+        <h3 style={{ marginBottom: '16px', fontSize: '14px', fontWeight: '500', color: '#6B7280' }}>Large Dots (12px)</h3>
         <div style={{ 
           display: 'flex', 
           gap: '16px',
@@ -266,17 +146,7 @@ export const TagVariantsShowcase: Story = {
           <Badge variant="dot" size="large" color="yellow" />
           <Badge variant="dot" size="large" color="orange" />
           <Badge variant="dot" size="large" color="black" />
-          <Badge variant="dot" size="large" color="gray" light />
-          <Badge variant="dot" size="large" color="gray" light />
-          <Badge variant="dot" size="large" color="gray" light />
-          <Badge variant="dot" size="large" color="gray" light />
-          <Badge variant="dot" size="large" color="gray" light />
-          <Badge variant="dot" size="large" color="gray" light />
-          <Badge variant="dot" size="large" color="gray" light />
           <Badge variant="dot" size="large" color="red" />
-          <Badge variant="dot" size="large" color="green" />
-          <Badge variant="dot" size="large" color="orange" />
-          <Badge variant="dot" size="large" color="blue" />
           <Badge variant="dot" size="large" color="purple" />
         </div>
       </div>
@@ -285,7 +155,7 @@ export const TagVariantsShowcase: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Complete showcase matching the exact Figma design with all Tag and Badge component variants. Shows both filled and light tag variants plus all dot indicator sizes and colors as specified in the design system.',
+        story: 'Complete showcase of Tag and Badge components matching the Figma design system with proper design tokens.',
       },
     },
   },
@@ -362,7 +232,7 @@ export const ResponsiveShowcase: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Example of how the Badge and Tag components work together in a responsive layout. This demonstrates real-world usage patterns with modern CSS Grid and Flexbox.',
+        story: 'Example of how the Badge and Tag components work together in a responsive layout.',
       },
     },
   },
