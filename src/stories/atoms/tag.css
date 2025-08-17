@@ -3,15 +3,14 @@
 .tag {
   display: inline-flex;
   align-items: center;
-  border-radius: var(--spacing-radius-4px);
   border: var(--spacing-stroke-1px) solid;
-  background: var(--neutral-gray-gray-50);
-  border-color: var(--neutral-gray-gray-300);
   transition: all var(--transition-fast);
   position: relative;
   box-sizing: border-box;
   font-family: var(--type-typeface-archivo);
   white-space: nowrap;
+  font-weight: var(--type-weight-medium);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
 }
 
 /* Size variants */
@@ -19,21 +18,134 @@
   padding: var(--spacing-sizing-2px) var(--spacing-sizing-6px);
   border-radius: var(--spacing-radius-4px);
   gap: var(--spacing-sizing-4px);
+  font-size: var(--type-archivo-label-sm);
+  line-height: var(--type-line-height-label-sm);
 }
 
 .tag.default {
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
   border-radius: var(--spacing-radius-6px);
   gap: var(--spacing-sizing-6px);
+  font-size: var(--type-archivo-label);
+  line-height: var(--type-line-height-label);
 }
 
 .tag.large {
   padding: var(--spacing-sizing-6px) var(--spacing-sizing-12px);
   border-radius: var(--spacing-radius-8px);
   gap: var(--spacing-sizing-8px);
+  font-size: var(--type-archivo-label-lg);
+  line-height: var(--type-line-height-label-lg);
 }
 
-/* Base color variants */
+/* Primary color variants - Filled styles (from Figma) */
+.tag.blue {
+  background: var(--primary-blue-blue-500);
+  border-color: var(--primary-blue-blue-500);
+  color: var(--base-white);
+}
+
+.tag.cyan {
+  background: var(--primary-sky-blue-sky-blue);
+  border-color: var(--primary-sky-blue-sky-blue);
+  color: var(--base-white);
+}
+
+.tag.purple {
+  background: var(--primary-purple-500);
+  border-color: var(--primary-purple-500);
+  color: var(--base-white);
+}
+
+/* Primary color variants - Light styles (from Figma) */
+.tag.blue.light {
+  background: var(--primary-blue-blue-50);
+  border-color: var(--primary-blue-blue-200);
+  color: var(--primary-blue-blue-700);
+}
+
+.tag.cyan.light {
+  background: var(--primary-sky-blue-100);
+  border-color: var(--primary-sky-blue-300);
+  color: var(--primary-sky-blue-700);
+}
+
+.tag.purple.light {
+  background: var(--primary-purple-50);
+  border-color: var(--primary-purple-200);
+  color: var(--primary-purple-700);
+}
+
+/* Functional color variants - Filled styles (from Figma) */
+.tag.orange {
+  background: var(--functional-orange-orange-500);
+  border-color: var(--functional-orange-orange-500);
+  color: var(--base-white);
+}
+
+.tag.green {
+  background: var(--functional-green-green-500);
+  border-color: var(--functional-green-green-500);
+  color: var(--base-white);
+}
+
+.tag.red {
+  background: var(--functional-red-red-500);
+  border-color: var(--functional-red-red-500);
+  color: var(--base-white);
+}
+
+.tag.yellow {
+  background: var(--functional-yellow-yellow-400);
+  border-color: var(--functional-yellow-yellow-400);
+  color: var(--base-white);
+}
+
+/* Functional color variants - Light styles (from Figma) */
+.tag.orange.light {
+  background: var(--functional-orange-orange-50);
+  border-color: var(--functional-orange-orange-200);
+  color: var(--functional-orange-orange-700);
+}
+
+.tag.green.light {
+  background: var(--functional-green-green-50);
+  border-color: var(--functional-green-green-200);
+  color: var(--functional-green-green-700);
+}
+
+.tag.red.light {
+  background: var(--functional-red-red-50);
+  border-color: var(--functional-red-red-200);
+  color: var(--functional-red-red-700);
+}
+
+.tag.yellow.light {
+  background: var(--functional-yellow-yellow-50);
+  border-color: var(--functional-yellow-yellow-200);
+  color: var(--functional-yellow-yellow-700);
+}
+
+/* Neutral color variants */
+.tag.gray {
+  background: var(--neutral-gray-gray-500);
+  border-color: var(--neutral-gray-gray-500);
+  color: var(--base-white);
+}
+
+.tag.gray.light {
+  background: var(--neutral-gray-gray-50);
+  border-color: var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-700);
+}
+
+.tag.black {
+  background: var(--base-black);
+  border-color: var(--base-black);
+  color: var(--base-white);
+}
+
+/* Legacy/backwards compatibility */
 .tag.light-gray {
   background: var(--neutral-gray-gray-50);
   border-color: var(--neutral-gray-gray-300);
@@ -52,63 +164,6 @@
   color: var(--base-white);
 }
 
-/* Primary color variants */
-.tag.blue {
-  background: var(--primary-blue-blue-50);
-  border-color: var(--primary-blue-blue-200);
-  color: var(--primary-blue-blue-700);
-}
-
-.tag.cyan {
-  background: var(--primary-sky-blue-100);
-  border-color: var(--primary-sky-blue-300);
-  color: var(--primary-sky-blue-700);
-}
-
-.tag.purple {
-  background: var(--primary-purple-50);
-  border-color: var(--primary-purple-200);
-  color: var(--primary-purple-700);
-}
-
-/* Functional color variants */
-.tag.orange {
-  background: var(--functional-orange-orange-50);
-  border-color: var(--functional-orange-orange-200);
-  color: var(--functional-orange-orange-700);
-}
-
-.tag.green {
-  background: var(--functional-green-green-50);
-  border-color: var(--functional-green-green-200);
-  color: var(--functional-green-green-700);
-}
-
-.tag.red {
-  background: var(--functional-red-red-50);
-  border-color: var(--functional-red-red-200);
-  color: var(--functional-red-red-700);
-}
-
-.tag.yellow {
-  background: var(--functional-yellow-yellow-50);
-  border-color: var(--functional-yellow-yellow-200);
-  color: var(--functional-yellow-yellow-700);
-}
-
-/* Neutral color variants */
-.tag.gray {
-  background: var(--neutral-gray-gray-50);
-  border-color: var(--neutral-gray-gray-200);
-  color: var(--neutral-gray-gray-700);
-}
-
-.tag.black {
-  background: var(--base-black);
-  border-color: var(--neutral-gray-gray-800);
-  color: var(--base-white);
-}
-
 /* Interactive states */
 .tag.clickable {
   cursor: pointer;
@@ -118,61 +173,52 @@
   transform: var(--transform-scale-up);
 }
 
-.tag.light-gray.clickable:hover {
-  background: var(--neutral-gray-gray-100);
-  border-color: var(--neutral-gray-gray-400);
-}
-
-.tag.primary.clickable:hover {
-  background: var(--primary-blue-blue-100);
-  border-color: var(--primary-blue-blue-300);
-}
-
-.tag.secondary.clickable:hover {
-  opacity: var(--opacity-high);
-}
-
 .tag.blue.clickable:hover {
-  background: var(--primary-blue-blue-100);
-  border-color: var(--primary-blue-blue-300);
+  background: var(--primary-blue-blue-600);
+  border-color: var(--primary-blue-blue-600);
 }
 
 .tag.cyan.clickable:hover {
-  background: var(--primary-sky-blue-200);
-  border-color: var(--primary-sky-blue-400);
+  background: var(--primary-sky-blue-600);
+  border-color: var(--primary-sky-blue-600);
 }
 
 .tag.purple.clickable:hover {
-  background: var(--primary-purple-100);
-  border-color: var(--primary-purple-300);
+  background: var(--primary-purple-600);
+  border-color: var(--primary-purple-600);
 }
 
 .tag.orange.clickable:hover {
-  background: var(--functional-orange-orange-100);
-  border-color: var(--functional-orange-orange-300);
+  background: var(--functional-orange-orange-600);
+  border-color: var(--functional-orange-orange-600);
 }
 
 .tag.green.clickable:hover {
-  background: var(--functional-green-green-100);
-  border-color: var(--functional-green-green-300);
+  background: var(--functional-green-green-600);
+  border-color: var(--functional-green-green-600);
 }
 
 .tag.red.clickable:hover {
-  background: var(--functional-red-red-100);
-  border-color: var(--functional-red-red-300);
+  background: var(--functional-red-red-600);
+  border-color: var(--functional-red-red-600);
 }
 
 .tag.yellow.clickable:hover {
-  background: var(--functional-yellow-yellow-100);
-  border-color: var(--functional-yellow-yellow-300);
+  background: var(--functional-yellow-yellow-500);
+  border-color: var(--functional-yellow-yellow-500);
 }
 
 .tag.gray.clickable:hover {
-  background: var(--neutral-gray-gray-100);
-  border-color: var(--neutral-gray-gray-300);
+  background: var(--neutral-gray-gray-600);
+  border-color: var(--neutral-gray-gray-600);
 }
 
 .tag.black.clickable:hover {
+  opacity: var(--opacity-high);
+}
+
+/* Light variant hover states */
+.tag.light.clickable:hover {
   opacity: var(--opacity-high);
 }
 
@@ -184,27 +230,8 @@
 /* Tag text styling */
 .tag-text {
   font-weight: var(--type-weight-medium);
-  line-height: var(--type-line-height-label);
   letter-spacing: var(--type-letter-spacing-archivo-label);
   flex: 1;
-}
-
-.tag.small .tag-text {
-  font-size: var(--type-archivo-label-sm);
-  line-height: var(--type-line-height-label-sm);
-  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
-}
-
-.tag.default .tag-text {
-  font-size: var(--type-archivo-label);
-  line-height: var(--type-line-height-label);
-  letter-spacing: var(--type-letter-spacing-archivo-label);
-}
-
-.tag.large .tag-text {
-  font-size: var(--type-archivo-label-lg);
-  line-height: var(--type-line-height-label-lg);
-  letter-spacing: var(--type-letter-spacing-archivo-label-lg);
 }
 
 /* Close button styling */
@@ -241,7 +268,15 @@
   background: rgba(0, 0, 0, 0.05);
 }
 
-.tag.black .tag-close-button:hover {
+.tag.black .tag-close-button:hover,
+.tag.blue .tag-close-button:hover,
+.tag.cyan .tag-close-button:hover,
+.tag.purple .tag-close-button:hover,
+.tag.orange .tag-close-button:hover,
+.tag.green .tag-close-button:hover,
+.tag.red .tag-close-button:hover,
+.tag.yellow .tag-close-button:hover,
+.tag.gray .tag-close-button:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
@@ -260,9 +295,6 @@
   .tag.large {
     padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
     gap: var(--spacing-sizing-6px);
-  }
-  
-  .tag.large .tag-text {
     font-size: var(--type-archivo-label);
     line-height: var(--type-line-height-label);
   }
