@@ -210,7 +210,12 @@ export const InputNumbers: React.FC<InputNumbersProps> = ({
 
   const handleMouseUp = React.useCallback(() => {
     if (state !== 'pressed') {
-      setIsPressed(false);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+      timeoutRef.current = setTimeout(() => {
+        setIsPressed(false);
+      }, 10); // Small delay to prevent rapid state changes
     }
   }, [state]);
 
