@@ -1,0 +1,318 @@
+@import '../foundations/tokens.css';
+
+.input-numbers-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+}
+
+.input-numbers-wrapper.small {
+  gap: var(--spacing-sizing-2px);
+}
+
+.input-numbers-wrapper.default {
+  gap: var(--spacing-sizing-4px);
+}
+
+.input-numbers-wrapper.large {
+  gap: var(--spacing-sizing-4px);
+}
+
+/* Label Styles */
+.input-numbers-label {
+  font-family: var(--type-typeface-archivo);
+  font-weight: var(--type-weight-medium);
+  color: var(--base-black);
+  margin: 0;
+}
+
+.input-numbers-label.small {
+  font-size: var(--type-archivo-label-sm);
+  line-height: var(--type-line-height-label-sm);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
+  padding: var(--spacing-sizing-2px);
+}
+
+.input-numbers-label.default {
+  font-size: var(--type-archivo-label);
+  line-height: var(--type-line-height-label);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
+  padding: var(--spacing-sizing-4px);
+}
+
+.input-numbers-label.large {
+  font-size: var(--type-archivo-label-lg);
+  line-height: var(--type-line-height-label-lg);
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg);
+  padding: var(--spacing-sizing-4px);
+}
+
+/* Container Styles */
+.input-numbers-container {
+  display: flex;
+  align-items: center;
+  border-radius: var(--spacing-radius-2px);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+  background: var(--base-white);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.input-numbers-container.small {
+  height: 32px;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
+  gap: var(--spacing-sizing-4px);
+}
+
+.input-numbers-container.default {
+  height: 44px;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
+  gap: var(--spacing-sizing-4px);
+}
+
+.input-numbers-container.large {
+  height: 54px;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
+  gap: var(--spacing-sizing-8px);
+}
+
+/* Default type has space between text and controls */
+.input-numbers-container.default.default,
+.input-numbers-container.default.small,
+.input-numbers-container.default.large {
+  justify-content: space-between;
+}
+
+.input-numbers-container.default.small {
+  width: 300px;
+}
+
+.input-numbers-container.default.default,
+.input-numbers-container.default.large {
+  width: 299px;
+}
+
+/* Simple type has controls only */
+.input-numbers-container.simple {
+  justify-content: center;
+  width: auto;
+  min-width: auto;
+}
+
+.input-numbers-container.simple.small {
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-12px);
+  gap: var(--spacing-sizing-8px);
+}
+
+.input-numbers-container.simple.default {
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-12px);
+  gap: var(--spacing-sizing-8px);
+}
+
+.input-numbers-container.simple.large {
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-12px);
+  gap: var(--spacing-sizing-12px);
+}
+
+/* State Styles */
+.input-numbers-container.focus {
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
+  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+}
+
+.input-numbers-container.pressed {
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-dark-sky-blue);
+  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+}
+
+.input-numbers-container.disabled {
+  background: var(--neutral-gray-gray-50);
+  border-color: var(--neutral-gray-gray-300);
+}
+
+.input-numbers-container.disabled .input-numbers-label {
+  color: var(--neutral-gray-gray-500);
+}
+
+/* Text Content (for default type) */
+.input-numbers-text {
+  flex: 1;
+  font-family: var(--type-typeface-roboto-flex);
+  font-weight: 400;
+  color: var(--base-black);
+  text-align: left;
+}
+
+.input-numbers-text.small {
+  font-size: var(--type-roboto-flex-body-sm);
+  line-height: var(--type-line-height-body-sm);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
+}
+
+.input-numbers-text.default {
+  font-size: var(--type-roboto-flex-body);
+  line-height: var(--type-line-height-body);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body);
+}
+
+.input-numbers-text.large {
+  font-size: var(--type-roboto-flex-body-lg);
+  line-height: var(--type-line-height-body-lg);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg);
+}
+
+.input-numbers-container.disabled .input-numbers-text {
+  color: var(--neutral-gray-gray-500);
+}
+
+/* Controls Container */
+.input-numbers-controls {
+  display: flex;
+  align-items: center;
+}
+
+.input-numbers-controls.small {
+  gap: var(--spacing-sizing-4px);
+}
+
+.input-numbers-controls.default {
+  gap: var(--spacing-sizing-6px);
+}
+
+.input-numbers-controls.large {
+  gap: var(--spacing-sizing-8px);
+}
+
+.input-numbers-container.simple .input-numbers-controls.small {
+  gap: var(--spacing-sizing-8px);
+}
+
+.input-numbers-container.simple .input-numbers-controls.default {
+  gap: var(--spacing-sizing-8px);
+}
+
+.input-numbers-container.simple .input-numbers-controls.large {
+  gap: var(--spacing-sizing-12px);
+}
+
+/* Button Styles */
+.input-numbers-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.input-numbers-button:disabled {
+  cursor: not-allowed;
+}
+
+.input-numbers-button:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.input-numbers-button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+/* Value Display */
+.input-numbers-value {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--type-typeface-roboto-flex);
+  font-weight: 600;
+  color: var(--base-black);
+  width: 20px;
+  height: 23px;
+}
+
+.input-numbers-value.small {
+  font-size: var(--type-roboto-flex-body-sm);
+  line-height: var(--type-line-height-body-sm);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
+}
+
+.input-numbers-value.default {
+  font-size: var(--type-roboto-flex-body);
+  line-height: var(--type-line-height-body);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body);
+}
+
+.input-numbers-value.large {
+  font-size: var(--type-roboto-flex-body-lg);
+  line-height: var(--type-line-height-body-lg);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg);
+}
+
+.input-numbers-container.disabled .input-numbers-value {
+  color: var(--neutral-gray-gray-400);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .input-numbers-wrapper {
+    max-width: 100%;
+  }
+  
+  .input-numbers-container.default.default,
+  .input-numbers-container.default.large {
+    width: 100%;
+    min-width: 280px;
+  }
+  
+  .input-numbers-container.default.small {
+    width: 100%;
+    min-width: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .input-numbers-controls.small {
+    gap: var(--spacing-sizing-2px);
+  }
+  
+  .input-numbers-controls.default,
+  .input-numbers-controls.large {
+    gap: var(--spacing-sizing-4px);
+  }
+  
+  .input-numbers-container.simple .input-numbers-controls.small,
+  .input-numbers-container.simple .input-numbers-controls.default {
+    gap: var(--spacing-sizing-6px);
+  }
+  
+  .input-numbers-container.simple .input-numbers-controls.large {
+    gap: var(--spacing-sizing-8px);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .input-numbers-container {
+    border-width: 2px;
+  }
+  
+  .input-numbers-container.focus,
+  .input-numbers-container.pressed {
+    border-width: 3px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .input-numbers-container,
+  .input-numbers-button {
+    transition: none;
+  }
+  
+  .input-numbers-button:active:not(:disabled) {
+    transform: none;
+  }
+}
