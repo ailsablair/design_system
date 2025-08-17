@@ -35,8 +35,8 @@ export const Badge: React.FC<BadgeProps> = ({
   const displayCount = count > maxCount ? `${maxCount}+` : count.toString();
 
   return (
-    <div 
-      className={`badge ${variant} ${color} ${size} ${className}`}
+    <div
+      className={`badge ${variant} ${color} ${size} ${light ? 'light' : ''} ${className}`}
       role={variant === 'count' ? 'status' : undefined}
       aria-label={variant === 'count' ? `${count} notifications` : `${color} status indicator`}
     >
