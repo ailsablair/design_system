@@ -55,8 +55,9 @@
   border-radius: var(--spacing-radius-2px);
   border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
   background: var(--base-white);
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
   position: relative;
+  contain: layout style;
 }
 
 .input-numbers-container.small {
@@ -85,12 +86,14 @@
 }
 
 .input-numbers-container.default.small {
-  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
 }
 
 .input-numbers-container.default.default,
 .input-numbers-container.default.large {
-  width: 299px;
+  min-width: 299px;
+  max-width: 299px;
 }
 
 /* Simple type has controls only */
@@ -205,7 +208,8 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: all 0.2s ease;
+  transition: opacity 0.2s ease;
+  will-change: opacity;
 }
 
 .input-numbers-button:disabled {
