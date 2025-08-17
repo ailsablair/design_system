@@ -3,7 +3,7 @@ import { TableRow, TableCell } from './TableRow';
 import './tableRow.css';
 
 const meta: Meta<typeof TableRow> = {
-  title: 'Atoms/TableRow',
+  title: 'Molecules/Building Blocks/TableRow',
   component: TableRow,
   parameters: {
     layout: 'padded',
