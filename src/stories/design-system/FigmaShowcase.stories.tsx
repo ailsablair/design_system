@@ -461,3 +461,293 @@ export const SliderSection: Story = {
     },
   },
 };
+
+// Comprehensive showcase with all Figma components
+export const CompleteFigmaShowcase: Story = {
+  render: () => (
+    <div style={{
+      minHeight: '100vh',
+      backgroundColor: 'var(--base-white)',
+      padding: '40px',
+      fontFamily: 'var(--type-typeface-archivo)',
+    }}>
+      <div style={{
+        maxWidth: '1400px',
+        margin: '0 auto',
+      }}>
+
+        {/* Header */}
+        <div style={{ marginBottom: '48px' }}>
+          <h1 style={{
+            fontSize: '32px',
+            fontWeight: '600',
+            color: 'var(--base-black)',
+            marginBottom: '8px',
+            lineHeight: '1.2'
+          }}>
+            Complete Figma Design System
+          </h1>
+          <p style={{
+            fontSize: '18px',
+            color: 'var(--secondary-blue-gray)',
+            fontWeight: '300',
+            margin: 0
+          }}>
+            All UI components as designed in Figma - Toggles, Sliders, and Date/Time Inputs
+          </p>
+        </div>
+
+        {/* Toggle Components Section */}
+        <div style={{ marginBottom: '64px' }}>
+          <h2 style={{
+            fontSize: '24px',
+            fontWeight: '500',
+            color: 'var(--base-black)',
+            marginBottom: '24px',
+            paddingBottom: '8px',
+            borderBottom: '1px solid var(--neutral-gray-gray-200)'
+          }}>
+            Toggle Components with Labels
+          </h2>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '32px',
+            alignItems: 'start'
+          }}>
+            {(['small', 'default', 'large'] as const).map((size) => (
+              <div key={`toggle-${size}`}>
+                <h3 style={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: 'var(--secondary-blue-gray)',
+                  marginBottom: '16px',
+                  textTransform: 'capitalize'
+                }}>
+                  {size} Size
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  <ToggleWithLabel size={size} enabled={true} />
+                  <ToggleWithLabel size={size} enabled={false} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Slider Components Section */}
+        <div style={{ marginBottom: '64px' }}>
+          <h2 style={{
+            fontSize: '24px',
+            fontWeight: '500',
+            color: 'var(--base-black)',
+            marginBottom: '24px',
+            paddingBottom: '8px',
+            borderBottom: '1px solid var(--neutral-gray-gray-200)'
+          }}>
+            Progressive Slider Components
+          </h2>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+            gap: '32px',
+            alignItems: 'start'
+          }}>
+            {(['small', 'default', 'large'] as const).map((size) => (
+              <div key={`slider-${size}`}>
+                <h3 style={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  color: 'var(--secondary-blue-gray)',
+                  marginBottom: '16px',
+                  textTransform: 'capitalize'
+                }}>
+                  {size} Size
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <SliderRow size={size} totalSteps={10} filledSteps={0} />
+                  <SliderRow size={size} totalSteps={10} filledSteps={3} />
+                  <SliderRow size={size} totalSteps={10} filledSteps={7} />
+                  <SliderRow size={size} totalSteps={10} filledSteps={10} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Date/Time Input Components Section */}
+        <div style={{ marginBottom: '64px' }}>
+          <h2 style={{
+            fontSize: '24px',
+            fontWeight: '500',
+            color: 'var(--base-black)',
+            marginBottom: '24px',
+            paddingBottom: '8px',
+            borderBottom: '1px solid var(--neutral-gray-gray-200)'
+          }}>
+            Date & Time Input Components
+          </h2>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '40px',
+            alignItems: 'start'
+          }}>
+            {/* Date Inputs */}
+            <div>
+              <h3 style={{
+                fontSize: '18px',
+                fontWeight: '500',
+                color: 'var(--secondary-blue-gray)',
+                marginBottom: '20px'
+              }}>
+                Date Inputs - All States
+              </h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                {(['small', 'default', 'large'] as const).map((size) => (
+                  <div key={`date-${size}`}>
+                    <h4 style={{
+                      fontSize: '14px',
+                      fontWeight: '500',
+                      color: 'var(--neutral-gray-gray-600)',
+                      marginBottom: '12px',
+                      textTransform: 'capitalize'
+                    }}>
+                      {size}
+                    </h4>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      <DateTimeInput label="Date" type="date" size={size} state="default" />
+                      <DateTimeInput label="Date" type="date" size={size} state="filled" value="01 / JAN / 2000" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Date Focus States */}
+            <div>
+              <h3 style={{
+                fontSize: '18px',
+                fontWeight: '500',
+                color: 'var(--secondary-blue-gray)',
+                marginBottom: '20px'
+              }}>
+                Date Focus & Typing States
+              </h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                {(['small', 'default', 'large'] as const).map((size) => (
+                  <div key={`date-focus-${size}`}>
+                    <h4 style={{
+                      fontSize: '14px',
+                      fontWeight: '500',
+                      color: 'var(--neutral-gray-gray-600)',
+                      marginBottom: '12px',
+                      textTransform: 'capitalize'
+                    }}>
+                      {size}
+                    </h4>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      <DateTimeInput label="Date" type="date" size={size} state="focus" />
+                      <DateTimeInput label="Date" type="date" size={size} state="typing" value="01 / JAN / |" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Time Inputs */}
+            <div>
+              <h3 style={{
+                fontSize: '18px',
+                fontWeight: '500',
+                color: 'var(--secondary-blue-gray)',
+                marginBottom: '20px'
+              }}>
+                Time Inputs - All States
+              </h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                {(['small', 'default', 'large'] as const).map((size) => (
+                  <div key={`time-${size}`}>
+                    <h4 style={{
+                      fontSize: '14px',
+                      fontWeight: '500',
+                      color: 'var(--neutral-gray-gray-600)',
+                      marginBottom: '12px',
+                      textTransform: 'capitalize'
+                    }}>
+                      {size}
+                    </h4>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      <DateTimeInput label="Time" type="time" size={size} state="default" />
+                      <DateTimeInput label="Time" type="time" size={size} state="filled" value="08 : 01 : 54 PM" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Time Focus States */}
+            <div>
+              <h3 style={{
+                fontSize: '18px',
+                fontWeight: '500',
+                color: 'var(--secondary-blue-gray)',
+                marginBottom: '20px'
+              }}>
+                Time Focus & Typing States
+              </h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                {(['small', 'default', 'large'] as const).map((size) => (
+                  <div key={`time-focus-${size}`}>
+                    <h4 style={{
+                      fontSize: '14px',
+                      fontWeight: '500',
+                      color: 'var(--neutral-gray-gray-600)',
+                      marginBottom: '12px',
+                      textTransform: 'capitalize'
+                    }}>
+                      {size}
+                    </h4>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      <DateTimeInput label="Time" type="time" size={size} state="focus" />
+                      <DateTimeInput label="Time" type="time" size={size} state="typing" value="08 : 01 : |  PM" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div style={{
+          marginTop: '64px',
+          padding: '24px',
+          backgroundColor: 'var(--neutral-gray-gray-50)',
+          borderRadius: 'var(--spacing-radius-8px)',
+          textAlign: 'center'
+        }}>
+          <p style={{
+            fontSize: '16px',
+            color: 'var(--secondary-blue-gray)',
+            margin: 0,
+            fontWeight: '300'
+          }}>
+            All components designed to match Figma specifications with full responsiveness and accessibility support.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Complete showcase of all Figma design components including toggles, sliders, and date/time inputs in all sizes and states.',
+      },
+    },
+  },
+};
