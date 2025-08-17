@@ -143,8 +143,14 @@ export const InputNumbers: React.FC<InputNumbersProps> = ({
   className = '',
 }) => {
   const [internalValue, setInternalValue] = useState(value);
-  const [isFocused, setIsFocused] = useState(state === 'focus');
-  const [isPressed, setIsPressed] = useState(state === 'pressed');
+  const [isFocused, setIsFocused] = useState(false);
+  const [isPressed, setIsPressed] = useState(false);
+
+  // Use effect to sync with external state prop
+  React.useEffect(() => {
+    setIsFocused(state === 'focus');
+    setIsPressed(state === 'pressed');
+  }, [state]);
 
   const currentValue = value !== undefined ? value : internalValue;
   const isAtMin = currentValue <= min;
@@ -167,25 +173,29 @@ export const InputNumbers: React.FC<InputNumbersProps> = ({
     if (onDecrement) onDecrement();
   };
 
-  const handleFocus = () => {
-    if (!disabled) {
+  const handleFocus = React.useCallback(() => {
+    if (!disabled && state !== 'focus') {
       setIsFocused(true);
     }
-  };
+  }, [disabled, state]);
 
-  const handleBlur = () => {
-    setIsFocused(false);
-  };
+  const handleBlur = React.useCallback(() => {
+    if (state !== 'focus') {
+      setIsFocused(false);
+    }
+  }, [state]);
 
-  const handleMouseDown = () => {
-    if (!disabled) {
+  const handleMouseDown = React.useCallback(() => {
+    if (!disabled && state !== 'pressed') {
       setIsPressed(true);
     }
-  };
+  }, [disabled, state]);
 
-  const handleMouseUp = () => {
-    setIsPressed(false);
-  };
+  const handleMouseUp = React.useCallback(() => {
+    if (state !== 'pressed') {
+      setIsPressed(false);
+    }
+  }, [state]);
 
   const getStateClass = () => {
     if (disabled) return 'disabled';
