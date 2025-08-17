@@ -1,0 +1,197 @@
+@import '../foundations/tokens.css';
+
+.datetime-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 308px;
+}
+
+.datetime-input-wrapper.small {
+  gap: var(--spacing-sizing-4px);
+}
+
+.datetime-input-wrapper.default {
+  gap: var(--spacing-sizing-4px);
+}
+
+.datetime-input-wrapper.large {
+  gap: var(--spacing-sizing-4px);
+}
+
+.datetime-input-label {
+  font-family: var(--type-typeface-archivo);
+  font-weight: var(--type-weight-medium);
+  color: var(--base-black);
+  margin: 0;
+}
+
+.datetime-input-label.small {
+  font-size: var(--type-archivo-label-sm);
+  line-height: var(--type-line-height-label-sm);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
+  padding: var(--spacing-sizing-2px);
+}
+
+.datetime-input-label.default {
+  font-size: var(--type-archivo-label);
+  line-height: var(--type-line-height-label);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
+  padding: var(--spacing-sizing-4px);
+}
+
+.datetime-input-label.large {
+  font-size: var(--type-archivo-label-lg);
+  line-height: var(--type-line-height-label-lg);
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg);
+  padding: var(--spacing-sizing-4px);
+}
+
+.datetime-input-container {
+  display: flex;
+  width: var(--sizing-width-300);
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--spacing-radius-2px);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+  background: var(--base-white);
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.datetime-input-container.small {
+  padding: var(--spacing-sizing-8px);
+  height: auto;
+  min-height: 32px;
+}
+
+.datetime-input-container.default {
+  height: var(--sizing-height-44);
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
+}
+
+.datetime-input-container.large {
+  height: var(--sizing-height-54);
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
+}
+
+.datetime-input-container.focus,
+.datetime-input-container.typing {
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
+  box-shadow: var(--shadow-focus);
+}
+
+.datetime-input-container.disabled {
+  background-color: var(--neutral-gray-gray-50);
+  border-color: var(--neutral-gray-gray-200);
+  opacity: var(--opacity-medium);
+  cursor: not-allowed;
+}
+
+.datetime-input-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.datetime-input-content.small {
+  gap: var(--spacing-sizing-4px);
+}
+
+.datetime-input-content.default {
+  gap: var(--spacing-sizing-4px);
+}
+
+.datetime-input-content.large {
+  gap: var(--spacing-sizing-8px);
+}
+
+.datetime-input-text-content {
+  font-family: var(--type-typeface-roboto-flex);
+  font-weight: var(--type-weight-regular);
+  flex: 1;
+  min-width: 0;
+}
+
+.datetime-input-text-content.small {
+  font-size: var(--type-roboto-flex-body-sm);
+  line-height: var(--type-line-height-body-sm);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
+}
+
+.datetime-input-text-content.default {
+  font-size: var(--type-roboto-flex-body);
+  line-height: var(--type-line-height-body);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body);
+}
+
+.datetime-input-text-content.large {
+  font-size: var(--type-roboto-flex-body-lg);
+  line-height: var(--type-line-height-body-lg);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg);
+}
+
+.datetime-input-text {
+  color: var(--base-black);
+}
+
+.datetime-input-cursor {
+  color: var(--neutral-gray-gray-400);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.datetime-input-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.datetime-input-icon.small {
+  width: 14px;
+  height: 14px;
+}
+
+.datetime-input-icon.default {
+  width: 16px;
+  height: 16px;
+}
+
+.datetime-input-icon.large {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .datetime-input-wrapper {
+    max-width: 100%;
+  }
+  
+  .datetime-input-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .datetime-input-container.large {
+    height: 44px;
+    padding: var(--spacing-sizing-4px) var(--spacing-sizing-6px);
+  }
+  
+  .datetime-input-text-content.large {
+    font-size: var(--type-size-base);
+  }
+  
+  .datetime-input-icon.large {
+    width: 16px;
+    height: 16px;
+  }
+}
