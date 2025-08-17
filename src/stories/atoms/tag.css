@@ -16,7 +16,7 @@
 /* Size variants */
 .tag.small {
   padding: var(--spacing-sizing-2px) var(--spacing-sizing-6px);
-  border-radius: var(--spacing-radius-4px);
+  border-radius: var(--spacing-radius-full);
   gap: var(--spacing-sizing-4px);
   font-size: var(--type-archivo-label-sm);
   line-height: var(--type-line-height-label-sm);
@@ -24,7 +24,7 @@
 
 .tag.default {
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
-  border-radius: var(--spacing-radius-6px);
+  border-radius: var(--spacing-radius-full);
   gap: var(--spacing-sizing-6px);
   font-size: var(--type-archivo-label);
   line-height: var(--type-line-height-label);
@@ -32,7 +32,7 @@
 
 .tag.large {
   padding: var(--spacing-sizing-6px) var(--spacing-sizing-12px);
-  border-radius: var(--spacing-radius-8px);
+  border-radius: var(--spacing-radius-full);
   gap: var(--spacing-sizing-8px);
   font-size: var(--type-archivo-label-lg);
   line-height: var(--type-line-height-label-lg);
