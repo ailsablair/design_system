@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Toggle } from './Toggle';
 
 const meta: Meta<typeof Toggle> = {
-  title: 'Design System/Toggle with Label',
+  title: 'Design System/Atoms/Toggle with Label',
   component: Toggle,
   parameters: {
     layout: 'centered',
