@@ -236,7 +236,11 @@
 .tag-text {
   font-weight: var(--type-weight-medium);
   letter-spacing: var(--type-letter-spacing-archivo-label);
-  flex: 1;
+  flex: 0 1 auto;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+  min-width: 0;
 }
 
 /* Close button styling */
