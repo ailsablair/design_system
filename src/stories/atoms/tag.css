@@ -232,6 +232,16 @@
   cursor: not-allowed;
 }
 
+/* Tag label container styling */
+.tag-label {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  min-width: 0;
+  width: 100%;
+}
+
 /* Tag text styling */
 .tag-text {
   font-weight: var(--type-weight-medium);
