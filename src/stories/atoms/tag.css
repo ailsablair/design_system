@@ -11,6 +11,10 @@
   white-space: nowrap;
   font-weight: var(--type-weight-medium);
   letter-spacing: var(--type-letter-spacing-archivo-label);
+  flex-wrap: nowrap;
+  min-width: 0;
+  width: auto;
+  max-width: none;
 }
 
 /* Size variants */
