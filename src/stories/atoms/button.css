@@ -865,7 +865,7 @@
 /* State variants for ghost buttons */
 .button.ghost.default {
   background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-400);
 }
 
 .button.ghost.hover,
@@ -889,7 +889,7 @@
 
 .button.ghost.clicked .button-text,
 .button.ghost:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.ghost.focused,
@@ -1048,7 +1048,7 @@
 }
 
 .button.ghost.force-clicked .button-text {
-  font-weight: var(--type-weight-light) !important;
+  font-weight: var(--type-weight-medium) !important;
 }
 
 .button.ghost.force-focused {
@@ -1110,12 +1110,14 @@
 /* Special hover effects for extra-small ghost buttons */
 .button.extra-small.ghost.hover,
 .button.extra-small.ghost:hover:not(.disabled):not(.loading) {
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200);
+  background: var(--base-white);
   border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-200);
 }
 
 .button.extra-small.ghost.clicked,
 .button.extra-small.ghost:active:not(.disabled):not(.loading) {
+  background: var(--base-white);
   border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-900);
   box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05);
 }
@@ -1138,7 +1140,7 @@
 .button.ghost.force-hover.extra-small {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400) !important;
-  box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05) !important;
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-200) !important;
 }
 
 .button.ghost.force-clicked.extra-small {
