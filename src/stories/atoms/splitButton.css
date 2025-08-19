@@ -259,7 +259,7 @@
 .split-button.primary.hover,
 .split-button.primary:hover:not(.disabled):not(.loading) {
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-400);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-teal-dark-teal);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
 }
 
 .split-button.primary.hover .split-button-text,
@@ -270,7 +270,7 @@
 .split-button.primary.clicked,
 .split-button.primary:active:not(.disabled):not(.loading) {
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-200);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-teal-dark-teal);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
 }
 
 .split-button.primary.clicked .split-button-text,
@@ -308,7 +308,7 @@
 .split-button.secondary:hover:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-50);
   border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
 }
 
 .split-button.secondary.hover .split-button-text,
@@ -320,7 +320,7 @@
 .split-button.secondary:active:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-50);
   border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-300);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
 }
 
 .split-button.secondary.clicked .split-button-text,
@@ -358,7 +358,7 @@
 .split-button.ghost.hover,
 .split-button.ghost:hover:not(.disabled):not(.loading) {
   border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-400);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
 }
 
 .split-button.ghost.hover .split-button-text,
@@ -369,7 +369,7 @@
 .split-button.ghost.clicked,
 .split-button.ghost:active:not(.disabled):not(.loading) {
   border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-400);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
 }
 
 .split-button.ghost.clicked .split-button-text,
