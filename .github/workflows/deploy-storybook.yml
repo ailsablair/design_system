@@ -54,11 +54,16 @@ jobs:
           npm ci --no-audit --no-fund
           echo "Dependencies installed successfully!"
 
-      - name: Validate TypeScript and linting
+      - name: Validate TypeScript
         run: |
           echo "Running TypeScript check..."
           npx tsc --noEmit --skipLibCheck
           echo "TypeScript validation passed!"
+
+      - name: Lint code (non-blocking)
+        run: |
+          echo "Running ESLint (warnings only)..."
+          npm run lint || echo "⚠️ Linting issues found but not blocking deployment"
 
       - name: Build Storybook
         run: |
