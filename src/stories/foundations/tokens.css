@@ -221,8 +221,10 @@
   /* === STATUS COLORS (Echo Specific) === */
   --status-red: #CE2031;
   --status-red-light: #FBEBEB;
+  --status-red-light-alt: #FFF3F3;
   --status-orange: #EE5622;
   --status-orange-alt: #F4A403;
+  --status-orange-light: #FEF4DA;
   --status-dark-orange: #D07C06;
   --status-green: #70CC67;
   --status-green-light: #F2FFF1;
