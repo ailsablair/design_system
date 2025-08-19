@@ -106,8 +106,19 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
 
   // Handle main button click
   const handleMainClick = () => {
-    if (!disabled && !loading && onClick) {
-      onClick();
+    if (!disabled && !loading) {
+      // Execute the onClick callback first
+      if (onClick) {
+        onClick();
+      }
+      // Then automatically open the dropdown
+      const newIsOpen = !isOpen;
+      if (controlledIsOpen === undefined) {
+        setInternalIsOpen(newIsOpen);
+      }
+      if (onToggle) {
+        onToggle(newIsOpen);
+      }
     }
   };
 
