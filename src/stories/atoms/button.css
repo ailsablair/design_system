@@ -1,0 +1,300 @@
+@import '../foundations/tokens.css';
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--spacing-radius-4px);
+  font-family: var(--type-typeface-archivo);
+  font-style: normal;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  outline: none;
+  position: relative;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+/* Button content layout */
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sizing-8px);
+  width: 100%;
+}
+
+.button-loading-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.button-text {
+  line-height: 1;
+  flex: 1;
+  text-align: center;
+}
+
+.button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Loading animation */
+.button-loading-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Size variants */
+.button.extra-small {
+  min-width: 50px;
+  padding: var(--spacing-sizing-2px) var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-6px);
+  min-height: 27px;
+}
+
+.button.extra-small .button-content {
+  padding: var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-6px);
+}
+
+.button.extra-small .button-text {
+  font-size: var(--type-archivo-footnote);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-footnote);
+  letter-spacing: var(--type-letter-spacing-archivo-footnote);
+}
+
+.button.small {
+  min-width: 80px;
+  min-height: 30px;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-12px);
+  gap: var(--spacing-sizing-12px);
+}
+
+.button.small .button-content {
+  padding: var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-8px);
+}
+
+.button.small .button-text {
+  font-size: var(--type-archivo-label-sm);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-label-sm);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
+}
+
+.button.default {
+  min-width: 80px;
+  min-height: 42px;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px);
+  gap: var(--spacing-sizing-12px);
+}
+
+.button.default .button-content {
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-8px);
+}
+
+.button.default .button-text {
+  font-size: var(--type-archivo-label);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-label);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
+}
+
+.button.large {
+  min-width: 80px;
+  min-height: 52px;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px);
+  gap: var(--spacing-sizing-12px);
+}
+
+.button.large .button-content {
+  padding: var(--spacing-sizing-12px) var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-8px);
+}
+
+.button.large .button-text {
+  font-size: var(--type-archivo-label-lg);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-label-lg);
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg);
+}
+
+/* Primary button variant */
+.button.primary {
+  background: var(--primary-blue-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue);
+  color: var(--base-white);
+}
+
+.button.primary .button-icon {
+  color: var(--base-white);
+  opacity: 0.6;
+}
+
+/* State variants for primary buttons */
+.button.primary.default {
+  background: var(--primary-blue-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue);
+}
+
+.button.primary.hover,
+.button.primary:hover:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-400);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-blue-blue-400);
+}
+
+.button.primary.hover .button-text,
+.button.primary:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.button.primary.clicked,
+.button.primary:active:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-200);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-blue-blue-400);
+}
+
+.button.primary.clicked .button-text,
+.button.primary:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.button.primary.focused,
+.button.primary:focus-visible:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-3px) solid var(--primary-blue-blue-300);
+}
+
+.button.primary.loading {
+  background: var(--primary-blue-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.primary.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.primary.disabled .button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
+}
+
+/* Special hover effects for extra-small buttons */
+.button.extra-small.primary.hover,
+.button.extra-small.primary:hover:not(.disabled):not(.loading) {
+  box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue);
+}
+
+.button.extra-small.primary.clicked,
+.button.extra-small.primary:active:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-0-5px) solid var(--base-white);
+  box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05);
+}
+
+/* Disabled extra-small special styling */
+.button.extra-small.primary.disabled {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-blue-200);
+  color: var(--neutral-gray-gray-400);
+}
+
+.button.extra-small.primary.disabled .button-icon {
+  color: var(--neutral-gray-gray-400);
+}
+
+/* Width variants */
+.button.full-width {
+  width: 100%;
+}
+
+/* Force state classes for Storybook */
+.button.force-hover {
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-400) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-blue-blue-400) !important;
+}
+
+.button.force-hover .button-text {
+  font-weight: var(--type-weight-medium) !important;
+}
+
+.button.force-clicked {
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-200) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-blue-blue-400) !important;
+}
+
+.button.force-clicked .button-text {
+  font-weight: var(--type-weight-medium) !important;
+}
+
+.button.force-focused {
+  border: var(--spacing-stroke-3px) solid var(--primary-blue-blue-300) !important;
+}
+
+.button.force-hover.extra-small {
+  box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05) !important;
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue) !important;
+}
+
+.button.force-clicked.extra-small {
+  border: var(--spacing-stroke-0-5px) solid var(--base-white) !important;
+  box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05) !important;
+}
+
+/* Accessibility and responsive improvements */
+@media (max-width: 768px) {
+  .button {
+    min-width: 60px;
+  }
+  
+  .button.extra-small {
+    min-width: 40px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .button.primary {
+    border-width: var(--spacing-stroke-2px);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+  
+  .button-loading-icon {
+    animation: none;
+  }
+}
+
+/* Focus management for keyboard navigation */
+.button:focus-visible {
+  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue-500);
+  outline-offset: var(--spacing-sizing-2px);
+}
