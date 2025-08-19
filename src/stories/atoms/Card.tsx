@@ -1,6 +1,5 @@
 import React from 'react';
 import './card.css';
-import { DefaultAlarmIcon, DefaultArrowDownCircleIcon } from '../foundations/Icon';
 
 export interface CardProps {
   /** Size variant */
