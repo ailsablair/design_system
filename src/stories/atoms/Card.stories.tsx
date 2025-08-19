@@ -8,7 +8,7 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A comprehensive card component that matches the Figma design specifications. Supports multiple types: simple cards with headers and buttons, icon cards, text-only cards, empty state cards, stat cards, and semantic cards (warning, error, info, success). Each type supports different sizes, alignments, and styling options.',
+        component: 'A comprehensive card component that matches the Figma design specifications. Supports multiple types: simple cards with headers and buttons, icon cards, text-only cards, empty state cards, stat cards, semantic cards (warning, error, info, success), and image cards (image, contained-image). Each type supports different sizes, alignments, and styling options.',
       },
     },
   },
