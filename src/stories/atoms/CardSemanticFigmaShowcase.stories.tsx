@@ -8,7 +8,7 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Semantic card components that exactly match the provided Figma designs. These cards display warning, error, and info states with appropriate icons, colors, and button styling.',
+        component: 'Semantic card components that exactly match the provided Figma designs. These cards display warning, error, info, and success states with appropriate icons, colors, and button styling in a horizontal layout.',
       },
     },
   },
