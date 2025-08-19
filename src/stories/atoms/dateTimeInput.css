@@ -185,6 +185,88 @@
   height: 20px;
 }
 
+/* Close button */
+.datetime-input-close-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+  margin-left: var(--spacing-sizing-4px);
+}
+
+.datetime-input-close-button:hover {
+  opacity: 1;
+}
+
+.datetime-input-close-button:focus {
+  outline: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
+  outline-offset: var(--spacing-sizing-1px);
+  border-radius: var(--spacing-radius-2px);
+}
+
+.datetime-input-close-button.small {
+  width: 14px;
+  height: 14px;
+}
+
+.datetime-input-close-button.default {
+  width: 16px;
+  height: 16px;
+}
+
+.datetime-input-close-button.large {
+  width: 20px;
+  height: 20px;
+}
+
+/* Validation message */
+.datetime-input-message {
+  font-family: var(--type-typeface-roboto-flex);
+  font-weight: var(--type-weight-regular);
+  margin-top: var(--spacing-sizing-4px);
+}
+
+.datetime-input-message.small {
+  font-size: var(--type-roboto-flex-body-sm);
+  line-height: var(--type-line-height-body-sm);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
+}
+
+.datetime-input-message.default {
+  font-size: var(--type-roboto-flex-body-sm);
+  line-height: var(--type-line-height-body-sm);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
+}
+
+.datetime-input-message.large {
+  font-size: var(--type-roboto-flex-body);
+  line-height: var(--type-line-height-body);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body);
+}
+
+.datetime-input-message.error {
+  color: var(--status-red);
+}
+
+.datetime-input-message.warning {
+  color: var(--status-orange-alt);
+}
+
+.datetime-input-message.success {
+  color: var(--status-dark-green);
+}
+
+.datetime-input-message.default,
+.datetime-input-message.focus,
+.datetime-input-message.typing,
+.datetime-input-message.filled {
+  color: var(--neutral-gray-gray-600);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .datetime-input-wrapper {
