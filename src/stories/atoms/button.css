@@ -1088,7 +1088,7 @@
 }
 
 .button.error.force-hover .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-medium) !important;
 }
 
 .button.error.force-clicked {
@@ -1118,7 +1118,7 @@
 }
 
 .button.warning.force-hover .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-medium) !important;
 }
 
 .button.warning.force-clicked {
@@ -1133,7 +1133,7 @@
 }
 
 .button.warning.force-clicked .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-medium) !important;
 }
 
 .button.warning.force-focused {
@@ -1367,7 +1367,7 @@
 }
 
 .button.info.force-hover .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-medium) !important;
 }
 
 .button.info.force-clicked {
@@ -1382,7 +1382,7 @@
 }
 
 .button.info.force-clicked .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-medium) !important;
 }
 
 .button.info.force-focused {
@@ -1398,7 +1398,7 @@
 }
 
 .button.success.force-hover .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-medium) !important;
 }
 
 .button.success.force-hover .button-icon {
@@ -1414,7 +1414,7 @@
 }
 
 .button.success.force-clicked .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-medium) !important;
 }
 
 .button.success.force-clicked .button-icon {
