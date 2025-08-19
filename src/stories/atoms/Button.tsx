@@ -7,7 +7,7 @@ export interface ButtonProps {
   /** Size variant */
   size?: 'extra-small' | 'small' | 'default' | 'large';
   /** Button type/variant */
-  type?: 'primary' | 'secondary' | 'tertiary';
+  type?: 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'error' | 'warning';
   /** Visual state (for controlled states) */
   state?: 'default' | 'hover' | 'clicked' | 'focused' | 'loading' | 'disabled';
   /** Outline variant */
@@ -50,6 +50,30 @@ const ArrowDownIcon: React.FC<{ size: number }> = ({ size }) => (
 const LoadingIcon: React.FC<{ size: number }> = ({ size }) => (
   <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="button-loading-icon">
     <path d="M7.99992 2.66665V1.33331C7.12444 1.33331 6.25753 1.50575 5.4487 1.84078C4.63986 2.17581 3.90493 2.66688 3.28587 3.28593C2.03563 4.53618 1.33325 6.23187 1.33325 7.99998H2.66659C2.66659 6.58549 3.22849 5.22894 4.22868 4.22874C5.22888 3.22855 6.58543 2.66665 7.99992 2.66665Z" fill="currentColor"/>
+  </svg>
+);
+
+const AlertIcon: React.FC<{ size: number }> = ({ size }) => (
+  <svg width={size} height={size} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.6">
+      <path d="M10.833 11.6666H9.16634V7.49996H10.833M10.833 15H9.16634V13.3333H10.833M0.833008 17.5H19.1663L9.99967 1.66663L0.833008 17.5Z" fill="currentColor"/>
+    </g>
+  </svg>
+);
+
+const CloseCircleIcon: React.FC<{ size: number }> = ({ size }) => (
+  <svg width={size} height={size} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.6">
+      <path d="M10.0003 1.66663C14.6087 1.66663 18.3337 5.39163 18.3337 9.99996C18.3337 14.6083 14.6087 18.3333 10.0003 18.3333C5.39199 18.3333 1.66699 14.6083 1.66699 9.99996C1.66699 5.39163 5.39199 1.66663 10.0003 1.66663ZM12.992 5.83329L10.0003 8.82496L7.00866 5.83329L5.83366 7.00829L8.82533 9.99996L5.83366 12.9916L7.00866 14.1666L10.0003 11.175L12.992 14.1666L14.167 12.9916L11.1753 9.99996L14.167 7.00829L12.992 5.83329Z" fill="currentColor"/>
+    </g>
+  </svg>
+);
+
+const ChevronUpIcon: React.FC<{ size: number }> = ({ size }) => (
+  <svg width={size} height={size} viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.6">
+      <path d="M4.3225 9.48913L7 6.81746L9.6775 9.48913L10.5 8.66663L7 5.16663L3.5 8.66663L4.3225 9.48913Z" fill="currentColor"/>
+    </g>
   </svg>
 );
 
@@ -126,4 +150,4 @@ export const Button: React.FC<ButtonProps> = ({
 };
 
 // Export default icons for convenience
-export { AlarmIcon, ArrowDownIcon, LoadingIcon };
+export { AlarmIcon, ArrowDownIcon, LoadingIcon, AlertIcon, CloseCircleIcon, ChevronUpIcon };
