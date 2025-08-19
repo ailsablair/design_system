@@ -329,36 +329,29 @@
 
 
 .textarea-message {
-  font-family: var(--type-typeface-archivo);
-  font-weight: var(--type-weight-light);
+  font-family: var(--type-typeface-roboto-flex);
+  font-weight: var(--type-weight-regular);
   margin: var(--spacing-sizing-0);
-  width: var(--sizing-width-300);
-  position: absolute;
-  height: var(--sizing-height-15);
+  flex: 1;
+  min-width: 0;
 }
 
 .textarea-message.small {
-  font-size: var(--type-archivo-footnote);
-  line-height: var(--type-line-height-footnote);
-  letter-spacing: var(--type-letter-spacing-archivo-footnote);
-  left: var(--spacing-sizing-4px);
-  top: var(--sizing-top-106);
+  font-size: var(--type-roboto-flex-body-sm);
+  line-height: var(--type-line-height-body-sm);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
 }
 
 .textarea-message.default {
-  font-size: var(--type-archivo-footnote);
-  line-height: var(--type-line-height-footnote);
-  letter-spacing: var(--type-letter-spacing-archivo-footnote);
-  left: var(--spacing-sizing-4px);
-  top: var(--sizing-top-111);
+  font-size: var(--type-roboto-flex-body-sm);
+  line-height: var(--type-line-height-body-sm);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
 }
 
 .textarea-message.large {
-  font-size: var(--type-archivo-footnote);
-  line-height: var(--type-line-height-footnote);
-  letter-spacing: var(--type-letter-spacing-archivo-footnote);
-  left: var(--spacing-sizing-4px);
-  top: var(--sizing-top-112);
+  font-size: var(--type-roboto-flex-body);
+  line-height: var(--type-line-height-body);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body);
 }
 
 .textarea-message.error {
