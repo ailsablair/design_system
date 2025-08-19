@@ -240,39 +240,39 @@
 }
 
 /* State variants for default labels */
-.label.default.default {
+.label.default:not(.ghost).default {
   background: var(--primary-blue-blue);
   border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue);
 }
 
-.label.default.hover,
-.label.default:hover:not(.disabled) {
+.label.default:not(.ghost).hover,
+.label.default:not(.ghost):hover:not(.disabled) {
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-400);
   box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
 }
 
-.label.default.hover .label-text,
-.label.default:hover:not(.disabled) .label-text {
+.label.default:not(.ghost).hover .label-text,
+.label.default:not(.ghost):hover:not(.disabled) .label-text {
   font-weight: var(--type-weight-medium);
 }
 
-.label.default.clicked,
-.label.default:active:not(.disabled) {
+.label.default:not(.ghost).clicked,
+.label.default:not(.ghost):active:not(.disabled) {
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-200);
   box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
 }
 
-.label.default.clicked .label-text,
-.label.default:active:not(.disabled) .label-text {
+.label.default:not(.ghost).clicked .label-text,
+.label.default:not(.ghost):active:not(.disabled) .label-text {
   font-weight: var(--type-weight-medium);
 }
 
-.label.default.focused,
-.label.default:focus-visible:not(.disabled) {
+.label.default:not(.ghost).focused,
+.label.default:not(.ghost):focus-visible:not(.disabled) {
   border: var(--spacing-stroke-3px) solid var(--primary-blue-blue-300);
 }
 
-.label.default.disabled {
+.label.default:not(.ghost).disabled {
   background: var(--neutral-gray-gray-100);
   border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
   color: var(--neutral-gray-gray-500);
@@ -280,7 +280,7 @@
   pointer-events: none;
 }
 
-.label.default.disabled .label-icon {
+.label.default:not(.ghost).disabled .label-icon {
   color: var(--neutral-gray-gray-500);
   opacity: 0.8;
 }
