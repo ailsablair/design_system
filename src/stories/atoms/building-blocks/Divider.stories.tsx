@@ -8,7 +8,7 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Divider component for creating visual separations with various line styles, thicknesses, and orientations. These building blocks are used to create clear visual divisions between content sections.',
+        component: 'Divider component for creating visual separations with various line styles, thicknesses, orientations, and optional text labels. These building blocks are used to create clear visual divisions between content sections.',
       },
     },
   },
@@ -28,6 +28,20 @@ const meta = {
       control: { type: 'select' },
       options: ['horizontal', 'vertical'],
       description: 'Orientation of the divider',
+    },
+    label: {
+      control: { type: 'text' },
+      description: 'Text label to display with the divider',
+    },
+    textAlign: {
+      control: { type: 'select' },
+      options: ['left', 'center', 'right'],
+      description: 'Position of the text label for horizontal dividers',
+    },
+    textStyle: {
+      control: { type: 'select' },
+      options: ['label-sm', 'title'],
+      description: 'Text style variant',
     },
     width: {
       control: { type: 'text' },
@@ -61,6 +75,42 @@ export const Default: Story = {
   },
 };
 
+export const WithLabel: Story = {
+  args: {
+    line: 'solid',
+    thickness: '0.5px',
+    alignment: 'horizontal',
+    label: 'Divider Label',
+    textAlign: 'left',
+    textStyle: 'label-sm',
+    width: '400px',
+  },
+};
+
+export const CenterLabel: Story = {
+  args: {
+    line: 'solid',
+    thickness: '0.5px',
+    alignment: 'horizontal',
+    label: 'Divider Label',
+    textAlign: 'center',
+    textStyle: 'label-sm',
+    width: '400px',
+  },
+};
+
+export const RightLabel: Story = {
+  args: {
+    line: 'solid',
+    thickness: '0.5px',
+    alignment: 'horizontal',
+    label: 'Divider Label',
+    textAlign: 'right',
+    textStyle: 'label-sm',
+    width: '400px',
+  },
+};
+
 export const VerticalDefault: Story = {
   args: {
     line: 'solid',
@@ -82,6 +132,261 @@ export const DottedVertical: Story = {
     line: 'dotted',
     thickness: '2px',
     alignment: 'vertical',
+  },
+};
+
+// === FIGMA DESIGN SHOWCASE === //
+
+export const FigmaDesignShowcase: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', padding: '40px', width: '100%', maxWidth: '1200px' }}>
+      <h2 style={{ margin: '0', fontSize: '24px', fontWeight: 600 }}>Figma Design Implementation</h2>
+      
+      {/* Basic Dividers without text */}
+      <div>
+        <h3 style={{ margin: '0 0 24px 0', fontSize: '18px', fontWeight: 500 }}>Basic Dividers</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+          <div>
+            <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Solid</p>
+            <Divider line="solid" thickness="0.5px" alignment="horizontal" width="100%" />
+          </div>
+          
+          <div>
+            <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Dashed</p>
+            <Divider line="dashed" thickness="0.5px" alignment="horizontal" width="100%" />
+          </div>
+          
+          <div>
+            <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Dotted</p>
+            <Divider line="dotted" thickness="0.5px" alignment="horizontal" width="100%" />
+          </div>
+        </div>
+      </div>
+
+      {/* Text Dividers - Label Small */}
+      <div>
+        <h3 style={{ margin: '0 0 24px 0', fontSize: '18px', fontWeight: 500 }}>Dividers with Text Labels (Label Small)</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+          {/* Left aligned labels */}
+          <div>
+            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Left Aligned</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              <Divider 
+                line="solid" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="left" 
+                textStyle="label-sm"
+                width="100%"
+              />
+              <Divider 
+                line="dashed" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="left" 
+                textStyle="label-sm"
+                width="100%"
+              />
+              <Divider 
+                line="dotted" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="left" 
+                textStyle="label-sm"
+                width="100%"
+              />
+            </div>
+          </div>
+
+          {/* Center aligned labels */}
+          <div>
+            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Center Aligned</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              <Divider 
+                line="solid" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="center" 
+                textStyle="label-sm"
+                width="100%"
+              />
+              <Divider 
+                line="dashed" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="center" 
+                textStyle="label-sm"
+                width="100%"
+              />
+              <Divider 
+                line="dotted" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="center" 
+                textStyle="label-sm"
+                width="100%"
+              />
+            </div>
+          </div>
+
+          {/* Right aligned labels */}
+          <div>
+            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Right Aligned</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              <Divider 
+                line="solid" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="right" 
+                textStyle="label-sm"
+                width="100%"
+              />
+              <Divider 
+                line="dashed" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="right" 
+                textStyle="label-sm"
+                width="100%"
+              />
+              <Divider 
+                line="dotted" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="right" 
+                textStyle="label-sm"
+                width="100%"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Text Dividers - Title Style */}
+      <div>
+        <h3 style={{ margin: '0 0 24px 0', fontSize: '18px', fontWeight: 500 }}>Dividers with Text Labels (Title Style)</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+          {/* Left aligned title */}
+          <div>
+            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Left Aligned</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              <Divider 
+                line="solid" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="left" 
+                textStyle="title"
+                width="100%"
+              />
+              <Divider 
+                line="dashed" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="left" 
+                textStyle="title"
+                width="100%"
+              />
+              <Divider 
+                line="dotted" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="left" 
+                textStyle="title"
+                width="100%"
+              />
+            </div>
+          </div>
+
+          {/* Center aligned title */}
+          <div>
+            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Center Aligned</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              <Divider 
+                line="solid" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="center" 
+                textStyle="title"
+                width="100%"
+              />
+              <Divider 
+                line="dashed" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="center" 
+                textStyle="title"
+                width="100%"
+              />
+              <Divider 
+                line="dotted" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="center" 
+                textStyle="title"
+                width="100%"
+              />
+            </div>
+          </div>
+
+          {/* Right aligned title */}
+          <div>
+            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Right Aligned</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              <Divider 
+                line="solid" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="right" 
+                textStyle="title"
+                width="100%"
+              />
+              <Divider 
+                line="dashed" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="right" 
+                textStyle="title"
+                width="100%"
+              />
+              <Divider 
+                line="dotted" 
+                thickness="0.5px" 
+                alignment="horizontal" 
+                label="Divider Label" 
+                textAlign="right" 
+                textStyle="title"
+                width="100%"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    layout: 'fullscreen',
+    docs: {
+      description: {
+        story: 'Complete implementation of all divider variants as shown in the Figma design, including basic dividers and text-labeled dividers with different alignment and text style options.',
+      },
+    },
   },
 };
 
@@ -189,107 +494,6 @@ export const LineStyleVariants: Story = {
   },
 };
 
-// === FIGMA DESIGN SHOWCASE === //
-
-export const FigmaDesignShowcase: Story = {
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', padding: '40px' }}>
-      <h2 style={{ margin: '0', fontSize: '24px', fontWeight: 600 }}>Figma Design Implementation</h2>
-      
-      {/* Horizontal Dividers */}
-      <div>
-        <h3 style={{ margin: '0 0 24px 0', fontSize: '18px', fontWeight: 500 }}>Horizontal Dividers</h3>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px', alignItems: 'start' }}>
-          {/* Solid variants */}
-          <div>
-            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Solid</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <Divider line="solid" thickness="0.5px" alignment="horizontal" width="200px" />
-              <Divider line="solid" thickness="1px" alignment="horizontal" width="200px" />
-              <Divider line="solid" thickness="2px" alignment="horizontal" width="200px" />
-              <Divider line="solid" thickness="4px" alignment="horizontal" width="200px" />
-              <Divider line="solid" thickness="8px" alignment="horizontal" width="200px" />
-            </div>
-          </div>
-          
-          {/* Dashed variants */}
-          <div>
-            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Dashed</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <Divider line="dashed" thickness="0.5px" alignment="horizontal" width="200px" />
-              <Divider line="dashed" thickness="1px" alignment="horizontal" width="200px" />
-              <Divider line="dashed" thickness="2px" alignment="horizontal" width="200px" />
-              <Divider line="dashed" thickness="3px" alignment="horizontal" width="200px" />
-              <Divider line="dashed" thickness="4px" alignment="horizontal" width="200px" />
-            </div>
-          </div>
-          
-          {/* Dotted variants */}
-          <div>
-            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Dotted</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <Divider line="dotted" thickness="0.5px" alignment="horizontal" width="200px" />
-              <Divider line="dotted" thickness="1px" alignment="horizontal" width="200px" />
-              <Divider line="dotted" thickness="2px" alignment="horizontal" width="200px" />
-              <Divider line="dotted" thickness="3px" alignment="horizontal" width="200px" />
-              <Divider line="dotted" thickness="4px" alignment="horizontal" width="200px" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Vertical Dividers */}
-      <div>
-        <h3 style={{ margin: '0 0 24px 0', fontSize: '18px', fontWeight: 500 }}>Vertical Dividers</h3>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px', alignItems: 'start' }}>
-          {/* Solid vertical */}
-          <div>
-            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Solid</h4>
-            <div style={{ display: 'flex', gap: '8px', alignItems: 'start' }}>
-              <Divider line="solid" thickness="0.5px" alignment="vertical" height="120px" />
-              <Divider line="solid" thickness="1px" alignment="vertical" height="120px" />
-              <Divider line="solid" thickness="2px" alignment="vertical" height="120px" />
-              <Divider line="solid" thickness="4px" alignment="vertical" height="120px" />
-              <Divider line="solid" thickness="8px" alignment="vertical" height="120px" />
-            </div>
-          </div>
-          
-          {/* Dashed vertical */}
-          <div>
-            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Dashed</h4>
-            <div style={{ display: 'flex', gap: '8px', alignItems: 'start' }}>
-              <Divider line="dashed" thickness="0.5px" alignment="vertical" height="120px" />
-              <Divider line="dashed" thickness="1px" alignment="vertical" height="120px" />
-              <Divider line="dashed" thickness="2px" alignment="vertical" height="120px" />
-              <Divider line="dashed" thickness="3px" alignment="vertical" height="120px" />
-              <Divider line="dashed" thickness="8px" alignment="vertical" height="120px" />
-            </div>
-          </div>
-          
-          {/* Dotted vertical */}
-          <div>
-            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Dotted</h4>
-            <div style={{ display: 'flex', gap: '8px', alignItems: 'start' }}>
-              <Divider line="dotted" thickness="0.5px" alignment="vertical" height="120px" />
-              <Divider line="dotted" thickness="1px" alignment="vertical" height="120px" />
-              <Divider line="dotted" thickness="2px" alignment="vertical" height="120px" />
-              <Divider line="dotted" thickness="3px" alignment="vertical" height="120px" />
-              <Divider line="dotted" thickness="8px" alignment="vertical" height="120px" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Complete implementation of all divider variants as shown in the Figma design, including all combinations of line styles, thicknesses, and orientations.',
-      },
-    },
-  },
-};
-
 // === USAGE EXAMPLES === //
 
 export const UsageInLayouts: Story = {
@@ -306,7 +510,7 @@ export const UsageInLayouts: Story = {
           </p>
         </div>
         
-        <Divider line="solid" thickness="1px" alignment="horizontal" />
+        <Divider line="solid" thickness="1px" alignment="horizontal" label="Section Divider" textAlign="center" />
         
         <div style={{ padding: '16px', backgroundColor: '#f8f9fa', borderRadius: '4px' }}>
           <h4 style={{ margin: '0 0 8px 0', fontSize: '16px' }}>Section 2</h4>
@@ -370,8 +574,17 @@ export const CustomStyling: Story = {
         </div>
         
         <div>
-          <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Custom green color, dotted</p>
-          <Divider line="dotted" thickness="4px" alignment="horizontal" width="250px" color="#38a169" />
+          <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Custom green color with label</p>
+          <Divider 
+            line="solid" 
+            thickness="2px" 
+            alignment="horizontal" 
+            width="250px" 
+            color="#38a169" 
+            label="Custom Label"
+            textAlign="center"
+            textStyle="title"
+          />
         </div>
       </div>
 
