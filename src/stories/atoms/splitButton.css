@@ -540,6 +540,39 @@
   z-index: 1001;
 }
 
+/* Open state visual feedback for primary buttons */
+.split-button-container.open .split-button.primary {
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-400);
+  box-shadow: var(--shadow-xl);
+  background: var(--primary-blue-blue-600);
+}
+
+.split-button-container.open .split-button.primary .split-button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+/* Open state visual feedback for secondary buttons */
+.split-button-container.open .split-button.secondary {
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
+  box-shadow: var(--shadow-xl);
+  background: var(--primary-sky-blue-100);
+}
+
+.split-button-container.open .split-button.secondary .split-button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+/* Open state visual feedback for ghost buttons */
+.split-button-container.open .split-button.ghost {
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-400);
+  box-shadow: var(--shadow-xl);
+  background: var(--neutral-gray-gray-50);
+}
+
+.split-button-container.open .split-button.ghost .split-button-text {
+  font-weight: var(--type-weight-medium);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .split-button {
