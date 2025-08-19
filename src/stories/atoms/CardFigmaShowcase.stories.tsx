@@ -48,11 +48,14 @@ const backgrounds = [
 
 export const FigmaDesignReplication: Story = {
   render: () => (
-    <div style={{ 
+    <div style={{
       padding: '40px',
       backgroundColor: '#f8f9fa',
       minHeight: '100vh',
-      fontFamily: 'Arial, sans-serif'
+      fontFamily: 'Arial, sans-serif',
+      /* Performance optimizations for large showcases */
+      contain: 'layout style',
+      willChange: 'scroll-position'
     }}>
       <div style={{ 
         maxWidth: '1600px',
