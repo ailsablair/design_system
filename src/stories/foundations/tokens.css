@@ -339,6 +339,12 @@
   --type-roboto-flex-body: 16px;
   --type-roboto-flex-body-lg: 18px;
 
+  /* Archivo Heading Sizes */
+  --type-archivo-heading-2: 32px;
+  --type-archivo-heading-3: 28px;
+  --type-archivo-heading-4: 24px;
+  --type-archivo-heading-5: 19px;
+
   /* Font Weights */
   --type-weight-light: 300;
   --type-weight-regular: 400;
