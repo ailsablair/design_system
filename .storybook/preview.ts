@@ -32,6 +32,17 @@ suppressResizeObserverErrors();
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        order: [
+          'Design System',
+          'Foundations',
+          'Atoms',
+          'Molecules',
+          '*'
+        ],
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
