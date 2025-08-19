@@ -305,7 +305,7 @@ export const ContrastIssuesFixed: Story = {
         <ul style={{ color: '#666', fontSize: '14px', lineHeight: '1.6' }}>
           <li><strong>Success buttons:</strong> Changed from light green background with black text to dark green background with white text</li>
           <li><strong>Warning buttons:</strong> Changed from yellow background with white text to yellow background with black text</li>
-          <li><strong>Disabled states:</strong> Changed from light gray text (gray-300) to darker gray text (gray-600) on light gray background</li>
+          <li><strong>Disabled states:</strong> Changed from light gray text (gray-300) to medium gray text (gray-500) on light gray background</li>
           <li><strong>Focus states:</strong> Enhanced contrast for ghost button focused states</li>
           <li><strong>Icon opacity:</strong> Increased from 0.6 to 0.8 for better visibility while maintaining design aesthetics</li>
         </ul>
