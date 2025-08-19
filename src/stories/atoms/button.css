@@ -305,7 +305,7 @@
 .button.primary.hover,
 .button.primary:hover:not(.disabled):not(.loading) {
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-400);
-  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 3px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.primary.hover .button-text,
@@ -316,7 +316,7 @@
 .button.primary.clicked,
 .button.primary:active:not(.disabled):not(.loading) {
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-200);
-  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 3px 0 0 var(--primary-blue-blue-200);
 }
 
 .button.primary.clicked .button-text,
@@ -359,7 +359,7 @@
 .button.primary.outline:hover:not(.disabled):not(.loading) {
   background: var(--primary-blue-blue-100);
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
-  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 3px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.primary.outline.hover .button-text,
@@ -371,7 +371,7 @@
 .button.primary.outline:active:not(.disabled):not(.loading) {
   background: var(--primary-blue-blue-100);
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
-  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 3px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.primary.outline.clicked .button-text,
@@ -415,7 +415,7 @@
 .button.secondary:hover:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-50);
   border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
-  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 3px 0 0 var(--base-black);
 }
 
 .button.secondary.hover .button-text,
@@ -427,7 +427,7 @@
 .button.secondary:active:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-50);
   border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-300);
-  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 3px 0 0 var(--base-black);
 }
 
 .button.secondary.clicked .button-text,
@@ -471,7 +471,7 @@
 .button.tertiary:hover:not(.disabled):not(.loading) {
   background: var(--primary-blue-dark-blue);
   border: var(--spacing-stroke-1px) solid var(--base-white);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black);
+  box-shadow: 3px 3px 0 0 var(--primary-teal-dark-teal);
 }
 
 .button.tertiary.hover .button-text,
@@ -483,7 +483,7 @@
 .button.tertiary:active:not(.disabled):not(.loading) {
   background: var(--primary-blue-dark-blue);
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-300);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black);
+  box-shadow: 3px 3px 0 0 var(--primary-teal-dark-teal);
 }
 
 .button.tertiary.clicked .button-text,
@@ -872,7 +872,7 @@
 .button.ghost:hover:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-400);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200);
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-200);
 }
 
 .button.ghost.hover .button-text,
@@ -884,7 +884,7 @@
 .button.ghost:active:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-400);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200);
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-200);
 }
 
 .button.ghost.clicked .button-text,
