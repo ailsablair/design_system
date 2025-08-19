@@ -4,9 +4,12 @@
   flex-direction: column;
   border-radius: var(--spacing-radius-8px);
   box-sizing: border-box;
-  transition: var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   position: relative;
   font-family: var(--type-typeface-archivo);
+  /* Performance optimizations */
+  will-change: transform;
+  contain: layout style;
 }
 
 /* Clickable cards */
@@ -16,10 +19,13 @@
 
 .card.card-clickable:hover:not(.card-disabled) {
   transform: var(--transform-scale-up);
+  /* Enhance shadow on hover instead of relying solely on transforms */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .card.card-clickable:active:not(.card-disabled) {
   transform: var(--transform-scale-down);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .card.card-clickable:focus:not(.card-disabled) {
