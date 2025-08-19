@@ -382,16 +382,70 @@
   color: var(--neutral-gray-gray-500);
 }
 
-/* Additional styling for specific size containers */
-.textarea-wrapper.small .textarea-area {
+/* Enhanced validation states for container */
+.textarea-container.error {
+  border: var(--spacing-stroke-2px) solid var(--status-red);
+}
+
+.textarea-container.warning {
+  border: var(--spacing-stroke-2px) solid var(--status-orange-alt);
+}
+
+.textarea-container.success {
+  border: var(--spacing-stroke-2px) solid var(--status-dark-green);
+}
+
+.textarea-container.focus,
+.textarea-container.typing {
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
   box-shadow: var(--shadow-focus);
 }
 
-.textarea-container.focus .textarea-area,
-.textarea-container.typing .textarea-area,
-.textarea-container.error .textarea-area,
-.textarea-container.warning .textarea-area,
-.textarea-container.success .textarea-area {
+/* Footer for message and character count */
+.textarea-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-8px);
+}
+
+.textarea-footer.small {
+  margin-top: var(--spacing-sizing-2px);
+}
+
+.textarea-footer.large {
+  margin-top: var(--spacing-sizing-6px);
+}
+
+/* Character count styling */
+.textarea-character-count {
+  font-family: var(--type-typeface-roboto-flex);
+  font-weight: var(--type-weight-regular);
+  color: var(--neutral-gray-gray-600);
+  font-size: var(--type-roboto-flex-body-sm);
+  line-height: var(--type-line-height-body-sm);
+  flex-shrink: 0;
+  align-self: flex-end;
+}
+
+.textarea-character-count.small {
+  font-size: var(--type-archivo-footnote);
+  line-height: var(--type-line-height-footnote);
+}
+
+.textarea-character-count.large {
+  font-size: var(--type-roboto-flex-body);
+  line-height: var(--type-line-height-body);
+}
+
+.textarea-character-count.over-limit {
+  color: var(--status-red);
+  font-weight: var(--type-weight-medium);
+}
+
+/* Additional styling for specific size containers */
+.textarea-wrapper.small .textarea-area {
   box-shadow: var(--shadow-focus);
 }
 
