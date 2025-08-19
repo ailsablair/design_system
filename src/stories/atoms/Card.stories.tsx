@@ -8,7 +8,7 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A versatile card component that serves as a container for content. Cards can be used for displaying information, grouping related content, or as interactive elements. They support multiple sizes, background colors, light/dark modes, and optional drop shadows.',
+        component: 'A comprehensive card component that matches the Figma design specifications. Supports multiple types: simple cards with headers and buttons, icon cards, text-only cards, empty state cards, and stat cards. Each type supports different sizes, alignments, and styling options.',
       },
     },
   },
@@ -21,26 +21,59 @@ const meta = {
     },
     type: {
       control: { type: 'select' },
-      options: ['plain'],
-      description: 'Card type (currently only plain supported)',
+      options: ['simple', 'icon', 'text-only', 'empty-state', 'stat'],
+      description: 'Type of card content',
     },
     bg: {
       control: { type: 'select' },
-      options: ['default', 'sky-blue', 'error', 'success', 'warning', 'info-blue', 'note-purple', 'light-gray', 'black', 'blue', 'dark-gray'],
+      options: ['default'],
       description: 'Background color variant',
     },
-    mode: {
+    align: {
       control: { type: 'select' },
-      options: ['light', 'dark'],
-      description: 'Color mode',
+      options: ['horizontal', 'vertical'],
+      description: 'Content alignment',
     },
     dropShadow: {
       control: { type: 'boolean' },
       description: 'Whether to show drop shadow',
     },
-    children: {
+    showCloseIcon: {
+      control: { type: 'boolean' },
+      description: 'Show close icon (for simple type)',
+    },
+    showButtonGroup: {
+      control: { type: 'boolean' },
+      description: 'Show button group (for simple type)',
+    },
+    showIcon: {
+      control: { type: 'boolean' },
+      description: 'Show icon (for icon types)',
+    },
+    title: {
       control: { type: 'text' },
-      description: 'Card content',
+      description: 'Card title text',
+    },
+    subtitle: {
+      control: { type: 'text' },
+      description: 'Card subtitle text',
+    },
+    bodyText: {
+      control: { type: 'text' },
+      description: 'Card body text',
+    },
+    statValue: {
+      control: { type: 'text' },
+      description: 'Stat value (for stat type)',
+    },
+    statLabel: {
+      control: { type: 'text' },
+      description: 'Stat label (for stat type)',
+    },
+    font: {
+      control: { type: 'select' },
+      options: ['default', 'roboto-flex', 'archivo'],
+      description: 'Font type for stat cards',
     },
     disabled: {
       control: { type: 'boolean' },
@@ -56,255 +89,352 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// Sample content for cards
-const SampleContent = () => (
-  <div style={{ padding: '8px' }}>
-    <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600 }}>Card Title</h3>
-    <p style={{ margin: '0', fontSize: '14px', lineHeight: 1.4 }}>
-      This is sample content inside a card component.
-    </p>
-  </div>
-);
+// === SIMPLE CARD EXAMPLES === //
 
-// Basic Examples
-export const Default: Story = {
+export const SimpleHorizontalSmall: Story = {
   args: {
-    children: <SampleContent />,
-  },
-};
-
-export const Small: Story = {
-  args: {
+    type: 'simple',
     size: 'small',
-    children: (
-      <div style={{ padding: '4px' }}>
-        <h4 style={{ margin: '0 0 4px 0', fontSize: '14px', fontWeight: 600 }}>Small Card</h4>
-        <p style={{ margin: '0', fontSize: '12px' }}>Compact content</p>
-      </div>
-    ),
+    align: 'horizontal',
+    dropShadow: true,
   },
 };
 
-export const Large: Story = {
+export const SimpleHorizontalDefault: Story = {
   args: {
+    type: 'simple',
+    size: 'default',
+    align: 'horizontal',
+    dropShadow: true,
+  },
+};
+
+export const SimpleHorizontalLarge: Story = {
+  args: {
+    type: 'simple',
     size: 'large',
-    children: (
-      <div style={{ padding: '12px' }}>
-        <h2 style={{ margin: '0 0 12px 0', fontSize: '18px', fontWeight: 600 }}>Large Card</h2>
-        <p style={{ margin: '0', fontSize: '16px', lineHeight: 1.5 }}>
-          This is a larger card with more content space. Perfect for detailed information or complex layouts.
-        </p>
-      </div>
-    ),
+    align: 'horizontal',
+    dropShadow: true,
   },
 };
 
-// Background Color Variants
-export const SkyBlue: Story = {
+export const SimpleVerticalSmall: Story = {
   args: {
-    bg: 'sky-blue',
-    children: <SampleContent />,
+    type: 'simple',
+    size: 'small',
+    align: 'vertical',
+    dropShadow: true,
   },
 };
 
-export const Error: Story = {
+export const SimpleVerticalDefault: Story = {
   args: {
-    bg: 'error',
-    children: (
-      <div style={{ padding: '8px' }}>
-        <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600 }}>Error Card</h3>
-        <p style={{ margin: '0', fontSize: '14px' }}>Something went wrong. Please try again.</p>
-      </div>
-    ),
+    type: 'simple',
+    size: 'default',
+    align: 'vertical',
+    dropShadow: true,
   },
 };
 
-export const Success: Story = {
+export const SimpleVerticalLarge: Story = {
   args: {
-    bg: 'success',
-    children: (
-      <div style={{ padding: '8px' }}>
-        <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600 }}>Success Card</h3>
-        <p style={{ margin: '0', fontSize: '14px' }}>Operation completed successfully!</p>
-      </div>
-    ),
+    type: 'simple',
+    size: 'large',
+    align: 'vertical',
+    dropShadow: true,
   },
 };
 
-export const Warning: Story = {
+// No shadow variants
+export const SimpleNoShadow: Story = {
   args: {
-    bg: 'warning',
-    children: (
-      <div style={{ padding: '8px' }}>
-        <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600 }}>Warning Card</h3>
-        <p style={{ margin: '0', fontSize: '14px' }}>Please review this information carefully.</p>
-      </div>
-    ),
-  },
-};
-
-export const InfoBlue: Story = {
-  args: {
-    bg: 'info-blue',
-    children: (
-      <div style={{ padding: '8px' }}>
-        <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600 }}>Info Card</h3>
-        <p style={{ margin: '0', fontSize: '14px' }}>Here's some important information for you.</p>
-      </div>
-    ),
-  },
-};
-
-export const NotePurple: Story = {
-  args: {
-    bg: 'note-purple',
-    children: (
-      <div style={{ padding: '8px' }}>
-        <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600 }}>Note Card</h3>
-        <p style={{ margin: '0', fontSize: '14px' }}>Take note of this important detail.</p>
-      </div>
-    ),
-  },
-};
-
-// Mode Variants
-export const DarkMode: Story = {
-  args: {
-    mode: 'dark',
-    children: <SampleContent />,
-  },
-  parameters: {
-    backgrounds: { default: 'dark' },
-  },
-};
-
-export const DarkModeBlue: Story = {
-  args: {
-    bg: 'blue',
-    mode: 'dark',
-    children: <SampleContent />,
-  },
-  parameters: {
-    backgrounds: { default: 'dark' },
-  },
-};
-
-// Shadow Variants
-export const NoShadow: Story = {
-  args: {
+    type: 'simple',
+    size: 'default',
+    align: 'horizontal',
     dropShadow: false,
-    children: <SampleContent />,
   },
 };
 
-// Interactive States
-export const Clickable: Story = {
+// === ICON CARD EXAMPLES === //
+
+export const IconCardSmall: Story = {
   args: {
-    children: (
-      <div style={{ padding: '8px' }}>
-        <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600 }}>Clickable Card</h3>
-        <p style={{ margin: '0', fontSize: '14px' }}>Click me to see the interaction!</p>
-      </div>
-    ),
+    type: 'icon',
+    size: 'small',
+    align: 'vertical',
+    dropShadow: true,
+  },
+};
+
+export const IconCardDefault: Story = {
+  args: {
+    type: 'icon',
+    size: 'default',
+    align: 'vertical',
+    dropShadow: true,
+  },
+};
+
+export const IconCardLarge: Story = {
+  args: {
+    type: 'icon',
+    size: 'large',
+    align: 'vertical',
+    dropShadow: true,
+  },
+};
+
+// === EMPTY STATE EXAMPLES === //
+
+export const EmptyStateDefault: Story = {
+  args: {
+    type: 'empty-state',
+    size: 'default',
+    align: 'vertical',
+    dropShadow: true,
+  },
+};
+
+export const EmptyStateLarge: Story = {
+  args: {
+    type: 'empty-state',
+    size: 'large',
+    align: 'vertical',
+    dropShadow: true,
+  },
+};
+
+// === TEXT-ONLY EXAMPLES === //
+
+export const TextOnlyDefault: Story = {
+  args: {
+    type: 'text-only',
+    size: 'default',
+    align: 'vertical',
+    dropShadow: true,
+  },
+};
+
+export const TextOnlyLarge: Story = {
+  args: {
+    type: 'text-only',
+    size: 'large',
+    align: 'vertical',
+    dropShadow: true,
+  },
+};
+
+// === STAT CARD EXAMPLES === //
+
+export const StatCardSmallRoboto: Story = {
+  args: {
+    type: 'stat',
+    size: 'small',
+    align: 'vertical',
+    dropShadow: true,
+    font: 'roboto-flex',
+    statValue: '23%',
+    statLabel: 'awesomeness',
+  },
+};
+
+export const StatCardDefaultRoboto: Story = {
+  args: {
+    type: 'stat',
+    size: 'default',
+    align: 'vertical',
+    dropShadow: true,
+    font: 'roboto-flex',
+    statValue: '23%',
+    statLabel: 'awesomeness',
+  },
+};
+
+export const StatCardLargeRoboto: Story = {
+  args: {
+    type: 'stat',
+    size: 'large',
+    align: 'vertical',
+    dropShadow: true,
+    font: 'roboto-flex',
+    statValue: '23%',
+    statLabel: 'awesomeness',
+  },
+};
+
+export const StatCardLargeArchivo: Story = {
+  args: {
+    type: 'stat',
+    size: 'large',
+    align: 'vertical',
+    dropShadow: true,
+    font: 'archivo',
+    statValue: '23%',
+    statLabel: 'awesomeness',
+  },
+};
+
+// === INTERACTIVE EXAMPLES === //
+
+export const ClickableCard: Story = {
+  args: {
+    type: 'simple',
+    size: 'default',
+    align: 'horizontal',
+    dropShadow: true,
+    title: 'Clickable Card',
+    subtitle: 'Click me to interact',
     onClick: () => console.log('Card clicked!'),
   },
 };
 
-export const Disabled: Story = {
+export const DisabledCard: Story = {
   args: {
-    children: (
-      <div style={{ padding: '8px' }}>
-        <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600 }}>Disabled Card</h3>
-        <p style={{ margin: '0', fontSize: '14px' }}>This card is disabled and cannot be interacted with.</p>
-      </div>
-    ),
+    type: 'simple',
+    size: 'default',
+    align: 'horizontal',
+    dropShadow: true,
+    title: 'Disabled Card',
+    subtitle: 'This card is disabled',
     disabled: true,
     onClick: () => console.log('This should not fire'),
   },
 };
 
-// Comprehensive Showcases
-export const AllSizesShowcase: Story = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '16px', alignItems: 'start', flexWrap: 'wrap' }}>
-      <Card size="small">
-        <div style={{ padding: '4px' }}>
-          <h4 style={{ margin: '0 0 4px 0', fontSize: '14px', fontWeight: 600 }}>Small</h4>
-          <p style={{ margin: '0', fontSize: '12px' }}>Compact</p>
-        </div>
-      </Card>
-      <Card size="default">
-        <div style={{ padding: '8px' }}>
-          <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600 }}>Default</h3>
-          <p style={{ margin: '0', fontSize: '14px' }}>Standard size</p>
-        </div>
-      </Card>
-      <Card size="large">
-        <div style={{ padding: '12px' }}>
-          <h2 style={{ margin: '0 0 12px 0', fontSize: '18px', fontWeight: 600 }}>Large</h2>
-          <p style={{ margin: '0', fontSize: '16px' }}>Spacious layout</p>
-        </div>
-      </Card>
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Comparison of all card sizes.',
-      },
-    },
+// === CUSTOMIZATION EXAMPLES === //
+
+export const CustomContent: Story = {
+  args: {
+    type: 'simple',
+    size: 'default',
+    align: 'horizontal',
+    dropShadow: true,
+    showCloseIcon: false,
+    showButtonGroup: false,
+    title: 'Custom Title',
+    subtitle: 'Custom subtitle text',
+    bodyText: 'This is a custom body text that demonstrates the flexibility of the card component.',
   },
 };
 
-export const AllBackgroundsShowcase: Story = {
-  render: () => (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', maxWidth: '1000px' }}>
-      {['default', 'sky-blue', 'error', 'success', 'warning', 'info-blue', 'note-purple', 'light-gray', 'black', 'blue', 'dark-gray'].map(bg => (
-        <Card key={bg} bg={bg as any}>
-          <div style={{ padding: '8px' }}>
-            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600, textTransform: 'capitalize' }}>
-              {bg.replace('-', ' ')}
-            </h4>
-            <p style={{ margin: '0', fontSize: '12px' }}>Background variant</p>
-          </div>
-        </Card>
-      ))}
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'All available background color variants.',
-      },
-    },
+export const NoCloseButton: Story = {
+  args: {
+    type: 'simple',
+    size: 'default',
+    align: 'vertical',
+    dropShadow: true,
+    showCloseIcon: false,
   },
 };
 
-export const LightDarkComparison: Story = {
+export const NoButtonGroup: Story = {
+  args: {
+    type: 'simple',
+    size: 'default',
+    align: 'vertical',
+    dropShadow: true,
+    showButtonGroup: false,
+  },
+};
+
+// === COMPREHENSIVE SHOWCASES === //
+
+export const AllSimpleVariants: Story = {
   render: () => (
-    <div style={{ display: 'flex', gap: '32px', flexWrap: 'wrap' }}>
-      <div>
-        <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600 }}>Light Mode</h3>
-        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-          <Card mode="light" bg="default"><SampleContent /></Card>
-          <Card mode="light" bg="blue"><SampleContent /></Card>
-          <Card mode="light" bg="success"><SampleContent /></Card>
-        </div>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '20px' }}>
+      <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Simple Cards - Horizontal</h3>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'start', flexWrap: 'wrap' }}>
+        <Card type="simple" size="small" align="horizontal" dropShadow={true} />
+        <Card type="simple" size="default" align="horizontal" dropShadow={true} />
+        <Card type="simple" size="large" align="horizontal" dropShadow={true} />
       </div>
-      <div>
-        <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600 }}>Dark Mode</h3>
-        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-          <Card mode="dark" bg="default"><SampleContent /></Card>
-          <Card mode="dark" bg="blue"><SampleContent /></Card>
-          <Card mode="dark" bg="success"><SampleContent /></Card>
-        </div>
+      
+      <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Simple Cards - Vertical</h3>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'start', flexWrap: 'wrap' }}>
+        <Card type="simple" size="small" align="vertical" dropShadow={true} />
+        <Card type="simple" size="default" align="vertical" dropShadow={true} />
+        <Card type="simple" size="large" align="vertical" dropShadow={true} />
       </div>
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Comparison of light and dark modes for different background colors.',
+        story: 'All simple card variants with both horizontal and vertical alignments.',
+      },
+    },
+  },
+};
+
+export const AllIconVariants: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '20px' }}>
+      <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Icon Cards</h3>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'start', flexWrap: 'wrap' }}>
+        <Card type="icon" size="small" align="vertical" dropShadow={true} />
+        <Card type="icon" size="default" align="vertical" dropShadow={true} />
+        <Card type="icon" size="large" align="vertical" dropShadow={true} />
+      </div>
+      
+      <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Empty State Cards</h3>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'start', flexWrap: 'wrap' }}>
+        <Card type="empty-state" size="small" align="vertical" dropShadow={true} />
+        <Card type="empty-state" size="default" align="vertical" dropShadow={true} />
+        <Card type="empty-state" size="large" align="vertical" dropShadow={true} />
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Icon and empty state card variants.',
+      },
+    },
+  },
+};
+
+export const AllTextVariants: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '20px' }}>
+      <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Text-Only Cards</h3>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'start', flexWrap: 'wrap' }}>
+        <Card type="text-only" size="small" align="vertical" dropShadow={true} />
+        <Card type="text-only" size="default" align="vertical" dropShadow={true} />
+        <Card type="text-only" size="large" align="vertical" dropShadow={true} />
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Text-only card variants.',
+      },
+    },
+  },
+};
+
+export const AllStatVariants: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '20px' }}>
+      <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Stat Cards - Roboto Flex</h3>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'start', flexWrap: 'wrap' }}>
+        <Card type="stat" size="small" align="vertical" dropShadow={true} font="roboto-flex" />
+        <Card type="stat" size="default" align="vertical" dropShadow={true} font="roboto-flex" />
+        <Card type="stat" size="large" align="vertical" dropShadow={true} font="roboto-flex" />
+      </div>
+      
+      <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Stat Cards - Archivo</h3>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'start', flexWrap: 'wrap' }}>
+        <Card type="stat" size="small" align="vertical" dropShadow={true} font="archivo" />
+        <Card type="stat" size="default" align="vertical" dropShadow={true} font="archivo" />
+        <Card type="stat" size="large" align="vertical" dropShadow={true} font="archivo" />
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Stat card variants with different font types.',
       },
     },
   },
@@ -312,14 +442,17 @@ export const LightDarkComparison: Story = {
 
 export const ShadowComparison: Story = {
   render: () => (
-    <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
-      <div>
-        <h4 style={{ margin: '0 0 16px 0', fontSize: '14px', fontWeight: 500 }}>With Shadow</h4>
-        <Card dropShadow={true}><SampleContent /></Card>
-      </div>
-      <div>
-        <h4 style={{ margin: '0 0 16px 0', fontSize: '14px', fontWeight: 500 }}>No Shadow</h4>
-        <Card dropShadow={false}><SampleContent /></Card>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '20px' }}>
+      <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Shadow Comparison</h3>
+      <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
+        <div>
+          <h4 style={{ margin: '0 0 16px 0', fontSize: '14px', fontWeight: 500 }}>With Shadow</h4>
+          <Card type="simple" size="default" align="horizontal" dropShadow={true} />
+        </div>
+        <div>
+          <h4 style={{ margin: '0 0 16px 0', fontSize: '14px', fontWeight: 500 }}>No Shadow</h4>
+          <Card type="simple" size="default" align="horizontal" dropShadow={false} />
+        </div>
       </div>
     </div>
   ),
@@ -327,6 +460,26 @@ export const ShadowComparison: Story = {
     docs: {
       description: {
         story: 'Comparison of cards with and without drop shadows.',
+      },
+    },
+  },
+};
+
+export const CustomChildren: Story = {
+  args: {
+    children: (
+      <div style={{ padding: '16px' }}>
+        <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600 }}>Custom Content</h3>
+        <p style={{ margin: '0', fontSize: '14px', lineHeight: 1.4 }}>
+          This card uses custom children instead of the predefined structure.
+        </p>
+      </div>
+    ),
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Example of using custom children to override the default card structure.',
       },
     },
   },
