@@ -632,3 +632,331 @@
   outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue-500);
   outline-offset: var(--spacing-sizing-2px);
 }
+
+/* Ghost button variant */
+.button.ghost {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+  color: var(--base-black);
+}
+
+.button.ghost .button-icon {
+  color: var(--neutral-gray-gray-700);
+  opacity: 0.6;
+}
+
+/* Error button variant */
+.button.error {
+  background: var(--status-red);
+  border: var(--spacing-stroke-0-5px) solid var(--status-red-light);
+  color: var(--base-white);
+}
+
+.button.error .button-icon {
+  color: var(--base-white);
+  opacity: 0.6;
+}
+
+/* Warning button variant */
+.button.warning {
+  background: var(--status-orange);
+  border: var(--spacing-stroke-0-5px) solid var(--status-orange-light);
+  color: var(--base-white);
+}
+
+.button.warning .button-icon {
+  color: var(--base-white);
+  opacity: 0.6;
+}
+
+/* State variants for ghost buttons */
+.button.ghost.default {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+}
+
+.button.ghost.hover,
+.button.ghost:hover:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-400);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200);
+}
+
+.button.ghost.hover .button-text,
+.button.ghost:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.button.ghost.clicked,
+.button.ghost:active:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-400);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200);
+}
+
+.button.ghost.clicked .button-text,
+.button.ghost:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.button.ghost.focused,
+.button.ghost:focus-visible:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-3px) solid var(--neutral-gray-gray-300);
+  color: var(--neutral-gray-gray-700);
+}
+
+.button.ghost.focused .button-icon,
+.button.ghost:focus-visible:not(.disabled):not(.loading) .button-icon {
+  color: var(--neutral-gray-gray-700);
+}
+
+.button.ghost.loading {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.ghost.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.ghost.disabled .button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
+}
+
+/* State variants for error buttons */
+.button.error.default {
+  background: var(--status-red);
+  border: var(--spacing-stroke-0-5px) solid var(--status-red-light);
+}
+
+.button.error.hover,
+.button.error:hover:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-2px) solid var(--status-red-light);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300);
+}
+
+.button.error.hover .button-text,
+.button.error:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.error.clicked,
+.button.error:active:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-2px) solid var(--status-red-light);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300);
+}
+
+.button.error.clicked .button-text,
+.button.error:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.button.error.focused,
+.button.error:focus-visible:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-3px) solid var(--status-red-light);
+}
+
+.button.error.loading {
+  background: var(--status-red);
+  border: var(--spacing-stroke-0-5px) solid var(--status-red-light);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.error.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.error.disabled .button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
+}
+
+/* State variants for warning buttons */
+.button.warning.default {
+  background: var(--status-orange);
+  border: var(--spacing-stroke-0-5px) solid var(--status-orange-light);
+}
+
+.button.warning.hover,
+.button.warning:hover:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-2px) solid var(--status-orange-light);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300);
+}
+
+.button.warning.hover .button-text,
+.button.warning:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.warning.clicked,
+.button.warning:active:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-2px) solid var(--primary-yellow-yellow-100);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300);
+}
+
+.button.warning.clicked .button-text,
+.button.warning:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.warning.focused,
+.button.warning:focus-visible:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-3px) solid var(--status-orange-light);
+}
+
+.button.warning.loading {
+  background: var(--status-orange);
+  border: var(--spacing-stroke-0-5px) solid var(--status-orange-light);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.warning.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.warning.disabled .button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
+}
+
+/* Force state classes for ghost buttons */
+.button.ghost.force-hover {
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-400) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200) !important;
+}
+
+.button.ghost.force-hover .button-text {
+  font-weight: var(--type-weight-medium) !important;
+}
+
+.button.ghost.force-clicked {
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-400) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200) !important;
+}
+
+.button.ghost.force-clicked .button-text {
+  font-weight: var(--type-weight-medium) !important;
+}
+
+.button.ghost.force-focused {
+  border: var(--spacing-stroke-3px) solid var(--neutral-gray-gray-300) !important;
+  color: var(--neutral-gray-gray-700) !important;
+}
+
+.button.ghost.force-focused .button-icon {
+  color: var(--neutral-gray-gray-700) !important;
+}
+
+/* Force state classes for error buttons */
+.button.error.force-hover {
+  border: var(--spacing-stroke-2px) solid var(--status-red-light) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300) !important;
+}
+
+.button.error.force-hover .button-text {
+  font-weight: var(--type-weight-bold) !important;
+}
+
+.button.error.force-clicked {
+  border: var(--spacing-stroke-2px) solid var(--status-red-light) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300) !important;
+}
+
+.button.error.force-clicked .button-text {
+  font-weight: var(--type-weight-medium) !important;
+}
+
+.button.error.force-focused {
+  border: var(--spacing-stroke-3px) solid var(--status-red-light) !important;
+}
+
+/* Force state classes for warning buttons */
+.button.warning.force-hover {
+  border: var(--spacing-stroke-2px) solid var(--status-orange-light) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300) !important;
+}
+
+.button.warning.force-hover .button-text {
+  font-weight: var(--type-weight-bold) !important;
+}
+
+.button.warning.force-clicked {
+  border: var(--spacing-stroke-2px) solid var(--primary-yellow-yellow-100) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300) !important;
+}
+
+.button.warning.force-clicked .button-text {
+  font-weight: var(--type-weight-bold) !important;
+}
+
+.button.warning.force-focused {
+  border: var(--spacing-stroke-3px) solid var(--status-orange-light) !important;
+}
+
+/* Special hover effects for extra-small ghost buttons */
+.button.extra-small.ghost.hover,
+.button.extra-small.ghost:hover:not(.disabled):not(.loading) {
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+}
+
+.button.extra-small.ghost.clicked,
+.button.extra-small.ghost:active:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-900);
+  box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05);
+}
+
+.button.extra-small.ghost.focused,
+.button.extra-small.ghost:focus-visible:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-3px) solid var(--neutral-gray-gray-300);
+}
+
+.button.extra-small.ghost.disabled {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-400);
+}
+
+.button.extra-small.ghost.disabled .button-icon {
+  color: var(--neutral-gray-gray-400);
+}
+
+.button.ghost.force-hover.extra-small {
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200) !important;
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400) !important;
+}
+
+.button.ghost.force-clicked.extra-small {
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-900) !important;
+  box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05) !important;
+}
+
+.button.ghost.force-focused.extra-small {
+  border: var(--spacing-stroke-3px) solid var(--neutral-gray-gray-300) !important;
+}
+
+/* Open state for dropdown-style buttons */
+.button.open {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+}
+
+.button.open .button-icon {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease;
+}
