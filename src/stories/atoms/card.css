@@ -510,6 +510,53 @@
   letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg);
 }
 
+/* === CLOSE ICON === */
+
+.card-close-icon {
+  position: absolute;
+  top: var(--spacing-sizing-8px);
+  right: var(--spacing-sizing-8px);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-sizing-4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--spacing-radius-4px);
+  z-index: 10;
+  transition: background-color 0.2s ease;
+}
+
+.card.card-size-default .card-close-icon {
+  top: var(--spacing-sizing-12px);
+  right: var(--spacing-sizing-12px);
+}
+
+.card.card-size-large .card-close-icon {
+  top: var(--spacing-sizing-16px);
+  right: var(--spacing-sizing-16px);
+}
+
+.card-close-icon:hover {
+  background-color: var(--neutral-gray-gray-100);
+}
+
+.card-close-icon:focus {
+  outline: 2px solid var(--primary-blue-blue);
+  outline-offset: 2px;
+}
+
+.card-close-icon svg {
+  width: 16px;
+  height: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.card-close-icon:hover svg {
+  opacity: 0.8;
+}
+
 /* === INTERACTIVE STATES === */
 
 .card.card-clickable {
