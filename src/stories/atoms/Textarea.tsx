@@ -9,13 +9,15 @@ export interface TextareaProps {
   /** Textarea value */
   value?: string;
   /** Validation state */
-  state?: 'default' | 'filled' | 'focus' | 'typing' | 'error' | 'warning' | 'success';
+  state?: 'default' | 'error' | 'warning' | 'success' | 'focus' | 'typing' | 'filled';
   /** Validation message text */
   message?: string;
   /** Show close/clear button */
   showClose?: boolean;
   /** Disabled state */
   disabled?: boolean;
+  /** Required field indicator */
+  required?: boolean;
   /** Size variant */
   size?: 'small' | 'default' | 'large';
   /** Textarea ID */
@@ -30,6 +32,10 @@ export interface TextareaProps {
   resize?: 'none' | 'vertical' | 'horizontal' | 'both';
   /** Number of rows */
   rows?: number;
+  /** Maximum character count */
+  maxLength?: number;
+  /** Show character count */
+  showCharacterCount?: boolean;
   /** onChange event handler */
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   /** onClose/clear event handler */
