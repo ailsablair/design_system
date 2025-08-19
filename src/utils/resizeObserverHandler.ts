@@ -8,25 +8,30 @@ export const setupResizeObserverErrorHandler = (): void => {
   if (typeof window === 'undefined') return;
 
   const originalError = window.console.error;
-  
+
   window.console.error = (...args: any[]) => {
     const message = args[0];
-    
+
     // Check if this is a ResizeObserver loop error
     if (
-      typeof message === 'string' && 
-      message.includes('ResizeObserver loop completed with undelivered notifications')
+      typeof message === 'string' &&
+      (message.includes('ResizeObserver loop completed with undelivered notifications') ||
+       message.includes('ResizeObserver loop limit exceeded'))
     ) {
-      // Log a more helpful message instead
+      // Silently ignore these errors in development as they're usually harmless
       if (process.env.NODE_ENV === 'development') {
-        console.warn(
-          'ResizeObserver loop detected - this is usually harmless and caused by rapid component resizing. ' +
-          'Consider debouncing resize operations if this impacts performance.'
-        );
+        // Only log once per session to avoid spam
+        if (!window.__resizeObserverErrorLogged) {
+          console.warn(
+            '⚠️ ResizeObserver loop detected - this is usually harmless in Storybook. ' +
+            'These errors are now suppressed for cleaner console output.'
+          );
+          window.__resizeObserverErrorLogged = true;
+        }
       }
       return;
     }
-    
+
     // For all other errors, use the original error handler
     originalError.apply(window.console, args);
   };
