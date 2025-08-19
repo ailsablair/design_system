@@ -1,0 +1,209 @@
+/* Divider Component Styles */
+
+.divider {
+  background-color: var(--neutral-gray-gray-300);
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* === ALIGNMENT STYLES === */
+
+.divider.divider-alignment-horizontal {
+  height: 1px;
+  width: 100%;
+}
+
+.divider.divider-alignment-vertical {
+  width: 1px;
+  height: 100%;
+}
+
+/* === THICKNESS VARIANTS === */
+
+/* 0.5px thickness */
+.divider.divider-thickness-0_5px.divider-alignment-horizontal {
+  height: 0.5px;
+}
+
+.divider.divider-thickness-0_5px.divider-alignment-vertical {
+  width: 0.5px;
+}
+
+/* 1px thickness (default) */
+.divider.divider-thickness-1px.divider-alignment-horizontal {
+  height: 1px;
+}
+
+.divider.divider-thickness-1px.divider-alignment-vertical {
+  width: 1px;
+}
+
+/* 2px thickness */
+.divider.divider-thickness-2px.divider-alignment-horizontal {
+  height: 2px;
+}
+
+.divider.divider-thickness-2px.divider-alignment-vertical {
+  width: 2px;
+}
+
+/* 3px thickness */
+.divider.divider-thickness-3px.divider-alignment-horizontal {
+  height: 3px;
+}
+
+.divider.divider-thickness-3px.divider-alignment-vertical {
+  width: 3px;
+}
+
+/* 4px thickness */
+.divider.divider-thickness-4px.divider-alignment-horizontal {
+  height: 4px;
+}
+
+.divider.divider-thickness-4px.divider-alignment-vertical {
+  width: 4px;
+}
+
+/* 8px thickness */
+.divider.divider-thickness-8px.divider-alignment-horizontal {
+  height: 8px;
+}
+
+.divider.divider-thickness-8px.divider-alignment-vertical {
+  width: 8px;
+}
+
+/* === LINE STYLE VARIANTS === */
+
+/* Solid lines (default) - use background-color */
+.divider.divider-line-solid {
+  background-color: var(--neutral-gray-gray-300);
+  border: none;
+}
+
+/* Dashed lines - use border instead of background */
+.divider.divider-line-dashed {
+  background-color: transparent;
+  border-style: dashed;
+  border-color: var(--neutral-gray-gray-300);
+}
+
+.divider.divider-line-dashed.divider-alignment-horizontal {
+  border-top-width: var(--divider-thickness, 1px);
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.divider.divider-line-dashed.divider-alignment-vertical {
+  border-left-width: var(--divider-thickness, 1px);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* Dotted lines - use border instead of background */
+.divider.divider-line-dotted {
+  background-color: transparent;
+  border-style: dotted;
+  border-color: var(--neutral-gray-gray-300);
+}
+
+.divider.divider-line-dotted.divider-alignment-horizontal {
+  border-top-width: var(--divider-thickness, 1px);
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.divider.divider-line-dotted.divider-alignment-vertical {
+  border-left-width: var(--divider-thickness, 1px);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* === THICKNESS CSS CUSTOM PROPERTIES === */
+
+.divider.divider-thickness-0_5px {
+  --divider-thickness: 0.5px;
+}
+
+.divider.divider-thickness-1px {
+  --divider-thickness: 1px;
+}
+
+.divider.divider-thickness-2px {
+  --divider-thickness: 2px;
+}
+
+.divider.divider-thickness-3px {
+  --divider-thickness: 3px;
+}
+
+.divider.divider-thickness-4px {
+  --divider-thickness: 4px;
+}
+
+.divider.divider-thickness-8px {
+  --divider-thickness: 8px;
+}
+
+/* === RESPONSIVE BEHAVIOR === */
+
+@media (max-width: 768px) {
+  .divider.divider-alignment-horizontal {
+    max-width: 100%;
+  }
+  
+  .divider.divider-alignment-vertical {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .divider.divider-alignment-vertical {
+    max-height: 150px;
+  }
+}
+
+/* === ACCESSIBILITY === */
+
+.divider[role="separator"] {
+  /* Ensure dividers are visible to screen readers when used as separators */
+}
+
+.divider[aria-orientation="vertical"] {
+  /* Vertical divider specific accessibility styling if needed */
+}
+
+.divider[aria-orientation="horizontal"] {
+  /* Horizontal divider specific accessibility styling if needed */
+}
+
+/* === UTILITY CLASSES === */
+
+.divider-spacer-small {
+  margin: var(--spacing-sizing-8px) 0;
+}
+
+.divider-spacer-medium {
+  margin: var(--spacing-sizing-16px) 0;
+}
+
+.divider-spacer-large {
+  margin: var(--spacing-sizing-24px) 0;
+}
+
+.divider-spacer-vertical-small {
+  margin: 0 var(--spacing-sizing-8px);
+}
+
+.divider-spacer-vertical-medium {
+  margin: 0 var(--spacing-sizing-16px);
+}
+
+.divider-spacer-vertical-large {
+  margin: 0 var(--spacing-sizing-24px);
+}
