@@ -11,6 +11,7 @@
   --spacing-sizing-16px: 16px;
   --spacing-sizing-20px: 20px;
   --spacing-sizing-24px: 24px;
+  --spacing-sizing-28px: 25.923px;
   --spacing-sizing-32px: 32px;
   --spacing-sizing-40px: 40px;
   --spacing-sizing-48px: 48px;
@@ -18,6 +19,10 @@
   --spacing-sizing-64px: 64px;
   --spacing-sizing-80px: 80px;
   --spacing-sizing-120px: 120px;
+  --spacing-sizing-180px: 65.727px;
+  --spacing-sizing-240px: 75.895px;
+  --spacing-sizing-320px: 87.636px;
+  --spacing-sizing-400px: 97.98px;
 
   /* === BORDER RADIUS TOKENS === */
   --spacing-radius-2px: 2px;
