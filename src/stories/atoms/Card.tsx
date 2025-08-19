@@ -12,8 +12,8 @@ export interface CardProps {
   align?: 'horizontal' | 'vertical';
   /** Drop shadow */
   dropShadow?: boolean;
-  /** Placement for icon types */
-  placement?: 'default' | 'n/a';
+  /** Placement for icon types and image cards */
+  placement?: 'default' | 'n/a' | 'left' | 'right';
   /** Font type for stat cards */
   font?: 'default' | 'roboto-flex' | 'archivo';
   /** Show close icon */
@@ -396,68 +396,96 @@ export const Card: React.FC<CardProps> = ({
       case 'image':
         return (
           <>
+            <div className="card-content">
+              <div className="card-top-content">
+                <div className="card-text">
+                  <div className="card-header">
+                    <h3 className="card-title">{title}</h3>
+                  </div>
+                  <p className="card-body">{bodyText}</p>
+                </div>
+                {shouldShowCloseIcon && (
+                  <button
+                    className="card-close-icon"
+                    onClick={handleCloseClick}
+                    aria-label="Close card"
+                    type="button"
+                  >
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 6.41L6.41 5L12 10.59L17.59 5L19 6.41L13.41 12L19 17.59L17.59 19L12 13.41L6.41 19L5 17.59L10.59 12L5 6.41Z" fill="#9CA3AF"/>
+                    </svg>
+                  </button>
+                )}
+              </div>
+              {showButtonGroup && (
+                <div className="card-button-group">
+                  <button className="card-btn card-btn-primary">
+                    <AlarmIcon size={size} />
+                    <span>Label</span>
+                    <ArrowDownCircleIcon size={size} />
+                  </button>
+                  <button className="card-btn card-btn-ghost">
+                    <AlarmIcon size={size} />
+                    <span>Label</span>
+                    <ArrowDownCircleIcon size={size} />
+                  </button>
+                </div>
+              )}
+            </div>
             <div className="card-image-container">
               <div className="card-image-wrapper">
-                <img
-                  src={imageSrc || '/api/placeholder/400/200'}
-                  alt={imageAlt}
-                  className="card-image"
-                />
+                <svg className="card-image" width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M62.5 52.5L50 67.5L32.5 45L10 75H80M0 80V10C0 4.45 4.5 0 10 0H80C82.6522 0 85.1957 1.05357 87.0711 2.92893C88.9464 4.8043 90 7.34784 90 10V80C90 82.6522 88.9464 85.1957 87.0711 87.0711C85.1957 88.9464 82.6522 90 80 90H10C7.34784 90 4.8043 88.9464 2.92893 87.0711C1.05357 85.1957 0 82.6522 0 80Z" fill="#9CA3AF"/>
+                </svg>
               </div>
             </div>
-            <div className="card-text">
-              <div className="card-headings">
-                <h3 className="card-title">{title}</h3>
-              </div>
-              <p className="card-body">{bodyText}</p>
-            </div>
-            {showButtonGroup && (
-              <div className="card-button-group">
-                <button className="card-btn card-btn-primary">
-                  <AlarmIcon size={size} />
-                  <span>Label</span>
-                  <ArrowDownCircleIcon size={size} />
-                </button>
-                <button className="card-btn card-btn-ghost">
-                  <AlarmIcon size={size} />
-                  <span>Label</span>
-                  <ArrowDownCircleIcon size={size} />
-                </button>
-              </div>
-            )}
           </>
         );
 
       case 'contained-image':
         return (
           <>
-            <div className="card-contained-image-wrapper">
-              <img
-                src={imageSrc || '/api/placeholder/400/200'}
-                alt={imageAlt}
-                className="card-contained-image"
-              />
-            </div>
-            <div className="card-text">
-              <div className="card-headings">
-                <h3 className="card-title">{title}</h3>
+            <div className="card-contained-image-container">
+              <div className="card-contained-image-wrapper">
+                {/* Placeholder image - replace with actual image if needed */}
               </div>
-              <p className="card-body">{bodyText}</p>
             </div>
-            {showButtonGroup && (
-              <div className="card-button-group">
-                <button className="card-btn card-btn-primary">
-                  <AlarmIcon size={size} />
-                  <span>Label</span>
-                  <ArrowDownCircleIcon size={size} />
-                </button>
-                <button className="card-btn card-btn-ghost">
-                  <AlarmIcon size={size} />
-                  <span>Label</span>
-                  <ArrowDownCircleIcon size={size} />
-                </button>
+            <div className="card-content">
+              <div className="card-top-content">
+                <div className="card-text">
+                  <div className="card-header">
+                    <h3 className="card-title">{title}</h3>
+                  </div>
+                  <p className="card-body">{bodyText}</p>
+                </div>
+                {shouldShowCloseIcon && (
+                  <button
+                    className="card-close-icon"
+                    onClick={handleCloseClick}
+                    aria-label="Close card"
+                    type="button"
+                  >
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 6.41L6.41 5L12 10.59L17.59 5L19 6.41L13.41 12L19 17.59L17.59 19L12 13.41L6.41 19L5 17.59L10.59 12L5 6.41Z" fill="#9CA3AF"/>
+                    </svg>
+                  </button>
+                )}
               </div>
-            )}
+              {showButtonGroup && (
+                <div className="card-button-group">
+                  <button className="card-btn card-btn-primary">
+                    <AlarmIcon size={size} />
+                    <span>Label</span>
+                    <ArrowDownCircleIcon size={size} />
+                  </button>
+                  <button className="card-btn card-btn-ghost">
+                    <AlarmIcon size={size} />
+                    <span>Label</span>
+                    <ArrowDownCircleIcon size={size} />
+                  </button>
+                </div>
+              )}
+            </div>
           </>
         );
 
@@ -538,6 +566,7 @@ export const Card: React.FC<CardProps> = ({
       tabIndex={onClick && !disabled ? 0 : undefined}
       aria-disabled={disabled}
       aria-label={ariaLabel}
+      data-placement={placement}
       onKeyDown={(e) => {
         if (onClick && !disabled && (e.key === 'Enter' || e.key === ' ')) {
           e.preventDefault();
@@ -545,7 +574,8 @@ export const Card: React.FC<CardProps> = ({
         }
       }}
     >
-      {shouldShowCloseIcon && (
+      {/* For non-image cards, show close icon in top-right corner */}
+      {shouldShowCloseIcon && type !== 'image' && type !== 'contained-image' && (
         <button
           className="card-close-icon"
           onClick={handleCloseClick}
