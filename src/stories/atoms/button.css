@@ -841,7 +841,7 @@
 /* Error button variant */
 .button.error {
   background: var(--status-red);
-  border: var(--spacing-stroke-0-5px) solid var(--status-red-100);
+  border: var(--spacing-stroke-2px) solid var(--status-red-light-alt);
   color: var(--base-white);
 }
 
@@ -927,26 +927,27 @@
 /* State variants for error buttons */
 .button.error.default {
   background: var(--status-red);
-  border: var(--spacing-stroke-0-5px) solid var(--status-red-light-alt);
+  border: var(--spacing-stroke-2px) solid var(--status-red-light-alt);
+  box-shadow: 3px 3px 0 0 var(--status-red);
 }
 
 .button.error.hover,
 .button.error:hover:not(.disabled):not(.loading) {
   background: var(--status-red);
   border: var(--spacing-stroke-2px) solid var(--status-red-light-alt);
-  box-shadow: 3px 3px 0 0 var(--status-red-light-alt);
+  box-shadow: 3px 3px 0 0 var(--status-red);
 }
 
 .button.error.hover .button-text,
 .button.error:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-bold);
 }
 
 .button.error.clicked,
 .button.error:active:not(.disabled):not(.loading) {
   background: var(--status-red);
   border: var(--spacing-stroke-2px) solid var(--status-red-light-alt);
-  box-shadow: 3px 3px 0 0 var(--status-red-light-alt);
+  box-shadow: 3px 3px 0 0 var(--status-red);
 }
 
 .button.error.clicked .button-text,
@@ -956,19 +957,21 @@
 
 .button.error.focused,
 .button.error:focus-visible:not(.disabled):not(.loading) {
-  border: var(--spacing-stroke-3px) solid var(--status-red-100);
+  border: var(--spacing-stroke-3px) solid var(--status-red-light-alt);
+  box-shadow: 3px 3px 0 0 var(--status-red);
 }
 
 .button.error.loading {
   background: var(--status-red);
-  border: var(--spacing-stroke-0-5px) solid var(--status-red-100);
+  border: var(--spacing-stroke-2px) solid var(--status-red-light-alt);
+  box-shadow: 3px 3px 0 0 var(--status-red);
   cursor: wait;
   pointer-events: none;
 }
 
 .button.error.disabled {
   background: var(--neutral-gray-gray-100);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-300);
   color: var(--neutral-gray-gray-500);
   cursor: not-allowed;
   pointer-events: none;
@@ -1084,17 +1087,17 @@
 .button.error.force-hover {
   background: var(--status-red) !important;
   border: var(--spacing-stroke-2px) solid var(--status-red-light-alt) !important;
-  box-shadow: 3px 3px 0 0 var(--status-red-light-alt) !important;
+  box-shadow: 3px 3px 0 0 var(--status-red) !important;
 }
 
 .button.error.force-hover .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-bold) !important;
 }
 
 .button.error.force-clicked {
   background: var(--status-red) !important;
   border: var(--spacing-stroke-2px) solid var(--status-red-light-alt) !important;
-  box-shadow: 3px 3px 0 0 var(--status-red-light-alt) !important;
+  box-shadow: 3px 3px 0 0 var(--status-red) !important;
 }
 
 .button.error.force-clicked .button-text {
@@ -1102,7 +1105,8 @@
 }
 
 .button.error.force-focused {
-  border: var(--spacing-stroke-3px) solid var(--status-red-100) !important;
+  border: var(--spacing-stroke-3px) solid var(--status-red-light-alt) !important;
+  box-shadow: 3px 3px 0 0 var(--status-red) !important;
 }
 
 /* Force state classes for warning buttons */
