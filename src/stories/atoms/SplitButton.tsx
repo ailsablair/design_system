@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './splitButton.css';
 
-export interface MenuItem {
+export interface SplitButtonMenuItem {
   id: string;
   label: string;
   onClick?: () => void;
