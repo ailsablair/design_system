@@ -1,14 +1,19 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Tile, AlarmIcon } from './Tile';
+import { Tile } from './Tile';
 
-const meta: Meta<typeof Tile> = {
-  title: 'Atoms/Tile',
+const meta = {
+  title: 'Echo Design System/Atoms/Tile/Figma Showcase',
   component: Tile,
   parameters: {
     layout: 'fullscreen',
+    docs: {
+      description: {
+        component: 'Exact replication of the Tile component as shown in the Figma design. This showcases all size, alignment, and color variants in the exact layout from the design system.',
+      },
+    },
   },
-};
+  tags: ['autodocs'],
+} satisfies Meta<typeof Tile>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -16,253 +21,278 @@ type Story = StoryObj<typeof meta>;
 export const FigmaDesignReplication: Story = {
   render: () => (
     <div style={{ 
-      padding: '40px', 
+      padding: '40px',
       backgroundColor: '#f8f9fa',
-      fontFamily: 'Archivo, -apple-system, Roboto, Helvetica, sans-serif'
+      minHeight: '100vh',
+      fontFamily: 'Arial, sans-serif'
     }}>
       <div style={{ 
-        display: 'grid', 
-        gridTemplateColumns: 'repeat(6, 1fr)',
-        gap: '16px',
-        maxWidth: '2976px',
-        backgroundColor: 'white',
-        padding: '20px',
-        borderRadius: '8px',
-        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+        maxWidth: '1400px',
+        margin: '0 auto',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '32px'
       }}>
         
-        {/* Row 1: Default size, centre alignment */}
-        <Tile size="default" align="centre" colour="default" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-        <Tile size="default" align="centre" colour="blue" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-        <Tile size="default" align="centre" colour="yellow" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-        <Tile size="default" align="centre" colour="light-gray" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-        <Tile size="default" align="centre" colour="info-blue" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-        <Tile size="default" align="centre" colour="blue-gray" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-
-        {/* Row 2: Large size, centre alignment */}
-        <Tile size="large" align="centre" colour="default" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-        <Tile size="large" align="centre" colour="blue" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-        <Tile size="large" align="centre" colour="yellow" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-        <Tile size="large" align="centre" colour="light-gray" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-        <Tile size="large" align="centre" colour="info-blue" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-        <Tile size="large" align="centre" colour="blue-gray" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-
-        {/* Row 3: Small size, centre alignment */}
-        <Tile size="small" align="centre" colour="default" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-        <Tile size="small" align="centre" colour="blue" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-        <Tile size="small" align="centre" colour="yellow" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-        <Tile size="small" align="centre" colour="light-gray" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-        <Tile size="small" align="centre" colour="info-blue" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-        <Tile size="small" align="centre" colour="blue-gray" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-
-        {/* Row 4: Default size, left alignment */}
-        <Tile size="default" align="left" colour="default" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-        <Tile size="default" align="left" colour="blue" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-        <Tile size="default" align="left" colour="yellow" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-        <Tile size="default" align="left" colour="light-gray" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-        <Tile size="default" align="left" colour="info-blue" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-        <Tile size="default" align="left" colour="blue-gray" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-
-        {/* Row 5: Large size, left alignment */}
-        <Tile size="large" align="left" colour="default" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-        <Tile size="large" align="left" colour="blue" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-        <Tile size="large" align="left" colour="yellow" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-        <Tile size="large" align="left" colour="light-gray" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-        <Tile size="large" align="left" colour="info-blue" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-        <Tile size="large" align="left" colour="blue-gray" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-
-        {/* Row 6: Small size, left alignment */}
-        <Tile size="small" align="left" colour="default" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-        <Tile size="small" align="left" colour="blue" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-        <Tile size="small" align="left" colour="yellow" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-        <Tile size="small" align="left" colour="light-gray" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-        <Tile size="small" align="left" colour="info-blue" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-        <Tile size="small" align="left" colour="blue-gray" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-
-        {/* Row 7: Default size, right alignment */}
-        <Tile size="default" align="right" colour="default" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-        <Tile size="default" align="right" colour="blue" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-        <Tile size="default" align="right" colour="yellow" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-        <Tile size="default" align="right" colour="light-gray" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-        <Tile size="default" align="right" colour="info-blue" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-        <Tile size="default" align="right" colour="blue-gray" icon={<AlarmIcon size={28} />}>
-          Label
-        </Tile>
-
-        {/* Row 8: Large size, right alignment */}
-        <Tile size="large" align="right" colour="default" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-        <Tile size="large" align="right" colour="blue" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-        <Tile size="large" align="right" colour="yellow" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-        <Tile size="large" align="right" colour="light-gray" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-        <Tile size="large" align="right" colour="info-blue" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-        <Tile size="large" align="right" colour="blue-gray" icon={<AlarmIcon size={32} />}>
-          Label
-        </Tile>
-
-        {/* Row 9: Small size, right alignment */}
-        <Tile size="small" align="right" colour="default" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-        <Tile size="small" align="right" colour="blue" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-        <Tile size="small" align="right" colour="yellow" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-        <Tile size="small" align="right" colour="light-gray" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-        <Tile size="small" align="right" colour="info-blue" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-        <Tile size="small" align="right" colour="blue-gray" icon={<AlarmIcon size={24} />}>
-          Label
-        </Tile>
-      </div>
-
-      {/* Title and description */}
-      <div style={{ marginTop: '32px', maxWidth: '2976px' }}>
-        <h2 style={{ 
+        {/* Title */}
+        <h1 style={{ 
           fontSize: '24px', 
           fontWeight: 600, 
-          marginBottom: '16px',
-          color: '#1f2937'
+          color: '#1a1a1a',
+          margin: '0 0 24px 0'
         }}>
-          Tile Component Design System
-        </h2>
-        <p style={{ 
-          fontSize: '16px', 
-          color: '#6b7280', 
-          lineHeight: 1.6,
-          marginBottom: '24px'
-        }}>
-          A comprehensive tile component that supports multiple sizes (small, default, large), 
-          alignments (centre, left, right), and color variants. Perfect for dashboard cards, 
-          navigation tiles, and feature blocks. This implementation exactly matches the Figma design specifications.
-        </p>
+          Tile Component - Figma Design Replication
+        </h1>
 
-        <h3 style={{ 
-          fontSize: '18px', 
-          fontWeight: 600, 
-          marginBottom: '12px',
-          color: '#1f2937'
+        {/* Center Aligned Tiles */}
+        <div>
+          <h2 style={{ 
+            fontSize: '18px', 
+            fontWeight: 500, 
+            color: '#333',
+            margin: '0 0 16px 0'
+          }}>
+            Centre Alignment
+          </h2>
+          
+          {/* Default Size - Centre */}
+          <div style={{ marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 500, color: '#666', margin: '0 0 12px 0' }}>
+              Default Size
+            </h3>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              <Tile size="default" align="centre" colour="default" children="Label" />
+              <Tile size="default" align="centre" colour="blue" children="Label" />
+              <Tile size="default" align="centre" colour="yellow" children="Label" />
+              <Tile size="default" align="centre" colour="light-gray" children="Label" />
+              <Tile size="default" align="centre" colour="info-blue" children="Label" />
+              <Tile size="default" align="centre" colour="blue-gray" children="Label" />
+            </div>
+          </div>
+
+          {/* Large Size - Centre */}
+          <div style={{ marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 500, color: '#666', margin: '0 0 12px 0' }}>
+              Large Size
+            </h3>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              <Tile size="large" align="centre" colour="default" children="Label" />
+              <Tile size="large" align="centre" colour="blue" children="Label" />
+              <Tile size="large" align="centre" colour="yellow" children="Label" />
+              <Tile size="large" align="centre" colour="light-gray" children="Label" />
+              <Tile size="large" align="centre" colour="info-blue" children="Label" />
+              <Tile size="large" align="centre" colour="blue-gray" children="Label" />
+            </div>
+          </div>
+
+          {/* Small Size - Centre */}
+          <div style={{ marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 500, color: '#666', margin: '0 0 12px 0' }}>
+              Small Size
+            </h3>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              <Tile size="small" align="centre" colour="default" children="Label" />
+              <Tile size="small" align="centre" colour="blue" children="Label" />
+              <Tile size="small" align="centre" colour="yellow" children="Label" />
+              <Tile size="small" align="centre" colour="light-gray" children="Label" />
+              <Tile size="small" align="centre" colour="info-blue" children="Label" />
+              <Tile size="small" align="centre" colour="blue-gray" children="Label" />
+            </div>
+          </div>
+        </div>
+
+        {/* Left Aligned Tiles */}
+        <div>
+          <h2 style={{ 
+            fontSize: '18px', 
+            fontWeight: 500, 
+            color: '#333',
+            margin: '0 0 16px 0'
+          }}>
+            Left Alignment
+          </h2>
+          
+          {/* Default Size - Left */}
+          <div style={{ marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 500, color: '#666', margin: '0 0 12px 0' }}>
+              Default Size
+            </h3>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              <Tile size="default" align="left" colour="default" children="Label" />
+              <Tile size="default" align="left" colour="blue" children="Label" />
+              <Tile size="default" align="left" colour="yellow" children="Label" />
+              <Tile size="default" align="left" colour="light-gray" children="Label" />
+              <Tile size="default" align="left" colour="info-blue" children="Label" />
+              <Tile size="default" align="left" colour="blue-gray" children="Label" />
+            </div>
+          </div>
+
+          {/* Large Size - Left */}
+          <div style={{ marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 500, color: '#666', margin: '0 0 12px 0' }}>
+              Large Size
+            </h3>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              <Tile size="large" align="left" colour="default" children="Label" />
+              <Tile size="large" align="left" colour="blue" children="Label" />
+              <Tile size="large" align="left" colour="yellow" children="Label" />
+              <Tile size="large" align="left" colour="light-gray" children="Label" />
+              <Tile size="large" align="left" colour="info-blue" children="Label" />
+              <Tile size="large" align="left" colour="blue-gray" children="Label" />
+            </div>
+          </div>
+
+          {/* Small Size - Left */}
+          <div style={{ marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 500, color: '#666', margin: '0 0 12px 0' }}>
+              Small Size
+            </h3>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              <Tile size="small" align="left" colour="default" children="Label" />
+              <Tile size="small" align="left" colour="blue" children="Label" />
+              <Tile size="small" align="left" colour="yellow" children="Label" />
+              <Tile size="small" align="left" colour="light-gray" children="Label" />
+              <Tile size="small" align="left" colour="info-blue" children="Label" />
+              <Tile size="small" align="left" colour="blue-gray" children="Label" />
+            </div>
+          </div>
+        </div>
+
+        {/* Right Aligned Tiles */}
+        <div>
+          <h2 style={{ 
+            fontSize: '18px', 
+            fontWeight: 500, 
+            color: '#333',
+            margin: '0 0 16px 0'
+          }}>
+            Right Alignment
+          </h2>
+          
+          {/* Default Size - Right */}
+          <div style={{ marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 500, color: '#666', margin: '0 0 12px 0' }}>
+              Default Size
+            </h3>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              <Tile size="default" align="right" colour="default" children="Label" />
+              <Tile size="default" align="right" colour="blue" children="Label" />
+              <Tile size="default" align="right" colour="yellow" children="Label" />
+              <Tile size="default" align="right" colour="light-gray" children="Label" />
+              <Tile size="default" align="right" colour="info-blue" children="Label" />
+              <Tile size="default" align="right" colour="blue-gray" children="Label" />
+            </div>
+          </div>
+
+          {/* Large Size - Right */}
+          <div style={{ marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 500, color: '#666', margin: '0 0 12px 0' }}>
+              Large Size
+            </h3>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              <Tile size="large" align="right" colour="default" children="Label" />
+              <Tile size="large" align="right" colour="blue" children="Label" />
+              <Tile size="large" align="right" colour="yellow" children="Label" />
+              <Tile size="large" align="right" colour="light-gray" children="Label" />
+              <Tile size="large" align="right" colour="info-blue" children="Label" />
+              <Tile size="large" align="right" colour="blue-gray" children="Label" />
+            </div>
+          </div>
+
+          {/* Small Size - Right */}
+          <div style={{ marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 500, color: '#666', margin: '0 0 12px 0' }}>
+              Small Size
+            </h3>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              <Tile size="small" align="right" colour="default" children="Label" />
+              <Tile size="small" align="right" colour="blue" children="Label" />
+              <Tile size="small" align="right" colour="yellow" children="Label" />
+              <Tile size="small" align="right" colour="light-gray" children="Label" />
+              <Tile size="small" align="right" colour="info-blue" children="Label" />
+              <Tile size="small" align="right" colour="blue-gray" children="Label" />
+            </div>
+          </div>
+        </div>
+
+        {/* Interactive Examples */}
+        <div>
+          <h2 style={{ 
+            fontSize: '18px', 
+            fontWeight: 500, 
+            color: '#333',
+            margin: '0 0 16px 0'
+          }}>
+            Interactive Examples
+          </h2>
+          
+          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
+            <div>
+              <h3 style={{ fontSize: '14px', fontWeight: 500, color: '#666', margin: '0 0 8px 0' }}>
+                Clickable
+              </h3>
+              <Tile 
+                size="default" 
+                align="centre" 
+                colour="blue" 
+                children="Click Me"
+                onClick={() => alert('Tile clicked!')}
+              />
+            </div>
+            
+            <div>
+              <h3 style={{ fontSize: '14px', fontWeight: 500, color: '#666', margin: '0 0 8px 0' }}>
+                Disabled
+              </h3>
+              <Tile 
+                size="default" 
+                align="centre" 
+                colour="default" 
+                children="Disabled"
+                disabled={true}
+                onClick={() => alert('This should not fire')}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Usage Notes */}
+        <div style={{ 
+          backgroundColor: '#fff',
+          padding: '24px',
+          borderRadius: '8px',
+          border: '1px solid #e0e0e0'
         }}>
-          Features:
-        </h3>
-        <ul style={{ 
-          fontSize: '14px', 
-          color: '#6b7280', 
-          lineHeight: 1.6,
-          paddingLeft: '20px'
-        }}>
-          <li>Three size variants: small (80x80px), default (100px width), and large (100px width)</li>
-          <li>Three alignment options: centre, left, and right</li>
-          <li>Six color variants: default, blue, yellow, light-gray, info-blue, and blue-gray</li>
-          <li>Icon and text content support with proper sizing</li>
-          <li>Interactive states with hover effects and click handlers</li>
-          <li>Full accessibility support with keyboard navigation</li>
-          <li>Responsive design with proper breakpoints</li>
-          <li>Disabled state support</li>
-        </ul>
+          <h2 style={{ 
+            fontSize: '16px', 
+            fontWeight: 600, 
+            color: '#333',
+            margin: '0 0 12px 0'
+          }}>
+            Design System Notes
+          </h2>
+          <ul style={{ 
+            margin: 0,
+            paddingLeft: '20px',
+            color: '#666',
+            lineHeight: 1.6
+          }}>
+            <li>Tiles use consistent 16px padding and 8px gap between icon and text</li>
+            <li>Icon sizes scale with tile size: 24px (small), 28px (default), 32px (large)</li>
+            <li>Typography follows the design system tokens for consistent sizing</li>
+            <li>All color variants provide appropriate contrast for accessibility</li>
+            <li>Hover and focus states enhance interactivity</li>
+            <li>Responsive design ensures usability across all screen sizes</li>
+          </ul>
+        </div>
+
       </div>
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Exact replication of the Figma design showing all tile variants in a 6x9 grid layout.',
+        story: 'Complete replication of the Tile component design from Figma, showing all size, alignment, and color combinations exactly as specified in the design system.',
       },
     },
   },
