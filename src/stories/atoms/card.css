@@ -548,6 +548,17 @@
   transform: translateY(-1px);
 }
 
+/* === BUTTON GROUP POSITIONING FOR SEMANTIC CARDS === */
+
+.card.card-type-warning .card-button-group,
+.card.card-type-error .card-button-group,
+.card.card-type-info .card-button-group,
+.card.card-type-success .card-button-group {
+  padding-right: var(--spacing-sizing-8px);
+  justify-content: flex-end;
+  align-self: stretch;
+}
+
 /* === RESPONSIVE DESIGN === */
 
 @media (max-width: 768px) {
@@ -558,6 +569,35 @@
   .card.card-size-default.card-align-horizontal {
     width: auto;
     max-width: 400px;
+  }
+
+  .card.card-type-warning,
+  .card.card-type-error,
+  .card.card-type-info,
+  .card.card-type-success {
+    min-width: auto;
+    max-width: 400px;
+  }
+
+  .card-semantic-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-semantic-text {
+    text-align: center;
+  }
+
+  .card-semantic-title {
+    text-align: center;
+  }
+
+  .card.card-type-warning .card-body,
+  .card.card-type-error .card-body,
+  .card.card-type-info .card-body,
+  .card.card-type-success .card-body {
+    width: auto;
+    height: auto;
   }
 }
 
