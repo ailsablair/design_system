@@ -63,6 +63,102 @@ const meta: Meta<typeof DateTimeInput> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+// Validation State Stories
+export const ValidationStates: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '24px' }}>
+      <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Validation States</h3>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <DateTimeInput
+          label="Error State"
+          type="date"
+          state="error"
+          value="32 / Feb / 2024"
+          message="Please enter a valid date."
+        />
+
+        <DateTimeInput
+          label="Warning State"
+          type="date"
+          state="warning"
+          value="29 / Feb / 2023"
+          message="This date is in a non-leap year."
+        />
+
+        <DateTimeInput
+          label="Success State"
+          type="date"
+          state="success"
+          value="15 / Mar / 2024"
+          message="Date validated successfully."
+        />
+
+        <DateTimeInput
+          label="Default State"
+          type="date"
+          state="default"
+          message="Please select a date."
+        />
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Comprehensive validation states matching Input component patterns with error, warning, and success states.',
+      },
+    },
+  },
+};
+
+export const InteractiveFeatures: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '24px' }}>
+      <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Interactive Features</h3>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <DateTimeInput
+          label="With Close Button"
+          type="date"
+          state="filled"
+          value="15 / Mar / 2024"
+          showClose={true}
+          onClose={() => console.log('Date cleared')}
+        />
+
+        <DateTimeInput
+          label="Without Close Button"
+          type="time"
+          state="filled"
+          value="2:30:00 PM"
+          showClose={false}
+        />
+
+        <DateTimeInput
+          label="Typing State"
+          type="date"
+          state="typing"
+          value="15 / M|"
+        />
+
+        <DateTimeInput
+          label="Focus State"
+          type="time"
+          state="focus"
+        />
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Interactive features including close button, typing states, and focus handling.',
+      },
+    },
+  },
+};
+
 // Date Input Stories
 export const DateDefault: Story = {
   args: {
