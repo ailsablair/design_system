@@ -125,7 +125,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
   };
 
   // Handle menu item click
-  const handleMenuItemClick = (item: MenuItem) => {
+  const handleMenuItemClick = (item: SplitButtonMenuItem) => {
     if (!item.disabled && item.onClick) {
       item.onClick();
     }
