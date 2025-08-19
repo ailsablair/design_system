@@ -8,7 +8,7 @@ const meta: Meta<typeof Button> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Primary button component with multiple sizes, states, and icon support. Includes primary, secondary, tertiary, ghost, error, warning, info, and success variants. Matches the Figma design system specifications.',
+        component: 'Primary button component with multiple sizes, states, and icon support. Includes primary, secondary, tertiary, ghost, error, warning, info, and success variants. Supports both regular buttons with text and icon-only variants. Matches the Figma design system specifications.',
       },
     },
   },
