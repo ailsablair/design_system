@@ -352,6 +352,7 @@
 
   /* Font Weights */
   --type-weight-light: 300;
+  --type-weight-default: 400;
   --type-weight-regular: 400;
   --type-weight-medium: 500;
   --type-weight-semibold: 600;
