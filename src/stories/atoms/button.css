@@ -1068,9 +1068,9 @@
 
 /* Force state classes for error buttons */
 .button.error.force-hover {
-  background: #CE2031 !important;
-  border: var(--spacing-stroke-2px) solid #FFF3F3 !important;
-  box-shadow: 3px 3px 0 0 #D2D5DA !important;
+  background: var(--status-red) !important;
+  border: var(--spacing-stroke-2px) solid var(--status-red-light-alt) !important;
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-300) !important;
 }
 
 .button.error.force-hover .button-text {
@@ -1078,9 +1078,9 @@
 }
 
 .button.error.force-clicked {
-  background: #CE2031 !important;
-  border: var(--spacing-stroke-2px) solid #FFF3F3 !important;
-  box-shadow: 3px 3px 0 0 #D2D5DA !important;
+  background: var(--status-red) !important;
+  border: var(--spacing-stroke-2px) solid var(--status-red-light-alt) !important;
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-300) !important;
 }
 
 .button.error.force-clicked .button-text {
@@ -1093,9 +1093,9 @@
 
 /* Force state classes for warning buttons */
 .button.warning.force-hover {
-  background: #F4A403 !important;
-  border: var(--spacing-stroke-2px) solid #FEF4DA !important;
-  box-shadow: 3px 3px 0 0 #D2D5DA !important;
+  background: var(--status-orange-alt) !important;
+  border: var(--spacing-stroke-2px) solid var(--status-orange-light) !important;
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-300) !important;
 }
 
 .button.warning.force-hover .button-text {
@@ -1103,9 +1103,9 @@
 }
 
 .button.warning.force-clicked {
-  background: #F4A403 !important;
-  border: var(--spacing-stroke-2px) solid #FEF4DA !important;
-  box-shadow: 3px 3px 0 0 #D2D5DA !important;
+  background: var(--status-orange-alt) !important;
+  border: var(--spacing-stroke-2px) solid var(--status-orange-light) !important;
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-300) !important;
 }
 
 .button.warning.force-clicked .button-text {
@@ -1318,9 +1318,9 @@
 
 /* Force state classes for info buttons */
 .button.info.force-hover {
-  background: #366F97 !important;
-  border: var(--spacing-stroke-2px) solid #F5FCFF !important;
-  box-shadow: 3px 3px 0 0 #D2D5DA !important;
+  background: var(--status-info-blue) !important;
+  border: var(--spacing-stroke-2px) solid var(--status-info-blue-light) !important;
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-300) !important;
 }
 
 .button.info.force-hover .button-text {
@@ -1328,9 +1328,9 @@
 }
 
 .button.info.force-clicked {
-  background: #366F97 !important;
-  border: var(--spacing-stroke-2px) solid #C5CAED !important;
-  box-shadow: 3px 3px 0 0 #D2D5DA !important;
+  background: var(--status-info-blue) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-200) !important;
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-300) !important;
 }
 
 .button.info.force-clicked .button-text {
@@ -1343,9 +1343,9 @@
 
 /* Force state classes for success buttons */
 .button.success.force-hover {
-  background: #227F1A !important;
-  border: var(--spacing-stroke-2px) solid #F2FFF1 !important;
-  box-shadow: 3px 3px 0 0 #70CC67 !important;
+  background: var(--status-dark-green) !important;
+  border: var(--spacing-stroke-2px) solid var(--status-green-light) !important;
+  box-shadow: 3px 3px 0 0 var(--status-green) !important;
   color: var(--base-white) !important;
 }
 
@@ -1359,9 +1359,9 @@
 }
 
 .button.success.force-clicked {
-  background: #227F1A !important;
-  border: var(--spacing-stroke-2px) solid #F2FFF1 !important;
-  box-shadow: 3px 3px 0 0 #70CC67 !important;
+  background: var(--status-dark-green) !important;
+  border: var(--spacing-stroke-2px) solid var(--status-green-light) !important;
+  box-shadow: 3px 3px 0 0 var(--status-green) !important;
   color: var(--base-white) !important;
 }
 
