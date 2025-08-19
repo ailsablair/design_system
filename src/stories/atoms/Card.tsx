@@ -5,7 +5,7 @@ export interface CardProps {
   /** Size variant */
   size?: 'small' | 'default' | 'large';
   /** Card type */
-  type?: 'simple' | 'icon' | 'text-only' | 'empty-state' | 'stat' | 'warning' | 'error' | 'info';
+  type?: 'simple' | 'icon' | 'text-only' | 'empty-state' | 'stat' | 'warning' | 'error' | 'info' | 'success';
   /** Background color variant */
   bg?: 'default';
   /** Alignment */
@@ -50,23 +50,26 @@ export interface CardProps {
 
 // Semantic icons for warning, error, and info cards
 const WarningIcon = () => (
-  <svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M38 11.5L6.8575 60.5H69.1425L38 11.5ZM38 24.5L57.595 55.5H18.405L38 24.5ZM33.25 39.5V47H42.75V39.5H33.25ZM33.25 51.5V60H42.75V51.5H33.25Z" fill="var(--status-orange-500)"/>
+  <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M36.8333 39.667H31.1666V25.5003H36.8333M36.8333 51.0003H31.1666V45.3337H36.8333M2.83325 59.5003H65.1666L33.9999 5.66699L2.83325 59.5003Z" fill="#F4A403"/>
   </svg>
 );
 
 const ErrorIcon = () => (
-  <svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="38" cy="38" r="32" fill="var(--status-red-500)"/>
-    <path d="M48.5 27.5L27.5 48.5M27.5 27.5L48.5 48.5" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+  <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M34.0001 5.66699C49.6684 5.66699 62.3334 18.332 62.3334 34.0003C62.3334 49.6687 49.6684 62.3337 34.0001 62.3337C18.3317 62.3337 5.66675 49.6687 5.66675 34.0003C5.66675 18.332 18.3317 5.66699 34.0001 5.66699ZM44.1717 19.8337L34.0001 30.0053L23.8284 19.8337L19.8334 23.8287L30.0051 34.0003L19.8334 44.172L23.8284 48.167L34.0001 37.9953L44.1717 48.167L48.1667 44.172L37.9951 34.0003L48.1667 23.8287L44.1717 19.8337Z" fill="#CE2031"/>
   </svg>
 );
 
 const InfoIcon = () => (
-  <svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="38" cy="38" r="32" fill="var(--primary-blue-blue)"/>
-    <path d="M38 25V30M38 35V51" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
-    <circle cx="38" cy="57" r="2" fill="white"/>
+  <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M36.8334 25.5003H31.1667V19.8337H36.8334M36.8334 48.167H31.1667V31.167H36.8334M34.0001 5.66699C30.2793 5.66699 26.5949 6.39986 23.1574 7.82374C19.7198 9.24762 16.5964 11.3346 13.9654 13.9656C8.65186 19.2792 5.66675 26.4859 5.66675 34.0003C5.66675 41.5148 8.65186 48.7215 13.9654 54.035C16.5964 56.666 19.7198 58.753 23.1574 60.1769C26.5949 61.6008 30.2793 62.3337 34.0001 62.3337C41.5145 62.3337 48.7212 59.3485 54.0348 54.035C59.3483 48.7215 62.3334 41.5148 62.3334 34.0003C62.3334 30.2795 61.6006 26.5952 60.1767 23.1576C58.7528 19.7201 56.6658 16.5966 54.0348 13.9656C51.4038 11.3346 48.2803 9.24762 44.8428 7.82374C41.4052 6.39986 37.7209 5.66699 34.0001 5.66699Z" fill="#366F97"/>
+  </svg>
+);
+
+const SuccessIcon = () => (
+  <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M34.0001 5.66699C18.4167 5.66699 5.66675 18.417 5.66675 34.0003C5.66675 49.5837 18.4167 62.3337 34.0001 62.3337C49.5834 62.3337 62.3334 49.5837 62.3334 34.0003C62.3334 18.417 49.5834 5.66699 34.0001 5.66699ZM28.3334 48.167L14.1667 34.0003L18.1617 30.0053L28.3334 40.1487L49.8384 18.6437L53.8334 22.667L28.3334 48.167Z" fill="#70CC67"/>
   </svg>
 );
 
@@ -291,18 +294,22 @@ export const Card: React.FC<CardProps> = ({
       case 'warning':
         return (
           <>
-            <div className="card-semantic-icon">
-              <WarningIcon />
-            </div>
-            <div className="card-text">
-              <h3 className="card-semantic-title">{title}</h3>
-              <p className="card-body">{bodyText}</p>
+            <div className="card-semantic-content">
+              <div className="card-semantic-icon">
+                <WarningIcon />
+              </div>
+              <div className="card-semantic-text">
+                <h3 className="card-semantic-title">{title}</h3>
+                <p className="card-body">{bodyText}</p>
+              </div>
             </div>
             {showButtonGroup && (
               <div className="card-button-group">
                 <button className="card-btn card-btn-warning">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 2.625L2.1875 10.5H11.8125L7 2.625ZM7 5.25L9.625 9.625H4.375L7 5.25ZM6.125 7.875V8.75H7.875V7.875H6.125ZM6.125 9.625V10.5H7.875V9.625H6.125Z" fill="white"/>
+                    <g opacity="0.6">
+                      <path d="M7.58325 8.16699H6.41659V5.25033H7.58325M7.58325 10.5003H6.41659V9.33366H7.58325M0.583252 12.2503H13.4166L6.99992 1.16699L0.583252 12.2503Z" fill="white"/>
+                    </g>
                   </svg>
                   <span>Warning button</span>
                 </button>
@@ -319,19 +326,22 @@ export const Card: React.FC<CardProps> = ({
       case 'error':
         return (
           <>
-            <div className="card-semantic-icon">
-              <ErrorIcon />
-            </div>
-            <div className="card-text">
-              <h3 className="card-semantic-title">{title}</h3>
-              <p className="card-body">{bodyText}</p>
+            <div className="card-semantic-content">
+              <div className="card-semantic-icon">
+                <ErrorIcon />
+              </div>
+              <div className="card-semantic-text">
+                <h3 className="card-semantic-title">{title}</h3>
+                <p className="card-body">{bodyText}</p>
+              </div>
             </div>
             {showButtonGroup && (
               <div className="card-button-group">
                 <button className="card-btn card-btn-error">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="7" cy="7" r="6" fill="white"/>
-                    <path d="M9 5L5 9M5 5L9 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <g opacity="0.6">
+                      <path d="M7.00008 1.16699C10.2259 1.16699 12.8334 3.77449 12.8334 7.00033C12.8334 10.2262 10.2259 12.8337 7.00008 12.8337C3.77425 12.8337 1.16675 10.2262 1.16675 7.00033C1.16675 3.77449 3.77425 1.16699 7.00008 1.16699ZM9.09425 4.08366L7.00008 6.17783L4.90591 4.08366L4.08341 4.90616L6.17758 7.00033L4.08341 9.09449L4.90591 9.91699L7.00008 7.82283L9.09425 9.91699L9.91675 9.09449L7.82258 7.00033L9.91675 4.90616L9.09425 4.08366Z" fill="white"/>
+                    </g>
                   </svg>
                   <span>Error button</span>
                 </button>
@@ -348,22 +358,53 @@ export const Card: React.FC<CardProps> = ({
       case 'info':
         return (
           <>
-            <div className="card-semantic-icon">
-              <InfoIcon />
-            </div>
-            <div className="card-text">
-              <h3 className="card-semantic-title">{title}</h3>
-              <p className="card-body">{bodyText}</p>
+            <div className="card-semantic-content">
+              <div className="card-semantic-icon">
+                <InfoIcon />
+              </div>
+              <div className="card-semantic-text">
+                <h3 className="card-semantic-title">{title}</h3>
+                <p className="card-body">{bodyText}</p>
+              </div>
             </div>
             {showButtonGroup && (
               <div className="card-button-group">
                 <button className="card-btn card-btn-info">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="7" cy="7" r="6" fill="white"/>
-                    <path d="M7 4.5V5.5M7 6.5V10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="7" cy="11.5" r="0.5" fill="currentColor"/>
+                    <g opacity="0.6">
+                      <path d="M7.58341 5.25033H6.41675V4.08366H7.58341M7.58341 9.91699H6.41675V6.41699H7.58341M7.00008 1.16699C6.23404 1.16699 5.47549 1.31788 4.76776 1.61103C4.06003 1.90418 3.41697 2.33386 2.87529 2.87554C1.78133 3.9695 1.16675 5.45323 1.16675 7.00033C1.16675 8.54742 1.78133 10.0312 2.87529 11.1251C3.41697 11.6668 4.06003 12.0965 4.76776 12.3896C5.47549 12.6828 6.23404 12.8337 7.00008 12.8337C8.54718 12.8337 10.0309 12.2191 11.1249 11.1251C12.2188 10.0312 12.8334 8.54742 12.8334 7.00033C12.8334 6.23428 12.6825 5.47574 12.3894 4.76801C12.0962 4.06027 11.6665 3.41721 11.1249 2.87554C10.5832 2.33386 9.94013 1.90418 9.2324 1.61103C8.52467 1.31788 7.76613 1.16699 7.00008 1.16699Z" fill="white"/>
+                    </g>
                   </svg>
                   <span>Info button</span>
+                </button>
+                <button className="card-btn card-btn-ghost">
+                  <AlarmIcon size={size} />
+                  <span>Label</span>
+                  <ArrowDownCircleIcon size={size} />
+                </button>
+              </div>
+            )}
+          </>
+        );
+
+      case 'success':
+        return (
+          <>
+            <div className="card-semantic-content">
+              <div className="card-semantic-icon">
+                <SuccessIcon />
+              </div>
+              <div className="card-semantic-text">
+                <h3 className="card-semantic-title">{title}</h3>
+                <p className="card-body">{bodyText}</p>
+              </div>
+            </div>
+            {showButtonGroup && (
+              <div className="card-button-group">
+                <button className="card-btn card-btn-success">
+                  <AlarmIcon size={size} />
+                  <span>Label</span>
+                  <ArrowDownCircleIcon size={size} />
                 </button>
                 <button className="card-btn card-btn-ghost">
                   <AlarmIcon size={size} />
