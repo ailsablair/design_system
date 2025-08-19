@@ -1499,6 +1499,402 @@ export const TertiaryOutlineLoading: Story = {
   },
 };
 
+// Icon-only button variants - Primary
+export const IconOnlyPrimaryExtraSmall: Story = {
+  args: {
+    size: 'extra-small',
+    type: 'primary',
+    iconOnly: true,
+    icon: <AlarmIcon size={14} />,
+  },
+};
+
+export const IconOnlyPrimarySmall: Story = {
+  args: {
+    size: 'small',
+    type: 'primary',
+    iconOnly: true,
+    icon: <AlarmIcon size={14} />,
+  },
+};
+
+export const IconOnlyPrimaryDefault: Story = {
+  args: {
+    size: 'default',
+    type: 'primary',
+    iconOnly: true,
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+export const IconOnlyPrimaryLarge: Story = {
+  args: {
+    size: 'large',
+    type: 'primary',
+    iconOnly: true,
+    icon: <AlarmIcon size={20} />,
+  },
+};
+
+// Icon-only button variants - Primary Hover
+export const IconOnlyPrimarySmallHover: Story = {
+  args: {
+    size: 'small',
+    type: 'primary',
+    iconOnly: true,
+    state: 'hover',
+    className: 'force-hover',
+    icon: <AlarmIcon size={14} />,
+  },
+};
+
+export const IconOnlyPrimaryDefaultHover: Story = {
+  args: {
+    size: 'default',
+    type: 'primary',
+    iconOnly: true,
+    state: 'hover',
+    className: 'force-hover',
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+export const IconOnlyPrimaryLargeHover: Story = {
+  args: {
+    size: 'large',
+    type: 'primary',
+    iconOnly: true,
+    state: 'hover',
+    className: 'force-hover',
+    icon: <AlarmIcon size={20} />,
+  },
+};
+
+// Icon-only button variants - Primary Clicked
+export const IconOnlyPrimarySmallClicked: Story = {
+  args: {
+    size: 'small',
+    type: 'primary',
+    iconOnly: true,
+    state: 'clicked',
+    className: 'force-clicked',
+    icon: <AlarmIcon size={14} />,
+  },
+};
+
+export const IconOnlyPrimaryDefaultClicked: Story = {
+  args: {
+    size: 'default',
+    type: 'primary',
+    iconOnly: true,
+    state: 'clicked',
+    className: 'force-clicked',
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+export const IconOnlyPrimaryLargeClicked: Story = {
+  args: {
+    size: 'large',
+    type: 'primary',
+    iconOnly: true,
+    state: 'clicked',
+    className: 'force-clicked',
+    icon: <AlarmIcon size={20} />,
+  },
+};
+
+// Icon-only button variants - Primary Focused
+export const IconOnlyPrimarySmallFocused: Story = {
+  args: {
+    size: 'small',
+    type: 'primary',
+    iconOnly: true,
+    state: 'focused',
+    className: 'force-focused',
+    icon: <AlarmIcon size={14} />,
+  },
+};
+
+export const IconOnlyPrimaryDefaultFocused: Story = {
+  args: {
+    size: 'default',
+    type: 'primary',
+    iconOnly: true,
+    state: 'focused',
+    className: 'force-focused',
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+export const IconOnlyPrimaryLargeFocused: Story = {
+  args: {
+    size: 'large',
+    type: 'primary',
+    iconOnly: true,
+    state: 'focused',
+    className: 'force-focused',
+    icon: <AlarmIcon size={20} />,
+  },
+};
+
+// Icon-only button variants - Primary Loading
+export const IconOnlyPrimarySmallLoading: Story = {
+  args: {
+    size: 'small',
+    type: 'primary',
+    iconOnly: true,
+    loading: true,
+  },
+};
+
+export const IconOnlyPrimaryDefaultLoading: Story = {
+  args: {
+    size: 'default',
+    type: 'primary',
+    iconOnly: true,
+    loading: true,
+  },
+};
+
+export const IconOnlyPrimaryLargeLoading: Story = {
+  args: {
+    size: 'large',
+    type: 'primary',
+    iconOnly: true,
+    loading: true,
+  },
+};
+
+// Icon-only button variants - Primary Disabled
+export const IconOnlyPrimarySmallDisabled: Story = {
+  args: {
+    size: 'small',
+    type: 'primary',
+    iconOnly: true,
+    disabled: true,
+    icon: <AlarmIcon size={14} />,
+  },
+};
+
+export const IconOnlyPrimaryDefaultDisabled: Story = {
+  args: {
+    size: 'default',
+    type: 'primary',
+    iconOnly: true,
+    disabled: true,
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+export const IconOnlyPrimaryLargeDisabled: Story = {
+  args: {
+    size: 'large',
+    type: 'primary',
+    iconOnly: true,
+    disabled: true,
+    icon: <AlarmIcon size={20} />,
+  },
+};
+
+// Icon-only button variants - Secondary
+export const IconOnlySecondaryExtraSmall: Story = {
+  args: {
+    size: 'extra-small',
+    type: 'secondary',
+    iconOnly: true,
+    icon: <AlarmIcon size={14} />,
+  },
+};
+
+export const IconOnlySecondarySmall: Story = {
+  args: {
+    size: 'small',
+    type: 'secondary',
+    iconOnly: true,
+    icon: <AlarmIcon size={14} />,
+  },
+};
+
+export const IconOnlySecondaryDefault: Story = {
+  args: {
+    size: 'default',
+    type: 'secondary',
+    iconOnly: true,
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+export const IconOnlySecondaryLarge: Story = {
+  args: {
+    size: 'large',
+    type: 'secondary',
+    iconOnly: true,
+    icon: <AlarmIcon size={20} />,
+  },
+};
+
+// Icon-only button variants - Secondary Hover
+export const IconOnlySecondarySmallHover: Story = {
+  args: {
+    size: 'small',
+    type: 'secondary',
+    iconOnly: true,
+    state: 'hover',
+    className: 'force-hover',
+    icon: <AlarmIcon size={14} />,
+  },
+};
+
+export const IconOnlySecondaryDefaultHover: Story = {
+  args: {
+    size: 'default',
+    type: 'secondary',
+    iconOnly: true,
+    state: 'hover',
+    className: 'force-hover',
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+export const IconOnlySecondaryLargeHover: Story = {
+  args: {
+    size: 'large',
+    type: 'secondary',
+    iconOnly: true,
+    state: 'hover',
+    className: 'force-hover',
+    icon: <AlarmIcon size={20} />,
+  },
+};
+
+// Icon-only button variants - Secondary Clicked
+export const IconOnlySecondarySmallClicked: Story = {
+  args: {
+    size: 'small',
+    type: 'secondary',
+    iconOnly: true,
+    state: 'clicked',
+    className: 'force-clicked',
+    icon: <AlarmIcon size={14} />,
+  },
+};
+
+export const IconOnlySecondaryDefaultClicked: Story = {
+  args: {
+    size: 'default',
+    type: 'secondary',
+    iconOnly: true,
+    state: 'clicked',
+    className: 'force-clicked',
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+export const IconOnlySecondaryLargeClicked: Story = {
+  args: {
+    size: 'large',
+    type: 'secondary',
+    iconOnly: true,
+    state: 'clicked',
+    className: 'force-clicked',
+    icon: <AlarmIcon size={20} />,
+  },
+};
+
+// Icon-only button variants - Secondary Focused
+export const IconOnlySecondarySmallFocused: Story = {
+  args: {
+    size: 'small',
+    type: 'secondary',
+    iconOnly: true,
+    state: 'focused',
+    className: 'force-focused',
+    icon: <AlarmIcon size={14} />,
+  },
+};
+
+export const IconOnlySecondaryDefaultFocused: Story = {
+  args: {
+    size: 'default',
+    type: 'secondary',
+    iconOnly: true,
+    state: 'focused',
+    className: 'force-focused',
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+export const IconOnlySecondaryLargeFocused: Story = {
+  args: {
+    size: 'large',
+    type: 'secondary',
+    iconOnly: true,
+    state: 'focused',
+    className: 'force-focused',
+    icon: <AlarmIcon size={20} />,
+  },
+};
+
+// Icon-only button variants - Secondary Loading
+export const IconOnlySecondarySmallLoading: Story = {
+  args: {
+    size: 'small',
+    type: 'secondary',
+    iconOnly: true,
+    loading: true,
+  },
+};
+
+export const IconOnlySecondaryDefaultLoading: Story = {
+  args: {
+    size: 'default',
+    type: 'secondary',
+    iconOnly: true,
+    loading: true,
+  },
+};
+
+export const IconOnlySecondaryLargeLoading: Story = {
+  args: {
+    size: 'large',
+    type: 'secondary',
+    iconOnly: true,
+    loading: true,
+  },
+};
+
+// Icon-only button variants - Secondary Disabled
+export const IconOnlySecondarySmallDisabled: Story = {
+  args: {
+    size: 'small',
+    type: 'secondary',
+    iconOnly: true,
+    disabled: true,
+    icon: <AlarmIcon size={14} />,
+  },
+};
+
+export const IconOnlySecondaryDefaultDisabled: Story = {
+  args: {
+    size: 'default',
+    type: 'secondary',
+    iconOnly: true,
+    disabled: true,
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+export const IconOnlySecondaryLargeDisabled: Story = {
+  args: {
+    size: 'large',
+    type: 'secondary',
+    iconOnly: true,
+    disabled: true,
+    icon: <AlarmIcon size={20} />,
+  },
+};
+
 export const TertiaryOutlineLoadingMedium: Story = {
   args: {
     children: 'Label',
