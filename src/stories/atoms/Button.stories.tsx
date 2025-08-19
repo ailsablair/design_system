@@ -1939,6 +1939,130 @@ export const IconOnlySecondaryLargeDisabled: Story = {
   },
 };
 
+// Comprehensive icon-only button showcase that matches the Figma design
+export const IconOnlyButtonsShowcase: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', padding: '24px' }}>
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Primary Icon-Only Buttons</h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '24px', alignItems: 'center' }}>
+          {/* Header row */}
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Size</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Default</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Hover</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Clicked</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Focused</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Loading</div>
+
+          {/* Extra Small row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Extra Small</div>
+          <Button size="extra-small" type="primary" iconOnly icon={<AlarmIcon size={14} />} />
+          <Button size="extra-small" type="primary" iconOnly className="force-hover" icon={<AlarmIcon size={14} />} />
+          <Button size="extra-small" type="primary" iconOnly className="force-clicked" icon={<AlarmIcon size={14} />} />
+          <Button size="extra-small" type="primary" iconOnly className="force-focused" icon={<AlarmIcon size={14} />} />
+          <Button size="extra-small" type="primary" iconOnly loading />
+
+          {/* Small row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Small</div>
+          <Button size="small" type="primary" iconOnly icon={<AlarmIcon size={14} />} />
+          <Button size="small" type="primary" iconOnly className="force-hover" icon={<AlarmIcon size={14} />} />
+          <Button size="small" type="primary" iconOnly className="force-clicked" icon={<AlarmIcon size={14} />} />
+          <Button size="small" type="primary" iconOnly className="force-focused" icon={<AlarmIcon size={14} />} />
+          <Button size="small" type="primary" iconOnly loading />
+
+          {/* Default row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Default</div>
+          <Button size="default" type="primary" iconOnly icon={<AlarmIcon size={18} />} />
+          <Button size="default" type="primary" iconOnly className="force-hover" icon={<AlarmIcon size={18} />} />
+          <Button size="default" type="primary" iconOnly className="force-clicked" icon={<AlarmIcon size={18} />} />
+          <Button size="default" type="primary" iconOnly className="force-focused" icon={<AlarmIcon size={18} />} />
+          <Button size="default" type="primary" iconOnly loading />
+
+          {/* Large row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Large</div>
+          <Button size="large" type="primary" iconOnly icon={<AlarmIcon size={20} />} />
+          <Button size="large" type="primary" iconOnly className="force-hover" icon={<AlarmIcon size={20} />} />
+          <Button size="large" type="primary" iconOnly className="force-clicked" icon={<AlarmIcon size={20} />} />
+          <Button size="large" type="primary" iconOnly className="force-focused" icon={<AlarmIcon size={20} />} />
+          <Button size="large" type="primary" iconOnly loading />
+        </div>
+      </div>
+
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Secondary Icon-Only Buttons</h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '24px', alignItems: 'center' }}>
+          {/* Header row */}
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Size</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Default</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Hover</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Clicked</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Focused</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Loading</div>
+
+          {/* Extra Small row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Extra Small</div>
+          <Button size="extra-small" type="secondary" iconOnly icon={<AlarmIcon size={14} />} />
+          <Button size="extra-small" type="secondary" iconOnly className="force-hover" icon={<AlarmIcon size={14} />} />
+          <Button size="extra-small" type="secondary" iconOnly className="force-clicked" icon={<AlarmIcon size={14} />} />
+          <Button size="extra-small" type="secondary" iconOnly className="force-focused" icon={<AlarmIcon size={14} />} />
+          <Button size="extra-small" type="secondary" iconOnly loading />
+
+          {/* Small row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Small</div>
+          <Button size="small" type="secondary" iconOnly icon={<AlarmIcon size={14} />} />
+          <Button size="small" type="secondary" iconOnly className="force-hover" icon={<AlarmIcon size={14} />} />
+          <Button size="small" type="secondary" iconOnly className="force-clicked" icon={<AlarmIcon size={14} />} />
+          <Button size="small" type="secondary" iconOnly className="force-focused" icon={<AlarmIcon size={14} />} />
+          <Button size="small" type="secondary" iconOnly loading />
+
+          {/* Default row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Default</div>
+          <Button size="default" type="secondary" iconOnly icon={<AlarmIcon size={18} />} />
+          <Button size="default" type="secondary" iconOnly className="force-hover" icon={<AlarmIcon size={18} />} />
+          <Button size="default" type="secondary" iconOnly className="force-clicked" icon={<AlarmIcon size={18} />} />
+          <Button size="default" type="secondary" iconOnly className="force-focused" icon={<AlarmIcon size={18} />} />
+          <Button size="default" type="secondary" iconOnly loading />
+
+          {/* Large row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Large</div>
+          <Button size="large" type="secondary" iconOnly icon={<AlarmIcon size={20} />} />
+          <Button size="large" type="secondary" iconOnly className="force-hover" icon={<AlarmIcon size={20} />} />
+          <Button size="large" type="secondary" iconOnly className="force-clicked" icon={<AlarmIcon size={20} />} />
+          <Button size="large" type="secondary" iconOnly className="force-focused" icon={<AlarmIcon size={20} />} />
+          <Button size="large" type="secondary" iconOnly loading />
+        </div>
+      </div>
+
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Disabled States</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <span style={{ minWidth: '120px', fontSize: '14px', fontWeight: '500' }}>Primary Disabled:</span>
+            <Button size="extra-small" type="primary" iconOnly disabled icon={<AlarmIcon size={14} />} />
+            <Button size="small" type="primary" iconOnly disabled icon={<AlarmIcon size={14} />} />
+            <Button size="default" type="primary" iconOnly disabled icon={<AlarmIcon size={18} />} />
+            <Button size="large" type="primary" iconOnly disabled icon={<AlarmIcon size={20} />} />
+          </div>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <span style={{ minWidth: '120px', fontSize: '14px', fontWeight: '500' }}>Secondary Disabled:</span>
+            <Button size="extra-small" type="secondary" iconOnly disabled icon={<AlarmIcon size={14} />} />
+            <Button size="small" type="secondary" iconOnly disabled icon={<AlarmIcon size={14} />} />
+            <Button size="default" type="secondary" iconOnly disabled icon={<AlarmIcon size={18} />} />
+            <Button size="large" type="secondary" iconOnly disabled icon={<AlarmIcon size={20} />} />
+          </div>
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Comprehensive showcase of all icon-only button variants, sizes, and states for both primary and secondary types, matching the Figma design specifications.',
+      },
+    },
+  },
+};
+
 export const TertiaryOutlineLoadingMedium: Story = {
   args: {
     children: 'Label',
