@@ -408,18 +408,40 @@
 
 .card.card-type-warning,
 .card.card-type-error,
-.card.card-type-info {
+.card.card-type-info,
+.card.card-type-success {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-sizing-16px);
+  align-items: flex-start;
+  gap: var(--spacing-sizing-8px);
+  min-height: 174px;
+  min-width: 468px;
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-12px) 0 var(--spacing-sizing-12px);
+}
+
+.card-semantic-content {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sizing-8px);
+  flex: 1;
 }
 
 .card-semantic-icon {
   display: flex;
-  align-items: center;
+  padding: var(--spacing-sizing-16px) var(--spacing-sizing-16px) var(--spacing-sizing-24px) var(--spacing-sizing-8px);
   justify-content: center;
-  margin-top: var(--spacing-sizing-8px);
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.card-semantic-text {
+  display: flex;
+  padding: var(--spacing-sizing-8px) 0 var(--spacing-sizing-4px) 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-sizing-12px);
+  flex: 1;
 }
 
 .card-semantic-title {
