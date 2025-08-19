@@ -38,6 +38,11 @@ const meta = {
       control: { type: 'boolean' },
       description: 'Whether to show drop shadow',
     },
+    placement: {
+      control: { type: 'select' },
+      options: ['default', 'n/a', 'left', 'right'],
+      description: 'Placement for icon types and image cards (left/right for image cards)',
+    },
     showCloseIcon: {
       control: { type: 'boolean' },
       description: 'Show close icon (for simple, text-only, and semantic types)',
