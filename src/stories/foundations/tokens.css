@@ -365,6 +365,12 @@
   --type-line-height-body: 20px;
   --type-line-height-body-lg: 22px;
 
+  /* Archivo Heading Line Heights */
+  --type-line-height-heading-2: 34px;
+  --type-line-height-heading-3: 28px;
+  --type-line-height-heading-4: 24px;
+  --type-line-height-heading-5: 24px;
+
   /* Letter Spacing */
   --type-letter-spacing-tight: -0.025em;
   --type-letter-spacing-normal: 0em;
