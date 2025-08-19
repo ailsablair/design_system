@@ -501,3 +501,150 @@ export const CustomChildren: Story = {
     },
   },
 };
+
+// === CLOSE ICON EXAMPLES === //
+
+export const CloseIconShowcase: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', padding: '20px' }}>
+      <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Close Icon Examples</h3>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <h4 style={{ margin: '0', fontSize: '16px', fontWeight: 500 }}>Simple Cards with Close Icon</h4>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'start', flexWrap: 'wrap' }}>
+          <Card
+            type="simple"
+            size="small"
+            align="vertical"
+            dropShadow={true}
+            showCloseIcon={true}
+            title="Small Card"
+            subtitle="With close icon"
+            onCloseClick={() => alert('Small card closed!')}
+          />
+          <Card
+            type="simple"
+            size="default"
+            align="vertical"
+            dropShadow={true}
+            showCloseIcon={true}
+            title="Default Card"
+            subtitle="With close icon"
+            onCloseClick={() => alert('Default card closed!')}
+          />
+          <Card
+            type="simple"
+            size="large"
+            align="vertical"
+            dropShadow={true}
+            showCloseIcon={true}
+            title="Large Card"
+            subtitle="With close icon"
+            onCloseClick={() => alert('Large card closed!')}
+          />
+        </div>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <h4 style={{ margin: '0', fontSize: '16px', fontWeight: 500 }}>Text-Only Cards with Close Icon</h4>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'start', flexWrap: 'wrap' }}>
+          <Card
+            type="text-only"
+            size="small"
+            align="vertical"
+            dropShadow={true}
+            showCloseIcon={true}
+            onCloseClick={() => alert('Small text-only card closed!')}
+          />
+          <Card
+            type="text-only"
+            size="default"
+            align="vertical"
+            dropShadow={true}
+            showCloseIcon={true}
+            onCloseClick={() => alert('Default text-only card closed!')}
+          />
+          <Card
+            type="text-only"
+            size="large"
+            align="vertical"
+            dropShadow={true}
+            showCloseIcon={true}
+            onCloseClick={() => alert('Large text-only card closed!')}
+          />
+        </div>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <h4 style={{ margin: '0', fontSize: '16px', fontWeight: 500 }}>Custom Content Card with Close Icon</h4>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'start', flexWrap: 'wrap' }}>
+          <Card
+            showCloseIcon={true}
+            dropShadow={true}
+            onCloseClick={() => alert('Custom content card closed!')}
+          >
+            <div style={{ padding: '20px', textAlign: 'center' }}>
+              <h3 style={{ margin: '0 0 12px 0', color: '#1C1C1C', fontSize: '18px' }}>
+                Custom Card with Close
+              </h3>
+              <p style={{ margin: '0 0 16px 0', color: '#6B7280', fontSize: '14px' }}>
+                This demonstrates the close icon positioned at the top-right corner.
+              </p>
+              <button
+                style={{
+                  background: '#2F42BD',
+                  color: 'white',
+                  border: 'none',
+                  padding: '8px 16px',
+                  borderRadius: '4px',
+                  cursor: 'pointer'
+                }}
+                onClick={() => alert('Action button clicked!')}
+              >
+                Action Button
+              </button>
+            </div>
+          </Card>
+        </div>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <h4 style={{ margin: '0', fontSize: '16px', fontWeight: 500 }}>Comparison: With vs Without Close Icon</h4>
+        <div style={{ display: 'flex', gap: '32px', alignItems: 'start' }}>
+          <div style={{ textAlign: 'center' }}>
+            <h5 style={{ margin: '0 0 12px 0', fontSize: '14px' }}>Without Close Icon</h5>
+            <Card
+              type="simple"
+              size="default"
+              align="vertical"
+              dropShadow={true}
+              showCloseIcon={false}
+              title="Regular Card"
+              subtitle="No close icon"
+            />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <h5 style={{ margin: '0 0 12px 0', fontSize: '14px' }}>With Close Icon</h5>
+            <Card
+              type="simple"
+              size="default"
+              align="vertical"
+              dropShadow={true}
+              showCloseIcon={true}
+              title="Closable Card"
+              subtitle="With close icon"
+              onCloseClick={() => alert('Card closed!')}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Comprehensive showcase of the close icon functionality across different card types and sizes. The close icon is positioned at the top-right corner and is optional for simple and text-only cards.',
+      },
+    },
+  },
+};
