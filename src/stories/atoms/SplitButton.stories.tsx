@@ -57,7 +57,7 @@ export default meta;
 type Story = StoryObj<typeof SplitButton>;
 
 // Default menu items for stories
-const defaultMenuItems: MenuItem[] = [
+const defaultMenuItems: SplitButtonMenuItem[] = [
   {
     id: 'top',
     label: 'This is the top',
