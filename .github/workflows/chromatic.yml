@@ -48,6 +48,11 @@ jobs:
           npx tsc --noEmit --skipLibCheck
           echo "TypeScript validation passed!"
 
+      - name: Lint code (non-blocking)
+        run: |
+          echo "Running ESLint (warnings only)..."
+          npm run lint || echo "⚠️ Linting issues found but not blocking Chromatic"
+
       - name: Build Storybook (test)
         run: |
           echo "Testing Storybook build before Chromatic..."
