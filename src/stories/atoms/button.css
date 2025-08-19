@@ -783,13 +783,13 @@
 
 /* State variants for warning buttons */
 .button.warning.default {
-  background: var(--status-orange);
-  border: var(--spacing-stroke-0-5px) solid var(--status-orange-light);
+  background: var(--status-orange-alt);
+  border: var(--spacing-stroke-0-5px) solid var(--status-orange-100);
 }
 
 .button.warning.hover,
 .button.warning:hover:not(.disabled):not(.loading) {
-  border: var(--spacing-stroke-2px) solid var(--status-orange-light);
+  border: var(--spacing-stroke-2px) solid var(--status-orange-100);
   box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300);
 }
 
@@ -800,7 +800,7 @@
 
 .button.warning.clicked,
 .button.warning:active:not(.disabled):not(.loading) {
-  border: var(--spacing-stroke-2px) solid var(--primary-yellow-yellow-100);
+  border: var(--spacing-stroke-2px) solid var(--status-orange-200);
   box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300);
 }
 
@@ -811,12 +811,12 @@
 
 .button.warning.focused,
 .button.warning:focus-visible:not(.disabled):not(.loading) {
-  border: var(--spacing-stroke-3px) solid var(--status-orange-light);
+  border: var(--spacing-stroke-3px) solid var(--status-orange-100);
 }
 
 .button.warning.loading {
-  background: var(--status-orange);
-  border: var(--spacing-stroke-0-5px) solid var(--status-orange-light);
+  background: var(--status-orange-alt);
+  border: var(--spacing-stroke-0-5px) solid var(--status-orange-100);
   cursor: wait;
   pointer-events: none;
 }
