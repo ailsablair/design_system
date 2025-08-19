@@ -189,8 +189,8 @@ export const Card: React.FC<CardProps> = ({
     className
   ].filter(Boolean).join(' ');
 
-  // Determine if close icon should be shown based on card type
-  const shouldShowCloseIcon = showCloseIcon && (type === 'simple' || type === 'text-only' || children);
+  // Show close icon on all card types when requested
+  const shouldShowCloseIcon = showCloseIcon;
 
   // If custom children are provided, use them
   if (children) {
@@ -234,11 +234,7 @@ export const Card: React.FC<CardProps> = ({
               <div className="card-content-horizontal">
                 <div className="card-text">
                   <div className="card-headings">
-                    <div className="card-header-close">
-                      <div className="card-header">
-                        <h3 className="card-title">{title}</h3>
-                      </div>
-                    </div>
+                    <h3 className="card-title">{title}</h3>
                     <p className="card-subtitle">{subtitle}</p>
                   </div>
                   <p className="card-body">{bodyText}</p>
@@ -247,10 +243,8 @@ export const Card: React.FC<CardProps> = ({
             ) : (
               <div className="card-text">
                 <div className="card-headings">
-                  <div className="card-header-close">
-                    <h3 className="card-title">{title}</h3>
-                    <p className="card-subtitle">{subtitle}</p>
-                  </div>
+                  <h3 className="card-title">{title}</h3>
+                  <p className="card-subtitle">{subtitle}</p>
                 </div>
                 <p className="card-body">{bodyText}</p>
               </div>
@@ -294,12 +288,8 @@ export const Card: React.FC<CardProps> = ({
       case 'text-only':
         return (
           <div className="card-text-only">
-            <div className="card-text-only-header">
-              <h3 className="card-text-only-title">This is simple text</h3>
-            </div>
-            <div className="card-text-only-body-wrapper">
-              <p className="card-text-only-body">{bodyText}</p>
-            </div>
+            <h3 className="card-text-only-title">This is simple text</h3>
+            <p className="card-text-only-body">{bodyText}</p>
           </div>
         );
 
