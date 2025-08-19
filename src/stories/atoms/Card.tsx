@@ -18,6 +18,8 @@ export interface CardProps {
   font?: 'default' | 'roboto-flex' | 'archivo';
   /** Show close icon */
   showCloseIcon?: boolean;
+  /** Close icon click handler */
+  onCloseClick?: () => void;
   /** Show button group */
   showButtonGroup?: boolean;
   /** Show icon */
@@ -116,7 +118,7 @@ const AlarmIcon = ({ size = 'small' }: { size?: 'small' | 'default' | 'large' })
 
 const ArrowDownCircleIcon = ({ size = 'small' }: { size?: 'small' | 'default' | 'large' }) => {
   const dimensions = size === 'small' ? '14' : size === 'large' ? '20' : '18';
-  
+
   return (
     <svg width={dimensions} height={dimensions} viewBox={`0 0 ${dimensions} ${dimensions}`} fill="none" xmlns="http://www.w3.org/2000/svg">
       <g opacity="0.6">
@@ -126,6 +128,13 @@ const ArrowDownCircleIcon = ({ size = 'small' }: { size?: 'small' | 'default' | 
   );
 };
 
+// Close icon component
+const CloseIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 4.7L11.3 4L8 7.3L4.7 4L4 4.7L7.3 8L4 11.3L4.7 12L8 8.7L11.3 12L12 11.3L8.7 8L12 4.7Z" fill="#9CA3AF"/>
+  </svg>
+);
+
 export const Card: React.FC<CardProps> = ({
   size = 'default',
   type = 'simple',
@@ -134,7 +143,8 @@ export const Card: React.FC<CardProps> = ({
   dropShadow = true,
   placement = 'default',
   font = 'default',
-  showCloseIcon = true,
+  showCloseIcon = false,
+  onCloseClick,
   showButtonGroup = true,
   showIcon = true,
   title = 'This is a heading',
@@ -159,6 +169,13 @@ export const Card: React.FC<CardProps> = ({
     }
   };
 
+  const handleCloseClick = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent card click when close is clicked
+    if (onCloseClick) {
+      onCloseClick();
+    }
+  };
+
   const cardClasses = [
     'card',
     `card-size-${size}`,
@@ -171,6 +188,9 @@ export const Card: React.FC<CardProps> = ({
     font !== 'default' ? `card-font-${font}` : '',
     className
   ].filter(Boolean).join(' ');
+
+  // Determine if close icon should be shown based on card type
+  const shouldShowCloseIcon = showCloseIcon && (type === 'simple' || type === 'text-only' || children);
 
   // If custom children are provided, use them
   if (children) {
@@ -189,6 +209,16 @@ export const Card: React.FC<CardProps> = ({
           }
         }}
       >
+        {shouldShowCloseIcon && (
+          <button
+            className="card-close-icon"
+            onClick={handleCloseClick}
+            aria-label="Close card"
+            type="button"
+          >
+            <CloseIcon />
+          </button>
+        )}
         {children}
       </div>
     );
@@ -301,6 +331,16 @@ export const Card: React.FC<CardProps> = ({
         }
       }}
     >
+      {shouldShowCloseIcon && (
+        <button
+          className="card-close-icon"
+          onClick={handleCloseClick}
+          aria-label="Close card"
+          type="button"
+        >
+          <CloseIcon />
+        </button>
+      )}
       {renderContent()}
     </div>
   );
