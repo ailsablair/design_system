@@ -293,13 +293,13 @@
 .split-button.primary.disabled {
   background: var(--neutral-gray-gray-100);
   border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
-  color: var(--neutral-gray-gray-600);
+  color: var(--neutral-gray-gray-500);
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .split-button.primary.disabled .split-button-icon {
-  color: var(--neutral-gray-gray-600);
+  color: var(--neutral-gray-gray-500);
   opacity: 0.8;
 }
 
@@ -344,13 +344,13 @@
 .split-button.secondary.disabled {
   background: var(--neutral-gray-gray-100);
   border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
-  color: var(--neutral-gray-gray-600);
+  color: var(--neutral-gray-gray-500);
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .split-button.secondary.disabled .split-button-icon {
-  color: var(--neutral-gray-gray-600);
+  color: var(--neutral-gray-gray-500);
   opacity: 0.8;
 }
 
@@ -398,13 +398,13 @@
 .split-button.ghost.disabled {
   background: var(--neutral-gray-gray-100);
   border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
-  color: var(--neutral-gray-gray-600);
+  color: var(--neutral-gray-gray-500);
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .split-button.ghost.disabled .split-button-icon {
-  color: var(--neutral-gray-gray-600);
+  color: var(--neutral-gray-gray-500);
   opacity: 0.8;
 }
 
