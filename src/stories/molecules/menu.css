@@ -1,0 +1,191 @@
+@import '../foundations/tokens.css';
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  background: var(--base-white);
+  border-radius: var(--spacing-radius-6px);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  position: relative;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Size variants affecting internal padding */
+.menu.small {
+  /* Small menus will have smaller internal spacing */
+}
+
+.menu.default {
+  /* Default spacing */
+}
+
+.menu.large {
+  /* Large menus will have larger internal spacing */
+}
+
+/* Position variants for dropdown positioning */
+.menu.top {
+  /* For menus that open upward */
+  transform-origin: bottom center;
+}
+
+.menu.bottom {
+  /* For menus that open downward */
+  transform-origin: top center;
+}
+
+.menu.left {
+  /* For menus that open to the left */
+  transform-origin: right center;
+}
+
+.menu.right {
+  /* For menus that open to the right */
+  transform-origin: left center;
+}
+
+/* MenuItem styling when inside Menu - override MenuItem's border radius and add borders */
+.menu .menu-item {
+  border-radius: 0;
+  border: none;
+  margin: 0;
+  position: relative;
+}
+
+/* First item (top) styling */
+.menu .menu-item:first-child {
+  border-radius: var(--spacing-radius-6px) var(--spacing-radius-6px) 0 0;
+}
+
+/* Last item (bottom) styling */
+.menu .menu-item:last-child {
+  border-radius: 0 0 var(--spacing-radius-6px) var(--spacing-radius-6px);
+}
+
+/* Single item (only child) styling */
+.menu .menu-item:only-child {
+  border-radius: var(--spacing-radius-6px);
+}
+
+/* Add borders between items */
+.menu .menu-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--spacing-stroke-0-5px);
+  background-color: var(--neutral-gray-gray-300);
+}
+
+/* Size-specific padding for menu items */
+.menu.small .menu-item {
+  padding: var(--spacing-sizing-6px) var(--spacing-sizing-12px);
+}
+
+.menu.small .menu-item:first-child {
+  padding-top: var(--spacing-sizing-12px);
+  padding-bottom: var(--spacing-sizing-6px);
+}
+
+.menu.small .menu-item:last-child {
+  padding-top: var(--spacing-sizing-6px);
+  padding-bottom: var(--spacing-sizing-12px);
+}
+
+.menu.default .menu-item {
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-12px);
+}
+
+.menu.default .menu-item:first-child {
+  padding-top: var(--spacing-sizing-12px);
+  padding-bottom: var(--spacing-sizing-8px);
+}
+
+.menu.default .menu-item:last-child {
+  padding-top: var(--spacing-sizing-8px);
+  padding-bottom: var(--spacing-sizing-12px);
+}
+
+.menu.large .menu-item {
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-16px);
+}
+
+.menu.large .menu-item:first-child {
+  padding-top: var(--spacing-sizing-16px);
+  padding-bottom: var(--spacing-sizing-8px);
+}
+
+.menu.large .menu-item:last-child {
+  padding-top: var(--spacing-sizing-8px);
+  padding-bottom: var(--spacing-sizing-16px);
+}
+
+/* Animation for menu appearance */
+.menu {
+  opacity: var(--opacity-full);
+  transform: var(--transform-scale-1);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+/* Entry animation */
+@keyframes menuSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.menu {
+  animation: menuSlideIn var(--transition-fast) ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .menu {
+    min-width: 120px;
+    max-width: 100vw;
+  }
+  
+  .menu.small .menu-item,
+  .menu.default .menu-item,
+  .menu.large .menu-item {
+    padding-left: var(--spacing-sizing-8px);
+    padding-right: var(--spacing-sizing-8px);
+  }
+}
+
+/* Focus management for keyboard navigation */
+.menu:focus-within {
+  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue-500);
+  outline-offset: var(--spacing-sizing-2px);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .menu {
+    border-width: var(--spacing-stroke-2px);
+  }
+  
+  .menu .menu-item:not(:last-child)::after {
+    height: var(--spacing-stroke-1px);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .menu {
+    animation: none;
+    transition: none;
+  }
+}
