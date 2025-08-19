@@ -545,6 +545,62 @@
   border: var(--spacing-stroke-3px) solid var(--primary-sky-blue-300) !important;
 }
 
+/* State variants for tertiary outline buttons */
+.button.tertiary.outline.default {
+  background: var(--primary-yellow-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-yellow-dark-yellow);
+}
+
+.button.tertiary.outline.hover,
+.button.tertiary.outline:hover:not(.disabled):not(.loading) {
+  background: var(--primary-yellow-100-alt);
+  border: var(--spacing-stroke-2px) solid var(--primary-yellow-500);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-yellow-dark-yellow);
+}
+
+.button.tertiary.outline.hover .button-text,
+.button.tertiary.outline:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.button.tertiary.outline.clicked,
+.button.tertiary.outline:active:not(.disabled):not(.loading) {
+  background: var(--primary-yellow-100-alt);
+  border: var(--spacing-stroke-2px) solid var(--primary-yellow-300);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-yellow-dark-yellow);
+}
+
+.button.tertiary.outline.clicked .button-text,
+.button.tertiary.outline:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.button.tertiary.outline.focused,
+.button.tertiary.outline:focus-visible:not(.disabled):not(.loading) {
+  background: var(--primary-yellow-50);
+  border: var(--spacing-stroke-3px) solid var(--primary-yellow-500);
+}
+
+.button.tertiary.outline.loading {
+  background: var(--primary-yellow-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-yellow-dark-yellow);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.tertiary.outline.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-300);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.tertiary.outline.disabled .button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
+}
+
 /* Force state classes for tertiary buttons */
 .button.tertiary.force-hover {
   background: var(--primary-blue-dark-blue) !important;
@@ -569,6 +625,32 @@
 .button.tertiary.force-focused {
   background: var(--primary-blue-dark-blue) !important;
   border: var(--spacing-stroke-3px) solid var(--primary-blue-blue-400) !important;
+}
+
+/* Force state classes for tertiary outline buttons */
+.button.tertiary.outline.force-hover {
+  background: var(--primary-yellow-100-alt) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-yellow-500) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-yellow-dark-yellow) !important;
+}
+
+.button.tertiary.outline.force-hover .button-text {
+  font-weight: var(--type-weight-medium) !important;
+}
+
+.button.tertiary.outline.force-clicked {
+  background: var(--primary-yellow-100-alt) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-yellow-300) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-yellow-dark-yellow) !important;
+}
+
+.button.tertiary.outline.force-clicked .button-text {
+  font-weight: var(--type-weight-medium) !important;
+}
+
+.button.tertiary.outline.force-focused {
+  background: var(--primary-yellow-50) !important;
+  border: var(--spacing-stroke-3px) solid var(--primary-yellow-500) !important;
 }
 
 .button.force-hover.extra-small {
