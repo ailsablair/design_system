@@ -4,11 +4,14 @@
   flex-direction: column;
   border-radius: var(--spacing-radius-8px);
   box-sizing: border-box;
-  transition: var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   position: relative;
   font-family: var(--type-typeface-archivo);
   font-weight: var(--type-weight-light);
   letter-spacing: var(--type-letter-spacing-archivo-label);
+  /* Performance optimizations */
+  will-change: transform;
+  contain: layout style;
 }
 
 /* Clickable tiles */
@@ -18,10 +21,13 @@
 
 .tile.clickable:hover:not(.disabled) {
   transform: var(--transform-scale-up);
+  /* Use box-shadow instead of additional transforms to avoid layout shifts */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .tile.clickable:active:not(.disabled) {
   transform: var(--transform-scale-down);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .tile.clickable:focus:not(.disabled) {
