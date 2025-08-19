@@ -8,8 +8,12 @@ export interface DateTimeInputProps {
   placeholder?: string;
   /** Input value */
   value?: string;
-  /** Input state */
-  state?: 'default' | 'focus' | 'typing' | 'filled';
+  /** Validation state */
+  state?: 'default' | 'error' | 'warning' | 'success' | 'focus' | 'typing' | 'filled';
+  /** Validation message text */
+  message?: string;
+  /** Show close/clear button */
+  showClose?: boolean;
   /** Size variant */
   size?: 'small' | 'default' | 'large';
   /** Input type - date or time */
@@ -22,6 +26,8 @@ export interface DateTimeInputProps {
   className?: string;
   /** onChange event handler */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  /** onClose/clear event handler */
+  onClose?: () => void;
   /** onFocus event handler */
   onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
   /** onBlur event handler */
@@ -46,9 +52,27 @@ const CalendarIcon = ({ size = 'default' }: { size?: 'small' | 'default' | 'larg
   );
 };
 
+const CloseCircleIcon = ({ size = 'default' }: { size?: 'small' | 'default' | 'large' }) => {
+  const iconSize = size === 'small' ? '14' : size === 'large' ? '20' : '16';
+
+  return (
+    <svg width={iconSize} height={iconSize} viewBox={`0 0 ${iconSize} ${iconSize}`} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.6">
+        {size === 'small' ? (
+          <path d="M7.00008 1.16675C10.2259 1.16675 12.8334 3.77425 12.8334 7.00008C12.8334 10.2259 10.2259 12.8334 7.00008 12.8334C3.77425 12.8334 1.16675 10.2259 1.16675 7.00008C1.16675 3.77425 3.77425 1.16675 7.00008 1.16675ZM9.09425 4.08341L7.00008 6.17758L4.90591 4.08341L4.08341 4.90591L6.17758 7.00008L4.08341 9.09425L4.90591 9.91675L7.00008 7.82258L9.09425 9.91675L9.91675 9.09425L7.82258 7.00008L9.91675 4.90591L9.09425 4.08341Z" fill="#61607C" />
+        ) : size === 'large' ? (
+          <path d="M10.0001 1.66675C14.6084 1.66675 18.3334 5.39175 18.3334 10.0001C18.3334 14.6084 14.6084 18.3334 10.0001 18.3334C5.39175 18.3334 1.66675 14.6084 1.66675 10.0001C1.66675 5.39175 5.39175 1.66675 10.0001 1.66675ZM12.9917 5.83342L10.0001 8.82508L7.00841 5.83342L5.83342 7.00841L8.82508 10.0001L5.83342 12.9917L7.00841 14.1667L10.0001 11.1751L12.9917 14.1667L14.1667 12.9917L11.1751 10.0001L14.1667 7.00841L12.9917 5.83342Z" fill="#61607C" />
+        ) : (
+          <path d="M7.99992 1.33325C11.6866 1.33325 14.6666 4.31325 14.6666 7.99992C14.6666 11.6866 11.6866 14.6666 7.99992 14.6666C4.31325 14.6666 1.33325 11.6866 1.33325 7.99992C1.33325 4.31325 4.31325 1.33325 7.99992 1.33325ZM10.3933 4.66659L7.99992 7.05992L5.60659 4.66659L4.66659 5.60659L7.05992 7.99992L4.66659 10.3933L5.60659 11.3333L7.99992 8.93992L10.3933 11.3333L11.3333 10.3933L8.93992 7.99992L11.3333 5.60659L10.3933 4.66659Z" fill="#61607C" />
+        )}
+      </g>
+    </svg>
+  );
+};
+
 const ClockIcon = ({ size = 'default' }: { size?: 'small' | 'default' | 'large' }) => {
   const iconSize = size === 'small' ? '14' : size === 'large' ? '20' : '16';
-  
+
   return (
     <svg width={iconSize} height={iconSize} viewBox={`0 0 ${iconSize} ${iconSize}`} fill="none" xmlns="http://www.w3.org/2000/svg">
       <g opacity="0.6">
@@ -69,12 +93,15 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
   placeholder,
   value,
   state = 'default',
+  message,
+  showClose = true,
   size = 'default',
   type = 'date',
   disabled = false,
   id,
   className = '',
   onChange,
+  onClose,
   onFocus,
   onBlur,
 }) => {
@@ -134,7 +161,24 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
         <div className={`datetime-input-icon ${size}`}>
           {type === 'date' ? <CalendarIcon size={size} /> : <ClockIcon size={size} />}
         </div>
+
+        {showClose && !disabled && (value || isFocused) && (
+          <button
+            type="button"
+            className={`datetime-input-close-button ${size}`}
+            onClick={onClose}
+            aria-label="Clear input"
+          >
+            <CloseCircleIcon size={size} />
+          </button>
+        )}
       </div>
+
+      {message && (
+        <div className={`datetime-input-message ${state} ${size}`}>
+          {message}
+        </div>
+      )}
     </div>
   );
 };
