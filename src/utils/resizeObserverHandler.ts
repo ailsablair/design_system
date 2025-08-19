@@ -3,6 +3,13 @@
  * These errors are usually harmless and occur when rapid resize events trigger loops
  */
 
+// Extend window interface for tracking
+declare global {
+  interface Window {
+    __resizeObserverErrorLogged?: boolean;
+  }
+}
+
 export const setupResizeObserverErrorHandler = (): void => {
   // Only run in development or when needed
   if (typeof window === 'undefined') return;
