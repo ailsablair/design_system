@@ -151,6 +151,29 @@ export const InfoCardFigma: Story = {
   },
 };
 
+export const SuccessCardFigma: Story = {
+  render: () => (
+    <div style={{ padding: '20px' }}>
+      <Card
+        type="success"
+        size="default"
+        dropShadow={true}
+        showCloseIcon={true}
+        title="This is a success heading"
+        bodyText="This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card."
+        onCloseClick={() => console.log('Success card closed')}
+      />
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Success card with green circle checkmark icon, green heading text, success button, and close icon - exactly matching the Figma design.',
+      },
+    },
+  },
+};
+
 export const SemanticCardsComparison: Story = {
   render: () => (
     <div style={{ padding: '20px' }}>
