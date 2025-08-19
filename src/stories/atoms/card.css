@@ -230,7 +230,6 @@
   font-weight: var(--type-weight-light);
   cursor: pointer;
   transition: all 0.2s ease;
-  flex-direction: column;
 }
 
 .card.card-size-small .card-btn {
