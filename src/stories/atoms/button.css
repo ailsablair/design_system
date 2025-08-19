@@ -730,7 +730,7 @@
 .button.tertiary.outline.force-hover {
   background: var(--primary-yellow-100-alt) !important;
   border: var(--spacing-stroke-2px) solid var(--primary-yellow-500) !important;
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-yellow-dark-yellow) !important;
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15) !important;
 }
 
 .button.tertiary.outline.force-hover .button-text {
@@ -740,7 +740,7 @@
 .button.tertiary.outline.force-clicked {
   background: var(--primary-yellow-100-alt) !important;
   border: var(--spacing-stroke-2px) solid var(--primary-yellow-300) !important;
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-yellow-dark-yellow) !important;
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15) !important;
 }
 
 .button.tertiary.outline.force-clicked .button-text {
@@ -1030,7 +1030,7 @@
 /* Force state classes for ghost buttons */
 .button.ghost.force-hover {
   border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-400) !important;
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200) !important;
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15) !important;
 }
 
 .button.ghost.force-hover .button-text {
@@ -1039,7 +1039,7 @@
 
 .button.ghost.force-clicked {
   border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-400) !important;
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200) !important;
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15) !important;
 }
 
 .button.ghost.force-clicked .button-text {
