@@ -149,6 +149,18 @@
   opacity: 0.6;
 }
 
+/* Primary outline button variant */
+.button.primary.outline {
+  background: var(--primary-blue-blue-50);
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
+  color: var(--primary-blue-blue);
+}
+
+.button.primary.outline .button-icon {
+  color: var(--primary-blue-blue);
+  opacity: 0.6;
+}
+
 /* State variants for primary buttons */
 .button.primary.default {
   background: var(--primary-blue-blue);
@@ -198,6 +210,62 @@
 }
 
 .button.primary.disabled .button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
+}
+
+/* State variants for primary outline buttons */
+.button.primary.outline.default {
+  background: var(--primary-blue-blue-50);
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
+}
+
+.button.primary.outline.hover,
+.button.primary.outline:hover:not(.disabled):not(.loading) {
+  background: var(--primary-blue-blue-100);
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
+  box-shadow: var(--spacing-stroke-3px) var(--spacing-stroke-3px) 0 0 var(--primary-blue-blue-400);
+}
+
+.button.primary.outline.hover .button-text,
+.button.primary.outline:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.button.primary.outline.clicked,
+.button.primary.outline:active:not(.disabled):not(.loading) {
+  background: var(--primary-blue-blue-100);
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
+  box-shadow: var(--spacing-stroke-3px) var(--spacing-stroke-3px) 0 0 var(--primary-blue-blue-400);
+}
+
+.button.primary.outline.clicked .button-text,
+.button.primary.outline:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.button.primary.outline.focused,
+.button.primary.outline:focus-visible:not(.disabled):not(.loading) {
+  background: var(--primary-blue-blue-50);
+  border: var(--spacing-stroke-3px) solid var(--primary-blue-blue-300);
+}
+
+.button.primary.outline.loading {
+  background: var(--primary-blue-blue-50);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-blue);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.primary.outline.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-300);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.primary.outline.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
   opacity: 0.6;
 }
@@ -254,6 +322,24 @@
   border: var(--spacing-stroke-3px) solid var(--primary-blue-blue-300) !important;
 }
 
+/* Force state classes for outline buttons */
+.button.outline.force-hover {
+  background: var(--primary-blue-blue-100) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue) !important;
+  box-shadow: var(--spacing-stroke-3px) var(--spacing-stroke-3px) 0 0 var(--primary-blue-blue-400) !important;
+}
+
+.button.outline.force-clicked {
+  background: var(--primary-blue-blue-100) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue) !important;
+  box-shadow: var(--spacing-stroke-3px) var(--spacing-stroke-3px) 0 0 var(--primary-blue-blue-400) !important;
+}
+
+.button.outline.force-focused {
+  background: var(--primary-blue-blue-50) !important;
+  border: var(--spacing-stroke-3px) solid var(--primary-blue-blue-300) !important;
+}
+
 .button.force-hover.extra-small {
   box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05) !important;
   border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue) !important;
@@ -262,6 +348,18 @@
 .button.force-clicked.extra-small {
   border: var(--spacing-stroke-0-5px) solid var(--base-white) !important;
   box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05) !important;
+}
+
+.button.outline.force-hover.extra-small {
+  background: var(--primary-blue-blue-100) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue) !important;
+  box-shadow: var(--spacing-stroke-3px) var(--spacing-stroke-3px) 0 0 var(--primary-blue-blue-400) !important;
+}
+
+.button.outline.force-clicked.extra-small {
+  background: var(--primary-blue-blue-100) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue) !important;
+  box-shadow: var(--spacing-stroke-3px) var(--spacing-stroke-3px) 0 0 var(--primary-blue-blue-400) !important;
 }
 
 /* Accessibility and responsive improvements */
