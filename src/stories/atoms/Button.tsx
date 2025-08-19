@@ -10,6 +10,8 @@ export interface ButtonProps {
   type?: 'primary' | 'secondary' | 'tertiary';
   /** Visual state (for controlled states) */
   state?: 'default' | 'hover' | 'clicked' | 'focused' | 'loading' | 'disabled';
+  /** Outline variant */
+  outline?: boolean;
   /** Loading state */
   loading?: boolean;
   /** Disabled state */
@@ -56,6 +58,7 @@ export const Button: React.FC<ButtonProps> = ({
   size = 'default',
   type = 'primary',
   state = 'default',
+  outline = false,
   loading = false,
   disabled = false,
   leadingIcon,
@@ -94,7 +97,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       type={htmlType}
-      className={`button ${size} ${type} ${actualState} ${width === 'full' ? 'full-width' : ''} ${className}`}
+      className={`button ${size} ${type} ${actualState} ${outline ? 'outline' : ''} ${width === 'full' ? 'full-width' : ''} ${className}`}
       onClick={handleClick}
       disabled={disabled || loading}
       aria-label={isLoadingState ? 'Loading...' : undefined}
