@@ -76,7 +76,7 @@ export const FigmaSemanticCards: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'These semantic cards exactly match the Figma designs provided by the user. Each card features a semantic icon (warning triangle, error X in circle, info i in circle), colored heading text, body text, and semantic action buttons.',
+        story: 'These semantic cards exactly match the Figma designs provided by the user. Each card features a semantic icon (warning triangle, error X in circle, info i in circle, success checkmark in circle), colored heading text, body text, and semantic action buttons in a horizontal layout.',
       },
     },
   },
