@@ -124,7 +124,9 @@ export const Textarea: React.FC<TextareaProps> = ({
                 value={isTyping && value?.includes('|') ? value.replace('|', '') : value}
                 placeholder={placeholder}
                 disabled={disabled}
+                required={required}
                 rows={rows}
+                maxLength={maxLength}
                 className={`textarea-field ${size}`}
                 style={{
                   minHeight: `${minHeight}px`,
@@ -134,6 +136,8 @@ export const Textarea: React.FC<TextareaProps> = ({
                 onChange={onChange}
                 onFocus={onFocus}
                 onBlur={onBlur}
+                aria-describedby={message ? `${textareaId}-message` : undefined}
+                aria-invalid={state === 'error'}
               />
             )}
           </div>
