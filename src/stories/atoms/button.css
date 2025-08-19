@@ -161,6 +161,30 @@
   opacity: 0.6;
 }
 
+/* Secondary button variant */
+.button.secondary {
+  background: var(--primary-sky-blue-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
+  color: var(--base-black);
+}
+
+.button.secondary .button-icon {
+  color: var(--primary-blue-blue);
+  opacity: 0.6;
+}
+
+/* Tertiary button variant */
+.button.tertiary {
+  background: var(--primary-blue-dark-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-blue);
+  color: var(--base-white);
+}
+
+.button.tertiary .button-icon {
+  color: var(--base-white);
+  opacity: 0.4;
+}
+
 /* State variants for primary buttons */
 .button.primary.default {
   background: var(--primary-blue-blue);
@@ -270,6 +294,118 @@
   opacity: 0.6;
 }
 
+/* State variants for secondary buttons */
+.button.secondary.default {
+  background: var(--primary-sky-blue-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
+}
+
+.button.secondary.hover,
+.button.secondary:hover:not(.disabled):not(.loading) {
+  background: var(--primary-sky-blue-50);
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black);
+}
+
+.button.secondary.hover .button-text,
+.button.secondary:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.button.secondary.clicked,
+.button.secondary:active:not(.disabled):not(.loading) {
+  background: var(--primary-sky-blue-50);
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-300);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black);
+}
+
+.button.secondary.clicked .button-text,
+.button.secondary:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.button.secondary.focused,
+.button.secondary:focus-visible:not(.disabled):not(.loading) {
+  background: var(--primary-sky-blue-50);
+  border: var(--spacing-stroke-3px) solid var(--primary-sky-blue-300);
+}
+
+.button.secondary.loading {
+  background: var(--primary-sky-blue-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.secondary.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.secondary.disabled .button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
+}
+
+/* State variants for tertiary buttons */
+.button.tertiary.default {
+  background: var(--primary-blue-dark-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-blue);
+}
+
+.button.tertiary.hover,
+.button.tertiary:hover:not(.disabled):not(.loading) {
+  background: var(--primary-blue-dark-blue);
+  border: var(--spacing-stroke-1px) solid var(--base-white);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black);
+}
+
+.button.tertiary.hover .button-text,
+.button.tertiary:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.button.tertiary.clicked,
+.button.tertiary:active:not(.disabled):not(.loading) {
+  background: var(--primary-blue-dark-blue);
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-300);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black);
+}
+
+.button.tertiary.clicked .button-text,
+.button.tertiary:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.button.tertiary.focused,
+.button.tertiary:focus-visible:not(.disabled):not(.loading) {
+  background: var(--primary-blue-dark-blue);
+  border: var(--spacing-stroke-3px) solid var(--primary-blue-blue-400);
+}
+
+.button.tertiary.loading {
+  background: var(--primary-blue-dark-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--base-white);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.tertiary.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.tertiary.disabled .button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
+}
+
 /* Special hover effects for extra-small buttons */
 .button.extra-small.primary.hover,
 .button.extra-small.primary:hover:not(.disabled):not(.loading) {
@@ -291,6 +427,37 @@
 }
 
 .button.extra-small.primary.disabled .button-icon {
+  color: var(--neutral-gray-gray-400);
+}
+
+/* Special hover effects for extra-small secondary buttons */
+.button.extra-small.secondary.hover,
+.button.extra-small.secondary:hover:not(.disabled):not(.loading) {
+  background: var(--primary-sky-blue-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
+  box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05);
+}
+
+.button.extra-small.secondary.clicked,
+.button.extra-small.secondary:active:not(.disabled):not(.loading) {
+  background: var(--primary-sky-blue-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
+  box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05);
+}
+
+.button.extra-small.secondary.focused,
+.button.extra-small.secondary:focus-visible:not(.disabled):not(.loading) {
+  background: var(--primary-sky-blue-50);
+  border: var(--spacing-stroke-3px) solid var(--primary-sky-blue-sky-blue);
+}
+
+.button.extra-small.secondary.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-400);
+}
+
+.button.extra-small.secondary.disabled .button-icon {
   color: var(--neutral-gray-gray-400);
 }
 
@@ -340,6 +507,58 @@
   border: var(--spacing-stroke-3px) solid var(--primary-blue-blue-300) !important;
 }
 
+/* Force state classes for secondary buttons */
+.button.secondary.force-hover {
+  background: var(--primary-sky-blue-50) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black) !important;
+}
+
+.button.secondary.force-hover .button-text {
+  font-weight: var(--type-weight-medium) !important;
+}
+
+.button.secondary.force-clicked {
+  background: var(--primary-sky-blue-50) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-300) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black) !important;
+}
+
+.button.secondary.force-clicked .button-text {
+  font-weight: var(--type-weight-medium) !important;
+}
+
+.button.secondary.force-focused {
+  background: var(--primary-sky-blue-50) !important;
+  border: var(--spacing-stroke-3px) solid var(--primary-sky-blue-300) !important;
+}
+
+/* Force state classes for tertiary buttons */
+.button.tertiary.force-hover {
+  background: var(--primary-blue-dark-blue) !important;
+  border: var(--spacing-stroke-1px) solid var(--base-white) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black) !important;
+}
+
+.button.tertiary.force-hover .button-text {
+  font-weight: var(--type-weight-medium) !important;
+}
+
+.button.tertiary.force-clicked {
+  background: var(--primary-blue-dark-blue) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-300) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black) !important;
+}
+
+.button.tertiary.force-clicked .button-text {
+  font-weight: var(--type-weight-medium) !important;
+}
+
+.button.tertiary.force-focused {
+  background: var(--primary-blue-dark-blue) !important;
+  border: var(--spacing-stroke-3px) solid var(--primary-blue-blue-400) !important;
+}
+
 .button.force-hover.extra-small {
   box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05) !important;
   border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue) !important;
@@ -360,6 +579,23 @@
   background: var(--primary-blue-blue-100) !important;
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue) !important;
   box-shadow: var(--spacing-stroke-3px) var(--spacing-stroke-3px) 0 0 var(--primary-blue-blue-400) !important;
+}
+
+.button.secondary.force-hover.extra-small {
+  background: var(--primary-sky-blue-50) !important;
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue) !important;
+  box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05) !important;
+}
+
+.button.secondary.force-clicked.extra-small {
+  background: var(--primary-sky-blue-50) !important;
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue) !important;
+  box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05) !important;
+}
+
+.button.secondary.force-focused.extra-small {
+  background: var(--primary-sky-blue-50) !important;
+  border: var(--spacing-stroke-3px) solid var(--primary-sky-blue-sky-blue) !important;
 }
 
 /* Accessibility and responsive improvements */
