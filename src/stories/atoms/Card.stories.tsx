@@ -684,3 +684,119 @@ export const CloseIconShowcase: Story = {
     },
   },
 };
+
+// === SEMANTIC CARD EXAMPLES === //
+
+export const WarningCard: Story = {
+  args: {
+    type: 'warning',
+    size: 'default',
+    dropShadow: true,
+    showCloseIcon: true,
+    title: 'This is a warning heading',
+    bodyText: 'This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card.',
+    onCloseClick: () => console.log('Warning card closed!'),
+  },
+};
+
+export const ErrorCard: Story = {
+  args: {
+    type: 'error',
+    size: 'default',
+    dropShadow: true,
+    showCloseIcon: true,
+    title: 'This is an error heading',
+    bodyText: 'This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card.',
+    onCloseClick: () => console.log('Error card closed!'),
+  },
+};
+
+export const InfoCard: Story = {
+  args: {
+    type: 'info',
+    size: 'default',
+    dropShadow: true,
+    showCloseIcon: true,
+    title: 'This is an info heading',
+    bodyText: 'This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card.',
+    onCloseClick: () => console.log('Info card closed!'),
+  },
+};
+
+export const AllSemanticCards: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', padding: '20px' }}>
+      <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Semantic Cards</h3>
+
+      <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+        <Card
+          type="warning"
+          size="default"
+          dropShadow={true}
+          showCloseIcon={true}
+          title="This is a warning heading"
+          bodyText="This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card."
+          onCloseClick={() => alert('Warning card closed!')}
+        />
+
+        <Card
+          type="error"
+          size="default"
+          dropShadow={true}
+          showCloseIcon={true}
+          title="This is an error heading"
+          bodyText="This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card."
+          onCloseClick={() => alert('Error card closed!')}
+        />
+
+        <Card
+          type="info"
+          size="default"
+          dropShadow={true}
+          showCloseIcon={true}
+          title="This is an info heading"
+          bodyText="This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card."
+          onCloseClick={() => alert('Info card closed!')}
+        />
+      </div>
+
+      <h4 style={{ margin: '0', fontSize: '16px', fontWeight: 500 }}>All Sizes - Warning Cards</h4>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'start', flexWrap: 'wrap' }}>
+        <Card
+          type="warning"
+          size="small"
+          dropShadow={true}
+          showCloseIcon={true}
+          title="Small Warning"
+          bodyText="Small warning card with shorter text."
+          onCloseClick={() => alert('Small warning closed!')}
+        />
+        <Card
+          type="warning"
+          size="default"
+          dropShadow={true}
+          showCloseIcon={true}
+          title="Default Warning"
+          bodyText="Default warning card with normal text."
+          onCloseClick={() => alert('Default warning closed!')}
+        />
+        <Card
+          type="warning"
+          size="large"
+          dropShadow={true}
+          showCloseIcon={true}
+          title="Large Warning"
+          bodyText="Large warning card with expanded text."
+          onCloseClick={() => alert('Large warning closed!')}
+        />
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Comprehensive showcase of semantic cards (warning, error, info) with different sizes and states.',
+      },
+    },
+  },
+};
