@@ -591,17 +591,37 @@
   border-radius: var(--spacing-radius-4px);
 }
 
+/* === RESIZE OBSERVER OPTIMIZATION === */
+
+/* Prevent ResizeObserver loops by stabilizing layout */
+.card * {
+  contain: layout style;
+}
+
+.card img,
+.card svg {
+  contain: layout size style;
+}
+
+/* Optimize showcases and demo containers */
+.card-showcase-container,
+.storybook-showcase,
+[data-component-name="card"] {
+  contain: layout style;
+  will-change: auto;
+}
+
 /* === RESPONSIVE DESIGN === */
 
 @media (max-width: 768px) {
   .card.card-align-horizontal .card-content-horizontal {
     flex-direction: column;
   }
-  
+
   .card.card-align-horizontal .card-close-btn-horizontal {
     display: none;
   }
-  
+
   .card.card-align-horizontal .card-close-btn-vertical {
     display: flex;
   }
@@ -611,7 +631,7 @@
   .card.card-size-default {
     padding: var(--spacing-sizing-12px);
   }
-  
+
   .card.card-size-large {
     padding: var(--spacing-sizing-16px);
   }
