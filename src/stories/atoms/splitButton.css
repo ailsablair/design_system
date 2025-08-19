@@ -101,7 +101,9 @@
 /* Size variants */
 .split-button.extra-small {
   min-width: 50px;
+  height: 27px;
   min-height: 27px;
+  max-height: 27px;
 }
 
 .split-button.extra-small .split-button-main {
@@ -126,7 +128,9 @@
 
 .split-button.small {
   min-width: 80px;
+  height: 30px;
   min-height: 30px;
+  max-height: 30px;
 }
 
 .split-button.small .split-button-main {
@@ -151,7 +155,9 @@
 
 .split-button.default {
   min-width: 80px;
+  height: 42px;
   min-height: 42px;
+  max-height: 42px;
 }
 
 .split-button.default .split-button-main {
@@ -176,7 +182,9 @@
 
 .split-button.large {
   min-width: 80px;
+  height: 52px;
   min-height: 52px;
+  max-height: 52px;
 }
 
 .split-button.large .split-button-main {
