@@ -342,16 +342,16 @@
 }
 
 .split-button.secondary.disabled {
-  background: var(--neutral-gray-gray-50);
+  background: var(--neutral-gray-gray-100);
   border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
-  color: var(--neutral-gray-gray-300);
+  color: var(--neutral-gray-gray-600);
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .split-button.secondary.disabled .split-button-icon {
-  color: var(--neutral-gray-gray-300);
-  opacity: 0.6;
+  color: var(--neutral-gray-gray-600);
+  opacity: 0.8;
 }
 
 /* State variants for ghost split buttons */
