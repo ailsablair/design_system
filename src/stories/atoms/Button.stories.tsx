@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button, AlarmIcon, ArrowDownIcon, AlertIcon, CloseCircleIcon, ChevronUpIcon } from './Button';
+import { Button, AlarmIcon, ArrowDownIcon, AlertIcon, CloseCircleIcon, ChevronUpIcon, InformationIcon } from './Button';
 
 const meta: Meta<typeof Button> = {
   title: 'Atoms/Button',
@@ -20,7 +20,7 @@ const meta: Meta<typeof Button> = {
     },
     type: {
       control: 'select',
-      options: ['primary', 'secondary', 'tertiary', 'ghost', 'error', 'warning'],
+      options: ['primary', 'secondary', 'tertiary', 'ghost', 'error', 'warning', 'info', 'success'],
       description: 'Button type/variant',
     },
     state: {
