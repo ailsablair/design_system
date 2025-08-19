@@ -404,6 +404,92 @@
   background: var(--neutral-gray-gray-50);
 }
 
+/* === SEMANTIC CARD TYPES === */
+
+.card.card-type-warning,
+.card.card-type-error,
+.card.card-type-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sizing-16px);
+}
+
+.card-semantic-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--spacing-sizing-8px);
+}
+
+.card-semantic-title {
+  color: var(--base-black);
+  text-align: center;
+  font-family: var(--type-typeface-archivo);
+  font-weight: var(--type-weight-medium);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.card.card-type-warning .card-semantic-title {
+  color: var(--status-orange-500);
+}
+
+.card.card-type-error .card-semantic-title {
+  color: var(--status-red-500);
+}
+
+.card.card-type-info .card-semantic-title {
+  color: var(--primary-blue-blue);
+}
+
+.card.card-size-small .card-semantic-title {
+  font-size: var(--type-archivo-heading-4);
+}
+
+.card.card-size-default .card-semantic-title {
+  font-size: var(--type-archivo-heading-3);
+}
+
+.card.card-size-large .card-semantic-title {
+  font-size: var(--type-archivo-heading-2);
+}
+
+/* === SEMANTIC BUTTON VARIANTS === */
+
+.card-btn-warning {
+  background: var(--status-orange-500);
+  border-color: var(--status-orange-600);
+  color: var(--base-white);
+}
+
+.card-btn-warning:hover {
+  background: var(--status-orange-600);
+  transform: translateY(-1px);
+}
+
+.card-btn-error {
+  background: var(--status-red-500);
+  border-color: var(--status-red-600);
+  color: var(--base-white);
+}
+
+.card-btn-error:hover {
+  background: var(--status-red-600);
+  transform: translateY(-1px);
+}
+
+.card-btn-info {
+  background: var(--primary-blue-blue);
+  border-color: var(--primary-blue-dark-blue);
+  color: var(--base-white);
+}
+
+.card-btn-info:hover {
+  background: var(--primary-blue-dark-blue);
+  transform: translateY(-1px);
+}
+
 /* === RESPONSIVE DESIGN === */
 
 @media (max-width: 768px) {
