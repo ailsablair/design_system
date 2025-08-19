@@ -723,6 +723,18 @@ export const InfoCard: Story = {
   },
 };
 
+export const SuccessCard: Story = {
+  args: {
+    type: 'success',
+    size: 'default',
+    dropShadow: true,
+    showCloseIcon: true,
+    title: 'This is a success heading',
+    bodyText: 'This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card.',
+    onCloseClick: () => console.log('Success card closed!'),
+  },
+};
+
 export const AllSemanticCards: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', padding: '20px' }}>
