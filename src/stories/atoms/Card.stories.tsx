@@ -771,6 +771,7 @@ export const ImageCardDefault: Story = {
     size: 'default',
     dropShadow: true,
     showCloseIcon: true,
+    placement: 'right',
     title: 'This is a heading',
     bodyText: 'This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card.',
     imageSrc: '/api/placeholder/400/200',
