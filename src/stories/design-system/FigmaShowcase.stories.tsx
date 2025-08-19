@@ -7,7 +7,7 @@ import { Badge } from '../atoms/Badge';
 import { InputNumbers } from '../atoms/InputNumbers';
 
 const meta: Meta = {
-  title: 'Foundations/Figma Implementation Showcase',
+  title: 'Design System/Figma Implementation Showcase',
   parameters: {
     layout: 'fullscreen',
     docs: {
