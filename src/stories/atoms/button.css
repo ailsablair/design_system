@@ -993,6 +993,13 @@
   box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-300);
 }
 
+.button.warning.default.hover,
+.button.warning.default:hover:not(.disabled):not(.loading),
+.button.warning.large.hover,
+.button.warning.large:hover:not(.disabled):not(.loading) {
+  box-shadow: 3px 3px 0 0 var(--primary-yellow-shadow);
+}
+
 .button.warning.hover .button-text,
 .button.warning:hover:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-bold);
@@ -1003,6 +1010,13 @@
   background: var(--status-orange-alt);
   border: var(--spacing-stroke-2px) solid var(--status-orange-light);
   box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-300);
+}
+
+.button.warning.default.clicked,
+.button.warning.default:active:not(.disabled):not(.loading),
+.button.warning.large.clicked,
+.button.warning.large:active:not(.disabled):not(.loading) {
+  box-shadow: 3px 3px 0 0 var(--primary-yellow-shadow);
 }
 
 .button.warning.clicked .button-text,
@@ -1098,6 +1112,11 @@
   box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-300) !important;
 }
 
+.button.warning.default.force-hover,
+.button.warning.large.force-hover {
+  box-shadow: 3px 3px 0 0 var(--primary-yellow-shadow) !important;
+}
+
 .button.warning.force-hover .button-text {
   font-weight: var(--type-weight-bold) !important;
 }
@@ -1106,6 +1125,11 @@
   background: var(--status-orange-alt) !important;
   border: var(--spacing-stroke-2px) solid var(--status-orange-light) !important;
   box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-300) !important;
+}
+
+.button.warning.default.force-clicked,
+.button.warning.large.force-clicked {
+  box-shadow: 3px 3px 0 0 var(--primary-yellow-shadow) !important;
 }
 
 .button.warning.force-clicked .button-text {
