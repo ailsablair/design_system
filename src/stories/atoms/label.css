@@ -450,13 +450,13 @@
 }
 
 /* Split label type variants */
-.label.split.default {
+.label.split.default:not(.ghost) {
   background: var(--primary-blue-blue);
   border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue);
   color: var(--base-white);
 }
 
-.label.split.default .label-icon {
+.label.split.default:not(.ghost) .label-icon {
   color: var(--base-white);
   opacity: 0.6;
 }
