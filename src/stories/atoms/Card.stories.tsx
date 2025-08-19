@@ -770,6 +770,16 @@ export const AllSemanticCards: Story = {
           bodyText="This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card."
           onCloseClick={() => alert('Info card closed!')}
         />
+
+        <Card
+          type="success"
+          size="default"
+          dropShadow={true}
+          showCloseIcon={true}
+          title="This is a success heading"
+          bodyText="This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card."
+          onCloseClick={() => alert('Success card closed!')}
+        />
       </div>
 
       <h4 style={{ margin: '0', fontSize: '16px', fontWeight: 500 }}>All Sizes - Warning Cards</h4>
