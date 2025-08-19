@@ -517,6 +517,17 @@
   transform: translateY(-1px);
 }
 
+.card-btn-success {
+  background: #227F1A;
+  border-color: var(--primary-blue-dark-blue);
+  color: var(--base-white);
+}
+
+.card-btn-success:hover {
+  background: #1E6D16;
+  transform: translateY(-1px);
+}
+
 /* === RESPONSIVE DESIGN === */
 
 @media (max-width: 768px) {
