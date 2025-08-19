@@ -1,4 +1,4 @@
-/* Card Component Styles - Comprehensive Figma Design Implementation */
+/* Card Component Styles - Clean Implementation */
 
 .card {
   display: flex;
@@ -10,78 +10,28 @@
   position: relative;
   font-family: var(--type-typeface-archivo);
   color: var(--base-black);
-  contain: layout style;
-  will-change: auto;
 }
 
 /* === SIZE VARIANTS === */
 
-/* Small size */
 .card.card-size-small {
   padding: var(--spacing-sizing-8px);
   gap: var(--spacing-sizing-16px);
 }
 
-.card.card-size-small .card-text {
-  padding-right: var(--spacing-sizing-8px);
-}
-
-.card.card-size-small.card-align-vertical .card-text {
-  gap: var(--spacing-sizing-12px);
-}
-
-/* Default size */
 .card.card-size-default {
   padding: var(--spacing-sizing-16px);
   gap: var(--spacing-sizing-16px);
   width: 334px;
 }
 
-.card.card-size-default .card-text {
-  padding-right: var(--spacing-sizing-16px);
-}
-
 .card.card-size-default.card-align-horizontal {
   width: 668px;
 }
 
-/* Large size */
 .card.card-size-large {
   padding: var(--spacing-sizing-24px);
   gap: var(--spacing-sizing-16px);
-}
-
-.card.card-size-large .card-text {
-  padding-right: var(--spacing-sizing-24px);
-}
-
-/* === ALIGNMENT VARIANTS === */
-
-/* Horizontal alignment */
-.card.card-align-horizontal .card-content-horizontal {
-  display: flex;
-  align-items: flex-start;
-}
-
-.card.card-align-horizontal .card-text {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--spacing-sizing-16px);
-}
-
-/* Vertical alignment */
-.card.card-align-vertical {
-  align-items: flex-start;
-}
-
-.card.card-align-vertical .card-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--spacing-sizing-16px);
-  align-self: stretch;
 }
 
 /* === SHADOW VARIANTS === */
@@ -96,65 +46,48 @@
 
 /* === CONTENT STRUCTURE === */
 
-/* Headings */
+.card-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-16px);
+  flex: 1;
+}
+
+.card.card-align-horizontal .card-content-horizontal {
+  display: flex;
+  align-items: flex-start;
+}
+
 .card-headings {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: var(--spacing-sizing-8px);
-  align-self: stretch;
-}
-
-.card-header-close {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--spacing-sizing-16px);
-  align-self: stretch;
-}
-
-.card.card-align-vertical .card-header-close {
-  flex-direction: column;
   gap: var(--spacing-sizing-8px);
 }
 
-.card-header {
-  display: flex;
-  padding-top: var(--spacing-sizing-8px);
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
+/* === TYPOGRAPHY === */
 
-/* Typography - Card Titles */
 .card-title {
   color: var(--base-black);
   font-family: var(--type-typeface-archivo);
   font-weight: var(--type-weight-medium);
-  line-height: 1;
+  line-height: 1.2;
   margin: 0;
+  padding-right: 24px; /* Space for close icon */
 }
 
 .card.card-size-small .card-title {
   font-size: var(--type-archivo-heading-4);
-  line-height: var(--type-line-height-heading-4);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-4);
 }
 
 .card.card-size-default .card-title {
   font-size: var(--type-archivo-heading-3);
-  line-height: var(--type-line-height-heading-3);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-3);
 }
 
 .card.card-size-large .card-title {
   font-size: var(--type-archivo-heading-2);
-  line-height: var(--type-line-height-heading-2);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-2);
 }
 
-/* Typography - Card Subtitles */
 .card-subtitle {
-  align-self: stretch;
   color: var(--neutral-gray-gray-500);
   font-family: var(--type-typeface-archivo);
   font-weight: var(--type-weight-light);
@@ -163,25 +96,17 @@
 
 .card.card-size-small .card-subtitle {
   font-size: var(--type-archivo-label);
-  line-height: var(--type-line-height-label);
-  letter-spacing: var(--type-letter-spacing-archivo-label);
 }
 
 .card.card-size-default .card-subtitle {
   font-size: var(--type-archivo-label-lg);
-  line-height: var(--type-line-height-label-lg);
-  letter-spacing: var(--type-letter-spacing-archivo-label-lg);
 }
 
 .card.card-size-large .card-subtitle {
   font-size: var(--type-archivo-heading-4);
-  line-height: var(--type-line-height-heading-4);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-4);
 }
 
-/* Typography - Card Body Text */
 .card-body {
-  align-self: stretch;
   color: var(--base-black);
   font-family: var(--type-typeface-roboto-flex);
   font-weight: var(--type-weight-default);
@@ -190,20 +115,59 @@
 
 .card.card-size-small .card-body {
   font-size: var(--type-roboto-flex-body-sm);
-  line-height: var(--type-line-height-body-sm);
-  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
 }
 
 .card.card-size-default .card-body {
   font-size: var(--type-roboto-flex-body);
-  line-height: var(--type-line-height-body);
-  letter-spacing: var(--type-letter-spacing-roboto-flex-body);
 }
 
 .card.card-size-large .card-body {
   font-size: var(--type-roboto-flex-body-lg);
-  line-height: var(--type-line-height-body-lg);
-  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg);
+}
+
+/* === CLOSE ICON === */
+
+.card-close-icon {
+  position: absolute;
+  top: var(--spacing-sizing-8px);
+  right: var(--spacing-sizing-8px);
+  background: var(--base-white);
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-sizing-4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--spacing-radius-2px);
+  z-index: 10;
+  width: 24px;
+  height: 24px;
+  transition: background-color 0.2s ease;
+}
+
+.card.card-size-default .card-close-icon {
+  top: var(--spacing-sizing-12px);
+  right: var(--spacing-sizing-12px);
+}
+
+.card.card-size-large .card-close-icon {
+  top: var(--spacing-sizing-16px);
+  right: var(--spacing-sizing-16px);
+}
+
+.card-close-icon:hover {
+  background-color: var(--neutral-gray-gray-100);
+}
+
+.card-close-icon:focus {
+  outline: 2px solid var(--primary-blue-blue);
+  outline-offset: 2px;
+}
+
+.card-close-icon svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
 /* === BUTTON GROUP === */
@@ -236,8 +200,6 @@
   min-width: 80px;
   min-height: 30px;
   font-size: var(--type-archivo-label-sm);
-  line-height: var(--type-line-height-label-sm);
-  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
 }
 
 .card.card-size-default .card-btn {
@@ -245,8 +207,6 @@
   min-height: 42px;
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px);
   font-size: var(--type-archivo-label);
-  line-height: var(--type-line-height-label);
-  letter-spacing: var(--type-letter-spacing-archivo-label);
 }
 
 .card.card-size-large .card-btn {
@@ -254,25 +214,6 @@
   min-height: 52px;
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px);
   font-size: var(--type-archivo-label-lg);
-  line-height: var(--type-line-height-label-lg);
-  letter-spacing: var(--type-letter-spacing-archivo-label-lg);
-}
-
-/* Button label container */
-.card-btn > * {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sizing-8px);
-  padding: var(--spacing-sizing-4px);
-  justify-content: center;
-}
-
-.card.card-size-default .card-btn > * {
-  padding: var(--spacing-sizing-8px) var(--spacing-sizing-4px);
-}
-
-.card.card-size-large .card-btn > * {
-  padding: var(--spacing-sizing-12px) var(--spacing-sizing-4px);
 }
 
 .card-btn-primary {
@@ -285,10 +226,6 @@
   background: var(--base-white);
   border-color: var(--neutral-gray-gray-400);
   color: var(--base-black);
-}
-
-.card-btn-ghost svg {
-  color: #374151;
 }
 
 /* === ICON TYPE === */
@@ -305,11 +242,6 @@
   gap: var(--spacing-sizing-16px);
 }
 
-.card.card-size-large.card-type-icon .card-icon-text,
-.card.card-size-large.card-type-empty-state .card-icon-text {
-  gap: var(--spacing-sizing-24px);
-}
-
 .card-icon-title {
   color: var(--base-black);
   text-align: center;
@@ -320,20 +252,14 @@
 
 .card.card-size-small .card-icon-title {
   font-size: var(--type-archivo-heading-5);
-  line-height: var(--type-line-height-heading-5);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-5);
 }
 
 .card.card-size-default .card-icon-title {
   font-size: var(--type-archivo-heading-3);
-  line-height: var(--type-line-height-heading-3);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-3);
 }
 
 .card.card-size-large .card-icon-title {
   font-size: var(--type-archivo-heading-2);
-  line-height: var(--type-line-height-heading-2);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-2);
 }
 
 /* === TEXT-ONLY TYPE === */
@@ -341,15 +267,6 @@
 .card-text-only {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: var(--spacing-sizing-16px);
-  align-self: stretch;
-}
-
-.card-text-only-header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   gap: var(--spacing-sizing-16px);
 }
 
@@ -358,36 +275,22 @@
   font-family: var(--type-typeface-archivo);
   font-weight: var(--type-weight-medium);
   margin: 0;
+  padding-right: 24px; /* Space for close icon */
 }
 
 .card.card-size-small .card-text-only-title {
   font-size: var(--type-archivo-heading-5);
-  line-height: var(--type-line-height-heading-5);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-5);
 }
 
 .card.card-size-default .card-text-only-title {
   font-size: var(--type-archivo-heading-4);
-  line-height: var(--type-line-height-heading-4);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-4);
 }
 
 .card.card-size-large .card-text-only-title {
   font-size: var(--type-archivo-heading-3);
-  line-height: var(--type-line-height-heading-3);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-3);
-}
-
-.card-text-only-body-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-sizing-16px);
-  align-self: stretch;
 }
 
 .card-text-only-body {
-  align-self: stretch;
   color: var(--base-black);
   font-family: var(--type-typeface-roboto-flex);
   font-weight: var(--type-weight-light);
@@ -396,20 +299,14 @@
 
 .card.card-size-small .card-text-only-body {
   font-size: var(--type-roboto-flex-body);
-  line-height: var(--type-line-height-body);
-  letter-spacing: var(--type-letter-spacing-roboto-flex-body);
 }
 
 .card.card-size-default .card-text-only-body {
   font-size: var(--type-roboto-flex-body-lg);
-  line-height: var(--type-line-height-body-lg);
-  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg);
 }
 
 .card.card-size-large .card-text-only-body {
   font-size: var(--type-archivo-heading-5);
-  line-height: var(--type-line-height-heading-5);
-  letter-spacing: var(--type-letter-spacing-roboto-flex-heading-5);
 }
 
 /* === STAT TYPE === */
@@ -424,63 +321,33 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.card.card-size-small.card-type-stat .card-stat-content {
-  gap: var(--spacing-sizing-4px);
-}
-
-.card.card-size-default.card-type-stat .card-stat-content {
-  gap: var(--spacing-sizing-6px);
-}
-
-.card.card-size-large.card-type-stat .card-stat-content {
-  gap: var(--spacing-sizing-12px);
+  gap: var(--spacing-sizing-8px);
 }
 
 .card-stat-value {
   color: var(--primary-blue-blue);
   text-align: center;
   font-weight: var(--type-weight-medium);
-  line-height: 90%;
+  line-height: 0.9;
   font-family: var(--type-typeface-roboto-flex);
   margin: 0;
 }
 
 .card.card-size-small .card-stat-value {
   font-size: 48px;
-  letter-spacing: 0.84px;
 }
 
 .card.card-size-default .card-stat-value {
   font-size: 64px;
-  letter-spacing: 1.12px;
 }
 
 .card.card-size-large .card-stat-value {
   font-size: 82px;
-  letter-spacing: 1.435px;
 }
 
-/* Archivo font variant for stat values */
 .card.card-font-archivo .card-stat-value {
   font-family: var(--type-typeface-archivo);
   font-weight: var(--type-weight-light);
-}
-
-.card.card-size-small.card-font-archivo .card-stat-value {
-  font-size: 42px;
-  letter-spacing: -0.945px;
-}
-
-.card.card-size-default.card-font-archivo .card-stat-value {
-  font-size: 64px;
-  letter-spacing: -1.44px;
-}
-
-.card.card-size-large.card-font-archivo .card-stat-value {
-  font-size: 76px;
-  letter-spacing: -2.25px;
 }
 
 .card-stat-label {
@@ -493,65 +360,14 @@
 
 .card.card-size-small .card-stat-label {
   font-size: var(--type-roboto-flex-body-sm);
-  line-height: var(--type-line-height-body-sm);
-  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
 }
 
 .card.card-size-default .card-stat-label {
   font-size: var(--type-roboto-flex-body);
-  line-height: var(--type-line-height-body);
-  letter-spacing: var(--type-letter-spacing-roboto-flex-body);
 }
 
 .card.card-size-large .card-stat-label {
   font-size: var(--type-roboto-flex-body-lg);
-  line-height: var(--type-line-height-body-lg);
-  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg);
-}
-
-/* === CLOSE ICON === */
-
-.card-close-icon {
-  position: absolute;
-  top: var(--spacing-sizing-8px);
-  right: var(--spacing-sizing-8px);
-  background: var(--base-white);
-  border: none;
-  cursor: pointer;
-  padding: var(--spacing-sizing-2px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--spacing-radius-2px);
-  z-index: 10;
-  width: 20px;
-  height: 20px;
-  transition: background-color 0.2s ease;
-}
-
-.card.card-size-default .card-close-icon {
-  top: var(--spacing-sizing-12px);
-  right: var(--spacing-sizing-12px);
-}
-
-.card.card-size-large .card-close-icon {
-  top: var(--spacing-sizing-16px);
-  right: var(--spacing-sizing-16px);
-}
-
-.card-close-icon:hover {
-  background-color: var(--neutral-gray-gray-100);
-}
-
-.card-close-icon:focus {
-  outline: 2px solid var(--primary-blue-blue);
-  outline-offset: 2px;
-}
-
-.card-close-icon svg {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
 }
 
 /* === INTERACTIVE STATES === */
@@ -576,7 +392,6 @@
   outline-offset: 2px;
 }
 
-/* Button hover states */
 .card-btn:hover {
   transform: translateY(-1px);
 }
@@ -587,26 +402,6 @@
 
 .card-btn-ghost:hover {
   background: var(--neutral-gray-gray-50);
-}
-
-/* === RESIZE OBSERVER OPTIMIZATION === */
-
-/* Prevent ResizeObserver loops by stabilizing layout */
-.card * {
-  contain: layout style;
-}
-
-.card img,
-.card svg {
-  contain: layout size style;
-}
-
-/* Optimize showcases and demo containers */
-.card-showcase-container,
-.storybook-showcase,
-[data-component-name="card"] {
-  contain: layout style;
-  will-change: auto;
 }
 
 /* === RESPONSIVE DESIGN === */
@@ -631,20 +426,6 @@
     padding: var(--spacing-sizing-16px);
   }
 }
-
-/* === HIGH CONTRAST SUPPORT === */
-
-@media (prefers-contrast: high) {
-  .card {
-    border-width: 2px;
-  }
-  
-  .card-btn {
-    border-width: 2px;
-  }
-}
-
-/* === REDUCED MOTION SUPPORT === */
 
 @media (prefers-reduced-motion: reduce) {
   .card,
