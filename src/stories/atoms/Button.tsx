@@ -3,7 +3,7 @@ import './button.css';
 
 export interface ButtonProps {
   /** Button text content */
-  children: React.ReactNode;
+  children?: React.ReactNode;
   /** Size variant */
   size?: 'extra-small' | 'small' | 'default' | 'large';
   /** Button type/variant */
@@ -20,6 +20,10 @@ export interface ButtonProps {
   leadingIcon?: React.ReactNode;
   /** Trailing icon */
   trailingIcon?: React.ReactNode;
+  /** Icon-only variant */
+  iconOnly?: boolean;
+  /** Icon for icon-only variant */
+  icon?: React.ReactNode;
   /** Click handler */
   onClick?: () => void;
   /** Additional CSS classes */
@@ -95,6 +99,8 @@ export const Button: React.FC<ButtonProps> = ({
   disabled = false,
   leadingIcon,
   trailingIcon,
+  iconOnly = false,
+  icon,
   onClick,
   className = '',
   htmlType = 'button',
@@ -125,11 +131,14 @@ export const Button: React.FC<ButtonProps> = ({
 
   // Determine if we should show content or loading icon
   const isLoadingState = loading || actualState === 'loading';
-  
+
+  // For icon-only buttons, use icon prop or leadingIcon as fallback
+  const iconOnlyContent = icon || leadingIcon;
+
   return (
     <button
       type={htmlType}
-      className={`button ${size} ${type} ${actualState} ${outline ? 'outline' : ''} ${width === 'full' ? 'full-width' : ''} ${className}`}
+      className={`button ${size} ${type} ${actualState} ${outline ? 'outline' : ''} ${iconOnly ? 'icon-only' : ''} ${width === 'full' ? 'full-width' : ''} ${className}`}
       onClick={handleClick}
       disabled={disabled || loading}
       aria-label={isLoadingState ? 'Loading...' : undefined}
@@ -138,6 +147,14 @@ export const Button: React.FC<ButtonProps> = ({
         <div className="button-loading-content">
           <LoadingIcon size={iconSize} />
         </div>
+      ) : iconOnly ? (
+        <div className="button-icon-only-content">
+          {iconOnlyContent && (
+            <span className="button-icon">
+              {iconOnlyContent}
+            </span>
+          )}
+        </div>
       ) : (
         <div className="button-content">
           {leadingIcon && (
@@ -145,7 +162,7 @@ export const Button: React.FC<ButtonProps> = ({
               {leadingIcon}
             </span>
           )}
-          <span className="button-text">{children}</span>
+          {children && <span className="button-text">{children}</span>}
           {trailingIcon && (
             <span className="button-icon button-trailing-icon">
               {trailingIcon}
