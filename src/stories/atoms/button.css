@@ -950,6 +950,212 @@
   border: var(--spacing-stroke-3px) solid var(--neutral-gray-gray-300) !important;
 }
 
+/* Info button variant */
+.button.info {
+  background: var(--status-info-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-blue-200);
+  color: var(--base-white);
+}
+
+.button.info .button-icon {
+  color: var(--base-white);
+  opacity: 0.6;
+}
+
+/* Success button variant */
+.button.success {
+  background: var(--status-green);
+  border: var(--spacing-stroke-0-5px) solid var(--status-dark-green);
+  color: var(--base-black);
+}
+
+.button.success .button-icon {
+  color: var(--base-black);
+  opacity: 0.6;
+}
+
+/* State variants for info buttons */
+.button.info.default {
+  background: var(--status-info-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-blue-200);
+}
+
+.button.info.hover,
+.button.info:hover:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-2px) solid var(--status-info-blue-light);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300);
+}
+
+.button.info.hover .button-text,
+.button.info:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.info.clicked,
+.button.info:active:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-200);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300);
+}
+
+.button.info.clicked .button-text,
+.button.info:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.info.focused,
+.button.info:focus-visible:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-3px) solid var(--status-info-blue-light);
+}
+
+.button.info.loading {
+  background: var(--status-info-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--status-info-blue-light);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.info.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.info.disabled .button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
+}
+
+/* State variants for success buttons */
+.button.success.default {
+  background: var(--status-green);
+  border: var(--spacing-stroke-0-5px) solid var(--status-dark-green);
+}
+
+.button.success.hover,
+.button.success:hover:not(.disabled):not(.loading) {
+  background: var(--status-dark-green);
+  border: var(--spacing-stroke-2px) solid var(--status-green-light);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--status-green);
+  color: var(--base-white);
+}
+
+.button.success.hover .button-text,
+.button.success:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.success.hover .button-icon,
+.button.success:hover:not(.disabled):not(.loading) .button-icon {
+  color: var(--base-white);
+  opacity: 0.6;
+}
+
+.button.success.clicked,
+.button.success:active:not(.disabled):not(.loading) {
+  background: var(--status-dark-green);
+  border: var(--spacing-stroke-2px) solid var(--status-green-light);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--status-green);
+  color: var(--base-white);
+}
+
+.button.success.clicked .button-text,
+.button.success:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.success.clicked .button-icon,
+.button.success:active:not(.disabled):not(.loading) .button-icon {
+  color: var(--base-white);
+  opacity: 0.6;
+}
+
+.button.success.focused,
+.button.success:focus-visible:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-3px) solid var(--status-dark-green);
+}
+
+.button.success.loading {
+  background: var(--status-green);
+  border: var(--spacing-stroke-0-5px) solid var(--status-dark-green);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.success.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.success.disabled .button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
+}
+
+/* Force state classes for info buttons */
+.button.info.force-hover {
+  border: var(--spacing-stroke-2px) solid var(--status-info-blue-light) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300) !important;
+}
+
+.button.info.force-hover .button-text {
+  font-weight: var(--type-weight-bold) !important;
+}
+
+.button.info.force-clicked {
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-200) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300) !important;
+}
+
+.button.info.force-clicked .button-text {
+  font-weight: var(--type-weight-bold) !important;
+}
+
+.button.info.force-focused {
+  border: var(--spacing-stroke-3px) solid var(--status-info-blue-light) !important;
+}
+
+/* Force state classes for success buttons */
+.button.success.force-hover {
+  background: var(--status-dark-green) !important;
+  border: var(--spacing-stroke-2px) solid var(--status-green-light) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--status-green) !important;
+  color: var(--base-white) !important;
+}
+
+.button.success.force-hover .button-text {
+  font-weight: var(--type-weight-bold) !important;
+}
+
+.button.success.force-hover .button-icon {
+  color: var(--base-white) !important;
+  opacity: 0.6 !important;
+}
+
+.button.success.force-clicked {
+  background: var(--status-dark-green) !important;
+  border: var(--spacing-stroke-2px) solid var(--status-green-light) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--status-green) !important;
+  color: var(--base-white) !important;
+}
+
+.button.success.force-clicked .button-text {
+  font-weight: var(--type-weight-bold) !important;
+}
+
+.button.success.force-clicked .button-icon {
+  color: var(--base-white) !important;
+  opacity: 0.6 !important;
+}
+
+.button.success.force-focused {
+  border: var(--spacing-stroke-3px) solid var(--status-dark-green) !important;
+}
+
 /* Open state for dropdown-style buttons */
 .button.open {
   background: var(--base-white);
