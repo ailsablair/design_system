@@ -396,16 +396,16 @@
 }
 
 .split-button.ghost.disabled {
-  background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
-  color: var(--neutral-gray-gray-300);
+  background: var(--neutral-gray-gray-100);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+  color: var(--neutral-gray-gray-600);
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .split-button.ghost.disabled .split-button-icon {
-  color: var(--neutral-gray-gray-300);
-  opacity: 0.6;
+  color: var(--neutral-gray-gray-600);
+  opacity: 0.8;
 }
 
 /* Width variants */
