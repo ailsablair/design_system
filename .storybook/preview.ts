@@ -1,67 +1,37 @@
-import type { Preview } from '@storybook/react\';\nimport \'./docs.css';
+import type { Preview } from '@storybook/react';
 
-// Enhanced global error handler to suppress ResizeObserver loop warnings
-// This is a common Storybook issue and doesn't affect functionality
-const originalError = window.console.error;
-const originalWarn = window.console.warn;
+// Suppress ResizeObserver loop completed errors (harmless in development)
+const suppressResizeObserverErrors = () => {
+  const originalError = console.error;
+  console.error = (...args: any[]) => {
+    const message = args[0];
+    if (
+      typeof message === 'string' && 
+      message.includes('ResizeObserver loop completed with undelivered notifications')
+    ) {
+      // Suppress this specific error as it's harmless
+      return;
+    }
+    originalError.apply(console, args);
+  };
 
-// Comprehensive ResizeObserver error patterns
-const resizeObserverPatterns = [
-  'ResizeObserver loop completed with undelivered notifications',
-  'ResizeObserver loop limit exceeded',
-  'ResizeObserver callback threw an exception',
-];
-
-const isResizeObserverError = (message: any): boolean => {
-  if (typeof message !== 'string') return false;
-  return resizeObserverPatterns.some(pattern => message.includes(pattern));
+  // Also handle window error events
+  window.addEventListener('error', (event) => {
+    if (
+      event.message && 
+      event.message.includes('ResizeObserver loop completed with undelivered notifications')
+    ) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  });
 };
 
-// Enhanced error suppression
-window.console.error = (...args) => {
-  const firstArg = args[0];
-  if (!isResizeObserverError(firstArg)) {
-    originalError(...args);
-  }
-};
-
-// Also suppress warnings related to ResizeObserver
-window.console.warn = (...args) => {
-  const firstArg = args[0];
-  if (!isResizeObserverError(firstArg)) {
-    originalWarn(...args);
-  }
-};
-
-// Handle uncaught ResizeObserver errors
-window.addEventListener('error', (event) => {
-  if (isResizeObserverError(event.message)) {
-    event.preventDefault();
-    return false;
-  }
-});
-
-// Handle unhandled promise rejections from ResizeObserver
-window.addEventListener('unhandledrejection', (event) => {
-  if (isResizeObserverError(event.reason)) {
-    event.preventDefault();
-    return false;
-  }
-});
+// Initialize error suppression
+suppressResizeObserverErrors();
 
 const preview: Preview = {
   parameters: {
-    options: {
-      storySort: {
-        order: [
-          'Design System',
-          'Foundations',
-          'Atoms',
-          'Molecules',
-          '*' // Everything else
-        ],
-      },
-    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -69,51 +39,29 @@ const preview: Preview = {
       },
     },
     docs: {
-      defaultName: 'Documentation',
-      // Enhanced docs configuration for better MDX rendering
-      source: {
-        type: 'code',
+      toc: {
+        contentsSelector: '.sbdocs-content',
+        headingSelector: 'h1, h2, h3',
+        ignoreSelector: '#primary',
+        title: 'Table of Contents',
+        disable: false,
+        unsafeTocbotOptions: {
+          orderedList: false,
+        },
       },
     },
-    layout: 'centered',
-    viewport: {
-      viewports: {
-        smallMobile: {
-          name: 'Small Mobile',
-          styles: {
-            width: '320px',
-            height: '568px',
-          },
+    backgrounds: {
+      default: 'light',
+      values: [
+        {
+          name: 'light',
+          value: '#ffffff',
         },
-        largeMobile: {
-          name: 'Large Mobile',
-          styles: {
-            width: '414px',
-            height: '896px',
-          },
+        {
+          name: 'dark',
+          value: '#333333',
         },
-        tablet: {
-          name: 'Tablet',
-          styles: {
-            width: '768px',
-            height: '1024px',
-          },
-        },
-        desktop: {
-          name: 'Desktop',
-          styles: {
-            width: '1024px',
-            height: '768px',
-          },
-        },
-        largeDesktop: {
-          name: 'Large Desktop',
-          styles: {
-            width: '1440px',
-            height: '900px',
-          },
-        },
-      },
+      ],
     },
   },
 };
