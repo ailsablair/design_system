@@ -335,7 +335,7 @@ export const SemanticCardsComparison: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Complete comparison of all semantic card types across all available sizes, showing the consistent design system implementation.',
+        story: 'Complete comparison of all semantic card types (warning, error, info, success) across all available sizes, showing the consistent design system implementation with horizontal layout matching Figma.',
       },
     },
   },
