@@ -951,6 +951,12 @@ export const DesignSystemShowcase: Story = {
           <Button size="default" type="warning" leadingIcon={<AlertIcon size={18} />}>
             Warning
           </Button>
+          <Button size="default" type="info" leadingIcon={<InformationIcon size={18} />}>
+            Info
+          </Button>
+          <Button size="default" type="success" leadingIcon={<InformationIcon size={18} />}>
+            Success
+          </Button>
           <Button size="default" type="secondary" leadingIcon={<AlarmIcon size={18} />}>
             Secondary
           </Button>
@@ -964,8 +970,364 @@ export const DesignSystemShowcase: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Complete design system showcase with all button variants and states, including ghost, error, warning, primary, secondary, and tertiary buttons.',
+        story: 'Complete design system showcase with all button variants and states, including ghost, error, warning, info, success, primary, secondary, and tertiary buttons.',
       },
     },
+  },
+};
+
+// Info button examples
+export const InfoDefault: Story = {
+  args: {
+    children: 'Info button',
+    size: 'small',
+    type: 'info',
+    leadingIcon: <InformationIcon size={14} />,
+  },
+};
+
+export const InfoDefaultMedium: Story = {
+  args: {
+    children: 'Info button',
+    size: 'default',
+    type: 'info',
+    leadingIcon: <InformationIcon size={18} />,
+  },
+};
+
+export const InfoDefaultLarge: Story = {
+  args: {
+    children: 'Info button',
+    size: 'large',
+    type: 'info',
+    leadingIcon: <InformationIcon size={20} />,
+  },
+};
+
+export const InfoHover: Story = {
+  args: {
+    children: 'Info button',
+    size: 'small',
+    type: 'info',
+    state: 'hover',
+    leadingIcon: <InformationIcon size={14} />,
+  },
+};
+
+export const InfoHoverMedium: Story = {
+  args: {
+    children: 'Info button',
+    size: 'default',
+    type: 'info',
+    state: 'hover',
+    leadingIcon: <InformationIcon size={18} />,
+  },
+};
+
+export const InfoHoverLarge: Story = {
+  args: {
+    children: 'Info button',
+    size: 'large',
+    type: 'info',
+    state: 'hover',
+    leadingIcon: <InformationIcon size={20} />,
+  },
+};
+
+export const InfoClicked: Story = {
+  args: {
+    children: 'Info button',
+    size: 'small',
+    type: 'info',
+    state: 'clicked',
+    leadingIcon: <InformationIcon size={14} />,
+  },
+};
+
+export const InfoClickedMedium: Story = {
+  args: {
+    children: 'Info button',
+    size: 'default',
+    type: 'info',
+    state: 'clicked',
+    leadingIcon: <InformationIcon size={18} />,
+  },
+};
+
+export const InfoClickedLarge: Story = {
+  args: {
+    children: 'Info button',
+    size: 'large',
+    type: 'info',
+    state: 'clicked',
+    leadingIcon: <InformationIcon size={20} />,
+  },
+};
+
+export const InfoFocused: Story = {
+  args: {
+    children: 'Info button',
+    size: 'small',
+    type: 'info',
+    state: 'focused',
+    leadingIcon: <InformationIcon size={14} />,
+  },
+};
+
+export const InfoFocusedMedium: Story = {
+  args: {
+    children: 'Info button',
+    size: 'default',
+    type: 'info',
+    state: 'focused',
+    leadingIcon: <InformationIcon size={18} />,
+  },
+};
+
+export const InfoFocusedLarge: Story = {
+  args: {
+    children: 'Info button',
+    size: 'large',
+    type: 'info',
+    state: 'focused',
+    leadingIcon: <InformationIcon size={20} />,
+  },
+};
+
+export const InfoLoading: Story = {
+  args: {
+    children: 'Info button',
+    size: 'small',
+    type: 'info',
+    loading: true,
+  },
+};
+
+export const InfoLoadingMedium: Story = {
+  args: {
+    children: 'Info button',
+    size: 'default',
+    type: 'info',
+    loading: true,
+  },
+};
+
+export const InfoLoadingLarge: Story = {
+  args: {
+    children: 'Info button',
+    size: 'large',
+    type: 'info',
+    loading: true,
+  },
+};
+
+export const InfoDisabled: Story = {
+  args: {
+    children: 'Label',
+    size: 'small',
+    type: 'info',
+    disabled: true,
+    leadingIcon: <AlarmIcon size={14} />,
+    trailingIcon: <ArrowDownIcon size={14} />,
+  },
+};
+
+export const InfoDisabledMedium: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'info',
+    disabled: true,
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const InfoDisabledLarge: Story = {
+  args: {
+    children: 'Label',
+    size: 'large',
+    type: 'info',
+    disabled: true,
+    leadingIcon: <AlarmIcon size={20} />,
+    trailingIcon: <ArrowDownIcon size={20} />,
+  },
+};
+
+// Success button examples
+export const SuccessDefault: Story = {
+  args: {
+    children: 'Success button',
+    size: 'small',
+    type: 'success',
+    leadingIcon: <InformationIcon size={14} />,
+  },
+};
+
+export const SuccessDefaultMedium: Story = {
+  args: {
+    children: 'Success button',
+    size: 'default',
+    type: 'success',
+    leadingIcon: <InformationIcon size={18} />,
+  },
+};
+
+export const SuccessDefaultLarge: Story = {
+  args: {
+    children: 'Success button',
+    size: 'large',
+    type: 'success',
+    leadingIcon: <InformationIcon size={20} />,
+  },
+};
+
+export const SuccessHover: Story = {
+  args: {
+    children: 'Success button',
+    size: 'small',
+    type: 'success',
+    state: 'hover',
+    leadingIcon: <InformationIcon size={14} />,
+  },
+};
+
+export const SuccessHoverMedium: Story = {
+  args: {
+    children: 'Success button',
+    size: 'default',
+    type: 'success',
+    state: 'hover',
+    leadingIcon: <InformationIcon size={18} />,
+  },
+};
+
+export const SuccessHoverLarge: Story = {
+  args: {
+    children: 'Success button',
+    size: 'large',
+    type: 'success',
+    state: 'hover',
+    leadingIcon: <InformationIcon size={20} />,
+  },
+};
+
+export const SuccessClicked: Story = {
+  args: {
+    children: 'Success button',
+    size: 'small',
+    type: 'success',
+    state: 'clicked',
+    leadingIcon: <InformationIcon size={14} />,
+  },
+};
+
+export const SuccessClickedMedium: Story = {
+  args: {
+    children: 'Success button',
+    size: 'default',
+    type: 'success',
+    state: 'clicked',
+    leadingIcon: <InformationIcon size={18} />,
+  },
+};
+
+export const SuccessClickedLarge: Story = {
+  args: {
+    children: 'Success button',
+    size: 'large',
+    type: 'success',
+    state: 'clicked',
+    leadingIcon: <InformationIcon size={20} />,
+  },
+};
+
+export const SuccessFocused: Story = {
+  args: {
+    children: 'Success button',
+    size: 'small',
+    type: 'success',
+    state: 'focused',
+    leadingIcon: <InformationIcon size={14} />,
+  },
+};
+
+export const SuccessFocusedMedium: Story = {
+  args: {
+    children: 'Success button',
+    size: 'default',
+    type: 'success',
+    state: 'focused',
+    leadingIcon: <InformationIcon size={18} />,
+  },
+};
+
+export const SuccessFocusedLarge: Story = {
+  args: {
+    children: 'Success button',
+    size: 'large',
+    type: 'success',
+    state: 'focused',
+    leadingIcon: <InformationIcon size={20} />,
+  },
+};
+
+export const SuccessLoading: Story = {
+  args: {
+    children: 'Success button',
+    size: 'small',
+    type: 'success',
+    loading: true,
+  },
+};
+
+export const SuccessLoadingMedium: Story = {
+  args: {
+    children: 'Success button',
+    size: 'default',
+    type: 'success',
+    loading: true,
+  },
+};
+
+export const SuccessLoadingLarge: Story = {
+  args: {
+    children: 'Success button',
+    size: 'large',
+    type: 'success',
+    loading: true,
+  },
+};
+
+export const SuccessDisabled: Story = {
+  args: {
+    children: 'Label',
+    size: 'small',
+    type: 'success',
+    disabled: true,
+    leadingIcon: <AlarmIcon size={14} />,
+    trailingIcon: <ArrowDownIcon size={14} />,
+  },
+};
+
+export const SuccessDisabledMedium: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'success',
+    disabled: true,
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const SuccessDisabledLarge: Story = {
+  args: {
+    children: 'Label',
+    size: 'large',
+    type: 'success',
+    disabled: true,
+    leadingIcon: <AlarmIcon size={20} />,
+    trailingIcon: <ArrowDownIcon size={20} />,
   },
 };
