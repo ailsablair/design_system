@@ -1,24 +1,19 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Tile, AlarmIcon } from './Tile';
+import { Tile } from './Tile';
 
-const meta: Meta<typeof Tile> = {
-  title: 'Atoms/Tile',
+const meta = {
+  title: 'Echo Design System/Atoms/Tile',
   component: Tile,
   parameters: {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A flexible tile component with support for different sizes, alignments, colors, and icons. Perfect for dashboard cards, navigation tiles, and feature blocks.',
+        component: 'A tile component that displays an icon and label with various size, alignment, and color variants. Perfect for creating dashboard widgets, category tiles, or action cards.',
       },
     },
   },
   tags: ['autodocs'],
   argTypes: {
-    children: {
-      control: 'text',
-      description: 'Tile text content',
-    },
     size: {
       control: { type: 'select' },
       options: ['small', 'default', 'large'],
@@ -26,242 +21,275 @@ const meta: Meta<typeof Tile> = {
     },
     align: {
       control: { type: 'select' },
-      options: ['centre', 'left', 'right'],
-      description: 'Content alignment within the tile',
+      options: ['left', 'centre', 'right'],
+      description: 'Text alignment within the tile',
     },
     colour: {
       control: { type: 'select' },
       options: ['default', 'blue', 'yellow', 'light-gray', 'info-blue', 'blue-gray'],
-      description: 'Color variant',
+      description: 'Color variant of the tile',
+    },
+    children: {
+      control: { type: 'text' },
+      description: 'Label text content',
     },
     disabled: {
-      control: 'boolean',
+      control: { type: 'boolean' },
       description: 'Disabled state',
     },
-    onClick: { action: 'clicked' },
+    onClick: {
+      action: 'clicked',
+      description: 'Click handler',
+    },
   },
-};
+} satisfies Meta<typeof Tile>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// Basic tile stories
+// Basic Examples
 export const Default: Story = {
   args: {
     children: 'Label',
-    size: 'default',
-    align: 'centre',
-    colour: 'default',
-    icon: <AlarmIcon size={28} />,
   },
 };
 
-export const Blue: Story = {
-  args: {
-    children: 'Label',
-    size: 'default',
-    align: 'centre',
-    colour: 'blue',
-    icon: <AlarmIcon size={28} />,
-  },
-};
-
-export const Yellow: Story = {
-  args: {
-    children: 'Label',
-    size: 'default',
-    align: 'centre',
-    colour: 'yellow',
-    icon: <AlarmIcon size={28} />,
-  },
-};
-
-export const LightGray: Story = {
-  args: {
-    children: 'Label',
-    size: 'default',
-    align: 'centre',
-    colour: 'light-gray',
-    icon: <AlarmIcon size={28} />,
-  },
-};
-
-export const InfoBlue: Story = {
-  args: {
-    children: 'Label',
-    size: 'default',
-    align: 'centre',
-    colour: 'info-blue',
-    icon: <AlarmIcon size={28} />,
-  },
-};
-
-export const BlueGray: Story = {
-  args: {
-    children: 'Label',
-    size: 'default',
-    align: 'centre',
-    colour: 'blue-gray',
-    icon: <AlarmIcon size={28} />,
-  },
-};
-
-// Size variants
 export const Small: Story = {
   args: {
-    children: 'Label',
     size: 'small',
-    align: 'centre',
-    colour: 'default',
-    icon: <AlarmIcon size={24} />,
+    children: 'Label',
   },
 };
 
 export const Large: Story = {
   args: {
-    children: 'Label',
     size: 'large',
-    align: 'centre',
-    colour: 'default',
-    icon: <AlarmIcon size={32} />,
+    children: 'Label',
   },
 };
 
-// Alignment variants
+// Alignment Variants
 export const LeftAligned: Story = {
   args: {
-    children: 'Label',
-    size: 'default',
     align: 'left',
-    colour: 'default',
-    icon: <AlarmIcon size={28} />,
+    children: 'Label',
   },
 };
 
 export const RightAligned: Story = {
   args: {
-    children: 'Label',
-    size: 'default',
     align: 'right',
-    colour: 'default',
-    icon: <AlarmIcon size={28} />,
+    children: 'Label',
   },
 };
 
-// Interactive tile
+// Color Variants
+export const Blue: Story = {
+  args: {
+    colour: 'blue',
+    children: 'Label',
+  },
+};
+
+export const Yellow: Story = {
+  args: {
+    colour: 'yellow',
+    children: 'Label',
+  },
+};
+
+export const LightGray: Story = {
+  args: {
+    colour: 'light-gray',
+    children: 'Label',
+  },
+};
+
+export const InfoBlue: Story = {
+  args: {
+    colour: 'info-blue',
+    children: 'Label',
+  },
+};
+
+export const BlueGray: Story = {
+  args: {
+    colour: 'blue-gray',
+    children: 'Label',
+  },
+};
+
+// Interactive States
 export const Clickable: Story = {
   args: {
     children: 'Clickable Tile',
-    size: 'default',
-    align: 'centre',
-    colour: 'blue',
-    icon: <AlarmIcon size={28} />,
-    onClick: () => alert('Tile clicked!'),
+    onClick: () => console.log('Tile clicked!'),
   },
 };
 
 export const Disabled: Story = {
   args: {
     children: 'Disabled Tile',
-    size: 'default',
-    align: 'centre',
-    colour: 'default',
-    icon: <AlarmIcon size={28} />,
     disabled: true,
-    onClick: () => alert('This should not fire'),
+    onClick: () => console.log('This should not fire'),
   },
 };
 
-// Comprehensive showcase matching Figma design
-export const FigmaDesignShowcase: Story = {
+// Custom Icon Example
+const CustomIcon: React.FC<{ size: number }> = ({ size }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" fill="currentColor"/>
+  </svg>
+);
+
+export const WithCustomIcon: Story = {
+  args: {
+    children: 'Custom',
+    colour: 'blue',
+    icon: <CustomIcon size={28} />,
+  },
+};
+
+// Comprehensive Showcase
+export const AllSizesShowcase: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', padding: '20px' }}>
-      <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>Tile Component Showcase</h3>
-      
-      {/* Default Size - Centre Alignment */}
-      <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 500, minWidth: '120px' }}>Default - Centre:</h4>
-        <Tile size="default" align="centre" colour="default" icon={<AlarmIcon size={28} />}>Label</Tile>
-        <Tile size="default" align="centre" colour="blue" icon={<AlarmIcon size={28} />}>Label</Tile>
-        <Tile size="default" align="centre" colour="yellow" icon={<AlarmIcon size={28} />}>Label</Tile>
-        <Tile size="default" align="centre" colour="light-gray" icon={<AlarmIcon size={28} />}>Label</Tile>
-        <Tile size="default" align="centre" colour="info-blue" icon={<AlarmIcon size={28} />}>Label</Tile>
-        <Tile size="default" align="centre" colour="blue-gray" icon={<AlarmIcon size={28} />}>Label</Tile>
+    <div style={{ display: 'flex', gap: '16px', alignItems: 'end' }}>
+      <Tile size="small" children="Small" />
+      <Tile size="default" children="Default" />
+      <Tile size="large" children="Large" />
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Comparison of all tile sizes.',
+      },
+    },
+  },
+};
+
+export const AllAlignmentsShowcase: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: '16px' }}>
+      <Tile align="left" children="Left" />
+      <Tile align="centre" children="Centre" />
+      <Tile align="right" children="Right" />
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Comparison of all text alignments.',
+      },
+    },
+  },
+};
+
+export const AllColorsShowcase: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+      <Tile colour="default" children="Default" />
+      <Tile colour="blue" children="Blue" />
+      <Tile colour="yellow" children="Yellow" />
+      <Tile colour="light-gray" children="Light Gray" />
+      <Tile colour="info-blue" children="Info Blue" />
+      <Tile colour="blue-gray" children="Blue Gray" />
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Comparison of all color variants.',
+      },
+    },
+  },
+};
+
+// Complete Design System Showcase
+export const DesignSystemShowcase: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+      {/* Size variants with center alignment */}
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600 }}>Centre Alignment</h3>
+        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+          {/* Default size */}
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <Tile size="default" align="centre" colour="default" children="Label" />
+            <Tile size="default" align="centre" colour="blue" children="Label" />
+            <Tile size="default" align="centre" colour="yellow" children="Label" />
+            <Tile size="default" align="centre" colour="light-gray" children="Label" />
+            <Tile size="default" align="centre" colour="info-blue" children="Label" />
+            <Tile size="default" align="centre" colour="blue-gray" children="Label" />
+          </div>
+        </div>
       </div>
 
-      {/* Large Size - Centre Alignment */}
-      <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 500, minWidth: '120px' }}>Large - Centre:</h4>
-        <Tile size="large" align="centre" colour="default" icon={<AlarmIcon size={32} />}>Label</Tile>
-        <Tile size="large" align="centre" colour="blue" icon={<AlarmIcon size={32} />}>Label</Tile>
-        <Tile size="large" align="centre" colour="yellow" icon={<AlarmIcon size={32} />}>Label</Tile>
-        <Tile size="large" align="centre" colour="light-gray" icon={<AlarmIcon size={32} />}>Label</Tile>
-        <Tile size="large" align="centre" colour="info-blue" icon={<AlarmIcon size={32} />}>Label</Tile>
-        <Tile size="large" align="centre" colour="blue-gray" icon={<AlarmIcon size={32} />}>Label</Tile>
+      {/* Large size variants */}
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600 }}>Large Size</h3>
+        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <Tile size="large" align="centre" colour="default" children="Label" />
+            <Tile size="large" align="centre" colour="blue" children="Label" />
+            <Tile size="large" align="centre" colour="yellow" children="Label" />
+            <Tile size="large" align="centre" colour="light-gray" children="Label" />
+            <Tile size="large" align="centre" colour="info-blue" children="Label" />
+            <Tile size="large" align="centre" colour="blue-gray" children="Label" />
+          </div>
+        </div>
       </div>
 
-      {/* Small Size - Centre Alignment */}
-      <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 500, minWidth: '120px' }}>Small - Centre:</h4>
-        <Tile size="small" align="centre" colour="default" icon={<AlarmIcon size={24} />}>Label</Tile>
-        <Tile size="small" align="centre" colour="blue" icon={<AlarmIcon size={24} />}>Label</Tile>
-        <Tile size="small" align="centre" colour="yellow" icon={<AlarmIcon size={24} />}>Label</Tile>
-        <Tile size="small" align="centre" colour="light-gray" icon={<AlarmIcon size={24} />}>Label</Tile>
-        <Tile size="small" align="centre" colour="info-blue" icon={<AlarmIcon size={24} />}>Label</Tile>
-        <Tile size="small" align="centre" colour="blue-gray" icon={<AlarmIcon size={24} />}>Label</Tile>
+      {/* Small size variants */}
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600 }}>Small Size</h3>
+        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <Tile size="small" align="centre" colour="default" children="Label" />
+            <Tile size="small" align="centre" colour="blue" children="Label" />
+            <Tile size="small" align="centre" colour="yellow" children="Label" />
+            <Tile size="small" align="centre" colour="light-gray" children="Label" />
+            <Tile size="small" align="centre" colour="info-blue" children="Label" />
+            <Tile size="small" align="centre" colour="blue-gray" children="Label" />
+          </div>
+        </div>
       </div>
 
-      {/* Default Size - Left Alignment */}
-      <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 500, minWidth: '120px' }}>Default - Left:</h4>
-        <Tile size="default" align="left" colour="default" icon={<AlarmIcon size={28} />}>Label</Tile>
-        <Tile size="default" align="left" colour="blue" icon={<AlarmIcon size={28} />}>Label</Tile>
-        <Tile size="default" align="left" colour="yellow" icon={<AlarmIcon size={28} />}>Label</Tile>
-        <Tile size="default" align="left" colour="light-gray" icon={<AlarmIcon size={28} />}>Label</Tile>
-        <Tile size="default" align="left" colour="info-blue" icon={<AlarmIcon size={28} />}>Label</Tile>
-        <Tile size="default" align="left" colour="blue-gray" icon={<AlarmIcon size={28} />}>Label</Tile>
+      {/* Left alignment */}
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600 }}>Left Alignment</h3>
+        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <Tile size="default" align="left" colour="default" children="Label" />
+            <Tile size="default" align="left" colour="blue" children="Label" />
+            <Tile size="default" align="left" colour="yellow" children="Label" />
+            <Tile size="default" align="left" colour="light-gray" children="Label" />
+            <Tile size="default" align="left" colour="info-blue" children="Label" />
+            <Tile size="default" align="left" colour="blue-gray" children="Label" />
+          </div>
+        </div>
       </div>
 
-      {/* Default Size - Right Alignment */}
-      <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 500, minWidth: '120px' }}>Default - Right:</h4>
-        <Tile size="default" align="right" colour="default" icon={<AlarmIcon size={28} />}>Label</Tile>
-        <Tile size="default" align="right" colour="blue" icon={<AlarmIcon size={28} />}>Label</Tile>
-        <Tile size="default" align="right" colour="yellow" icon={<AlarmIcon size={28} />}>Label</Tile>
-        <Tile size="default" align="right" colour="light-gray" icon={<AlarmIcon size={28} />}>Label</Tile>
-        <Tile size="default" align="right" colour="info-blue" icon={<AlarmIcon size={28} />}>Label</Tile>
-        <Tile size="default" align="right" colour="blue-gray" icon={<AlarmIcon size={28} />}>Label</Tile>
-      </div>
-
-      {/* Interactive Examples */}
-      <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 500, minWidth: '120px' }}>Interactive:</h4>
-        <Tile 
-          size="default" 
-          align="centre" 
-          colour="blue" 
-          icon={<AlarmIcon size={28} />}
-          onClick={() => alert('Blue tile clicked!')}
-        >
-          Clickable
-        </Tile>
-        <Tile 
-          size="default" 
-          align="centre" 
-          colour="yellow" 
-          icon={<AlarmIcon size={28} />}
-          disabled={true}
-          onClick={() => alert('This should not fire')}
-        >
-          Disabled
-        </Tile>
+      {/* Right alignment */}
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 600 }}>Right Alignment</h3>
+        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <Tile size="default" align="right" colour="default" children="Label" />
+            <Tile size="default" align="right" colour="blue" children="Label" />
+            <Tile size="default" align="right" colour="yellow" children="Label" />
+            <Tile size="default" align="right" colour="light-gray" children="Label" />
+            <Tile size="default" align="right" colour="info-blue" children="Label" />
+            <Tile size="default" align="right" colour="blue-gray" children="Label" />
+          </div>
+        </div>
       </div>
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Complete showcase of all tile variants, sizes, alignments, and colors as shown in the Figma design.',
+        story: 'Complete showcase of all tile variants from the design system.',
       },
     },
   },
