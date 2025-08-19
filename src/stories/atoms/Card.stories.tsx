@@ -40,7 +40,7 @@ const meta = {
     },
     showCloseIcon: {
       control: { type: 'boolean' },
-      description: 'Show close icon (for simple and text-only types)',
+      description: 'Show close icon (for simple, text-only, and semantic types)',
     },
     onCloseClick: {
       action: 'close clicked',
