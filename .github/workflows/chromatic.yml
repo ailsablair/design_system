@@ -33,15 +33,29 @@ jobs:
           echo "npm version: $(npm --version)"
           echo "Current directory: $(pwd)"
           echo "Package.json exists: $([ -f package.json ] && echo 'Yes' || echo 'No')"
+          echo "GitHub ref: ${{ github.ref }}"
+          echo "GitHub commit: ${{ github.sha }}"
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          echo "Installing dependencies..."
+          npm ci --no-audit --no-fund
+          echo "Dependencies installed successfully!"
+
+      - name: Validate TypeScript
+        run: |
+          echo "Running TypeScript check..."
+          npx tsc --noEmit --skipLibCheck
+          echo "TypeScript validation passed!"
 
       - name: Build Storybook (test)
         run: |
           echo "Testing Storybook build before Chromatic..."
           npm run build-storybook
-          echo "Storybook build successful!"
+          echo "✅ Storybook build successful!"
+          echo "📊 Build stats:"
+          du -sh storybook-static/
+          echo "📁 Total files: $(find storybook-static -type f | wc -l)"
 
       - name: Publish to Chromatic
         uses: chromaui/action@latest
@@ -52,3 +66,15 @@ jobs:
           autoAcceptChanges: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/mystic-garden' }}
           # Exit with code 0 when there are changes (don't fail the build)
           exitZeroOnChanges: true
+          # Upload only build artifacts, not source files
+          onlyChanged: false
+          # Skip snapshot for draft PRs
+          skip: ${{ github.event.pull_request.draft == true }}
+          
+      - name: Chromatic Summary
+        run: |
+          echo "🎨 Chromatic deployment completed!"
+          echo "✅ Visual regression tests finished"
+          if [[ "${{ github.ref }}" == "refs/heads/main" || "${{ github.ref }}" == "refs/heads/mystic-garden" ]]; then
+            echo "🏷️  Changes auto-accepted for main branch"
+          fi
