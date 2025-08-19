@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Tile } from './Tile';
 
 const meta = {
-  title: 'Echo Design System/Atoms/Tile/Figma Showcase',
+  title: 'Atoms/Tile/Figma Showcase',
   component: Tile,
   parameters: {
     layout: 'fullscreen',
