@@ -648,7 +648,7 @@
 /* Error button variant */
 .button.error {
   background: var(--status-red);
-  border: var(--spacing-stroke-0-5px) solid var(--status-red-light);
+  border: var(--spacing-stroke-0-5px) solid var(--status-red-100);
   color: var(--base-white);
 }
 
