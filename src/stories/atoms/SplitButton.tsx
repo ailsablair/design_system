@@ -26,7 +26,7 @@ export interface SplitButtonProps {
   /** Main button click handler */
   onClick?: () => void;
   /** Menu items for dropdown */
-  menuItems?: MenuItem[];
+  menuItems?: SplitButtonMenuItem[];
   /** Additional CSS classes */
   className?: string;
   /** HTML button type */
