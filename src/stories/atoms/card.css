@@ -15,12 +15,12 @@
 /* === SIZE VARIANTS === */
 
 .card.card-size-small {
-  padding: var(--spacing-sizing-8px);
+  padding: var(--spacing-sizing-24px);
   gap: var(--spacing-sizing-16px);
 }
 
 .card.card-size-default {
-  padding: var(--spacing-sizing-16px);
+  padding: var(--spacing-sizing-24px);
   gap: var(--spacing-sizing-16px);
   width: 334px;
 }
