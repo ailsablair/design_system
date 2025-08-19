@@ -160,52 +160,85 @@ export const FigmaImageCards: Story = {
 
 export const FigmaContainedImageCards: Story = {
   render: () => (
-    <div style={{ 
-      display: 'grid', 
-      gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-      gap: '32px', 
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '32px',
       padding: '32px',
-      maxWidth: '1400px',
+      maxWidth: '1200px',
       margin: '0 auto'
     }}>
-      {/* Small Contained Image Card */}
+      {/* Small Contained Image Card - With Shadow */}
       <Card
         type="contained-image"
         size="small"
         dropShadow={true}
-        showCloseIcon={false}
+        showCloseIcon={true}
         title="This is a heading"
         bodyText="This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card."
-        imageSrc="/api/placeholder/300/200"
+        onCloseClick={() => console.log('Small contained image card closed')}
       />
-      
-      {/* Default Contained Image Card */}
+
+      {/* Small Contained Image Card - No Shadow */}
+      <Card
+        type="contained-image"
+        size="small"
+        dropShadow={false}
+        showCloseIcon={true}
+        title="This is a heading"
+        bodyText="This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card."
+        onCloseClick={() => console.log('Small contained image card closed')}
+      />
+
+      {/* Default Contained Image Card - With Shadow */}
       <Card
         type="contained-image"
         size="default"
         dropShadow={true}
-        showCloseIcon={false}
+        showCloseIcon={true}
         title="This is a heading"
         bodyText="This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card."
-        imageSrc="/api/placeholder/400/200"
+        onCloseClick={() => console.log('Default contained image card closed')}
       />
-      
-      {/* Large Contained Image Card */}
+
+      {/* Default Contained Image Card - No Shadow */}
+      <Card
+        type="contained-image"
+        size="default"
+        dropShadow={false}
+        showCloseIcon={true}
+        title="This is a heading"
+        bodyText="This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card."
+        onCloseClick={() => console.log('Default contained image card closed')}
+      />
+
+      {/* Large Contained Image Card - With Shadow */}
       <Card
         type="contained-image"
         size="large"
         dropShadow={true}
-        showCloseIcon={false}
+        showCloseIcon={true}
         title="This is a heading"
         bodyText="This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card."
-        imageSrc="/api/placeholder/500/280"
+        onCloseClick={() => console.log('Large contained image card closed')}
+      />
+
+      {/* Large Contained Image Card - No Shadow */}
+      <Card
+        type="contained-image"
+        size="large"
+        dropShadow={false}
+        showCloseIcon={true}
+        title="This is a heading"
+        bodyText="This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card."
+        onCloseClick={() => console.log('Large contained image card closed')}
       />
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Contained image cards with bordered/contained images and centered layout - exactly matching the Figma designs.',
+        story: 'Contained image cards with bordered/contained images placed on the left side - exactly matching the Figma designs with proper layout and close icon functionality.',
       },
     },
   },
