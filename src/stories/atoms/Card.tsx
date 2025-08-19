@@ -5,7 +5,7 @@ export interface CardProps {
   /** Size variant */
   size?: 'small' | 'default' | 'large';
   /** Card type */
-  type?: 'simple' | 'icon' | 'text-only' | 'empty-state' | 'stat';
+  type?: 'simple' | 'icon' | 'text-only' | 'empty-state' | 'stat' | 'warning' | 'error' | 'info';
   /** Background color variant */
   bg?: 'default';
   /** Alignment */
@@ -47,6 +47,28 @@ export interface CardProps {
   /** Custom children (overrides default content) */
   children?: React.ReactNode;
 }
+
+// Semantic icons for warning, error, and info cards
+const WarningIcon = () => (
+  <svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M38 11.5L6.8575 60.5H69.1425L38 11.5ZM38 24.5L57.595 55.5H18.405L38 24.5ZM33.25 39.5V47H42.75V39.5H33.25ZM33.25 51.5V60H42.75V51.5H33.25Z" fill="var(--status-orange-500)"/>
+  </svg>
+);
+
+const ErrorIcon = () => (
+  <svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="38" cy="38" r="32" fill="var(--status-red-500)"/>
+    <path d="M48.5 27.5L27.5 48.5M27.5 27.5L48.5 48.5" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const InfoIcon = () => (
+  <svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="38" cy="38" r="32" fill="var(--primary-blue-blue)"/>
+    <path d="M38 25V30M38 35V51" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="38" cy="57" r="2" fill="white"/>
+  </svg>
+);
 
 // Icon components for different card types and sizes
 const AngleAcuteIcon = ({ size = 'default' }: { size?: 'small' | 'default' | 'large' }) => {
@@ -255,6 +277,93 @@ export const Card: React.FC<CardProps> = ({
                   <AlarmIcon size={size} />
                   <span>Label</span>
                   <ArrowDownCircleIcon size={size} />
+                </button>
+                <button className="card-btn card-btn-ghost">
+                  <AlarmIcon size={size} />
+                  <span>Label</span>
+                  <ArrowDownCircleIcon size={size} />
+                </button>
+              </div>
+            )}
+          </>
+        );
+
+      case 'warning':
+        return (
+          <>
+            <div className="card-semantic-icon">
+              <WarningIcon />
+            </div>
+            <div className="card-text">
+              <h3 className="card-semantic-title">{title}</h3>
+              <p className="card-body">{bodyText}</p>
+            </div>
+            {showButtonGroup && (
+              <div className="card-button-group">
+                <button className="card-btn card-btn-warning">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 2.625L2.1875 10.5H11.8125L7 2.625ZM7 5.25L9.625 9.625H4.375L7 5.25ZM6.125 7.875V8.75H7.875V7.875H6.125ZM6.125 9.625V10.5H7.875V9.625H6.125Z" fill="white"/>
+                  </svg>
+                  <span>Warning button</span>
+                </button>
+                <button className="card-btn card-btn-ghost">
+                  <AlarmIcon size={size} />
+                  <span>Label</span>
+                  <ArrowDownCircleIcon size={size} />
+                </button>
+              </div>
+            )}
+          </>
+        );
+
+      case 'error':
+        return (
+          <>
+            <div className="card-semantic-icon">
+              <ErrorIcon />
+            </div>
+            <div className="card-text">
+              <h3 className="card-semantic-title">{title}</h3>
+              <p className="card-body">{bodyText}</p>
+            </div>
+            {showButtonGroup && (
+              <div className="card-button-group">
+                <button className="card-btn card-btn-error">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="7" cy="7" r="6" fill="white"/>
+                    <path d="M9 5L5 9M5 5L9 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  <span>Error button</span>
+                </button>
+                <button className="card-btn card-btn-ghost">
+                  <AlarmIcon size={size} />
+                  <span>Label</span>
+                  <ArrowDownCircleIcon size={size} />
+                </button>
+              </div>
+            )}
+          </>
+        );
+
+      case 'info':
+        return (
+          <>
+            <div className="card-semantic-icon">
+              <InfoIcon />
+            </div>
+            <div className="card-text">
+              <h3 className="card-semantic-title">{title}</h3>
+              <p className="card-body">{bodyText}</p>
+            </div>
+            {showButtonGroup && (
+              <div className="card-button-group">
+                <button className="card-btn card-btn-info">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="7" cy="7" r="6" fill="white"/>
+                    <path d="M7 4.5V5.5M7 6.5V10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="7" cy="11.5" r="0.5" fill="currentColor"/>
+                  </svg>
+                  <span>Info button</span>
                 </button>
                 <button className="card-btn card-btn-ghost">
                   <AlarmIcon size={size} />
