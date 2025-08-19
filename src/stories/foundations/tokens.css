@@ -383,6 +383,15 @@
   --type-letter-spacing-roboto-flex-body: 0.05px;
   --type-letter-spacing-roboto-flex-body-lg: -0.15px;
 
+  /* Archivo Heading Letter Spacing */
+  --type-letter-spacing-archivo-heading-2: -1px;
+  --type-letter-spacing-archivo-heading-3: -0.5px;
+  --type-letter-spacing-archivo-heading-4: -0.25px;
+  --type-letter-spacing-archivo-heading-5: -0.15px;
+
+  /* Additional Roboto Flex Tokens */
+  --type-letter-spacing-roboto-flex-heading-5: 0.5px;
+
   /* === SHADOW TOKENS === */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
