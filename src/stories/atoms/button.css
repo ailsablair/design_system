@@ -864,7 +864,7 @@
 
 /* Force state classes for error buttons */
 .button.error.force-hover {
-  border: var(--spacing-stroke-2px) solid var(--status-red-light) !important;
+  border: var(--spacing-stroke-2px) solid var(--status-red-100) !important;
   box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300) !important;
 }
 
@@ -873,7 +873,7 @@
 }
 
 .button.error.force-clicked {
-  border: var(--spacing-stroke-2px) solid var(--status-red-light) !important;
+  border: var(--spacing-stroke-2px) solid var(--status-red-100) !important;
   box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300) !important;
 }
 
@@ -882,7 +882,7 @@
 }
 
 .button.error.force-focused {
-  border: var(--spacing-stroke-3px) solid var(--status-red-light) !important;
+  border: var(--spacing-stroke-3px) solid var(--status-red-100) !important;
 }
 
 /* Force state classes for warning buttons */
