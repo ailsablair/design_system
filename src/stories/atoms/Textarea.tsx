@@ -155,9 +155,22 @@ export const Textarea: React.FC<TextareaProps> = ({
         </div>
       </div>
 
-      {message && (
-        <div className={`textarea-message ${state} ${size}`}>
-          {message}
+      {(message || showCharacterCount) && (
+        <div className={`textarea-footer ${size}`}>
+          {message && (
+            <div
+              id={`${textareaId}-message`}
+              className={`textarea-message ${state} ${size}`}
+            >
+              {message}
+            </div>
+          )}
+
+          {showCharacterCount && (
+            <div className={`textarea-character-count ${size} ${isOverLimit ? 'over-limit' : ''}`}>
+              {characterCount}{maxLength ? ` / ${maxLength}` : ''}
+            </div>
+          )}
         </div>
       )}
     </div>
