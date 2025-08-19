@@ -1,0 +1,75 @@
+name: 'Build Test'
+
+# Event for the workflow to run on
+on:
+  # Runs on pull requests
+  pull_request:
+    branches: [ main, mystic-garden ]
+  # Allows manual testing from the Actions tab
+  workflow_dispatch:
+
+# List of jobs
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Verify environment
+        run: |
+          echo "Node.js version: $(node --version)"
+          echo "npm version: $(npm --version)"
+          echo "Current directory: $(pwd)"
+          echo "Package.json exists: $([ -f package.json ] && echo 'Yes' || echo 'No')"
+
+      - name: Install dependencies
+        run: |
+          echo "Installing dependencies..."
+          npm ci --no-audit --no-fund
+          echo "Dependencies installed successfully!"
+
+      - name: Run linting
+        run: |
+          echo "Running ESLint..."
+          npm run lint
+          echo "✅ Linting passed!"
+
+      - name: Validate TypeScript
+        run: |
+          echo "Running TypeScript check..."
+          npx tsc --noEmit --skipLibCheck
+          echo "✅ TypeScript validation passed!"
+
+      - name: Test Storybook build
+        run: |
+          echo "Testing Storybook build..."
+          npm run build-storybook
+          echo "✅ Storybook build successful!"
+          echo "📊 Build stats:"
+          du -sh storybook-static/
+          echo "📁 Total files: $(find storybook-static -type f | wc -l)"
+
+      - name: Test Vite build
+        run: |
+          echo "Testing Vite build..."
+          npm run build
+          echo "✅ Vite build successful!"
+          echo "📊 Build stats:"
+          du -sh dist/
+          echo "📁 Total files: $(find dist -type f | wc -l)"
+
+      - name: Build test summary
+        run: |
+          echo "🎉 All build tests passed!"
+          echo "✅ Dependencies installed"
+          echo "✅ Linting passed"
+          echo "✅ TypeScript validation passed"
+          echo "✅ Storybook build successful"
+          echo "✅ Vite build successful"
