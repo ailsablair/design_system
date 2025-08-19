@@ -79,6 +79,14 @@ const meta = {
       options: ['default', 'roboto-flex', 'archivo'],
       description: 'Font type for stat cards',
     },
+    imageSrc: {
+      control: { type: 'text' },
+      description: 'Image source URL for image card types',
+    },
+    imageAlt: {
+      control: { type: 'text' },
+      description: 'Image alt text',
+    },
     disabled: {
       control: { type: 'boolean' },
       description: 'Disabled state',
