@@ -1053,7 +1053,12 @@
 
 .button.ghost.force-focused {
   background: var(--base-white) !important;
-  border: var(--spacing-stroke-3px) solid var(--neutral-gray-gray-300) !important;
+  border: var(--spacing-stroke-3px) solid var(--neutral-gray-gray-400) !important;
+  color: var(--neutral-gray-gray-800) !important;
+}
+
+.button.ghost.force-focused .button-icon {
+  color: var(--neutral-gray-gray-800) !important;
 }
 
 /* Force state classes for error buttons */
