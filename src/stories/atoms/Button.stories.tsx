@@ -45,6 +45,10 @@ const meta: Meta<typeof Button> = {
       options: ['auto', 'full'],
       description: 'Width style',
     },
+    iconOnly: {
+      control: 'boolean',
+      description: 'Icon-only variant (removes text content)',
+    },
     children: {
       control: 'text',
       description: 'Button text content',
