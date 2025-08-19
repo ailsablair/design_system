@@ -1,0 +1,592 @@
+@import '../foundations/tokens.css';
+
+/* Split Button Container */
+.split-button-container {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-sizing-8px);
+}
+
+/* Split Button Base */
+.split-button {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--spacing-radius-4px);
+  font-family: var(--type-typeface-archivo);
+  font-style: normal;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  outline: none;
+  position: relative;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Split Button Main and Dropdown Layout */
+.split-button-main,
+.split-button-dropdown {
+  border: none;
+  background: none;
+  cursor: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  text-align: inherit;
+  outline: none;
+  transition: inherit;
+  box-sizing: border-box;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.split-button-main {
+  flex: 1;
+  border-radius: var(--spacing-radius-4px) 0 0 var(--spacing-radius-4px);
+}
+
+.split-button-dropdown {
+  border-radius: 0 var(--spacing-radius-4px) var(--spacing-radius-4px) 0;
+  border-left: var(--spacing-stroke-0-5px) solid rgba(255, 255, 255, 0.2);
+}
+
+/* Split Button Content Layout */
+.split-button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sizing-8px);
+  width: 100%;
+}
+
+.split-button-loading-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.split-button-text {
+  line-height: 1;
+  flex: 1;
+  text-align: center;
+}
+
+.split-button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Loading animation */
+.split-button-loading-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Size variants */
+.split-button.extra-small {
+  min-width: 50px;
+  min-height: 27px;
+}
+
+.split-button.extra-small .split-button-main {
+  padding: var(--spacing-sizing-2px) var(--spacing-sizing-4px);
+}
+
+.split-button.extra-small .split-button-dropdown {
+  padding: var(--spacing-sizing-2px) var(--spacing-sizing-2px);
+}
+
+.split-button.extra-small .split-button-content {
+  padding: var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-8px);
+}
+
+.split-button.extra-small .split-button-text {
+  font-size: var(--type-archivo-footnote);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-footnote);
+  letter-spacing: var(--type-letter-spacing-archivo-footnote);
+}
+
+.split-button.small {
+  min-width: 80px;
+  min-height: 30px;
+}
+
+.split-button.small .split-button-main {
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-12px);
+}
+
+.split-button.small .split-button-dropdown {
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-6px);
+}
+
+.split-button.small .split-button-content {
+  padding: var(--spacing-sizing-4px) 0 var(--spacing-sizing-4px) var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-12px);
+}
+
+.split-button.small .split-button-text {
+  font-size: var(--type-archivo-label-sm);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-label-sm);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
+}
+
+.split-button.default {
+  min-width: 80px;
+  min-height: 42px;
+}
+
+.split-button.default .split-button-main {
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px);
+}
+
+.split-button.default .split-button-dropdown {
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
+}
+
+.split-button.default .split-button-content {
+  padding: var(--spacing-sizing-8px) 0 var(--spacing-sizing-8px) var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-12px);
+}
+
+.split-button.default .split-button-text {
+  font-size: var(--type-archivo-label);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-label);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
+}
+
+.split-button.large {
+  min-width: 80px;
+  min-height: 52px;
+}
+
+.split-button.large .split-button-main {
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px);
+}
+
+.split-button.large .split-button-dropdown {
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
+}
+
+.split-button.large .split-button-content {
+  padding: var(--spacing-sizing-12px) 0 var(--spacing-sizing-12px) var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-12px);
+}
+
+.split-button.large .split-button-text {
+  font-size: var(--type-archivo-label-lg);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-label-lg);
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg);
+}
+
+/* Primary split button variant */
+.split-button.primary {
+  background: var(--primary-blue-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue);
+  color: var(--base-white);
+}
+
+.split-button.primary .split-button-icon {
+  color: var(--base-white);
+  opacity: 0.6;
+}
+
+.split-button.primary .split-button-dropdown {
+  border-left: var(--spacing-stroke-0-5px) solid rgba(255, 255, 255, 0.2);
+}
+
+/* Secondary split button variant */
+.split-button.secondary {
+  background: var(--primary-sky-blue-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
+  color: var(--base-black);
+}
+
+.split-button.secondary .split-button-icon {
+  color: var(--primary-blue-blue);
+  opacity: 0.6;
+}
+
+.split-button.secondary .split-button-dropdown {
+  border-left: var(--spacing-stroke-1px) solid rgba(47, 66, 189, 0.2);
+}
+
+/* Ghost split button variant */
+.split-button.ghost {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+  color: var(--base-black);
+}
+
+.split-button.ghost .split-button-icon {
+  color: var(--base-black);
+  opacity: 0.6;
+}
+
+.split-button.ghost .split-button-dropdown {
+  border-left: var(--spacing-stroke-0-5px) solid rgba(156, 163, 175, 0.5);
+}
+
+/* State variants for primary split buttons */
+.split-button.primary.hover,
+.split-button.primary:hover:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-400);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-teal-dark-teal);
+}
+
+.split-button.primary.hover .split-button-text,
+.split-button.primary:hover:not(.disabled):not(.loading) .split-button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.split-button.primary.clicked,
+.split-button.primary:active:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-200);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-teal-dark-teal);
+}
+
+.split-button.primary.clicked .split-button-text,
+.split-button.primary:active:not(.disabled):not(.loading) .split-button-text {
+  font-weight: var(--type-weight-light);
+}
+
+.split-button.primary.focused,
+.split-button.primary:focus-visible:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-3px) solid var(--primary-blue-blue-300);
+}
+
+.split-button.primary.loading {
+  background: var(--primary-blue-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.split-button.primary.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.split-button.primary.disabled .split-button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
+}
+
+/* State variants for secondary split buttons */
+.split-button.secondary.hover,
+.split-button.secondary:hover:not(.disabled):not(.loading) {
+  background: var(--primary-sky-blue-50);
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black);
+}
+
+.split-button.secondary.hover .split-button-text,
+.split-button.secondary:hover:not(.disabled):not(.loading) .split-button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.split-button.secondary.clicked,
+.split-button.secondary:active:not(.disabled):not(.loading) {
+  background: var(--primary-sky-blue-50);
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-300);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black);
+}
+
+.split-button.secondary.clicked .split-button-text,
+.split-button.secondary:active:not(.disabled):not(.loading) .split-button-text {
+  font-weight: var(--type-weight-light);
+}
+
+.split-button.secondary.focused,
+.split-button.secondary:focus-visible:not(.disabled):not(.loading) {
+  background: var(--primary-sky-blue-50);
+  border: var(--spacing-stroke-3px) solid var(--primary-sky-blue-300);
+}
+
+.split-button.secondary.loading {
+  background: var(--primary-sky-blue-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.split-button.secondary.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.split-button.secondary.disabled .split-button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
+}
+
+/* State variants for ghost split buttons */
+.split-button.ghost.hover,
+.split-button.ghost:hover:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-400);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200);
+}
+
+.split-button.ghost.hover .split-button-text,
+.split-button.ghost:hover:not(.disabled):not(.loading) .split-button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.split-button.ghost.clicked,
+.split-button.ghost:active:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-400);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200);
+}
+
+.split-button.ghost.clicked .split-button-text,
+.split-button.ghost:active:not(.disabled):not(.loading) .split-button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.split-button.ghost.focused,
+.split-button.ghost:focus-visible:not(.disabled):not(.loading) {
+  border: var(--spacing-stroke-3px) solid var(--neutral-gray-gray-300);
+  color: var(--neutral-gray-gray-700);
+}
+
+.split-button.ghost.focused .split-button-icon,
+.split-button.ghost:focus-visible:not(.disabled):not(.loading) .split-button-icon {
+  color: var(--neutral-gray-gray-700);
+}
+
+.split-button.ghost.loading {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.split-button.ghost.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.split-button.ghost.disabled .split-button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
+}
+
+/* Width variants */
+.split-button.full-width {
+  width: 100%;
+}
+
+/* Dropdown Menu */
+.split-button-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  min-width: 140px;
+  max-width: 200px;
+  width: 200px;
+  background: var(--base-white);
+  border-radius: var(--spacing-radius-6px);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-4px) 0 rgba(39, 39, 39, 0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: var(--spacing-sizing-8px);
+}
+
+/* Menu Items */
+.split-button-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-4px);
+  align-self: stretch;
+  background: var(--base-white);
+  color: var(--base-black);
+  font-family: var(--type-typeface-roboto-flex);
+  font-style: normal;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-left: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+  border-right: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+}
+
+.split-button-menu-item:hover:not(.disabled) {
+  background: var(--neutral-gray-gray-50);
+}
+
+.split-button-menu-item.focused {
+  background: var(--primary-blue-blue-50);
+  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue-200);
+  outline-offset: -2px;
+}
+
+.split-button-menu-item.disabled {
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.split-button-menu-item.first {
+  border-top: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+  border-radius: var(--spacing-radius-6px) var(--spacing-radius-6px) 0 0;
+}
+
+.split-button-menu-item.last {
+  border-bottom: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+  border-radius: 0 0 var(--spacing-radius-6px) var(--spacing-radius-6px);
+}
+
+/* Size-specific menu item styling */
+.split-button-menu.small .split-button-menu-item {
+  padding: var(--spacing-sizing-6px) var(--spacing-sizing-12px);
+  font-size: var(--type-roboto-flex-body-sm);
+  line-height: var(--type-line-height-body-sm);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
+}
+
+.split-button-menu.small .split-button-menu-item.first {
+  padding-top: var(--spacing-sizing-12px);
+}
+
+.split-button-menu.small .split-button-menu-item.last {
+  padding-bottom: var(--spacing-sizing-12px);
+}
+
+.split-button-menu.default .split-button-menu-item {
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-12px);
+  font-size: var(--type-roboto-flex-body);
+  line-height: var(--type-line-height-body);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body);
+}
+
+.split-button-menu.default .split-button-menu-item.first {
+  padding-top: var(--spacing-sizing-12px);
+}
+
+.split-button-menu.default .split-button-menu-item.last {
+  padding-bottom: var(--spacing-sizing-12px);
+}
+
+.split-button-menu.large .split-button-menu-item {
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-16px);
+  font-size: var(--type-roboto-flex-body-lg);
+  line-height: var(--type-line-height-body-lg);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg);
+}
+
+.split-button-menu.large .split-button-menu-item.first {
+  padding-top: var(--spacing-sizing-16px);
+}
+
+.split-button-menu.large .split-button-menu-item.last {
+  padding-bottom: var(--spacing-sizing-16px);
+}
+
+.split-button-menu.extra-small .split-button-menu-item {
+  padding: var(--spacing-sizing-6px) var(--spacing-sizing-12px);
+  font-size: var(--type-roboto-flex-body-sm);
+  line-height: var(--type-line-height-body-sm);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
+}
+
+.split-button-menu.extra-small .split-button-menu-item.first {
+  padding-top: var(--spacing-sizing-12px);
+}
+
+.split-button-menu.extra-small .split-button-menu-item.last {
+  padding-bottom: var(--spacing-sizing-12px);
+}
+
+/* Open state styling */
+.split-button-container.open .split-button {
+  z-index: 1001;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .split-button {
+    min-width: 60px;
+  }
+  
+  .split-button.extra-small {
+    min-width: 40px;
+  }
+
+  .split-button-menu {
+    min-width: 120px;
+    max-width: 180px;
+    width: 180px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .split-button.primary {
+    border-width: var(--spacing-stroke-2px);
+  }
+  
+  .split-button.secondary {
+    border-width: var(--spacing-stroke-2px);
+  }
+  
+  .split-button.ghost {
+    border-width: var(--spacing-stroke-2px);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .split-button {
+    transition: none;
+  }
+  
+  .split-button-loading-icon {
+    animation: none;
+  }
+  
+  .split-button-menu-item {
+    transition: none;
+  }
+}
+
+/* Focus management for keyboard navigation */
+.split-button:focus-visible {
+  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue-500);
+  outline-offset: var(--spacing-sizing-2px);
+}
+
+.split-button-main:focus-visible,
+.split-button-dropdown:focus-visible {
+  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue-500);
+  outline-offset: var(--spacing-sizing-2px);
+}
