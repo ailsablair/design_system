@@ -101,6 +101,8 @@ export const SimpleHorizontalSmall: Story = {
     size: 'small',
     align: 'horizontal',
     dropShadow: true,
+    showCloseIcon: true,
+    onCloseClick: () => console.log('Small horizontal card closed!'),
   },
 };
 
@@ -110,6 +112,8 @@ export const SimpleHorizontalDefault: Story = {
     size: 'default',
     align: 'horizontal',
     dropShadow: true,
+    showCloseIcon: true,
+    onCloseClick: () => console.log('Default horizontal card closed!'),
   },
 };
 
@@ -119,6 +123,8 @@ export const SimpleHorizontalLarge: Story = {
     size: 'large',
     align: 'horizontal',
     dropShadow: true,
+    showCloseIcon: true,
+    onCloseClick: () => console.log('Large horizontal card closed!'),
   },
 };
 
@@ -128,6 +134,8 @@ export const SimpleVerticalSmall: Story = {
     size: 'small',
     align: 'vertical',
     dropShadow: true,
+    showCloseIcon: true,
+    onCloseClick: () => console.log('Small vertical card closed!'),
   },
 };
 
@@ -137,6 +145,8 @@ export const SimpleVerticalDefault: Story = {
     size: 'default',
     align: 'vertical',
     dropShadow: true,
+    showCloseIcon: true,
+    onCloseClick: () => console.log('Default vertical card closed!'),
   },
 };
 
@@ -146,6 +156,8 @@ export const SimpleVerticalLarge: Story = {
     size: 'large',
     align: 'vertical',
     dropShadow: true,
+    showCloseIcon: true,
+    onCloseClick: () => console.log('Large vertical card closed!'),
   },
 };
 
@@ -156,6 +168,8 @@ export const SimpleNoShadow: Story = {
     size: 'default',
     align: 'horizontal',
     dropShadow: false,
+    showCloseIcon: true,
+    onCloseClick: () => console.log('No shadow card closed!'),
   },
 };
 
