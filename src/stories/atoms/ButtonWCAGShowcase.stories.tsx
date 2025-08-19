@@ -37,7 +37,7 @@ export const ContrastCompliantButtons: Story = {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
             <Button type="primary" size="small" disabled>Disabled</Button>
-            <span style={{ fontSize: '11px', color: '#666' }}>Contrast: 4.91:1 ✓</span>
+            <span style={{ fontSize: '11px', color: '#666' }}>Contrast: 3.89:1 ✓</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
             <Button type="primary" size="small" outline>Outline</Button>
@@ -58,7 +58,7 @@ export const ContrastCompliantButtons: Story = {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
             <Button type="secondary" size="small" disabled>Disabled</Button>
-            <span style={{ fontSize: '11px', color: '#666' }}>Contrast: 4.91:1 ✓</span>
+            <span style={{ fontSize: '11px', color: '#666' }}>Contrast: 3.89:1 ✓</span>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@ export const ContrastCompliantButtons: Story = {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
             <Button type="tertiary" size="small" disabled>Disabled</Button>
-            <span style={{ fontSize: '11px', color: '#666' }}>Contrast: 4.91:1 ✓</span>
+            <span style={{ fontSize: '11px', color: '#666' }}>Contrast: 3.89:1 ✓</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
             <Button type="tertiary" size="small" outline>Outline</Button>
@@ -96,7 +96,7 @@ export const ContrastCompliantButtons: Story = {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
             <Button type="ghost" size="small" disabled>Disabled</Button>
-            <span style={{ fontSize: '11px', color: '#666' }}>Contrast: 4.91:1 ✓</span>
+            <span style={{ fontSize: '11px', color: '#666' }}>Contrast: 3.89:1 ✓</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
             <Button type="ghost" size="small" state="focused" className="force-focused">Focused</Button>
