@@ -7,7 +7,7 @@ export interface ButtonProps {
   /** Size variant */
   size?: 'extra-small' | 'small' | 'default' | 'large';
   /** Button type/variant */
-  type?: 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'error' | 'warning';
+  type?: 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'error' | 'warning' | 'info' | 'success';
   /** Visual state (for controlled states) */
   state?: 'default' | 'hover' | 'clicked' | 'focused' | 'loading' | 'disabled';
   /** Outline variant */
@@ -73,6 +73,14 @@ const ChevronUpIcon: React.FC<{ size: number }> = ({ size }) => (
   <svg width={size} height={size} viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g opacity="0.6">
       <path d="M4.3225 9.48913L7 6.81746L9.6775 9.48913L10.5 8.66663L7 5.16663L3.5 8.66663L4.3225 9.48913Z" fill="currentColor"/>
+    </g>
+  </svg>
+);
+
+const InformationIcon: React.FC<{ size: number }> = ({ size }) => (
+  <svg width={size} height={size} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.6">
+      <path d="M7.58366 5.25002H6.41699V4.08335H7.58366M7.58366 9.91669H6.41699V6.41669H7.58366M7.00033 1.16669C6.23428 1.16669 5.47574 1.31757 4.76801 1.61072C4.06027 1.90388 3.41721 2.33356 2.87554 2.87523C1.78157 3.96919 1.16699 5.45292 1.16699 7.00002C1.16699 8.54712 1.78157 10.0308 2.87554 11.1248C3.41721 11.6665 4.06027 12.0962 4.76801 12.3893C5.47574 12.6825 6.23428 12.8334 7.00033 12.8334C8.54742 12.8334 10.0312 12.2188 11.1251 11.1248C12.2191 10.0308 12.8337 8.54712 12.8337 7.00002C12.8337 6.23398 12.6828 5.47543 12.3896 4.7677C12.0965 4.05997 11.6668 3.41691 11.1251 2.87523C10.5834 2.33356 9.94038 1.90388 9.23265 1.61072C8.52491 1.31757 7.76637 1.16669 7.00033 1.16669Z" fill="currentColor"/>
     </g>
   </svg>
 );
@@ -150,4 +158,4 @@ export const Button: React.FC<ButtonProps> = ({
 };
 
 // Export default icons for convenience
-export { AlarmIcon, ArrowDownIcon, LoadingIcon, AlertIcon, CloseCircleIcon, ChevronUpIcon };
+export { AlarmIcon, ArrowDownIcon, LoadingIcon, AlertIcon, CloseCircleIcon, ChevronUpIcon, InformationIcon };
