@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SplitButton, SplitButtonMenuItem } from './SplitButton';
+import { SplitButton } from './SplitButton';
+import type { SplitButtonMenuItem } from './SplitButton';
 import { AlarmIcon } from './Button';
 
 const meta: Meta<typeof SplitButton> = {
