@@ -926,15 +926,15 @@
 
 /* State variants for error buttons */
 .button.error.default {
-  background: #CE2031;
-  border: var(--spacing-stroke-0-5px) solid #FFF3F3;
+  background: var(--status-red);
+  border: var(--spacing-stroke-0-5px) solid var(--status-red-light-alt);
 }
 
 .button.error.hover,
 .button.error:hover:not(.disabled):not(.loading) {
-  background: #CE2031;
-  border: var(--spacing-stroke-2px) solid #FFF3F3;
-  box-shadow: 3px 3px 0 0 #D2D5DA;
+  background: var(--status-red);
+  border: var(--spacing-stroke-2px) solid var(--status-red-light-alt);
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-300);
 }
 
 .button.error.hover .button-text,
@@ -944,9 +944,9 @@
 
 .button.error.clicked,
 .button.error:active:not(.disabled):not(.loading) {
-  background: #CE2031;
-  border: var(--spacing-stroke-2px) solid #FFF3F3;
-  box-shadow: 3px 3px 0 0 #D2D5DA;
+  background: var(--status-red);
+  border: var(--spacing-stroke-2px) solid var(--status-red-light-alt);
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-300);
 }
 
 .button.error.clicked .button-text,
@@ -981,16 +981,16 @@
 
 /* State variants for warning buttons */
 .button.warning.default {
-  background: #F4A403;
-  border: var(--spacing-stroke-0-5px) solid #FEF4DA;
+  background: var(--status-orange-alt);
+  border: var(--spacing-stroke-0-5px) solid var(--status-orange-light);
   color: var(--base-white);
 }
 
 .button.warning.hover,
 .button.warning:hover:not(.disabled):not(.loading) {
-  background: #F4A403;
-  border: var(--spacing-stroke-2px) solid #FEF4DA;
-  box-shadow: 3px 3px 0 0 #D2D5DA;
+  background: var(--status-orange-alt);
+  border: var(--spacing-stroke-2px) solid var(--status-orange-light);
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-300);
 }
 
 .button.warning.hover .button-text,
@@ -1000,9 +1000,9 @@
 
 .button.warning.clicked,
 .button.warning:active:not(.disabled):not(.loading) {
-  background: #F4A403;
-  border: var(--spacing-stroke-2px) solid #FEF4DA;
-  box-shadow: 3px 3px 0 0 #D2D5DA;
+  background: var(--status-orange-alt);
+  border: var(--spacing-stroke-2px) solid var(--status-orange-light);
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-300);
 }
 
 .button.warning.clicked .button-text,
@@ -1194,15 +1194,15 @@
 
 /* State variants for info buttons */
 .button.info.default {
-  background: #366F97;
-  border: var(--spacing-stroke-0-5px) solid #F5FCFF;
+  background: var(--status-info-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--status-info-blue-light);
 }
 
 .button.info.hover,
 .button.info:hover:not(.disabled):not(.loading) {
-  background: #366F97;
-  border: var(--spacing-stroke-2px) solid #F5FCFF;
-  box-shadow: 3px 3px 0 0 #D2D5DA;
+  background: var(--status-info-blue);
+  border: var(--spacing-stroke-2px) solid var(--status-info-blue-light);
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-300);
 }
 
 .button.info.hover .button-text,
@@ -1212,9 +1212,9 @@
 
 .button.info.clicked,
 .button.info:active:not(.disabled):not(.loading) {
-  background: #366F97;
-  border: var(--spacing-stroke-2px) solid #C5CAED;
-  box-shadow: 3px 3px 0 0 #D2D5DA;
+  background: var(--status-info-blue);
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-200);
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-300);
 }
 
 .button.info.clicked .button-text,
@@ -1249,15 +1249,15 @@
 
 /* State variants for success buttons */
 .button.success.default {
-  background: #227F1A;
-  border: var(--spacing-stroke-0-5px) solid #F2FFF1;
+  background: var(--status-dark-green);
+  border: var(--spacing-stroke-0-5px) solid var(--status-green-light);
 }
 
 .button.success.hover,
 .button.success:hover:not(.disabled):not(.loading) {
-  background: #227F1A;
-  border: var(--spacing-stroke-2px) solid #F2FFF1;
-  box-shadow: 3px 3px 0 0 #70CC67;
+  background: var(--status-dark-green);
+  border: var(--spacing-stroke-2px) solid var(--status-green-light);
+  box-shadow: 3px 3px 0 0 var(--status-green);
   color: var(--base-white);
 }
 
@@ -1274,9 +1274,9 @@
 
 .button.success.clicked,
 .button.success:active:not(.disabled):not(.loading) {
-  background: #227F1A;
-  border: var(--spacing-stroke-2px) solid #F2FFF1;
-  box-shadow: 3px 3px 0 0 #70CC67;
+  background: var(--status-dark-green);
+  border: var(--spacing-stroke-2px) solid var(--status-green-light);
+  box-shadow: 3px 3px 0 0 var(--status-green);
   color: var(--base-white);
 }
 
