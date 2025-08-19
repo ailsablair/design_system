@@ -952,6 +952,46 @@ export const DesignSystemShowcase: Story = {
       </div>
 
       <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Icon-Only Primary Buttons - All Sizes</h3>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+          <Button size="extra-small" type="primary" iconOnly icon={<AlarmIcon size={14} />} />
+          <Button size="small" type="primary" iconOnly icon={<AlarmIcon size={14} />} />
+          <Button size="default" type="primary" iconOnly icon={<AlarmIcon size={18} />} />
+          <Button size="large" type="primary" iconOnly icon={<AlarmIcon size={20} />} />
+        </div>
+      </div>
+
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Icon-Only Secondary Buttons - All Sizes</h3>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+          <Button size="extra-small" type="secondary" iconOnly icon={<AlarmIcon size={14} />} />
+          <Button size="small" type="secondary" iconOnly icon={<AlarmIcon size={14} />} />
+          <Button size="default" type="secondary" iconOnly icon={<AlarmIcon size={18} />} />
+          <Button size="large" type="secondary" iconOnly icon={<AlarmIcon size={20} />} />
+        </div>
+      </div>
+
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Icon-Only Button States Comparison</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <span style={{ minWidth: '80px', fontSize: '14px', fontWeight: '500' }}>Primary:</span>
+            <Button size="default" type="primary" iconOnly icon={<AlarmIcon size={18} />} />
+            <Button size="default" type="primary" iconOnly className="force-hover" icon={<AlarmIcon size={18} />} />
+            <Button size="default" type="primary" iconOnly loading />
+            <Button size="default" type="primary" iconOnly disabled icon={<AlarmIcon size={18} />} />
+          </div>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <span style={{ minWidth: '80px', fontSize: '14px', fontWeight: '500' }}>Secondary:</span>
+            <Button size="default" type="secondary" iconOnly icon={<AlarmIcon size={18} />} />
+            <Button size="default" type="secondary" iconOnly className="force-hover" icon={<AlarmIcon size={18} />} />
+            <Button size="default" type="secondary" iconOnly loading />
+            <Button size="default" type="secondary" iconOnly disabled icon={<AlarmIcon size={18} />} />
+          </div>
+        </div>
+      </div>
+
+      <div>
         <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Interactive States</h3>
         <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
           <Button size="default" type="primary" leadingIcon={<AlarmIcon size={18} />}>
