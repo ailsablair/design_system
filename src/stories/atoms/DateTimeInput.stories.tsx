@@ -28,8 +28,16 @@ const meta: Meta<typeof DateTimeInput> = {
     },
     state: {
       control: { type: 'select' },
-      options: ['default', 'focus', 'typing', 'filled'],
-      description: 'Visual state of the input',
+      options: ['default', 'error', 'warning', 'success', 'focus', 'typing', 'filled'],
+      description: 'Validation and visual state of the input',
+    },
+    message: {
+      control: { type: 'text' },
+      description: 'Validation message text',
+    },
+    showClose: {
+      control: { type: 'boolean' },
+      description: 'Show close/clear button',
     },
     size: {
       control: { type: 'select' },
@@ -45,6 +53,10 @@ const meta: Meta<typeof DateTimeInput> = {
       control: { type: 'boolean' },
       description: 'Disabled state',
     },
+    onChange: { action: 'changed' },
+    onClose: { action: 'cleared' },
+    onFocus: { action: 'focused' },
+    onBlur: { action: 'blurred' },
   },
 };
 
