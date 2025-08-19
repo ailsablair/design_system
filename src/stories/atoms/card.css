@@ -1,0 +1,289 @@
+/* Card Component Styles */
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--spacing-radius-8px);
+  box-sizing: border-box;
+  transition: var(--transition-fast);
+  position: relative;
+  font-family: var(--type-typeface-archivo);
+}
+
+/* Clickable cards */
+.card.card-clickable {
+  cursor: pointer;
+}
+
+.card.card-clickable:hover:not(.card-disabled) {
+  transform: var(--transform-scale-up);
+}
+
+.card.card-clickable:active:not(.card-disabled) {
+  transform: var(--transform-scale-down);
+}
+
+.card.card-clickable:focus:not(.card-disabled) {
+  outline: 2px solid var(--primary-blue-blue-500);
+  outline-offset: 2px;
+}
+
+/* Disabled state */
+.card.card-disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
+
+/* === SIZE VARIANTS === */
+
+/* Small size */
+.card.card-size-small {
+  padding: var(--spacing-sizing-12px);
+  min-height: 80px;
+  min-width: 120px;
+}
+
+/* Default size */
+.card.card-size-default {
+  padding: var(--spacing-sizing-16px);
+  min-height: 100px;
+  min-width: 160px;
+}
+
+/* Large size */
+.card.card-size-large {
+  padding: var(--spacing-sizing-24px);
+  min-height: 120px;
+  min-width: 200px;
+}
+
+/* === SHADOW VARIANTS === */
+
+/* With drop shadow */
+.card.card-shadow {
+  box-shadow: var(--shadow-md);
+}
+
+/* Without drop shadow */
+.card.card-no-shadow {
+  box-shadow: none;
+}
+
+/* === BACKGROUND COLOR VARIANTS === */
+
+/* Default background */
+.card.card-bg-default.card-mode-light {
+  background-color: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
+  color: var(--base-black);
+}
+
+.card.card-bg-default.card-mode-dark {
+  background-color: var(--neutral-gray-gray-800);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-600);
+  color: var(--base-white);
+}
+
+/* Sky blue background */
+.card.card-bg-sky-blue.card-mode-light {
+  background-color: var(--primary-sky-blue-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-200);
+  color: var(--primary-sky-blue-900);
+}
+
+.card.card-bg-sky-blue.card-mode-dark {
+  background-color: var(--primary-sky-blue-800);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-600);
+  color: var(--primary-sky-blue-50);
+}
+
+/* Error background */
+.card.card-bg-error.card-mode-light {
+  background-color: var(--status-red-50);
+  border: var(--spacing-stroke-1px) solid var(--status-red-200);
+  color: var(--status-red-900);
+}
+
+.card.card-bg-error.card-mode-dark {
+  background-color: var(--status-red-800);
+  border: var(--spacing-stroke-1px) solid var(--status-red-600);
+  color: var(--status-red-100);
+}
+
+/* Success background */
+.card.card-bg-success.card-mode-light {
+  background-color: var(--status-green-50);
+  border: var(--spacing-stroke-1px) solid var(--status-green-200);
+  color: var(--status-green-900);
+}
+
+.card.card-bg-success.card-mode-dark {
+  background-color: var(--status-green-800);
+  border: var(--spacing-stroke-1px) solid var(--status-green-600);
+  color: var(--status-green-100);
+}
+
+/* Warning background */
+.card.card-bg-warning.card-mode-light {
+  background-color: var(--primary-yellow-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-yellow-200);
+  color: var(--primary-yellow-900);
+}
+
+.card.card-bg-warning.card-mode-dark {
+  background-color: var(--primary-yellow-800);
+  border: var(--spacing-stroke-1px) solid var(--primary-yellow-600);
+  color: var(--primary-yellow-100);
+}
+
+/* Info blue background */
+.card.card-bg-info-blue.card-mode-light {
+  background-color: var(--status-info-blue-light);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-200);
+  color: var(--status-info-blue);
+}
+
+.card.card-bg-info-blue.card-mode-dark {
+  background-color: var(--status-info-blue);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-600);
+  color: var(--base-white);
+}
+
+/* Note purple background */
+.card.card-bg-note-purple.card-mode-light {
+  background-color: var(--primary-purple-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-purple-200);
+  color: var(--primary-purple-900);
+}
+
+.card.card-bg-note-purple.card-mode-dark {
+  background-color: var(--primary-purple-800);
+  border: var(--spacing-stroke-1px) solid var(--primary-purple-600);
+  color: var(--primary-purple-100);
+}
+
+/* Light gray background */
+.card.card-bg-light-gray.card-mode-light {
+  background-color: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-900);
+}
+
+.card.card-bg-light-gray.card-mode-dark {
+  background-color: var(--neutral-gray-gray-700);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-500);
+  color: var(--neutral-gray-gray-100);
+}
+
+/* Black background */
+.card.card-bg-black.card-mode-light {
+  background-color: var(--neutral-gray-gray-900);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-800);
+  color: var(--base-white);
+}
+
+.card.card-bg-black.card-mode-dark {
+  background-color: var(--base-black);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-900);
+  color: var(--base-white);
+}
+
+/* Blue background */
+.card.card-bg-blue.card-mode-light {
+  background-color: var(--primary-blue-blue-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-blue-blue-200);
+  color: var(--primary-blue-blue-900);
+}
+
+.card.card-bg-blue.card-mode-dark {
+  background-color: var(--primary-blue-blue);
+  border: var(--spacing-stroke-1px) solid var(--primary-blue-blue-600);
+  color: var(--base-white);
+}
+
+/* Dark gray background */
+.card.card-bg-dark-gray.card-mode-light {
+  background-color: var(--neutral-gray-gray-100);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
+  color: var(--neutral-gray-gray-800);
+}
+
+.card.card-bg-dark-gray.card-mode-dark {
+  background-color: var(--neutral-gray-gray-600);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-500);
+  color: var(--neutral-gray-gray-100);
+}
+
+/* === RESPONSIVE DESIGN === */
+
+/* Ensure cards work well on smaller screens */
+@media (max-width: 768px) {
+  .card.card-size-small {
+    min-width: 100px;
+    padding: var(--spacing-sizing-8px);
+  }
+  
+  .card.card-size-default {
+    min-width: 120px;
+    padding: var(--spacing-sizing-12px);
+  }
+  
+  .card.card-size-large {
+    min-width: 150px;
+    padding: var(--spacing-sizing-16px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card.card-size-small {
+    min-width: 80px;
+  }
+  
+  .card.card-size-default {
+    min-width: 100px;
+  }
+  
+  .card.card-size-large {
+    min-width: 120px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card {
+    border-width: var(--spacing-stroke-2px);
+  }
+  
+  .card.card-shadow {
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* Focus styles for keyboard navigation */
+.card:focus-visible {
+  outline: 2px solid var(--primary-blue-blue-500);
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+  
+  .card.card-clickable:hover:not(.card-disabled) {
+    transform: none;
+  }
+  
+  .card.card-clickable:active:not(.card-disabled) {
+    transform: none;
+  }
+}
+
+/* Dark mode preference support */
+@media (prefers-color-scheme: dark) {
+  .card.card-bg-default {
+    background-color: var(--neutral-gray-gray-800);
+    border-color: var(--neutral-gray-gray-600);
+    color: var(--base-white);
+  }
+}
