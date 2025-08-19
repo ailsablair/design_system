@@ -124,7 +124,7 @@
 }
 
 .tile.yellow {
-  background: var(--primary-yellow-yellow);
+  background: var(--primary-yellow-400);
   color: var(--base-black);
 }
 
