@@ -838,6 +838,122 @@ export const Interactive: Story = {
 };
 
 // Complete design system showcase
+// Error Button Figma Showcase
+export const ErrorButtonsFigmaShowcase: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', padding: '24px' }}>
+      <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Error Buttons - Figma Design</h3>
+        <p style={{ margin: '0 0 24px 0', fontSize: '14px', color: '#666' }}>
+          Error buttons with distinctive drop shadow effect, matching exact Figma specifications.
+          Features #CE2031 background, #FFF3F3 border, and 3px solid drop shadow.
+        </p>
+      </div>
+
+      <div>
+        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Error Button States - Hover vs Clicked</h4>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', alignItems: 'center' }}>
+          {/* Header row */}
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Size</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Hover (Bold)</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Clicked (Medium)</div>
+
+          {/* Small row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Small</div>
+          <Button size="small" type="error" state="hover" leadingIcon={<CloseCircleIcon size={14} />}>
+            Error button
+          </Button>
+          <Button size="small" type="error" state="clicked" leadingIcon={<CloseCircleIcon size={14} />}>
+            Error button
+          </Button>
+
+          {/* Default row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Default</div>
+          <Button size="default" type="error" state="hover" leadingIcon={<CloseCircleIcon size={18} />}>
+            Error button
+          </Button>
+          <Button size="default" type="error" state="clicked" leadingIcon={<CloseCircleIcon size={18} />}>
+            Error button
+          </Button>
+
+          {/* Large row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Large</div>
+          <Button size="large" type="error" state="hover" leadingIcon={<CloseCircleIcon size={20} />}>
+            Error button
+          </Button>
+          <Button size="large" type="error" state="clicked" leadingIcon={<CloseCircleIcon size={20} />}>
+            Error button
+          </Button>
+        </div>
+      </div>
+
+      <div>
+        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>All Error Button Sizes</h4>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+          <Button size="small" type="error" leadingIcon={<CloseCircleIcon size={14} />}>
+            Small Error
+          </Button>
+          <Button size="default" type="error" leadingIcon={<CloseCircleIcon size={18} />}>
+            Default Error
+          </Button>
+          <Button size="large" type="error" leadingIcon={<CloseCircleIcon size={20} />}>
+            Large Error
+          </Button>
+        </div>
+        <p style={{ fontSize: '12px', color: '#666', margin: '8px 0 0 0' }}>
+          All sizes feature 3px solid drop shadow in #CE2031 and #FFF3F3 border
+        </p>
+      </div>
+
+      <div>
+        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Interactive Demo</h4>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+          <Button
+            size="default"
+            type="error"
+            leadingIcon={<CloseCircleIcon size={18} />}
+            onClick={() => alert('Error button clicked!')}
+          >
+            Click Me
+          </Button>
+          <Button size="default" type="error" loading>
+            Loading...
+          </Button>
+          <Button size="default" type="error" disabled leadingIcon={<CloseCircleIcon size={18} />}>
+            Disabled
+          </Button>
+        </div>
+      </div>
+
+      <div>
+        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Design Specifications</h4>
+        <div style={{
+          background: '#f8f9fa',
+          padding: '16px',
+          borderRadius: '8px',
+          fontSize: '14px',
+          fontFamily: 'monospace'
+        }}>
+          <div style={{ marginBottom: '8px' }}><strong>Background:</strong> #CE2031 (--status-red)</div>
+          <div style={{ marginBottom: '8px' }}><strong>Border:</strong> 2px solid #FFF3F3 (--status-red-light-alt)</div>
+          <div style={{ marginBottom: '8px' }}><strong>Box Shadow:</strong> 3px 3px 0 0 #CE2031</div>
+          <div style={{ marginBottom: '8px' }}><strong>Text Color:</strong> #FFFFFF (white)</div>
+          <div style={{ marginBottom: '8px' }}><strong>Icon:</strong> Close circle, white fill, 0.6 opacity</div>
+          <div style={{ marginBottom: '8px' }}><strong>Font Weight Hover:</strong> 700 (bold)</div>
+          <div><strong>Font Weight Clicked:</strong> 500 (medium)</div>
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Comprehensive showcase of error buttons matching the exact Figma design specifications with distinctive drop shadow effects and proper font weight variations.',
+      },
+    },
+  },
+};
+
 export const DesignSystemShowcase: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', padding: '24px' }}>
