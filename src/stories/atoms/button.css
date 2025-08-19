@@ -939,7 +939,7 @@
 
 .button.error.hover .button-text,
 .button.error:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.error.clicked,
@@ -1002,7 +1002,7 @@
 
 .button.warning.hover .button-text,
 .button.warning:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.warning.clicked,
@@ -1021,7 +1021,7 @@
 
 .button.warning.clicked .button-text,
 .button.warning:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.warning.focused,
@@ -1238,7 +1238,7 @@
 
 .button.info.hover .button-text,
 .button.info:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.info.clicked,
@@ -1257,7 +1257,7 @@
 
 .button.info.clicked .button-text,
 .button.info:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.info.focused,
@@ -1301,7 +1301,7 @@
 
 .button.success.hover .button-text,
 .button.success:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.success.hover .button-icon,
@@ -1320,7 +1320,7 @@
 
 .button.success.clicked .button-text,
 .button.success:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.success.clicked .button-icon,
