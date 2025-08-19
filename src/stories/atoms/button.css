@@ -622,7 +622,7 @@
 .button.secondary.force-hover {
   background: var(--primary-sky-blue-50) !important;
   border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue) !important;
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black) !important;
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15) !important;
 }
 
 .button.secondary.force-hover .button-text {
@@ -632,7 +632,7 @@
 .button.secondary.force-clicked {
   background: var(--primary-sky-blue-50) !important;
   border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-300) !important;
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black) !important;
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15) !important;
 }
 
 .button.secondary.force-clicked .button-text {
@@ -704,7 +704,7 @@
 .button.tertiary.force-hover {
   background: var(--primary-blue-dark-blue) !important;
   border: var(--spacing-stroke-1px) solid var(--base-white) !important;
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black) !important;
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15) !important;
 }
 
 .button.tertiary.force-hover .button-text {
@@ -714,7 +714,7 @@
 .button.tertiary.force-clicked {
   background: var(--primary-blue-dark-blue) !important;
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-300) !important;
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black) !important;
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15) !important;
 }
 
 .button.tertiary.force-clicked .button-text {
