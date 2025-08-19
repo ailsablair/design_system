@@ -743,6 +743,89 @@ export const SuccessCard: Story = {
   },
 };
 
+// === IMAGE CARD EXAMPLES === //
+
+export const ImageCardSmall: Story = {
+  args: {
+    type: 'image',
+    size: 'small',
+    dropShadow: true,
+    showCloseIcon: true,
+    title: 'This is a heading',
+    bodyText: 'This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card.',
+    imageSrc: '/api/placeholder/300/200',
+    imageAlt: 'Card image',
+    onCloseClick: () => console.log('Image card closed!'),
+  },
+};
+
+export const ImageCardDefault: Story = {
+  args: {
+    type: 'image',
+    size: 'default',
+    dropShadow: true,
+    showCloseIcon: true,
+    title: 'This is a heading',
+    bodyText: 'This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card.',
+    imageSrc: '/api/placeholder/400/200',
+    imageAlt: 'Card image',
+    onCloseClick: () => console.log('Image card closed!'),
+  },
+};
+
+export const ImageCardLarge: Story = {
+  args: {
+    type: 'image',
+    size: 'large',
+    dropShadow: true,
+    showCloseIcon: true,
+    title: 'This is a heading',
+    bodyText: 'This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card.',
+    imageSrc: '/api/placeholder/500/283',
+    imageAlt: 'Card image',
+    onCloseClick: () => console.log('Image card closed!'),
+  },
+};
+
+export const ContainedImageCardSmall: Story = {
+  args: {
+    type: 'contained-image',
+    size: 'small',
+    dropShadow: true,
+    showCloseIcon: false,
+    title: 'This is a heading',
+    bodyText: 'This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card.',
+    imageSrc: '/api/placeholder/300/200',
+    imageAlt: 'Card image',
+  },
+};
+
+export const ContainedImageCardDefault: Story = {
+  args: {
+    type: 'contained-image',
+    size: 'default',
+    dropShadow: true,
+    showCloseIcon: false,
+    title: 'This is a heading',
+    bodyText: 'This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card.',
+    imageSrc: '/api/placeholder/400/200',
+    imageAlt: 'Card image',
+  },
+};
+
+export const ContainedImageCardLarge: Story = {
+  args: {
+    type: 'contained-image',
+    size: 'large',
+    dropShadow: true,
+    showCloseIcon: false,
+    title: 'This is a heading',
+    bodyText: 'This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card.',
+    imageSrc: '/api/placeholder/500/280',
+    imageAlt: 'Card image',
+  },
+};
+
 export const AllSemanticCards: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', padding: '20px' }}>
