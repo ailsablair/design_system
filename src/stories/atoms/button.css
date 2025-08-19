@@ -871,7 +871,7 @@
 .button.ghost.hover,
 .button.ghost:hover:not(.disabled):not(.loading) {
   border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-400);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
 }
 
 .button.ghost.hover .button-text,
@@ -882,7 +882,7 @@
 .button.ghost.clicked,
 .button.ghost:active:not(.disabled):not(.loading) {
   border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-400);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
 }
 
 .button.ghost.clicked .button-text,
@@ -930,7 +930,7 @@
 .button.error.hover,
 .button.error:hover:not(.disabled):not(.loading) {
   border: var(--spacing-stroke-2px) solid var(--status-red-100);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
 }
 
 .button.error.hover .button-text,
@@ -941,7 +941,7 @@
 .button.error.clicked,
 .button.error:active:not(.disabled):not(.loading) {
   border: var(--spacing-stroke-2px) solid var(--status-red-100);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
 }
 
 .button.error.clicked .button-text,
