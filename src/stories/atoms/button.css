@@ -281,7 +281,7 @@
 
 .button.tertiary .button-icon {
   color: var(--base-white);
-  opacity: 0.4;
+  opacity: 0.7;
 }
 
 /* Tertiary outline button variant */
@@ -471,7 +471,7 @@
 .button.tertiary:hover:not(.disabled):not(.loading) {
   background: var(--primary-blue-dark-blue);
   border: var(--spacing-stroke-1px) solid var(--base-white);
-  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black);
 }
 
 .button.tertiary.hover .button-text,
@@ -483,12 +483,12 @@
 .button.tertiary:active:not(.disabled):not(.loading) {
   background: var(--primary-blue-dark-blue);
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-300);
-  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black);
 }
 
 .button.tertiary.clicked .button-text,
 .button.tertiary:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.tertiary.focused,
@@ -499,7 +499,7 @@
 
 .button.tertiary.loading {
   background: var(--primary-blue-dark-blue);
-  border: var(--spacing-stroke-0-5px) solid var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--base-white);
   cursor: wait;
   pointer-events: none;
 }
@@ -704,7 +704,7 @@
 .button.tertiary.force-hover {
   background: var(--primary-blue-dark-blue) !important;
   border: var(--spacing-stroke-1px) solid var(--base-white) !important;
-  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black) !important;
 }
 
 .button.tertiary.force-hover .button-text {
@@ -714,11 +714,11 @@
 .button.tertiary.force-clicked {
   background: var(--primary-blue-dark-blue) !important;
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-300) !important;
-  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15) !important;
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--base-black) !important;
 }
 
 .button.tertiary.force-clicked .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.tertiary.force-focused {
