@@ -548,6 +548,262 @@
   transform: translateY(-1px);
 }
 
+/* === IMAGE CARD TYPES === */
+
+.card.card-type-image,
+.card.card-type-contained-image {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--spacing-sizing-24px);
+  position: relative;
+}
+
+.card.card-type-image {
+  padding-bottom: var(--spacing-sizing-20px);
+}
+
+.card.card-size-small.card-type-image {
+  width: 300px;
+  height: 414px;
+  min-width: 300px;
+  max-width: 500px;
+  min-height: 100px;
+  max-height: 500px;
+}
+
+.card.card-size-default.card-type-image {
+  width: 400px;
+  height: 454px;
+  min-width: 350px;
+  max-width: 700px;
+  min-height: 140px;
+  max-height: 700px;
+  gap: var(--spacing-sizing-32px);
+  padding-bottom: var(--spacing-sizing-28px);
+}
+
+.card.card-size-large.card-type-image {
+  width: 500px;
+  height: 578px;
+  min-width: 500px;
+  max-width: 800px;
+  min-height: 180px;
+  max-height: 800px;
+  gap: var(--spacing-sizing-36px);
+  padding-bottom: var(--spacing-sizing-36px);
+}
+
+.card-image-container {
+  display: flex;
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-10px);
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1 0 0;
+  align-self: stretch;
+  position: relative;
+}
+
+.card.card-size-default .card-image-container {
+  height: 200px;
+  padding: var(--spacing-sizing-10px);
+}
+
+.card-image-wrapper {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--spacing-radius-6px) var(--spacing-radius-6px) 0 0;
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+}
+
+.card.card-size-default .card-image {
+  padding: var(--spacing-sizing-44px) var(--spacing-sizing-200px);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card.card-size-large .card-image {
+  height: 282.609px;
+  min-height: 282.609px;
+  padding: var(--spacing-sizing-80px) var(--spacing-sizing-100px);
+  aspect-ratio: 23/13;
+}
+
+/* === CONTAINED IMAGE CARD STYLES === */
+
+.card.card-type-contained-image {
+  padding: var(--spacing-sizing-12px) var(--spacing-sizing-20px) var(--spacing-sizing-20px) var(--spacing-sizing-20px);
+  align-items: center;
+}
+
+.card.card-size-small.card-type-contained-image {
+  width: 300px;
+  min-width: 300px;
+  max-width: 500px;
+  min-height: 100px;
+  max-height: 500px;
+  height: 426px;
+}
+
+.card.card-size-default.card-type-contained-image {
+  width: 400px;
+  height: 454px;
+  min-width: 350px;
+  max-width: 700px;
+  min-height: 140px;
+  max-height: 700px;
+  padding: var(--spacing-sizing-16px) var(--spacing-sizing-24px) var(--spacing-sizing-20px) var(--spacing-sizing-24px);
+}
+
+.card.card-size-large.card-type-contained-image {
+  width: 500px;
+  min-width: 500px;
+  max-width: 800px;
+  min-height: 180px;
+  max-height: 800px;
+  padding: var(--spacing-sizing-24px) var(--spacing-sizing-36px) var(--spacing-sizing-36px) var(--spacing-sizing-36px);
+  height: 598px;
+  gap: var(--spacing-sizing-36px);
+}
+
+.card-contained-image-wrapper {
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: var(--spacing-radius-6px);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+  position: relative;
+}
+
+.card.card-size-large .card-contained-image-wrapper {
+  height: 280px;
+}
+
+.card-contained-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--spacing-radius-6px);
+  padding: var(--spacing-sizing-40px) var(--spacing-sizing-80px);
+}
+
+/* === IMAGE CARD TEXT STYLES === */
+
+.card.card-type-image .card-text,
+.card.card-type-contained-image .card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-sizing-12px);
+  align-self: stretch;
+}
+
+.card.card-type-image .card-text {
+  padding: 0 var(--spacing-sizing-16px);
+}
+
+.card.card-size-default.card-type-image .card-text {
+  padding: 0 var(--spacing-sizing-24px);
+}
+
+.card.card-size-large.card-type-image .card-text {
+  padding: 0 var(--spacing-sizing-32px);
+  gap: var(--spacing-sizing-16px);
+}
+
+.card.card-type-image .card-title,
+.card.card-type-contained-image .card-title {
+  color: var(--primary-blue-blue);
+  font-family: var(--type-typeface-archivo);
+  font-weight: var(--type-weight-medium);
+  line-height: 1;
+  letter-spacing: -0.25px;
+  margin: 0;
+  padding-right: 0;
+}
+
+.card.card-size-small.card-type-image .card-title,
+.card.card-size-small.card-type-contained-image .card-title {
+  font-size: var(--type-archivo-heading-4);
+}
+
+.card.card-size-default.card-type-image .card-title,
+.card.card-size-default.card-type-contained-image .card-title {
+  font-size: var(--type-archivo-heading-3);
+  letter-spacing: -0.5px;
+}
+
+.card.card-size-large.card-type-image .card-title,
+.card.card-size-large.card-type-contained-image .card-title {
+  font-size: var(--type-archivo-heading-2);
+  line-height: 34px;
+  letter-spacing: -1px;
+}
+
+.card.card-type-image .card-body,
+.card.card-type-contained-image .card-body {
+  align-self: stretch;
+  color: var(--base-black);
+  font-family: var(--type-typeface-roboto-flex);
+  font-weight: var(--type-weight-default);
+  margin: 0;
+}
+
+.card.card-size-small.card-type-image .card-body,
+.card.card-size-small.card-type-contained-image .card-body {
+  font-size: var(--type-roboto-flex-body-sm);
+  line-height: 16px;
+  letter-spacing: -0.15px;
+}
+
+.card.card-size-default.card-type-image .card-body,
+.card.card-size-default.card-type-contained-image .card-body {
+  font-size: var(--type-roboto-flex-body);
+  line-height: 20px;
+  letter-spacing: 0.05px;
+}
+
+.card.card-size-large.card-type-image .card-body,
+.card.card-size-large.card-type-contained-image .card-body {
+  font-size: var(--type-roboto-flex-body-lg);
+  line-height: 22px;
+  letter-spacing: -0.15px;
+}
+
+/* === IMAGE CARD BUTTON GROUPS === */
+
+.card.card-type-image .card-button-group,
+.card.card-type-contained-image .card-button-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--spacing-sizing-6px);
+  align-self: stretch;
+}
+
+.card.card-type-image .card-button-group {
+  padding-right: var(--spacing-sizing-16px);
+}
+
+.card.card-size-default.card-type-image .card-button-group {
+  padding-right: var(--spacing-sizing-24px);
+}
+
+.card.card-size-large.card-type-image .card-button-group {
+  padding-right: var(--spacing-sizing-32px);
+}
+
 /* === BUTTON GROUP POSITIONING FOR SEMANTIC CARDS === */
 
 .card.card-type-warning .card-button-group,
