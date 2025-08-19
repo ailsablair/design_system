@@ -167,10 +167,6 @@
   .menu {
     border-width: var(--spacing-stroke-2px);
   }
-  
-  .menu .menu-item:not(:last-child)::after {
-    height: var(--spacing-stroke-1px);
-  }
 }
 
 /* Reduced motion support */
