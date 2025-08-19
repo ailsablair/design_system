@@ -1,3 +1,5 @@
+@import '../../foundations/tokens.css';
+
 /* Divider Component Styles */
 
 .divider {
@@ -150,6 +152,190 @@
   --divider-thickness: 8px;
 }
 
+/* === DIVIDER WITH TEXT LABEL === */
+
+.divider-with-text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.divider-line {
+  flex: 1;
+  background-color: var(--neutral-gray-gray-300);
+  position: relative;
+}
+
+/* Text alignment variants */
+.divider-with-text-left {
+  justify-content: flex-start;
+}
+
+.divider-with-text-center {
+  justify-content: center;
+}
+
+.divider-with-text-right {
+  justify-content: flex-end;
+}
+
+/* Divider line styles for text dividers */
+.divider-line.divider-line-solid {
+  background-color: var(--neutral-gray-gray-300);
+  border: none;
+}
+
+.divider-line.divider-line-dashed {
+  background-color: transparent;
+  border-style: dashed;
+  border-color: var(--neutral-gray-gray-300);
+  border-top-width: var(--divider-thickness, 0.5px);
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.divider-line.divider-line-dotted {
+  background-color: transparent;
+  border-style: dotted;
+  border-color: var(--neutral-gray-gray-300);
+  border-top-width: var(--divider-thickness, 0.5px);
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* Thickness for text divider lines */
+.divider-line.divider-thickness-0_5px {
+  --divider-thickness: 0.5px;
+  height: 0.5px;
+}
+
+.divider-line.divider-thickness-1px {
+  --divider-thickness: 1px;
+  height: 1px;
+}
+
+.divider-line.divider-thickness-2px {
+  --divider-thickness: 2px;
+  height: 2px;
+}
+
+.divider-line.divider-thickness-3px {
+  --divider-thickness: 3px;
+  height: 3px;
+}
+
+.divider-line.divider-thickness-4px {
+  --divider-thickness: 4px;
+  height: 4px;
+}
+
+.divider-line.divider-thickness-8px {
+  --divider-thickness: 8px;
+  height: 8px;
+}
+
+/* Label styling */
+.divider-label {
+  background: var(--base-white);
+  padding: 0 var(--spacing-sizing-16px);
+  color: var(--base-black);
+  font-family: var(--type-typeface-archivo);
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+/* Label text styles */
+.divider-label-label-sm {
+  font-size: var(--type-archivo-label-sm);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-label-sm);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
+}
+
+.divider-label-title {
+  font-size: var(--type-archivo-label);
+  font-weight: var(--type-weight-medium);
+  line-height: var(--type-line-height-label);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
+}
+
+/* Text alignment specific positioning */
+.divider-with-text-left .divider-label {
+  order: -1;
+  margin-right: auto;
+}
+
+.divider-with-text-left .divider-line {
+  margin-left: var(--spacing-sizing-16px);
+}
+
+.divider-with-text-center .divider-label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.divider-with-text-right .divider-label {
+  order: 1;
+  margin-left: auto;
+}
+
+.divider-with-text-right .divider-line {
+  margin-right: var(--spacing-sizing-16px);
+}
+
+/* Center alignment creates two line segments */
+.divider-with-text-center .divider-line {
+  position: relative;
+}
+
+.divider-with-text-center .divider-line::before,
+.divider-with-text-center .divider-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: inherit;
+  border: inherit;
+}
+
+.divider-with-text-center .divider-line::before {
+  left: 0;
+  right: calc(50% + 64px); /* Half label width + padding */
+}
+
+.divider-with-text-center .divider-line::after {
+  right: 0;
+  left: calc(50% + 64px); /* Half label width + padding */
+}
+
+.divider-with-text-center .divider-line.divider-line-solid::before,
+.divider-with-text-center .divider-line.divider-line-solid::after {
+  background-color: var(--neutral-gray-gray-300);
+}
+
+.divider-with-text-center .divider-line.divider-line-dashed::before,
+.divider-with-text-center .divider-line.divider-line-dashed::after {
+  background-color: transparent;
+  border-top: var(--divider-thickness, 0.5px) dashed var(--neutral-gray-gray-300);
+}
+
+.divider-with-text-center .divider-line.divider-line-dotted::before,
+.divider-with-text-center .divider-line.divider-line-dotted::after {
+  background-color: transparent;
+  border-top: var(--divider-thickness, 0.5px) dotted var(--neutral-gray-gray-300);
+}
+
+/* Hide the main line for center alignment as we use pseudo elements */
+.divider-with-text-center .divider-line {
+  background-color: transparent !important;
+  border: none !important;
+}
+
 /* === RESPONSIVE BEHAVIOR === */
 
 @media (max-width: 768px) {
@@ -160,11 +346,36 @@
   .divider.divider-alignment-vertical {
     max-height: 200px;
   }
+
+  .divider-label {
+    font-size: var(--type-archivo-label-sm);
+    padding: 0 var(--spacing-sizing-12px);
+  }
+
+  .divider-with-text-center .divider-line::before {
+    right: calc(50% + 48px);
+  }
+
+  .divider-with-text-center .divider-line::after {
+    left: calc(50% + 48px);
+  }
 }
 
 @media (max-width: 480px) {
   .divider.divider-alignment-vertical {
     max-height: 150px;
+  }
+
+  .divider-label {
+    padding: 0 var(--spacing-sizing-8px);
+  }
+
+  .divider-with-text-center .divider-line::before {
+    right: calc(50% + 32px);
+  }
+
+  .divider-with-text-center .divider-line::after {
+    left: calc(50% + 32px);
   }
 }
 
@@ -180,6 +391,10 @@
 
 .divider[aria-orientation="horizontal"] {
   /* Horizontal divider specific accessibility styling if needed */
+}
+
+.divider-with-text[role="separator"] {
+  /* Text dividers accessibility */
 }
 
 /* === UTILITY CLASSES === */
