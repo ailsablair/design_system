@@ -659,8 +659,8 @@
 
 /* Warning button variant */
 .button.warning {
-  background: var(--status-orange);
-  border: var(--spacing-stroke-0-5px) solid var(--status-orange-light);
+  background: var(--status-orange-alt);
+  border: var(--spacing-stroke-0-5px) solid var(--status-orange-100);
   color: var(--base-white);
 }
 
