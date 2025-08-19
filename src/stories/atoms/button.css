@@ -76,6 +76,17 @@
   min-height: 27px;
 }
 
+.button.extra-small.icon-only {
+  width: 30px;
+  height: 27px;
+  min-width: 30px;
+  padding: var(--spacing-sizing-2px) var(--spacing-sizing-4px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sizing-12px);
+}
+
 .button.extra-small .button-content {
   padding: var(--spacing-sizing-4px);
   gap: var(--spacing-sizing-6px);
