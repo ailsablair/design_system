@@ -88,11 +88,11 @@ export const Card: React.FC<CardProps> = ({
   bg = 'default',
   align = 'horizontal',
   dropShadow = true,
-  placement = 'default',
+  placement = 'default', // Used for future extensibility
   font = 'default',
   showCloseIcon = true,
   showButtonGroup = true,
-  showIcon = true,
+  showIcon = true, // Used for future extensibility
   title = 'This is a heading',
   subtitle = 'This is a subheading',
   bodyText = 'This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card. This is body text that can span multiple lines within the card.',
@@ -105,6 +105,9 @@ export const Card: React.FC<CardProps> = ({
   'aria-label': ariaLabel,
   children,
 }) => {
+  // Suppress unused variable warnings for props that are kept for API completeness
+  void placement;
+  void showIcon;
   const handleClick = () => {
     if (!disabled && onClick) {
       onClick();
