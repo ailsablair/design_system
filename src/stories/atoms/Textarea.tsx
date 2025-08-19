@@ -92,12 +92,15 @@ export const Textarea: React.FC<TextareaProps> = ({
   const isFocused = state === 'focus' || state === 'typing';
   const isTyping = state === 'typing';
   const isFilled = state === 'filled' || (value !== undefined && value !== '');
+  const characterCount = value?.length || 0;
+  const isOverLimit = maxLength ? characterCount > maxLength : false;
 
   return (
     <div className={`textarea-wrapper ${size} ${className}`}>
       {label && (
-        <label htmlFor={textareaId} className={`textarea-label ${size}`}>
+        <label htmlFor={textareaId} className={`textarea-label ${size} ${required ? 'required' : ''}`}>
           {label}
+          {required && <span className="textarea-label-required">*</span>}
         </label>
       )}
 
