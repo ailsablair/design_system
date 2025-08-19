@@ -886,6 +886,23 @@
   .card.card-type-success {
     padding: var(--spacing-sizing-12px);
   }
+
+  .card.card-type-image {
+    padding-bottom: var(--spacing-sizing-16px);
+  }
+
+  .card.card-type-contained-image {
+    padding: var(--spacing-sizing-12px) var(--spacing-sizing-16px) var(--spacing-sizing-16px) var(--spacing-sizing-16px);
+  }
+
+  .card.card-type-image .card-text,
+  .card.card-type-contained-image .card-text {
+    padding: 0 var(--spacing-sizing-12px);
+  }
+
+  .card.card-type-image .card-button-group {
+    padding-right: var(--spacing-sizing-12px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
