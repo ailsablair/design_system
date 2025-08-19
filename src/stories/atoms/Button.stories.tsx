@@ -937,6 +937,21 @@ export const DesignSystemShowcase: Story = {
       </div>
 
       <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Tertiary Outline Buttons - All Sizes</h3>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+          <Button size="small" type="tertiary" outline leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
+            Small
+          </Button>
+          <Button size="default" type="tertiary" outline leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
+            Default
+          </Button>
+          <Button size="large" type="tertiary" outline leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>
+            Large
+          </Button>
+        </div>
+      </div>
+
+      <div>
         <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Interactive States</h3>
         <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
           <Button size="default" type="primary" leadingIcon={<AlarmIcon size={18} />}>
