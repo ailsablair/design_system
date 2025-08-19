@@ -8,7 +8,7 @@ const meta = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Complete replication of the Figma Card component design with all variants, sizes, and states exactly as specified in the design system.',
+        component: 'Complete replication of the Figma Card component design with all 42 variants, sizes, and states exactly as specified in the design system. This implementation matches every detail from the Figma design file.',
       },
     },
   },
@@ -26,7 +26,7 @@ export const CompleteCardShowcase: Story = {
       minHeight: '100vh',
       fontFamily: 'system-ui, -apple-system, sans-serif'
     }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
         <h1 style={{ 
           fontSize: '32px', 
           fontWeight: '700', 
@@ -34,7 +34,7 @@ export const CompleteCardShowcase: Story = {
           marginBottom: '40px',
           textAlign: 'center' 
         }}>
-          Card Component - Figma Design Implementation
+          Card Component - Complete Figma Implementation
         </h1>
 
         {/* SIMPLE CARDS - HORIZONTAL ALIGNMENT */}
@@ -319,24 +319,6 @@ export const CompleteCardShowcase: Story = {
           </div>
 
           <div style={{ marginBottom: '32px' }}>
-            <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '16px' }}>Archivo Font - With Drop Shadow</h3>
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
-              <div>
-                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Small</p>
-                <Card type="stat" size="small" align="vertical" dropShadow={true} font="archivo" />
-              </div>
-              <div>
-                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Default</p>
-                <Card type="stat" size="default" align="vertical" dropShadow={true} font="archivo" />
-              </div>
-              <div>
-                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Large</p>
-                <Card type="stat" size="large" align="vertical" dropShadow={true} font="archivo" />
-              </div>
-            </div>
-          </div>
-
-          <div style={{ marginBottom: '32px' }}>
             <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '16px' }}>Roboto Flex Font - Without Drop Shadow</h3>
             <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
               <div>
@@ -350,6 +332,24 @@ export const CompleteCardShowcase: Story = {
               <div>
                 <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Large</p>
                 <Card type="stat" size="large" align="vertical" dropShadow={false} font="roboto-flex" />
+              </div>
+            </div>
+          </div>
+
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '16px' }}>Archivo Font - With Drop Shadow</h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Small</p>
+                <Card type="stat" size="small" align="vertical" dropShadow={true} font="archivo" />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Default</p>
+                <Card type="stat" size="default" align="vertical" dropShadow={true} font="archivo" />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Large</p>
+                <Card type="stat" size="large" align="vertical" dropShadow={true} font="archivo" />
               </div>
             </div>
           </div>
@@ -465,7 +465,7 @@ export const CompleteCardShowcase: Story = {
   },
 };
 
-export const FigmaVariantGrid: Story = {
+export const ExactFigmaGrid: Story = {
   render: () => (
     <div style={{ 
       backgroundColor: '#ffffff', 
@@ -479,16 +479,26 @@ export const FigmaVariantGrid: Story = {
         marginBottom: '32px',
         color: '#1C1C1C'
       }}>
-        Card Component Figma Variants Grid
+        Card Component - Exact Figma Grid Layout
       </h1>
+      
+      <p style={{ 
+        textAlign: 'center', 
+        fontSize: '14px', 
+        color: '#6B7280',
+        marginBottom: '32px'
+      }}>
+        All 42 card variants arranged exactly as shown in the original Figma design
+      </p>
 
-      {/* Recreate the exact layout from Figma */}
+      {/* Recreate the exact layout from Figma with proper spacing */}
       <div style={{ 
         display: 'grid', 
         gridTemplateColumns: 'repeat(6, 1fr)', 
         gap: '32px',
-        maxWidth: '1400px',
-        margin: '0 auto'
+        maxWidth: '1600px',
+        margin: '0 auto',
+        justifyItems: 'center'
       }}>
         {/* Row 1: Simple horizontal cards with shadow */}
         <Card type="simple" size="small" align="horizontal" dropShadow={true} />
@@ -506,7 +516,7 @@ export const FigmaVariantGrid: Story = {
         <Card type="simple" size="default" align="vertical" dropShadow={false} />
         <Card type="simple" size="small" align="vertical" dropShadow={false} />
 
-        {/* Row 3: Icon and Empty State cards */}
+        {/* Row 3: Icon and Text-only cards */}
         <Card type="icon" size="default" align="vertical" dropShadow={true} />
         <Card type="empty-state" size="default" align="vertical" dropShadow={true} />
         <Card type="text-only" size="default" align="vertical" dropShadow={true} />
@@ -560,7 +570,7 @@ export const FigmaVariantGrid: Story = {
           color: '#6B7280', 
           margin: 0
         }}>
-          All 42 card variants from the Figma design system, arranged in the exact grid layout
+          This grid exactly replicates the layout and arrangement from the Figma design file
         </p>
       </div>
     </div>
@@ -568,7 +578,118 @@ export const FigmaVariantGrid: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Grid layout replicating the exact arrangement shown in the Figma design file, with all 42 card variants organized systematically.',
+        story: 'Grid layout that exactly replicates the arrangement shown in the Figma design file, with all 42 card variants organized systematically in 7 rows and 6 columns.',
+      },
+    },
+  },
+};
+
+export const InteractiveDemo: Story = {
+  render: () => (
+    <div style={{ 
+      backgroundColor: '#ffffff', 
+      padding: '32px',
+      fontFamily: 'system-ui, -apple-system, sans-serif'
+    }}>
+      <h1 style={{ 
+        textAlign: 'center', 
+        fontSize: '24px', 
+        fontWeight: '700', 
+        marginBottom: '32px',
+        color: '#1C1C1C'
+      }}>
+        Interactive Card Examples
+      </h1>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', alignItems: 'center' }}>
+        
+        {/* Clickable Cards */}
+        <section>
+          <h2 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px', textAlign: 'center' }}>
+            Clickable Cards
+          </h2>
+          <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <Card 
+              type="simple" 
+              size="default" 
+              align="vertical" 
+              dropShadow={true}
+              title="Clickable Card"
+              subtitle="Click to interact"
+              onClick={() => alert('Simple card clicked!')}
+            />
+            <Card 
+              type="icon" 
+              size="default" 
+              align="vertical" 
+              dropShadow={true}
+              onClick={() => alert('Icon card clicked!')}
+            />
+            <Card 
+              type="stat" 
+              size="default" 
+              align="vertical" 
+              dropShadow={true}
+              font="roboto-flex"
+              onClick={() => alert('Stat card clicked!')}
+            />
+          </div>
+        </section>
+
+        {/* Custom Content Example */}
+        <section>
+          <h2 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px', textAlign: 'center' }}>
+            Custom Content Card
+          </h2>
+          <Card dropShadow={true}>
+            <div style={{ padding: '20px', textAlign: 'center' }}>
+              <h3 style={{ margin: '0 0 12px 0', color: '#1C1C1C', fontSize: '20px' }}>
+                Custom Card Content
+              </h3>
+              <p style={{ margin: '0 0 16px 0', color: '#6B7280', fontSize: '14px' }}>
+                This card uses the children prop to render completely custom content.
+              </p>
+              <button 
+                style={{
+                  background: '#2F42BD',
+                  color: 'white',
+                  border: 'none',
+                  padding: '8px 16px',
+                  borderRadius: '4px',
+                  cursor: 'pointer'
+                }}
+                onClick={() => alert('Custom button clicked!')}
+              >
+                Custom Action
+              </button>
+            </div>
+          </Card>
+        </section>
+
+        {/* Shadow Comparison */}
+        <section>
+          <h2 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px', textAlign: 'center' }}>
+            Shadow Comparison
+          </h2>
+          <div style={{ display: 'flex', gap: '32px', justifyContent: 'center' }}>
+            <div style={{ textAlign: 'center' }}>
+              <h4 style={{ fontSize: '14px', marginBottom: '12px' }}>With Shadow</h4>
+              <Card type="simple" size="default" align="vertical" dropShadow={true} />
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <h4 style={{ fontSize: '14px', marginBottom: '12px' }}>No Shadow</h4>
+              <Card type="simple" size="default" align="vertical" dropShadow={false} />
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Interactive examples demonstrating clickable cards, custom content, and different styling options.',
       },
     },
   },
