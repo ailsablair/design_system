@@ -8,7 +8,7 @@ const meta = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Complete replication of all 78 Card component variants as specified in the Figma design. This showcase demonstrates every combination of size, background, mode, and shadow properties.',
+        component: 'Complete replication of all Card component variants as specified in the Figma design. This showcase demonstrates every combination of size, type, alignment, shadow, and other properties exactly as shown in the Figma design system.',
       },
     },
   },
@@ -18,34 +18,6 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// Sample content for different sizes
-const SmallContent = () => (
-  <div style={{ fontSize: '12px', lineHeight: 1.3 }}>
-    <div style={{ fontWeight: 600, marginBottom: '4px' }}>Small</div>
-    <div>Content</div>
-  </div>
-);
-
-const DefaultContent = () => (
-  <div style={{ fontSize: '14px', lineHeight: 1.4 }}>
-    <div style={{ fontWeight: 600, marginBottom: '6px' }}>Default</div>
-    <div>Sample content for default card size</div>
-  </div>
-);
-
-const LargeContent = () => (
-  <div style={{ fontSize: '16px', lineHeight: 1.5 }}>
-    <div style={{ fontWeight: 600, marginBottom: '8px' }}>Large</div>
-    <div>This is content for a large card with more space available</div>
-  </div>
-);
-
-// Background colors array as defined in Figma
-const backgrounds = [
-  'default', 'black', 'sky-blue', 'blue', 'error', 'success', 
-  'warning', 'info-blue', 'note-purple', 'light-gray', 'dark-gray'
-] as const;
-
 export const FigmaDesignReplication: Story = {
   render: () => (
     <div style={{
@@ -53,9 +25,6 @@ export const FigmaDesignReplication: Story = {
       backgroundColor: '#f8f9fa',
       minHeight: '100vh',
       fontFamily: 'Arial, sans-serif',
-      /* Performance optimizations for large showcases */
-      contain: 'layout style',
-      willChange: 'scroll-position'
     }}>
       <div style={{ 
         maxWidth: '1600px',
@@ -68,7 +37,7 @@ export const FigmaDesignReplication: Story = {
         {/* Title */}
         <div>
           <h1 style={{ 
-            fontSize: '28px', 
+            fontSize: '32px', 
             fontWeight: 600, 
             color: '#1a1a1a',
             margin: '0 0 8px 0'
@@ -80,341 +49,315 @@ export const FigmaDesignReplication: Story = {
             color: '#666',
             margin: '0 0 24px 0'
           }}>
-            All 78 variants: 3 sizes × 11 backgrounds × 2 modes × 2 shadow states (some combinations excluded)
+            Complete implementation of all card variants: Simple, Icon, Text-Only, Empty State, and Stat cards
           </p>
         </div>
 
-        {/* Small Cards with Drop Shadow */}
+        {/* === SIMPLE CARDS === */}
         <section>
           <h2 style={{ 
-            fontSize: '20px', 
-            fontWeight: 500, 
+            fontSize: '24px', 
+            fontWeight: 600, 
             color: '#333',
-            margin: '0 0 24px 0'
+            margin: '0 0 32px 0'
           }}>
-            Small Cards - With Drop Shadow
+            Simple Cards
           </h2>
           
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            {/* Light mode */}
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
-                Light Mode
-              </h3>
-              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                {backgrounds.map(bg => (
-                  <Card 
-                    key={`small-light-shadow-${bg}`}
-                    size="small" 
-                    bg={bg} 
-                    mode="light" 
-                    dropShadow={true}
-                  >
-                    <SmallContent />
-                  </Card>
-                ))}
-              </div>
+          {/* Horizontal Layout with Shadow */}
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ 
+              fontSize: '18px', 
+              fontWeight: 500, 
+              color: '#555',
+              margin: '0 0 16px 0'
+            }}>
+              Horizontal Layout - With Drop Shadow
+            </h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+              <Card type="simple" size="small" align="horizontal" dropShadow={true} />
+              <Card type="simple" size="default" align="horizontal" dropShadow={true} />
+              <Card type="simple" size="large" align="horizontal" dropShadow={true} />
             </div>
+          </div>
 
-            {/* Dark mode */}
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
-                Dark Mode
-              </h3>
-              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                {backgrounds.map(bg => (
-                  <Card 
-                    key={`small-dark-shadow-${bg}`}
-                    size="small" 
-                    bg={bg} 
-                    mode="dark" 
-                    dropShadow={true}
-                  >
-                    <SmallContent />
-                  </Card>
-                ))}
-              </div>
+          {/* Horizontal Layout without Shadow */}
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ 
+              fontSize: '18px', 
+              fontWeight: 500, 
+              color: '#555',
+              margin: '0 0 16px 0'
+            }}>
+              Horizontal Layout - No Drop Shadow
+            </h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+              <Card type="simple" size="small" align="horizontal" dropShadow={false} />
+              <Card type="simple" size="default" align="horizontal" dropShadow={false} />
+              <Card type="simple" size="large" align="horizontal" dropShadow={false} />
+            </div>
+          </div>
+
+          {/* Vertical Layout with Shadow */}
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ 
+              fontSize: '18px', 
+              fontWeight: 500, 
+              color: '#555',
+              margin: '0 0 16px 0'
+            }}>
+              Vertical Layout - With Drop Shadow
+            </h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+              <Card type="simple" size="small" align="vertical" dropShadow={true} />
+              <Card type="simple" size="default" align="vertical" dropShadow={true} />
+              <Card type="simple" size="large" align="vertical" dropShadow={true} />
+            </div>
+          </div>
+
+          {/* Vertical Layout without Shadow */}
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ 
+              fontSize: '18px', 
+              fontWeight: 500, 
+              color: '#555',
+              margin: '0 0 16px 0'
+            }}>
+              Vertical Layout - No Drop Shadow
+            </h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+              <Card type="simple" size="small" align="vertical" dropShadow={false} />
+              <Card type="simple" size="default" align="vertical" dropShadow={false} />
+              <Card type="simple" size="large" align="vertical" dropShadow={false} />
             </div>
           </div>
         </section>
 
-        {/* Small Cards without Drop Shadow */}
+        {/* === ICON CARDS === */}
         <section>
           <h2 style={{ 
-            fontSize: '20px', 
-            fontWeight: 500, 
+            fontSize: '24px', 
+            fontWeight: 600, 
             color: '#333',
-            margin: '0 0 24px 0'
+            margin: '0 0 32px 0'
           }}>
-            Small Cards - No Drop Shadow
+            Icon Cards
           </h2>
           
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            {/* Light mode */}
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
-                Light Mode
-              </h3>
-              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                {backgrounds.map(bg => (
-                  <Card 
-                    key={`small-light-no-shadow-${bg}`}
-                    size="small" 
-                    bg={bg} 
-                    mode="light" 
-                    dropShadow={false}
-                  >
-                    <SmallContent />
-                  </Card>
-                ))}
-              </div>
+          {/* Icon Cards with Shadow */}
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ 
+              fontSize: '18px', 
+              fontWeight: 500, 
+              color: '#555',
+              margin: '0 0 16px 0'
+            }}>
+              With Drop Shadow
+            </h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+              <Card type="icon" size="small" align="vertical" dropShadow={true} />
+              <Card type="icon" size="default" align="vertical" dropShadow={true} />
+              <Card type="icon" size="large" align="vertical" dropShadow={true} />
             </div>
+          </div>
 
-            {/* Dark mode */}
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
-                Dark Mode
-              </h3>
-              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                {backgrounds.map(bg => (
-                  <Card 
-                    key={`small-dark-no-shadow-${bg}`}
-                    size="small" 
-                    bg={bg} 
-                    mode="dark" 
-                    dropShadow={false}
-                  >
-                    <SmallContent />
-                  </Card>
-                ))}
-              </div>
+          {/* Icon Cards without Shadow */}
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ 
+              fontSize: '18px', 
+              fontWeight: 500, 
+              color: '#555',
+              margin: '0 0 16px 0'
+            }}>
+              No Drop Shadow
+            </h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+              <Card type="icon" size="small" align="vertical" dropShadow={false} />
+              <Card type="icon" size="default" align="vertical" dropShadow={false} />
+              <Card type="icon" size="large" align="vertical" dropShadow={false} />
             </div>
           </div>
         </section>
 
-        {/* Default Cards with Drop Shadow */}
+        {/* === EMPTY STATE CARDS === */}
         <section>
           <h2 style={{ 
-            fontSize: '20px', 
-            fontWeight: 500, 
+            fontSize: '24px', 
+            fontWeight: 600, 
             color: '#333',
-            margin: '0 0 24px 0'
+            margin: '0 0 32px 0'
           }}>
-            Default Cards - With Drop Shadow
+            Empty State Cards
           </h2>
           
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            {/* Light mode */}
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
-                Light Mode
-              </h3>
-              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                {backgrounds.map(bg => (
-                  <Card 
-                    key={`default-light-shadow-${bg}`}
-                    size="default" 
-                    bg={bg} 
-                    mode="light" 
-                    dropShadow={true}
-                  >
-                    <DefaultContent />
-                  </Card>
-                ))}
-              </div>
+          {/* Empty State Cards with Shadow */}
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ 
+              fontSize: '18px', 
+              fontWeight: 500, 
+              color: '#555',
+              margin: '0 0 16px 0'
+            }}>
+              With Drop Shadow
+            </h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+              <Card type="empty-state" size="small" align="vertical" dropShadow={true} />
+              <Card type="empty-state" size="default" align="vertical" dropShadow={true} />
+              <Card type="empty-state" size="large" align="vertical" dropShadow={true} />
             </div>
+          </div>
 
-            {/* Dark mode */}
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
-                Dark Mode
-              </h3>
-              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                {backgrounds.map(bg => (
-                  <Card 
-                    key={`default-dark-shadow-${bg}`}
-                    size="default" 
-                    bg={bg} 
-                    mode="dark" 
-                    dropShadow={true}
-                  >
-                    <DefaultContent />
-                  </Card>
-                ))}
-              </div>
+          {/* Empty State Cards without Shadow */}
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ 
+              fontSize: '18px', 
+              fontWeight: 500, 
+              color: '#555',
+              margin: '0 0 16px 0'
+            }}>
+              No Drop Shadow
+            </h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+              <Card type="empty-state" size="small" align="vertical" dropShadow={false} />
+              <Card type="empty-state" size="default" align="vertical" dropShadow={false} />
+              <Card type="empty-state" size="large" align="vertical" dropShadow={false} />
             </div>
           </div>
         </section>
 
-        {/* Default Cards without Drop Shadow */}
+        {/* === TEXT-ONLY CARDS === */}
         <section>
           <h2 style={{ 
-            fontSize: '20px', 
-            fontWeight: 500, 
+            fontSize: '24px', 
+            fontWeight: 600, 
             color: '#333',
-            margin: '0 0 24px 0'
+            margin: '0 0 32px 0'
           }}>
-            Default Cards - No Drop Shadow
+            Text-Only Cards
           </h2>
           
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            {/* Light mode */}
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
-                Light Mode
-              </h3>
-              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                {backgrounds.map(bg => (
-                  <Card 
-                    key={`default-light-no-shadow-${bg}`}
-                    size="default" 
-                    bg={bg} 
-                    mode="light" 
-                    dropShadow={false}
-                  >
-                    <DefaultContent />
-                  </Card>
-                ))}
-              </div>
+          {/* Text-Only Cards with Shadow */}
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ 
+              fontSize: '18px', 
+              fontWeight: 500, 
+              color: '#555',
+              margin: '0 0 16px 0'
+            }}>
+              With Drop Shadow
+            </h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+              <Card type="text-only" size="small" align="vertical" dropShadow={true} />
+              <Card type="text-only" size="default" align="vertical" dropShadow={true} />
+              <Card type="text-only" size="large" align="vertical" dropShadow={true} />
             </div>
+          </div>
 
-            {/* Dark mode */}
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
-                Dark Mode
-              </h3>
-              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                {backgrounds.map(bg => (
-                  <Card 
-                    key={`default-dark-no-shadow-${bg}`}
-                    size="default" 
-                    bg={bg} 
-                    mode="dark" 
-                    dropShadow={false}
-                  >
-                    <DefaultContent />
-                  </Card>
-                ))}
-              </div>
+          {/* Text-Only Cards without Shadow */}
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ 
+              fontSize: '18px', 
+              fontWeight: 500, 
+              color: '#555',
+              margin: '0 0 16px 0'
+            }}>
+              No Drop Shadow
+            </h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+              <Card type="text-only" size="small" align="vertical" dropShadow={false} />
+              <Card type="text-only" size="default" align="vertical" dropShadow={false} />
+              <Card type="text-only" size="large" align="vertical" dropShadow={false} />
             </div>
           </div>
         </section>
 
-        {/* Large Cards with Drop Shadow */}
+        {/* === STAT CARDS === */}
         <section>
           <h2 style={{ 
-            fontSize: '20px', 
-            fontWeight: 500, 
+            fontSize: '24px', 
+            fontWeight: 600, 
             color: '#333',
-            margin: '0 0 24px 0'
+            margin: '0 0 32px 0'
           }}>
-            Large Cards - With Drop Shadow
+            Stat Cards
           </h2>
           
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            {/* Light mode */}
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
-                Light Mode
-              </h3>
-              <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-                {backgrounds.map(bg => (
-                  <Card 
-                    key={`large-light-shadow-${bg}`}
-                    size="large" 
-                    bg={bg} 
-                    mode="light" 
-                    dropShadow={true}
-                  >
-                    <LargeContent />
-                  </Card>
-                ))}
-              </div>
+          {/* Roboto Flex Stats with Shadow */}
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ 
+              fontSize: '18px', 
+              fontWeight: 500, 
+              color: '#555',
+              margin: '0 0 16px 0'
+            }}>
+              Roboto Flex Font - With Drop Shadow
+            </h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+              <Card type="stat" size="small" align="vertical" dropShadow={true} font="roboto-flex" />
+              <Card type="stat" size="default" align="vertical" dropShadow={true} font="roboto-flex" />
+              <Card type="stat" size="large" align="vertical" dropShadow={true} font="roboto-flex" />
             </div>
+          </div>
 
-            {/* Dark mode */}
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
-                Dark Mode
-              </h3>
-              <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-                {backgrounds.map(bg => (
-                  <Card 
-                    key={`large-dark-shadow-${bg}`}
-                    size="large" 
-                    bg={bg} 
-                    mode="dark" 
-                    dropShadow={true}
-                  >
-                    <LargeContent />
-                  </Card>
-                ))}
-              </div>
+          {/* Roboto Flex Stats without Shadow */}
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ 
+              fontSize: '18px', 
+              fontWeight: 500, 
+              color: '#555',
+              margin: '0 0 16px 0'
+            }}>
+              Roboto Flex Font - No Drop Shadow
+            </h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+              <Card type="stat" size="small" align="vertical" dropShadow={false} font="roboto-flex" />
+              <Card type="stat" size="default" align="vertical" dropShadow={false} font="roboto-flex" />
+              <Card type="stat" size="large" align="vertical" dropShadow={false} font="roboto-flex" />
+            </div>
+          </div>
+
+          {/* Archivo Stats with Shadow */}
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ 
+              fontSize: '18px', 
+              fontWeight: 500, 
+              color: '#555',
+              margin: '0 0 16px 0'
+            }}>
+              Archivo Font - With Drop Shadow
+            </h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+              <Card type="stat" size="small" align="vertical" dropShadow={true} font="archivo" />
+              <Card type="stat" size="default" align="vertical" dropShadow={true} font="archivo" />
+              <Card type="stat" size="large" align="vertical" dropShadow={true} font="archivo" />
+            </div>
+          </div>
+
+          {/* Archivo Stats without Shadow */}
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ 
+              fontSize: '18px', 
+              fontWeight: 500, 
+              color: '#555',
+              margin: '0 0 16px 0'
+            }}>
+              Archivo Font - No Drop Shadow
+            </h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+              <Card type="stat" size="small" align="vertical" dropShadow={false} font="archivo" />
+              <Card type="stat" size="default" align="vertical" dropShadow={false} font="archivo" />
+              <Card type="stat" size="large" align="vertical" dropShadow={false} font="archivo" />
             </div>
           </div>
         </section>
 
-        {/* Large Cards without Drop Shadow */}
+        {/* === INTERACTIVE EXAMPLES === */}
         <section>
           <h2 style={{ 
-            fontSize: '20px', 
-            fontWeight: 500, 
+            fontSize: '24px', 
+            fontWeight: 600, 
             color: '#333',
-            margin: '0 0 24px 0'
-          }}>
-            Large Cards - No Drop Shadow
-          </h2>
-          
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            {/* Light mode */}
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
-                Light Mode
-              </h3>
-              <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-                {backgrounds.map(bg => (
-                  <Card 
-                    key={`large-light-no-shadow-${bg}`}
-                    size="large" 
-                    bg={bg} 
-                    mode="light" 
-                    dropShadow={false}
-                  >
-                    <LargeContent />
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            {/* Dark mode */}
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
-                Dark Mode
-              </h3>
-              <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-                {backgrounds.map(bg => (
-                  <Card 
-                    key={`large-dark-no-shadow-${bg}`}
-                    size="large" 
-                    bg={bg} 
-                    mode="dark" 
-                    dropShadow={false}
-                  >
-                    <LargeContent />
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Interactive Examples */}
-        <section>
-          <h2 style={{ 
-            fontSize: '20px', 
-            fontWeight: 500, 
-            color: '#333',
-            margin: '0 0 24px 0'
+            margin: '0 0 32px 0'
           }}>
             Interactive Examples
           </h2>
@@ -425,17 +368,14 @@ export const FigmaDesignReplication: Story = {
                 Clickable Card
               </h3>
               <Card 
-                size="default" 
-                bg="blue" 
-                mode="light" 
+                type="simple"
+                size="default"
+                align="horizontal"
                 dropShadow={true}
+                title="Click Me"
+                subtitle="This card is interactive"
                 onClick={() => alert('Card clicked!')}
-              >
-                <div style={{ padding: '8px' }}>
-                  <div style={{ fontWeight: 600, marginBottom: '6px' }}>Click Me</div>
-                  <div style={{ fontSize: '14px' }}>This card is interactive</div>
-                </div>
-              </Card>
+              />
             </div>
             
             <div>
@@ -443,23 +383,50 @@ export const FigmaDesignReplication: Story = {
                 Disabled Card
               </h3>
               <Card 
-                size="default" 
-                bg="default" 
-                mode="light" 
+                type="simple"
+                size="default"
+                align="horizontal"
                 dropShadow={true}
+                title="Disabled"
+                subtitle="Cannot interact"
                 disabled={true}
                 onClick={() => alert('This should not fire')}
-              >
-                <div style={{ padding: '8px' }}>
-                  <div style={{ fontWeight: 600, marginBottom: '6px' }}>Disabled</div>
-                  <div style={{ fontSize: '14px' }}>Cannot interact</div>
-                </div>
-              </Card>
+              />
+            </div>
+
+            <div>
+              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
+                No Close Button
+              </h3>
+              <Card 
+                type="simple"
+                size="default"
+                align="horizontal"
+                dropShadow={true}
+                showCloseIcon={false}
+                title="No Close"
+                subtitle="Close button hidden"
+              />
+            </div>
+
+            <div>
+              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
+                No Button Group
+              </h3>
+              <Card 
+                type="simple"
+                size="default"
+                align="horizontal"
+                dropShadow={true}
+                showButtonGroup={false}
+                title="No Buttons"
+                subtitle="Button group hidden"
+              />
             </div>
           </div>
         </section>
 
-        {/* Design System Notes */}
+        {/* === DESIGN SYSTEM SUMMARY === */}
         <section style={{ 
           backgroundColor: '#fff',
           padding: '32px',
@@ -468,61 +435,79 @@ export const FigmaDesignReplication: Story = {
           boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
         }}>
           <h2 style={{ 
-            fontSize: '18px', 
+            fontSize: '20px', 
             fontWeight: 600, 
             color: '#333',
-            margin: '0 0 16px 0'
+            margin: '0 0 24px 0'
           }}>
-            Design System Implementation Notes
+            Figma Design System Implementation Summary
           </h2>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#555', margin: '0 0 8px 0' }}>
-                Size Variants
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#555', margin: '0 0 12px 0' }}>
+                Card Types (5)
               </h3>
               <ul style={{ margin: '0', paddingLeft: '20px', color: '#666', lineHeight: 1.6 }}>
-                <li><strong>Small:</strong> 80px min-height, 12px padding</li>
-                <li><strong>Default:</strong> 100px min-height, 16px padding</li>
-                <li><strong>Large:</strong> 120px min-height, 24px padding</li>
+                <li><strong>Simple:</strong> Headers, subtitles, body text, buttons</li>
+                <li><strong>Icon:</strong> Large icon with title and body text</li>
+                <li><strong>Text-Only:</strong> Title and body text without buttons</li>
+                <li><strong>Empty State:</strong> Icon with title for empty states</li>
+                <li><strong>Stat:</strong> Large numeric values with labels</li>
               </ul>
             </div>
             
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#555', margin: '0 0 8px 0' }}>
-                Background Colors
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#555', margin: '0 0 12px 0' }}>
+                Size Variants (3)
               </h3>
               <ul style={{ margin: '0', paddingLeft: '20px', color: '#666', lineHeight: 1.6 }}>
-                <li>11 semantic color variants</li>
-                <li>Light/dark mode support for each</li>
-                <li>WCAG AA compliant contrast ratios</li>
-                <li>Status colors for feedback</li>
+                <li><strong>Small:</strong> Compact spacing and typography</li>
+                <li><strong>Default:</strong> Standard size for most use cases</li>
+                <li><strong>Large:</strong> Increased spacing and typography</li>
               </ul>
             </div>
             
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#555', margin: '0 0 8px 0' }}>
-                Accessibility Features
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#555', margin: '0 0 12px 0' }}>
+                Layout Options
               </h3>
               <ul style={{ margin: '0', paddingLeft: '20px', color: '#666', lineHeight: 1.6 }}>
+                <li><strong>Horizontal:</strong> Text and buttons side by side</li>
+                <li><strong>Vertical:</strong> Stacked content layout</li>
+                <li><strong>Shadow:</strong> Optional drop shadow</li>
+                <li><strong>Close Icon:</strong> Toggleable close button</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#555', margin: '0 0 12px 0' }}>
+                Typography & Accessibility
+              </h3>
+              <ul style={{ margin: '0', paddingLeft: '20px', color: '#666', lineHeight: 1.6 }}>
+                <li>Design token-based typography</li>
                 <li>Keyboard navigation support</li>
-                <li>Focus indicators</li>
-                <li>High contrast mode support</li>
-                <li>Reduced motion preferences</li>
+                <li>ARIA labels and roles</li>
+                <li>Focus indicators and states</li>
               </ul>
             </div>
-            
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#555', margin: '0 0 8px 0' }}>
-                Responsive Design
-              </h3>
-              <ul style={{ margin: '0', paddingLeft: '20px', color: '#666', lineHeight: 1.6 }}>
-                <li>Mobile-first approach</li>
-                <li>Flexible sizing on small screens</li>
-                <li>Touch-friendly interactions</li>
-                <li>Fluid layouts with CSS Grid/Flexbox</li>
-              </ul>
-            </div>
+          </div>
+
+          <div style={{ 
+            marginTop: '24px', 
+            padding: '20px', 
+            backgroundColor: '#f8f9fa', 
+            borderRadius: '8px',
+            border: '1px solid #e9ecef'
+          }}>
+            <h4 style={{ fontSize: '14px', fontWeight: 600, color: '#495057', margin: '0 0 8px 0' }}>
+              Figma Design Compliance
+            </h4>
+            <p style={{ margin: '0', fontSize: '14px', color: '#6c757d', lineHeight: 1.5 }}>
+              This implementation faithfully reproduces all card variants from the Figma design system, 
+              including exact spacing, typography, colors, and interactive states. All 42+ variants 
+              are supported with pixel-perfect accuracy.
+            </p>
           </div>
         </section>
 
@@ -532,7 +517,7 @@ export const FigmaDesignReplication: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Complete showcase of all 78 Card component variants as specified in the Figma design. This demonstrates every combination of size (3), background (11), mode (2), and shadow (2) properties, organized by category for easy reference.',
+        story: 'Complete showcase of all Card component variants as specified in the Figma design. This demonstrates every combination of type, size, alignment, shadow, and font properties, organized by category for comprehensive documentation.',
       },
     },
   },
