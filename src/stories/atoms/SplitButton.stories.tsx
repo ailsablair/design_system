@@ -370,7 +370,7 @@ export const Interactive: Story = {
       alert(`${buttonLabel} - ${itemLabel} clicked!`);
     };
 
-    const createMenuItems = (buttonLabel: string): MenuItem[] => [
+    const createMenuItems = (buttonLabel: string): SplitButtonMenuItem[] => [
       {
         id: 'top',
         label: 'This is the top',
