@@ -5,7 +5,7 @@ export interface CardProps {
   /** Size variant */
   size?: 'small' | 'default' | 'large';
   /** Card type */
-  type?: 'simple' | 'icon' | 'text-only' | 'empty-state' | 'stat' | 'warning' | 'error' | 'info' | 'success';
+  type?: 'simple' | 'icon' | 'text-only' | 'empty-state' | 'stat' | 'warning' | 'error' | 'info' | 'success' | 'image' | 'contained-image';
   /** Background color variant */
   bg?: 'default';
   /** Alignment */
@@ -46,6 +46,10 @@ export interface CardProps {
   'aria-label'?: string;
   /** Custom children (overrides default content) */
   children?: React.ReactNode;
+  /** Image source for image card types */
+  imageSrc?: string;
+  /** Image alt text */
+  imageAlt?: string;
 }
 
 // Semantic icons for warning, error, and info cards
@@ -183,6 +187,8 @@ export const Card: React.FC<CardProps> = ({
   disabled = false,
   'aria-label': ariaLabel,
   children,
+  imageSrc,
+  imageAlt = 'Card image',
 }) => {
   // Suppress unused variable warnings for props that are kept for API completeness
   void placement;
@@ -376,6 +382,74 @@ export const Card: React.FC<CardProps> = ({
                     </g>
                   </svg>
                   <span>Info button</span>
+                </button>
+                <button className="card-btn card-btn-ghost">
+                  <AlarmIcon size={size} />
+                  <span>Label</span>
+                  <ArrowDownCircleIcon size={size} />
+                </button>
+              </div>
+            )}
+          </>
+        );
+
+      case 'image':
+        return (
+          <>
+            <div className="card-image-container">
+              <div className="card-image-wrapper">
+                <img
+                  src={imageSrc || '/api/placeholder/400/200'}
+                  alt={imageAlt}
+                  className="card-image"
+                />
+              </div>
+            </div>
+            <div className="card-text">
+              <div className="card-headings">
+                <h3 className="card-title">{title}</h3>
+              </div>
+              <p className="card-body">{bodyText}</p>
+            </div>
+            {showButtonGroup && (
+              <div className="card-button-group">
+                <button className="card-btn card-btn-primary">
+                  <AlarmIcon size={size} />
+                  <span>Label</span>
+                  <ArrowDownCircleIcon size={size} />
+                </button>
+                <button className="card-btn card-btn-ghost">
+                  <AlarmIcon size={size} />
+                  <span>Label</span>
+                  <ArrowDownCircleIcon size={size} />
+                </button>
+              </div>
+            )}
+          </>
+        );
+
+      case 'contained-image':
+        return (
+          <>
+            <div className="card-contained-image-wrapper">
+              <img
+                src={imageSrc || '/api/placeholder/400/200'}
+                alt={imageAlt}
+                className="card-contained-image"
+              />
+            </div>
+            <div className="card-text">
+              <div className="card-headings">
+                <h3 className="card-title">{title}</h3>
+              </div>
+              <p className="card-body">{bodyText}</p>
+            </div>
+            {showButtonGroup && (
+              <div className="card-button-group">
+                <button className="card-btn card-btn-primary">
+                  <AlarmIcon size={size} />
+                  <span>Label</span>
+                  <ArrowDownCircleIcon size={size} />
                 </button>
                 <button className="card-btn card-btn-ghost">
                   <AlarmIcon size={size} />
