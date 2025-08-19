@@ -516,8 +516,8 @@
   position: absolute;
   top: var(--spacing-sizing-8px);
   right: var(--spacing-sizing-8px);
-  background: none;
-  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--neutral-gray-gray-300);
   cursor: pointer;
   padding: var(--spacing-sizing-4px);
   display: flex;
@@ -525,7 +525,10 @@
   justify-content: center;
   border-radius: var(--spacing-radius-4px);
   z-index: 10;
-  transition: background-color 0.2s ease;
+  width: 24px;
+  height: 24px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .card.card-size-default .card-close-icon {
@@ -540,6 +543,8 @@
 
 .card-close-icon:hover {
   background-color: var(--neutral-gray-gray-100);
+  border-color: var(--neutral-gray-gray-400);
+  transform: scale(1.05);
 }
 
 .card-close-icon:focus {
@@ -550,11 +555,13 @@
 .card-close-icon svg {
   width: 16px;
   height: 16px;
-  transition: opacity 0.2s ease;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
 }
 
 .card-close-icon:hover svg {
   opacity: 0.8;
+  transform: scale(1.1);
 }
 
 /* === INTERACTIVE STATES === */
