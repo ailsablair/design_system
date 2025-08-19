@@ -1,0 +1,566 @@
+@import '../foundations/tokens.css';
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--spacing-radius-4px);
+  font-family: var(--type-typeface-archivo);
+  font-style: normal;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  outline: none;
+  position: relative;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+/* Label content layout */
+.label-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sizing-8px);
+  width: 100%;
+}
+
+.label-icon-only-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.label-text {
+  line-height: 1;
+  flex: 1;
+  text-align: center;
+}
+
+.label-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Size variants */
+.label.extra-small {
+  min-width: 50px;
+  padding: var(--spacing-sizing-2px) var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-6px);
+  height: 27px;
+  min-height: 27px;
+  max-height: 27px;
+}
+
+.label.extra-small.icon-only {
+  width: 30px;
+  height: 27px;
+  min-width: 30px;
+  padding: var(--spacing-sizing-2px) var(--spacing-sizing-4px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sizing-12px);
+}
+
+.label.extra-small .label-content {
+  padding: var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-6px);
+}
+
+.label.extra-small .label-text {
+  font-size: var(--type-archivo-footnote);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-footnote);
+  letter-spacing: var(--type-letter-spacing-archivo-footnote);
+}
+
+.label.small {
+  min-width: 80px;
+  height: 30px;
+  min-height: 30px;
+  max-height: 30px;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-12px);
+  gap: var(--spacing-sizing-12px);
+}
+
+.label.small.icon-only {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  max-width: 30px;
+  max-height: 30px;
+  padding: var(--spacing-sizing-4px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sizing-12px);
+}
+
+.label.small .label-content {
+  padding: var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-8px);
+}
+
+.label.small .label-text {
+  font-size: var(--type-archivo-label-sm);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-label-sm);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
+}
+
+.label.default {
+  min-width: 80px;
+  height: 42px;
+  min-height: 42px;
+  max-height: 42px;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px);
+  gap: var(--spacing-sizing-12px);
+}
+
+.label.default.icon-only {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  max-width: 42px;
+  max-height: 42px;
+  padding: var(--spacing-sizing-4px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sizing-12px);
+}
+
+.label.default .label-content {
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-8px);
+}
+
+.label.default .label-text {
+  font-size: var(--type-archivo-label);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-label);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
+}
+
+.label.large {
+  min-width: 80px;
+  height: 52px;
+  min-height: 52px;
+  max-height: 52px;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px);
+  gap: var(--spacing-sizing-12px);
+}
+
+.label.large.icon-only {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
+  max-width: 52px;
+  max-height: 52px;
+  padding: var(--spacing-sizing-4px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sizing-12px);
+}
+
+.label.large .label-content {
+  padding: var(--spacing-sizing-12px) var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-8px);
+}
+
+.label.large .label-text {
+  font-size: var(--type-archivo-label-lg);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-label-lg);
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg);
+}
+
+/* Icon-only label content styling */
+.label.icon-only .label-icon-only-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.label.icon-only .label-icon {
+  opacity: 0.7;
+}
+
+/* Icon-only label content padding adjustments */
+.label.extra-small.icon-only .label-icon-only-content {
+  padding: var(--spacing-sizing-4px);
+}
+
+.label.small.icon-only .label-icon-only-content {
+  padding: var(--spacing-sizing-4px);
+}
+
+.label.default.icon-only .label-icon-only-content {
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-4px);
+}
+
+.label.large.icon-only .label-icon-only-content {
+  padding: var(--spacing-sizing-12px) var(--spacing-sizing-4px);
+}
+
+/* Default label variant (primary-like) */
+.label.default {
+  background: var(--primary-blue-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue);
+  color: var(--base-white);
+}
+
+.label.default .label-icon {
+  color: var(--base-white);
+  opacity: 0.6;
+}
+
+/* Ghost label variant */
+.label.ghost {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+  color: var(--base-black);
+}
+
+.label.ghost .label-icon {
+  color: var(--neutral-gray-gray-700);
+  opacity: 0.6;
+}
+
+/* State variants for default labels */
+.label.default.default {
+  background: var(--primary-blue-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue);
+}
+
+.label.default.hover,
+.label.default:hover:not(.disabled) {
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-400);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
+}
+
+.label.default.hover .label-text,
+.label.default:hover:not(.disabled) .label-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.label.default.clicked,
+.label.default:active:not(.disabled) {
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-200);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
+}
+
+.label.default.clicked .label-text,
+.label.default:active:not(.disabled) .label-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.label.default.focused,
+.label.default:focus-visible:not(.disabled) {
+  border: var(--spacing-stroke-3px) solid var(--primary-blue-blue-300);
+}
+
+.label.default.disabled {
+  background: var(--neutral-gray-gray-100);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
+  color: var(--neutral-gray-gray-500);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.label.default.disabled .label-icon {
+  color: var(--neutral-gray-gray-500);
+  opacity: 0.8;
+}
+
+/* State variants for ghost labels */
+.label.ghost.default {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+}
+
+.label.ghost.hover,
+.label.ghost:hover:not(.disabled) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-400);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200);
+}
+
+.label.ghost.hover .label-text,
+.label.ghost:hover:not(.disabled) .label-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.label.ghost.clicked,
+.label.ghost:active:not(.disabled) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-400);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-200);
+}
+
+.label.ghost.clicked .label-text,
+.label.ghost:active:not(.disabled) .label-text {
+  font-weight: var(--type-weight-light);
+}
+
+.label.ghost.focused,
+.label.ghost:focus-visible:not(.disabled) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-3px) solid var(--neutral-gray-gray-400);
+  color: var(--neutral-gray-gray-800);
+}
+
+.label.ghost.focused .label-icon,
+.label.ghost:focus-visible:not(.disabled) .label-icon {
+  color: var(--neutral-gray-gray-800);
+}
+
+.label.ghost.disabled {
+  background: var(--neutral-gray-gray-100);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+  color: var(--neutral-gray-gray-500);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.label.ghost.disabled .label-icon {
+  color: var(--neutral-gray-gray-500);
+  opacity: 0.8;
+}
+
+/* Split label variant styles */
+.label-container.split {
+  position: relative;
+  display: inline-flex;
+}
+
+.label.split {
+  display: flex;
+  border-radius: var(--spacing-radius-4px);
+  overflow: hidden;
+}
+
+.label-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  outline: none;
+  position: relative;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.label-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  outline: none;
+  position: relative;
+  box-sizing: border-box;
+  border-left: var(--spacing-stroke-0-5px) solid rgba(255, 255, 255, 0.2);
+}
+
+/* Split label sizing */
+.label.split.extra-small {
+  min-width: 50px;
+  padding: var(--spacing-sizing-2px) var(--spacing-sizing-2px) var(--spacing-sizing-2px) var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-12px);
+  height: 27px;
+  min-height: 27px;
+  max-height: 27px;
+}
+
+.label.split.extra-small .label-main {
+  padding: var(--spacing-sizing-4px);
+}
+
+.label.split.extra-small .label-dropdown {
+  padding: var(--spacing-sizing-4px);
+  min-width: 22px;
+}
+
+.label.split.small {
+  min-width: 80px;
+  height: 30px;
+  min-height: 30px;
+  max-height: 30px;
+  padding: var(--spacing-sizing-2px) var(--spacing-sizing-6px) var(--spacing-sizing-2px) var(--spacing-sizing-12px);
+  gap: var(--spacing-sizing-12px);
+}
+
+.label.split.small .label-main {
+  padding: var(--spacing-sizing-4px) 0 var(--spacing-sizing-4px) var(--spacing-sizing-4px);
+}
+
+.label.split.small .label-dropdown {
+  padding: var(--spacing-sizing-4px);
+  min-width: 22px;
+}
+
+.label.split.default {
+  min-width: 80px;
+  height: 42px;
+  min-height: 42px;
+  max-height: 42px;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px) var(--spacing-sizing-4px) var(--spacing-sizing-16px);
+  gap: var(--spacing-sizing-12px);
+}
+
+.label.split.default .label-main {
+  padding: var(--spacing-sizing-4px) 0 var(--spacing-sizing-4px) var(--spacing-sizing-4px);
+}
+
+.label.split.default .label-dropdown {
+  padding: var(--spacing-sizing-4px);
+  min-width: 28px;
+}
+
+.label.split.large {
+  min-width: 80px;
+  height: 52px;
+  min-height: 52px;
+  max-height: 52px;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px) var(--spacing-sizing-4px) var(--spacing-sizing-16px);
+  gap: var(--spacing-sizing-12px);
+}
+
+.label.split.large .label-main {
+  padding: var(--spacing-sizing-12px) 0 var(--spacing-sizing-12px) var(--spacing-sizing-4px);
+}
+
+.label.split.large .label-dropdown {
+  padding: var(--spacing-sizing-12px) var(--spacing-sizing-4px);
+  min-width: 32px;
+}
+
+/* Split label type variants */
+.label.split.default {
+  background: var(--primary-blue-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue);
+  color: var(--base-white);
+}
+
+.label.split.default .label-icon {
+  color: var(--base-white);
+  opacity: 0.6;
+}
+
+.label.split.ghost {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+  color: var(--base-black);
+}
+
+.label.split.ghost .label-icon {
+  color: var(--neutral-gray-gray-700);
+  opacity: 0.6;
+}
+
+.label.split.ghost .label-dropdown {
+  border-left: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+}
+
+/* Dropdown menu styles */
+.label-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
+  border-radius: var(--spacing-radius-4px);
+  box-shadow: 0 var(--spacing-sizing-4px) var(--spacing-sizing-12px) 0 rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin-top: var(--spacing-sizing-2px);
+  overflow: hidden;
+}
+
+.label-menu-item {
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-12px);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  font-family: var(--type-typeface-archivo);
+  font-size: var(--type-archivo-label-sm);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-label-sm);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
+  color: var(--base-black);
+}
+
+.label-menu-item:hover,
+.label-menu-item.focused {
+  background: var(--neutral-gray-gray-50);
+}
+
+.label-menu-item.disabled {
+  color: var(--neutral-gray-gray-400);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.label-menu.small .label-menu-item {
+  padding: var(--spacing-sizing-6px) var(--spacing-sizing-8px);
+  font-size: var(--type-archivo-footnote);
+  line-height: var(--type-line-height-footnote);
+  letter-spacing: var(--type-letter-spacing-archivo-footnote);
+}
+
+.label-menu.large .label-menu-item {
+  padding: var(--spacing-sizing-12px) var(--spacing-sizing-16px);
+  font-size: var(--type-archivo-label);
+  line-height: var(--type-line-height-label);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
+}
+
+/* Focus management for keyboard navigation */
+.label:focus-visible {
+  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue-500);
+  outline-offset: var(--spacing-sizing-2px);
+}
+
+.label-main:focus-visible,
+.label-dropdown:focus-visible {
+  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue-500);
+  outline-offset: var(--spacing-sizing-2px);
+}
+
+/* Accessibility and responsive improvements */
+@media (max-width: 768px) {
+  .label {
+    min-width: 60px;
+  }
+  
+  .label.extra-small {
+    min-width: 40px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .label.default {
+    border-width: var(--spacing-stroke-2px);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .label {
+    transition: none;
+  }
+}
