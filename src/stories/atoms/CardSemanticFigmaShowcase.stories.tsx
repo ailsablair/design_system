@@ -293,6 +293,42 @@ export const SemanticCardsComparison: Story = {
             />
           </div>
         </div>
+
+        {/* Success Cards Row */}
+        <div>
+          <h4 style={{ marginBottom: '16px', fontSize: '14px', fontWeight: 500, color: '#666' }}>
+            Success Cards
+          </h4>
+          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+            <Card
+              type="success"
+              size="small"
+              dropShadow={true}
+              showCloseIcon={true}
+              title="Small Success"
+              bodyText="This is body text for a small success card."
+              onCloseClick={() => console.log('Small success closed')}
+            />
+            <Card
+              type="success"
+              size="default"
+              dropShadow={true}
+              showCloseIcon={true}
+              title="This is a success heading"
+              bodyText="This is body text that can span multiple lines within the card."
+              onCloseClick={() => console.log('Default success closed')}
+            />
+            <Card
+              type="success"
+              size="large"
+              dropShadow={true}
+              showCloseIcon={true}
+              title="Large Success"
+              bodyText="This is body text for a large success card with more space."
+              onCloseClick={() => console.log('Large success closed')}
+            />
+          </div>
+        </div>
       </div>
     </div>
   ),
