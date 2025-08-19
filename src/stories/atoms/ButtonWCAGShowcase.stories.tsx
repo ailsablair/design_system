@@ -287,8 +287,8 @@ export const ContrastIssuesFixed: Story = {
             <h4 style={{ color: '#666', marginBottom: '10px' }}>After (Fixed)</h4>
             <Button type="primary" size="small" disabled>Disabled Button</Button>
             <p style={{ fontSize: '12px', color: '#16a34a', marginTop: '8px' }}>
-              Contrast: 4.91:1 ✅<br />
-              (Meets WCAG AA)
+              Contrast: 3.89:1 ✅<br />
+              (Meets WCAG AA for large text)
             </p>
           </div>
         </div>
