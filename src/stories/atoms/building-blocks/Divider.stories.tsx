@@ -1,0 +1,398 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Divider } from './Divider';
+
+const meta = {
+  title: 'Atoms/Building Blocks/Divider',
+  component: Divider,
+  parameters: {
+    layout: 'centered',
+    docs: {
+      description: {
+        component: 'Divider component for creating visual separations with various line styles, thicknesses, and orientations. These building blocks are used to create clear visual divisions between content sections.',
+      },
+    },
+  },
+  tags: ['autodocs'],
+  argTypes: {
+    line: {
+      control: { type: 'select' },
+      options: ['solid', 'dashed', 'dotted'],
+      description: 'Line style of the divider',
+    },
+    thickness: {
+      control: { type: 'select' },
+      options: ['0.5px', '1px', '2px', '3px', '4px', '8px'],
+      description: 'Thickness of the divider line',
+    },
+    alignment: {
+      control: { type: 'select' },
+      options: ['horizontal', 'vertical'],
+      description: 'Orientation of the divider',
+    },
+    width: {
+      control: { type: 'text' },
+      description: 'Custom width (for horizontal dividers)',
+    },
+    height: {
+      control: { type: 'text' },
+      description: 'Custom height (for vertical dividers)',
+    },
+    color: {
+      control: { type: 'color' },
+      description: 'Custom color override',
+    },
+    className: {
+      control: { type: 'text' },
+      description: 'Additional CSS classes',
+    },
+  },
+} satisfies Meta<typeof Divider>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+// === BASIC EXAMPLES === //
+
+export const Default: Story = {
+  args: {
+    line: 'solid',
+    thickness: '1px',
+    alignment: 'horizontal',
+  },
+};
+
+export const VerticalDefault: Story = {
+  args: {
+    line: 'solid',
+    thickness: '1px',
+    alignment: 'vertical',
+  },
+};
+
+export const DashedHorizontal: Story = {
+  args: {
+    line: 'dashed',
+    thickness: '1px',
+    alignment: 'horizontal',
+  },
+};
+
+export const DottedVertical: Story = {
+  args: {
+    line: 'dotted',
+    thickness: '2px',
+    alignment: 'vertical',
+  },
+};
+
+// === THICKNESS VARIANTS === //
+
+export const ThicknessVariants: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '20px' }}>
+      <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Horizontal Dividers - Thickness Variants</h3>
+      
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <div>
+          <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>0.5px thickness</p>
+          <Divider line="solid" thickness="0.5px" alignment="horizontal" width="400px" />
+        </div>
+        
+        <div>
+          <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>1px thickness</p>
+          <Divider line="solid" thickness="1px" alignment="horizontal" width="400px" />
+        </div>
+        
+        <div>
+          <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>2px thickness</p>
+          <Divider line="solid" thickness="2px" alignment="horizontal" width="400px" />
+        </div>
+        
+        <div>
+          <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>3px thickness</p>
+          <Divider line="solid" thickness="3px" alignment="horizontal" width="400px" />
+        </div>
+        
+        <div>
+          <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>4px thickness</p>
+          <Divider line="solid" thickness="4px" alignment="horizontal" width="400px" />
+        </div>
+        
+        <div>
+          <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>8px thickness</p>
+          <Divider line="solid" thickness="8px" alignment="horizontal" width="400px" />
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Horizontal dividers showcasing all available thickness options from 0.5px to 8px.',
+      },
+    },
+  },
+};
+
+// === LINE STYLE VARIANTS === //
+
+export const LineStyleVariants: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', padding: '20px' }}>
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: 600 }}>Horizontal Line Styles</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div>
+            <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Solid</p>
+            <Divider line="solid" thickness="2px" alignment="horizontal" width="300px" />
+          </div>
+          
+          <div>
+            <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Dashed</p>
+            <Divider line="dashed" thickness="2px" alignment="horizontal" width="300px" />
+          </div>
+          
+          <div>
+            <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Dotted</p>
+            <Divider line="dotted" thickness="2px" alignment="horizontal" width="300px" />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: 600 }}>Vertical Line Styles</h3>
+        <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Solid</p>
+            <Divider line="solid" thickness="2px" alignment="vertical" height="100px" />
+          </div>
+          
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Dashed</p>
+            <Divider line="dashed" thickness="2px" alignment="vertical" height="100px" />
+          </div>
+          
+          <div style={{ textAlign: 'center' }}>
+            <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Dotted</p>
+            <Divider line="dotted" thickness="2px" alignment="vertical" height="100px" />
+          </div>
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Different line styles (solid, dashed, dotted) shown in both horizontal and vertical orientations.',
+      },
+    },
+  },
+};
+
+// === FIGMA DESIGN SHOWCASE === //
+
+export const FigmaDesignShowcase: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', padding: '40px' }}>
+      <h2 style={{ margin: '0', fontSize: '24px', fontWeight: 600 }}>Figma Design Implementation</h2>
+      
+      {/* Horizontal Dividers */}
+      <div>
+        <h3 style={{ margin: '0 0 24px 0', fontSize: '18px', fontWeight: 500 }}>Horizontal Dividers</h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px', alignItems: 'start' }}>
+          {/* Solid variants */}
+          <div>
+            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Solid</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <Divider line="solid" thickness="0.5px" alignment="horizontal" width="200px" />
+              <Divider line="solid" thickness="1px" alignment="horizontal" width="200px" />
+              <Divider line="solid" thickness="2px" alignment="horizontal" width="200px" />
+              <Divider line="solid" thickness="4px" alignment="horizontal" width="200px" />
+              <Divider line="solid" thickness="8px" alignment="horizontal" width="200px" />
+            </div>
+          </div>
+          
+          {/* Dashed variants */}
+          <div>
+            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Dashed</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <Divider line="dashed" thickness="0.5px" alignment="horizontal" width="200px" />
+              <Divider line="dashed" thickness="1px" alignment="horizontal" width="200px" />
+              <Divider line="dashed" thickness="2px" alignment="horizontal" width="200px" />
+              <Divider line="dashed" thickness="3px" alignment="horizontal" width="200px" />
+              <Divider line="dashed" thickness="4px" alignment="horizontal" width="200px" />
+            </div>
+          </div>
+          
+          {/* Dotted variants */}
+          <div>
+            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Dotted</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <Divider line="dotted" thickness="0.5px" alignment="horizontal" width="200px" />
+              <Divider line="dotted" thickness="1px" alignment="horizontal" width="200px" />
+              <Divider line="dotted" thickness="2px" alignment="horizontal" width="200px" />
+              <Divider line="dotted" thickness="3px" alignment="horizontal" width="200px" />
+              <Divider line="dotted" thickness="4px" alignment="horizontal" width="200px" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Vertical Dividers */}
+      <div>
+        <h3 style={{ margin: '0 0 24px 0', fontSize: '18px', fontWeight: 500 }}>Vertical Dividers</h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px', alignItems: 'start' }}>
+          {/* Solid vertical */}
+          <div>
+            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Solid</h4>
+            <div style={{ display: 'flex', gap: '8px', alignItems: 'start' }}>
+              <Divider line="solid" thickness="0.5px" alignment="vertical" height="120px" />
+              <Divider line="solid" thickness="1px" alignment="vertical" height="120px" />
+              <Divider line="solid" thickness="2px" alignment="vertical" height="120px" />
+              <Divider line="solid" thickness="4px" alignment="vertical" height="120px" />
+              <Divider line="solid" thickness="8px" alignment="vertical" height="120px" />
+            </div>
+          </div>
+          
+          {/* Dashed vertical */}
+          <div>
+            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Dashed</h4>
+            <div style={{ display: 'flex', gap: '8px', alignItems: 'start' }}>
+              <Divider line="dashed" thickness="0.5px" alignment="vertical" height="120px" />
+              <Divider line="dashed" thickness="1px" alignment="vertical" height="120px" />
+              <Divider line="dashed" thickness="2px" alignment="vertical" height="120px" />
+              <Divider line="dashed" thickness="3px" alignment="vertical" height="120px" />
+              <Divider line="dashed" thickness="8px" alignment="vertical" height="120px" />
+            </div>
+          </div>
+          
+          {/* Dotted vertical */}
+          <div>
+            <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Dotted</h4>
+            <div style={{ display: 'flex', gap: '8px', alignItems: 'start' }}>
+              <Divider line="dotted" thickness="0.5px" alignment="vertical" height="120px" />
+              <Divider line="dotted" thickness="1px" alignment="vertical" height="120px" />
+              <Divider line="dotted" thickness="2px" alignment="vertical" height="120px" />
+              <Divider line="dotted" thickness="3px" alignment="vertical" height="120px" />
+              <Divider line="dotted" thickness="8px" alignment="vertical" height="120px" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Complete implementation of all divider variants as shown in the Figma design, including all combinations of line styles, thicknesses, and orientations.',
+      },
+    },
+  },
+};
+
+// === USAGE EXAMPLES === //
+
+export const UsageInLayouts: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', padding: '20px', maxWidth: '600px' }}>
+      <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Usage in Content Layouts</h3>
+      
+      {/* Content sections separated by dividers */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <div style={{ padding: '16px', backgroundColor: '#f8f9fa', borderRadius: '4px' }}>
+          <h4 style={{ margin: '0 0 8px 0', fontSize: '16px' }}>Section 1</h4>
+          <p style={{ margin: '0', fontSize: '14px', color: '#666' }}>
+            Content for the first section goes here.
+          </p>
+        </div>
+        
+        <Divider line="solid" thickness="1px" alignment="horizontal" />
+        
+        <div style={{ padding: '16px', backgroundColor: '#f8f9fa', borderRadius: '4px' }}>
+          <h4 style={{ margin: '0 0 8px 0', fontSize: '16px' }}>Section 2</h4>
+          <p style={{ margin: '0', fontSize: '14px', color: '#666' }}>
+            Content for the second section goes here.
+          </p>
+        </div>
+        
+        <Divider line="dashed" thickness="1px" alignment="horizontal" />
+        
+        <div style={{ padding: '16px', backgroundColor: '#f8f9fa', borderRadius: '4px' }}>
+          <h4 style={{ margin: '0 0 8px 0', fontSize: '16px' }}>Section 3</h4>
+          <p style={{ margin: '0', fontSize: '14px', color: '#666' }}>
+            Content for the third section goes here.
+          </p>
+        </div>
+      </div>
+
+      {/* Vertical layout example */}
+      <div>
+        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>Vertical Layout</h4>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+          <div style={{ padding: '16px', backgroundColor: '#f8f9fa', borderRadius: '4px', flex: 1 }}>
+            <p style={{ margin: '0', fontSize: '14px', textAlign: 'center' }}>Left Content</p>
+          </div>
+          
+          <Divider line="solid" thickness="2px" alignment="vertical" height="60px" />
+          
+          <div style={{ padding: '16px', backgroundColor: '#f8f9fa', borderRadius: '4px', flex: 1 }}>
+            <p style={{ margin: '0', fontSize: '14px', textAlign: 'center' }}>Right Content</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Examples of how dividers can be used in real content layouts to separate sections and create visual hierarchy.',
+      },
+    },
+  },
+};
+
+// === CUSTOM STYLING === //
+
+export const CustomStyling: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '20px' }}>
+      <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Custom Colors & Dimensions</h3>
+      
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <div>
+          <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Custom blue color</p>
+          <Divider line="solid" thickness="3px" alignment="horizontal" width="250px" color="#2F42BD" />
+        </div>
+        
+        <div>
+          <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Custom red color, dashed</p>
+          <Divider line="dashed" thickness="2px" alignment="horizontal" width="250px" color="#e53e3e" />
+        </div>
+        
+        <div>
+          <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Custom green color, dotted</p>
+          <Divider line="dotted" thickness="4px" alignment="horizontal" width="250px" color="#38a169" />
+        </div>
+      </div>
+
+      <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
+          <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Custom height</p>
+          <Divider line="solid" thickness="2px" alignment="vertical" height="80px" color="#9f7aea" />
+        </div>
+        
+        <div style={{ textAlign: 'center' }}>
+          <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Extra thick</p>
+          <Divider line="solid" thickness="8px" alignment="vertical" height="80px" color="#ed8936" />
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Examples of custom colors and dimensions to show the flexibility of the divider component.',
+      },
+    },
+  },
+};
