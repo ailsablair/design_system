@@ -913,3 +913,108 @@ export const AllSemanticCards: Story = {
     },
   },
 };
+
+export const AllImageCards: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', padding: '20px' }}>
+      <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Image Cards</h3>
+
+      <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+        <Card
+          type="image"
+          size="small"
+          dropShadow={true}
+          showCloseIcon={true}
+          title="Small Image Card"
+          bodyText="This is body text that can span multiple lines within the card."
+          imageSrc="/api/placeholder/300/200"
+          onCloseClick={() => alert('Small image card closed!')}
+        />
+
+        <Card
+          type="image"
+          size="default"
+          dropShadow={true}
+          showCloseIcon={true}
+          title="Default Image Card"
+          bodyText="This is body text that can span multiple lines within the card."
+          imageSrc="/api/placeholder/400/200"
+          onCloseClick={() => alert('Default image card closed!')}
+        />
+
+        <Card
+          type="image"
+          size="large"
+          dropShadow={true}
+          showCloseIcon={true}
+          title="Large Image Card"
+          bodyText="This is body text that can span multiple lines within the card."
+          imageSrc="/api/placeholder/500/283"
+          onCloseClick={() => alert('Large image card closed!')}
+        />
+      </div>
+
+      <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Contained Image Cards</h3>
+
+      <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+        <Card
+          type="contained-image"
+          size="small"
+          dropShadow={true}
+          title="Small Contained"
+          bodyText="This is body text that can span multiple lines within the card."
+          imageSrc="/api/placeholder/300/200"
+        />
+
+        <Card
+          type="contained-image"
+          size="default"
+          dropShadow={true}
+          title="Default Contained"
+          bodyText="This is body text that can span multiple lines within the card."
+          imageSrc="/api/placeholder/400/200"
+        />
+
+        <Card
+          type="contained-image"
+          size="large"
+          dropShadow={true}
+          title="Large Contained"
+          bodyText="This is body text that can span multiple lines within the card."
+          imageSrc="/api/placeholder/500/280"
+        />
+      </div>
+
+      <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Without Shadows</h3>
+
+      <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
+        <Card
+          type="image"
+          size="small"
+          dropShadow={false}
+          showCloseIcon={true}
+          title="No Shadow Image"
+          bodyText="This is body text that can span multiple lines within the card."
+          imageSrc="/api/placeholder/300/200"
+          onCloseClick={() => alert('No shadow card closed!')}
+        />
+
+        <Card
+          type="contained-image"
+          size="small"
+          dropShadow={false}
+          title="No Shadow Contained"
+          bodyText="This is body text that can span multiple lines within the card."
+          imageSrc="/api/placeholder/300/200"
+        />
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Comprehensive showcase of image cards (image, contained-image) with different sizes, shadow options, and close icon functionality matching the Figma designs.',
+      },
+    },
+  },
+};
