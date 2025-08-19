@@ -1331,3 +1331,211 @@ export const SuccessDisabledLarge: Story = {
     trailingIcon: <ArrowDownIcon size={20} />,
   },
 };
+
+// Tertiary outline button examples
+export const TertiaryOutlineDefault: Story = {
+  args: {
+    children: 'Label',
+    size: 'small',
+    type: 'tertiary',
+    outline: true,
+    leadingIcon: <AlarmIcon size={14} />,
+    trailingIcon: <ArrowDownIcon size={14} />,
+  },
+};
+
+export const TertiaryOutlineDefaultMedium: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'tertiary',
+    outline: true,
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const TertiaryOutlineDefaultLarge: Story = {
+  args: {
+    children: 'Label',
+    size: 'large',
+    type: 'tertiary',
+    outline: true,
+    leadingIcon: <AlarmIcon size={20} />,
+    trailingIcon: <ArrowDownIcon size={20} />,
+  },
+};
+
+export const TertiaryOutlineHover: Story = {
+  args: {
+    children: 'Label',
+    size: 'small',
+    type: 'tertiary',
+    outline: true,
+    state: 'hover',
+    leadingIcon: <AlarmIcon size={14} />,
+    trailingIcon: <ArrowDownIcon size={14} />,
+  },
+};
+
+export const TertiaryOutlineHoverMedium: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'tertiary',
+    outline: true,
+    state: 'hover',
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const TertiaryOutlineHoverLarge: Story = {
+  args: {
+    children: 'Label',
+    size: 'large',
+    type: 'tertiary',
+    outline: true,
+    state: 'hover',
+    leadingIcon: <AlarmIcon size={20} />,
+    trailingIcon: <ArrowDownIcon size={20} />,
+  },
+};
+
+export const TertiaryOutlineClicked: Story = {
+  args: {
+    children: 'Label',
+    size: 'small',
+    type: 'tertiary',
+    outline: true,
+    state: 'clicked',
+    leadingIcon: <AlarmIcon size={14} />,
+    trailingIcon: <ArrowDownIcon size={14} />,
+  },
+};
+
+export const TertiaryOutlineClickedMedium: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'tertiary',
+    outline: true,
+    state: 'clicked',
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const TertiaryOutlineClickedLarge: Story = {
+  args: {
+    children: 'Label',
+    size: 'large',
+    type: 'tertiary',
+    outline: true,
+    state: 'clicked',
+    leadingIcon: <AlarmIcon size={20} />,
+    trailingIcon: <ArrowDownIcon size={20} />,
+  },
+};
+
+export const TertiaryOutlineFocused: Story = {
+  args: {
+    children: 'Label',
+    size: 'small',
+    type: 'tertiary',
+    outline: true,
+    state: 'focused',
+    leadingIcon: <AlarmIcon size={14} />,
+    trailingIcon: <ArrowDownIcon size={14} />,
+  },
+};
+
+export const TertiaryOutlineFocusedMedium: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'tertiary',
+    outline: true,
+    state: 'focused',
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const TertiaryOutlineFocusedLarge: Story = {
+  args: {
+    children: 'Label',
+    size: 'large',
+    type: 'tertiary',
+    outline: true,
+    state: 'focused',
+    leadingIcon: <AlarmIcon size={20} />,
+    trailingIcon: <ArrowDownIcon size={20} />,
+  },
+};
+
+export const TertiaryOutlineLoading: Story = {
+  args: {
+    children: 'Label',
+    size: 'small',
+    type: 'tertiary',
+    outline: true,
+    loading: true,
+  },
+};
+
+export const TertiaryOutlineLoadingMedium: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'tertiary',
+    outline: true,
+    loading: true,
+  },
+};
+
+export const TertiaryOutlineLoadingLarge: Story = {
+  args: {
+    children: 'Label',
+    size: 'large',
+    type: 'tertiary',
+    outline: true,
+    loading: true,
+  },
+};
+
+export const TertiaryOutlineDisabled: Story = {
+  args: {
+    children: 'Label',
+    size: 'small',
+    type: 'tertiary',
+    outline: true,
+    disabled: true,
+    leadingIcon: <AlarmIcon size={14} />,
+    trailingIcon: <ArrowDownIcon size={14} />,
+  },
+};
+
+export const TertiaryOutlineDisabledMedium: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'tertiary',
+    outline: true,
+    disabled: true,
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const TertiaryOutlineDisabledLarge: Story = {
+  args: {
+    children: 'Label',
+    size: 'large',
+    type: 'tertiary',
+    outline: true,
+    disabled: true,
+    leadingIcon: <AlarmIcon size={20} />,
+    trailingIcon: <ArrowDownIcon size={20} />,
+  },
+};
