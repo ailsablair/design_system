@@ -216,13 +216,13 @@
 }
 
 /* Default label variant (primary-like) */
-.label.default {
+.label.default:not(.ghost) {
   background: var(--primary-blue-blue);
   border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue);
   color: var(--base-white);
 }
 
-.label.default .label-icon {
+.label.default:not(.ghost) .label-icon {
   color: var(--base-white);
   opacity: 0.6;
 }
