@@ -21,7 +21,7 @@ const meta = {
     },
     type: {
       control: { type: 'select' },
-      options: ['simple', 'icon', 'text-only', 'empty-state', 'stat', 'warning', 'error', 'info'],
+      options: ['simple', 'icon', 'text-only', 'empty-state', 'stat', 'warning', 'error', 'info', 'success'],
       description: 'Type of card content',
     },
     bg: {
