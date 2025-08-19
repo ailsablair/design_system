@@ -185,6 +185,18 @@
   opacity: 0.4;
 }
 
+/* Tertiary outline button variant */
+.button.tertiary.outline {
+  background: var(--primary-yellow-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-yellow-dark-yellow);
+  color: var(--base-black);
+}
+
+.button.tertiary.outline .button-icon {
+  color: var(--primary-yellow-dark-yellow);
+  opacity: 0.7;
+}
+
 /* State variants for primary buttons */
 .button.primary.default {
   background: var(--primary-blue-blue);
