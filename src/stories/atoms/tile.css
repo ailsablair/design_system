@@ -1,18 +1,14 @@
-@import '../foundations/tokens.css';
-
+/* Tile Component Styles */
 .tile {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sizing-8px);
-  padding: var(--spacing-sizing-16px);
-  font-family: var(--type-typeface-archivo);
-  font-style: normal;
-  transition: all var(--transition-fast);
-  text-decoration: none;
-  outline: none;
-  position: relative;
+  border-radius: var(--spacing-radius-8px);
   box-sizing: border-box;
-  border-radius: var(--spacing-radius-4px);
+  transition: var(--transition-fast);
+  position: relative;
+  font-family: var(--type-typeface-archivo);
+  font-weight: var(--type-weight-light);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
 }
 
 /* Clickable tiles */
@@ -21,30 +17,56 @@
 }
 
 .tile.clickable:hover:not(.disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: var(--transform-scale-up);
 }
 
+.tile.clickable:active:not(.disabled) {
+  transform: var(--transform-scale-down);
+}
+
+.tile.clickable:focus:not(.disabled) {
+  outline: 2px solid var(--primary-blue-blue-500);
+  outline-offset: 2px;
+}
+
+/* Disabled state */
 .tile.disabled {
-  opacity: 0.5;
+  opacity: var(--opacity-disabled);
   cursor: not-allowed;
-  pointer-events: none;
 }
 
-/* Tile content layout */
+/* Tile content container */
+.tile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sizing-8px);
+  padding: var(--spacing-sizing-16px);
+  height: 100%;
+}
+
+/* Icon styling */
 .tile-icon {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
+/* Label styling */
 .tile-label {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-weight: var(--type-weight-light);
+  align-self: stretch;
+  flex: 1;
+  text-align: center;
+  line-height: var(--type-line-height-label);
 }
 
-/* Size variants */
+/* === SIZE VARIANTS === */
+
+/* Small size */
 .tile.small {
   width: 80px;
   height: 80px;
@@ -57,6 +79,7 @@
   letter-spacing: var(--type-letter-spacing-archivo-label-sm);
 }
 
+/* Default size */
 .tile.default {
   width: 100px;
   min-width: 80px;
@@ -68,6 +91,7 @@
   letter-spacing: var(--type-letter-spacing-archivo-label);
 }
 
+/* Large size */
 .tile.large {
   width: 100px;
   min-width: 80px;
@@ -79,105 +103,148 @@
   letter-spacing: var(--type-letter-spacing-archivo-label-lg);
 }
 
-/* Alignment variants */
-.tile.centre {
+/* === ALIGNMENT VARIANTS === */
+
+/* Center alignment */
+.tile.align-centre .tile-content {
   align-items: center;
 }
 
-.tile.centre .tile-label {
+.tile.align-centre .tile-label {
   text-align: center;
 }
 
-.tile.left {
+/* Left alignment */
+.tile.align-left .tile-content {
   align-items: flex-start;
 }
 
-.tile.left .tile-label {
+.tile.align-left .tile-label {
   text-align: left;
 }
 
-.tile.right {
+/* Right alignment */
+.tile.align-right .tile-content {
   align-items: flex-end;
 }
 
-.tile.right .tile-label {
+.tile.align-right .tile-label {
   text-align: right;
 }
 
-/* Color variants */
-.tile.default {
-  background: var(--base-white);
+/* === COLOR VARIANTS === */
+
+/* Default color */
+.tile.colour-default {
+  background-color: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
+}
+
+.tile.colour-default .tile-icon,
+.tile.colour-default .tile-label {
   color: var(--base-black);
 }
 
-.tile.default .tile-icon {
-  color: var(--base-black);
+/* Blue color */
+.tile.colour-blue {
+  background-color: var(--primary-blue-blue);
+  border: var(--spacing-stroke-1px) solid var(--primary-blue-blue);
 }
 
-.tile.blue {
-  background: var(--primary-blue-blue);
+.tile.colour-blue .tile-icon,
+.tile.colour-blue .tile-label {
   color: var(--base-white);
 }
 
-.tile.blue .tile-icon {
-  color: var(--base-white);
+/* Yellow color */
+.tile.colour-yellow {
+  background-color: var(--primary-yellow-300);
+  border: var(--spacing-stroke-1px) solid var(--primary-yellow-300);
 }
 
-.tile.yellow {
-  background: var(--primary-yellow-400);
+.tile.colour-yellow .tile-icon,
+.tile.colour-yellow .tile-label {
   color: var(--base-black);
 }
 
-.tile.yellow .tile-icon {
+/* Light gray color */
+.tile.colour-light-gray {
+  background-color: var(--neutral-gray-gray-100);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
+}
+
+.tile.colour-light-gray .tile-icon,
+.tile.colour-light-gray .tile-label {
   color: var(--base-black);
 }
 
-.tile.light-gray {
-  background: var(--neutral-gray-gray-100);
-  color: var(--base-black);
+/* Info blue color */
+.tile.colour-info-blue {
+  background-color: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
 }
 
-.tile.light-gray .tile-icon {
-  color: var(--base-black);
-}
-
-.tile.info-blue {
-  background: var(--status-info-blue-light);
+.tile.colour-info-blue .tile-icon,
+.tile.colour-info-blue .tile-label {
   color: var(--status-info-blue);
 }
 
-.tile.info-blue .tile-icon {
-  color: var(--status-info-blue);
+/* Blue gray color */
+.tile.colour-blue-gray {
+  background-color: var(--secondary-blue-gray);
+  border: var(--spacing-stroke-1px) solid var(--secondary-blue-gray);
 }
 
-.tile.blue-gray {
-  background: var(--neutral-gray-gray-700);
+.tile.colour-blue-gray .tile-icon,
+.tile.colour-blue-gray .tile-label {
   color: var(--base-white);
 }
 
-.tile.blue-gray .tile-icon {
-  color: var(--base-white);
-}
+/* === RESPONSIVE DESIGN === */
 
-/* Focus management for accessibility */
-.tile.clickable:focus-visible {
-  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue-500);
-  outline-offset: var(--spacing-sizing-2px);
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
+/* Ensure tiles work well on smaller screens */
+@media (max-width: 480px) {
+  .tile {
+    min-width: 60px;
+  }
+  
+  .tile.small {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+  
   .tile.default,
   .tile.large {
     width: 80px;
+    min-width: 60px;
+  }
+  
+  .tile-content {
+    padding: var(--spacing-sizing-12px);
+    gap: var(--spacing-sizing-6px);
   }
 }
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .tile {
-    border: var(--spacing-stroke-1px) solid currentColor;
+    border-width: var(--spacing-stroke-2px);
   }
+  
+  .tile.colour-default {
+    border-color: var(--base-black);
+  }
+  
+  .tile.colour-light-gray {
+    border-color: var(--neutral-gray-gray-600);
+  }
+}
+
+/* Focus styles for keyboard navigation */
+.tile:focus-visible {
+  outline: 2px solid var(--primary-blue-blue-500);
+  outline-offset: 2px;
 }
 
 /* Reduced motion support */
@@ -187,6 +254,10 @@
   }
   
   .tile.clickable:hover:not(.disabled) {
+    transform: none;
+  }
+  
+  .tile.clickable:active:not(.disabled) {
     transform: none;
   }
 }
