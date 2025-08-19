@@ -516,6 +516,28 @@ export const CustomChildren: Story = {
   },
 };
 
+// === CLOSE ICON TEST === //
+
+export const CloseIconTest: Story = {
+  args: {
+    type: 'simple',
+    size: 'default',
+    align: 'vertical',
+    dropShadow: true,
+    showCloseIcon: true,
+    title: 'Close Icon Test',
+    subtitle: 'Should have a visible close icon',
+    onCloseClick: () => alert('Close icon works!'),
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Test story to verify the close icon is visible and functional on simple cards.',
+      },
+    },
+  },
+};
+
 // === CLOSE ICON EXAMPLES === //
 
 export const CloseIconShowcase: Story = {
