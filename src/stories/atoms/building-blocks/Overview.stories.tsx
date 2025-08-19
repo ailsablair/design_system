@@ -86,6 +86,58 @@ export const Overview: Story = {
         <li>They serve as the foundation for more complex components</li>
       </ul>
 
+      <h2 style={{
+        fontSize: '24px',
+        fontWeight: '500',
+        color: 'var(--base-black)',
+        marginBottom: '16px'
+      }}>
+        Available Building Blocks
+      </h2>
+
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+        gap: '16px',
+        marginBottom: '32px'
+      }}>
+        <div style={{
+          padding: '16px',
+          backgroundColor: 'var(--neutral-gray-gray-50)',
+          borderRadius: 'var(--spacing-radius-4px)',
+          border: '1px solid var(--neutral-gray-gray-200)'
+        }}>
+          <h4 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: '500' }}>Dividers</h4>
+          <p style={{ margin: '0 0 12px 0', fontSize: '14px', color: '#666' }}>
+            Visual separators with multiple line styles and thicknesses
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <div style={{ height: '1px', background: 'var(--neutral-gray-gray-300)', width: '100%' }} />
+            <div style={{
+              height: '2px',
+              background: 'var(--neutral-gray-gray-300)',
+              width: '80%',
+              borderStyle: 'dashed',
+              borderWidth: '1px 0 0 0',
+              borderColor: 'var(--neutral-gray-gray-300)',
+              background: 'transparent'
+            }} />
+          </div>
+        </div>
+
+        <div style={{
+          padding: '16px',
+          backgroundColor: 'var(--neutral-gray-gray-50)',
+          borderRadius: 'var(--spacing-radius-4px)',
+          border: '1px solid var(--neutral-gray-gray-200)'
+        }}>
+          <h4 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: '500' }}>Sliders</h4>
+          <p style={{ margin: '0', fontSize: '14px', color: '#666' }}>
+            Interactive range input controls
+          </p>
+        </div>
+      </div>
+
       <div style={{
         marginTop: '40px',
         padding: '24px',
@@ -99,7 +151,7 @@ export const Overview: Story = {
           margin: 0,
           fontStyle: 'italic'
         }}>
-          Building blocks maintain the same design token standards and accessibility requirements 
+          Building blocks maintain the same design token standards and accessibility requirements
           as all other components in the system.
         </p>
       </div>
