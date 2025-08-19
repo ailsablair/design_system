@@ -1,0 +1,192 @@
+@import '../foundations/tokens.css';
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-8px);
+  padding: var(--spacing-sizing-16px);
+  font-family: var(--type-typeface-archivo);
+  font-style: normal;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  outline: none;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: var(--spacing-radius-4px);
+}
+
+/* Clickable tiles */
+.tile.clickable {
+  cursor: pointer;
+}
+
+.tile.clickable:hover:not(.disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tile.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Tile content layout */
+.tile-icon {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.tile-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: var(--type-weight-light);
+}
+
+/* Size variants */
+.tile.small {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+}
+
+.tile.small .tile-label {
+  font-size: var(--type-archivo-label-sm);
+  line-height: var(--type-line-height-label-sm);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
+}
+
+.tile.default {
+  width: 100px;
+  min-width: 80px;
+}
+
+.tile.default .tile-label {
+  font-size: var(--type-archivo-label);
+  line-height: var(--type-line-height-label);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
+}
+
+.tile.large {
+  width: 100px;
+  min-width: 80px;
+}
+
+.tile.large .tile-label {
+  font-size: var(--type-archivo-label-lg);
+  line-height: var(--type-line-height-label-lg);
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg);
+}
+
+/* Alignment variants */
+.tile.centre {
+  align-items: center;
+}
+
+.tile.centre .tile-label {
+  text-align: center;
+}
+
+.tile.left {
+  align-items: flex-start;
+}
+
+.tile.left .tile-label {
+  text-align: left;
+}
+
+.tile.right {
+  align-items: flex-end;
+}
+
+.tile.right .tile-label {
+  text-align: right;
+}
+
+/* Color variants */
+.tile.default {
+  background: var(--base-white);
+  color: var(--base-black);
+}
+
+.tile.default .tile-icon {
+  color: var(--base-black);
+}
+
+.tile.blue {
+  background: var(--primary-blue-blue);
+  color: var(--base-white);
+}
+
+.tile.blue .tile-icon {
+  color: var(--base-white);
+}
+
+.tile.yellow {
+  background: var(--primary-yellow-yellow);
+  color: var(--base-black);
+}
+
+.tile.yellow .tile-icon {
+  color: var(--base-black);
+}
+
+.tile.light-gray {
+  background: var(--neutral-gray-gray-100);
+  color: var(--base-black);
+}
+
+.tile.light-gray .tile-icon {
+  color: var(--base-black);
+}
+
+.tile.info-blue {
+  background: var(--status-info-blue-light);
+  color: var(--status-info-blue);
+}
+
+.tile.info-blue .tile-icon {
+  color: var(--status-info-blue);
+}
+
+.tile.blue-gray {
+  background: var(--neutral-gray-gray-700);
+  color: var(--base-white);
+}
+
+.tile.blue-gray .tile-icon {
+  color: var(--base-white);
+}
+
+/* Focus management for accessibility */
+.tile.clickable:focus-visible {
+  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue-500);
+  outline-offset: var(--spacing-sizing-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .tile.default,
+  .tile.large {
+    width: 80px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .tile {
+    border: var(--spacing-stroke-1px) solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .tile {
+    transition: none;
+  }
+  
+  .tile.clickable:hover:not(.disabled) {
+    transform: none;
+  }
+}
