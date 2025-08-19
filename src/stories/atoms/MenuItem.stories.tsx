@@ -1,222 +1,349 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
 import { MenuItem } from './MenuItem';
 
 const meta: Meta<typeof MenuItem> = {
-  title: 'Molecules/Building Blocks/MenuItem',
+  title: 'Atoms/MenuItem',
   component: MenuItem,
   parameters: {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A menu item component for dropdown menus and navigation. Supports different sizes, states, and icon configurations.',
+        component: 'MenuItem component for dropdown menus and split buttons. Supports different types (top, default, bottom), sizes, and interactive states.',
       },
     },
   },
-  tags: ['autodocs'],
   argTypes: {
-    label: {
-      control: 'text',
-      description: 'Menu item label text',
+    type: {
+      control: 'select',
+      options: ['top', 'default', 'bottom'],
+      description: 'Position type in menu',
     },
     size: {
       control: 'select',
       options: ['small', 'default', 'large'],
-      description: 'Size variant of the menu item',
-    },
-    position: {
-      control: 'select',
-      options: ['top', 'default', 'bottom', 'submenu-top'],
-      description: 'Position of the item in the menu',
-    },
-    type: {
-      control: 'select',
-      options: ['simple', 'back', 'section', 'sub-section'],
-      description: 'Type of menu item',
-    },
-    sectionName: {
-      control: 'text',
-      description: 'Section name for sub-section type',
+      description: 'Size variant',
     },
     state: {
       control: 'select',
-      options: ['default', 'hover', 'focus', 'active', 'disabled'],
-      description: 'Visual state of the menu item',
-    },
-    showLeadingIcon: {
-      control: 'boolean',
-      description: 'Show leading icon',
-    },
-    showTrailingIcon: {
-      control: 'boolean',
-      description: 'Show trailing chevron icon for expandable items',
+      options: ['default', 'hover', 'clicked', 'disabled'],
+      description: 'Interactive state',
     },
     disabled: {
       control: 'boolean',
       description: 'Disabled state',
     },
+    children: {
+      control: 'text',
+      description: 'Menu item content',
+    },
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof MenuItem>;
 
-// Section Header
-export const SectionHeader: Story = {
-  args: {
-    label: 'Section name',
-    type: 'section',
-    size: 'default',
-    position: 'top',
-    showLeadingIcon: false,
-  },
-};
-
-// Sub-section Header
-export const SubSectionHeader: Story = {
-  args: {
-    label: 'Back',
-    sectionName: 'Section name',
-    type: 'sub-section',
-    size: 'default',
-    position: 'submenu-top',
-    showLeadingIcon: true,
-  },
-};
-
-// Section Headers by Size
-export const SectionSizes: Story = {
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '276px' }}>
-      <MenuItem label="Section name" type="section" size="small" position="top" showLeadingIcon={false} />
-      <MenuItem label="Section name" type="section" size="default" position="top" showLeadingIcon={false} />
-      <MenuItem label="Section name" type="section" size="large" position="top" showLeadingIcon={false} />
-    </div>
-  ),
-};
-
-// Sub-section Headers by Size
-export const SubSectionSizes: Story = {
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '276px' }}>
-      <MenuItem label="Back" sectionName="Section name" type="sub-section" size="small" position="submenu-top" />
-      <MenuItem label="Back" sectionName="Section name" type="sub-section" size="default" position="submenu-top" />
-      <MenuItem label="Back" sectionName="Section name" type="sub-section" size="large" position="submenu-top" />
-    </div>
-  ),
-};
-
+// Basic examples
 export const Default: Story = {
   args: {
-    label: 'Menu item',
+    children: 'This is the middle',
+    type: 'default',
+    size: 'default',
+    state: 'default',
   },
 };
 
-export const BackButton: Story = {
+export const TopItem: Story = {
   args: {
-    label: 'Back',
-    type: 'back',
+    children: 'This is the top',
+    type: 'top',
+    size: 'default',
+    state: 'default',
   },
 };
 
-export const WithoutIcon: Story = {
+export const BottomItem: Story = {
   args: {
-    label: 'Menu item',
-    showLeadingIcon: false,
+    children: 'This is the bottom',
+    type: 'bottom',
+    size: 'default',
+    state: 'default',
   },
 };
 
-export const Disabled: Story = {
+// Size variants
+export const SmallSize: Story = {
   args: {
-    label: 'Menu item',
+    children: 'This is the middle',
+    type: 'default',
+    size: 'small',
+    state: 'default',
+  },
+};
+
+export const LargeSize: Story = {
+  args: {
+    children: 'This is the middle',
+    type: 'default',
+    size: 'large',
+    state: 'default',
+  },
+};
+
+// State variants
+export const HoverState: Story = {
+  args: {
+    children: 'This is the middle',
+    type: 'default',
+    size: 'default',
+    state: 'hover',
+    className: 'force-hover',
+  },
+};
+
+export const ClickedState: Story = {
+  args: {
+    children: 'This is the middle',
+    type: 'default',
+    size: 'default',
+    state: 'clicked',
+    className: 'force-clicked',
+  },
+};
+
+export const DisabledState: Story = {
+  args: {
+    children: 'This is the middle',
+    type: 'default',
+    size: 'default',
     disabled: true,
   },
 };
 
-export const AllSizes: Story = {
+// All types showcase
+export const AllTypes: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '276px' }}>
-      <MenuItem size="small" label="Small menu item" position="top" />
-      <MenuItem size="default" label="Default menu item" />
-      <MenuItem size="large" label="Large menu item" position="bottom" />
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', width: '200px' }}>
+      <MenuItem type="top" size="default" state="default">
+        This is the top
+      </MenuItem>
+      <MenuItem type="default" size="default" state="default">
+        This is the middle
+      </MenuItem>
+      <MenuItem type="bottom" size="default" state="default">
+        This is the bottom
+      </MenuItem>
     </div>
   ),
-};
-
-export const AllStates: Story = {
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '276px' }}>
-      <MenuItem label="Default state" state="default" />
-      <MenuItem label="Hover state" state="hover" />
-      <MenuItem label="Focus state" state="focus" />
-      <MenuItem label="Active state" state="active" />
-      <MenuItem label="Disabled state" state="disabled" />
-    </div>
-  ),
-};
-
-export const AllPositions: Story = {
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '276px' }}>
-      <MenuItem label="Top position" position="top" />
-      <MenuItem label="Default position" position="default" />
-      <MenuItem label="Bottom position" position="bottom" />
-      <MenuItem label="Submenu top" position="submenu-top" type="back" />
-    </div>
-  ),
-};
-
-export const BackButtons: Story = {
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '276px' }}>
-      <MenuItem size="small" label="Back" type="back" position="submenu-top" />
-      <MenuItem size="default" label="Back" type="back" position="submenu-top" />
-      <MenuItem size="large" label="Back" type="back" position="submenu-top" />
-    </div>
-  ),
-};
-
-export const CustomIcon: Story = {
-  render: () => {
-    const CustomIcon = (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2L13.09 8.26L19 9L13.09 9.74L12 16L10.91 9.74L5 9L10.91 8.26L12 2Z" fill="#6D7280"/>
-      </svg>
-    );
-    
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '276px' }}>
-        <MenuItem label="Custom icon" icon={CustomIcon} />
-        <MenuItem label="Default icon" />
-        <MenuItem label="No icon" showLeadingIcon={false} />
-      </div>
-    );
+  parameters: {
+    docs: {
+      description: {
+        story: 'Menu items shown as they would appear in a complete menu with proper top, middle, and bottom positioning.',
+      },
+    },
   },
 };
 
-export const InteractiveExample: Story = {
+// All sizes comparison
+export const AllSizes: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Small</h4>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', width: '180px' }}>
+          <MenuItem type="top" size="small" state="default">
+            This is the top
+          </MenuItem>
+          <MenuItem type="default" size="small" state="default">
+            This is the middle
+          </MenuItem>
+          <MenuItem type="bottom" size="small" state="default">
+            This is the bottom
+          </MenuItem>
+        </div>
+      </div>
+      
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Default</h4>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', width: '200px' }}>
+          <MenuItem type="top" size="default" state="default">
+            This is the top
+          </MenuItem>
+          <MenuItem type="default" size="default" state="default">
+            This is the middle
+          </MenuItem>
+          <MenuItem type="bottom" size="default" state="default">
+            This is the bottom
+          </MenuItem>
+        </div>
+      </div>
+      
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Large</h4>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', width: '220px' }}>
+          <MenuItem type="top" size="large" state="default">
+            This is the top
+          </MenuItem>
+          <MenuItem type="default" size="large" state="default">
+            This is the middle
+          </MenuItem>
+          <MenuItem type="bottom" size="large" state="default">
+            This is the bottom
+          </MenuItem>
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Comparison of all available sizes for menu items.',
+      },
+    },
+  },
+};
+
+// All states showcase
+export const AllStates: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Default State</h4>
+        <MenuItem type="default" size="default" state="default">
+          This is the middle
+        </MenuItem>
+      </div>
+      
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Hover State</h4>
+        <MenuItem type="default" size="default" state="hover" className="force-hover">
+          This is the middle
+        </MenuItem>
+      </div>
+      
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Clicked State</h4>
+        <MenuItem type="default" size="default" state="clicked" className="force-clicked">
+          This is the middle
+        </MenuItem>
+      </div>
+      
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Disabled State</h4>
+        <MenuItem type="default" size="default" disabled>
+          This is the middle
+        </MenuItem>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'All available interactive states for menu items.',
+      },
+    },
+  },
+};
+
+// Interactive menu example
+export const InteractiveMenu: Story = {
   render: () => {
-    const [selectedItem, setSelectedItem] = React.useState<string | null>(null);
-    const [hoveredItem, setHoveredItem] = React.useState<string | null>(null);
+    const handleItemClick = (item: string) => {
+      alert(`Clicked: ${item}`);
+    };
 
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '276px' }}>
-        <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: '#6B7280' }}>
-          Selected: {selectedItem || 'None'} | Hovered: {hoveredItem || 'None'}
-        </p>
-        
-        {['Option 1', 'Option 2', 'Option 3'].map((option, index) => (
-          <MenuItem
-            key={option}
-            label={option}
-            position={index === 0 ? 'top' : index === 2 ? 'bottom' : 'default'}
-            state={selectedItem === option ? 'active' : hoveredItem === option ? 'hover' : 'default'}
-            onClick={() => setSelectedItem(option)}
-            onMouseEnter={() => setHoveredItem(option)}
-            onMouseLeave={() => setHoveredItem(null)}
-          />
-        ))}
+      <div style={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        gap: '2px', 
+        width: '220px',
+        border: '1px solid #e5e7eb',
+        borderRadius: '8px',
+        padding: '4px',
+        backgroundColor: 'white',
+        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+      }}>
+        <MenuItem 
+          type="top" 
+          size="default" 
+          onClick={() => handleItemClick('Edit Profile')}
+        >
+          Edit Profile
+        </MenuItem>
+        <MenuItem 
+          type="default" 
+          size="default" 
+          onClick={() => handleItemClick('Account Settings')}
+        >
+          Account Settings
+        </MenuItem>
+        <MenuItem 
+          type="default" 
+          size="default" 
+          onClick={() => handleItemClick('Preferences')}
+        >
+          Preferences
+        </MenuItem>
+        <MenuItem 
+          type="default" 
+          size="default" 
+          disabled
+        >
+          Premium Features (Disabled)
+        </MenuItem>
+        <MenuItem 
+          type="bottom" 
+          size="default" 
+          onClick={() => handleItemClick('Sign Out')}
+        >
+          Sign Out
+        </MenuItem>
       </div>
     );
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Example of a complete interactive menu using MenuItem components with click handlers.',
+      },
+    },
+  },
+};
+
+// Complete variant matrix (for comprehensive testing)
+export const VariantMatrix: Story = {
+  render: () => (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', padding: '16px' }}>
+      {/* Header */}
+      <div></div>
+      <div style={{ fontWeight: 'bold', textAlign: 'center' }}>Default</div>
+      <div style={{ fontWeight: 'bold', textAlign: 'center' }}>Hover</div>
+      <div style={{ fontWeight: 'bold', textAlign: 'center' }}>Clicked</div>
+      
+      {/* Small size row */}
+      <div style={{ fontWeight: 'bold' }}>Small</div>
+      <MenuItem type="default" size="small" state="default">Small Default</MenuItem>
+      <MenuItem type="default" size="small" state="hover" className="force-hover">Small Hover</MenuItem>
+      <MenuItem type="default" size="small" state="clicked" className="force-clicked">Small Clicked</MenuItem>
+      
+      {/* Default size row */}
+      <div style={{ fontWeight: 'bold' }}>Default</div>
+      <MenuItem type="default" size="default" state="default">Default Default</MenuItem>
+      <MenuItem type="default" size="default" state="hover" className="force-hover">Default Hover</MenuItem>
+      <MenuItem type="default" size="default" state="clicked" className="force-clicked">Default Clicked</MenuItem>
+      
+      {/* Large size row */}
+      <div style={{ fontWeight: 'bold' }}>Large</div>
+      <MenuItem type="default" size="large" state="default">Large Default</MenuItem>
+      <MenuItem type="default" size="large" state="hover" className="force-hover">Large Hover</MenuItem>
+      <MenuItem type="default" size="large" state="clicked" className="force-clicked">Large Clicked</MenuItem>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Complete matrix showing all size and state combinations.',
+      },
+    },
   },
 };
