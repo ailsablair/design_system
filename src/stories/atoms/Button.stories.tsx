@@ -28,6 +28,10 @@ const meta: Meta<typeof Button> = {
       options: ['default', 'hover', 'clicked', 'focused', 'loading', 'disabled'],
       description: 'Visual state (for controlled states)',
     },
+    outline: {
+      control: 'boolean',
+      description: 'Outline variant',
+    },
     loading: {
       control: 'boolean',
       description: 'Loading state',
@@ -57,6 +61,15 @@ export const Default: Story = {
     children: 'Label',
     size: 'default',
     type: 'primary',
+  },
+};
+
+export const DefaultOutline: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'primary',
+    outline: true,
   },
 };
 
@@ -280,11 +293,19 @@ export const LoadingStates: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'center' }}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Loading States</h4>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Filled Loading States</h4>
         <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
           <Button size="small" type="primary" loading>Label</Button>
           <Button size="default" type="primary" loading>Label</Button>
           <Button size="large" type="primary" loading>Label</Button>
+        </div>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Outline Loading States</h4>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+          <Button size="small" type="primary" outline loading>Label</Button>
+          <Button size="default" type="primary" outline loading>Label</Button>
+          <Button size="large" type="primary" outline loading>Label</Button>
         </div>
       </div>
     </div>
@@ -292,7 +313,7 @@ export const LoadingStates: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Loading states with animated spinner icons for all button sizes.',
+        story: 'Loading states with animated spinner icons for all button sizes, including both filled and outline variants.',
       },
     },
   },
@@ -301,46 +322,67 @@ export const LoadingStates: Story = {
 // Interactive examples
 export const Interactive: Story = {
   render: () => {
-    const handleClick = () => {
-      alert('Button clicked!');
+    const handleClick = (type: string) => {
+      alert(`${type} button clicked!`);
     };
 
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'center' }}>
-        <Button 
-          size="default" 
-          type="primary" 
-          onClick={handleClick}
-          leadingIcon={<AlarmIcon size={18} />}
-        >
-          Click me!
-        </Button>
-        
-        <Button 
-          size="small" 
-          type="primary" 
-          onClick={handleClick}
-          trailingIcon={<ArrowDownIcon size={14} />}
-        >
-          Small Button
-        </Button>
-        
-        <Button 
-          size="large" 
-          type="primary" 
-          onClick={handleClick}
-          leadingIcon={<AlarmIcon size={20} />}
-          trailingIcon={<ArrowDownIcon size={20} />}
-        >
-          Large Button
-        </Button>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+          <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Filled Buttons</h4>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+            <Button
+              size="default"
+              type="primary"
+              onClick={() => handleClick('Filled')}
+              leadingIcon={<AlarmIcon size={18} />}
+            >
+              Click me!
+            </Button>
+
+            <Button
+              size="small"
+              type="primary"
+              onClick={() => handleClick('Small filled')}
+              trailingIcon={<ArrowDownIcon size={14} />}
+            >
+              Small Button
+            </Button>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+          <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Outline Buttons</h4>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+            <Button
+              size="default"
+              type="primary"
+              outline
+              onClick={() => handleClick('Outline')}
+              leadingIcon={<AlarmIcon size={18} />}
+            >
+              Click me!
+            </Button>
+
+            <Button
+              size="large"
+              type="primary"
+              outline
+              onClick={() => handleClick('Large outline')}
+              leadingIcon={<AlarmIcon size={20} />}
+              trailingIcon={<ArrowDownIcon size={20} />}
+            >
+              Large Button
+            </Button>
+          </div>
+        </div>
       </div>
     );
   },
   parameters: {
     docs: {
       description: {
-        story: 'Interactive buttons with click handlers.',
+        story: 'Interactive buttons with click handlers, showcasing both filled and outline variants.',
       },
     },
   },
@@ -349,17 +391,31 @@ export const Interactive: Story = {
 // Width variants
 export const WidthVariants: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '300px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', width: '300px' }}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Auto Width</h4>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Filled - Auto Width</h4>
         <Button size="default" type="primary" width="auto" leadingIcon={<AlarmIcon size={18} />}>
           Auto Width
         </Button>
       </div>
-      
+
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Full Width</h4>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Filled - Full Width</h4>
         <Button size="default" type="primary" width="full" leadingIcon={<AlarmIcon size={18} />}>
+          Full Width Button
+        </Button>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Outline - Auto Width</h4>
+        <Button size="default" type="primary" outline width="auto" leadingIcon={<AlarmIcon size={18} />}>
+          Auto Width
+        </Button>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Outline - Full Width</h4>
+        <Button size="default" type="primary" outline width="full" leadingIcon={<AlarmIcon size={18} />}>
           Full Width Button
         </Button>
       </div>
@@ -368,33 +424,307 @@ export const WidthVariants: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Buttons with different width configurations.',
+        story: 'Buttons with different width configurations, showcasing both filled and outline variants.',
       },
     },
   },
 };
 
-// Icon only buttons
+// Icon configurations
 export const IconButtons: Story = {
   render: () => (
-    <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-      <Button size="small" type="primary" leadingIcon={<AlarmIcon size={14} />}>
-        Leading
-      </Button>
-      
-      <Button size="default" type="primary" trailingIcon={<ArrowDownIcon size={18} />}>
-        Trailing
-      </Button>
-      
-      <Button size="large" type="primary" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>
-        Both Icons
-      </Button>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'center' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Filled with Icons</h4>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+          <Button size="small" type="primary" leadingIcon={<AlarmIcon size={14} />}>
+            Leading
+          </Button>
+
+          <Button size="default" type="primary" trailingIcon={<ArrowDownIcon size={18} />}>
+            Trailing
+          </Button>
+
+          <Button size="large" type="primary" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>
+            Both Icons
+          </Button>
+        </div>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Outline with Icons</h4>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+          <Button size="small" type="primary" outline leadingIcon={<AlarmIcon size={14} />}>
+            Leading
+          </Button>
+
+          <Button size="default" type="primary" outline trailingIcon={<ArrowDownIcon size={18} />}>
+            Trailing
+          </Button>
+
+          <Button size="large" type="primary" outline leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>
+            Both Icons
+          </Button>
+        </div>
+      </div>
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Buttons with different icon configurations.',
+        story: 'Buttons with different icon configurations, showcasing both filled and outline variants.',
+      },
+    },
+  },
+};
+
+// Outline variants
+export const OutlineDefault: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'primary',
+    outline: true,
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const OutlineSmall: Story = {
+  args: {
+    children: 'Label',
+    size: 'small',
+    type: 'primary',
+    outline: true,
+    leadingIcon: <AlarmIcon size={14} />,
+    trailingIcon: <ArrowDownIcon size={14} />,
+  },
+};
+
+export const OutlineLarge: Story = {
+  args: {
+    children: 'Label',
+    size: 'large',
+    type: 'primary',
+    outline: true,
+    leadingIcon: <AlarmIcon size={20} />,
+    trailingIcon: <ArrowDownIcon size={20} />,
+  },
+};
+
+export const OutlineHover: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'primary',
+    outline: true,
+    state: 'hover',
+    className: 'force-hover',
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const OutlineClicked: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'primary',
+    outline: true,
+    state: 'clicked',
+    className: 'force-clicked',
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const OutlineFocused: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'primary',
+    outline: true,
+    state: 'focused',
+    className: 'force-focused',
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const OutlineLoading: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'primary',
+    outline: true,
+    loading: true,
+  },
+};
+
+export const OutlineDisabled: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'primary',
+    outline: true,
+    disabled: true,
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+// All outline sizes comparison
+export const AllOutlineSizes: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'center' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Small</h4>
+        <Button size="small" type="primary" outline leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
+          Label
+        </Button>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Default</h4>
+        <Button size="default" type="primary" outline leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
+          Label
+        </Button>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Large</h4>
+        <Button size="large" type="primary" outline leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>
+          Label
+        </Button>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Comparison of all available outline button sizes with appropriate icons.',
+      },
+    },
+  },
+};
+
+// All outline states showcase
+export const AllOutlineStates: Story = {
+  render: () => (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', alignItems: 'center' }}>
+      {/* Small size row */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+        <h4 style={{ margin: 0, fontSize: '12px', fontWeight: '600' }}>Small - Default</h4>
+        <Button size="small" type="primary" outline leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
+          Label
+        </Button>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+        <h4 style={{ margin: 0, fontSize: '12px', fontWeight: '600' }}>Small - Hover</h4>
+        <Button size="small" type="primary" outline className="force-hover" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
+          Label
+        </Button>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+        <h4 style={{ margin: 0, fontSize: '12px', fontWeight: '600' }}>Small - Clicked</h4>
+        <Button size="small" type="primary" outline className="force-clicked" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
+          Label
+        </Button>
+      </div>
+
+      {/* Default size row */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+        <h4 style={{ margin: 0, fontSize: '12px', fontWeight: '600' }}>Default - Focused</h4>
+        <Button size="default" type="primary" outline className="force-focused" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
+          Label
+        </Button>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+        <h4 style={{ margin: 0, fontSize: '12px', fontWeight: '600' }}>Default - Loading</h4>
+        <Button size="default" type="primary" outline loading>
+          Label
+        </Button>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+        <h4 style={{ margin: 0, fontSize: '12px', fontWeight: '600' }}>Default - Disabled</h4>
+        <Button size="default" type="primary" outline disabled leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
+          Label
+        </Button>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Comprehensive showcase of different outline button states across various sizes.',
+      },
+    },
+  },
+};
+
+// Comparison between filled and outline buttons
+export const FilledVsOutline: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', padding: '24px' }}>
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Filled Primary Buttons</h3>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+          <Button size="small" type="primary" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
+            Small
+          </Button>
+          <Button size="default" type="primary" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
+            Default
+          </Button>
+          <Button size="large" type="primary" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>
+            Large
+          </Button>
+        </div>
+      </div>
+
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Outline Primary Buttons</h3>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+          <Button size="small" type="primary" outline leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
+            Small
+          </Button>
+          <Button size="default" type="primary" outline leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
+            Default
+          </Button>
+          <Button size="large" type="primary" outline leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>
+            Large
+          </Button>
+        </div>
+      </div>
+
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Interactive States Comparison</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <span style={{ minWidth: '80px', fontSize: '14px', fontWeight: '500' }}>Filled:</span>
+            <Button size="default" type="primary" leadingIcon={<AlarmIcon size={18} />}>Default</Button>
+            <Button size="default" type="primary" className="force-hover" leadingIcon={<AlarmIcon size={18} />}>Hover</Button>
+            <Button size="default" type="primary" loading>Loading</Button>
+            <Button size="default" type="primary" disabled leadingIcon={<AlarmIcon size={18} />}>Disabled</Button>
+          </div>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <span style={{ minWidth: '80px', fontSize: '14px', fontWeight: '500' }}>Outline:</span>
+            <Button size="default" type="primary" outline leadingIcon={<AlarmIcon size={18} />}>Default</Button>
+            <Button size="default" type="primary" outline className="force-hover" leadingIcon={<AlarmIcon size={18} />}>Hover</Button>
+            <Button size="default" type="primary" outline loading>Loading</Button>
+            <Button size="default" type="primary" outline disabled leadingIcon={<AlarmIcon size={18} />}>Disabled</Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Side-by-side comparison of filled and outline button variants with all states.',
       },
     },
   },
@@ -421,7 +751,22 @@ export const DesignSystemShowcase: Story = {
           </Button>
         </div>
       </div>
-      
+
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Primary Outline Buttons - All Sizes</h3>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+          <Button size="small" type="primary" outline leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
+            Small
+          </Button>
+          <Button size="default" type="primary" outline leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
+            Default
+          </Button>
+          <Button size="large" type="primary" outline leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>
+            Large
+          </Button>
+        </div>
+      </div>
+
       <div>
         <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Interactive States</h3>
         <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
@@ -444,7 +789,7 @@ export const DesignSystemShowcase: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Complete design system showcase with all button variants and states.',
+        story: 'Complete design system showcase with all button variants and states, including the new outline buttons.',
       },
     },
   },
