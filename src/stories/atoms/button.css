@@ -983,7 +983,7 @@
 .button.warning.hover,
 .button.warning:hover:not(.disabled):not(.loading) {
   border: var(--spacing-stroke-2px) solid var(--status-orange-100);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
 }
 
 .button.warning.hover .button-text,
@@ -994,7 +994,7 @@
 .button.warning.clicked,
 .button.warning:active:not(.disabled):not(.loading) {
   border: var(--spacing-stroke-2px) solid var(--status-orange-200);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
 }
 
 .button.warning.clicked .button-text,
@@ -1176,7 +1176,7 @@
 .button.info.hover,
 .button.info:hover:not(.disabled):not(.loading) {
   border: var(--spacing-stroke-2px) solid var(--status-info-blue-light);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
 }
 
 .button.info.hover .button-text,
@@ -1187,7 +1187,7 @@
 .button.info.clicked,
 .button.info:active:not(.disabled):not(.loading) {
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-200);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--neutral-gray-gray-300);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
 }
 
 .button.info.clicked .button-text,
@@ -1230,7 +1230,7 @@
 .button.success:hover:not(.disabled):not(.loading) {
   background: var(--status-dark-green);
   border: var(--spacing-stroke-2px) solid var(--status-green-light);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--status-green);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
   color: var(--base-white);
 }
 
@@ -1249,7 +1249,7 @@
 .button.success:active:not(.disabled):not(.loading) {
   background: var(--status-dark-green);
   border: var(--spacing-stroke-2px) solid var(--status-green-light);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--status-green);
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
   color: var(--base-white);
 }
 
