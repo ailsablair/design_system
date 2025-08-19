@@ -30,6 +30,16 @@
   align-items: center;
 }
 
+.textarea-label.required {
+  color: var(--base-black);
+}
+
+.textarea-label-required {
+  color: var(--status-red);
+  margin-left: var(--spacing-sizing-2px);
+  font-weight: var(--type-weight-bold);
+}
+
 .textarea-label.small {
   font-size: var(--type-archivo-label-sm);
   line-height: var(--type-line-height-label-sm);
