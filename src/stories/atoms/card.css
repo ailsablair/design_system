@@ -446,23 +446,28 @@
 
 .card-semantic-title {
   color: var(--base-black);
-  text-align: center;
+  text-align: left;
   font-family: var(--type-typeface-archivo);
   font-weight: var(--type-weight-medium);
   margin: 0;
-  line-height: 1.2;
+  line-height: 1;
+  letter-spacing: -0.25px;
 }
 
 .card.card-type-warning .card-semantic-title {
-  color: var(--status-orange-500);
+  color: #D07C06;
 }
 
 .card.card-type-error .card-semantic-title {
-  color: var(--status-red-500);
+  color: #CE2031;
 }
 
 .card.card-type-info .card-semantic-title {
-  color: var(--primary-blue-blue);
+  color: #366F97;
+}
+
+.card.card-type-success .card-semantic-title {
+  color: #227F1A;
 }
 
 .card.card-size-small .card-semantic-title {
