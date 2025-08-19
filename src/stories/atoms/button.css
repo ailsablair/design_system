@@ -580,7 +580,7 @@
 /* Force state classes for Storybook */
 .button.force-hover {
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-400) !important;
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-blue-blue-400) !important;
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15) !important;
 }
 
 .button.force-hover .button-text {
@@ -589,7 +589,7 @@
 
 .button.force-clicked {
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-200) !important;
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-blue-blue-400) !important;
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15) !important;
 }
 
 .button.force-clicked .button-text {
@@ -604,13 +604,13 @@
 .button.outline.force-hover {
   background: var(--primary-blue-blue-100) !important;
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue) !important;
-  box-shadow: var(--spacing-stroke-3px) var(--spacing-stroke-3px) 0 0 var(--primary-blue-blue-400) !important;
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15) !important;
 }
 
 .button.outline.force-clicked {
   background: var(--primary-blue-blue-100) !important;
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue) !important;
-  box-shadow: var(--spacing-stroke-3px) var(--spacing-stroke-3px) 0 0 var(--primary-blue-blue-400) !important;
+  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15) !important;
 }
 
 .button.outline.force-focused {
