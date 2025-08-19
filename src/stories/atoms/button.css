@@ -330,7 +330,7 @@
 
 .button.primary.disabled {
   background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
   color: var(--neutral-gray-gray-300);
   cursor: not-allowed;
   pointer-events: none;
