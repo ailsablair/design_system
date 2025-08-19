@@ -297,7 +297,7 @@
 .button.primary.hover,
 .button.primary:hover:not(.disabled):not(.loading) {
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-400);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-blue-blue-400);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-teal-dark-teal);
 }
 
 .button.primary.hover .button-text,
@@ -308,7 +308,7 @@
 .button.primary.clicked,
 .button.primary:active:not(.disabled):not(.loading) {
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-200);
-  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-blue-blue-400);
+  box-shadow: var(--spacing-sizing-3px) var(--spacing-sizing-3px) 0 0 var(--primary-teal-dark-teal);
 }
 
 .button.primary.clicked .button-text,
