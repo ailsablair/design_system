@@ -475,11 +475,31 @@
 }
 
 .card.card-size-default .card-semantic-title {
-  font-size: var(--type-archivo-heading-3);
+  font-size: var(--type-archivo-heading-4);
 }
 
 .card.card-size-large .card-semantic-title {
-  font-size: var(--type-archivo-heading-2);
+  font-size: var(--type-archivo-heading-3);
+}
+
+/* === SEMANTIC CARDS BODY TEXT === */
+
+.card.card-type-warning .card-body,
+.card.card-type-error .card-body,
+.card.card-type-info .card-body,
+.card.card-type-success .card-body {
+  width: 344px;
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--base-black);
+  font-family: var(--type-typeface-roboto-flex);
+  font-size: var(--type-roboto-flex-body-sm);
+  font-weight: var(--type-weight-default);
+  line-height: 16px;
+  letter-spacing: -0.15px;
+  margin: 0;
 }
 
 /* === SEMANTIC BUTTON VARIANTS === */
