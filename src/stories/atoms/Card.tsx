@@ -130,8 +130,8 @@ const ArrowDownCircleIcon = ({ size = 'small' }: { size?: 'small' | 'default' | 
 
 // Close icon component
 const CloseIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M11.8 4.2L7.6 8.4L3.4 4.2L2.2 5.4L6.4 9.6L2.2 13.8L3.4 15L7.6 10.8L11.8 15L13 13.8L8.8 9.6L13 5.4L11.8 4.2Z" fill="#6B7280" stroke="#6B7280" strokeWidth="0.5"/>
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M13.5 4.5L4.5 13.5M4.5 4.5L13.5 13.5" stroke="#4B5563" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
