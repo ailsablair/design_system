@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Card } from './Card';
 
 const meta = {
-  title: 'Echo Design System/Atoms/Card/Figma Showcase',
+  title: 'Atoms/Card/Figma Showcase',
   component: Card,
   parameters: {
     layout: 'fullscreen',
