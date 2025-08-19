@@ -71,6 +71,7 @@
   /* === SKY BLUE PALETTE === */
   --primary-sky-blue-25: #F8FEFF;
   --primary-sky-blue-50: #F0FBFF;
+  --primary-sky-blue-50-alt: #E5F7FF;
   --primary-sky-blue-75: #E8F8FF;
   --primary-sky-blue-100: #E0F6FE;
   --primary-sky-blue-150: #D0F1FD;
@@ -92,6 +93,8 @@
   --primary-sky-blue-925: #0A3F5F;
   --primary-sky-blue-950: #082F49;
   --primary-sky-blue-975: #051F31;
+  --primary-sky-blue-dark-sky-blue: #04435E;
+  --primary-sky-blue-light-alt: #D6F0FB;
 
   /* Legacy Sky Blue (maintain backward compatibility) */
   --primary-sky-blue-sky-blue: #0BA7EA;
