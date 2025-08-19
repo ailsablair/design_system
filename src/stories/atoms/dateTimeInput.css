@@ -75,10 +75,26 @@
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
 }
 
+/* State variants */
 .datetime-input-container.focus,
 .datetime-input-container.typing {
   border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
   box-shadow: var(--shadow-focus);
+}
+
+.datetime-input-container.error {
+  border: var(--spacing-stroke-2px) solid var(--status-red);
+  box-shadow: 0 0 0 1px var(--status-red-light);
+}
+
+.datetime-input-container.warning {
+  border: var(--spacing-stroke-2px) solid var(--status-orange-alt);
+  box-shadow: 0 0 0 1px var(--status-orange-light);
+}
+
+.datetime-input-container.success {
+  border: var(--spacing-stroke-2px) solid var(--status-dark-green);
+  box-shadow: 0 0 0 1px var(--status-green-light);
 }
 
 .datetime-input-container.disabled {
