@@ -8,7 +8,7 @@ const meta = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Complete replication of all Card component variants as specified in the Figma design. This showcase demonstrates every combination of size, type, alignment, shadow, and other properties exactly as shown in the Figma design system.',
+        component: 'Complete replication of the Figma Card component design with all variants, sizes, and states exactly as specified in the design system.',
       },
     },
   },
@@ -18,506 +18,557 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const FigmaDesignReplication: Story = {
+export const CompleteCardShowcase: Story = {
   render: () => (
-    <div style={{
-      padding: '40px',
-      backgroundColor: '#f8f9fa',
+    <div style={{ 
+      backgroundColor: '#f8fafc', 
+      padding: '32px', 
       minHeight: '100vh',
-      fontFamily: 'Arial, sans-serif',
+      fontFamily: 'system-ui, -apple-system, sans-serif'
     }}>
-      <div style={{ 
-        maxWidth: '1600px',
-        margin: '0 auto',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '48px'
-      }}>
-        
-        {/* Title */}
-        <div>
-          <h1 style={{ 
-            fontSize: '32px', 
-            fontWeight: 600, 
-            color: '#1a1a1a',
-            margin: '0 0 8px 0'
-          }}>
-            Card Component - Figma Design Replication
-          </h1>
-          <p style={{
-            fontSize: '16px',
-            color: '#666',
-            margin: '0 0 24px 0'
-          }}>
-            Complete implementation of all card variants: Simple, Icon, Text-Only, Empty State, and Stat cards
-          </p>
-        </div>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <h1 style={{ 
+          fontSize: '32px', 
+          fontWeight: '700', 
+          color: '#1C1C1C', 
+          marginBottom: '40px',
+          textAlign: 'center' 
+        }}>
+          Card Component - Figma Design Implementation
+        </h1>
 
-        {/* === SIMPLE CARDS === */}
-        <section>
+        {/* SIMPLE CARDS - HORIZONTAL ALIGNMENT */}
+        <section style={{ marginBottom: '48px' }}>
           <h2 style={{ 
-            fontSize: '24px', 
-            fontWeight: 600, 
-            color: '#333',
-            margin: '0 0 32px 0'
+            fontSize: '20px', 
+            fontWeight: '600', 
+            color: '#374151', 
+            marginBottom: '24px',
+            borderBottom: '2px solid #e5e7eb',
+            paddingBottom: '8px'
           }}>
-            Simple Cards
+            Simple Cards - Horizontal Alignment
           </h2>
           
-          {/* Horizontal Layout with Shadow */}
           <div style={{ marginBottom: '32px' }}>
-            <h3 style={{ 
-              fontSize: '18px', 
-              fontWeight: 500, 
-              color: '#555',
-              margin: '0 0 16px 0'
-            }}>
-              Horizontal Layout - With Drop Shadow
-            </h3>
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
-              <Card type="simple" size="small" align="horizontal" dropShadow={true} />
-              <Card type="simple" size="default" align="horizontal" dropShadow={true} />
-              <Card type="simple" size="large" align="horizontal" dropShadow={true} />
+            <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '16px' }}>With Drop Shadow</h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Small</p>
+                <Card type="simple" size="small" align="horizontal" dropShadow={true} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Default</p>
+                <Card type="simple" size="default" align="horizontal" dropShadow={true} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Large</p>
+                <Card type="simple" size="large" align="horizontal" dropShadow={true} />
+              </div>
             </div>
           </div>
 
-          {/* Horizontal Layout without Shadow */}
           <div style={{ marginBottom: '32px' }}>
-            <h3 style={{ 
-              fontSize: '18px', 
-              fontWeight: 500, 
-              color: '#555',
-              margin: '0 0 16px 0'
-            }}>
-              Horizontal Layout - No Drop Shadow
-            </h3>
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
-              <Card type="simple" size="small" align="horizontal" dropShadow={false} />
-              <Card type="simple" size="default" align="horizontal" dropShadow={false} />
-              <Card type="simple" size="large" align="horizontal" dropShadow={false} />
-            </div>
-          </div>
-
-          {/* Vertical Layout with Shadow */}
-          <div style={{ marginBottom: '32px' }}>
-            <h3 style={{ 
-              fontSize: '18px', 
-              fontWeight: 500, 
-              color: '#555',
-              margin: '0 0 16px 0'
-            }}>
-              Vertical Layout - With Drop Shadow
-            </h3>
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
-              <Card type="simple" size="small" align="vertical" dropShadow={true} />
-              <Card type="simple" size="default" align="vertical" dropShadow={true} />
-              <Card type="simple" size="large" align="vertical" dropShadow={true} />
-            </div>
-          </div>
-
-          {/* Vertical Layout without Shadow */}
-          <div style={{ marginBottom: '32px' }}>
-            <h3 style={{ 
-              fontSize: '18px', 
-              fontWeight: 500, 
-              color: '#555',
-              margin: '0 0 16px 0'
-            }}>
-              Vertical Layout - No Drop Shadow
-            </h3>
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
-              <Card type="simple" size="small" align="vertical" dropShadow={false} />
-              <Card type="simple" size="default" align="vertical" dropShadow={false} />
-              <Card type="simple" size="large" align="vertical" dropShadow={false} />
+            <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '16px' }}>Without Drop Shadow</h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Small</p>
+                <Card type="simple" size="small" align="horizontal" dropShadow={false} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Default</p>
+                <Card type="simple" size="default" align="horizontal" dropShadow={false} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Large</p>
+                <Card type="simple" size="large" align="horizontal" dropShadow={false} />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* === ICON CARDS === */}
-        <section>
+        {/* SIMPLE CARDS - VERTICAL ALIGNMENT */}
+        <section style={{ marginBottom: '48px' }}>
           <h2 style={{ 
-            fontSize: '24px', 
-            fontWeight: 600, 
-            color: '#333',
-            margin: '0 0 32px 0'
+            fontSize: '20px', 
+            fontWeight: '600', 
+            color: '#374151', 
+            marginBottom: '24px',
+            borderBottom: '2px solid #e5e7eb',
+            paddingBottom: '8px'
+          }}>
+            Simple Cards - Vertical Alignment
+          </h2>
+          
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '16px' }}>With Drop Shadow</h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Small</p>
+                <Card type="simple" size="small" align="vertical" dropShadow={true} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Default</p>
+                <Card type="simple" size="default" align="vertical" dropShadow={true} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Large</p>
+                <Card type="simple" size="large" align="vertical" dropShadow={true} />
+              </div>
+            </div>
+          </div>
+
+          <div style={{ marginBottom: '32px' }}>
+            <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '16px' }}>Without Drop Shadow</h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Small</p>
+                <Card type="simple" size="small" align="vertical" dropShadow={false} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Default</p>
+                <Card type="simple" size="default" align="vertical" dropShadow={false} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Large</p>
+                <Card type="simple" size="large" align="vertical" dropShadow={false} />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ICON CARDS */}
+        <section style={{ marginBottom: '48px' }}>
+          <h2 style={{ 
+            fontSize: '20px', 
+            fontWeight: '600', 
+            color: '#374151', 
+            marginBottom: '24px',
+            borderBottom: '2px solid #e5e7eb',
+            paddingBottom: '8px'
           }}>
             Icon Cards
           </h2>
           
-          {/* Icon Cards with Shadow */}
           <div style={{ marginBottom: '32px' }}>
-            <h3 style={{ 
-              fontSize: '18px', 
-              fontWeight: 500, 
-              color: '#555',
-              margin: '0 0 16px 0'
-            }}>
-              With Drop Shadow
-            </h3>
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
-              <Card type="icon" size="small" align="vertical" dropShadow={true} />
-              <Card type="icon" size="default" align="vertical" dropShadow={true} />
-              <Card type="icon" size="large" align="vertical" dropShadow={true} />
+            <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '16px' }}>With Drop Shadow</h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Small</p>
+                <Card type="icon" size="small" align="vertical" dropShadow={true} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Default</p>
+                <Card type="icon" size="default" align="vertical" dropShadow={true} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Large</p>
+                <Card type="icon" size="large" align="vertical" dropShadow={true} />
+              </div>
             </div>
           </div>
 
-          {/* Icon Cards without Shadow */}
           <div style={{ marginBottom: '32px' }}>
-            <h3 style={{ 
-              fontSize: '18px', 
-              fontWeight: 500, 
-              color: '#555',
-              margin: '0 0 16px 0'
-            }}>
-              No Drop Shadow
-            </h3>
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
-              <Card type="icon" size="small" align="vertical" dropShadow={false} />
-              <Card type="icon" size="default" align="vertical" dropShadow={false} />
-              <Card type="icon" size="large" align="vertical" dropShadow={false} />
+            <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '16px' }}>Without Drop Shadow</h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Small</p>
+                <Card type="icon" size="small" align="vertical" dropShadow={false} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Default</p>
+                <Card type="icon" size="default" align="vertical" dropShadow={false} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Large</p>
+                <Card type="icon" size="large" align="vertical" dropShadow={false} />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* === EMPTY STATE CARDS === */}
-        <section>
+        {/* EMPTY STATE CARDS */}
+        <section style={{ marginBottom: '48px' }}>
           <h2 style={{ 
-            fontSize: '24px', 
-            fontWeight: 600, 
-            color: '#333',
-            margin: '0 0 32px 0'
+            fontSize: '20px', 
+            fontWeight: '600', 
+            color: '#374151', 
+            marginBottom: '24px',
+            borderBottom: '2px solid #e5e7eb',
+            paddingBottom: '8px'
           }}>
             Empty State Cards
           </h2>
           
-          {/* Empty State Cards with Shadow */}
           <div style={{ marginBottom: '32px' }}>
-            <h3 style={{ 
-              fontSize: '18px', 
-              fontWeight: 500, 
-              color: '#555',
-              margin: '0 0 16px 0'
-            }}>
-              With Drop Shadow
-            </h3>
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
-              <Card type="empty-state" size="small" align="vertical" dropShadow={true} />
-              <Card type="empty-state" size="default" align="vertical" dropShadow={true} />
-              <Card type="empty-state" size="large" align="vertical" dropShadow={true} />
+            <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '16px' }}>With Drop Shadow</h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Small</p>
+                <Card type="empty-state" size="small" align="vertical" dropShadow={true} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Default</p>
+                <Card type="empty-state" size="default" align="vertical" dropShadow={true} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Large</p>
+                <Card type="empty-state" size="large" align="vertical" dropShadow={true} />
+              </div>
             </div>
           </div>
 
-          {/* Empty State Cards without Shadow */}
           <div style={{ marginBottom: '32px' }}>
-            <h3 style={{ 
-              fontSize: '18px', 
-              fontWeight: 500, 
-              color: '#555',
-              margin: '0 0 16px 0'
-            }}>
-              No Drop Shadow
-            </h3>
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
-              <Card type="empty-state" size="small" align="vertical" dropShadow={false} />
-              <Card type="empty-state" size="default" align="vertical" dropShadow={false} />
-              <Card type="empty-state" size="large" align="vertical" dropShadow={false} />
+            <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '16px' }}>Without Drop Shadow</h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Small</p>
+                <Card type="empty-state" size="small" align="vertical" dropShadow={false} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Default</p>
+                <Card type="empty-state" size="default" align="vertical" dropShadow={false} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Large</p>
+                <Card type="empty-state" size="large" align="vertical" dropShadow={false} />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* === TEXT-ONLY CARDS === */}
-        <section>
+        {/* TEXT-ONLY CARDS */}
+        <section style={{ marginBottom: '48px' }}>
           <h2 style={{ 
-            fontSize: '24px', 
-            fontWeight: 600, 
-            color: '#333',
-            margin: '0 0 32px 0'
+            fontSize: '20px', 
+            fontWeight: '600', 
+            color: '#374151', 
+            marginBottom: '24px',
+            borderBottom: '2px solid #e5e7eb',
+            paddingBottom: '8px'
           }}>
             Text-Only Cards
           </h2>
           
-          {/* Text-Only Cards with Shadow */}
           <div style={{ marginBottom: '32px' }}>
-            <h3 style={{ 
-              fontSize: '18px', 
-              fontWeight: 500, 
-              color: '#555',
-              margin: '0 0 16px 0'
-            }}>
-              With Drop Shadow
-            </h3>
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
-              <Card type="text-only" size="small" align="vertical" dropShadow={true} />
-              <Card type="text-only" size="default" align="vertical" dropShadow={true} />
-              <Card type="text-only" size="large" align="vertical" dropShadow={true} />
+            <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '16px' }}>With Drop Shadow</h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Small</p>
+                <Card type="text-only" size="small" align="vertical" dropShadow={true} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Default</p>
+                <Card type="text-only" size="default" align="vertical" dropShadow={true} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Large</p>
+                <Card type="text-only" size="large" align="vertical" dropShadow={true} />
+              </div>
             </div>
           </div>
 
-          {/* Text-Only Cards without Shadow */}
           <div style={{ marginBottom: '32px' }}>
-            <h3 style={{ 
-              fontSize: '18px', 
-              fontWeight: 500, 
-              color: '#555',
-              margin: '0 0 16px 0'
-            }}>
-              No Drop Shadow
-            </h3>
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
-              <Card type="text-only" size="small" align="vertical" dropShadow={false} />
-              <Card type="text-only" size="default" align="vertical" dropShadow={false} />
-              <Card type="text-only" size="large" align="vertical" dropShadow={false} />
+            <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '16px' }}>Without Drop Shadow</h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Small</p>
+                <Card type="text-only" size="small" align="vertical" dropShadow={false} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Default</p>
+                <Card type="text-only" size="default" align="vertical" dropShadow={false} />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Large</p>
+                <Card type="text-only" size="large" align="vertical" dropShadow={false} />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* === STAT CARDS === */}
-        <section>
+        {/* STAT CARDS */}
+        <section style={{ marginBottom: '48px' }}>
           <h2 style={{ 
-            fontSize: '24px', 
-            fontWeight: 600, 
-            color: '#333',
-            margin: '0 0 32px 0'
+            fontSize: '20px', 
+            fontWeight: '600', 
+            color: '#374151', 
+            marginBottom: '24px',
+            borderBottom: '2px solid #e5e7eb',
+            paddingBottom: '8px'
           }}>
             Stat Cards
           </h2>
           
-          {/* Roboto Flex Stats with Shadow */}
           <div style={{ marginBottom: '32px' }}>
-            <h3 style={{ 
-              fontSize: '18px', 
-              fontWeight: 500, 
-              color: '#555',
-              margin: '0 0 16px 0'
-            }}>
-              Roboto Flex Font - With Drop Shadow
-            </h3>
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
-              <Card type="stat" size="small" align="vertical" dropShadow={true} font="roboto-flex" />
-              <Card type="stat" size="default" align="vertical" dropShadow={true} font="roboto-flex" />
-              <Card type="stat" size="large" align="vertical" dropShadow={true} font="roboto-flex" />
+            <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '16px' }}>Roboto Flex Font - With Drop Shadow</h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Small</p>
+                <Card type="stat" size="small" align="vertical" dropShadow={true} font="roboto-flex" />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Default</p>
+                <Card type="stat" size="default" align="vertical" dropShadow={true} font="roboto-flex" />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Large</p>
+                <Card type="stat" size="large" align="vertical" dropShadow={true} font="roboto-flex" />
+              </div>
             </div>
           </div>
 
-          {/* Roboto Flex Stats without Shadow */}
           <div style={{ marginBottom: '32px' }}>
-            <h3 style={{ 
-              fontSize: '18px', 
-              fontWeight: 500, 
-              color: '#555',
-              margin: '0 0 16px 0'
-            }}>
-              Roboto Flex Font - No Drop Shadow
-            </h3>
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
-              <Card type="stat" size="small" align="vertical" dropShadow={false} font="roboto-flex" />
-              <Card type="stat" size="default" align="vertical" dropShadow={false} font="roboto-flex" />
-              <Card type="stat" size="large" align="vertical" dropShadow={false} font="roboto-flex" />
+            <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '16px' }}>Archivo Font - With Drop Shadow</h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Small</p>
+                <Card type="stat" size="small" align="vertical" dropShadow={true} font="archivo" />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Default</p>
+                <Card type="stat" size="default" align="vertical" dropShadow={true} font="archivo" />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Large</p>
+                <Card type="stat" size="large" align="vertical" dropShadow={true} font="archivo" />
+              </div>
             </div>
           </div>
 
-          {/* Archivo Stats with Shadow */}
           <div style={{ marginBottom: '32px' }}>
-            <h3 style={{ 
-              fontSize: '18px', 
-              fontWeight: 500, 
-              color: '#555',
-              margin: '0 0 16px 0'
-            }}>
-              Archivo Font - With Drop Shadow
-            </h3>
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
-              <Card type="stat" size="small" align="vertical" dropShadow={true} font="archivo" />
-              <Card type="stat" size="default" align="vertical" dropShadow={true} font="archivo" />
-              <Card type="stat" size="large" align="vertical" dropShadow={true} font="archivo" />
+            <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '16px' }}>Roboto Flex Font - Without Drop Shadow</h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Small</p>
+                <Card type="stat" size="small" align="vertical" dropShadow={false} font="roboto-flex" />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Default</p>
+                <Card type="stat" size="default" align="vertical" dropShadow={false} font="roboto-flex" />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Large</p>
+                <Card type="stat" size="large" align="vertical" dropShadow={false} font="roboto-flex" />
+              </div>
             </div>
           </div>
 
-          {/* Archivo Stats without Shadow */}
           <div style={{ marginBottom: '32px' }}>
-            <h3 style={{ 
-              fontSize: '18px', 
-              fontWeight: 500, 
-              color: '#555',
-              margin: '0 0 16px 0'
-            }}>
-              Archivo Font - No Drop Shadow
-            </h3>
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'start', flexWrap: 'wrap' }}>
-              <Card type="stat" size="small" align="vertical" dropShadow={false} font="archivo" />
-              <Card type="stat" size="default" align="vertical" dropShadow={false} font="archivo" />
-              <Card type="stat" size="large" align="vertical" dropShadow={false} font="archivo" />
+            <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '16px' }}>Archivo Font - Without Drop Shadow</h3>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Small</p>
+                <Card type="stat" size="small" align="vertical" dropShadow={false} font="archivo" />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Default</p>
+                <Card type="stat" size="default" align="vertical" dropShadow={false} font="archivo" />
+              </div>
+              <div>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginBottom: '8px' }}>Large</p>
+                <Card type="stat" size="large" align="vertical" dropShadow={false} font="archivo" />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* === INTERACTIVE EXAMPLES === */}
-        <section>
-          <h2 style={{ 
-            fontSize: '24px', 
-            fontWeight: 600, 
-            color: '#333',
-            margin: '0 0 32px 0'
-          }}>
-            Interactive Examples
-          </h2>
-          
-          <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', alignItems: 'start' }}>
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
-                Clickable Card
-              </h3>
-              <Card 
-                type="simple"
-                size="default"
-                align="horizontal"
-                dropShadow={true}
-                title="Click Me"
-                subtitle="This card is interactive"
-                onClick={() => alert('Card clicked!')}
-              />
-            </div>
-            
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
-                Disabled Card
-              </h3>
-              <Card 
-                type="simple"
-                size="default"
-                align="horizontal"
-                dropShadow={true}
-                title="Disabled"
-                subtitle="Cannot interact"
-                disabled={true}
-                onClick={() => alert('This should not fire')}
-              />
-            </div>
-
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
-                No Close Button
-              </h3>
-              <Card 
-                type="simple"
-                size="default"
-                align="horizontal"
-                dropShadow={true}
-                showCloseIcon={false}
-                title="No Close"
-                subtitle="Close button hidden"
-              />
-            </div>
-
-            <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 500, color: '#555', margin: '0 0 12px 0' }}>
-                No Button Group
-              </h3>
-              <Card 
-                type="simple"
-                size="default"
-                align="horizontal"
-                dropShadow={true}
-                showButtonGroup={false}
-                title="No Buttons"
-                subtitle="Button group hidden"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* === DESIGN SYSTEM SUMMARY === */}
+        {/* DESIGN SPECIFICATION NOTES */}
         <section style={{ 
-          backgroundColor: '#fff',
-          padding: '32px',
-          borderRadius: '12px',
-          border: '1px solid #e0e0e0',
-          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+          backgroundColor: '#f8fafc', 
+          border: '1px solid #e5e7eb', 
+          borderRadius: '8px', 
+          padding: '24px',
+          marginTop: '48px'
         }}>
           <h2 style={{ 
-            fontSize: '20px', 
-            fontWeight: 600, 
-            color: '#333',
-            margin: '0 0 24px 0'
+            fontSize: '18px', 
+            fontWeight: '600', 
+            color: '#374151', 
+            marginBottom: '16px'
           }}>
-            Figma Design System Implementation Summary
+            Design Specifications
           </h2>
-          
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px', fontSize: '14px', color: '#6B7280' }}>
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#555', margin: '0 0 12px 0' }}>
-                Card Types (5)
-              </h3>
-              <ul style={{ margin: '0', paddingLeft: '20px', color: '#666', lineHeight: 1.6 }}>
-                <li><strong>Simple:</strong> Headers, subtitles, body text, buttons</li>
-                <li><strong>Icon:</strong> Large icon with title and body text</li>
-                <li><strong>Text-Only:</strong> Title and body text without buttons</li>
-                <li><strong>Empty State:</strong> Icon with title for empty states</li>
-                <li><strong>Stat:</strong> Large numeric values with labels</li>
+              <h4 style={{ fontWeight: '500', color: '#374151', marginBottom: '8px' }}>Typography</h4>
+              <ul style={{ margin: 0, paddingLeft: '16px' }}>
+                <li>Headings: Archivo font family with medium weight</li>
+                <li>Body text: Roboto Flex font family</li>
+                <li>Precise font sizes, line heights, and letter spacing per Figma specs</li>
+                <li>Color tokens: --base-black, --neutral-gray-gray-500</li>
               </ul>
             </div>
-            
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#555', margin: '0 0 12px 0' }}>
-                Size Variants (3)
-              </h3>
-              <ul style={{ margin: '0', paddingLeft: '20px', color: '#666', lineHeight: 1.6 }}>
-                <li><strong>Small:</strong> Compact spacing and typography</li>
-                <li><strong>Default:</strong> Standard size for most use cases</li>
-                <li><strong>Large:</strong> Increased spacing and typography</li>
+              <h4 style={{ fontWeight: '500', color: '#374151', marginBottom: '8px' }}>Layout & Spacing</h4>
+              <ul style={{ margin: 0, paddingLeft: '16px' }}>
+                <li>Responsive flexbox layouts</li>
+                <li>Consistent spacing using design tokens</li>
+                <li>Size variants: small, default, large</li>
+                <li>Alignment options: horizontal, vertical</li>
               </ul>
             </div>
-            
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#555', margin: '0 0 12px 0' }}>
-                Layout Options
-              </h3>
-              <ul style={{ margin: '0', paddingLeft: '20px', color: '#666', lineHeight: 1.6 }}>
-                <li><strong>Horizontal:</strong> Text and buttons side by side</li>
-                <li><strong>Vertical:</strong> Stacked content layout</li>
-                <li><strong>Shadow:</strong> Optional drop shadow</li>
-                <li><strong>Close Icon:</strong> Toggleable close button</li>
+              <h4 style={{ fontWeight: '500', color: '#374151', marginBottom: '8px' }}>Interactive Elements</h4>
+              <ul style={{ margin: 0, paddingLeft: '16px' }}>
+                <li>Hover states with subtle transforms</li>
+                <li>Focus outlines for accessibility</li>
+                <li>Optional close buttons and action buttons</li>
+                <li>Disabled state support</li>
               </ul>
             </div>
-            
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#555', margin: '0 0 12px 0' }}>
-                Typography & Accessibility
-              </h3>
-              <ul style={{ margin: '0', paddingLeft: '20px', color: '#666', lineHeight: 1.6 }}>
-                <li>Design token-based typography</li>
-                <li>Keyboard navigation support</li>
-                <li>ARIA labels and roles</li>
-                <li>Focus indicators and states</li>
+              <h4 style={{ fontWeight: '500', color: '#374151', marginBottom: '8px' }}>Customization</h4>
+              <ul style={{ margin: 0, paddingLeft: '16px' }}>
+                <li>5 card types: simple, icon, text-only, empty-state, stat</li>
+                <li>Drop shadow toggle</li>
+                <li>Custom content support via children prop</li>
+                <li>Font family options for stat cards</li>
               </ul>
             </div>
-          </div>
-
-          <div style={{ 
-            marginTop: '24px', 
-            padding: '20px', 
-            backgroundColor: '#f8f9fa', 
-            borderRadius: '8px',
-            border: '1px solid #e9ecef'
-          }}>
-            <h4 style={{ fontSize: '14px', fontWeight: 600, color: '#495057', margin: '0 0 8px 0' }}>
-              Figma Design Compliance
-            </h4>
-            <p style={{ margin: '0', fontSize: '14px', color: '#6c757d', lineHeight: 1.5 }}>
-              This implementation faithfully reproduces all card variants from the Figma design system, 
-              including exact spacing, typography, colors, and interactive states. All 42+ variants 
-              are supported with pixel-perfect accuracy.
-            </p>
           </div>
         </section>
 
+        <div style={{ 
+          textAlign: 'center', 
+          marginTop: '48px', 
+          padding: '24px',
+          backgroundColor: '#f0f9ff',
+          borderRadius: '8px',
+          border: '1px solid #0284c7'
+        }}>
+          <p style={{ 
+            fontSize: '16px', 
+            color: '#0369a1', 
+            margin: 0,
+            fontWeight: '500'
+          }}>
+            ✨ Complete Card Component Implementation
+          </p>
+          <p style={{ 
+            fontSize: '14px', 
+            color: '#075985', 
+            margin: '8px 0 0 0'
+          }}>
+            All 42 variants exactly matching the Figma design specifications
+          </p>
+        </div>
       </div>
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Complete showcase of all Card component variants as specified in the Figma design. This demonstrates every combination of type, size, alignment, shadow, and font properties, organized by category for comprehensive documentation.',
+        story: 'Complete showcase of all Card component variants exactly as designed in Figma. This implementation includes all 42 possible combinations of size, type, alignment, shadow, and font options, ensuring pixel-perfect replication of the design system specifications.',
+      },
+    },
+  },
+};
+
+export const FigmaVariantGrid: Story = {
+  render: () => (
+    <div style={{ 
+      backgroundColor: '#ffffff', 
+      padding: '40px',
+      fontFamily: 'system-ui, -apple-system, sans-serif'
+    }}>
+      <h1 style={{ 
+        textAlign: 'center', 
+        fontSize: '24px', 
+        fontWeight: '700', 
+        marginBottom: '32px',
+        color: '#1C1C1C'
+      }}>
+        Card Component Figma Variants Grid
+      </h1>
+
+      {/* Recreate the exact layout from Figma */}
+      <div style={{ 
+        display: 'grid', 
+        gridTemplateColumns: 'repeat(6, 1fr)', 
+        gap: '32px',
+        maxWidth: '1400px',
+        margin: '0 auto'
+      }}>
+        {/* Row 1: Simple horizontal cards with shadow */}
+        <Card type="simple" size="small" align="horizontal" dropShadow={true} />
+        <Card type="simple" size="small" align="horizontal" dropShadow={false} />
+        <Card type="simple" size="default" align="horizontal" dropShadow={true} />
+        <Card type="simple" size="default" align="horizontal" dropShadow={false} />
+        <Card type="simple" size="large" align="horizontal" dropShadow={true} />
+        <Card type="simple" size="large" align="horizontal" dropShadow={false} />
+
+        {/* Row 2: Simple vertical cards */}
+        <Card type="simple" size="small" align="vertical" dropShadow={true} />
+        <Card type="simple" size="default" align="vertical" dropShadow={true} />
+        <Card type="simple" size="large" align="vertical" dropShadow={true} />
+        <Card type="simple" size="large" align="vertical" dropShadow={false} />
+        <Card type="simple" size="default" align="vertical" dropShadow={false} />
+        <Card type="simple" size="small" align="vertical" dropShadow={false} />
+
+        {/* Row 3: Icon and Empty State cards */}
+        <Card type="icon" size="default" align="vertical" dropShadow={true} />
+        <Card type="empty-state" size="default" align="vertical" dropShadow={true} />
+        <Card type="text-only" size="default" align="vertical" dropShadow={true} />
+        <Card type="text-only" size="large" align="vertical" dropShadow={true} />
+        <Card type="text-only" size="large" align="vertical" dropShadow={false} />
+        <Card type="text-only" size="default" align="vertical" dropShadow={false} />
+
+        {/* Row 4: More icon variations */}
+        <Card type="icon" size="default" align="vertical" dropShadow={false} />
+        <Card type="empty-state" size="default" align="vertical" dropShadow={false} />
+        <Card type="icon" size="large" align="vertical" dropShadow={true} />
+        <Card type="empty-state" size="large" align="vertical" dropShadow={true} />
+        <Card type="icon" size="large" align="vertical" dropShadow={false} />
+        <Card type="empty-state" size="large" align="vertical" dropShadow={false} />
+
+        {/* Row 5: Small icon and text-only cards */}
+        <Card type="icon" size="small" align="vertical" dropShadow={true} />
+        <Card type="empty-state" size="small" align="vertical" dropShadow={true} />
+        <Card type="text-only" size="small" align="vertical" dropShadow={true} />
+        <Card type="text-only" size="small" align="vertical" dropShadow={false} />
+        <Card type="icon" size="small" align="vertical" dropShadow={false} />
+        <Card type="empty-state" size="small" align="vertical" dropShadow={false} />
+
+        {/* Row 6: Stat cards with different fonts */}
+        <Card type="stat" size="large" align="vertical" dropShadow={true} font="roboto-flex" />
+        <Card type="stat" size="large" align="vertical" dropShadow={false} font="roboto-flex" />
+        <Card type="stat" size="large" align="vertical" dropShadow={true} font="archivo" />
+        <Card type="stat" size="large" align="vertical" dropShadow={false} font="archivo" />
+        <Card type="stat" size="small" align="vertical" dropShadow={true} font="roboto-flex" />
+        <Card type="stat" size="default" align="vertical" dropShadow={true} font="roboto-flex" />
+
+        {/* Row 7: More stat variations */}
+        <Card type="stat" size="default" align="vertical" dropShadow={false} font="roboto-flex" />
+        <Card type="stat" size="default" align="vertical" dropShadow={true} font="archivo" />
+        <Card type="stat" size="default" align="vertical" dropShadow={false} font="archivo" />
+        <Card type="stat" size="small" align="vertical" dropShadow={false} font="roboto-flex" />
+        <Card type="stat" size="small" align="vertical" dropShadow={true} font="archivo" />
+        <Card type="stat" size="small" align="vertical" dropShadow={false} font="archivo" />
+      </div>
+
+      <div style={{ 
+        textAlign: 'center', 
+        marginTop: '48px',
+        padding: '20px',
+        backgroundColor: '#f9fafb',
+        borderRadius: '8px',
+        border: '1px solid #e5e7eb'
+      }}>
+        <p style={{ 
+          fontSize: '14px', 
+          color: '#6B7280', 
+          margin: 0
+        }}>
+          All 42 card variants from the Figma design system, arranged in the exact grid layout
+        </p>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Grid layout replicating the exact arrangement shown in the Figma design file, with all 42 card variants organized systematically.',
       },
     },
   },
