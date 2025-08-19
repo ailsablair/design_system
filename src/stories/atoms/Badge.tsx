@@ -36,7 +36,7 @@ export const Badge: React.FC<BadgeProps> = ({
 
   return (
     <div
-      className={`badge ${variant} ${color} ${size} ${light ? 'light' : ''} ${className}`}
+      className={`badge ${variant} ${color} ${size} ${light ? 'light' : ''} ${show ? 'show' : ''} ${className}`}
       role={variant === 'count' ? 'status' : undefined}
       aria-label={variant === 'count' ? `${count} notifications` : `${color} status indicator`}
     >
