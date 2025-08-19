@@ -198,6 +198,36 @@
   letter-spacing: var(--type-letter-spacing-archivo-label-lg);
 }
 
+/* Icon-only button content styling */
+.button.icon-only .button-icon-only-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.button.icon-only .button-icon {
+  opacity: 0.7;
+}
+
+/* Icon-only button content padding adjustments */
+.button.extra-small.icon-only .button-icon-only-content {
+  padding: var(--spacing-sizing-4px);
+}
+
+.button.small.icon-only .button-icon-only-content {
+  padding: var(--spacing-sizing-4px);
+}
+
+.button.default.icon-only .button-icon-only-content {
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-4px);
+}
+
+.button.large.icon-only .button-icon-only-content {
+  padding: var(--spacing-sizing-12px) var(--spacing-sizing-4px);
+}
+
 /* Primary button variant */
 .button.primary {
   background: var(--primary-blue-blue);
