@@ -40,7 +40,11 @@ const meta = {
     },
     showCloseIcon: {
       control: { type: 'boolean' },
-      description: 'Show close icon (for simple type)',
+      description: 'Show close icon (for simple and text-only types)',
+    },
+    onCloseClick: {
+      action: 'close clicked',
+      description: 'Close icon click handler',
     },
     showButtonGroup: {
       control: { type: 'boolean' },
@@ -212,6 +216,8 @@ export const TextOnlyDefault: Story = {
     size: 'default',
     align: 'vertical',
     dropShadow: true,
+    showCloseIcon: true,
+    onCloseClick: () => console.log('Text-only card close clicked!'),
   },
 };
 
@@ -221,6 +227,8 @@ export const TextOnlyLarge: Story = {
     size: 'large',
     align: 'vertical',
     dropShadow: true,
+    showCloseIcon: true,
+    onCloseClick: () => console.log('Text-only card close clicked!'),
   },
 };
 
@@ -284,7 +292,9 @@ export const ClickableCard: Story = {
     dropShadow: true,
     title: 'Clickable Card',
     subtitle: 'Click me to interact',
+    showCloseIcon: true,
     onClick: () => console.log('Card clicked!'),
+    onCloseClick: () => console.log('Close clicked!'),
   },
 };
 
@@ -297,7 +307,9 @@ export const DisabledCard: Story = {
     title: 'Disabled Card',
     subtitle: 'This card is disabled',
     disabled: true,
+    showCloseIcon: true,
     onClick: () => console.log('This should not fire'),
+    onCloseClick: () => console.log('Close clicked!'),
   },
 };
 
@@ -309,11 +321,12 @@ export const CustomContent: Story = {
     size: 'default',
     align: 'horizontal',
     dropShadow: true,
-    showCloseIcon: false,
+    showCloseIcon: true,
     showButtonGroup: false,
     title: 'Custom Title',
     subtitle: 'Custom subtitle text',
     bodyText: 'This is a custom body text that demonstrates the flexibility of the card component.',
+    onCloseClick: () => console.log('Close clicked!'),
   },
 };
 
@@ -334,6 +347,8 @@ export const NoButtonGroup: Story = {
     align: 'vertical',
     dropShadow: true,
     showButtonGroup: false,
+    showCloseIcon: true,
+    onCloseClick: () => console.log('Close clicked!'),
   },
 };
 
@@ -344,16 +359,16 @@ export const AllSimpleVariants: Story = {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '20px' }}>
       <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Simple Cards - Horizontal</h3>
       <div style={{ display: 'flex', gap: '16px', alignItems: 'start', flexWrap: 'wrap' }}>
-        <Card type="simple" size="small" align="horizontal" dropShadow={true} />
-        <Card type="simple" size="default" align="horizontal" dropShadow={true} />
-        <Card type="simple" size="large" align="horizontal" dropShadow={true} />
+        <Card type="simple" size="small" align="horizontal" dropShadow={true} showCloseIcon={true} onCloseClick={() => console.log('Small card closed')} />
+        <Card type="simple" size="default" align="horizontal" dropShadow={true} showCloseIcon={true} onCloseClick={() => console.log('Default card closed')} />
+        <Card type="simple" size="large" align="horizontal" dropShadow={true} showCloseIcon={true} onCloseClick={() => console.log('Large card closed')} />
       </div>
       
       <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Simple Cards - Vertical</h3>
       <div style={{ display: 'flex', gap: '16px', alignItems: 'start', flexWrap: 'wrap' }}>
-        <Card type="simple" size="small" align="vertical" dropShadow={true} />
-        <Card type="simple" size="default" align="vertical" dropShadow={true} />
-        <Card type="simple" size="large" align="vertical" dropShadow={true} />
+        <Card type="simple" size="small" align="vertical" dropShadow={true} showCloseIcon={true} onCloseClick={() => console.log('Small vertical card closed')} />
+        <Card type="simple" size="default" align="vertical" dropShadow={true} showCloseIcon={true} onCloseClick={() => console.log('Default vertical card closed')} />
+        <Card type="simple" size="large" align="vertical" dropShadow={true} showCloseIcon={true} onCloseClick={() => console.log('Large vertical card closed')} />
       </div>
     </div>
   ),
@@ -398,9 +413,9 @@ export const AllTextVariants: Story = {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '20px' }}>
       <h3 style={{ margin: '0', fontSize: '18px', fontWeight: 600 }}>Text-Only Cards</h3>
       <div style={{ display: 'flex', gap: '16px', alignItems: 'start', flexWrap: 'wrap' }}>
-        <Card type="text-only" size="small" align="vertical" dropShadow={true} />
-        <Card type="text-only" size="default" align="vertical" dropShadow={true} />
-        <Card type="text-only" size="large" align="vertical" dropShadow={true} />
+        <Card type="text-only" size="small" align="vertical" dropShadow={true} showCloseIcon={true} onCloseClick={() => console.log('Small text-only card closed')} />
+        <Card type="text-only" size="default" align="vertical" dropShadow={true} showCloseIcon={true} onCloseClick={() => console.log('Default text-only card closed')} />
+        <Card type="text-only" size="large" align="vertical" dropShadow={true} showCloseIcon={true} onCloseClick={() => console.log('Large text-only card closed')} />
       </div>
     </div>
   ),
@@ -467,6 +482,8 @@ export const ShadowComparison: Story = {
 
 export const CustomChildren: Story = {
   args: {
+    showCloseIcon: true,
+    onCloseClick: () => console.log('Custom card close clicked!'),
     children: (
       <div style={{ padding: '16px' }}>
         <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600 }}>Custom Content</h3>
@@ -479,7 +496,7 @@ export const CustomChildren: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Example of using custom children to override the default card structure.',
+        story: 'Example of using custom children to override the default card structure with an optional close icon.',
       },
     },
   },
