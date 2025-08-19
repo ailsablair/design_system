@@ -62,6 +62,8 @@ export const Overview: Story = {
         <li>Sub-components used by larger atoms</li>
         <li>Internal UI elements that don't stand alone</li>
         <li>Primitive elements that combine to form complete components</li>
+        <li>Visual separators like dividers and spacers</li>
+        <li>Layout helpers and structural elements</li>
       </ul>
 
       <h2 style={{
