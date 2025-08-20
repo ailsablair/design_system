@@ -98,28 +98,45 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 
   return (
     <div className={`checkbox-wrapper ${size} ${className}`}>
-      <div className={`checkbox-container ${actualState} ${variant} ${size}`}>
-        <input
-          id={checkboxId}
-          type="checkbox"
-          name={name}
-          value={value}
-          checked={checked}
-          disabled={disabled}
-          onChange={handleChange}
-          className="checkbox-input"
-          aria-checked={indeterminate ? 'mixed' : checked}
-        />
-        <div className={`checkbox-visual ${actualState} ${variant} ${size}`}>
-          {actualState === 'checked' && <CheckIcon size={size} />}
-          {actualState === 'indeterminate' && <IndeterminateIcon size={size} />}
+      <div className={`checkbox-row ${actualState} ${variant} ${size}`}>
+        <div className={`checkbox-container ${actualState} ${variant} ${size}`}>
+          <input
+            id={checkboxId}
+            type="checkbox"
+            name={name}
+            value={value}
+            checked={checked}
+            disabled={disabled}
+            required={required}
+            onChange={handleChange}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            className="checkbox-input"
+            aria-checked={indeterminate ? 'mixed' : checked}
+            aria-describedby={message ? `${checkboxId}-message` : undefined}
+            aria-invalid={actualState === 'error'}
+          />
+          <div className={`checkbox-visual ${actualState} ${variant} ${size}`}>
+            {actualState === 'checked' && <CheckIcon size={size} />}
+            {actualState === 'indeterminate' && <IndeterminateIcon size={size} />}
+          </div>
         </div>
+
+        {label && (
+          <label htmlFor={checkboxId} className={`checkbox-label ${size} ${disabled ? 'disabled' : ''} ${required ? 'required' : ''}`}>
+            {label}
+            {required && <span className="checkbox-label-required">*</span>}
+          </label>
+        )}
       </div>
-      
-      {label && (
-        <label htmlFor={checkboxId} className={`checkbox-label ${size} ${disabled ? 'disabled' : ''}`}>
-          {label}
-        </label>
+
+      {message && (
+        <div
+          id={`${checkboxId}-message`}
+          className={`checkbox-message ${actualState} ${size}`}
+        >
+          {message}
+        </div>
       )}
     </div>
   );
