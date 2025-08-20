@@ -6,6 +6,36 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 All notable changes to the Echo Design System are documented here.
 
+## [2.4.0] - 2024 ResizeObserver Error Handling & Performance
+
+### 🛠️ Fixed - ResizeObserver Errors
+
+#### Comprehensive Error Suppression
+- **Enhanced Error Handler**: Upgraded ResizeObserver error handling system
+- **Multiple Error Patterns**: Now catches all variants of ResizeObserver loop errors
+- **Storybook Integration**: Applied error suppression to Storybook environment
+- **Development Friendly**: Clean console output with one-time warnings only
+
+#### Performance Optimizations
+- **CSS Containment**: Added `contain: layout style` to transform-heavy components
+- **GPU Acceleration**: Enhanced `transform: translateZ(0)` usage for smooth animations
+- **Will-Change Optimization**: Smart `will-change` property management to reduce paint costs
+- **Backface Visibility**: Added `backface-visibility: hidden` for transform performance
+
+#### Components Optimized
+- ✅ **Avatar**: Enhanced transform performance and containment
+- ✅ **Avatar Group**: Optimized grid hover effects
+- ✅ **Image**: Improved scale transform handling
+- ✅ **Tag**: Added containment and transform optimization
+- ✅ **Badge**: Enhanced interactive transform performance
+- ✅ **Tile**: Optimized hover and active state transforms
+
+#### Error Handling Features
+- **Pattern Matching**: Detects multiple ResizeObserver error variations
+- **Event Capture**: Handles both console errors and unhandled promise rejections
+- **Session Tracking**: Prevents console spam with one-time warning system
+- **Development Mode**: Friendly warnings only in development environment
+
 ## [2.3.0] - 2024 Story Restoration & Enhancement
 
 ### ✅ Restored - Previously Rejected Stories
