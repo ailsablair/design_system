@@ -115,7 +115,6 @@ export const Overview: Story = {
             <div style={{ height: '1px', background: 'var(--neutral-gray-gray-300)', width: '100%' }} />
             <div style={{
               height: '2px',
-              background: 'var(--neutral-gray-gray-300)',
               width: '80%',
               borderStyle: 'dashed',
               borderWidth: '1px 0 0 0',
