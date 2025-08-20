@@ -1,5 +1,6 @@
 import React from 'react';
-import { Avatar, AvatarProps } from './Avatar';
+import { Avatar } from './Avatar';
+import type { AvatarProps } from './Avatar';
 import './avatarGroup.css';
 
 export type AvatarGroupType = 'default' | 'grid' | 'initials-light' | 'initials-dark';
