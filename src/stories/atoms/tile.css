@@ -9,25 +9,30 @@
   font-family: var(--type-typeface-archivo);
   font-weight: var(--type-weight-light);
   letter-spacing: var(--type-letter-spacing-archivo-label);
-  /* Performance optimizations */
-  will-change: transform;
+  /* CSS containment for performance */
   contain: layout style;
+  backface-visibility: hidden;
 }
 
 /* Clickable tiles */
 .tile.clickable {
   cursor: pointer;
+  will-change: transform;
 }
 
 .tile.clickable:hover:not(.disabled) {
-  transform: var(--transform-scale-up);
+  transform: translateZ(0) var(--transform-scale-up);
   /* Use box-shadow instead of additional transforms to avoid layout shifts */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .tile.clickable:active:not(.disabled) {
-  transform: var(--transform-scale-down);
+  transform: translateZ(0) var(--transform-scale-down);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tile.clickable:not(:hover):not(:active):not(:focus) {
+  will-change: auto;
 }
 
 .tile.clickable:focus:not(.disabled) {
