@@ -464,6 +464,20 @@
   --sizing-auto: auto;
   --sizing-flex-1: 1;
 
+  /* === AVATAR COMPONENT TOKENS === */
+  --components-avatar-avatar: 46px;
+  --components-avatar-avatar-xs: 26px;
+  --components-avatar-border-radius: 8px;
+  --spacing-radius-99999px: 99999px;
+
+  /* === AVATAR GROUP TOKENS === */
+  --avatar-group-spacing-default: 15px;
+  --avatar-group-spacing-small: 6px;
+  --avatar-group-overlap-default: -12px;
+  --avatar-group-overlap-small: -8px;
+  --avatar-group-overlap-bordered-default: -16px;
+  --avatar-group-overlap-bordered-small: -12px;
+
   /* Toggle specific dimensions */
   --sizing-toggle-small-width: 32px;
   --sizing-toggle-small-height: 18px;
