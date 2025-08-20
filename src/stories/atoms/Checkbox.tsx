@@ -5,11 +5,15 @@ export interface CheckboxProps {
   /** Checkbox label text */
   label?: string;
   /** Checkbox state */
-  state?: 'default' | 'checked' | 'indeterminate' | 'disabled';
+  state?: 'default' | 'checked' | 'indeterminate' | 'error' | 'warning' | 'success' | 'disabled';
   /** Color variant */
   variant?: 'default' | 'primary' | 'success' | 'warning' | 'error';
   /** Size variant */
   size?: 'small' | 'default' | 'large';
+  /** Validation message text */
+  message?: string;
+  /** Required field indicator */
+  required?: boolean;
   /** Disabled state */
   disabled?: boolean;
   /** Checked state (controlled) */
@@ -26,6 +30,10 @@ export interface CheckboxProps {
   className?: string;
   /** onChange event handler */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  /** onFocus event handler */
+  onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
+  /** onBlur event handler */
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
 }
 
 const CheckIcon = ({ size = 'default' }: { size?: 'small' | 'default' | 'large' }) => {
