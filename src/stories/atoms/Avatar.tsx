@@ -181,3 +181,6 @@ export const Avatar: React.FC<AvatarProps> = ({
 };
 
 export default Avatar;
+
+// Explicit re-exports to ensure they're available
+export type { AvatarProps, StatusIconProps, AvatarSize, AvatarType, AvatarShape, StatusType, StatusSize };
