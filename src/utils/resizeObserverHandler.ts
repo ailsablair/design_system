@@ -1,96 +1,144 @@
 /**
- * Utility to handle ResizeObserver loop errors gracefully
- * These errors are usually harmless and occur when rapid resize events trigger loops
+ * Comprehensive utility to handle ResizeObserver loop errors gracefully
+ * These errors are usually harmless and occur when rapid resize events trigger loops,
+ * especially common in Storybook and when using CSS transforms
  */
 
 // Extend window interface for tracking
 declare global {
   interface Window {
     __resizeObserverErrorLogged?: boolean;
+    __resizeObserverOriginalError?: typeof console.error;
+    __resizeObserverSetupComplete?: boolean;
   }
 }
 
-export const setupResizeObserverErrorHandler = (): void => {
-  // Only run in development or when needed
-  if (typeof window === 'undefined') return;
-
-  const originalError = window.console.error;
-
-  window.console.error = (...args: any[]) => {
-    const message = args[0];
-
-    // Check if this is a ResizeObserver loop error
-    if (
-      typeof message === 'string' &&
-      (message.includes('ResizeObserver loop completed with undelivered notifications') ||
-       message.includes('ResizeObserver loop limit exceeded'))
-    ) {
-      // Silently ignore these errors in development as they're usually harmless
-      if (process.env.NODE_ENV === 'development') {
-        // Only log once per session to avoid spam
-        if (!window.__resizeObserverErrorLogged) {
-          console.warn(
-            '⚠️ ResizeObserver loop detected - this is usually harmless in Storybook. ' +
-            'These errors are now suppressed for cleaner console output.'
-          );
-          window.__resizeObserverErrorLogged = true;
-        }
-      }
-      return;
-    }
-
-    // For all other errors, use the original error handler
-    originalError.apply(window.console, args);
-  };
-
-  // Handle unhandled errors that might include ResizeObserver issues
-  window.addEventListener('error', (event) => {
-    if (
-      event.message && 
-      event.message.includes('ResizeObserver loop completed with undelivered notifications')
-    ) {
-      event.preventDefault();
-      event.stopPropagation();
-      
-      if (process.env.NODE_ENV === 'development') {
-        console.warn('ResizeObserver error caught and handled gracefully');
-      }
-    }
-  });
-
-  // Handle unhandled promise rejections that might be related
-  window.addEventListener('unhandledrejection', (event) => {
-    if (
-      event.reason &&
-      typeof event.reason === 'string' &&
-      event.reason.includes('ResizeObserver')
-    ) {
-      event.preventDefault();
-      
-      if (process.env.NODE_ENV === 'development') {
-        console.warn('ResizeObserver promise rejection caught and handled');
-      }
-    }
-  });
+/**
+ * Check if an error message is related to ResizeObserver
+ */
+const isResizeObserverError = (message: any): boolean => {
+  if (typeof message !== 'string') return false;
+  
+  const resizeObserverPatterns = [
+    'ResizeObserver loop completed with undelivered notifications',
+    'ResizeObserver loop limit exceeded',
+    'ResizeObserver loop',
+    'Non-finite CSS pixel',
+    'ResizeObserver callback threw an exception'
+  ];
+  
+  return resizeObserverPatterns.some(pattern => 
+    message.toLowerCase().includes(pattern.toLowerCase())
+  );
 };
 
 /**
- * Debounced ResizeObserver wrapper to prevent rapid firing
+ * Enhanced ResizeObserver error suppression
+ */
+export const setupResizeObserverErrorHandler = (): void => {
+  // Only run in browser environment
+  if (typeof window === 'undefined') return;
+  
+  // Prevent multiple setups
+  if (window.__resizeObserverSetupComplete) return;
+  
+  // Store original console.error if not already stored
+  if (!window.__resizeObserverOriginalError) {
+    window.__resizeObserverOriginalError = window.console.error;
+  }
+
+  // Override console.error to catch ResizeObserver errors
+  window.console.error = (...args: any[]) => {
+    const message = args[0];
+
+    // Check if this is a ResizeObserver related error
+    if (isResizeObserverError(message)) {
+      // In development, show a friendly warning once
+      if (process.env.NODE_ENV === 'development' && !window.__resizeObserverErrorLogged) {
+        console.warn(
+          '🔧 ResizeObserver loops detected and suppressed.\n' +
+          'These are typically harmless warnings caused by CSS transforms or Storybook.\n' +
+          'For more info: https://github.com/WICG/ResizeObserver/issues/38'
+        );
+        window.__resizeObserverErrorLogged = true;
+      }
+      return; // Suppress the error
+    }
+
+    // For all other errors, use the original error handler
+    if (window.__resizeObserverOriginalError) {
+      window.__resizeObserverOriginalError.apply(window.console, args);
+    }
+  };
+
+  // Handle uncaught errors
+  window.addEventListener('error', (event) => {
+    if (isResizeObserverError(event.message)) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+      
+      if (process.env.NODE_ENV === 'development' && !window.__resizeObserverErrorLogged) {
+        console.warn('ResizeObserver error caught and suppressed in error handler');
+        window.__resizeObserverErrorLogged = true;
+      }
+    }
+  }, true); // Use capture phase
+
+  // Handle unhandled promise rejections
+  window.addEventListener('unhandledrejection', (event) => {
+    const reason = event.reason;
+    
+    if (
+      reason &&
+      (typeof reason === 'string' && isResizeObserverError(reason)) ||
+      (reason instanceof Error && isResizeObserverError(reason.message))
+    ) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+      
+      if (process.env.NODE_ENV === 'development' && !window.__resizeObserverErrorLogged) {
+        console.warn('ResizeObserver promise rejection caught and suppressed');
+        window.__resizeObserverErrorLogged = true;
+      }
+    }
+  }, true); // Use capture phase
+
+  // Mark setup as complete
+  window.__resizeObserverSetupComplete = true;
+};
+
+/**
+ * Debounced ResizeObserver wrapper to prevent rapid firing and loops
  */
 export const createDebouncedResizeObserver = (
   callback: ResizeObserverCallback,
   delay: number = 16 // ~60fps
 ): ResizeObserver => {
   let timeoutId: number | null = null;
+  let isProcessing = false;
   
   const debouncedCallback: ResizeObserverCallback = (entries, observer) => {
+    // Prevent recursive calls
+    if (isProcessing) return;
+    
     if (timeoutId) {
       clearTimeout(timeoutId);
     }
     
     timeoutId = window.setTimeout(() => {
-      callback(entries, observer);
-      timeoutId = null;
+      isProcessing = true;
+      try {
+        callback(entries, observer);
+      } catch (error) {
+        if (error instanceof Error && !isResizeObserverError(error.message)) {
+          console.error('ResizeObserver callback error:', error);
+        }
+      } finally {
+        isProcessing = false;
+        timeoutId = null;
+      }
     }, delay);
   };
   
@@ -98,25 +146,68 @@ export const createDebouncedResizeObserver = (
 };
 
 /**
- * Safe ResizeObserver that catches and handles errors
+ * Safe ResizeObserver that catches and handles errors gracefully
  */
 export const createSafeResizeObserver = (
   callback: ResizeObserverCallback
 ): ResizeObserver => {
+  let isProcessing = false;
+  
   const safeCallback: ResizeObserverCallback = (entries, observer) => {
+    // Prevent recursive calls
+    if (isProcessing) return;
+    
+    isProcessing = true;
     try {
-      callback(entries, observer);
+      // Use requestAnimationFrame to prevent layout thrashing
+      requestAnimationFrame(() => {
+        try {
+          callback(entries, observer);
+        } catch (error) {
+          if (error instanceof Error && !isResizeObserverError(error.message)) {
+            console.error('ResizeObserver callback error:', error);
+          }
+        } finally {
+          isProcessing = false;
+        }
+      });
     } catch (error) {
-      if (
-        error instanceof Error &&
-        error.message.includes('ResizeObserver loop')
-      ) {
-        console.warn('ResizeObserver loop error caught and handled:', error.message);
-      } else {
-        throw error; // Re-throw non-ResizeObserver errors
+      isProcessing = false;
+      if (error instanceof Error && !isResizeObserverError(error.message)) {
+        console.error('ResizeObserver setup error:', error);
       }
     }
   };
   
   return new ResizeObserver(safeCallback);
+};
+
+/**
+ * Utility to temporarily disable ResizeObserver error logging
+ * Useful for testing or specific scenarios
+ */
+export const temporarilyDisableResizeObserverLogging = (duration: number = 5000): void => {
+  if (typeof window === 'undefined') return;
+  
+  const wasLogged = window.__resizeObserverErrorLogged;
+  window.__resizeObserverErrorLogged = true;
+  
+  setTimeout(() => {
+    window.__resizeObserverErrorLogged = wasLogged;
+  }, duration);
+};
+
+/**
+ * Reset ResizeObserver error handler (useful for testing)
+ */
+export const resetResizeObserverErrorHandler = (): void => {
+  if (typeof window === 'undefined') return;
+  
+  if (window.__resizeObserverOriginalError) {
+    window.console.error = window.__resizeObserverOriginalError;
+    delete window.__resizeObserverOriginalError;
+  }
+  
+  delete window.__resizeObserverErrorLogged;
+  delete window.__resizeObserverSetupComplete;
 };
