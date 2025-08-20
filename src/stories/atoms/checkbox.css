@@ -2,16 +2,31 @@
 
 .checkbox-wrapper {
   display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-4px);
+}
+
+.checkbox-wrapper.small {
+  gap: var(--spacing-sizing-2px);
+}
+
+.checkbox-wrapper.large {
+  gap: var(--spacing-sizing-6px);
+}
+
+/* Row layout for checkbox and label */
+.checkbox-row {
+  display: flex;
   align-items: center;
   gap: var(--spacing-sizing-8px);
   cursor: pointer;
 }
 
-.checkbox-wrapper.small {
+.checkbox-row.small {
   gap: var(--spacing-sizing-6px);
 }
 
-.checkbox-wrapper.large {
+.checkbox-row.large {
   gap: var(--spacing-sizing-12px);
 }
 
