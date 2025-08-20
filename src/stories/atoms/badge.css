@@ -183,12 +183,21 @@
   cursor: pointer;
 }
 
+.badge.interactive {
+  contain: layout style;
+  will-change: transform;
+}
+
 .badge.interactive:hover {
-  transform: var(--transform-scale-up);
+  transform: translateZ(0) var(--transform-scale-up);
 }
 
 .badge.interactive:active {
-  transform: var(--transform-scale-down);
+  transform: translateZ(0) var(--transform-scale-down);
+}
+
+.badge.interactive:not(:hover):not(:active):not(:focus) {
+  will-change: auto;
 }
 
 /* Specific hover states for each color */
