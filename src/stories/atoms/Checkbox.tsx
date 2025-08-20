@@ -7,7 +7,9 @@ export interface CheckboxProps {
   /** Checkbox state */
   state?: 'default' | 'checked' | 'indeterminate' | 'error' | 'warning' | 'success' | 'disabled';
   /** Color variant */
-  variant?: 'default' | 'primary' | 'success' | 'warning' | 'error';
+  variant?: 'default' | 'primary' | 'success' | 'warning' | 'error' | 'black' | 'blue' | 'cyan' | 'yellow' | 'gray' | 'red' | 'green' | 'purple' | 'seafoam';
+  /** Shape variant */
+  shape?: 'round' | 'square';
   /** Size variant */
   size?: 'small' | 'default' | 'large';
   /** Validation message text */
@@ -71,6 +73,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   label,
   state = 'default',
   variant = 'default',
+  shape = 'square',
   size = 'default',
   message,
   required = false,
@@ -99,7 +102,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   return (
     <div className={`checkbox-wrapper ${size} ${className}`}>
       <div className={`checkbox-row ${actualState} ${variant} ${size}`}>
-        <div className={`checkbox-container ${actualState} ${variant} ${size}`}>
+        <div className={`checkbox-container ${actualState} ${variant} ${shape} ${size}`}>
           <input
             id={checkboxId}
             type="checkbox"
@@ -116,7 +119,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
             aria-describedby={message ? `${checkboxId}-message` : undefined}
             aria-invalid={actualState === 'error'}
           />
-          <div className={`checkbox-visual ${actualState} ${variant} ${size}`}>
+          <div className={`checkbox-visual ${actualState} ${variant} ${shape} ${size}`}>
             {actualState === 'checked' && <CheckIcon size={size} />}
             {actualState === 'indeterminate' && <IndeterminateIcon size={size} />}
           </div>
