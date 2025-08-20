@@ -6,6 +6,8 @@ const meta: Meta = {
   title: 'Atoms/ResizeObserver Test',
   parameters: {
     layout: 'padded',
+    // Disable in Chromatic since this has animated content and timers
+    chromatic: { disable: true },
     docs: {
       description: {
         component: `
