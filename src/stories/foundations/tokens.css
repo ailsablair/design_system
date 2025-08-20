@@ -154,6 +154,10 @@
   --primary-yellow-450: #F4BE0C;
   --primary-yellow-500: #F9C846;
   --primary-yellow-550: #DBA507;
+
+  /* Legacy Yellow (maintain backward compatibility) */
+  --primary-yellow-yellow: #F9C846;
+  --primary-yellow-yellow-100: #FEF4DA;
   --primary-yellow-600: #CA8A04;
   --primary-yellow-650: #B87704;
   --primary-yellow-700: #A16207;
