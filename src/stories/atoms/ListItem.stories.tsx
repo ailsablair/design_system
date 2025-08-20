@@ -1,300 +1,218 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ListItem } from './ListItem';
 
-const meta: Meta<typeof ListItem> = {
+const meta = {
   title: 'Atoms/ListItem',
   component: ListItem,
   parameters: {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A flexible list item component with customizable elements including icons, separators, text, and notification badges.',
-      },
-    },
+        component: 'A list item component for displaying search results with work order/request numbers, descriptions, tags, and timestamps. Supports multiple sizes and states.'
+      }
+    }
   },
   tags: ['autodocs'],
   argTypes: {
     size: {
-      control: 'select',
-      options: ['small', 'default', 'large', 'x-large'],
-      description: 'Size variant of the list item',
+      control: { type: 'select' },
+      options: ['small', 'default', 'large'],
+      description: 'Size variant of the list item'
     },
-    label: {
-      control: 'text',
-      description: 'Text content for the list item',
+    state: {
+      control: { type: 'select' },
+      options: ['default', 'selected'],
+      description: 'State variant of the list item'
     },
-    showStaticIcon: {
-      control: 'boolean',
-      description: 'Show the static icon (checkmark)',
+    woNumber: {
+      control: { type: 'text' },
+      description: 'Work Order number'
     },
-    showDisc: {
-      control: 'boolean',
-      description: 'Show the separator dot',
+    wrNumber: {
+      control: { type: 'text' },
+      description: 'Work Request number'
     },
-    showPreText: {
-      control: 'boolean',
-      description: 'Show the pre-text (forward slash)',
+    description: {
+      control: { type: 'text' },
+      description: 'Description text for the list item'
     },
-    showIcon: {
-      control: 'boolean',
-      description: 'Show the main icon (bell)',
+    timestamp: {
+      control: { type: 'text' },
+      description: 'Timestamp text'
     },
-    showBadge: {
-      control: 'boolean',
-      description: 'Show the notification badge',
-    },
-    badgeNumber: {
-      control: 'number',
-      description: 'Badge number to display',
-    },
-    showHorizontalDivider: {
-      control: 'boolean',
-      description: 'Show horizontal divider',
-    },
-    showVerticalDivider: {
-      control: 'boolean',
-      description: 'Show vertical divider',
-    },
-  },
-};
+    onClick: {
+      action: 'clicked',
+      description: 'Click handler'
+    }
+  }
+} satisfies Meta<typeof ListItem>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+// Default story
 export const Default: Story = {
   args: {
-    label: 'List Item',
-  },
+    woNumber: '000000',
+    wrNumber: '000000',
+    description: 'This is a description or piece of text to help identify the search result to the user. This can be up to three lines of body or H5 text for the user to get enough context.',
+    size: 'default',
+    state: 'default',
+    timestamp: 'Last updated 3 mins ago'
+  }
+};
+
+// Size variants
+export const Large: Story = {
+  args: {
+    ...Default.args,
+    size: 'large'
+  }
 };
 
 export const Small: Story = {
   args: {
-    size: 'small',
-    label: 'List Item',
-  },
+    ...Default.args,
+    size: 'small'
+  }
 };
 
-export const Large: Story = {
+// State variants
+export const Selected: Story = {
   args: {
+    ...Default.args,
+    state: 'selected'
+  }
+};
+
+export const SelectedLarge: Story = {
+  args: {
+    ...Default.args,
     size: 'large',
-    label: 'List Item',
-  },
+    state: 'selected'
+  }
 };
 
-export const XLarge: Story = {
+export const SelectedSmall: Story = {
   args: {
-    size: 'x-large',
-    label: 'List Item',
-  },
+    ...Default.args,
+    size: 'small',
+    state: 'selected'
+  }
 };
 
+// Custom content
+export const CustomNumbers: Story = {
+  args: {
+    ...Default.args,
+    woNumber: '123456',
+    wrNumber: '789012'
+  }
+};
+
+export const LongDescription: Story = {
+  args: {
+    ...Default.args,
+    description: 'This is a much longer description that demonstrates how the component handles multiple lines of text. It should wrap properly and maintain good readability across all size variants. This text is intentionally long to test the layout behavior.'
+  }
+};
+
+export const ShortDescription: Story = {
+  args: {
+    ...Default.args,
+    description: 'Short description.'
+  }
+};
+
+// Different timestamps
+export const RecentUpdate: Story = {
+  args: {
+    ...Default.args,
+    timestamp: 'Last updated just now'
+  }
+};
+
+export const OldUpdate: Story = {
+  args: {
+    ...Default.args,
+    timestamp: 'Last updated 2 days ago'
+  }
+};
+
+// Custom tags
+export const SingleTag: Story = {
+  args: {
+    ...Default.args,
+    tags: [
+      { label: "Priority", color: "yellow" as const }
+    ]
+  }
+};
+
+export const MultipleTags: Story = {
+  args: {
+    ...Default.args,
+    tags: [
+      { label: "Applied", color: "yellow" as const },
+      { label: "Evaluated", color: "outline-gray" as const },
+      { label: "In Progress", color: "yellow" as const }
+    ]
+  }
+};
+
+export const NoTags: Story = {
+  args: {
+    ...Default.args,
+    tags: []
+  }
+};
+
+// Interactive examples
+export const Interactive: Story = {
+  args: {
+    ...Default.args,
+    onClick: () => console.log('List item clicked!')
+  }
+};
+
+// All sizes comparison
 export const AllSizes: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', width: '400px' }}>
-      <ListItem size="small" label="Small List Item" />
-      <ListItem size="default" label="Default List Item" />
-      <ListItem size="large" label="Large List Item" />
-      <ListItem size="x-large" label="X-Large List Item" />
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', width: '100%' }}>
+      <div>
+        <h3>Large</h3>
+        <ListItem size="large" />
+      </div>
+      <div>
+        <h3>Default</h3>
+        <ListItem size="default" />
+      </div>
+      <div>
+        <h3>Small</h3>
+        <ListItem size="small" />
+      </div>
     </div>
   ),
   parameters: {
-    docs: {
-      description: {
-        story: 'All size variants of the list item component displayed together.',
-      },
-    },
-  },
+    layout: 'padded'
+  }
 };
 
-export const WithoutElements: Story = {
+// All states comparison
+export const AllStates: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '400px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', width: '100%' }}>
       <div>
-        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>Without Static Icon</h4>
-        <ListItem label="List Item" showStaticIcon={false} />
+        <h3>Default State</h3>
+        <ListItem state="default" />
       </div>
-      
       <div>
-        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>Without Separator</h4>
-        <ListItem label="List Item" showDisc={false} />
-      </div>
-      
-      <div>
-        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>Without Pre-text</h4>
-        <ListItem label="List Item" showPreText={false} />
-      </div>
-      
-      <div>
-        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>Without Main Icon</h4>
-        <ListItem label="List Item" showIcon={false} />
-      </div>
-      
-      <div>
-        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>Without Badge</h4>
-        <ListItem label="List Item" showBadge={false} />
-      </div>
-      
-      <div>
-        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>Without Dividers</h4>
-        <ListItem label="List Item" showHorizontalDivider={false} showVerticalDivider={false} />
+        <h3>Selected State</h3>
+        <ListItem state="selected" />
       </div>
     </div>
   ),
   parameters: {
-    docs: {
-      description: {
-        story: 'Examples showing the list item with various elements hidden.',
-      },
-    },
-  },
-};
-
-export const DifferentBadgeNumbers: Story = {
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', width: '400px' }}>
-      <ListItem label="New Messages" badgeNumber={1} />
-      <ListItem label="Notifications" badgeNumber={5} />
-      <ListItem label="Alerts" badgeNumber={12} />
-      <ListItem label="Updates" badgeNumber={99} />
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'List items with different badge numbers.',
-      },
-    },
-  },
-};
-
-export const CustomLabels: Story = {
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', width: '400px' }}>
-      <ListItem label="Dashboard" />
-      <ListItem label="User Profile" />
-      <ListItem label="Settings & Preferences" />
-      <ListItem label="Notification Center" />
-      <ListItem label="Help & Support" />
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'List items with different custom labels.',
-      },
-    },
-  },
-};
-
-export const Interactive: Story = {
-  render: () => {
-    const handleClick = (itemName: string) => {
-      alert(`Clicked on ${itemName}`);
-    };
-
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', width: '400px' }}>
-        <ListItem 
-          label="Clickable Item 1" 
-          onClick={() => handleClick('Item 1')}
-          badgeNumber={3}
-        />
-        <ListItem 
-          label="Clickable Item 2" 
-          onClick={() => handleClick('Item 2')}
-          badgeNumber={7}
-        />
-        <ListItem 
-          label="Clickable Item 3" 
-          onClick={() => handleClick('Item 3')}
-          badgeNumber={1}
-        />
-      </div>
-    );
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Interactive list items that respond to clicks.',
-      },
-    },
-  },
-};
-
-export const MinimalVariation: Story = {
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', width: '400px' }}>
-      <ListItem 
-        label="Simple Item"
-        showStaticIcon={false}
-        showDisc={false}
-        showPreText={false}
-        showIcon={false}
-        showBadge={false}
-        showHorizontalDivider={false}
-        showVerticalDivider={false}
-      />
-      <ListItem 
-        label="With Icon Only"
-        showStaticIcon={false}
-        showDisc={false}
-        showPreText={false}
-        showBadge={false}
-        showHorizontalDivider={false}
-        showVerticalDivider={false}
-      />
-      <ListItem 
-        label="With Badge Only"
-        showStaticIcon={false}
-        showDisc={false}
-        showPreText={false}
-        showIcon={false}
-        showHorizontalDivider={false}
-        showVerticalDivider={false}
-      />
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Minimal variations showing selective element display.',
-      },
-    },
-  },
-};
-
-export const FigmaShowcase: Story = {
-  render: () => (
-    <div style={{ 
-      display: 'flex', 
-      flexDirection: 'column', 
-      gap: '0px', 
-      width: '500px',
-      backgroundColor: '#f8f9fa',
-      padding: '24px',
-      borderRadius: '8px',
-      border: '2px dashed #6171DF'
-    }}>
-      <h3 style={{ 
-        margin: '0 0 16px 0', 
-        fontSize: '18px', 
-        fontWeight: 600,
-        color: '#1a1a1a'
-      }}>
-        List Item Component - All Sizes
-      </h3>
-      
-      <ListItem size="small" label="List Item" />
-      <ListItem size="default" label="List Item" />
-      <ListItem size="large" label="List Item" />
-      <ListItem size="x-large" label="List Item" />
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Complete showcase matching the Figma design with all size variants.',
-      },
-    },
-  },
+    layout: 'padded'
+  }
 };
