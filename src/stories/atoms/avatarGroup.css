@@ -16,6 +16,14 @@
 /* Individual Avatar Positioning in Group */
 .avatar-group__avatar {
   position: relative;
+  display: inline-block;
+  /* Ensure the Avatar component doesn't have conflicting styles */
+}
+
+/* Ensure avatar-container within groups behaves correctly */
+.avatar-group__avatar .avatar-container {
+  display: inline-block;
+  position: relative;
 }
 
 /* === DEFAULT OVERLAPPING LAYOUT === */
