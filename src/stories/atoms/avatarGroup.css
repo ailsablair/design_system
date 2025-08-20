@@ -2,6 +2,8 @@
 .avatar-group {
   display: inline-flex;
   position: relative;
+  /* CSS containment to prevent layout thrashing */
+  contain: layout style;
 }
 
 /* Avatar Group List (Default Overlapping Layout) */
@@ -199,9 +201,10 @@
 
 /* === GRID LAYOUT HOVER EFFECTS === */
 .avatar-group--grid .avatar-group__avatar:hover {
-  transform: scale(1.05);
+  transform: translateZ(0) scale(1.05);
   z-index: var(--z-index-50);
-  transition: var(--transition-fast);
+  transition: transform var(--transition-fast);
+  will-change: transform;
 }
 
 /* === ACCESSIBILITY === */
