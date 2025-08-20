@@ -21,8 +21,13 @@ const meta: Meta<typeof Checkbox> = {
     },
     variant: {
       control: 'select',
-      options: ['default', 'primary', 'success', 'warning', 'error'],
+      options: ['default', 'primary', 'success', 'warning', 'error', 'black', 'blue', 'cyan', 'yellow', 'gray', 'red', 'green', 'purple', 'seafoam'],
       description: 'Color variant of the checkbox',
+    },
+    shape: {
+      control: 'select',
+      options: ['round', 'square'],
+      description: 'Shape variant of the checkbox',
     },
     size: {
       control: 'select',
@@ -102,20 +107,73 @@ export const AllSizes: Story = {
 
 export const AllVariants: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', maxWidth: '600px' }}>
+      {/* Original Variants */}
       <Checkbox variant="default" label="Default variant" checked />
       <Checkbox variant="primary" label="Primary variant" checked />
       <Checkbox variant="success" label="Success variant" checked />
       <Checkbox variant="warning" label="Warning variant" checked />
       <Checkbox variant="error" label="Error variant" checked />
+
+      {/* Extended Color Variants */}
+      <Checkbox variant="black" label="Black variant" checked />
+      <Checkbox variant="blue" label="Blue variant" checked />
+      <Checkbox variant="cyan" label="Cyan variant" checked />
+      <Checkbox variant="yellow" label="Yellow variant" checked />
+      <Checkbox variant="gray" label="Gray variant" checked />
+      <Checkbox variant="red" label="Red variant" checked />
+      <Checkbox variant="green" label="Green variant" checked />
+      <Checkbox variant="purple" label="Purple variant" checked />
+      <Checkbox variant="seafoam" label="Seafoam variant" checked />
     </div>
   ),
 };
 
+export const AllShapes: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+      <div>
+        <h3 style={{ marginBottom: '16px', fontSize: '16px', fontWeight: 500 }}>Round Checkboxes</h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', maxWidth: '400px' }}>
+          <Checkbox shape="round" variant="black" label="Black" checked />
+          <Checkbox shape="round" variant="blue" label="Blue" checked />
+          <Checkbox shape="round" variant="cyan" label="Cyan" checked />
+          <Checkbox shape="round" variant="yellow" label="Yellow" checked />
+          <Checkbox shape="round" variant="red" label="Red" checked />
+          <Checkbox shape="round" variant="green" label="Green" checked />
+          <Checkbox shape="round" variant="purple" label="Purple" checked />
+          <Checkbox shape="round" variant="seafoam" label="Seafoam" checked />
+        </div>
+      </div>
+
+      <div>
+        <h3 style={{ marginBottom: '16px', fontSize: '16px', fontWeight: 500 }}>Square Checkboxes</h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', maxWidth: '400px' }}>
+          <Checkbox shape="square" variant="black" label="Black" checked />
+          <Checkbox shape="square" variant="blue" label="Blue" checked />
+          <Checkbox shape="square" variant="cyan" label="Cyan" checked />
+          <Checkbox shape="square" variant="yellow" label="Yellow" checked />
+          <Checkbox shape="square" variant="red" label="Red" checked />
+          <Checkbox shape="square" variant="green" label="Green" checked />
+          <Checkbox shape="square" variant="purple" label="Purple" checked />
+          <Checkbox shape="square" variant="seafoam" label="Seafoam" checked />
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Checkboxes support both round and square shapes with all color variants.',
+      },
+    },
+  },
+};
+
 export const AllStates: Story = {
   render: () => (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '16px', minWidth: '600px' }}>
-      {/* Default variant states */}
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '16px', minWidth: '800px' }}>
+      {/* Core variant states */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Default</h4>
         <Checkbox variant="default" label="Unchecked" />
@@ -123,41 +181,45 @@ export const AllStates: Story = {
         <Checkbox variant="default" label="Indeterminate" indeterminate />
         <Checkbox variant="default" label="Disabled" disabled />
       </div>
-      
-      {/* Primary variant states */}
+
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Primary</h4>
-        <Checkbox variant="primary" label="Unchecked" />
-        <Checkbox variant="primary" label="Checked" checked />
-        <Checkbox variant="primary" label="Indeterminate" indeterminate />
-        <Checkbox variant="primary" label="Disabled" disabled />
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Black</h4>
+        <Checkbox variant="black" label="Unchecked" />
+        <Checkbox variant="black" label="Checked" checked />
+        <Checkbox variant="black" label="Indeterminate" indeterminate />
+        <Checkbox variant="black" label="Disabled" disabled />
       </div>
-      
-      {/* Success variant states */}
+
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Success</h4>
-        <Checkbox variant="success" label="Unchecked" />
-        <Checkbox variant="success" label="Checked" checked />
-        <Checkbox variant="success" label="Indeterminate" indeterminate />
-        <Checkbox variant="success" label="Disabled" disabled />
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Blue</h4>
+        <Checkbox variant="blue" label="Unchecked" />
+        <Checkbox variant="blue" label="Checked" checked />
+        <Checkbox variant="blue" label="Indeterminate" indeterminate />
+        <Checkbox variant="blue" label="Disabled" disabled />
       </div>
-      
-      {/* Warning variant states */}
+
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Warning</h4>
-        <Checkbox variant="warning" label="Unchecked" />
-        <Checkbox variant="warning" label="Checked" checked />
-        <Checkbox variant="warning" label="Indeterminate" indeterminate />
-        <Checkbox variant="warning" label="Disabled" disabled />
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Red</h4>
+        <Checkbox variant="red" label="Unchecked" />
+        <Checkbox variant="red" label="Checked" checked />
+        <Checkbox variant="red" label="Indeterminate" indeterminate />
+        <Checkbox variant="red" label="Disabled" disabled />
       </div>
-      
-      {/* Error variant states */}
+
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Error</h4>
-        <Checkbox variant="error" label="Unchecked" />
-        <Checkbox variant="error" label="Checked" checked />
-        <Checkbox variant="error" label="Indeterminate" indeterminate />
-        <Checkbox variant="error" label="Disabled" disabled />
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Green</h4>
+        <Checkbox variant="green" label="Unchecked" />
+        <Checkbox variant="green" label="Checked" checked />
+        <Checkbox variant="green" label="Indeterminate" indeterminate />
+        <Checkbox variant="green" label="Disabled" disabled />
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Purple</h4>
+        <Checkbox variant="purple" label="Unchecked" />
+        <Checkbox variant="purple" label="Checked" checked />
+        <Checkbox variant="purple" label="Indeterminate" indeterminate />
+        <Checkbox variant="purple" label="Disabled" disabled />
       </div>
     </div>
   ),
@@ -225,5 +287,4 @@ export const Interactive: Story = {
   },
 };
 
-// Add React import
 import React from 'react';
