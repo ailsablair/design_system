@@ -1,321 +1,297 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ListGroup } from './ListGroup';
+import type { ListItemProps } from './ListItem';
 
-const meta: Meta<typeof ListGroup> = {
+const meta = {
   title: 'Atoms/ListGroup',
   component: ListGroup,
   parameters: {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A flexible list group component that displays multiple list items with various styles including discs, numbers, icons, and dividers.',
-      },
-    },
+        component: 'A container component for displaying multiple list items with support for loading states, empty states, and pagination.'
+      }
+    }
   },
   tags: ['autodocs'],
   argTypes: {
-    type: {
-      control: 'select',
-      options: ['disc', 'numbers', 'static-icon', 'icons', 'horizontal-dividers', 'vertical-dividers'],
-      description: 'Type of list group styling',
-    },
     size: {
-      control: 'select',
-      options: ['small', 'default', 'large', 'x-large'],
-      description: 'Size variant of the list group',
+      control: { type: 'select' },
+      options: ['small', 'default', 'large'],
+      description: 'Size variant for all list items'
     },
-    items: {
-      control: 'object',
-      description: 'Array of list items to display',
+    loading: {
+      control: { type: 'boolean' },
+      description: 'Show loading skeleton state'
     },
-  },
-};
+    emptyMessage: {
+      control: { type: 'text' },
+      description: 'Message to show when no items are present'
+    },
+    maxItems: {
+      control: { type: 'number' },
+      description: 'Maximum number of items to display'
+    },
+    onItemClick: {
+      action: 'item-clicked',
+      description: 'Callback when an item is clicked'
+    }
+  }
+} satisfies Meta<typeof ListGroup>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// Sample data for stories
-const sampleItems = [
-  { id: '1', label: 'List Item 1' },
-  { id: '2', label: 'List Item 2' },
-  { id: '3', label: 'List Item 3' },
-  { id: '4', label: 'List Item 4' },
+// Sample data
+const sampleItems: ListItemProps[] = [
+  {
+    woNumber: '123456',
+    wrNumber: '789012',
+    description: 'This is a description for the first search result. It provides context about the work order and helps users identify the correct item.',
+    timestamp: 'Last updated 5 mins ago',
+    state: 'selected'
+  },
+  {
+    woNumber: '234567',
+    wrNumber: '890123',
+    description: 'Second work order description that shows how multiple items look in a list. This demonstrates the spacing and layout.',
+    timestamp: 'Last updated 15 mins ago'
+  },
+  {
+    woNumber: '345678',
+    wrNumber: '901234',
+    description: 'Third item in the list with different content to show variety in the data presentation.',
+    timestamp: 'Last updated 1 hour ago'
+  },
+  {
+    woNumber: '456789',
+    wrNumber: '012345',
+    description: 'Fourth work order with a longer description to demonstrate how the component handles varying content lengths and maintains consistent layout.',
+    timestamp: 'Last updated 2 hours ago'
+  },
+  {
+    woNumber: '567890',
+    wrNumber: '123456',
+    description: 'Fifth item showing more data variety.',
+    timestamp: 'Last updated 1 day ago'
+  }
 ];
 
+// Default story
 export const Default: Story = {
   args: {
-    type: 'disc',
-    size: 'default',
-    items: sampleItems,
-  },
+    items: sampleItems.slice(0, 3),
+    size: 'default'
+  }
 };
 
-export const DiscType: Story = {
+// Size variants
+export const Large: Story = {
   args: {
-    type: 'disc',
-    size: 'default',
-    items: sampleItems,
-  },
+    items: sampleItems.slice(0, 3),
+    size: 'large'
+  }
 };
 
-export const NumbersType: Story = {
+export const Small: Story = {
   args: {
-    type: 'numbers',
-    size: 'default',
-    items: sampleItems,
-  },
+    items: sampleItems.slice(0, 3),
+    size: 'small'
+  }
 };
 
-export const StaticIconType: Story = {
+// States
+export const Loading: Story = {
   args: {
-    type: 'static-icon',
-    size: 'default',
-    items: sampleItems,
-  },
+    loading: true,
+    size: 'default'
+  }
 };
 
-export const IconsType: Story = {
+export const LoadingLarge: Story = {
   args: {
-    type: 'icons',
-    size: 'default',
-    items: sampleItems,
-  },
+    loading: true,
+    size: 'large'
+  }
 };
 
-export const HorizontalDividersType: Story = {
+export const LoadingSmall: Story = {
   args: {
-    type: 'horizontal-dividers',
-    size: 'default',
-    items: sampleItems,
-  },
+    loading: true,
+    size: 'small'
+  }
 };
 
-export const VerticalDividersType: Story = {
+export const Empty: Story = {
   args: {
-    type: 'vertical-dividers',
-    size: 'default',
-    items: sampleItems,
-  },
+    items: [],
+    emptyMessage: 'No search results found. Try adjusting your search criteria.'
+  }
 };
 
+export const EmptyCustomMessage: Story = {
+  args: {
+    items: [],
+    emptyMessage: 'No work orders match your current filters. Please modify your search or clear all filters to see available items.'
+  }
+};
+
+// Pagination
+export const WithMaxItems: Story = {
+  args: {
+    items: sampleItems,
+    maxItems: 3,
+    size: 'default'
+  }
+};
+
+// With header and footer
+export const WithHeaderAndFooter: Story = {
+  args: {
+    items: sampleItems.slice(0, 3),
+    header: (
+      <div style={{ 
+        padding: '16px', 
+        background: '#f3f4f6', 
+        borderRadius: '8px',
+        fontWeight: '600',
+        color: '#374151'
+      }}>
+        Search Results (3 items found)
+      </div>
+    ),
+    footer: (
+      <div style={{ 
+        padding: '12px', 
+        textAlign: 'center',
+        color: '#6b7280',
+        fontSize: '14px'
+      }}>
+        Showing results 1-3 of 3
+      </div>
+    ),
+    size: 'default'
+  }
+};
+
+// Single item
+export const SingleItem: Story = {
+  args: {
+    items: [sampleItems[0]],
+    size: 'default'
+  }
+};
+
+// Many items
+export const ManyItems: Story = {
+  args: {
+    items: [
+      ...sampleItems,
+      {
+        woNumber: '678901',
+        wrNumber: '234567',
+        description: 'Additional work order for testing with many items.',
+        timestamp: 'Last updated 3 days ago'
+      },
+      {
+        woNumber: '789012',
+        wrNumber: '345678',
+        description: 'Another work order in the extended list.',
+        timestamp: 'Last updated 1 week ago'
+      }
+    ],
+    size: 'default'
+  },
+  parameters: {
+    layout: 'padded'
+  }
+};
+
+// Interactive example
+export const Interactive: Story = {
+  args: {
+    items: sampleItems.slice(0, 4),
+    size: 'default',
+    onItemClick: (item, index) => {
+      console.log('Clicked item:', item, 'at index:', index);
+    }
+  }
+};
+
+// All sizes comparison
 export const AllSizes: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', width: '400px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', width: '100%' }}>
       <div>
-        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>Small</h4>
-        <ListGroup type="disc" size="small" items={sampleItems} />
+        <h3>Large</h3>
+        <ListGroup items={sampleItems.slice(0, 2)} size="large" />
       </div>
-      
       <div>
-        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>Default</h4>
-        <ListGroup type="disc" size="default" items={sampleItems} />
+        <h3>Default</h3>
+        <ListGroup items={sampleItems.slice(0, 2)} size="default" />
       </div>
-      
       <div>
-        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>Large</h4>
-        <ListGroup type="disc" size="large" items={sampleItems} />
-      </div>
-      
-      <div>
-        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>X-Large</h4>
-        <ListGroup type="disc" size="x-large" items={sampleItems} />
+        <h3>Small</h3>
+        <ListGroup items={sampleItems.slice(0, 2)} size="small" />
       </div>
     </div>
   ),
   parameters: {
-    docs: {
-      description: {
-        story: 'All size variants of the list group component displayed together.',
-      },
-    },
-  },
+    layout: 'padded'
+  }
 };
 
-export const AllTypes: Story = {
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', width: '400px' }}>
-      <div>
-        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>Disc</h4>
-        <ListGroup type="disc" size="default" items={sampleItems} />
-      </div>
-      
-      <div>
-        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>Numbers</h4>
-        <ListGroup type="numbers" size="default" items={sampleItems} />
-      </div>
-      
-      <div>
-        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>Static Icon</h4>
-        <ListGroup type="static-icon" size="default" items={sampleItems} />
-      </div>
-      
-      <div>
-        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>Icons</h4>
-        <ListGroup type="icons" size="default" items={sampleItems} />
-      </div>
-      
-      <div>
-        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>Horizontal Dividers</h4>
-        <ListGroup type="horizontal-dividers" size="default" items={sampleItems} />
-      </div>
-      
-      <div>
-        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>Vertical Dividers</h4>
-        <ListGroup type="vertical-dividers" size="default" items={sampleItems} />
-      </div>
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'All type variants of the list group component displayed together.',
-      },
-    },
-  },
-};
-
-export const Interactive: Story = {
-  render: () => {
-    const handleItemClick = (itemId: string) => {
-      alert(`Clicked item: ${itemId}`);
-    };
-
-    const interactiveItems = sampleItems.map(item => ({
-      ...item,
-      onClick: () => handleItemClick(item.id),
-    }));
-
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', width: '400px' }}>
+// Complex example with filtering
+export const SearchResults: Story = {
+  args: {
+    items: sampleItems,
+    header: (
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'space-between', 
+        alignItems: 'center',
+        padding: '16px 0',
+        borderBottom: '1px solid #d1d5db'
+      }}>
         <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>Interactive Numbers List</h4>
-          <ListGroup type="numbers" size="default" items={interactiveItems} />
+          <h3 style={{ margin: 0, fontSize: '18px', fontWeight: '600' }}>Search Results</h3>
+          <p style={{ margin: '4px 0 0 0', color: '#6b7280', fontSize: '14px' }}>
+            Found {sampleItems.length} work orders matching your criteria
+          </p>
         </div>
-        
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: 600 }}>Interactive Icons List</h4>
-          <ListGroup type="icons" size="default" items={interactiveItems} />
-        </div>
+        <button style={{
+          padding: '8px 16px',
+          border: '1px solid #d1d5db',
+          borderRadius: '6px',
+          background: 'white',
+          cursor: 'pointer'
+        }}>
+          Filter
+        </button>
       </div>
-    );
+    ),
+    footer: (
+      <div style={{ 
+        display: 'flex',
+        justifyContent: 'center',
+        padding: '20px 0'
+      }}>
+        <button style={{
+          padding: '12px 24px',
+          border: '1px solid #d1d5db',
+          borderRadius: '6px',
+          background: 'white',
+          cursor: 'pointer',
+          fontWeight: '500'
+        }}>
+          Load More Results
+        </button>
+      </div>
+    ),
+    maxItems: 3,
+    size: 'default'
   },
   parameters: {
-    docs: {
-      description: {
-        story: 'Interactive list groups that respond to clicks on individual items.',
-      },
-    },
-  },
-};
-
-export const CustomContent: Story = {
-  render: () => {
-    const customItems = [
-      { id: '1', label: 'Dashboard Overview' },
-      { id: '2', label: 'User Management' },
-      { id: '3', label: 'Settings & Configuration' },
-      { id: '4', label: 'Reports & Analytics' },
-      { id: '5', label: 'Help & Documentation' },
-    ];
-
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', width: '500px' }}>
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600 }}>Navigation Menu</h4>
-          <ListGroup type="static-icon" size="default" items={customItems} />
-        </div>
-        
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600 }}>Step-by-Step Guide</h4>
-          <ListGroup type="numbers" size="default" items={customItems} />
-        </div>
-      </div>
-    );
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'List groups with custom content for real-world use cases.',
-      },
-    },
-  },
-};
-
-export const FigmaShowcase: Story = {
-  render: () => (
-    <div style={{ 
-      display: 'grid', 
-      gridTemplateColumns: 'repeat(4, 1fr)', 
-      gap: '32px', 
-      width: '100%',
-      maxWidth: '1200px',
-      backgroundColor: '#f8f9fa',
-      padding: '24px',
-      borderRadius: '8px',
-      border: '2px dashed #6171DF'
-    }}>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600, color: '#1a1a1a' }}>
-          Small Size
-        </h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          <ListGroup type="disc" size="small" items={sampleItems} />
-          <ListGroup type="numbers" size="small" items={sampleItems} />
-          <ListGroup type="static-icon" size="small" items={sampleItems} />
-          <ListGroup type="icons" size="small" items={sampleItems} />
-          <ListGroup type="horizontal-dividers" size="small" items={sampleItems} />
-          <ListGroup type="vertical-dividers" size="small" items={sampleItems} />
-        </div>
-      </div>
-      
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600, color: '#1a1a1a' }}>
-          Default Size
-        </h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          <ListGroup type="disc" size="default" items={sampleItems} />
-          <ListGroup type="numbers" size="default" items={sampleItems} />
-          <ListGroup type="static-icon" size="default" items={sampleItems} />
-          <ListGroup type="icons" size="default" items={sampleItems} />
-          <ListGroup type="horizontal-dividers" size="default" items={sampleItems} />
-          <ListGroup type="vertical-dividers" size="default" items={sampleItems} />
-        </div>
-      </div>
-      
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600, color: '#1a1a1a' }}>
-          Large Size
-        </h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          <ListGroup type="disc" size="large" items={sampleItems} />
-          <ListGroup type="numbers" size="large" items={sampleItems} />
-          <ListGroup type="static-icon" size="large" items={sampleItems} />
-          <ListGroup type="icons" size="large" items={sampleItems} />
-          <ListGroup type="horizontal-dividers" size="large" items={sampleItems} />
-          <ListGroup type="vertical-dividers" size="large" items={sampleItems} />
-        </div>
-      </div>
-      
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600, color: '#1a1a1a' }}>
-          X-Large Size
-        </h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          <ListGroup type="disc" size="x-large" items={sampleItems} />
-          <ListGroup type="numbers" size="x-large" items={sampleItems} />
-          <ListGroup type="static-icon" size="x-large" items={sampleItems} />
-          <ListGroup type="icons" size="x-large" items={sampleItems} />
-          <ListGroup type="horizontal-dividers" size="x-large" items={sampleItems} />
-          <ListGroup type="vertical-dividers" size="x-large" items={sampleItems} />
-        </div>
-      </div>
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Complete showcase matching the Figma design with all types and sizes.',
-      },
-    },
-  },
+    layout: 'padded'
+  }
 };
