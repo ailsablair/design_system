@@ -82,6 +82,31 @@
   border-radius: var(--spacing-radius-6px);
 }
 
+/* Shape variants */
+.checkbox-visual.round.small {
+  border-radius: 50%;
+}
+
+.checkbox-visual.round.default {
+  border-radius: 50%;
+}
+
+.checkbox-visual.round.large {
+  border-radius: 50%;
+}
+
+.checkbox-visual.square.small {
+  border-radius: var(--spacing-radius-2px);
+}
+
+.checkbox-visual.square.default {
+  border-radius: var(--spacing-radius-4px);
+}
+
+.checkbox-visual.square.large {
+  border-radius: var(--spacing-radius-6px);
+}
+
 /* Color variants - Default (Sky Blue Brand) */
 .checkbox-visual.default {
   border-color: var(--neutral-gray-gray-400);
@@ -142,6 +167,116 @@
   border-color: var(--status-red-500);
 }
 
+/* Extended Color Variants from Figma */
+/* Black variant */
+.checkbox-visual.black {
+  border-color: var(--neutral-gray-gray-400);
+  color: var(--base-white);
+}
+
+.checkbox-visual.black.checked,
+.checkbox-visual.black.indeterminate {
+  background: var(--base-black);
+  border-color: var(--base-black);
+}
+
+/* Blue variant */
+.checkbox-visual.blue {
+  border-color: var(--neutral-gray-gray-400);
+  color: var(--base-white);
+}
+
+.checkbox-visual.blue.checked,
+.checkbox-visual.blue.indeterminate {
+  background: var(--primary-blue-500);
+  border-color: var(--primary-blue-500);
+}
+
+/* Cyan variant */
+.checkbox-visual.cyan {
+  border-color: var(--neutral-gray-gray-400);
+  color: var(--base-white);
+}
+
+.checkbox-visual.cyan.checked,
+.checkbox-visual.cyan.indeterminate {
+  background: var(--primary-cyan-500);
+  border-color: var(--primary-cyan-500);
+}
+
+/* Yellow variant */
+.checkbox-visual.yellow {
+  border-color: var(--neutral-gray-gray-400);
+  color: var(--base-black);
+}
+
+.checkbox-visual.yellow.checked,
+.checkbox-visual.yellow.indeterminate {
+  background: var(--primary-yellow-500);
+  border-color: var(--primary-yellow-500);
+  color: var(--base-black);
+}
+
+/* Gray variant */
+.checkbox-visual.gray {
+  border-color: var(--neutral-gray-gray-400);
+  color: var(--base-white);
+}
+
+.checkbox-visual.gray.checked,
+.checkbox-visual.gray.indeterminate {
+  background: var(--neutral-gray-gray-500);
+  border-color: var(--neutral-gray-gray-500);
+}
+
+/* Red variant (same as error but distinct) */
+.checkbox-visual.red {
+  border-color: var(--neutral-gray-gray-400);
+  color: var(--base-white);
+}
+
+.checkbox-visual.red.checked,
+.checkbox-visual.red.indeterminate {
+  background: var(--status-red-500);
+  border-color: var(--status-red-500);
+}
+
+/* Green variant (same as success but distinct) */
+.checkbox-visual.green {
+  border-color: var(--neutral-gray-gray-400);
+  color: var(--base-white);
+}
+
+.checkbox-visual.green.checked,
+.checkbox-visual.green.indeterminate {
+  background: var(--status-green-500);
+  border-color: var(--status-green-500);
+}
+
+/* Purple variant */
+.checkbox-visual.purple {
+  border-color: var(--neutral-gray-gray-400);
+  color: var(--base-white);
+}
+
+.checkbox-visual.purple.checked,
+.checkbox-visual.purple.indeterminate {
+  background: var(--status-purple);
+  border-color: var(--status-purple);
+}
+
+/* Seafoam variant */
+.checkbox-visual.seafoam {
+  border-color: var(--neutral-gray-gray-400);
+  color: var(--base-white);
+}
+
+.checkbox-visual.seafoam.checked,
+.checkbox-visual.seafoam.indeterminate {
+  background: var(--primary-seafoam-500);
+  border-color: var(--primary-seafoam-500);
+}
+
 /* Disabled state */
 .checkbox-visual.disabled {
   background: var(--neutral-gray-gray-100);
@@ -185,6 +320,43 @@
 
 .checkbox-container:hover .checkbox-visual.error:not(.disabled) {
   border-color: var(--status-red-600);
+}
+
+/* Hover states for extended color variants */
+.checkbox-container:hover .checkbox-visual.black:not(.disabled) {
+  border-color: var(--neutral-gray-gray-800);
+}
+
+.checkbox-container:hover .checkbox-visual.blue:not(.disabled) {
+  border-color: var(--primary-blue-600);
+}
+
+.checkbox-container:hover .checkbox-visual.cyan:not(.disabled) {
+  border-color: var(--primary-cyan-600);
+}
+
+.checkbox-container:hover .checkbox-visual.yellow:not(.disabled) {
+  border-color: var(--primary-yellow-600);
+}
+
+.checkbox-container:hover .checkbox-visual.gray:not(.disabled) {
+  border-color: var(--neutral-gray-gray-600);
+}
+
+.checkbox-container:hover .checkbox-visual.red:not(.disabled) {
+  border-color: var(--status-red-600);
+}
+
+.checkbox-container:hover .checkbox-visual.green:not(.disabled) {
+  border-color: var(--status-green-600);
+}
+
+.checkbox-container:hover .checkbox-visual.purple:not(.disabled) {
+  border-color: var(--status-purple);
+}
+
+.checkbox-container:hover .checkbox-visual.seafoam:not(.disabled) {
+  border-color: var(--primary-seafoam-600);
 }
 
 .checkbox-container:hover .checkbox-visual.checked:not(.disabled),
