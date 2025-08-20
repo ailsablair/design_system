@@ -42,7 +42,7 @@
 
 /* Avatar Shapes */
 .avatar--default {
-  border-radius: var(--spacing-radius-full);
+  border-radius: var(--spacing-radius-99999px);
 }
 
 .avatar--square {
@@ -60,7 +60,7 @@
 
 .avatar--initial-light {
   background-color: var(--neutral-gray-gray-200);
-  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
 }
 
 .avatar--initial-dark {
@@ -86,13 +86,11 @@
 
 /* Avatar Initial Text */
 .avatar__initial {
-  color: var(--base-white);
   text-align: center;
   font-family: var(--type-typeface-archivo);
   font-style: normal;
   font-weight: var(--type-weight-medium);
   line-height: 1;
-  letter-spacing: -0.025em;
 }
 
 .avatar--initial-light .avatar__initial {
@@ -103,7 +101,7 @@
   color: var(--base-white);
 }
 
-/* Initial Text Sizes */
+/* Initial Text Sizes - Match Figma Typography Exactly */
 .avatar--x-small .avatar__initial {
   font-size: var(--type-archivo-label-sm);
   line-height: var(--type-line-height-label-sm);
@@ -184,9 +182,12 @@
 
 /* Verified Icon Special Sizing */
 .avatar-status-icon--verified {
+  fill: var(--primary-sky-blue-sky-blue);
+}
+
+.avatar-status-icon--verified.avatar-status-icon--default {
   width: 16px;
   height: 16px;
-  fill: var(--primary-sky-blue-sky-blue);
 }
 
 .avatar-status-icon--verified.avatar-status-icon--large {
@@ -259,7 +260,7 @@
 /* Online Status */
 .avatar-status-icon__circle--online {
   fill: var(--status-green);
-  stroke: var(--status-green-light);
+  stroke: var(--primary-seafoam-seafoam-100);
 }
 
 /* Offline Status */
@@ -271,7 +272,7 @@
 /* Away Status */
 .avatar-status-icon__circle--away {
   fill: var(--primary-yellow-yellow);
-  stroke: var(--primary-yellow-100);
+  stroke: var(--primary-yellow-yellow-100);
 }
 
 /* Do Not Disturb Status */
@@ -282,13 +283,30 @@
 
 /* === STATUS ICON STROKE COLORS FOR DIFFERENT AVATAR TYPES === */
 
-/* Status Icons on Light Background Avatars */
+/* Status Icons on Light Background Avatars (Empty State) */
+.avatar--empty-state ~ .avatar-container__status-icon .avatar-status-icon__circle--do-not-disturb {
+  stroke: var(--base-white);
+}
+
+.avatar--empty-state ~ .avatar-container__status-icon .avatar-status-icon__circle--online {
+  stroke: var(--base-white);
+}
+
+.avatar--empty-state ~ .avatar-container__status-icon .avatar-status-icon__circle--offline {
+  stroke: var(--base-white);
+}
+
+.avatar--empty-state ~ .avatar-container__status-icon .avatar-status-icon__circle--away {
+  stroke: var(--base-white);
+}
+
+/* Status Icons on Light Background Avatars (Initial Light) */
 .avatar--initial-light ~ .avatar-container__status-icon .avatar-status-icon__circle--do-not-disturb {
   stroke: var(--status-red-light);
 }
 
 .avatar--initial-light ~ .avatar-container__status-icon .avatar-status-icon__circle--online {
-  stroke: var(--status-green-light);
+  stroke: var(--primary-seafoam-seafoam-100);
 }
 
 .avatar--initial-light ~ .avatar-container__status-icon .avatar-status-icon__circle--offline {
@@ -296,10 +314,10 @@
 }
 
 .avatar--initial-light ~ .avatar-container__status-icon .avatar-status-icon__circle--away {
-  stroke: var(--primary-yellow-100);
+  stroke: var(--primary-yellow-yellow-100);
 }
 
-/* Status Icons on Dark Background Avatars */
+/* Status Icons on Dark Background Avatars (Initial Dark) */
 .avatar--initial-dark ~ .avatar-container__status-icon .avatar-status-icon__circle--do-not-disturb {
   stroke: var(--base-white);
 }
@@ -330,23 +348,6 @@
 }
 
 .avatar--profile-photo ~ .avatar-container__status-icon .avatar-status-icon__circle--away {
-  stroke: var(--base-white);
-}
-
-/* Status Icons on Empty State Avatars */
-.avatar--empty-state ~ .avatar-container__status-icon .avatar-status-icon__circle--do-not-disturb {
-  stroke: var(--base-white);
-}
-
-.avatar--empty-state ~ .avatar-container__status-icon .avatar-status-icon__circle--online {
-  stroke: var(--base-white);
-}
-
-.avatar--empty-state ~ .avatar-container__status-icon .avatar-status-icon__circle--offline {
-  stroke: var(--base-white);
-}
-
-.avatar--empty-state ~ .avatar-container__status-icon .avatar-status-icon__circle--away {
   stroke: var(--base-white);
 }
 
