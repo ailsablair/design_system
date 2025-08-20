@@ -17,7 +17,7 @@ const meta: Meta<typeof RadioButton> = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'primary', 'success', 'warning', 'error'],
+      options: ['default', 'primary', 'success', 'warning', 'error', 'black', 'blue', 'cyan', 'yellow', 'gray', 'red', 'green', 'purple', 'seafoam'],
       description: 'Color variant of the radio button',
     },
     size: {
@@ -95,20 +95,32 @@ export const AllSizes: Story = {
 
 export const AllVariants: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', maxWidth: '600px' }}>
+      {/* Original Variants */}
       <RadioButton variant="default" label="Default variant" selected />
       <RadioButton variant="primary" label="Primary variant" selected />
       <RadioButton variant="success" label="Success variant" selected />
       <RadioButton variant="warning" label="Warning variant" selected />
       <RadioButton variant="error" label="Error variant" selected />
+      
+      {/* Extended Color Variants */}
+      <RadioButton variant="black" label="Black variant" selected />
+      <RadioButton variant="blue" label="Blue variant" selected />
+      <RadioButton variant="cyan" label="Cyan variant" selected />
+      <RadioButton variant="yellow" label="Yellow variant" selected />
+      <RadioButton variant="gray" label="Gray variant" selected />
+      <RadioButton variant="red" label="Red variant" selected />
+      <RadioButton variant="green" label="Green variant" selected />
+      <RadioButton variant="purple" label="Purple variant" selected />
+      <RadioButton variant="seafoam" label="Seafoam variant" selected />
     </div>
   ),
 };
 
 export const AllStates: Story = {
   render: () => (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '16px', minWidth: '600px' }}>
-      {/* Default variant states */}
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '16px', minWidth: '800px' }}>
+      {/* Core variant states */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Default</h4>
         <RadioButton variant="default" label="Unselected" />
@@ -117,43 +129,176 @@ export const AllStates: Story = {
         <RadioButton variant="default" label="Disabled selected" disabled selected />
       </div>
       
-      {/* Primary variant states */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Primary</h4>
-        <RadioButton variant="primary" label="Unselected" />
-        <RadioButton variant="primary" label="Selected" selected />
-        <RadioButton variant="primary" label="Disabled" disabled />
-        <RadioButton variant="primary" label="Disabled selected" disabled selected />
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Black</h4>
+        <RadioButton variant="black" label="Unselected" />
+        <RadioButton variant="black" label="Selected" selected />
+        <RadioButton variant="black" label="Disabled" disabled />
+        <RadioButton variant="black" label="Disabled selected" disabled selected />
       </div>
       
-      {/* Success variant states */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Success</h4>
-        <RadioButton variant="success" label="Unselected" />
-        <RadioButton variant="success" label="Selected" selected />
-        <RadioButton variant="success" label="Disabled" disabled />
-        <RadioButton variant="success" label="Disabled selected" disabled selected />
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Blue</h4>
+        <RadioButton variant="blue" label="Unselected" />
+        <RadioButton variant="blue" label="Selected" selected />
+        <RadioButton variant="blue" label="Disabled" disabled />
+        <RadioButton variant="blue" label="Disabled selected" disabled selected />
       </div>
       
-      {/* Warning variant states */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Warning</h4>
-        <RadioButton variant="warning" label="Unselected" />
-        <RadioButton variant="warning" label="Selected" selected />
-        <RadioButton variant="warning" label="Disabled" disabled />
-        <RadioButton variant="warning" label="Disabled selected" disabled selected />
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Red</h4>
+        <RadioButton variant="red" label="Unselected" />
+        <RadioButton variant="red" label="Selected" selected />
+        <RadioButton variant="red" label="Disabled" disabled />
+        <RadioButton variant="red" label="Disabled selected" disabled selected />
       </div>
       
-      {/* Error variant states */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Error</h4>
-        <RadioButton variant="error" label="Unselected" />
-        <RadioButton variant="error" label="Selected" selected />
-        <RadioButton variant="error" label="Disabled" disabled />
-        <RadioButton variant="error" label="Disabled selected" disabled selected />
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Green</h4>
+        <RadioButton variant="green" label="Unselected" />
+        <RadioButton variant="green" label="Selected" selected />
+        <RadioButton variant="green" label="Disabled" disabled />
+        <RadioButton variant="green" label="Disabled selected" disabled selected />
+      </div>
+      
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Purple</h4>
+        <RadioButton variant="purple" label="Unselected" />
+        <RadioButton variant="purple" label="Selected" selected />
+        <RadioButton variant="purple" label="Disabled" disabled />
+        <RadioButton variant="purple" label="Disabled selected" disabled selected />
       </div>
     </div>
   ),
+};
+
+export const ColorGroups: Story = {
+  render: () => {
+    const [primarySelected, setPrimarySelected] = React.useState('blue');
+    const [statusSelected, setStatusSelected] = React.useState('green');
+    const [extendedSelected, setExtendedSelected] = React.useState('purple');
+
+    return (
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px', maxWidth: '800px' }}>
+        {/* Primary Colors Group */}
+        <div>
+          <h3 style={{ fontSize: '16px', fontWeight: 500, marginBottom: '16px' }}>Primary Colors</h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <RadioButton 
+              variant="black" 
+              label="Black" 
+              name="primary-group" 
+              value="black"
+              selected={primarySelected === 'black'}
+              onChange={(e) => setPrimarySelected(e.target.value)}
+            />
+            <RadioButton 
+              variant="blue" 
+              label="Blue" 
+              name="primary-group" 
+              value="blue"
+              selected={primarySelected === 'blue'}
+              onChange={(e) => setPrimarySelected(e.target.value)}
+            />
+            <RadioButton 
+              variant="cyan" 
+              label="Cyan" 
+              name="primary-group" 
+              value="cyan"
+              selected={primarySelected === 'cyan'}
+              onChange={(e) => setPrimarySelected(e.target.value)}
+            />
+            <RadioButton 
+              variant="yellow" 
+              label="Yellow" 
+              name="primary-group" 
+              value="yellow"
+              selected={primarySelected === 'yellow'}
+              onChange={(e) => setPrimarySelected(e.target.value)}
+            />
+          </div>
+        </div>
+        
+        {/* Status Colors Group */}
+        <div>
+          <h3 style={{ fontSize: '16px', fontWeight: 500, marginBottom: '16px' }}>Status Colors</h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <RadioButton 
+              variant="red" 
+              label="Error" 
+              name="status-group" 
+              value="red"
+              selected={statusSelected === 'red'}
+              onChange={(e) => setStatusSelected(e.target.value)}
+            />
+            <RadioButton 
+              variant="green" 
+              label="Success" 
+              name="status-group" 
+              value="green"
+              selected={statusSelected === 'green'}
+              onChange={(e) => setStatusSelected(e.target.value)}
+            />
+            <RadioButton 
+              variant="yellow" 
+              label="Warning" 
+              name="status-group" 
+              value="yellow"
+              selected={statusSelected === 'yellow'}
+              onChange={(e) => setStatusSelected(e.target.value)}
+            />
+            <RadioButton 
+              variant="gray" 
+              label="Neutral" 
+              name="status-group" 
+              value="gray"
+              selected={statusSelected === 'gray'}
+              onChange={(e) => setStatusSelected(e.target.value)}
+            />
+          </div>
+        </div>
+        
+        {/* Extended Colors Group */}
+        <div>
+          <h3 style={{ fontSize: '16px', fontWeight: 500, marginBottom: '16px' }}>Extended Colors</h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <RadioButton 
+              variant="purple" 
+              label="Purple" 
+              name="extended-group" 
+              value="purple"
+              selected={extendedSelected === 'purple'}
+              onChange={(e) => setExtendedSelected(e.target.value)}
+            />
+            <RadioButton 
+              variant="seafoam" 
+              label="Seafoam" 
+              name="extended-group" 
+              value="seafoam"
+              selected={extendedSelected === 'seafoam'}
+              onChange={(e) => setExtendedSelected(e.target.value)}
+            />
+            <RadioButton 
+              variant="primary" 
+              label="Primary" 
+              name="extended-group" 
+              value="primary"
+              selected={extendedSelected === 'primary'}
+              onChange={(e) => setExtendedSelected(e.target.value)}
+            />
+            <RadioButton 
+              variant="default" 
+              label="Default" 
+              name="extended-group" 
+              value="default"
+              selected={extendedSelected === 'default'}
+              onChange={(e) => setExtendedSelected(e.target.value)}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  },
 };
 
 export const RadioGroup: Story = {
@@ -245,7 +390,7 @@ export const MultipleGroups: Story = {
             label="Blue"
             selected={group2Value === 'color-blue'}
             onChange={(e) => setGroup2Value(e.target.value)}
-            variant="primary"
+            variant="blue"
           />
           <RadioButton
             name="color-group"
@@ -253,7 +398,7 @@ export const MultipleGroups: Story = {
             label="Red"
             selected={group2Value === 'color-red'}
             onChange={(e) => setGroup2Value(e.target.value)}
-            variant="error"
+            variant="red"
           />
           <RadioButton
             name="color-group"
@@ -261,7 +406,7 @@ export const MultipleGroups: Story = {
             label="Green"
             selected={group2Value === 'color-green'}
             onChange={(e) => setGroup2Value(e.target.value)}
-            variant="success"
+            variant="green"
           />
         </div>
       </div>
