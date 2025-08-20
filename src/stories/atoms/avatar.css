@@ -2,6 +2,8 @@
 .avatar-container {
   position: relative;
   display: inline-block;
+  /* CSS containment to prevent layout thrashing */
+  contain: layout style;
 }
 
 /* Avatar Base Styles */
@@ -12,6 +14,9 @@
   justify-content: center;
   overflow: hidden;
   flex-shrink: 0;
+  /* Optimize for transforms */
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 /* Avatar Sizes */
@@ -126,15 +131,23 @@
 /* Clickable Avatar */
 .avatar--clickable {
   cursor: pointer;
-  transition: var(--transition-fast);
+  transition: transform var(--transition-fast);
+  /* Optimize transform performance */
+  will-change: transform;
+  contain: layout style;
 }
 
 .avatar--clickable:hover {
-  transform: var(--transform-scale-up);
+  transform: translateZ(0) var(--transform-scale-up);
 }
 
 .avatar--clickable:active {
-  transform: var(--transform-scale-down);
+  transform: translateZ(0) var(--transform-scale-down);
+}
+
+/* Reset will-change when not needed */
+.avatar--clickable:not(:hover):not(:active):not(:focus) {
+  will-change: auto;
 }
 
 .avatar--clickable:focus {
