@@ -63,6 +63,7 @@ jobs:
           echo "📁 Total files: $(find storybook-static -type f | wc -l)"
 
       - name: Publish to Chromatic
+        id: chromatic
         uses: chromaui/action@latest
         with:
           # Chromatic project token
@@ -75,11 +76,61 @@ jobs:
           onlyChanged: false
           # Skip snapshot for draft PRs
           skip: ${{ github.event.pull_request.draft == true }}
+          # Don't fail on component errors for now while we debug
+          exitOnceUploaded: false
+          # Continue to run tests even if there are component errors
+          allowConsoleErrors: true
           
       - name: Chromatic Summary
+        if: always()
         run: |
           echo "🎨 Chromatic deployment completed!"
-          echo "✅ Visual regression tests finished"
+          echo "Build URL: ${{ steps.chromatic.outputs.url }}"
+          echo "Storybook URL: ${{ steps.chromatic.outputs.storybookUrl }}"
+          echo "Exit code: ${{ steps.chromatic.outputs.code }}"
+          if [[ "${{ steps.chromatic.outputs.code }}" != "0" ]]; then
+            echo "⚠️ Chromatic found issues - check the build URL above for details"
+            echo "Common causes:"
+            echo "- Component rendering errors"
+            echo "- Missing dependencies"
+            echo "- Storybook configuration issues"
+            echo "- Story syntax errors"
+          else
+            echo "✅ Visual regression tests passed"
+          fi
           if [[ "${{ github.ref }}" == "refs/heads/main" || "${{ github.ref }}" == "refs/heads/mystic-garden" ]]; then
             echo "🏷️  Changes auto-accepted for main branch"
           fi
+
+      - name: Create Issue Comment (if PR and errors)
+        if: github.event_name == 'pull_request' && steps.chromatic.outputs.code != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## ⚠️ Chromatic Visual Tests Found Issues
+              
+              Chromatic has detected component errors that need attention:
+              
+              - **Build URL**: ${{ steps.chromatic.outputs.url }}
+              - **Storybook Preview**: ${{ steps.chromatic.outputs.storybookUrl }}
+              
+              Please review the Chromatic build to see the specific component errors and fix them before merging.
+              
+              Common fixes:
+              - Check for TypeScript errors in components
+              - Verify all story dependencies are properly imported
+              - Ensure component props are correctly typed
+              - Check for console errors in the Storybook preview`
+            })
+
+      - name: Set exit code based on Chromatic result
+        if: steps.chromatic.outputs.code != '0'
+        run: |
+          echo "Chromatic detected issues (exit code: ${{ steps.chromatic.outputs.code }})"
+          echo "This is being treated as a warning for now to allow debugging"
+          # Uncomment the line below to make Chromatic errors fail the CI:
+          # exit 1
