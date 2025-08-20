@@ -72,6 +72,8 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   state = 'default',
   variant = 'default',
   size = 'default',
+  message,
+  required = false,
   disabled = false,
   checked = false,
   indeterminate = false,
@@ -80,6 +82,8 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   value,
   className = '',
   onChange,
+  onFocus,
+  onBlur,
 }) => {
   const checkboxId = id || `checkbox-${Math.random().toString(36).substring(2, 11)}`;
   
