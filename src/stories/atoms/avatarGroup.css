@@ -32,8 +32,16 @@
   margin-left: var(--avatar-group-overlap-default) !important;
 }
 
+.avatar-group--default .avatar-group__avatar:not(:first-child) .avatar-container {
+  margin-left: var(--avatar-group-overlap-default) !important;
+}
+
 /* Profile Photo Avatars - Small Size */
 .avatar-group--default.avatar-group--small .avatar-group__avatar:not(:first-child) {
+  margin-left: var(--avatar-group-overlap-small) !important;
+}
+
+.avatar-group--default.avatar-group--small .avatar-group__avatar:not(:first-child) .avatar-container {
   margin-left: var(--avatar-group-overlap-small) !important;
 }
 
@@ -44,9 +52,19 @@
   margin-left: var(--avatar-group-overlap-default) !important;
 }
 
+.avatar-group--initials-light .avatar-group__avatar:not(:first-child) .avatar-container,
+.avatar-group--initials-dark .avatar-group__avatar:not(:first-child) .avatar-container {
+  margin-left: var(--avatar-group-overlap-default) !important;
+}
+
 /* Initial Light & Dark - Small Size */
 .avatar-group--initials-light.avatar-group--small .avatar-group__avatar:not(:first-child),
 .avatar-group--initials-dark.avatar-group--small .avatar-group__avatar:not(:first-child) {
+  margin-left: var(--avatar-group-overlap-small) !important;
+}
+
+.avatar-group--initials-light.avatar-group--small .avatar-group__avatar:not(:first-child) .avatar-container,
+.avatar-group--initials-dark.avatar-group--small .avatar-group__avatar:not(:first-child) .avatar-container {
   margin-left: var(--avatar-group-overlap-small) !important;
 }
 
@@ -56,8 +74,16 @@
   margin-left: var(--avatar-group-overlap-bordered-default) !important;
 }
 
+.avatar-group--bordered .avatar-group__avatar:not(:first-child) .avatar-container {
+  margin-left: var(--avatar-group-overlap-bordered-default) !important;
+}
+
 /* Bordered - Small Size */
 .avatar-group--bordered.avatar-group--small .avatar-group__avatar:not(:first-child) {
+  margin-left: var(--avatar-group-overlap-bordered-small) !important;
+}
+
+.avatar-group--bordered.avatar-group--small .avatar-group__avatar:not(:first-child) .avatar-container {
   margin-left: var(--avatar-group-overlap-bordered-small) !important;
 }
 
