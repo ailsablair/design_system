@@ -284,9 +284,23 @@
   margin-right: var(--avatar-group-overlap-default) !important;
 }
 
+[dir="rtl"] .avatar-group--default .avatar-group__avatar:not(:first-child) .avatar-container,
+[dir="rtl"] .avatar-group--initials-light .avatar-group__avatar:not(:first-child) .avatar-container,
+[dir="rtl"] .avatar-group--initials-dark .avatar-group__avatar:not(:first-child) .avatar-container {
+  margin-left: 0 !important;
+  margin-right: var(--avatar-group-overlap-default) !important;
+}
+
 [dir="rtl"] .avatar-group--default.avatar-group--small .avatar-group__avatar:not(:first-child),
 [dir="rtl"] .avatar-group--initials-light.avatar-group--small .avatar-group__avatar:not(:first-child),
 [dir="rtl"] .avatar-group--initials-dark.avatar-group--small .avatar-group__avatar:not(:first-child) {
+  margin-left: 0 !important;
+  margin-right: var(--avatar-group-overlap-small) !important;
+}
+
+[dir="rtl"] .avatar-group--default.avatar-group--small .avatar-group__avatar:not(:first-child) .avatar-container,
+[dir="rtl"] .avatar-group--initials-light.avatar-group--small .avatar-group__avatar:not(:first-child) .avatar-container,
+[dir="rtl"] .avatar-group--initials-dark.avatar-group--small .avatar-group__avatar:not(:first-child) .avatar-container {
   margin-left: 0 !important;
   margin-right: var(--avatar-group-overlap-small) !important;
 }
@@ -296,7 +310,17 @@
   margin-right: var(--avatar-group-overlap-bordered-default) !important;
 }
 
+[dir="rtl"] .avatar-group--bordered .avatar-group__avatar:not(:first-child) .avatar-container {
+  margin-left: 0 !important;
+  margin-right: var(--avatar-group-overlap-bordered-default) !important;
+}
+
 [dir="rtl"] .avatar-group--bordered.avatar-group--small .avatar-group__avatar:not(:first-child) {
+  margin-left: 0 !important;
+  margin-right: var(--avatar-group-overlap-bordered-small) !important;
+}
+
+[dir="rtl"] .avatar-group--bordered.avatar-group--small .avatar-group__avatar:not(:first-child) .avatar-container {
   margin-left: 0 !important;
   margin-right: var(--avatar-group-overlap-bordered-small) !important;
 }
