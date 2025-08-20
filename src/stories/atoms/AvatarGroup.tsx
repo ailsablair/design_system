@@ -59,6 +59,11 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({
     return avatar.type || 'profile-photo';
   };
 
+  // Determine if avatar should have border based on stroke
+  const getAvatarBorder = () => {
+    return stroke === 'bordered';
+  };
+
   // Get avatars to display based on maxCount
   const getDisplayAvatars = () => {
     if (!maxCount || avatars.length <= maxCount) {
@@ -109,17 +114,17 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({
             <div key={rowIndex} className="avatar-group__grid-row">
               {row.map((avatar, avatarIndex) => (
                 <Avatar
-                  key={avatar.id || `${rowIndex}-${avatarIndex}`}
-                  size={getAvatarSize() as any}
-                  type={getAvatarType(avatar, avatarIndex) as any}
-                  shape={avatar.shape || 'default'}
-                  border={stroke === 'bordered'}
-                  src={avatar.src}
-                  alt={avatar.name || 'Avatar'}
-                  initial={avatar.initial || (avatar.name ? avatar.name.charAt(0).toUpperCase() : 'A')}
-                  statusIcon={avatar.statusIcon}
-                  className="avatar-group__avatar"
-                />
+                key={avatar.id || `${rowIndex}-${avatarIndex}`}
+                size={getAvatarSize() as any}
+                type={getAvatarType(avatar, avatarIndex) as any}
+                shape={avatar.shape || 'default'}
+                border={getAvatarBorder()}
+                src={avatar.src}
+                alt={avatar.name || 'Avatar'}
+                initial={avatar.initial || (avatar.name ? avatar.name.charAt(0).toUpperCase() : 'A')}
+                statusIcon={avatar.statusIcon}
+                className="avatar-group__avatar"
+              />
               ))}
             </div>
           ))}
@@ -143,7 +148,7 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({
             size={getAvatarSize() as any}
             type={getAvatarType(avatar, index) as any}
             shape={avatar.shape || 'default'}
-            border={stroke === 'bordered'}
+            border={getAvatarBorder()}
             src={avatar.src}
             alt={avatar.name || 'Avatar'}
             initial={avatar.initial || (avatar.name ? avatar.name.charAt(0).toUpperCase() : 'A')}
@@ -158,7 +163,7 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({
               size={getAvatarSize() as any}
               type="initial-light"
               shape="default"
-              border={stroke === 'bordered'}
+              border={getAvatarBorder()}
               initial={`+${overflowCount}`}
               className="avatar-group__overflow-avatar"
             />
