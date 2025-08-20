@@ -1,0 +1,245 @@
+/* Avatar Group Base Styles */
+.avatar-group {
+  display: inline-flex;
+  position: relative;
+}
+
+/* Avatar Group List (Default Overlapping Layout) */
+.avatar-group__list {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Individual Avatar Positioning in Group */
+.avatar-group__avatar {
+  position: relative;
+}
+
+/* Default Overlapping Layout */
+.avatar-group--default .avatar-group__avatar:not(:first-child) {
+  margin-left: -8px;
+}
+
+.avatar-group--default.avatar-group--small .avatar-group__avatar:not(:first-child) {
+  margin-left: -6px;
+}
+
+/* Initial Groups - Specific Spacing */
+.avatar-group--initials-light .avatar-group__avatar:not(:first-child),
+.avatar-group--initials-dark .avatar-group__avatar:not(:first-child) {
+  margin-left: -8px;
+}
+
+.avatar-group--initials-light.avatar-group--small .avatar-group__avatar:not(:first-child),
+.avatar-group--initials-dark.avatar-group--small .avatar-group__avatar:not(:first-child) {
+  margin-left: -6px;
+}
+
+/* Bordered Avatars - Adjusted Spacing */
+.avatar-group--bordered .avatar-group__avatar:not(:first-child) {
+  margin-left: -12px;
+}
+
+.avatar-group--bordered.avatar-group--small .avatar-group__avatar:not(:first-child) {
+  margin-left: -8px;
+}
+
+/* Avatar Group Grid Layout */
+.avatar-group__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-8px);
+}
+
+.avatar-group--grid.avatar-group--small .avatar-group__grid {
+  gap: var(--spacing-sizing-6px);
+}
+
+.avatar-group__grid-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sizing-8px);
+}
+
+.avatar-group--grid.avatar-group--small .avatar-group__grid-row {
+  gap: var(--spacing-sizing-6px);
+}
+
+/* Grid Layout Specific Spacing */
+.avatar-group--grid .avatar-group__avatar {
+  margin-left: 0;
+}
+
+/* Bordered Grid Layout */
+.avatar-group--grid.avatar-group--bordered .avatar-group__grid-row {
+  gap: var(--spacing-sizing-8px);
+}
+
+.avatar-group--grid.avatar-group--bordered.avatar-group--small .avatar-group__grid-row {
+  gap: var(--spacing-sizing-6px);
+}
+
+/* Overflow Avatar */
+.avatar-group__overflow {
+  position: relative;
+}
+
+.avatar-group__overflow-avatar {
+  background-color: var(--neutral-gray-gray-100);
+  color: var(--neutral-gray-gray-600);
+  font-weight: var(--type-weight-medium);
+}
+
+/* Z-index stacking for overlapping avatars */
+.avatar-group--default .avatar-group__avatar {
+  z-index: 1;
+}
+
+.avatar-group--default .avatar-group__avatar:nth-child(1) { z-index: 5; }
+.avatar-group--default .avatar-group__avatar:nth-child(2) { z-index: 4; }
+.avatar-group--default .avatar-group__avatar:nth-child(3) { z-index: 3; }
+.avatar-group--default .avatar-group__avatar:nth-child(4) { z-index: 2; }
+.avatar-group--default .avatar-group__avatar:nth-child(5) { z-index: 1; }
+
+.avatar-group--initials-light .avatar-group__avatar,
+.avatar-group--initials-dark .avatar-group__avatar {
+  z-index: 1;
+}
+
+.avatar-group--initials-light .avatar-group__avatar:nth-child(1),
+.avatar-group--initials-dark .avatar-group__avatar:nth-child(1) { z-index: 5; }
+.avatar-group--initials-light .avatar-group__avatar:nth-child(2),
+.avatar-group--initials-dark .avatar-group__avatar:nth-child(2) { z-index: 4; }
+.avatar-group--initials-light .avatar-group__avatar:nth-child(3),
+.avatar-group--initials-dark .avatar-group__avatar:nth-child(3) { z-index: 3; }
+.avatar-group--initials-light .avatar-group__avatar:nth-child(4),
+.avatar-group--initials-dark .avatar-group__avatar:nth-child(4) { z-index: 2; }
+.avatar-group--initials-light .avatar-group__avatar:nth-child(5),
+.avatar-group--initials-dark .avatar-group__avatar:nth-child(5) { z-index: 1; }
+
+/* Hover Effects for Overlapping Avatars */
+.avatar-group--default .avatar-group__avatar:hover,
+.avatar-group--initials-light .avatar-group__avatar:hover,
+.avatar-group--initials-dark .avatar-group__avatar:hover {
+  z-index: 10 !important;
+  transform: translateY(-2px);
+  transition: var(--transition-fast);
+}
+
+/* Bordered Avatar Hover */
+.avatar-group--bordered .avatar-group__avatar:hover {
+  z-index: 10 !important;
+  transform: translateY(-2px);
+  transition: var(--transition-fast);
+}
+
+/* Clickable Avatar Group */
+.avatar-group--clickable {
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.avatar-group--clickable:hover {
+  transform: translateY(-1px);
+}
+
+.avatar-group--clickable:active {
+  transform: translateY(0);
+}
+
+.avatar-group--clickable:focus {
+  outline: 2px solid var(--primary-sky-blue-sky-blue);
+  outline-offset: 2px;
+  border-radius: var(--spacing-radius-8px);
+}
+
+/* Grid Layout Hover Effects */
+.avatar-group--grid .avatar-group__avatar:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  transition: var(--transition-fast);
+}
+
+/* Avatar Group Sizes */
+.avatar-group--small {
+  /* Size-specific adjustments handled by individual avatar size */
+}
+
+.avatar-group--default {
+  /* Default size styling */
+}
+
+/* Special styling for initial groups */
+.avatar-group--initials-light .avatar-group__avatar {
+  border: 1px solid var(--neutral-gray-gray-300);
+}
+
+.avatar-group--initials-dark .avatar-group__avatar {
+  border: 1px solid var(--base-white);
+}
+
+/* Bordered avatar groups */
+.avatar-group--bordered .avatar-group__avatar {
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-200);
+}
+
+/* Accessibility */
+.avatar-group--clickable:focus-visible {
+  outline: 2px solid var(--primary-sky-blue-sky-blue);
+  outline-offset: 2px;
+  border-radius: var(--spacing-radius-8px);
+}
+
+/* High Contrast Support */
+@media (prefers-contrast: high) {
+  .avatar-group__avatar {
+    border-width: 2px;
+  }
+  
+  .avatar-group--initials-light .avatar-group__avatar {
+    border-color: var(--base-black);
+  }
+  
+  .avatar-group--initials-dark .avatar-group__avatar {
+    border-color: var(--base-white);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .avatar-group--clickable,
+  .avatar-group__avatar {
+    transition: none;
+  }
+  
+  .avatar-group--clickable:hover,
+  .avatar-group__avatar:hover {
+    transform: none;
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] .avatar-group--default .avatar-group__avatar:not(:first-child),
+[dir="rtl"] .avatar-group--initials-light .avatar-group__avatar:not(:first-child),
+[dir="rtl"] .avatar-group--initials-dark .avatar-group__avatar:not(:first-child) {
+  margin-left: 0;
+  margin-right: -8px;
+}
+
+[dir="rtl"] .avatar-group--default.avatar-group--small .avatar-group__avatar:not(:first-child),
+[dir="rtl"] .avatar-group--initials-light.avatar-group--small .avatar-group__avatar:not(:first-child),
+[dir="rtl"] .avatar-group--initials-dark.avatar-group--small .avatar-group__avatar:not(:first-child) {
+  margin-left: 0;
+  margin-right: -6px;
+}
+
+[dir="rtl"] .avatar-group--bordered .avatar-group__avatar:not(:first-child) {
+  margin-left: 0;
+  margin-right: -12px;
+}
+
+[dir="rtl"] .avatar-group--bordered.avatar-group--small .avatar-group__avatar:not(:first-child) {
+  margin-left: 0;
+  margin-right: -8px;
+}
