@@ -1,0 +1,279 @@
+/* Star Component Styles */
+
+.star {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  contain: layout style paint;
+}
+
+/* Size Variants */
+.star--small {
+  width: 20px;
+  height: 20px;
+}
+
+.star--default {
+  width: 24px;
+  height: 24px;
+}
+
+.star--large {
+  width: 28px;
+  height: 28px;
+}
+
+/* Star SVG Base Styles */
+.star-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.star-outline {
+  fill: var(--neutral-gray-gray-200);
+}
+
+/* Fill Overlay Styles */
+.star-fill-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: 2;
+}
+
+.star-fill-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.star-fill {
+  fill: var(--primary-yellow-yellow);
+}
+
+/* Size-specific adjustments for pixel-perfect alignment */
+.star--small .star-svg {
+  width: 18px;
+  height: 18px;
+}
+
+.star--default .star-svg {
+  width: 22px;
+  height: 21px;
+}
+
+.star--large .star-svg {
+  width: 26px;
+  height: 25px;
+}
+
+.star--small .star-fill-svg {
+  width: 18px;
+  height: 18px;
+}
+
+.star--default .star-fill-svg {
+  width: 22px;
+  height: 21px;
+}
+
+.star--large .star-fill-svg {
+  width: 26px;
+  height: 25px;
+}
+
+/* Hover Effects */
+.star:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+.star:hover .star-outline {
+  fill: #D1D5DB;
+  transition: fill 0.2s ease;
+}
+
+.star:hover .star-fill {
+  fill: #F59E0B;
+  transition: fill 0.2s ease;
+}
+
+/* Active/Pressed State */
+.star:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
+}
+
+/* Focus State for Accessibility */
+.star:focus-visible {
+  outline: 2px solid var(--primary-sky-blue-sky-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Fill State Variants */
+.star--fill-empty .star-fill-overlay {
+  display: none;
+}
+
+.star--fill-5\% .star-fill-overlay {
+  width: 1px;
+}
+
+.star--fill-15\% .star-fill-overlay {
+  width: 3px;
+}
+
+.star--fill-25\% .star-fill-overlay {
+  width: 5px;
+}
+
+.star--fill-40\% .star-fill-overlay {
+  width: 8px;
+}
+
+.star--fill-50\% .star-fill-overlay {
+  width: 10px;
+}
+
+.star--fill-60\% .star-fill-overlay {
+  width: 12px;
+}
+
+.star--fill-75\% .star-fill-overlay {
+  width: 15px;
+}
+
+.star--fill-85\% .star-fill-overlay {
+  width: 17px;
+}
+
+.star--fill-95\% .star-fill-overlay {
+  width: 19px;
+}
+
+.star--fill-100\% .star-fill-overlay {
+  width: 100%;
+}
+
+/* Size-specific fill adjustments for default size */
+.star--default.star--fill-5\% .star-fill-overlay {
+  width: 1px;
+}
+
+.star--default.star--fill-15\% .star-fill-overlay {
+  width: 3px;
+}
+
+.star--default.star--fill-25\% .star-fill-overlay {
+  width: 5px;
+}
+
+.star--default.star--fill-40\% .star-fill-overlay {
+  width: 9px;
+}
+
+.star--default.star--fill-50\% .star-fill-overlay {
+  width: 11px;
+}
+
+.star--default.star--fill-60\% .star-fill-overlay {
+  width: 13px;
+}
+
+.star--default.star--fill-75\% .star-fill-overlay {
+  width: 16px;
+}
+
+.star--default.star--fill-85\% .star-fill-overlay {
+  width: 18px;
+}
+
+.star--default.star--fill-95\% .star-fill-overlay {
+  width: 20px;
+}
+
+/* Size-specific fill adjustments for large size */
+.star--large.star--fill-5\% .star-fill-overlay {
+  width: 1px;
+}
+
+.star--large.star--fill-15\% .star-fill-overlay {
+  width: 4px;
+}
+
+.star--large.star--fill-25\% .star-fill-overlay {
+  width: 7px;
+}
+
+.star--large.star--fill-40\% .star-fill-overlay {
+  width: 10px;
+}
+
+.star--large.star--fill-50\% .star-fill-overlay {
+  width: 13px;
+}
+
+.star--large.star--fill-60\% .star-fill-overlay {
+  width: 15px;
+}
+
+.star--large.star--fill-75\% .star-fill-overlay {
+  width: 19px;
+}
+
+.star--large.star--fill-85\% .star-fill-overlay {
+  width: 22px;
+}
+
+.star--large.star--fill-95\% .star-fill-overlay {
+  width: 24px;
+}
+
+/* Disabled State */
+.star:disabled,
+.star[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .star-outline {
+    fill: #000000;
+  }
+  
+  .star-fill {
+    fill: #FFD700;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .star:hover,
+  .star:active {
+    transform: none;
+    transition: none;
+  }
+  
+  .star:hover .star-outline,
+  .star:hover .star-fill {
+    transition: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .star {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+}
