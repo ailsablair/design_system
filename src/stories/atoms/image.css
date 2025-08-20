@@ -1,0 +1,307 @@
+/* Image Base Styles */
+.image {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  background-color: var(--neutral-gray-gray-100);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
+  transition: var(--transition-fast);
+}
+
+/* Image Sizes */
+.image--small {
+  width: 64px;
+  height: 64px;
+}
+
+.image--default {
+  width: 120px;
+  height: 120px;
+}
+
+.image--large {
+  width: 200px;
+  height: 200px;
+}
+
+.image--extra-large {
+  width: 320px;
+  height: 320px;
+}
+
+/* Image Shapes */
+.image--default {
+  border-radius: var(--spacing-radius-8px);
+}
+
+.image--square {
+  border-radius: var(--spacing-radius-4px);
+}
+
+/* Image Content */
+.image__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: var(--transition-fast);
+}
+
+/* Placeholder State */
+.image__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--neutral-gray-gray-50);
+  color: var(--neutral-gray-gray-400);
+}
+
+.image--placeholder {
+  background-color: var(--neutral-gray-gray-100);
+}
+
+/* Placeholder Icon */
+.image__icon {
+  width: 24px;
+  height: 24px;
+  color: var(--neutral-gray-gray-400);
+  opacity: var(--opacity-medium);
+}
+
+/* Responsive icon sizes based on container size */
+.image--small .image__icon {
+  width: 16px;
+  height: 16px;
+}
+
+.image--default .image__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.image--large .image__icon {
+  width: 32px;
+  height: 32px;
+}
+
+.image--extra-large .image__icon {
+  width: 48px;
+  height: 48px;
+}
+
+/* Loading State */
+.image__loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(2px);
+}
+
+.image__spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--neutral-gray-gray-200);
+  border-top: 2px solid var(--primary-sky-blue-sky-blue);
+  border-radius: var(--spacing-radius-full);
+  animation: image-spin 1s linear infinite;
+}
+
+.image--small .image__spinner {
+  width: 16px;
+  height: 16px;
+  border-width: 1px;
+}
+
+.image--large .image__spinner,
+.image--extra-large .image__spinner {
+  width: 24px;
+  height: 24px;
+  border-width: 3px;
+}
+
+@keyframes image-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Clickable State */
+.image--clickable {
+  cursor: pointer;
+}
+
+.image--clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--neutral-gray-gray-300);
+}
+
+.image--clickable:hover .image__img {
+  transform: scale(1.05);
+}
+
+.image--clickable:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-md);
+}
+
+.image--clickable:focus {
+  outline: 2px solid var(--primary-sky-blue-sky-blue);
+  outline-offset: 2px;
+}
+
+/* Hover Effects for Images */
+.image:hover .image__img {
+  filter: brightness(1.1);
+}
+
+.image--placeholder:hover .image__placeholder {
+  background-color: var(--neutral-gray-gray-200);
+}
+
+.image--placeholder:hover .image__icon {
+  color: var(--neutral-gray-gray-500);
+  opacity: var(--opacity-strong);
+}
+
+/* Error State */
+.image--error .image__placeholder {
+  background-color: var(--status-red-light);
+  color: var(--status-red);
+}
+
+.image--error .image__icon {
+  color: var(--status-red);
+}
+
+/* Focus States */
+.image--clickable:focus-visible {
+  outline: 2px solid var(--primary-sky-blue-sky-blue);
+  outline-offset: 2px;
+}
+
+/* High Contrast Support */
+@media (prefers-contrast: high) {
+  .image {
+    border-width: 2px;
+    border-color: var(--base-black);
+  }
+  
+  .image__icon {
+    color: var(--base-black);
+    opacity: var(--opacity-full);
+  }
+  
+  .image--placeholder {
+    background-color: var(--base-white);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .image,
+  .image__img,
+  .image__spinner {
+    transition: none;
+    animation: none;
+  }
+  
+  .image--clickable:hover {
+    transform: none;
+  }
+  
+  .image--clickable:hover .image__img {
+    transform: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .image {
+    break-inside: avoid;
+  }
+  
+  .image__loading,
+  .image__spinner {
+    display: none;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .image--large {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .image--extra-large {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 320px) {
+  .image--default {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .image--large {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .image--extra-large {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* Aspect Ratio Utilities */
+.image--aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.image--aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.image--aspect-photo {
+  aspect-ratio: 4 / 3;
+}
+
+/* Object Fit Utilities */
+.image--object-cover .image__img {
+  object-fit: cover;
+}
+
+.image--object-contain .image__img {
+  object-fit: contain;
+}
+
+.image--object-fill .image__img {
+  object-fit: fill;
+}
+
+.image--object-scale-down .image__img {
+  object-fit: scale-down;
+}
+
+.image--object-none .image__img {
+  object-fit: none;
+}
+
+/* Performance Optimizations */
+.image__img {
+  will-change: transform, filter;
+}
+
+.image--loading .image__img {
+  will-change: auto;
+}
