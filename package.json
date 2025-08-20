@@ -12,7 +12,8 @@
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=chpt_3b449a46cc629ec",
     "chromatic:ci": "npx chromatic --project-token=chpt_3b449a46cc629ec --exit-zero-on-changes",
-    "deploy": "npm run build-storybook && npm run chromatic:ci"
+    "deploy": "npm run build-storybook && npm run chromatic:ci",
+    "debug:chromatic": "node scripts/debug-chromatic.js"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
