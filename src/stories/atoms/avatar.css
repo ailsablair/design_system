@@ -1,0 +1,297 @@
+/* Avatar Container */
+.avatar-container {
+  position: relative;
+  display: inline-block;
+}
+
+.avatar-container__status-icon {
+  position: absolute;
+}
+
+/* Avatar Base Styles */
+.avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Avatar Sizes */
+.avatar--x-small {
+  width: 26px;
+  height: 26px;
+}
+
+.avatar--small {
+  width: 38px;
+  height: 38px;
+}
+
+.avatar--default {
+  width: 46px;
+  height: 46px;
+}
+
+.avatar--large {
+  width: 62px;
+  height: 62px;
+}
+
+/* Avatar Shapes */
+.avatar--default {
+  border-radius: var(--spacing-radius-full);
+}
+
+.avatar--square {
+  border-radius: var(--spacing-radius-6px);
+}
+
+/* Avatar Types - Base Styling */
+.avatar--empty-state {
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
+}
+
+.avatar--profile-photo {
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-700);
+}
+
+.avatar--initial-light {
+  background-color: var(--neutral-gray-gray-100);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
+}
+
+.avatar--initial-dark {
+  background-color: var(--neutral-gray-gray-700);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-700);
+}
+
+/* Bordered Avatar Styles */
+.avatar--bordered {
+  border: var(--spacing-stroke-4px) solid var(--base-white) !important;
+  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-200);
+}
+
+/* Avatar Image */
+.avatar__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Avatar Initial Text */
+.avatar__initial {
+  color: var(--base-white);
+  text-align: center;
+  font-family: var(--type-typeface-archivo);
+  font-style: normal;
+  font-weight: var(--type-weight-medium);
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.avatar--initial-light .avatar__initial {
+  color: var(--base-black);
+}
+
+.avatar--initial-dark .avatar__initial {
+  color: var(--base-white);
+}
+
+/* Initial Text Sizes */
+.avatar--x-small .avatar__initial {
+  font-size: var(--type-archivo-label-sm);
+  line-height: var(--type-line-height-label-sm);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
+}
+
+.avatar--small .avatar__initial {
+  font-size: var(--type-archivo-label-lg);
+  line-height: var(--type-line-height-label-lg);
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg);
+}
+
+.avatar--default .avatar__initial {
+  font-size: var(--type-archivo-heading-5);
+  line-height: var(--type-line-height-heading-5);
+  letter-spacing: var(--type-letter-spacing-archivo-heading-5);
+}
+
+.avatar--large .avatar__initial {
+  font-size: var(--type-archivo-heading-4);
+  line-height: var(--type-line-height-heading-4);
+  letter-spacing: var(--type-letter-spacing-archivo-heading-4);
+}
+
+/* Clickable Avatar */
+.avatar--clickable {
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.avatar--clickable:hover {
+  transform: var(--transform-scale-up);
+}
+
+.avatar--clickable:active {
+  transform: var(--transform-scale-down);
+}
+
+.avatar--clickable:focus {
+  outline: 2px solid var(--primary-sky-blue-sky-blue);
+  outline-offset: 2px;
+}
+
+/* Status Icon Positioning */
+.avatar-container__status-icon {
+  position: absolute;
+}
+
+/* X-Small Avatar Status Positioning */
+.avatar--x-small + .avatar-container__status-icon {
+  top: -1px;
+  right: -1px;
+}
+
+.avatar--x-small.avatar--square + .avatar-container__status-icon {
+  top: -3px;
+  right: -3px;
+}
+
+/* Small Avatar Status Positioning */
+.avatar--small + .avatar-container__status-icon {
+  top: -1px;
+  right: -1px;
+}
+
+.avatar--small.avatar--square + .avatar-container__status-icon {
+  top: -4px;
+  right: -4px;
+}
+
+/* Default Avatar Status Positioning */
+.avatar--default + .avatar-container__status-icon {
+  top: -2px;
+  right: -2px;
+}
+
+.avatar--default.avatar--square + .avatar-container__status-icon {
+  top: -4px;
+  right: -5px;
+}
+
+/* Large Avatar Status Positioning */
+.avatar--large + .avatar-container__status-icon {
+  top: 0;
+  right: 0;
+}
+
+.avatar--large.avatar--square + .avatar-container__status-icon {
+  top: -4px;
+  right: -6px;
+}
+
+/* Status Icon Base Styles */
+.avatar-status-icon {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.avatar-status-icon__circle {
+  stroke-width: 2;
+}
+
+/* Status Icon Colors */
+.avatar-status-icon--online .avatar-status-icon__circle--online {
+  fill: var(--status-green);
+  stroke: var(--status-green-light);
+}
+
+.avatar-status-icon--offline .avatar-status-icon__circle--offline {
+  fill: var(--neutral-gray-gray-500);
+  stroke: var(--neutral-gray-gray-100);
+}
+
+.avatar-status-icon--away .avatar-status-icon__circle--away {
+  fill: var(--primary-yellow-yellow);
+  stroke: var(--primary-yellow-50);
+}
+
+.avatar-status-icon--do-not-disturb .avatar-status-icon__circle--do-not-disturb {
+  fill: var(--status-red);
+  stroke: var(--status-red-light-alt);
+}
+
+/* Status Icon for Light Theme Avatars */
+.avatar--initial-light + .avatar-container__status-icon .avatar-status-icon--do-not-disturb .avatar-status-icon__circle--do-not-disturb {
+  stroke: var(--status-red-light-alt);
+}
+
+.avatar--initial-light + .avatar-container__status-icon .avatar-status-icon--online .avatar-status-icon__circle--online {
+  stroke: var(--status-green-light);
+}
+
+.avatar--initial-light + .avatar-container__status-icon .avatar-status-icon--offline .avatar-status-icon__circle--offline {
+  stroke: var(--neutral-gray-gray-100);
+}
+
+.avatar--initial-light + .avatar-container__status-icon .avatar-status-icon--away .avatar-status-icon__circle--away {
+  stroke: var(--primary-yellow-50);
+}
+
+/* Status Icon for Dark Theme Avatars */
+.avatar--initial-dark + .avatar-container__status-icon .avatar-status-icon--do-not-disturb .avatar-status-icon__circle--do-not-disturb {
+  stroke: var(--base-white);
+}
+
+.avatar--initial-dark + .avatar-container__status-icon .avatar-status-icon--online .avatar-status-icon__circle--online {
+  stroke: var(--base-white);
+}
+
+.avatar--initial-dark + .avatar-container__status-icon .avatar-status-icon--offline .avatar-status-icon__circle--offline {
+  stroke: var(--base-white);
+}
+
+.avatar--initial-dark + .avatar-container__status-icon .avatar-status-icon--away .avatar-status-icon__circle--away {
+  stroke: var(--base-white);
+}
+
+/* Bordered Avatar Status Icon Adjustments */
+.avatar--bordered + .avatar-container__status-icon {
+  /* Status icons maintain their position relative to avatar content, not the border */
+}
+
+/* Accessibility */
+.avatar--clickable:focus-visible {
+  outline: 2px solid var(--primary-sky-blue-sky-blue);
+  outline-offset: 2px;
+}
+
+/* High Contrast Support */
+@media (prefers-contrast: high) {
+  .avatar--empty-state,
+  .avatar--initial-light {
+    border-color: var(--base-black);
+  }
+  
+  .avatar--profile-photo,
+  .avatar--initial-dark {
+    border-color: var(--base-white);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .avatar--clickable {
+    transition: none;
+  }
+  
+  .avatar--clickable:hover,
+  .avatar--clickable:active {
+    transform: none;
+  }
+}
