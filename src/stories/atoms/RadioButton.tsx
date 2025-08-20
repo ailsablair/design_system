@@ -5,7 +5,7 @@ export interface RadioButtonProps {
   /** Radio button label text */
   label?: string;
   /** Color variant */
-  variant?: 'default' | 'primary' | 'success' | 'warning' | 'error';
+  variant?: 'default' | 'primary' | 'success' | 'warning' | 'error' | 'black' | 'blue' | 'cyan' | 'yellow' | 'gray' | 'red' | 'green' | 'purple' | 'seafoam';
   /** Size variant */
   size?: 'small' | 'default' | 'large';
   /** Disabled state */
