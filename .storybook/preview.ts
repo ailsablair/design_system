@@ -6,6 +6,10 @@ import { withErrorBoundary } from '../src/stories/chromatic/ErrorBoundary';
 setupResizeObserverErrorHandler();
 
 const preview: Preview = {
+  decorators: [
+    // Add error boundary to all stories for better error handling in Chromatic
+    (Story) => withErrorBoundary(Story),
+  ],
   parameters: {
     options: {
       storySort: {
