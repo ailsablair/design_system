@@ -1,161 +1,120 @@
 import React from 'react';
+import type { ListItemProps } from './ListItem';
 import { ListItem } from './ListItem';
 import './listGroup.css';
 
-export interface ListGroupItem {
-  /** Unique identifier for the list item */
-  id: string;
-  /** Text content for the list item */
-  label: string;
-  /** Optional click handler for individual items */
-  onClick?: () => void;
-}
-
 export interface ListGroupProps {
-  /** Type of list group */
-  type?: 'disc' | 'numbers' | 'static-icon' | 'icons' | 'horizontal-dividers' | 'vertical-dividers';
-  /** Size variant */
-  size?: 'small' | 'default' | 'large' | 'x-large';
-  /** Array of list items */
-  items?: ListGroupItem[];
-  /** Additional CSS class name */
+  /** Array of list items to display */
+  items?: ListItemProps[];
+  /** Size variant for all items */
+  size?: 'small' | 'default' | 'large';
+  /** Maximum number of items to display */
+  maxItems?: number;
+  /** Show loading state */
+  loading?: boolean;
+  /** Empty state message */
+  emptyMessage?: string;
+  /** Custom header content */
+  header?: React.ReactNode;
+  /** Custom footer content */
+  footer?: React.ReactNode;
+  /** Additional CSS class */
   className?: string;
-  /** Click handler for the entire group */
-  onClick?: () => void;
+  /** Callback when an item is clicked */
+  onItemClick?: (item: ListItemProps, index: number) => void;
 }
 
-/**
- * ListGroup component for displaying multiple list items with consistent styling and behavior
- */
-export const ListGroup: React.FC<ListGroupProps> = ({
-  type = 'disc',
-  size = 'default',
+const LoadingSkeleton = ({ size = 'default' }: { size?: 'small' | 'default' | 'large' }) => (
+  <div className={`list-group__skeleton list-group__skeleton--${size}`}>
+    <div className="list-group__skeleton-header">
+      <div className="list-group__skeleton-icon"></div>
+      <div className="list-group__skeleton-title"></div>
+      <div className="list-group__skeleton-separator"></div>
+      <div className="list-group__skeleton-title"></div>
+    </div>
+    <div className="list-group__skeleton-description"></div>
+    <div className="list-group__skeleton-footer">
+      <div className="list-group__skeleton-tags">
+        <div className="list-group__skeleton-tag"></div>
+        <div className="list-group__skeleton-tag"></div>
+      </div>
+      <div className="list-group__skeleton-timestamp"></div>
+    </div>
+  </div>
+);
+
+export const ListGroup = ({
   items = [],
+  size = 'default',
+  maxItems,
+  loading = false,
+  emptyMessage = "No items to display",
+  header,
+  footer,
   className = '',
-  onClick
-}) => {
-  const groupClassName = [
+  onItemClick
+}: ListGroupProps) => {
+  const classes = [
     'list-group',
-    `list-group--${type}`,
     `list-group--${size}`,
-    onClick && 'list-group--clickable',
     className
   ].filter(Boolean).join(' ');
 
-  // Determine which elements to show based on type
-  const getItemProps = (item: ListGroupItem, index: number) => {
-    const baseProps = {
-      label: item.label,
-      size,
-      onClick: item.onClick,
-      key: item.id,
-    };
+  const displayItems = maxItems ? items.slice(0, maxItems) : items;
 
-    switch (type) {
-      case 'disc':
-        return {
-          ...baseProps,
-          showDisc: true,
-          showStaticIcon: false,
-          showPreText: false,
-          showIcon: false,
-          showBadge: false,
-          showHorizontalDivider: false,
-          showVerticalDivider: false,
-        };
-
-      case 'numbers':
-        return {
-          ...baseProps,
-          showDisc: false,
-          showStaticIcon: false,
-          showPreText: true,
-          showIcon: false,
-          showBadge: false,
-          showHorizontalDivider: false,
-          showVerticalDivider: false,
-          badgeNumber: index + 1, // Use for numbering
-        };
-
-      case 'static-icon':
-        return {
-          ...baseProps,
-          showDisc: false,
-          showStaticIcon: true,
-          showPreText: false,
-          showIcon: false,
-          showBadge: false,
-          showHorizontalDivider: false,
-          showVerticalDivider: false,
-        };
-
-      case 'icons':
-        return {
-          ...baseProps,
-          showDisc: false,
-          showStaticIcon: false,
-          showPreText: false,
-          showIcon: true,
-          showBadge: false,
-          showHorizontalDivider: false,
-          showVerticalDivider: false,
-        };
-
-      case 'horizontal-dividers':
-        return {
-          ...baseProps,
-          showDisc: false,
-          showStaticIcon: false,
-          showPreText: false,
-          showIcon: false,
-          showBadge: false,
-          showHorizontalDivider: true,
-          showVerticalDivider: false,
-        };
-
-      case 'vertical-dividers':
-        return {
-          ...baseProps,
-          showDisc: false,
-          showStaticIcon: false,
-          showPreText: false,
-          showIcon: false,
-          showBadge: false,
-          showHorizontalDivider: false,
-          showVerticalDivider: index < items.length - 1, // Don't show on last item
-        };
-
-      default:
-        return baseProps;
+  const handleItemClick = (item: ListItemProps, index: number) => {
+    if (onItemClick) {
+      onItemClick(item, index);
     }
   };
 
-  // For numbers type, we need to override the preText with actual numbers
-  const renderListItem = (item: ListGroupItem, index: number) => {
-    const itemProps = getItemProps(item, index);
-    
-    if (type === 'numbers') {
-      // For numbers type, we render a custom implementation
-      return (
-        <div key={item.id} className="list-group__item list-group__item--numbers">
-          <div className="list-group__item-content">
-            <div className={`list-group__number list-group__number--${size}`}>
-              {index + 1}
-            </div>
-            <div className={`list-group__text list-group__text--${size}`} onClick={item.onClick}>
-              {item.label}
-            </div>
-          </div>
+  if (loading) {
+    return (
+      <div className={classes}>
+        {header && <div className="list-group__header">{header}</div>}
+        <div className="list-group__content">
+          {[...Array(3)].map((_, index) => (
+            <LoadingSkeleton key={index} size={size} />
+          ))}
         </div>
-      );
-    }
+        {footer && <div className="list-group__footer">{footer}</div>}
+      </div>
+    );
+  }
 
-    return <ListItem {...itemProps} />;
-  };
+  if (displayItems.length === 0) {
+    return (
+      <div className={classes}>
+        {header && <div className="list-group__header">{header}</div>}
+        <div className="list-group__empty">
+          <div className="list-group__empty-message">{emptyMessage}</div>
+        </div>
+        {footer && <div className="list-group__footer">{footer}</div>}
+      </div>
+    );
+  }
 
   return (
-    <div className={groupClassName} onClick={onClick}>
-      {items.map((item, index) => renderListItem(item, index))}
+    <div className={classes}>
+      {header && <div className="list-group__header">{header}</div>}
+      <div className="list-group__content">
+        {displayItems.map((item, index) => (
+          <ListItem
+            key={index}
+            {...item}
+            size={size}
+            onClick={() => handleItemClick(item, index)}
+          />
+        ))}
+      </div>
+      {footer && <div className="list-group__footer">{footer}</div>}
+      {maxItems && items.length > maxItems && (
+        <div className="list-group__show-more">
+          <button className="list-group__show-more-button">
+            Show {items.length - maxItems} more items
+          </button>
+        </div>
+      )}
     </div>
   );
 };
