@@ -173,8 +173,17 @@
   cursor: pointer;
 }
 
+.tag.clickable {
+  contain: layout style;
+  will-change: transform;
+}
+
 .tag.clickable:hover {
-  transform: var(--transform-scale-up);
+  transform: translateZ(0) var(--transform-scale-up);
+}
+
+.tag.clickable:not(:hover):not(:active):not(:focus) {
+  will-change: auto;
 }
 
 /* Filled variant hover states */
