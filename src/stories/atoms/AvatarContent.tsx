@@ -1,5 +1,6 @@
 import React from 'react';
-import { Avatar, AvatarProps } from './Avatar';
+import { Avatar } from './Avatar';
+import type { AvatarProps } from './Avatar';
 import './avatarContent.css';
 
 export type AvatarContentType = 'default' | 'w-subtext' | 'name-only';
