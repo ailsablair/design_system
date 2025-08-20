@@ -1,0 +1,320 @@
+@import '../foundations/tokens.css';
+
+/* List Group Base Styles */
+.list-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  font-family: var(--type-typeface-archivo, 'Archivo', -apple-system, Roboto, Helvetica, sans-serif);
+  position: relative;
+  /* CSS containment to prevent layout thrashing */
+  contain: layout style;
+}
+
+.list-group--clickable {
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.list-group--clickable:hover {
+  background-color: var(--neutral-gray-gray-50);
+}
+
+/* Disc Type Styling */
+.list-group--disc {
+  gap: var(--spacing-sizing-2px);
+}
+
+.list-group--disc .list-item__separator {
+  background: var(--primary-blue-blue-400, #6171DF);
+}
+
+/* Numbers Type Styling */
+.list-group--numbers {
+  gap: var(--spacing-sizing-4px);
+}
+
+.list-group--numbers.list-group--default {
+  gap: var(--spacing-sizing-8px);
+}
+
+.list-group__item--numbers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.list-group--numbers.list-group--small .list-group__item--numbers {
+  gap: var(--spacing-sizing-4px);
+}
+
+.list-group--numbers.list-group--default .list-group__item--numbers {
+  gap: var(--spacing-sizing-8px);
+}
+
+.list-group--numbers.list-group--large .list-group__item--numbers {
+  gap: var(--spacing-sizing-2px);
+}
+
+.list-group--numbers.list-group--x-large .list-group__item--numbers {
+  gap: var(--spacing-sizing-2px);
+}
+
+.list-group__item-content {
+  display: flex;
+  padding: var(--spacing-sizing-4px) 0;
+  align-items: center;
+  gap: var(--spacing-sizing-12px);
+  align-self: stretch;
+}
+
+.list-group--numbers.list-group--small .list-group__item-content {
+  gap: var(--spacing-sizing-12px);
+}
+
+.list-group--numbers.list-group--default .list-group__item-content {
+  gap: var(--spacing-sizing-12px);
+}
+
+.list-group--numbers.list-group--large .list-group__item-content {
+  gap: var(--spacing-sizing-8px);
+}
+
+.list-group--numbers.list-group--x-large .list-group__item-content {
+  gap: var(--spacing-sizing-12px);
+}
+
+.list-group__number {
+  color: var(--primary-blue-blue-400, #6171DF);
+  font-weight: var(--type-weight-bold);
+  flex-shrink: 0;
+}
+
+.list-group__number--small {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+
+.list-group__number--default {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+
+.list-group__number--large {
+  font-size: 19px;
+  line-height: 24px;
+  letter-spacing: -0.15px;
+}
+
+.list-group__number--x-large {
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: -0.25px;
+  font-weight: var(--type-weight-medium);
+}
+
+.list-group__text {
+  color: var(--neutral-gray-gray-900, #1F2937);
+  font-weight: var(--type-weight-medium);
+  flex: 1 0 0;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.list-group__text:hover {
+  color: var(--primary-blue-blue-400);
+}
+
+.list-group__text--small {
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.15px;
+}
+
+.list-group__text--default {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.15px;
+}
+
+.list-group__text--large {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+
+.list-group__text--x-large {
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: -0.25px;
+}
+
+/* Static Icon Type Styling */
+.list-group--static-icon {
+  gap: var(--spacing-sizing-6px);
+}
+
+.list-group--static-icon.list-group--default {
+  gap: var(--spacing-sizing-8px);
+}
+
+.list-group--static-icon.list-group--large {
+  gap: var(--spacing-sizing-4px);
+}
+
+.list-group--static-icon.list-group--x-large {
+  gap: var(--spacing-sizing-8px);
+}
+
+/* Icons Type Styling */
+.list-group--icons {
+  gap: var(--spacing-sizing-4px);
+}
+
+.list-group--icons.list-group--large,
+.list-group--icons.list-group--x-large {
+  gap: var(--spacing-sizing-2px);
+}
+
+/* Horizontal Dividers Type Styling */
+.list-group--horizontal-dividers {
+  gap: var(--spacing-sizing-4px);
+}
+
+/* Vertical Dividers Type Styling */
+.list-group--vertical-dividers {
+  gap: var(--spacing-sizing-4px);
+}
+
+.list-group--vertical-dividers.list-group--default {
+  gap: var(--spacing-sizing-4px);
+}
+
+.list-group--vertical-dividers.list-group--large,
+.list-group--vertical-dividers.list-group--x-large {
+  gap: var(--spacing-sizing-2px);
+}
+
+/* Override vertical divider colors for consistency */
+.list-group--vertical-dividers .list-item__divider-line--vertical {
+  background: var(--primary-blue-blue-400, #6171DF);
+}
+
+/* Size-specific adjustments */
+.list-group--small {
+  gap: var(--spacing-sizing-2px);
+}
+
+.list-group--default {
+  gap: var(--spacing-sizing-2px);
+}
+
+.list-group--large {
+  gap: var(--spacing-sizing-2px);
+}
+
+.list-group--x-large {
+  gap: var(--spacing-sizing-2px);
+}
+
+/* Focus States */
+.list-group--clickable:focus {
+  outline: 2px solid var(--primary-sky-blue-sky-blue);
+  outline-offset: 2px;
+  border-radius: var(--spacing-radius-4px);
+}
+
+.list-group--clickable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Active States */
+.list-group--clickable:active {
+  background-color: var(--neutral-gray-gray-100);
+}
+
+/* High Contrast Support */
+@media (prefers-contrast: high) {
+  .list-group__number {
+    font-weight: var(--type-weight-bold);
+  }
+  
+  .list-group--disc .list-item__separator {
+    background: var(--base-black);
+  }
+  
+  .list-group--vertical-dividers .list-item__divider-line--vertical {
+    background: var(--base-black);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .list-group--clickable,
+  .list-group__text {
+    transition: none;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .list-group__item-content {
+    gap: var(--spacing-sizing-8px);
+  }
+  
+  /* Scale down x-large on mobile */
+  .list-group__number--x-large {
+    font-size: 20px;
+  }
+  
+  .list-group__text--x-large {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .list-group__item-content {
+    gap: var(--spacing-sizing-6px);
+  }
+  
+  /* Further scale down on small mobile */
+  .list-group__number--large {
+    font-size: 18px;
+  }
+  
+  .list-group__number--x-large {
+    font-size: 18px;
+  }
+  
+  .list-group__text--large {
+    font-size: 16px;
+  }
+  
+  .list-group__text--x-large {
+    font-size: 18px;
+  }
+}
+
+/* Ensure proper spacing between different list group types */
+.list-group + .list-group {
+  margin-top: var(--spacing-sizing-24px);
+}
+
+/* RTL Support */
+[dir="rtl"] .list-group__item-content {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .list-group__number {
+  order: 2;
+}
+
+[dir="rtl"] .list-group__text {
+  order: 1;
+  text-align: right;
+}
