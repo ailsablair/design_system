@@ -159,14 +159,70 @@ const getFileTypeLabel = (type: FileType): string => {
   return labelMap[type] || 'FILE';
 };
 
-// Check if file type should show icon overlay (non-text files)
+// Get size dimensions for SVG
+const getSizeDimensions = (size: FileIconSize): { width: number; height: number } => {
+  const dimensions = {
+    small: { width: 40, height: 40 },
+    medium: { width: 42, height: 42 },
+    large: { width: 46, height: 46 }
+  };
+  return dimensions[size];
+};
+
+// Check if file type should show icon overlay
 const shouldShowIconOverlay = (type: FileType): boolean => {
-  const iconTypes = ['pdf', 'doc', 'docx', 'csv', 'xls', 'xlsx'];
+  const iconTypes = ['pdf', 'doc', 'docx', 'csv', 'xls', 'xlsx', 'zip', 'rar'];
   return iconTypes.includes(type);
 };
 
+// Get overlay icon based on file type
+const getOverlayIcon = (type: FileType, color: string): React.ReactNode => {
+  switch (type) {
+    case 'pdf':
+      return (
+        <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle" 
+              fontSize="8" fontWeight="700" fill={color}>
+          PDF
+        </text>
+      );
+    case 'doc':
+    case 'docx':
+      return (
+        <g fill={color}>
+          <rect x="14" y="12" width="12" height="1.5" rx="0.5"/>
+          <rect x="14" y="15" width="8" height="1.5" rx="0.5"/>
+          <rect x="14" y="18" width="10" height="1.5" rx="0.5"/>
+        </g>
+      );
+    case 'csv':
+    case 'xls':
+    case 'xlsx':
+      return (
+        <g fill={color}>
+          <rect x="12" y="12" width="4" height="4" rx="0.5" strokeWidth="0.5" stroke={color} fill="none"/>
+          <rect x="17" y="12" width="4" height="4" rx="0.5" strokeWidth="0.5" stroke={color} fill="none"/>
+          <rect x="22" y="12" width="4" height="4" rx="0.5" strokeWidth="0.5" stroke={color} fill="none"/>
+          <rect x="12" y="17" width="4" height="4" rx="0.5" strokeWidth="0.5" stroke={color} fill="none"/>
+          <rect x="17" y="17" width="4" height="4" rx="0.5" strokeWidth="0.5" stroke={color} fill="none"/>
+          <rect x="22" y="17" width="4" height="4" rx="0.5" strokeWidth="0.5" stroke={color} fill="none"/>
+        </g>
+      );
+    case 'zip':
+    case 'rar':
+      return (
+        <g fill={color}>
+          <rect x="16" y="12" width="8" height="10" rx="1" strokeWidth="0.5" stroke={color} fill="none"/>
+          <rect x="18" y="14" width="4" height="2" rx="0.5"/>
+          <rect x="18" y="17" width="4" height="2" rx="0.5"/>
+        </g>
+      );
+    default:
+      return null;
+  }
+};
+
 /**
- * FileIcon component for displaying file type icons with labels
+ * FileIcon component for displaying file type icons with labels using SVG
  */
 export const FileIcon: React.FC<FileIconProps> = ({
   type,
@@ -179,6 +235,7 @@ export const FileIcon: React.FC<FileIconProps> = ({
   const color = getFileTypeColor(type);
   const label = customLabel || getFileTypeLabel(type);
   const hasIconOverlay = shouldShowIconOverlay(type);
+  const { width, height } = getSizeDimensions(size);
   
   const baseClasses = [
     'file-icon',
@@ -199,17 +256,50 @@ export const FileIcon: React.FC<FileIconProps> = ({
           onClick();
         }
       } : undefined}
+      aria-label={`${label} file`}
     >
-      <div className="file-icon__document">
-        <div className="file-icon__page" />
-        <div className="file-icon__corner" />
-        
-        {hasIconOverlay && (
-          <div className="file-icon__overlay">
-            {/* Simple icon representation for certain file types */}
-            <div className="file-icon__overlay-content" style={{ color }} />
-          </div>
-        )}
+      <div className="file-icon__svg-container">
+        <svg 
+          width={width} 
+          height={height} 
+          viewBox="0 0 40 40" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-hidden="true"
+          className="file-icon__svg"
+        >
+          {/* Document background */}
+          <path 
+            d="M8 6C8 4.89543 8.89543 4 10 4H26L34 12V34C34 35.1046 33.1046 36 32 36H10C8.89543 36 8 35.1046 8 34V6Z" 
+            fill="white" 
+            stroke="#D0D5DD" 
+            strokeWidth="1.5"
+          />
+          
+          {/* Folded corner */}
+          <path 
+            d="M26 4V10C26 11.1046 26.8954 12 28 12H34L26 4Z" 
+            fill="white" 
+            stroke="#D0D5DD" 
+            strokeWidth="1.5" 
+            strokeLinejoin="round"
+          />
+          
+          {/* Corner line */}
+          <path 
+            d="M26 4L34 12" 
+            stroke="#D0D5DD" 
+            strokeWidth="1.5"
+          />
+          
+          {/* Overlay icon for specific file types */}
+          {hasIconOverlay && (
+            <g className="file-icon__overlay">
+              {getOverlayIcon(type, color)}
+            </g>
+          )}
+        </svg>
       </div>
       
       {showLabel && (
