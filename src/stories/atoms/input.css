@@ -197,8 +197,8 @@
   outline: none;
   background: transparent;
   font-family: var(--type-typeface-roboto-flex);
-  font-weight: var(--type-weight-regular);
-  color: var(--base-black);
+  font-weight: var(--type-weight-light);
+  color: var(--neutral-gray-gray-700);
   padding: 0;
   min-width: 0;
   width: 100%;
@@ -224,7 +224,8 @@
 }
 
 .input-field::placeholder {
-  color: var(--secondary-blue-gray);
+  color: var(--neutral-gray-gray-700);
+  font-weight: var(--type-weight-light);
 }
 
 .input-field.tags::placeholder {
@@ -232,7 +233,8 @@
 }
 
 .input-field:focus::placeholder {
-  color: var(--secondary-blue-gray);
+  color: var(--neutral-gray-gray-700);
+  font-weight: var(--type-weight-light);
 }
 
 .input-field:disabled {
@@ -368,10 +370,18 @@
 /* State-specific text colors for typing display */
 .input-container.typing .input-field {
   color: var(--base-black);
+  font-weight: var(--type-weight-regular);
 }
 
 .input-container.focus .input-field {
   color: var(--base-black);
+  font-weight: var(--type-weight-regular);
+}
+
+/* When user starts typing, placeholder should change to black */
+.input-container.typing .input-field::placeholder {
+  color: var(--base-black);
+  font-weight: var(--type-weight-regular);
 }
 
 /* Hide placeholder when typing in tags mode */
