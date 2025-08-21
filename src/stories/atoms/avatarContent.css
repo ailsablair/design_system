@@ -185,17 +185,17 @@
 }
 
 .avatar-content__email--default.avatar-content__email--archivo {
-  font-size: var(--type-archivo-label-sm);
-  line-height: var(--type-line-height-label-sm);
-  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
-  font-weight: var(--type-weight-medium);
+  font-size: var(--type-archivo-footnote);
+  line-height: var(--type-line-height-footnote);
+  letter-spacing: var(--type-letter-spacing-archivo-footnote);
+  font-weight: var(--type-weight-regular);
 }
 
 .avatar-content__email--large {
-  font-size: var(--type-archivo-label-lg);
-  line-height: var(--type-line-height-label-lg);
-  letter-spacing: var(--type-letter-spacing-archivo-label-lg);
-  font-weight: var(--type-weight-medium);
+  font-size: var(--type-archivo-label);
+  line-height: var(--type-line-height-label);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
+  font-weight: var(--type-weight-regular);
 }
 
 /* Subtext Styling */
