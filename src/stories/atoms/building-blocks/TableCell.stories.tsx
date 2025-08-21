@@ -29,12 +29,32 @@ Features different background states (seafoam, white, gray, disabled, hover) and
     },
     type: {
       control: { type: 'select' },
-      options: ['title', 'title-subtext', 'toggle', 'toggle-w-subtext'],
+      options: [
+        'avatar-w-title',
+        'avatar-w-subtext',
+        'toggle-avatar-w-title',
+        'toggle-avatar-w-subtext',
+        'payment-w-select',
+        'payment-w-select-and-expiry',
+        'payment-w-toggle',
+        'payment-w-toggle-and-expiry',
+        'file-w-select',
+        'file-w-select-and-expiry',
+        'file-w-toggle',
+        'file-w-toggle-and-expiry',
+        'links',
+        'rating',
+        'more-actions',
+        'icon-only',
+        'icon-group',
+        'cta-button',
+        'button-group'
+      ],
       description: 'Cell type determines layout and content',
     },
     background: {
       control: { type: 'select' },
-      options: ['alt-seafoam-25', 'default', 'alt-gray-50', 'disabled', 'hover'],
+      options: ['default', 'alt-seafoam-25', 'alt-gray-50', 'disabled', 'hover'],
       description: 'Background variant',
     },
     leadCell: {
@@ -68,7 +88,7 @@ Features different background states (seafoam, white, gray, disabled, hover) and
   },
   args: {
     size: 'default',
-    type: 'title',
+    type: 'avatar-w-title',
     background: 'default',
     leadCell: true,
     title: 'Olivia Rhye',
@@ -85,28 +105,50 @@ type Story = StoryObj<typeof TableCell>;
 // Basic Examples
 export const Default: Story = {
   args: {
-    type: 'title',
+    type: 'avatar-w-title',
     background: 'default',
   },
 };
 
 export const WithSubtext: Story = {
   args: {
-    type: 'title-subtext',
+    type: 'avatar-w-subtext',
     background: 'default',
   },
 };
 
 export const ToggleOnly: Story = {
   args: {
-    type: 'toggle',
+    type: 'toggle-avatar-w-title',
     background: 'default',
   },
 };
 
 export const ToggleWithSubtext: Story = {
   args: {
-    type: 'toggle-w-subtext',
+    type: 'toggle-avatar-w-subtext',
+    background: 'default',
+  },
+};
+
+// New Cell Types
+export const IconGroup: Story = {
+  args: {
+    type: 'icon-group',
+    background: 'default',
+  },
+};
+
+export const CTAButton: Story = {
+  args: {
+    type: 'cta-button',
+    background: 'default',
+  },
+};
+
+export const ButtonGroup: Story = {
+  args: {
+    type: 'button-group',
     background: 'default',
   },
 };
@@ -115,7 +157,7 @@ export const ToggleWithSubtext: Story = {
 export const SmallSize: Story = {
   args: {
     size: 'small',
-    type: 'title-subtext',
+    type: 'avatar-w-subtext',
     background: 'default',
   },
 };
@@ -123,29 +165,53 @@ export const SmallSize: Story = {
 export const SmallToggle: Story = {
   args: {
     size: 'small',
-    type: 'toggle-w-subtext',
+    type: 'toggle-avatar-w-subtext',
     background: 'default',
+  },
+};
+
+export const SmallIconGroup: Story = {
+  args: {
+    size: 'small',
+    type: 'icon-group',
+    background: 'alt-seafoam-25',
+  },
+};
+
+export const SmallCTAButton: Story = {
+  args: {
+    size: 'small',
+    type: 'cta-button',
+    background: 'alt-seafoam-25',
+  },
+};
+
+export const SmallButtonGroup: Story = {
+  args: {
+    size: 'small',
+    type: 'button-group',
+    background: 'alt-seafoam-25',
   },
 };
 
 // Background Variants
 export const SeafoamBackground: Story = {
   args: {
-    type: 'title-subtext',
+    type: 'avatar-w-subtext',
     background: 'alt-seafoam-25',
   },
 };
 
 export const GrayBackground: Story = {
   args: {
-    type: 'title-subtext',
+    type: 'avatar-w-subtext',
     background: 'alt-gray-50',
   },
 };
 
 export const DisabledState: Story = {
   args: {
-    type: 'title-subtext',
+    type: 'avatar-w-subtext',
     background: 'disabled',
     disabled: true,
   },
@@ -153,7 +219,95 @@ export const DisabledState: Story = {
 
 export const HoverState: Story = {
   args: {
-    type: 'title-subtext',
+    type: 'avatar-w-subtext',
+    background: 'hover',
+  },
+};
+
+// New Cell Types - Background Variants
+export const IconGroupSeafoam: Story = {
+  args: {
+    type: 'icon-group',
+    background: 'alt-seafoam-25',
+  },
+};
+
+export const IconGroupGray: Story = {
+  args: {
+    type: 'icon-group',
+    background: 'alt-gray-50',
+  },
+};
+
+export const IconGroupDisabled: Story = {
+  args: {
+    type: 'icon-group',
+    background: 'disabled',
+    disabled: true,
+  },
+};
+
+export const IconGroupHover: Story = {
+  args: {
+    type: 'icon-group',
+    background: 'hover',
+  },
+};
+
+export const CTAButtonSeafoam: Story = {
+  args: {
+    type: 'cta-button',
+    background: 'alt-seafoam-25',
+  },
+};
+
+export const CTAButtonGray: Story = {
+  args: {
+    type: 'cta-button',
+    background: 'alt-gray-50',
+  },
+};
+
+export const CTAButtonDisabled: Story = {
+  args: {
+    type: 'cta-button',
+    background: 'disabled',
+    disabled: true,
+  },
+};
+
+export const CTAButtonHover: Story = {
+  args: {
+    type: 'cta-button',
+    background: 'hover',
+  },
+};
+
+export const ButtonGroupSeafoam: Story = {
+  args: {
+    type: 'button-group',
+    background: 'alt-seafoam-25',
+  },
+};
+
+export const ButtonGroupGray: Story = {
+  args: {
+    type: 'button-group',
+    background: 'alt-gray-50',
+  },
+};
+
+export const ButtonGroupDisabled: Story = {
+  args: {
+    type: 'button-group',
+    background: 'disabled',
+    disabled: true,
+  },
+};
+
+export const ButtonGroupHover: Story = {
+  args: {
+    type: 'button-group',
     background: 'hover',
   },
 };
@@ -161,7 +315,7 @@ export const HoverState: Story = {
 // Interactive States
 export const CheckedCheckbox: Story = {
   args: {
-    type: 'title-subtext',
+    type: 'avatar-w-subtext',
     background: 'hover',
     checked: true,
   },
@@ -169,7 +323,7 @@ export const CheckedCheckbox: Story = {
 
 export const EnabledToggle: Story = {
   args: {
-    type: 'toggle-w-subtext',
+    type: 'toggle-avatar-w-subtext',
     background: 'default',
     enabled: true,
   },
@@ -178,173 +332,162 @@ export const EnabledToggle: Story = {
 // Comprehensive Showcase
 export const AllVariants: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
-      <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Default Size - Seafoam Background</h3>
-      <div style={{ display: 'flex', flexDirection: 'column', border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
-        <TableCell
-          size="default"
-          type="title"
-          background="alt-seafoam-25"
-          title="Olivia Rhye"
-        />
-        <TableCell
-          size="default"
-          type="title-subtext"
-          background="alt-seafoam-25"
-          title="Olivia Rhye"
-          subtext="olivia@email.com"
-        />
-        <TableCell
-          size="default"
-          type="toggle"
-          background="alt-seafoam-25"
-          enabled={true}
-        />
-        <TableCell
-          size="default"
-          type="toggle-w-subtext"
-          background="alt-seafoam-25"
-          title="Olivia Rhye"
-          subtext="olivia@email.com"
-          enabled={true}
-        />
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>New Table Cell Variants - Default Size</h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
+          {/* Icon Group Cells */}
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Icon Group - Seafoam</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="default" type="icon-group" background="alt-seafoam-25" />
+            </div>
+          </div>
+
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Icon Group - Default</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="default" type="icon-group" background="default" />
+            </div>
+          </div>
+
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Icon Group - Gray</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="default" type="icon-group" background="alt-gray-50" />
+            </div>
+          </div>
+
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Icon Group - Disabled</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="default" type="icon-group" background="disabled" disabled={true} />
+            </div>
+          </div>
+
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Icon Group - Hover</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="default" type="icon-group" background="hover" />
+            </div>
+          </div>
+        </div>
       </div>
 
-      <h3 style={{ margin: '24px 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Default Size - White Background</h3>
-      <div style={{ display: 'flex', flexDirection: 'column', border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
-        <TableCell
-          size="default"
-          type="title"
-          background="default"
-          title="Olivia Rhye"
-        />
-        <TableCell
-          size="default"
-          type="title-subtext"
-          background="default"
-          title="Olivia Rhye"
-          subtext="olivia@email.com"
-        />
-        <TableCell
-          size="default"
-          type="toggle"
-          background="default"
-          enabled={true}
-        />
-        <TableCell
-          size="default"
-          type="toggle-w-subtext"
-          background="default"
-          title="Olivia Rhye"
-          subtext="olivia@email.com"
-          enabled={true}
-        />
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>CTA Button Cells - Default Size</h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>CTA Button - Seafoam</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="default" type="cta-button" background="alt-seafoam-25" />
+            </div>
+          </div>
+
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>CTA Button - Default</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="default" type="cta-button" background="default" />
+            </div>
+          </div>
+
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>CTA Button - Gray</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="default" type="cta-button" background="alt-gray-50" />
+            </div>
+          </div>
+
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>CTA Button - Disabled</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="default" type="cta-button" background="disabled" disabled={true} />
+            </div>
+          </div>
+
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>CTA Button - Hover</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="default" type="cta-button" background="hover" />
+            </div>
+          </div>
+        </div>
       </div>
 
-      <h3 style={{ margin: '24px 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Small Size - Gray Background</h3>
-      <div style={{ display: 'flex', flexDirection: 'column', border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
-        <TableCell
-          size="small"
-          type="title"
-          background="alt-gray-50"
-          title="Olivia Rhye"
-        />
-        <TableCell
-          size="small"
-          type="title-subtext"
-          background="alt-gray-50"
-          title="Olivia Rhye"
-          subtext="olivia@email.com"
-        />
-        <TableCell
-          size="small"
-          type="toggle"
-          background="alt-gray-50"
-          enabled={true}
-        />
-        <TableCell
-          size="small"
-          type="toggle-w-subtext"
-          background="alt-gray-50"
-          title="Olivia Rhye"
-          subtext="olivia@email.com"
-          enabled={true}
-        />
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Button Group Cells - Default Size</h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Button Group - Seafoam</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="default" type="button-group" background="alt-seafoam-25" />
+            </div>
+          </div>
+
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Button Group - Default</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="default" type="button-group" background="default" />
+            </div>
+          </div>
+
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Button Group - Gray</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="default" type="button-group" background="alt-gray-50" />
+            </div>
+          </div>
+
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Button Group - Disabled</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="default" type="button-group" background="disabled" disabled={true} />
+            </div>
+          </div>
+
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Button Group - Hover</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="default" type="button-group" background="hover" />
+            </div>
+          </div>
+        </div>
       </div>
 
-      <h3 style={{ margin: '24px 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Disabled State</h3>
-      <div style={{ display: 'flex', flexDirection: 'column', border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
-        <TableCell
-          size="default"
-          type="title"
-          background="disabled"
-          title="Olivia Rhye"
-          disabled={true}
-        />
-        <TableCell
-          size="default"
-          type="title-subtext"
-          background="disabled"
-          title="Olivia Rhye"
-          subtext="olivia@email.com"
-          disabled={true}
-        />
-        <TableCell
-          size="default"
-          type="toggle"
-          background="disabled"
-          enabled={true}
-          disabled={true}
-        />
-        <TableCell
-          size="default"
-          type="toggle-w-subtext"
-          background="disabled"
-          title="Olivia Rhye"
-          subtext="olivia@email.com"
-          enabled={true}
-          disabled={true}
-        />
-      </div>
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Small Size Variants</h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Small Icon Group</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="small" type="icon-group" background="alt-seafoam-25" />
+              <TableCell size="small" type="icon-group" background="default" />
+            </div>
+          </div>
 
-      <h3 style={{ margin: '24px 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Hover State</h3>
-      <div style={{ display: 'flex', flexDirection: 'column', border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
-        <TableCell
-          size="default"
-          type="title"
-          background="hover"
-          title="Olivia Rhye"
-          checked={true}
-        />
-        <TableCell
-          size="default"
-          type="title-subtext"
-          background="hover"
-          title="Olivia Rhye"
-          subtext="olivia@email.com"
-          checked={true}
-        />
-        <TableCell
-          size="default"
-          type="toggle"
-          background="hover"
-          enabled={true}
-        />
-        <TableCell
-          size="default"
-          type="toggle-w-subtext"
-          background="hover"
-          title="Olivia Rhye"
-          subtext="olivia@email.com"
-          enabled={true}
-        />
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Small CTA Button</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="small" type="cta-button" background="alt-seafoam-25" />
+              <TableCell size="small" type="cta-button" background="default" />
+            </div>
+          </div>
+
+          <div>
+            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Small Button Group</h4>
+            <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+              <TableCell size="small" type="button-group" background="alt-seafoam-25" />
+              <TableCell size="small" type="button-group" background="default" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Comprehensive showcase of all table cell variants including different sizes, backgrounds, and states.',
+        story: 'Comprehensive showcase of all new table cell variants including icon groups, CTA buttons, and button groups with different sizes, backgrounds, and states.',
       },
     },
   },
@@ -355,91 +498,142 @@ export const FigmaDesignShowcase: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       <div>
-        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Figma Design Implementation</h3>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Complete Figma Design Implementation</h3>
         <p style={{ margin: '0 0 16px 0', color: '#6D7280', fontSize: '14px' }}>
-          Pixel-perfect implementation of the table cell designs from Figma
+          Pixel-perfect implementation of all table cell designs from Figma, including the new icon group, CTA button, and button group variants
         </p>
       </div>
-      
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, 320px)', gap: '24px' }}>
-        {/* Default Size - Seafoam */}
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Default Size - Seafoam</h4>
-          <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
-            <TableCell size="default" type="title" background="alt-seafoam-25" />
-            <TableCell size="default" type="title-subtext" background="alt-seafoam-25" />
-            <TableCell size="default" type="toggle-w-subtext" background="alt-seafoam-25" enabled={true} />
-          </div>
-        </div>
 
-        {/* Small Size - Seafoam */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+        {/* Complete Design Matrix */}
         <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Small Size - Seafoam</h4>
-          <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
-            <TableCell size="small" type="title" background="alt-seafoam-25" />
-            <TableCell size="small" type="title-subtext" background="alt-seafoam-25" />
-            <TableCell size="small" type="toggle-w-subtext" background="alt-seafoam-25" enabled={true} />
-          </div>
-        </div>
+          <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '500' }}>Complete Design Matrix - All Variants</h4>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
 
-        {/* Default Size - White */}
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Default Size - White</h4>
-          <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
-            <TableCell size="default" type="title" background="default" />
-            <TableCell size="default" type="title-subtext" background="default" />
-            <TableCell size="default" type="toggle-w-subtext" background="default" enabled={true} />
-          </div>
-        </div>
+            {/* Default Size Row */}
+            <div>
+              <h5 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500', color: '#374151' }}>Default Size (72px height)</h5>
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="default" type="icon-group" background="alt-seafoam-25" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="default" type="icon-group" background="default" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="default" type="cta-button" background="alt-seafoam-25" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="default" type="cta-button" background="default" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="default" type="button-group" background="alt-seafoam-25" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="default" type="button-group" background="default" />
+                </div>
+              </div>
+            </div>
 
-        {/* Small Size - White */}
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Small Size - White</h4>
-          <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
-            <TableCell size="small" type="title" background="default" />
-            <TableCell size="small" type="title-subtext" background="default" />
-            <TableCell size="small" type="toggle-w-subtext" background="default" enabled={true} />
-          </div>
-        </div>
+            {/* Small Size Row */}
+            <div>
+              <h5 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500', color: '#374151' }}>Small Size (52px height)</h5>
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="small" type="icon-group" background="alt-seafoam-25" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="small" type="icon-group" background="default" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="small" type="cta-button" background="alt-seafoam-25" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="small" type="cta-button" background="default" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="small" type="button-group" background="alt-seafoam-25" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="small" type="button-group" background="default" />
+                </div>
+              </div>
+            </div>
 
-        {/* Gray Background */}
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Gray Background</h4>
-          <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
-            <TableCell size="default" type="title" background="alt-gray-50" />
-            <TableCell size="default" type="title-subtext" background="alt-gray-50" />
-            <TableCell size="default" type="toggle-w-subtext" background="alt-gray-50" enabled={true} />
-          </div>
-        </div>
+            {/* Gray Background Row */}
+            <div>
+              <h5 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500', color: '#374151' }}>Gray Background Variants</h5>
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="default" type="icon-group" background="alt-gray-50" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="small" type="icon-group" background="alt-gray-50" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="default" type="cta-button" background="alt-gray-50" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="small" type="cta-button" background="alt-gray-50" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="default" type="button-group" background="alt-gray-50" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="small" type="button-group" background="alt-gray-50" />
+                </div>
+              </div>
+            </div>
 
-        {/* Disabled State */}
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Disabled State</h4>
-          <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
-            <TableCell size="default" type="title" background="disabled" disabled={true} />
-            <TableCell size="default" type="title-subtext" background="disabled" disabled={true} />
-            <TableCell size="default" type="toggle-w-subtext" background="disabled" enabled={true} disabled={true} />
-          </div>
-        </div>
+            {/* Disabled State Row */}
+            <div>
+              <h5 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500', color: '#9CA3AF' }}>Disabled State</h5>
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="default" type="icon-group" background="disabled" disabled={true} />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="small" type="icon-group" background="disabled" disabled={true} />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="default" type="cta-button" background="disabled" disabled={true} />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="small" type="cta-button" background="disabled" disabled={true} />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="default" type="button-group" background="disabled" disabled={true} />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="small" type="button-group" background="disabled" disabled={true} />
+                </div>
+              </div>
+            </div>
 
-        {/* Hover State */}
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Hover State</h4>
-          <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
-            <TableCell size="default" type="title" background="hover" checked={true} />
-            <TableCell size="default" type="title-subtext" background="hover" checked={true} />
-            <TableCell size="default" type="toggle-w-subtext" background="hover" enabled={true} />
-          </div>
-        </div>
-
-        {/* Toggle Only Cells */}
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500' }}>Toggle Only</h4>
-          <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
-            <TableCell size="default" type="toggle" background="alt-seafoam-25" enabled={true} />
-            <TableCell size="small" type="toggle" background="alt-seafoam-25" enabled={true} />
-            <TableCell size="default" type="toggle" background="default" enabled={true} />
-            <TableCell size="small" type="toggle" background="default" enabled={true} />
+            {/* Hover State Row */}
+            <div>
+              <h5 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500', color: '#0BA7EA' }}>Hover State</h5>
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="default" type="icon-group" background="hover" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="small" type="icon-group" background="hover" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="default" type="cta-button" background="hover" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="small" type="cta-button" background="hover" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="default" type="button-group" background="hover" />
+                </div>
+                <div style={{ border: '1px solid #E5E7EB', borderRadius: '4px' }}>
+                  <TableCell size="small" type="button-group" background="hover" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -448,7 +642,7 @@ export const FigmaDesignShowcase: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Complete showcase matching the exact Figma designs with all variants, sizes, and states.',
+        story: 'Complete pixel-perfect implementation matching the exact Figma designs with all variants, sizes, backgrounds, and states. This includes the new icon group cells (with email, edit, link, and share icons), CTA button cells (with single Edit button), and button group cells (with Edit and Delete buttons).',
       },
     },
   },
