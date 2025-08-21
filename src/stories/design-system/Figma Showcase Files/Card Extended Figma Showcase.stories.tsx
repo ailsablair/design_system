@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Card } from './Card';
+import { Card } from '../../atoms/Card';
 
 const meta = {
-  title: 'Atoms/Card/Figma Showcase',
+  title: 'Design System/Figma Showcase Files/Card Extended Figma Showcase',
   component: Card,
   parameters: {
     layout: 'fullscreen',
