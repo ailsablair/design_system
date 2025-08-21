@@ -7,7 +7,7 @@ export interface TagProps {
   /** Size variant */
   size?: 'small' | 'default' | 'large';
   /** Color variant */
-  variant?: 'light-gray' | 'primary' | 'secondary' | 'blue' | 'cyan' | 'orange' | 'gray' | 'purple' | 'green' | 'red' | 'yellow' | 'black';
+  variant?: 'light-gray' | 'primary' | 'secondary' | 'blue' | 'cyan' | 'orange' | 'gray' | 'purple' | 'green' | 'red' | 'yellow' | 'black' | 'outline-blue' | 'outline-info-blue';
   /** Show close button */
   showClose?: boolean;
   /** Light style variant (for outline/light background style) */
