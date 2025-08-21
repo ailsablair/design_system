@@ -1,4 +1,5 @@
 import React from 'react';
+import { Checkbox } from '../Checkbox';
 import { Toggle } from '../Toggle';
 import { PaymentIcon, type PaymentMethod } from '../PaymentIcon';
 import './paymentCell.css';
@@ -7,7 +8,7 @@ export interface PaymentCellProps {
   /** Cell size variant */
   size?: 'small' | 'default';
   /** Cell variant determines the layout and content */
-  variant?: 'payment-w-toggle' | 'payment-w-toggle-and-expiry';
+  variant?: 'payment-w-select' | 'payment-w-select-and-expiry' | 'payment-w-toggle' | 'payment-w-toggle-and-expiry';
   /** Background variant */
   background?: 'white' | 'alt-gray-50' | 'alt-seafoam-25' | 'hover' | 'disabled';
   /** Payment method name (e.g., "Visa ending in 1234") */
@@ -16,7 +17,9 @@ export interface PaymentCellProps {
   paymentExpiry?: string;
   /** Payment method type for icon */
   paymentMethod?: PaymentMethod;
-  /** Toggle enabled state */
+  /** Checkbox checked state (for select variants) */
+  checked?: boolean;
+  /** Toggle enabled state (for toggle variants) */
   toggleEnabled?: boolean;
   /** Disabled state */
   disabled?: boolean;
@@ -24,6 +27,8 @@ export interface PaymentCellProps {
   width?: string;
   /** Additional CSS classes */
   className?: string;
+  /** Checkbox change handler */
+  onCheckboxChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /** Toggle change handler */
   onToggleChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /** Click handler for the cell */
@@ -31,13 +36,15 @@ export interface PaymentCellProps {
 }
 
 /**
- * Payment Cell component for displaying payment method information with toggle controls
+ * Payment Cell component for displaying payment method information with selection/toggle controls
  * 
  * Supports multiple variants:
+ * - payment-w-select: Checkbox + payment icon + payment name
+ * - payment-w-select-and-expiry: Checkbox + payment icon + payment name + expiry
  * - payment-w-toggle: Toggle + payment icon + payment name
  * - payment-w-toggle-and-expiry: Toggle + payment icon + payment name + expiry
  * 
- * Features responsive design and multiple background states
+ * Features responsive design and multiple background states matching Figma designs
  */
 export const PaymentCell: React.FC<PaymentCellProps> = ({
   size = 'default',
@@ -46,10 +53,12 @@ export const PaymentCell: React.FC<PaymentCellProps> = ({
   paymentName = 'Visa ending in 1234',
   paymentExpiry = 'Expiry 01/2001',
   paymentMethod = 'visa',
+  checked = false,
   toggleEnabled = true,
   disabled = false,
   width,
   className = '',
+  onCheckboxChange,
   onToggleChange,
   onClick,
 }) => {
@@ -64,7 +73,9 @@ export const PaymentCell: React.FC<PaymentCellProps> = ({
 
   const cellStyle = width ? { width } : undefined;
 
-  const showExpiry = variant === 'payment-w-toggle-and-expiry';
+  const showCheckbox = variant === 'payment-w-select' || variant === 'payment-w-select-and-expiry';
+  const showToggle = variant === 'payment-w-toggle' || variant === 'payment-w-toggle-and-expiry';
+  const showExpiry = variant === 'payment-w-select-and-expiry' || variant === 'payment-w-toggle-and-expiry';
 
   return (
     <div 
@@ -72,16 +83,31 @@ export const PaymentCell: React.FC<PaymentCellProps> = ({
       style={cellStyle}
       onClick={onClick}
     >
-      <div className="payment-cell-toggle">
-        <Toggle
-          size={size === 'small' ? 'small' : 'default'}
-          enabled={toggleEnabled}
-          disabled={disabled}
-          onChange={onToggleChange}
-          icon={true}
-          state={disabled ? 'disabled' : 'default'}
-        />
-      </div>
+      {showCheckbox && (
+        <div className="payment-cell-checkbox">
+          <Checkbox
+            size={size === 'small' ? 'small' : 'default'}
+            checked={checked}
+            disabled={disabled}
+            onChange={onCheckboxChange}
+            variant="default"
+            shape="square"
+          />
+        </div>
+      )}
+
+      {showToggle && (
+        <div className="payment-cell-toggle">
+          <Toggle
+            size={size === 'small' ? 'small' : 'default'}
+            enabled={toggleEnabled}
+            disabled={disabled}
+            onChange={onToggleChange}
+            icon={true}
+            state={disabled ? 'disabled' : (background === 'hover' ? 'hover' : 'default')}
+          />
+        </div>
+      )}
 
       <div className="payment-cell-payment-icon">
         <PaymentIcon
