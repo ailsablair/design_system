@@ -86,16 +86,150 @@ export const FigmaDesignExact: Story = {
         </p>
       </div>
 
-      {/* Default Size - Black Background */}
+      {/* Light Gray Background Variants */}
       <section>
-        <h2 style={{ 
-          margin: '0 0 24px 0', 
-          fontSize: '24px', 
+        <h2 style={{
+          margin: '0 0 24px 0',
+          fontSize: '24px',
           fontWeight: '600',
           color: '#1C1C1C',
           fontFamily: 'Archivo, -apple-system, sans-serif'
         }}>
-          Default Size - Black Background
+          Light Gray Background Variants (from Figma)
+        </h2>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '48px' }}>
+          {/* Default Footer with Navigation */}
+          <div>
+            <TableFooter
+              type="default"
+              size="default"
+              background="light-gray"
+              currentPage={1}
+              totalPages={10}
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=default, size=default, bg=light-gray
+            </p>
+          </div>
+
+          {/* View More Footer */}
+          <div>
+            <TableFooter
+              type="view-more"
+              size="default"
+              background="light-gray"
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=view-more, size=default, bg=light-gray
+            </p>
+          </div>
+
+          {/* Pagination Only Footer */}
+          <div>
+            <TableFooter
+              type="pagination-only"
+              size="default"
+              background="light-gray"
+              currentPage={1}
+              totalPages={10}
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=pagination-only, size=default, bg=light-gray
+            </p>
+          </div>
+
+          {/* No Content Footer */}
+          <div>
+            <TableFooter
+              type="no-content"
+              size="default"
+              background="light-gray"
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=no-content, size=default, bg=light-gray
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Small Size - Light Gray Background */}
+      <section>
+        <h2 style={{
+          margin: '0 0 24px 0',
+          fontSize: '24px',
+          fontWeight: '600',
+          color: '#1C1C1C',
+          fontFamily: 'Archivo, -apple-system, sans-serif'
+        }}>
+          Small Size - Light Gray Background (from Figma)
+        </h2>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '48px' }}>
+          {/* Small Default Footer */}
+          <div>
+            <TableFooter
+              type="default"
+              size="small"
+              background="light-gray"
+              currentPage={1}
+              totalPages={10}
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=default, size=small, bg=light-gray
+            </p>
+          </div>
+
+          {/* Small View More Footer */}
+          <div>
+            <TableFooter
+              type="view-more"
+              size="small"
+              background="light-gray"
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=view-more, size=small, bg=light-gray
+            </p>
+          </div>
+
+          {/* Small Pagination Only Footer */}
+          <div>
+            <TableFooter
+              type="pagination-only"
+              size="small"
+              background="light-gray"
+              currentPage={1}
+              totalPages={10}
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=pagination-only, size=small, bg=light-gray
+            </p>
+          </div>
+
+          {/* Small No Content Footer */}
+          <div>
+            <TableFooter
+              type="no-content"
+              size="small"
+              background="light-gray"
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=no-content, size=small, bg=light-gray
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Blue-50 Background Variants */}
+      <section>
+        <h2 style={{
+          margin: '0 0 24px 0',
+          fontSize: '24px',
+          fontWeight: '600',
+          color: '#1C1C1C',
+          fontFamily: 'Archivo, -apple-system, sans-serif'
+        }}>
+          Blue-50 Background Variants (from Figma)
         </h2>
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '48px' }}>
@@ -104,117 +238,117 @@ export const FigmaDesignExact: Story = {
             <TableFooter
               type="default"
               size="default"
-              background="black"
+              background="blue-50"
               currentPage={1}
               totalPages={10}
             />
             <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
-              type=default, size=default, bg=black
+              type=default, size=default, bg=blue-50
             </p>
           </div>
-          
+
           {/* View More Footer */}
           <div>
             <TableFooter
               type="view-more"
               size="default"
-              background="black"
+              background="blue-50"
             />
             <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
-              type=view-more, size=default, bg=black
+              type=view-more, size=default, bg=blue-50
             </p>
           </div>
-          
+
           {/* Pagination Only Footer */}
           <div>
             <TableFooter
               type="pagination-only"
               size="default"
-              background="black"
+              background="blue-50"
               currentPage={1}
               totalPages={10}
             />
             <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
-              type=pagination-only, size=default, bg=black
+              type=pagination-only, size=default, bg=blue-50
             </p>
           </div>
-          
+
           {/* No Content Footer */}
           <div>
             <TableFooter
               type="no-content"
               size="default"
-              background="black"
+              background="blue-50"
             />
             <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
-              type=no-content, size=default, bg=black
+              type=no-content, size=default, bg=blue-50
             </p>
           </div>
         </div>
       </section>
 
-      {/* Small Size - Black Background */}
+      {/* Small Size - Blue-50 Background */}
       <section>
-        <h2 style={{ 
-          margin: '0 0 24px 0', 
-          fontSize: '24px', 
+        <h2 style={{
+          margin: '0 0 24px 0',
+          fontSize: '24px',
           fontWeight: '600',
           color: '#1C1C1C',
           fontFamily: 'Archivo, -apple-system, sans-serif'
         }}>
-          Small Size - Black Background
+          Small Size - Blue-50 Background (from Figma)
         </h2>
-        
+
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '48px' }}>
           {/* Small Default Footer */}
           <div>
             <TableFooter
               type="default"
               size="small"
-              background="black"
+              background="blue-50"
               currentPage={1}
               totalPages={10}
             />
             <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
-              type=default, size=small, bg=black
+              type=default, size=small, bg=blue-50
             </p>
           </div>
-          
+
           {/* Small View More Footer */}
           <div>
             <TableFooter
               type="view-more"
               size="small"
-              background="black"
+              background="blue-50"
             />
             <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
-              type=view-more, size=small, bg=black
+              type=view-more, size=small, bg=blue-50
             </p>
           </div>
-          
+
           {/* Small Pagination Only Footer */}
           <div>
             <TableFooter
               type="pagination-only"
               size="small"
-              background="black"
+              background="blue-50"
               currentPage={1}
               totalPages={10}
             />
             <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
-              type=pagination-only, size=small, bg=black
+              type=pagination-only, size=small, bg=blue-50
             </p>
           </div>
-          
+
           {/* Small No Content Footer */}
           <div>
             <TableFooter
               type="no-content"
               size="small"
-              background="black"
+              background="blue-50"
             />
             <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
-              type=no-content, size=small, bg=black
+              type=no-content, size=small, bg=blue-50
             </p>
           </div>
         </div>
@@ -222,43 +356,79 @@ export const FigmaDesignExact: Story = {
 
       {/* Different Page States */}
       <section>
-        <h2 style={{ 
-          margin: '0 0 24px 0', 
-          fontSize: '24px', 
+        <h2 style={{
+          margin: '0 0 24px 0',
+          fontSize: '24px',
           fontWeight: '600',
           color: '#1C1C1C',
           fontFamily: 'Archivo, -apple-system, sans-serif'
         }}>
-          Pagination States
+          Pagination States - All Backgrounds
         </h2>
-        
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '48px' }}>
-          {/* Middle page with ellipsis */}
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '48px' }}>
+          {/* Light gray pagination states */}
           <div>
-            <TableFooter
-              type="default"
-              size="default"
-              background="black"
-              currentPage={5}
-              totalPages={10}
-            />
-            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
-              Middle page with full pagination range
-            </p>
+            <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontWeight: '500', color: '#374151' }}>Light Gray Background</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div>
+                <TableFooter
+                  type="default"
+                  size="default"
+                  background="light-gray"
+                  currentPage={5}
+                  totalPages={10}
+                />
+                <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+                  Middle page with full pagination range - light gray
+                </p>
+              </div>
+
+              <div>
+                <TableFooter
+                  type="pagination-only"
+                  size="small"
+                  background="light-gray"
+                  currentPage={1}
+                  totalPages={10}
+                />
+                <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+                  Small pagination only - light gray
+                </p>
+              </div>
+            </div>
           </div>
-          
-          {/* Large dataset with ellipsis */}
+
+          {/* Blue-50 pagination states */}
           <div>
-            <TableFooter
-              type="default"
-              size="default"
-              background="black"
-              currentPage={50}
-              totalPages={100}
-            />
-            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
-              Large dataset (Page 50 of 100) with ellipsis
-            </p>
+            <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontWeight: '500', color: '#374151' }}>Blue-50 Background</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div>
+                <TableFooter
+                  type="default"
+                  size="default"
+                  background="blue-50"
+                  currentPage={1}
+                  totalPages={10}
+                />
+                <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+                  First page with navigation - blue-50
+                </p>
+              </div>
+
+              <div>
+                <TableFooter
+                  type="pagination-only"
+                  size="small"
+                  background="blue-50"
+                  currentPage={1}
+                  totalPages={10}
+                />
+                <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+                  Small pagination only - blue-50
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
