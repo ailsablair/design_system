@@ -119,6 +119,15 @@ export const WithSubtextAndButtons: Story = {
   }
 };
 
+export const BlackBackground: Story = {
+  args: {
+    background: 'black',
+    type: 'default-w-subtext-and-buttons',
+    title: 'Customers',
+    subtitle: 'These companies have purchased in the last 12 months'
+  }
+};
+
 // Figma Design Showcase - All Variants
 export const FigmaDesignShowcase: Story = {
   render: () => (
