@@ -1,0 +1,355 @@
+/* TableHeader Component - Figma Design Implementation */
+
+/* === BASE TABLE HEADER === */
+
+.table-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--spacing-radius-12px, 12px) var(--spacing-radius-12px, 12px) 0 0;
+  border: var(--spacing-stroke-1px, 1px) solid var(--neutral-gray-gray-200, #E5E7EB);
+  position: relative;
+  contain: layout style;
+}
+
+/* === BACKGROUND VARIANTS === */
+
+.table-header--bg-default {
+  background: var(--base-white, #FFFFFF);
+}
+
+.table-header--bg-light-gray {
+  background: var(--neutral-gray-gray-50, #F9FAFB);
+}
+
+/* === SIZE VARIANTS === */
+
+/* Default size */
+.table-header--default {
+  padding: var(--spacing-sizing-20px, 20px) var(--spacing-sizing-24px, 24px);
+}
+
+.table-header--default.table-header--default {
+  height: 70px;
+}
+
+.table-header--default.table-header--default-w-subtext,
+.table-header--default.table-header--default-w-subtext-and-buttons {
+  height: 90px;
+}
+
+/* Small size */
+.table-header--small {
+  padding: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-24px, 24px);
+}
+
+.table-header--small.table-header--default {
+  height: 54px;
+}
+
+.table-header--small.table-header--default-w-subtext,
+.table-header--small.table-header--default-w-subtext-and-buttons {
+  height: 65px;
+}
+
+/* === HEADER CONTENT === */
+
+.table-header__content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+/* === MAIN CONTENT AREA === */
+
+.table-header__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1 0 0;
+  align-self: stretch;
+  position: relative;
+}
+
+/* When there's subtext, adjust gap */
+.table-header--default .table-header__main {
+  gap: var(--spacing-sizing-6px, 6px);
+}
+
+.table-header--small .table-header__main {
+  gap: var(--spacing-sizing-2px, 2px);
+}
+
+/* === TITLE SECTION === */
+
+.table-header__title-section {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sizing-12px, 12px);
+  position: relative;
+}
+
+.table-header__title-section--clickable {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: var(--spacing-radius-4px, 4px);
+  padding: var(--spacing-sizing-2px, 2px);
+  margin: calc(-1 * var(--spacing-sizing-2px, 2px));
+}
+
+.table-header__title-section--clickable:hover {
+  background-color: var(--neutral-gray-gray-50, #F9FAFB);
+}
+
+.table-header__title-section--clickable:focus-visible {
+  outline: 2px solid var(--primary-blue-blue-400, #6171DF);
+  outline-offset: 2px;
+}
+
+/* === TITLE STYLES === */
+
+.table-header__title {
+  color: var(--base-black, #1C1C1C);
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-style: normal;
+  font-weight: var(--type-weight-medium, 500);
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Default size title */
+.table-header__title--default {
+  font-size: var(--type-archivo-heading-4, 24px);
+  line-height: var(--type-line-height-heading-4, 24px);
+  letter-spacing: var(--type-letter-spacing-archivo-heading-4, -0.25px);
+}
+
+/* Small size title */
+.table-header__title--small {
+  font-size: var(--type-archivo-heading-5, 19px);
+  line-height: var(--type-line-height-heading-5, 24px);
+  letter-spacing: var(--type-letter-spacing-archivo-heading-5, -0.15px);
+}
+
+/* === TAG CONTAINER === */
+
+.table-header__tag {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* === SUBTEXT STYLES === */
+
+.table-header__subtext {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  align-self: stretch;
+  overflow: hidden;
+  color: var(--neutral-gray-gray-500, #6D7280);
+  text-overflow: ellipsis;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Default size subtext */
+.table-header__subtext--default {
+  font-family: var(--type-typeface-roboto-flex, 'Roboto Flex');
+  font-size: var(--type-roboto-flex-body, 16px);
+  line-height: var(--type-line-height-body, 20px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body, 0.05px);
+}
+
+/* Small size subtext */
+.table-header__subtext--small {
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-size: var(--type-archivo-footnote, 13px);
+  font-weight: var(--type-weight-medium, 500);
+  line-height: var(--type-line-height-footnote, 15px);
+  letter-spacing: var(--type-letter-spacing-archivo-footnote, 0.2px);
+}
+
+/* === ACTIONS SECTION === */
+
+.table-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-6px, 6px);
+  position: relative;
+  margin-right: var(--spacing-sizing-16px, 16px);
+}
+
+/* === TYPES WITH DIFFERENT LAYOUTS === */
+
+/* Default type - no special layout changes needed */
+.table-header--default .table-header__content {
+  align-items: center;
+}
+
+/* With subtext - content should be column layout */
+.table-header--default-w-subtext .table-header__content,
+.table-header--default-w-subtext-and-buttons .table-header__content {
+  align-items: center;
+  gap: var(--spacing-sizing-16px, 16px);
+}
+
+/* With buttons - add gap for actions */
+.table-header--default-w-button .table-header__content,
+.table-header--default-w-subtext-and-buttons .table-header__content {
+  gap: var(--spacing-sizing-16px, 16px);
+}
+
+/* === RESPONSIVE DESIGN === */
+
+@media (max-width: 768px) {
+  .table-header--default {
+    padding: var(--spacing-sizing-16px, 16px) var(--spacing-sizing-20px, 20px);
+  }
+  
+  .table-header--small {
+    padding: var(--spacing-sizing-8px, 8px) var(--spacing-sizing-20px, 20px);
+  }
+  
+  .table-header__title--default {
+    font-size: var(--type-archivo-heading-5, 19px);
+    line-height: var(--type-line-height-heading-5, 24px);
+  }
+  
+  .table-header__actions {
+    margin-right: var(--spacing-sizing-8px, 8px);
+  }
+}
+
+@media (max-width: 480px) {
+  .table-header {
+    border-radius: var(--spacing-radius-8px, 8px) var(--spacing-radius-8px, 8px) 0 0;
+  }
+  
+  .table-header--default,
+  .table-header--small {
+    padding: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-16px, 16px);
+  }
+  
+  .table-header__content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sizing-12px, 12px);
+  }
+  
+  .table-header__actions {
+    align-self: flex-end;
+    margin-right: 0;
+  }
+  
+  .table-header__title-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sizing-8px, 8px);
+  }
+  
+  .table-header__title--default,
+  .table-header__title--small {
+    font-size: var(--type-archivo-label, 16px);
+    line-height: var(--type-line-height-label, 22px);
+  }
+  
+  .table-header__subtext--default {
+    font-size: var(--type-archivo-label-sm, 14px);
+    line-height: var(--type-line-height-label-sm, 17px);
+  }
+}
+
+/* === ACCESSIBILITY === */
+
+@media (prefers-reduced-motion: reduce) {
+  .table-header__title-section--clickable {
+    transition: none;
+  }
+}
+
+/* === HIGH CONTRAST MODE === */
+
+@media (prefers-contrast: high) {
+  .table-header {
+    border-width: 2px;
+    border-color: #000;
+  }
+  
+  .table-header__title {
+    color: #000;
+    font-weight: 600;
+  }
+  
+  .table-header__subtext {
+    color: #333;
+  }
+}
+
+/* === FOCUS VISIBLE SUPPORT === */
+
+.table-header__title-section--clickable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* === PRINT STYLES === */
+
+@media print {
+  .table-header {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+  
+  .table-header__actions {
+    display: none;
+  }
+  
+  .table-header__title,
+  .table-header__subtext {
+    color: #000 !important;
+  }
+}
+
+/* === LOADING STATE === */
+
+.table-header--loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.table-header--loading .table-header__title,
+.table-header--loading .table-header__subtext,
+.table-header--loading .table-header__tag {
+  opacity: 0.7;
+}
+
+/* === TRUNCATION FOR VERY LONG TITLES === */
+
+@media (max-width: 320px) {
+  .table-header__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 200px;
+  }
+  
+  .table-header__subtext {
+    -webkit-line-clamp: 2;
+  }
+}
+
+/* === CUSTOM HOVER EFFECTS === */
+
+.table-header--bg-light-gray .table-header__title-section--clickable:hover {
+  background-color: var(--base-white, #FFFFFF);
+}
