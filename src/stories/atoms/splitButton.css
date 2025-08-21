@@ -548,7 +548,7 @@
 }
 
 .split-button-container.open .split-button.primary .split-button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-semibold);
 }
 
 /* Open state visual feedback for secondary buttons */
@@ -559,7 +559,7 @@
 }
 
 .split-button-container.open .split-button.secondary .split-button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-semibold);
 }
 
 /* Open state visual feedback for ghost buttons */
@@ -570,7 +570,7 @@
 }
 
 .split-button-container.open .split-button.ghost .split-button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-semibold);
 }
 
 /* Responsive adjustments */
