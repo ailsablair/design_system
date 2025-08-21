@@ -119,14 +119,14 @@
   font-size: var(--type-archivo-heading-4);
   line-height: var(--type-line-height-heading-4);
   letter-spacing: var(--type-letter-spacing-archivo-heading-4);
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-semibold);
 }
 
 .avatar-content__name--large.avatar-content__name--name-only {
-  font-size: var(--type-archivo-heading-1);
-  line-height: var(--type-line-height-heading-1);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-1);
-  font-weight: var(--type-weight-medium);
+  font-size: var(--type-archivo-heading-2);
+  line-height: var(--type-line-height-heading-2);
+  letter-spacing: var(--type-letter-spacing-archivo-heading-2);
+  font-weight: var(--type-weight-semibold);
 }
 
 /* Special sizing for w-subtext large */
@@ -134,6 +134,7 @@
   font-size: var(--type-archivo-heading-5);
   line-height: var(--type-line-height-heading-5);
   letter-spacing: var(--type-letter-spacing-archivo-heading-5);
+  font-weight: var(--type-weight-semibold);
 }
 
 /* Email Styling */
@@ -163,24 +164,24 @@
 }
 
 .avatar-content__email--x-small.avatar-content__email--archivo {
-  font-size: var(--type-archivo-label-sm);
-  line-height: var(--type-line-height-label-sm);
-  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
-  font-weight: var(--type-weight-medium);
+  font-size: var(--type-archivo-footnote);
+  line-height: var(--type-line-height-footnote);
+  letter-spacing: var(--type-letter-spacing-archivo-footnote);
+  font-weight: var(--type-weight-regular);
 }
 
 .avatar-content__email--small {
   font-size: var(--type-roboto-flex-body-sm);
   line-height: var(--type-line-height-body-sm);
   letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
-  font-weight: var(--type-weight-semibold);
+  font-weight: var(--type-weight-regular);
 }
 
 .avatar-content__email--default {
   font-size: var(--type-roboto-flex-body);
   line-height: var(--type-line-height-body);
   letter-spacing: var(--type-letter-spacing-roboto-flex-body);
-  font-weight: var(--type-weight-semibold);
+  font-weight: var(--type-weight-regular);
 }
 
 .avatar-content__email--default.avatar-content__email--archivo {
