@@ -501,6 +501,38 @@ export const FigmaDesignExact: Story = {
         </h2>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '48px' }}>
+          {/* Default (white) pagination states */}
+          <div>
+            <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontWeight: '500', color: '#374151' }}>Default (White) Background</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div>
+                <TableFooter
+                  type="default"
+                  size="default"
+                  background="default"
+                  currentPage={1}
+                  totalPages={10}
+                />
+                <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+                  First page with navigation - default white
+                </p>
+              </div>
+
+              <div>
+                <TableFooter
+                  type="pagination-only"
+                  size="small"
+                  background="default"
+                  currentPage={1}
+                  totalPages={10}
+                />
+                <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+                  Small pagination only - default white
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* Light gray pagination states */}
           <div>
             <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontWeight: '500', color: '#374151' }}>Light Gray Background</h3>
