@@ -17,30 +17,41 @@ declare global {
  * Check if an error message is related to ResizeObserver
  */
 const isResizeObserverError = (message: any): boolean => {
-  if (typeof message !== 'string') return false;
-  
+  if (!message) return false;
+
+  // Convert to string and normalize
+  const messageStr = String(message).toLowerCase();
+
   const resizeObserverPatterns = [
-    'ResizeObserver loop completed with undelivered notifications',
-    'ResizeObserver loop limit exceeded',
-    'ResizeObserver loop',
-    'Non-finite CSS pixel',
-    'ResizeObserver callback threw an exception'
+    'resizeobserver loop completed with undelivered notifications',
+    'resizeobserver loop limit exceeded',
+    'resizeobserver loop',
+    'resizeobserver callback threw an exception',
+    'resizeobserver',
+    'non-finite css pixel',
+    'resize observer loop',
+    'resize observer callback',
+    'loop completed with undelivered notifications',
+    'undelivered notifications'
   ];
-  
-  return resizeObserverPatterns.some(pattern => 
-    message.toLowerCase().includes(pattern.toLowerCase())
+
+  return resizeObserverPatterns.some(pattern =>
+    messageStr.includes(pattern)
   );
 };
 
 /**
- * Enhanced ResizeObserver error suppression
+ * Enhanced ResizeObserver error suppression with immediate setup
  */
 export const setupResizeObserverErrorHandler = (): void => {
   // Only run in browser environment
   if (typeof window === 'undefined') return;
-  
+
   // Prevent multiple setups
   if (window.__resizeObserverSetupComplete) return;
+
+  // Set up immediately to catch early errors
+  window.__resizeObserverSetupComplete = true;
   
   // Store original console.error if not already stored
   if (!window.__resizeObserverOriginalError) {
@@ -49,10 +60,10 @@ export const setupResizeObserverErrorHandler = (): void => {
 
   // Override console.error to catch ResizeObserver errors
   window.console.error = (...args: any[]) => {
-    const message = args[0];
+    // Check all arguments for ResizeObserver patterns
+    const isResizeError = args.some(arg => isResizeObserverError(arg));
 
-    // Check if this is a ResizeObserver related error
-    if (isResizeObserverError(message)) {
+    if (isResizeError) {
       // In development, show a friendly warning once
       if (process.env.NODE_ENV === 'development' && !window.__resizeObserverErrorLogged) {
         console.warn(
@@ -105,8 +116,22 @@ export const setupResizeObserverErrorHandler = (): void => {
     }
   }, true); // Use capture phase
 
-  // Mark setup as complete
-  window.__resizeObserverSetupComplete = true;
+  // Additional safety net: try to catch any remaining ResizeObserver errors
+  // that might slip through with a more aggressive pattern
+  const originalRequestAnimationFrame = window.requestAnimationFrame;
+  window.requestAnimationFrame = (callback) => {
+    return originalRequestAnimationFrame.call(window, (...args) => {
+      try {
+        return callback(...args);
+      } catch (error) {
+        if (error instanceof Error && isResizeObserverError(error.message)) {
+          // Silently suppress ResizeObserver errors in animation frames
+          return;
+        }
+        throw error;
+      }
+    });
+  };
 };
 
 /**
