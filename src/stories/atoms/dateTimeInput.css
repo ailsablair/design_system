@@ -47,6 +47,84 @@
   padding: var(--spacing-sizing-4px);
 }
 
+/* Native input styling */
+.datetime-input-native {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--type-typeface-archivo);
+  font-weight: var(--type-weight-light);
+  color: var(--neutral-gray-gray-700);
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.datetime-input-native:focus {
+  color: var(--base-black);
+  font-weight: var(--type-weight-regular);
+}
+
+.datetime-input-native::placeholder {
+  color: var(--neutral-gray-gray-700);
+  font-weight: var(--type-weight-light);
+  opacity: 1;
+}
+
+.datetime-input-native:focus::placeholder {
+  color: var(--base-black);
+  font-weight: var(--type-weight-regular);
+}
+
+.datetime-input-native.small {
+  font-size: var(--type-archivo-label-sm);
+  line-height: var(--type-line-height-label-sm);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
+}
+
+.datetime-input-native.default {
+  font-size: var(--type-archivo-label);
+  line-height: var(--type-line-height-label);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
+}
+
+.datetime-input-native.large {
+  font-size: var(--type-archivo-label-lg);
+  line-height: var(--type-line-height-label-lg);
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg);
+}
+
+/* Remove default date/time input styling */
+.datetime-input-native::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.datetime-input-native::-webkit-datetime-edit {
+  color: inherit;
+}
+
+.datetime-input-native::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+}
+
+.datetime-input-native::-webkit-datetime-edit-text {
+  color: inherit;
+  padding: 0;
+}
+
+.datetime-input-native::-webkit-datetime-edit-month-field,
+.datetime-input-native::-webkit-datetime-edit-day-field,
+.datetime-input-native::-webkit-datetime-edit-year-field,
+.datetime-input-native::-webkit-datetime-edit-hour-field,
+.datetime-input-native::-webkit-datetime-edit-minute-field,
+.datetime-input-native::-webkit-datetime-edit-second-field,
+.datetime-input-native::-webkit-datetime-edit-millisecond-field,
+.datetime-input-native::-webkit-datetime-edit-meridiem-field {
+  color: inherit;
+  background: transparent;
+}
+
 .datetime-input-container {
   display: flex;
   width: var(--sizing-width-300);
