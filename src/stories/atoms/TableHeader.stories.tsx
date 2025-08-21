@@ -59,7 +59,7 @@ that need to display titles, counts, descriptions, and actions.
     },
     background: {
       control: 'select',
-      options: ['light-gray', 'blue-50'],
+      options: ['light-gray', 'blue-50', 'black'],
       description: 'Background variant'
     },
     type: {
