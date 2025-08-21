@@ -243,8 +243,21 @@
   gap: var(--spacing-sizing-8px, 8px) !important;
 }
 
-/* === LIGHT BACKGROUNDS OVERRIDES === */
-/* No overrides needed - page numbers always use gray text for inactive, blue theme for active */
+/* === BACKGROUND-SPECIFIC ICON OVERRIDES === */
+
+/* Default background - Primary blue icons */
+.table-footer--default .table-footer__nav-button svg path,
+.table-footer--default .table-footer__view-more svg path {
+  fill: var(--primary-blue-blue, #2F42BD) !important;
+}
+
+/* Light backgrounds - Sky blue icons */
+.table-footer--light-gray .table-footer__nav-button svg path,
+.table-footer--light-gray .table-footer__view-more svg path,
+.table-footer--blue-50 .table-footer__nav-button svg path,
+.table-footer--blue-50 .table-footer__view-more svg path {
+  fill: var(--primary-sky-blue-dark-sky-blue, #04435E) !important;
+}
 
 /* === RESPONSIVE DESIGN === */
 
