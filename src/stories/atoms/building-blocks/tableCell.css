@@ -1,0 +1,205 @@
+/* TableCell Component Styles */
+
+.table-cell-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-16px, 16px);
+  padding: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-24px, 24px) var(--spacing-sizing-8px, 8px) var(--spacing-sizing-24px, 24px);
+  border-bottom: var(--spacing-stroke-1px, 1px) solid var(--neutral-gray-gray-200, #E5E7EB);
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* Size Variants */
+.table-cell-size-default {
+  height: 72px;
+}
+
+.table-cell-size-small {
+  height: 52px;
+}
+
+/* Background Variants */
+.table-cell-bg-alt-seafoam-25 {
+  background: var(--primary-seafoam-seafoam-25, #F9FCFA);
+}
+
+.table-cell-bg-default {
+  background: var(--base-white, #FFF);
+}
+
+.table-cell-bg-alt-gray-50 {
+  background: var(--neutral-gray-gray-50, #F9FAFB);
+}
+
+.table-cell-bg-disabled {
+  background: var(--neutral-gray-gray-100, #F3F4F6);
+}
+
+.table-cell-bg-hover {
+  background: var(--primary-sky-blue-sky-blue-25, #F2FBFF);
+}
+
+/* Type Variants - Adjust layout based on content */
+.table-cell-type-toggle {
+  width: 98px; /* Matches Figma width for toggle-only cells */
+}
+
+.table-cell-size-small.table-cell-type-toggle {
+  width: 88px; /* Smaller width for small toggle cells */
+}
+
+.table-cell-type-title,
+.table-cell-type-title-subtext,
+.table-cell-type-toggle-w-subtext {
+  width: 320px; /* Standard width for content cells */
+}
+
+/* Content Layout */
+.table-cell-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-sizing-6px, 6px);
+  align-self: stretch;
+  flex: 1;
+}
+
+.table-cell-size-small .table-cell-content {
+  gap: var(--spacing-sizing-4px, 4px);
+}
+
+/* Typography */
+.table-cell-title {
+  color: var(--base-black, #1C1C1C);
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-style: normal;
+  font-weight: var(--type-weight-medium, 500);
+  letter-spacing: var(--type-letter-spacing-archivo-label, 0.15px);
+}
+
+.table-cell-size-default .table-cell-title {
+  font-size: var(--type-archivo-label, 16px);
+  line-height: var(--type-line-height-label, 22px);
+}
+
+.table-cell-size-small .table-cell-title {
+  font-size: var(--type-archivo-label-sm, 14px);
+  line-height: var(--type-line-height-label-sm, 17px);
+}
+
+.table-cell-subtext {
+  color: var(--neutral-gray-gray-500, #6D7280);
+  font-family: var(--type-typeface-roboto-flex, "Roboto Flex");
+  font-style: normal;
+  font-weight: 400;
+}
+
+.table-cell-size-default .table-cell-subtext {
+  font-size: var(--type-roboto-flex-body, 16px);
+  line-height: var(--type-line-height-body, 20px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body, 0.05px);
+}
+
+.table-cell-size-small .table-cell-subtext {
+  font-size: var(--type-roboto-flex-body-sm, 14px);
+  line-height: var(--type-line-height-body-sm, 16px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm, -0.15px);
+}
+
+/* Disabled State */
+.table-cell-disabled .table-cell-title {
+  color: var(--neutral-gray-gray-400, #9CA3AF);
+}
+
+.table-cell-disabled .table-cell-subtext {
+  color: var(--neutral-gray-gray-400, #9CA3AF);
+}
+
+/* Checkbox Container */
+.table-cell-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.table-cell-size-default .table-cell-checkbox {
+  width: 22px;
+  height: 22px;
+}
+
+.table-cell-size-small .table-cell-checkbox {
+  width: 18px;
+  height: 18px;
+}
+
+/* Toggle Container */
+.table-cell-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Hover Effects */
+.table-cell-container:hover:not(.table-cell-disabled) {
+  background: var(--primary-sky-blue-sky-blue-25, #F2FBFF);
+  cursor: pointer;
+}
+
+.table-cell-bg-hover .table-cell-container:hover:not(.table-cell-disabled) {
+  background: var(--primary-sky-blue-sky-blue-50, #E5F7FF);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .table-cell-container {
+    padding: var(--spacing-sizing-8px, 8px) var(--spacing-sizing-16px, 16px);
+    gap: var(--spacing-sizing-12px, 12px);
+  }
+  
+  .table-cell-type-title,
+  .table-cell-type-title-subtext,
+  .table-cell-type-toggle-w-subtext {
+    width: auto;
+    min-width: 200px;
+  }
+  
+  .table-cell-type-toggle {
+    width: auto;
+    min-width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-cell-container {
+    padding: var(--spacing-sizing-6px, 6px) var(--spacing-sizing-12px, 12px);
+    gap: var(--spacing-sizing-8px, 8px);
+  }
+  
+  .table-cell-size-default {
+    height: 60px;
+  }
+  
+  .table-cell-size-small {
+    height: 44px;
+  }
+}
+
+/* Focus States for Accessibility */
+.table-cell-container:focus-within {
+  outline: 2px solid var(--primary-sky-blue-sky-blue, #0BA7EA);
+  outline-offset: -2px;
+}
+
+/* Animation for Smooth Transitions */
+.table-cell-container {
+  transition: background-color 0.2s ease-in-out;
+}
+
+.table-cell-title,
+.table-cell-subtext {
+  transition: color 0.2s ease-in-out;
+}
