@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TableHeader } from './TableHeader';
-import { AlarmIcon, ArrowDownIcon } from './Button';
+import { Button } from './Button';
 
 const meta: Meta<typeof TableHeader> = {
   title: 'Atoms/TableHeader',
@@ -10,20 +10,27 @@ const meta: Meta<typeof TableHeader> = {
     docs: {
       description: {
         component: `
-The TableHeader component provides flexible table headers based on the Figma design system.
-Supports multiple layout types, size variants, and background options.
+The TableHeader component provides comprehensive table header layouts based on Figma designs.
+Perfect for data tables, lists, and collection views with various content and action configurations.
 
 ## Features
-- **4 Layout Types**: Default, with subtext, with buttons, with both
-- **2 Size Variants**: Default (70-90px height) and Small (54-65px height)
-- **2 Background Options**: White and Light Gray
-- **Flexible Actions**: Customizable action buttons
-- **Count Tags**: Integrated count display with color variants
-- **Responsive Design**: Adapts to all screen sizes
-- **Full Accessibility**: ARIA compliant with keyboard navigation
+- **4 Layout Types**: Default, with subtext, with buttons, with subtext and buttons
+- **2 Sizes**: Small and Default with proper proportional scaling
+- **2 Backgrounds**: Light gray and blue-50 variants
+- **Flexible Actions**: Customizable button groups and action menu
+- **Count Integration**: Built-in count tags with proper styling
+- **Responsive**: Adapts gracefully to different screen sizes
+- **Accessible**: Proper semantic structure and ARIA compliance
+
+## Layout Types
+- **default**: Basic header with title and count
+- **default-w-subtext**: Header with subtitle/description
+- **default-w-buttons**: Header with action button group
+- **default-w-subtext-and-buttons**: Header with both subtitle and buttons
 
 ## Usage
-Perfect for data tables, lists, and any content requiring structured headers with counts and actions.
+Commonly used for table headers, section headers, and data collection views
+that need to display titles, counts, descriptions, and actions.
         `
       }
     }
@@ -33,58 +40,52 @@ Perfect for data tables, lists, and any content requiring structured headers wit
       control: 'text',
       description: 'Header title text'
     },
+    subtitle: {
+      control: 'text',
+      description: 'Subtitle/description text'
+    },
     count: {
       control: 'number',
-      description: 'Count value for the tag'
+      description: 'Count value'
     },
     countLabel: {
       control: 'text',
       description: 'Count label (e.g., "items", "members")'
     },
-    subtext: {
-      control: 'text',
-      description: 'Subtext description'
-    },
-    type: {
-      control: 'select',
-      options: ['default', 'default-w-subtext', 'default-w-button', 'default-w-subtext-and-buttons'],
-      description: 'Header type/variant'
-    },
     size: {
       control: 'select',
-      options: ['default', 'small'],
+      options: ['small', 'default'],
       description: 'Size variant'
     },
     background: {
       control: 'select',
-      options: ['default', 'light-gray'],
+      options: ['light-gray', 'blue-50'],
       description: 'Background variant'
     },
-    tagVariant: {
+    type: {
       control: 'select',
-      options: ['outline-blue', 'outline-info-blue'],
-      description: 'Tag color variant'
+      options: ['default', 'default-w-subtext', 'default-w-buttons', 'default-w-subtext-and-buttons'],
+      description: 'Layout type'
     },
-    showActions: {
+    showCount: {
       control: 'boolean',
-      description: 'Show action buttons'
+      description: 'Show count tag'
     },
-    showDotsMenu: {
+    showActionMenu: {
       control: 'boolean',
-      description: 'Show dots menu button'
+      description: 'Show action menu button'
     }
   },
   args: {
     title: 'Team members',
+    subtitle: 'These companies have purchased in the last 12 months',
     count: 100,
     countLabel: 'items',
-    subtext: 'These companies have purchased in the last 12 months',
+    size: 'small',
+    background: 'light-gray',
     type: 'default',
-    size: 'default',
-    background: 'default',
-    tagVariant: 'outline-blue',
-    showActions: false,
-    showDotsMenu: true
+    showCount: true,
+    showActionMenu: true
   }
 };
 
@@ -99,14 +100,14 @@ export const Default: Story = {
 export const WithSubtext: Story = {
   args: {
     type: 'default-w-subtext',
-    title: 'Customers'
+    title: 'Customers',
+    subtitle: 'These companies have purchased in the last 12 months'
   }
 };
 
 export const WithButtons: Story = {
   args: {
-    type: 'default-w-button',
-    showActions: true
+    type: 'default-w-buttons'
   }
 };
 
@@ -114,89 +115,159 @@ export const WithSubtextAndButtons: Story = {
   args: {
     type: 'default-w-subtext-and-buttons',
     title: 'Customers',
-    showActions: true
+    subtitle: 'These companies have purchased in the last 12 months'
   }
 };
 
-// All Type Variants
-export const AllTypeVariants: Story = {
+// Figma Design Showcase - All Variants
+export const FigmaDesignShowcase: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-      <div style={{ textAlign: 'center' }}>
-        <h3 style={{ margin: '0 0 24px 0', fontSize: '18px', fontWeight: '600' }}>
-          Table Header Types - Figma Design
-        </h3>
-        <p style={{ margin: '0 0 32px 0', fontSize: '14px', color: '#666' }}>
-          All header layout variants matching the Figma specifications
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', width: '100%', maxWidth: '1216px' }}>
+      <div style={{ textAlign: 'left' }}>
+        <h2 style={{ margin: '0 0 24px 0', fontSize: '24px', fontWeight: '600' }}>
+          Table Header - Figma Design Implementation
+        </h2>
+        <p style={{ margin: '0 0 32px 0', fontSize: '16px', color: '#666', lineHeight: '1.5' }}>
+          Complete implementation of all table header variants from Figma designs.
+          Includes different types, sizes, and background colors.
         </p>
       </div>
-      
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '600' }}>Default</h4>
+
+      {/* Small Size - Light Gray Background */}
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Small Size - Light Gray Background</h3>
+        
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <TableHeader
             title="Team members"
             count={100}
             countLabel="items"
+            size="small"
+            background="light-gray"
             type="default"
           />
-        </div>
-        
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '600' }}>With Subtext</h4>
+          
           <TableHeader
             title="Customers"
+            subtitle="These companies have purchased in the last 12 months"
             count={100}
             countLabel="items"
-            subtext="These companies have purchased in the last 12 months"
+            size="small"
+            background="light-gray"
             type="default-w-subtext"
           />
-        </div>
-        
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '600' }}>With Buttons</h4>
+          
           <TableHeader
             title="Team members"
             count={100}
             countLabel="items"
-            type="default-w-button"
-            showActions={true}
-            actionButtons={[
-              {
-                label: 'Label',
-                leadingIcon: <AlarmIcon size={18} />,
-                trailingIcon: <ArrowDownIcon size={18} />
-              },
-              {
-                label: 'Label',
-                leadingIcon: <AlarmIcon size={18} />,
-                trailingIcon: <ArrowDownIcon size={18} />
-              }
-            ]}
+            size="small"
+            background="light-gray"
+            type="default-w-buttons"
           />
-        </div>
-        
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '600' }}>With Subtext and Buttons</h4>
+          
           <TableHeader
             title="Customers"
+            subtitle="These companies have purchased in the last 12 months"
             count={100}
             countLabel="items"
-            subtext="These companies have purchased in the last 12 months"
+            size="small"
+            background="light-gray"
             type="default-w-subtext-and-buttons"
-            showActions={true}
-            actionButtons={[
-              {
-                label: 'Label',
-                leadingIcon: <AlarmIcon size={18} />,
-                trailingIcon: <ArrowDownIcon size={18} />
-              },
-              {
-                label: 'Label',
-                leadingIcon: <AlarmIcon size={18} />,
-                trailingIcon: <ArrowDownIcon size={18} />
-              }
-            ]}
+          />
+        </div>
+      </div>
+
+      {/* Default Size - Blue-50 Background */}
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Default Size - Blue-50 Background</h3>
+        
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <TableHeader
+            title="Team members"
+            count={100}
+            countLabel="items"
+            size="default"
+            background="blue-50"
+            type="default"
+            buttonGroupProps={{ size: 'default' }}
+          />
+          
+          <TableHeader
+            title="Customers"
+            subtitle="These companies have purchased in the last 12 months"
+            count={100}
+            countLabel="items"
+            size="default"
+            background="blue-50"
+            type="default-w-subtext"
+            buttonGroupProps={{ size: 'default' }}
+          />
+          
+          <TableHeader
+            title="Team members"
+            count={100}
+            countLabel="items"
+            size="default"
+            background="blue-50"
+            type="default-w-buttons"
+            buttonGroupProps={{ size: 'default' }}
+          />
+          
+          <TableHeader
+            title="Customers"
+            subtitle="These companies have purchased in the last 12 months"
+            count={100}
+            countLabel="items"
+            size="default"
+            background="blue-50"
+            type="default-w-subtext-and-buttons"
+            buttonGroupProps={{ size: 'default' }}
+          />
+        </div>
+      </div>
+
+      {/* Small Size - Blue-50 Background */}
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Small Size - Blue-50 Background</h3>
+        
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <TableHeader
+            title="Team members"
+            count={100}
+            countLabel="items"
+            size="small"
+            background="blue-50"
+            type="default"
+          />
+          
+          <TableHeader
+            title="Customers"
+            subtitle="These companies have purchased in the last 12 months"
+            count={100}
+            countLabel="items"
+            size="small"
+            background="blue-50"
+            type="default-w-subtext"
+          />
+          
+          <TableHeader
+            title="Team members"
+            count={100}
+            countLabel="items"
+            size="small"
+            background="blue-50"
+            type="default-w-buttons"
+          />
+          
+          <TableHeader
+            title="Customers"
+            subtitle="These companies have purchased in the last 12 months"
+            count={100}
+            countLabel="items"
+            size="small"
+            background="blue-50"
+            type="default-w-subtext-and-buttons"
           />
         </div>
       </div>
@@ -205,76 +276,51 @@ export const AllTypeVariants: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'All header layout types showing different combinations of content and actions.'
+        story: 'Complete showcase of all table header variants matching the Figma designs exactly.'
       }
     }
   }
 };
 
-// Size Variants
-export const SizeVariants: Story = {
+// Size Comparison
+export const SizeComparison: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-      <div style={{ textAlign: 'center' }}>
-        <h3 style={{ margin: '0 0 24px 0', fontSize: '18px', fontWeight: '600' }}>
-          Size Variants
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', width: '100%', maxWidth: '800px' }}>
+      <div style={{ textAlign: 'left' }}>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>
+          Size Comparison
         </h3>
-        <p style={{ margin: '0 0 32px 0', fontSize: '14px', color: '#666' }}>
-          Default and Small size variants with different heights and typography
+        <p style={{ margin: '0 0 24px 0', fontSize: '14px', color: '#666' }}>
+          Small vs Default size with proportional scaling
         </p>
       </div>
       
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '600' }}>Default Size (70px)</h4>
-          <TableHeader
-            title="Team members"
-            count={100}
-            countLabel="items"
-            size="default"
-          />
-        </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <TableHeader
+          title="Small Header"
+          subtitle="Compact header with smaller text and spacing"
+          count={25}
+          countLabel="users"
+          size="small"
+          type="default-w-subtext"
+        />
         
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '600' }}>Small Size (54px)</h4>
-          <TableHeader
-            title="Team members"
-            count={100}
-            countLabel="items"
-            size="small"
-          />
-        </div>
-        
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '600' }}>Default with Subtext (90px)</h4>
-          <TableHeader
-            title="Customers"
-            count={100}
-            countLabel="items"
-            subtext="These companies have purchased in the last 12 months"
-            type="default-w-subtext"
-            size="default"
-          />
-        </div>
-        
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '600' }}>Small with Subtext (65px)</h4>
-          <TableHeader
-            title="Customers"
-            count={100}
-            countLabel="items"
-            subtext="These companies have purchased in the last 12 months"
-            type="default-w-subtext"
-            size="small"
-          />
-        </div>
+        <TableHeader
+          title="Default Header"
+          subtitle="Standard header with default text and spacing"
+          count={100}
+          countLabel="items"
+          size="default"
+          type="default-w-subtext"
+          buttonGroupProps={{ size: 'default' }}
+        />
       </div>
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Size variants showing height differences and typography scaling.'
+        story: 'Direct comparison between small and default sizes showing proportional scaling.'
       }
     }
   }
@@ -283,251 +329,168 @@ export const SizeVariants: Story = {
 // Background Variants
 export const BackgroundVariants: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-      <div style={{ textAlign: 'center' }}>
-        <h3 style={{ margin: '0 0 24px 0', fontSize: '18px', fontWeight: '600' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', width: '100%', maxWidth: '800px' }}>
+      <div style={{ textAlign: 'left' }}>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>
           Background Variants
         </h3>
-        <p style={{ margin: '0 0 32px 0', fontSize: '14px', color: '#666' }}>
-          White and Light Gray background options with Info Blue tags
+        <p style={{ margin: '0 0 24px 0', fontSize: '14px', color: '#666' }}>
+          Light gray vs Blue-50 backgrounds with appropriate tag variants
         </p>
       </div>
       
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '600' }}>Default Background (White)</h4>
-          <TableHeader
-            title="Team members"
-            count={100}
-            countLabel="items"
-            background="default"
-            tagVariant="outline-blue"
-          />
-        </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <TableHeader
+          title="Light Gray Background"
+          subtitle="Uses blue outline tags for contrast"
+          count={150}
+          countLabel="entries"
+          background="light-gray"
+          type="default-w-subtext"
+        />
         
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '600' }}>Light Gray Background</h4>
-          <TableHeader
-            title="Team members"
-            count={100}
-            countLabel="items"
-            background="light-gray"
-            tagVariant="outline-info-blue"
-          />
-        </div>
-        
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '600' }}>Light Gray with Subtext and Buttons</h4>
-          <TableHeader
-            title="Customers"
-            count={100}
-            countLabel="items"
-            subtext="These companies have purchased in the last 12 months"
-            type="default-w-subtext-and-buttons"
-            background="light-gray"
-            tagVariant="outline-info-blue"
-            showActions={true}
-            actionButtons={[
-              {
-                label: 'Label',
-                leadingIcon: <AlarmIcon size={18} />,
-                trailingIcon: <ArrowDownIcon size={18} />
-              },
-              {
-                label: 'Label',
-                leadingIcon: <AlarmIcon size={18} />,
-                trailingIcon: <ArrowDownIcon size={18} />
-              }
-            ]}
-          />
-        </div>
+        <TableHeader
+          title="Blue-50 Background"
+          subtitle="Uses white tags for proper contrast"
+          count={150}
+          countLabel="entries"
+          background="blue-50"
+          type="default-w-subtext"
+        />
       </div>
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Background variants showing white and light gray options matching Figma design.'
+        story: 'Comparison of background variants with appropriate tag color adjustments.'
       }
     }
   }
 };
 
-// Complete Matrix
-export const CompleteMatrix: Story = {
+// Custom Action Buttons
+export const CustomActionButtons: Story = {
+  render: () => {
+    const customButtons = [
+      <Button key="export" size="small" type="ghost">
+        Export
+      </Button>,
+      <Button key="filter" size="small" type="ghost">
+        Filter
+      </Button>,
+      <Button key="sort" size="small" type="ghost">
+        Sort
+      </Button>
+    ];
+
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', width: '100%', maxWidth: '800px' }}>
+        <div style={{ textAlign: 'left' }}>
+          <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>
+            Custom Action Buttons
+          </h3>
+          <p style={{ margin: '0 0 24px 0', fontSize: '14px', color: '#666' }}>
+            Headers with custom action button configurations
+          </p>
+        </div>
+        
+        <TableHeader
+          title="Custom Actions"
+          subtitle="Header with custom export, filter, and sort buttons"
+          count={200}
+          countLabel="records"
+          type="default-w-subtext-and-buttons"
+          actionButtons={customButtons}
+        />
+      </div>
+    );
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Example with custom action buttons replacing the default filter buttons.'
+      }
+    }
+  }
+};
+
+// Real-world Examples
+export const RealWorldExamples: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
-      <div style={{ textAlign: 'center' }}>
-        <h3 style={{ margin: '0 0 24px 0', fontSize: '18px', fontWeight: '600' }}>
-          Complete Design Matrix
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', width: '100%', maxWidth: '1000px' }}>
+      <div style={{ textAlign: 'left' }}>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>
+          Real-world Usage Examples
         </h3>
-        <p style={{ margin: '0 0 32px 0', fontSize: '14px', color: '#666' }}>
-          All combinations from the Figma design system
+        <p style={{ margin: '0 0 24px 0', fontSize: '14px', color: '#666' }}>
+          Common use cases with appropriate content and configurations
         </p>
       </div>
       
-      {/* Default Size - White Background */}
-      <div>
-        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Default Size - White Background</h4>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          <TableHeader
-            title="Team members"
-            count={100}
-            countLabel="items"
-            type="default"
-            size="default"
-            background="default"
-          />
-          <TableHeader
-            title="Customers"
-            count={100}
-            countLabel="items"
-            subtext="These companies have purchased in the last 12 months"
-            type="default-w-subtext"
-            size="default"
-            background="default"
-          />
-          <TableHeader
-            title="Team members"
-            count={100}
-            countLabel="items"
-            type="default-w-button"
-            size="default"
-            background="default"
-            showActions={true}
-          />
-          <TableHeader
-            title="Customers"
-            count={100}
-            countLabel="items"
-            subtext="These companies have purchased in the last 12 months"
-            type="default-w-subtext-and-buttons"
-            size="default"
-            background="default"
-            showActions={true}
-          />
-        </div>
-      </div>
-      
-      {/* Small Size - White Background */}
-      <div>
-        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Small Size - White Background</h4>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          <TableHeader
-            title="Team members"
-            count={100}
-            countLabel="items"
-            type="default"
-            size="small"
-            background="default"
-          />
-          <TableHeader
-            title="Customers"
-            count={100}
-            countLabel="items"
-            subtext="These companies have purchased in the last 12 months"
-            type="default-w-subtext"
-            size="small"
-            background="default"
-          />
-          <TableHeader
-            title="Team members"
-            count={100}
-            countLabel="items"
-            type="default-w-button"
-            size="small"
-            background="default"
-            showActions={true}
-            actionButtons={[
-              {
-                label: 'Label',
-                leadingIcon: <AlarmIcon size={14} />,
-                trailingIcon: <ArrowDownIcon size={14} />
-              },
-              {
-                label: 'Label',
-                leadingIcon: <AlarmIcon size={14} />,
-                trailingIcon: <ArrowDownIcon size={14} />
-              }
-            ]}
-          />
-          <TableHeader
-            title="Customers"
-            count={100}
-            countLabel="items"
-            subtext="These companies have purchased in the last 12 months"
-            type="default-w-subtext-and-buttons"
-            size="small"
-            background="default"
-            showActions={true}
-            actionButtons={[
-              {
-                label: 'Label',
-                leadingIcon: <AlarmIcon size={14} />,
-                trailingIcon: <ArrowDownIcon size={14} />
-              },
-              {
-                label: 'Label',
-                leadingIcon: <AlarmIcon size={14} />,
-                trailingIcon: <ArrowDownIcon size={14} />
-              }
-            ]}
-          />
-        </div>
-      </div>
-      
-      {/* Light Gray Background Variants */}
-      <div>
-        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Light Gray Background Variants</h4>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          <TableHeader
-            title="Team members"
-            count={100}
-            countLabel="items"
-            type="default"
-            size="default"
-            background="light-gray"
-            tagVariant="outline-info-blue"
-          />
-          <TableHeader
-            title="Customers"
-            count={100}
-            countLabel="items"
-            subtext="These companies have purchased in the last 12 months"
-            type="default-w-subtext"
-            size="default"
-            background="light-gray"
-            tagVariant="outline-info-blue"
-          />
-          <TableHeader
-            title="Team members"
-            count={100}
-            countLabel="items"
-            type="default-w-button"
-            size="default"
-            background="light-gray"
-            tagVariant="outline-info-blue"
-            showActions={true}
-          />
-          <TableHeader
-            title="Customers"
-            count={100}
-            countLabel="items"
-            subtext="These companies have purchased in the last 12 months"
-            type="default-w-subtext-and-buttons"
-            size="default"
-            background="light-gray"
-            tagVariant="outline-info-blue"
-            showActions={true}
-          />
-        </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+        {/* User Management */}
+        <TableHeader
+          title="Active Users"
+          subtitle="Users who have logged in within the last 30 days"
+          count={1247}
+          countLabel="users"
+          size="default"
+          background="light-gray"
+          type="default-w-subtext-and-buttons"
+          buttonGroupProps={{ size: 'default' }}
+        />
+        
+        {/* Order Management */}
+        <TableHeader
+          title="Recent Orders"
+          subtitle="Orders placed in the last 7 days"
+          count={89}
+          countLabel="orders"
+          size="small"
+          background="blue-50"
+          type="default-w-subtext"
+        />
+        
+        {/* File Management */}
+        <TableHeader
+          title="Uploaded Files"
+          count={456}
+          countLabel="files"
+          size="small"
+          background="light-gray"
+          type="default-w-buttons"
+        />
+        
+        {/* Analytics Dashboard */}
+        <TableHeader
+          title="Page Views"
+          subtitle="Unique page views from the last 24 hours"
+          count={12500}
+          countLabel="views"
+          size="default"
+          background="blue-50"
+          type="default-w-subtext"
+          buttonGroupProps={{ size: 'default' }}
+        />
+        
+        {/* Team Management */}
+        <TableHeader
+          title="Team Members"
+          subtitle="Active team members with current project assignments"
+          count={25}
+          countLabel="members"
+          size="small"
+          background="light-gray"
+          type="default-w-subtext-and-buttons"
+        />
       </div>
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Complete matrix showing all possible combinations from the Figma design.'
+        story: 'Real-world examples showing different configurations for common use cases.'
       }
     }
   }
@@ -537,198 +500,130 @@ export const CompleteMatrix: Story = {
 export const Interactive: Story = {
   args: {
     type: 'default-w-subtext-and-buttons',
-    title: 'Customers',
-    subtext: 'These companies have purchased in the last 12 months',
-    showActions: true,
-    onTitleClick: () => console.log('Title clicked!'),
-    onDotsMenuClick: () => console.log('Dots menu clicked!'),
-    actionButtons: [
-      {
-        label: 'Filter',
-        leadingIcon: <AlarmIcon size={18} />,
-        trailingIcon: <ArrowDownIcon size={18} />,
-        onClick: () => console.log('Filter clicked!')
-      },
-      {
-        label: 'Sort',
-        leadingIcon: <AlarmIcon size={18} />,
-        trailingIcon: <ArrowDownIcon size={18} />,
-        onClick: () => console.log('Sort clicked!')
-      }
-    ]
+    title: 'Interactive Header',
+    subtitle: 'Click the action menu or buttons to see interactions',
+    onActionMenuClick: () => console.log('Action menu clicked!')
   },
   parameters: {
     docs: {
       description: {
-        story: 'Interactive header with all click handlers. Check console for event logs.'
+        story: 'Interactive header with click handlers. Check console for event logs.'
       }
     }
   }
 };
 
-// Real-world Examples
-export const RealWorldExamples: Story = {
+// Without Count Tag
+export const WithoutCount: Story = {
+  args: {
+    showCount: false,
+    type: 'default-w-subtext'
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Header without count tag for cases where count is not relevant.'
+      }
+    }
+  }
+};
+
+// Without Action Menu
+export const WithoutActionMenu: Story = {
+  args: {
+    showActionMenu: false,
+    type: 'default-w-buttons'
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Header without action menu button for simplified interfaces.'
+      }
+    }
+  }
+};
+
+// Large Numbers
+export const LargeNumbers: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-      <div style={{ textAlign: 'center' }}>
-        <h3 style={{ margin: '0 0 24px 0', fontSize: '18px', fontWeight: '600' }}>
-          Real-world Usage Examples
-        </h3>
-        <p style={{ margin: '0 0 32px 0', fontSize: '14px', color: '#666' }}>
-          Common use cases with appropriate content and actions
-        </p>
-      </div>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '100%', maxWidth: '800px' }}>
+      <TableHeader
+        title="Global Users"
+        subtitle="Total registered users across all regions"
+        count={1250000}
+        countLabel="users"
+        type="default-w-subtext"
+      />
       
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-        <TableHeader
-          title="Team Members"
-          count={45}
-          countLabel="people"
-          type="default-w-subtext-and-buttons"
-          subtext="Active employees across all departments"
-          showActions={true}
-          actionButtons={[
-            {
-              label: 'Add Member',
-              leadingIcon: <AlarmIcon size={18} />
-            },
-            {
-              label: 'Export',
-              trailingIcon: <ArrowDownIcon size={18} />
-            }
-          ]}
-        />
-        
-        <TableHeader
-          title="Customer Orders"
-          count={1247}
-          countLabel="orders"
-          type="default-w-subtext"
-          subtext="Orders placed in the last 30 days"
-          size="small"
-          background="light-gray"
-          tagVariant="outline-info-blue"
-        />
-        
-        <TableHeader
-          title="Product Inventory"
-          count={856}
-          countLabel="items"
-          type="default-w-button"
-          showActions={true}
-          actionButtons={[
-            {
-              label: 'Filter by Category',
-              leadingIcon: <AlarmIcon size={18} />,
-              trailingIcon: <ArrowDownIcon size={18} />
-            }
-          ]}
-        />
-        
-        <TableHeader
-          title="Support Tickets"
-          count={23}
-          countLabel="open"
-          type="default"
-          size="small"
-        />
-      </div>
+      <TableHeader
+        title="Database Records"
+        count={999999}
+        countLabel="records"
+        type="default"
+      />
+      
+      <TableHeader
+        title="API Calls"
+        subtitle="Total API calls processed this month"
+        count={10000000}
+        countLabel="requests"
+        type="default-w-subtext"
+        background="blue-50"
+      />
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Real-world examples showing appropriate usage in different contexts.'
+        story: 'Examples with large numbers showing how the component handles various count sizes.'
       }
     }
   }
 };
 
-// Custom Action Buttons
-export const CustomActionButtons: Story = {
-  args: {
-    title: 'Advanced Table',
-    count: 500,
-    countLabel: 'records',
-    type: 'default-w-button',
-    showActions: true,
-    actionButtons: [
-      {
-        label: 'Download CSV',
-        leadingIcon: <ArrowDownIcon size={18} />,
-        onClick: () => console.log('Download CSV clicked!')
-      },
-      {
-        label: 'Advanced Filter',
-        leadingIcon: <AlarmIcon size={18} />,
-        trailingIcon: <ArrowDownIcon size={18} />,
-        onClick: () => console.log('Advanced Filter clicked!')
-      },
-      {
-        label: 'Refresh',
-        leadingIcon: <AlarmIcon size={18} />,
-        onClick: () => console.log('Refresh clicked!')
-      }
-    ]
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Example with custom action buttons and different labels.'
-      }
-    }
-  }
-};
-
-// Responsive Example
-export const ResponsiveExample: Story = {
+// Responsive Showcase
+export const ResponsiveShowcase: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', width: '100%' }}>
-      <div style={{ textAlign: 'center' }}>
-        <h3 style={{ margin: '0 0 24px 0', fontSize: '18px', fontWeight: '600' }}>
+      <div style={{ textAlign: 'left' }}>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>
           Responsive Behavior
         </h3>
-        <p style={{ margin: '0 0 32px 0', fontSize: '14px', color: '#666' }}>
+        <p style={{ margin: '0 0 24px 0', fontSize: '14px', color: '#666' }}>
           How the component adapts to different container widths
         </p>
       </div>
       
       {/* Wide container */}
-      <div style={{ border: '1px dashed #ccc', padding: '8px' }}>
-        <div style={{ fontSize: '12px', color: '#888', marginBottom: '8px' }}>Full Width</div>
+      <div style={{ width: '100%', maxWidth: '1000px', border: '1px dashed #ccc', padding: '16px' }}>
         <TableHeader
-          title="Full Width Container"
+          title="Wide Container Example"
+          subtitle="Full layout with all elements visible"
           count={150}
           countLabel="items"
           type="default-w-subtext-and-buttons"
-          subtext="This header adapts to the full container width"
-          showActions={true}
         />
       </div>
       
       {/* Medium container */}
-      <div style={{ maxWidth: '600px', border: '1px dashed #ccc', padding: '8px' }}>
-        <div style={{ fontSize: '12px', color: '#888', marginBottom: '8px' }}>600px Width</div>
+      <div style={{ width: '100%', maxWidth: '600px', border: '1px dashed #ccc', padding: '16px' }}>
         <TableHeader
           title="Medium Container"
+          subtitle="Responsive layout adaptation"
           count={75}
           countLabel="files"
           type="default-w-subtext-and-buttons"
-          subtext="Responsive design adapts gracefully"
-          showActions={true}
         />
       </div>
       
       {/* Narrow container */}
-      <div style={{ maxWidth: '400px', border: '1px dashed #ccc', padding: '8px' }}>
-        <div style={{ fontSize: '12px', color: '#888', marginBottom: '8px' }}>400px Width</div>
+      <div style={{ width: '100%', maxWidth: '400px', border: '1px dashed #ccc', padding: '16px' }}>
         <TableHeader
           title="Narrow Container"
+          subtitle="Stacked layout for mobile"
           count={25}
           countLabel="users"
           type="default-w-subtext-and-buttons"
-          subtext="Even narrow containers work well"
-          showActions={true}
         />
       </div>
     </div>
