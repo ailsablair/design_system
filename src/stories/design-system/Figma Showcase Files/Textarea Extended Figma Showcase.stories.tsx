@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Textarea } from './Textarea';
+import { Textarea } from '../../atoms/Textarea';
 
 const meta: Meta<typeof Textarea> = {
-  title: 'Atoms/Textarea - Figma Showcase',
+  title: 'Design System/Figma Showcase Files/Textarea Extended Figma Showcase',
   component: Textarea,
   parameters: {
     layout: 'centered',
