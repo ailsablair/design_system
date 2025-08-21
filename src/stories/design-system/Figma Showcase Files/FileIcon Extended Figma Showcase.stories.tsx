@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FileIcon, type FileType } from './FileIcon';
+import { FileIcon, type FileType } from '../../atoms/FileIcon';
 
 const meta: Meta<typeof FileIcon> = {
-  title: 'Atoms/FileIcon/Figma Showcase',
+  title: 'Design System/Figma Showcase Files/FileIcon Extended Figma Showcase',
   component: FileIcon,
   parameters: {
     layout: 'fullscreen',
