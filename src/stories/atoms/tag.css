@@ -241,6 +241,30 @@
   cursor: not-allowed;
 }
 
+/* Outline variants - Figma Design System */
+.tag.outline-blue {
+  background: var(--primary-blue-blue-50, #F9F9FE);
+  border-color: var(--primary-blue-blue, #2F42BD);
+  color: var(--primary-blue-blue, #2F42BD);
+}
+
+.tag.outline-info-blue {
+  background: var(--base-white, #FFFFFF);
+  border-color: var(--status-info-blue, #3E7CA7);
+  color: var(--status-info-blue, #3E7CA7);
+}
+
+/* Outline variant hover states */
+.tag.outline-blue.clickable:hover {
+  background: var(--primary-blue-blue-100, #E6ECFF);
+  border-color: var(--primary-blue-blue-400, #6171DF);
+}
+
+.tag.outline-info-blue.clickable:hover {
+  background: var(--neutral-gray-gray-50, #F9FAFB);
+  border-color: var(--status-info-blue, #3E7CA7);
+}
+
 /* Tag label container styling */
 .tag-label {
   display: flex;
