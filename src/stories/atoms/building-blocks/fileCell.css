@@ -1,20 +1,20 @@
-/* FileCell Component Styles */
+/* FileCell Component Styles - Comprehensive Implementation */
 
 .file-cell-container {
   display: flex;
   align-items: center;
   gap: var(--spacing-sizing-16px, 16px);
-  padding: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-24px, 24px) var(--spacing-sizing-8px, 8px) var(--spacing-sizing-24px, 24px);
+  flex-shrink: 0;
   border-bottom: var(--spacing-stroke-1px, 1px) solid var(--neutral-gray-gray-200, #E5E7EB);
   box-sizing: border-box;
-  flex-shrink: 0;
-  width: 100%;
+  cursor: pointer;
   transition: background-color 0.2s ease-in-out;
 }
 
 /* Size Variants */
 .file-cell-size-default {
   height: 72px;
+  padding: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-24px, 24px) var(--spacing-sizing-8px, 8px) var(--spacing-sizing-24px, 24px);
 }
 
 .file-cell-size-small {
@@ -43,12 +43,106 @@
   background: var(--neutral-gray-gray-100, #F3F4F6);
 }
 
+/* Content Layout */
+.file-cell-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: stretch;
+  flex: 1;
+}
+
+/* Single line content (no file size) */
+.file-cell-variant-file-w-select .file-cell-content,
+.file-cell-variant-file-w-toggle .file-cell-content {
+  gap: 0;
+}
+
+/* Multi-line content (with file size) */
+.file-cell-variant-file-w-select-and-expiry .file-cell-content,
+.file-cell-variant-file-w-toggle-and-expiry .file-cell-content {
+  gap: var(--spacing-sizing-4px, 4px);
+  height: 52px;
+}
+
+/* Small size adjustments for expiry variants */
+.file-cell-size-small .file-cell-variant-file-w-select-and-expiry .file-cell-content,
+.file-cell-size-small .file-cell-variant-file-w-toggle-and-expiry .file-cell-content {
+  gap: var(--spacing-sizing-6px, 6px);
+}
+
+/* Typography */
+.file-cell-filename {
+  color: var(--base-black, #1C1C1C);
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-style: normal;
+  font-weight: var(--type-weight-medium, 500);
+  letter-spacing: var(--type-letter-spacing-archivo-label, 0.15px);
+  leading-trim: both;
+  text-edge: cap;
+}
+
+.file-cell-size-default .file-cell-filename {
+  font-size: var(--type-archivo-label, 16px);
+  line-height: var(--type-line-height-label, 22px);
+}
+
+.file-cell-size-small .file-cell-filename {
+  font-size: var(--type-archivo-label-sm, 14px);
+  line-height: var(--type-line-height-label-sm, 17px);
+}
+
+.file-cell-filesize {
+  font-family: var(--type-typeface-roboto-flex, "Roboto Flex");
+  font-style: normal;
+  font-weight: 400;
+}
+
+.file-cell-size-default .file-cell-filesize {
+  font-size: var(--type-roboto-flex-body, 16px);
+  line-height: var(--type-line-height-body, 20px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body, 0.05px);
+}
+
+.file-cell-size-small .file-cell-filesize {
+  font-size: var(--type-roboto-flex-body-sm, 14px);
+  line-height: var(--type-line-height-body-sm, 16px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm, -0.15px);
+}
+
+/* Text colors based on background state */
+.file-cell-bg-white .file-cell-filesize,
+.file-cell-bg-alt-gray-50 .file-cell-filesize,
+.file-cell-bg-alt-seafoam-25 .file-cell-filesize,
+.file-cell-bg-hover .file-cell-filesize {
+  color: var(--neutral-gray-gray-500, #6D7280);
+}
+
+.file-cell-bg-disabled .file-cell-filename {
+  color: var(--neutral-gray-gray-400, #9CA3AF);
+}
+
+.file-cell-bg-disabled .file-cell-filesize {
+  color: var(--neutral-gray-gray-400, #9CA3AF);
+}
+
+/* Disabled State */
+.file-cell-disabled .file-cell-filename {
+  color: var(--neutral-gray-gray-400, #9CA3AF);
+}
+
+.file-cell-disabled .file-cell-filesize {
+  color: var(--neutral-gray-gray-400, #9CA3AF);
+}
+
 /* Checkbox Container */
 .file-cell-checkbox {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  aspect-ratio: 1/1;
 }
 
 .file-cell-size-default .file-cell-checkbox {
@@ -72,7 +166,6 @@
 /* File Icon Container */
 .file-cell-file-icon {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-shrink: 0;
 }
@@ -80,93 +173,22 @@
 .file-cell-size-default .file-cell-file-icon {
   width: 42px;
   height: 42px;
+  aspect-ratio: 1/1;
 }
 
 .file-cell-size-small .file-cell-file-icon {
   width: 40px;
   height: 40px;
+  aspect-ratio: 1/1;
 }
 
-/* Content Layout */
-.file-cell-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: var(--spacing-sizing-4px, 4px);
-  flex: 1;
-  min-width: 0; /* Allow text truncation */
-}
-
-.file-cell-size-small .file-cell-content {
-  gap: var(--spacing-sizing-6px, 6px);
-}
-
-/* Single content item centering */
-.file-cell-variant-file-w-select .file-cell-content,
-.file-cell-variant-file-w-toggle .file-cell-content {
-  justify-content: center;
-}
-
-/* Typography */
-.file-cell-filename {
-  color: var(--base-black, #1C1C1C);
-  font-family: var(--type-typeface-archivo, Archivo);
-  font-style: normal;
-  font-weight: var(--type-weight-medium, 500);
-  letter-spacing: var(--type-letter-spacing-archivo-label, 0.15px);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 100%;
-}
-
-.file-cell-size-default .file-cell-filename {
-  font-size: var(--type-archivo-label, 16px);
-  line-height: var(--type-line-height-label, 22px);
-}
-
-.file-cell-size-small .file-cell-filename {
-  font-size: var(--type-archivo-label-sm, 14px);
-  line-height: var(--type-line-height-label-sm, 17px);
-}
-
-.file-cell-filesize {
-  color: var(--neutral-gray-gray-500, #6D7280);
-  font-family: var(--type-typeface-roboto-flex, "Roboto Flex");
-  font-style: normal;
-  font-weight: 400;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 100%;
-}
-
-.file-cell-size-default .file-cell-filesize {
-  font-size: var(--type-roboto-flex-body, 16px);
-  line-height: var(--type-line-height-body, 20px);
-  letter-spacing: var(--type-letter-spacing-roboto-flex-body, 0.05px);
-}
-
-.file-cell-size-small .file-cell-filesize {
-  font-size: var(--type-roboto-flex-body-sm, 14px);
-  line-height: var(--type-line-height-body-sm, 16px);
-  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm, -0.15px);
-}
-
-/* Disabled State */
-.file-cell-disabled .file-cell-filename {
-  color: var(--neutral-gray-gray-400, #9CA3AF);
-}
-
-.file-cell-disabled .file-cell-filesize {
-  color: var(--neutral-gray-gray-400, #9CA3AF);
+.file-cell-bg-disabled .file-cell-file-icon {
+  opacity: 0.5;
 }
 
 /* Hover Effects */
-.file-cell-container:hover:not(.file-cell-disabled) {
+.file-cell-container:hover:not(.file-cell-disabled):not(.file-cell-bg-disabled) {
   background: var(--primary-sky-blue-sky-blue-25, #F2FBFF);
-  cursor: pointer;
 }
 
 .file-cell-bg-hover:hover:not(.file-cell-disabled) {
@@ -177,7 +199,6 @@
 .file-cell-container:focus-within {
   outline: 2px solid var(--primary-sky-blue-sky-blue, #0BA7EA);
   outline-offset: -2px;
-  border-radius: var(--spacing-border-radius-4px, 4px);
 }
 
 /* Responsive Design */
@@ -186,25 +207,13 @@
     padding: var(--spacing-sizing-8px, 8px) var(--spacing-sizing-16px, 16px);
     gap: var(--spacing-sizing-12px, 12px);
   }
-
-  .file-cell-size-default .file-cell-file-icon {
-    width: 36px;
-    height: 36px;
+  
+  .file-cell-size-default {
+    height: 60px;
   }
-
-  .file-cell-size-small .file-cell-file-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .file-cell-size-default .file-cell-checkbox {
-    width: 20px;
-    height: 20px;
-  }
-
-  .file-cell-size-small .file-cell-checkbox {
-    width: 16px;
-    height: 16px;
+  
+  .file-cell-size-small {
+    height: 44px;
   }
 }
 
@@ -215,21 +224,11 @@
   }
   
   .file-cell-size-default {
-    height: 60px;
+    height: 56px;
   }
   
   .file-cell-size-small {
-    height: 44px;
-  }
-
-  .file-cell-size-default .file-cell-file-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .file-cell-size-small .file-cell-file-icon {
-    width: 28px;
-    height: 28px;
+    height: 40px;
   }
 }
 
@@ -237,27 +236,4 @@
 .file-cell-filename,
 .file-cell-filesize {
   transition: color 0.2s ease-in-out;
-}
-
-/* Variant-specific adjustments */
-.file-cell-variant-file-w-select,
-.file-cell-variant-file-w-toggle {
-  justify-content: flex-start;
-}
-
-.file-cell-variant-file-w-select-and-size,
-.file-cell-variant-file-w-toggle-and-size {
-  justify-content: flex-start;
-}
-
-/* Ensure proper width for standard file cells */
-.file-cell-container {
-  width: 320px;
-}
-
-/* Fixed width matching Figma designs */
-@media (min-width: 768px) {
-  .file-cell-container {
-    width: 320px;
-  }
 }
