@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AvatarGroup } from './AvatarGroup';
+import { AvatarGroup } from '../../atoms/AvatarGroup';
 
 const meta: Meta<typeof AvatarGroup> = {
-  title: 'Atoms/Avatar Group/Figma Showcase',
+  title: 'Design System/Figma Showcase Files/AvatarGroup Extended Figma Showcase',
   component: AvatarGroup,
   parameters: {
     layout: 'padded',
