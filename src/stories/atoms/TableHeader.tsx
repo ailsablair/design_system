@@ -96,6 +96,8 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
   const getTagVariant = () => {
     if (background === 'blue-50') {
       return 'light-gray'; // White tag on blue background
+    } else if (background === 'black') {
+      return 'yellow'; // Yellow tag on black background
     }
     return 'outline-info-blue'; // Blue outline tag on light gray
   };
