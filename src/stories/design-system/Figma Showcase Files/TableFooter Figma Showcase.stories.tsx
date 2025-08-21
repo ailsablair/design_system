@@ -23,9 +23,10 @@ from the Figma designs. Each variant matches the specifications pixel-perfectly.
 - **No Content**: Empty footer for minimal layouts
 
 ### Background Colors
+- **Default**: White background with primary blue active states and navigation
+- **Light Gray**: Standard light theme with sky blue active states
+- **Blue-50**: Subtle blue background variant with sky blue active states
 - **Black**: Dark theme with white text and yellow active page indicators
-- **Light Gray**: Standard light theme
-- **Blue-50**: Subtle blue background variant
 
 ### Sizes
 - **Small**: Compact footer with smaller pagination buttons (32px)
