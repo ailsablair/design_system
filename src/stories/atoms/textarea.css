@@ -46,8 +46,11 @@
   letter-spacing: var(--type-letter-spacing-archivo-label-sm);
   padding: var(--spacing-sizing-2px);
   gap: var(--spacing-sizing-4px);
-  width: var(--sizing-width-76);
-  height: var(--sizing-height-14);
+  width: 100%;
+  height: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .textarea-label.default {
@@ -56,8 +59,11 @@
   letter-spacing: var(--type-letter-spacing-archivo-label);
   padding: var(--spacing-sizing-4px);
   gap: var(--spacing-sizing-6px);
-  width: var(--sizing-width-91);
-  height: var(--sizing-height-19);
+  width: 100%;
+  height: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .textarea-label.large {
@@ -66,8 +72,11 @@
   letter-spacing: var(--type-letter-spacing-archivo-label-lg);
   padding: var(--spacing-sizing-4px);
   gap: var(--spacing-sizing-8px);
-  width: var(--sizing-width-101);
-  height: var(--sizing-height-20);
+  width: 100%;
+  height: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .textarea-area {
