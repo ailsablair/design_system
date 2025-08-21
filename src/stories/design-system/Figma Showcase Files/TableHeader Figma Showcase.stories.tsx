@@ -247,16 +247,16 @@ export const FigmaDesignExact: Story = {
 
       {/* Small Size - Blue-50 Background */}
       <section>
-        <h2 style={{ 
-          margin: '0 0 24px 0', 
-          fontSize: '24px', 
+        <h2 style={{
+          margin: '0 0 24px 0',
+          fontSize: '24px',
           fontWeight: '600',
           color: '#1C1C1C',
           fontFamily: 'Archivo, -apple-system, sans-serif'
         }}>
           Small Size - Blue-50 Background
         </h2>
-        
+
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '48px' }}>
           {/* Small Blue - Default */}
           <div>
@@ -272,7 +272,7 @@ export const FigmaDesignExact: Story = {
               type=default, size=small, bg=blue-50
             </p>
           </div>
-          
+
           {/* Small Blue - With Subtext */}
           <div>
             <TableHeader
@@ -288,7 +288,7 @@ export const FigmaDesignExact: Story = {
               type=default-w-subtext, size=small, bg=blue-50
             </p>
           </div>
-          
+
           {/* Small Blue - With Buttons */}
           <div>
             <TableHeader
@@ -303,7 +303,7 @@ export const FigmaDesignExact: Story = {
               type=default-w-buttons, size=small, bg=blue-50
             </p>
           </div>
-          
+
           {/* Small Blue - With Subtext and Buttons */}
           <div>
             <TableHeader
@@ -317,6 +317,149 @@ export const FigmaDesignExact: Story = {
             />
             <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
               type=default-w-subtext-and-buttons, size=small, bg=blue-50
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Black Background Variants */}
+      <section>
+        <h2 style={{
+          margin: '0 0 24px 0',
+          fontSize: '24px',
+          fontWeight: '600',
+          color: '#1C1C1C',
+          fontFamily: 'Archivo, -apple-system, sans-serif'
+        }}>
+          Black Background Variants
+        </h2>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '48px' }}>
+          {/* Default Size - Black */}
+          <div>
+            <TableHeader
+              title="Team members"
+              count={100}
+              countLabel="items"
+              size="default"
+              background="black"
+              type="default"
+              buttonGroupProps={{ size: 'default' }}
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=default, size=default, bg=black
+            </p>
+          </div>
+
+          {/* Default Size - Black with Subtext */}
+          <div>
+            <TableHeader
+              title="Customers"
+              subtitle="These companies have purchased in the last 12 months"
+              count={100}
+              countLabel="items"
+              size="default"
+              background="black"
+              type="default-w-subtext"
+              buttonGroupProps={{ size: 'default' }}
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=default-w-subtext, size=default, bg=black
+            </p>
+          </div>
+
+          {/* Default Size - Black with Buttons */}
+          <div>
+            <TableHeader
+              title="Team members"
+              count={100}
+              countLabel="items"
+              size="default"
+              background="black"
+              type="default-w-buttons"
+              buttonGroupProps={{ size: 'default' }}
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=default-w-buttons, size=default, bg=black
+            </p>
+          </div>
+
+          {/* Default Size - Black with Subtext and Buttons */}
+          <div>
+            <TableHeader
+              title="Customers"
+              subtitle="These companies have purchased in the last 12 months"
+              count={100}
+              countLabel="items"
+              size="default"
+              background="black"
+              type="default-w-subtext-and-buttons"
+              buttonGroupProps={{ size: 'default' }}
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=default-w-subtext-and-buttons, size=default, bg=black
+            </p>
+          </div>
+
+          {/* Small Size - Black */}
+          <div>
+            <TableHeader
+              title="Team members"
+              count={100}
+              countLabel="items"
+              size="small"
+              background="black"
+              type="default"
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=default, size=small, bg=black
+            </p>
+          </div>
+
+          {/* Small Size - Black with Subtext */}
+          <div>
+            <TableHeader
+              title="Customers"
+              subtitle="These companies have purchased in the last 12 months"
+              count={100}
+              countLabel="items"
+              size="small"
+              background="black"
+              type="default-w-subtext"
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=default-w-subtext, size=small, bg=black
+            </p>
+          </div>
+
+          {/* Small Size - Black with Buttons */}
+          <div>
+            <TableHeader
+              title="Team members"
+              count={100}
+              countLabel="items"
+              size="small"
+              background="black"
+              type="default-w-buttons"
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=default-w-buttons, size=small, bg=black
+            </p>
+          </div>
+
+          {/* Small Size - Black with Subtext and Buttons */}
+          <div>
+            <TableHeader
+              title="Customers"
+              subtitle="These companies have purchased in the last 12 months"
+              count={100}
+              countLabel="items"
+              size="small"
+              background="black"
+              type="default-w-subtext-and-buttons"
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=default-w-subtext-and-buttons, size=small, bg=black
             </p>
           </div>
         </div>
