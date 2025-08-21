@@ -68,7 +68,7 @@ export const PaymentIcon: React.FC<PaymentIconProps> = ({
     switch (method) {
       case 'visa':
         return (
-          <svg className="payment-icon__svg" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className="payment-icon__svg" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
             <rect width="48" height="32" rx="6" fill="white" stroke="#D0D5DD" strokeWidth="1"/>
             <path fillRule="evenodd" clipRule="evenodd" d="M8.33357 11.1444H5.58725L3.52784 3.05655C3.43009 2.68451 3.22255 2.3556 2.91725 2.20059C2.15535 1.81102 1.31579 1.50099 0.399902 1.34462V1.03324H4.82401C5.4346 1.03324 5.89254 1.50099 5.96887 2.04422L7.0374 7.87824L9.78238 1.03324H12.4524L8.33357 11.1444ZM13.9789 11.1444H11.3852L13.5209 1.03324H16.1146L13.9789 11.1444ZM19.4702 3.83433C19.5465 3.28975 20.0044 2.97837 20.5387 2.97837C21.3783 2.90019 22.2928 3.05655 23.0561 3.44477L23.514 1.2678C22.7508 0.956414 21.9112 0.800049 21.1493 0.800049C18.6319 0.800049 16.8002 2.20059 16.8002 4.14437C16.8002 5.62309 18.0977 6.39952 19.0136 6.86727C20.0044 7.33367 20.3861 7.64505 20.3097 8.11145C20.3097 8.81105 19.5465 9.12243 18.7846 9.12243C17.8687 9.12243 16.9528 8.88923 16.1146 8.49966L15.6567 10.678C16.5725 11.0662 17.5634 11.2226 18.4793 11.2226C21.3019 11.2994 23.0561 9.90021 23.0561 7.80007C23.0561 5.15535 19.4702 5.00033 19.4702 3.83433ZM32.1332 11.1444L30.0738 1.03324H27.8618C27.4038 1.03324 26.9459 1.34462 26.7932 1.81102L22.9797 11.1444H25.6497L26.1826 9.667H29.4632L29.7685 11.1444H32.1332ZM28.2434 3.75616L29.0053 7.56688H26.8696L28.2434 3.75616Z" fill="#172B85"/>
           </svg>
@@ -76,7 +76,7 @@ export const PaymentIcon: React.FC<PaymentIconProps> = ({
 
       case 'mastercard':
         return (
-          <svg className="payment-icon__svg" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className="payment-icon__svg" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
             <rect width="48" height="32" rx="6" fill="white" stroke="#D0D5DD" strokeWidth="1"/>
             <circle cx="20" cy="16" r="9" fill="#ED0006"/>
             <circle cx="28" cy="16" r="9" fill="#F9A000"/>
