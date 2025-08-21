@@ -264,7 +264,7 @@
 
 .split-button.primary.hover .split-button-text,
 .split-button.primary:hover:not(.disabled):not(.loading) .split-button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-semibold);
 }
 
 .split-button.primary.clicked,
@@ -275,7 +275,7 @@
 
 .split-button.primary.clicked .split-button-text,
 .split-button.primary:active:not(.disabled):not(.loading) .split-button-text {
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-medium);
 }
 
 .split-button.primary.focused,
@@ -313,7 +313,7 @@
 
 .split-button.secondary.hover .split-button-text,
 .split-button.secondary:hover:not(.disabled):not(.loading) .split-button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-semibold);
 }
 
 .split-button.secondary.clicked,
@@ -325,7 +325,7 @@
 
 .split-button.secondary.clicked .split-button-text,
 .split-button.secondary:active:not(.disabled):not(.loading) .split-button-text {
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-medium);
 }
 
 .split-button.secondary.focused,
@@ -363,7 +363,7 @@
 
 .split-button.ghost.hover .split-button-text,
 .split-button.ghost:hover:not(.disabled):not(.loading) .split-button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-semibold);
 }
 
 .split-button.ghost.clicked,
@@ -374,7 +374,7 @@
 
 .split-button.ghost.clicked .split-button-text,
 .split-button.ghost:active:not(.disabled):not(.loading) .split-button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-semibold);
 }
 
 .split-button.ghost.focused,
