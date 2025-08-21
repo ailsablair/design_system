@@ -105,58 +105,99 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  font-family: var(--type-typeface-archivo, Archivo);
-  font-style: normal;
-  font-weight: var(--type-weight-medium, 500);
   transition: all 0.2s ease;
   position: relative;
+  padding: 0;
 }
 
 .table-footer__page-number--default {
   width: 40px;
   height: 40px;
-  padding: var(--spacing-sizing-8px, 8px);
-  font-size: var(--type-archivo-heading-5, 19px);
-  line-height: var(--type-line-height-heading-5, 24px);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-5, -0.15px);
 }
 
 .table-footer__page-number--small {
   width: 32px;
   height: 32px;
-  padding: var(--spacing-sizing-8px, 8px);
-  font-size: var(--type-archivo-label, 16px);
-  line-height: var(--type-line-height-label, 22px);
-  letter-spacing: var(--type-letter-spacing-archivo-label, 0.15px);
   aspect-ratio: 1 / 1;
 }
 
-/* Default page number styling */
-.table-footer__page-number {
-  color: var(--base-white, #FFFFFF);
+/* Page Content Container */
+.table-footer__page-content {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: var(--spacing-sizing-8px, 8px);
+  position: relative;
 }
 
-.table-footer__page-number:hover {
-  background: rgba(255, 255, 255, 0.1);
+.table-footer__page-content--default {
+  padding: var(--spacing-sizing-8px, 8px);
+  height: 40px;
+}
+
+.table-footer__page-content--small {
+  padding: var(--spacing-sizing-8px, 8px);
+  height: 32px;
+}
+
+/* Page Text Styling */
+.table-footer__page-text {
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-style: normal;
+  text-align: center;
+  position: relative;
+}
+
+.table-footer__page-text--default {
+  font-size: var(--type-archivo-heading-5, 19px);
+  font-weight: var(--type-weight-medium, 500);
+  line-height: var(--type-line-height-heading-5, 24px);
+  letter-spacing: var(--type-letter-spacing-archivo-heading-5, -0.15px);
+}
+
+.table-footer__page-text--small {
+  font-size: var(--type-archivo-label, 16px);
+  font-weight: var(--type-weight-medium, 500);
+  line-height: var(--type-line-height-label, 22px);
+  letter-spacing: var(--type-letter-spacing-archivo-label, 0.15px);
+}
+
+/* Default page number styling - Gray text */
+.table-footer__page-text {
+  color: var(--neutral-gray-gray-500, #6D7280);
+}
+
+.table-footer__page-number:hover .table-footer__page-content {
+  background: rgba(109, 114, 128, 0.1);
 }
 
 .table-footer__page-number:disabled {
   cursor: default;
 }
 
-/* Active page number styling */
+/* Active page number styling - Blue theme */
 .table-footer__page-number--active {
-  border: var(--spacing-stroke-3px, 3px) solid var(--primary-yellow-dark-yellow, #E8A317) !important;
-  background: var(--primary-yellow-yellow-100, #FEF4DA) !important;
-  color: var(--base-black, #1C1C1C) !important;
+  border: 1px solid var(--primary-sky-blue-sky-blue, #0BA7EA) !important;
+  background: var(--primary-sky-blue-sky-blue-50, #E5F7FF) !important;
 }
 
-.table-footer__page-number--active.table-footer__page-number--small {
+.table-footer__page-text--active {
+  color: var(--primary-sky-blue-dark-sky-blue, #04435E) !important;
+}
+
+.table-footer__page-number--active.table-footer__page-number--small .table-footer__page-text {
   font-weight: var(--type-weight-bold, 700);
 }
 
 .table-footer__page-number--active:hover {
-  background: var(--primary-yellow-yellow-100, #FEF4DA) !important;
+  background: var(--primary-sky-blue-sky-blue-50, #E5F7FF) !important;
+}
+
+.table-footer__page-number--active:hover .table-footer__page-content {
+  background: transparent;
 }
 
 /* === DOTS === */
@@ -187,16 +228,7 @@
 }
 
 /* === LIGHT BACKGROUNDS OVERRIDES === */
-
-.table-footer--light-gray .table-footer__page-number,
-.table-footer--blue-50 .table-footer__page-number {
-  color: var(--base-black, #1C1C1C);
-}
-
-.table-footer--light-gray .table-footer__page-number:hover,
-.table-footer--blue-50 .table-footer__page-number:hover {
-  background: rgba(0, 0, 0, 0.05);
-}
+/* No overrides needed - page numbers always use gray text for inactive, blue theme for active */
 
 /* === RESPONSIVE DESIGN === */
 
