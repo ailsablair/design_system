@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button, AlarmIcon } from './Button';
-import { SplitButton } from './SplitButton';
+import { Button, AlarmIcon } from '../../atoms/Button';
+import { SplitButton } from '../../atoms/SplitButton';
 
 const meta: Meta<typeof Button> = {
-  title: 'Atoms/Button/Figma Showcase',
+  title: 'Design System/Figma Showcase Files/Button Extended Figma Showcase',
   component: Button,
   parameters: {
     layout: 'padded',
