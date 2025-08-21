@@ -173,8 +173,8 @@
   outline: none;
   background: transparent;
   font-family: var(--type-typeface-roboto-flex);
-  font-weight: var(--type-weight-regular);
-  color: var(--base-black);
+  font-weight: var(--type-weight-light);
+  color: var(--neutral-gray-gray-700);
   padding: var(--spacing-sizing-0);
   min-width: 0;
   width: 100%;
@@ -202,7 +202,8 @@
 }
 
 .textarea-field::placeholder {
-  color: var(--secondary-blue-gray);
+  color: var(--neutral-gray-gray-700);
+  font-weight: var(--type-weight-light);
 }
 
 .textarea-field:disabled {
