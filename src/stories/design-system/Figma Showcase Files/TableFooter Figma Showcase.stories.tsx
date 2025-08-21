@@ -86,6 +86,140 @@ export const FigmaDesignExact: Story = {
         </p>
       </div>
 
+      {/* Default (White) Background Variants */}
+      <section>
+        <h2 style={{
+          margin: '0 0 24px 0',
+          fontSize: '24px',
+          fontWeight: '600',
+          color: '#1C1C1C',
+          fontFamily: 'Archivo, -apple-system, sans-serif'
+        }}>
+          Default (White) Background Variants (from Figma)
+        </h2>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '48px' }}>
+          {/* Default Footer with Navigation */}
+          <div>
+            <TableFooter
+              type="default"
+              size="default"
+              background="default"
+              currentPage={1}
+              totalPages={10}
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=default, size=default, bg=default
+            </p>
+          </div>
+
+          {/* View More Footer */}
+          <div>
+            <TableFooter
+              type="view-more"
+              size="default"
+              background="default"
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=view-more, size=default, bg=default
+            </p>
+          </div>
+
+          {/* Pagination Only Footer */}
+          <div>
+            <TableFooter
+              type="pagination-only"
+              size="default"
+              background="default"
+              currentPage={1}
+              totalPages={10}
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=pagination-only, size=default, bg=default
+            </p>
+          </div>
+
+          {/* No Content Footer */}
+          <div>
+            <TableFooter
+              type="no-content"
+              size="default"
+              background="default"
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=no-content, size=default, bg=default
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Small Size - Default (White) Background */}
+      <section>
+        <h2 style={{
+          margin: '0 0 24px 0',
+          fontSize: '24px',
+          fontWeight: '600',
+          color: '#1C1C1C',
+          fontFamily: 'Archivo, -apple-system, sans-serif'
+        }}>
+          Small Size - Default (White) Background (from Figma)
+        </h2>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '48px' }}>
+          {/* Small Default Footer */}
+          <div>
+            <TableFooter
+              type="default"
+              size="small"
+              background="default"
+              currentPage={1}
+              totalPages={10}
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=default, size=small, bg=default
+            </p>
+          </div>
+
+          {/* Small View More Footer */}
+          <div>
+            <TableFooter
+              type="view-more"
+              size="small"
+              background="default"
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=view-more, size=small, bg=default
+            </p>
+          </div>
+
+          {/* Small Pagination Only Footer */}
+          <div>
+            <TableFooter
+              type="pagination-only"
+              size="small"
+              background="default"
+              currentPage={1}
+              totalPages={10}
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=pagination-only, size=small, bg=default
+            </p>
+          </div>
+
+          {/* Small No Content Footer */}
+          <div>
+            <TableFooter
+              type="no-content"
+              size="small"
+              background="default"
+            />
+            <p style={{ margin: '8px 0 0 0', fontSize: '13px', color: '#9CA3AF' }}>
+              type=no-content, size=small, bg=default
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Light Gray Background Variants */}
       <section>
         <h2 style={{
