@@ -10,6 +10,11 @@
   overflow: hidden;
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
+  /* Prevent layout shifts and ensure consistent rendering */
+  flex-shrink: 0;
+  vertical-align: middle;
+  /* Ensure proper positioning context */
+  isolation: isolate;
 }
 
 .payment-icon--clickable {
@@ -54,22 +59,41 @@
   width: 100%;
   height: 100%;
   display: block;
+  flex-shrink: 0;
+  /* Ensure proper scaling and prevent layout shifts */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  /* Optimize for crisp rendering */
+  shape-rendering: crispEdges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  /* Prevent selection and dragging */
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
 
-/* Ensure proper scaling for different sizes */
+/* Ensure proper scaling for different sizes with precise dimensions */
 .payment-icon--small .payment-icon__svg {
   width: var(--spacing-sizing-40px);
   height: var(--spacing-sizing-28px);
+  min-width: var(--spacing-sizing-40px);
+  min-height: var(--spacing-sizing-28px);
 }
 
 .payment-icon--default .payment-icon__svg {
   width: var(--spacing-sizing-48px);
   height: var(--spacing-sizing-32px);
+  min-width: var(--spacing-sizing-48px);
+  min-height: var(--spacing-sizing-32px);
 }
 
 .payment-icon--large .payment-icon__svg {
   width: 56px;
   height: 36px;
+  min-width: 56px;
+  min-height: 36px;
 }
 
 /* === PLACEHOLDER STYLING === */
