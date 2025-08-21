@@ -1,9 +1,9 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Label, AlarmIcon, ArrowDownCircleIcon } from './Label';
+import { Label, AlarmIcon, ArrowDownCircleIcon } from '../../atoms/Label';
 
 const meta: Meta<typeof Label> = {
-  title: 'Atoms/Label',
+  title: 'Design System/Figma Showcase Files/Label Extended Figma Showcase',
   component: Label,
   parameters: {
     layout: 'fullscreen',
