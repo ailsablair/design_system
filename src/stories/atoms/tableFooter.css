@@ -209,6 +209,11 @@
 }
 
 .table-footer__page-number--active:hover {
+  background: var(--primary-blue-blue-50, #F9F9FE) !important;
+}
+
+.table-footer--light-gray .table-footer__page-number--active:hover,
+.table-footer--blue-50 .table-footer__page-number--active:hover {
   background: var(--primary-sky-blue-sky-blue-50, #E5F7FF) !important;
 }
 
