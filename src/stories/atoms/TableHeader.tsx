@@ -15,7 +15,7 @@ export interface TableHeaderProps {
   /** Size variant */
   size?: 'small' | 'default';
   /** Background variant */
-  background?: 'light-gray' | 'blue-50';
+  background?: 'light-gray' | 'blue-50' | 'black';
   /** Header type/layout variant */
   type?: 'default' | 'default-w-subtext' | 'default-w-buttons' | 'default-w-subtext-and-buttons';
   /** Show count tag */
