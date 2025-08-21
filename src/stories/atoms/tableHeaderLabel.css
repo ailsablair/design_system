@@ -1,0 +1,195 @@
+/* TableHeaderLabel Component - Figma Design Implementation */
+
+/* Base Header Label */
+.table-header-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  cursor: default;
+  user-select: none;
+  /* Ensure proper rendering */
+  contain: layout style;
+}
+
+.table-header-label--clickable {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.table-header-label--clickable:hover {
+  /* Hover effects are handled via state prop */
+}
+
+.table-header-label--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* === TEXT STYLES === */
+
+.table-header-label__text {
+  color: var(--base-black, #1C1C1C);
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.15px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Small size text */
+.table-header-label__text--small {
+  font-size: var(--type-archivo-label-sm, 14px);
+  line-height: var(--type-line-height-label-sm, 17px);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm, 0.15px);
+  font-weight: var(--type-weight-light, 300);
+}
+
+/* Default size text */
+.table-header-label__text--default {
+  font-size: var(--type-archivo-label, 16px);
+  line-height: var(--type-line-height-label, 22px);
+  letter-spacing: var(--type-letter-spacing-archivo-label, 0.15px);
+  font-weight: var(--type-weight-light, 300);
+}
+
+/* Large size text */
+.table-header-label__text--large {
+  font-size: var(--type-archivo-label-lg, 18px);
+  line-height: var(--type-line-height-label-lg, 24px);
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg, 0.15px);
+  font-weight: var(--type-weight-light, 300);
+}
+
+/* === STATE VARIATIONS === */
+
+/* Hover state - text becomes bold */
+.table-header-label--hover .table-header-label__text--small,
+.table-header-label--hover .table-header-label__text--default,
+.table-header-label--hover .table-header-label__text--large {
+  font-weight: var(--type-weight-bold, 700);
+}
+
+/* === HELP BUTTON === */
+
+.table-header-label__help-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.table-header-label__help-button:hover {
+  /* Hover effects are handled via SVG fill color */
+}
+
+.table-header-label__help-button:focus {
+  outline: 2px solid var(--primary-blue-blue-400, #6171DF);
+  outline-offset: 2px;
+}
+
+.table-header-label__help-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* === SORT ICON === */
+
+.table-header-label__sort-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* === RESPONSIVE DESIGN === */
+
+@media (max-width: 768px) {
+  .table-header-label {
+    gap: 3px;
+  }
+  
+  .table-header-label__text--large {
+    font-size: var(--type-archivo-label, 16px);
+    line-height: var(--type-line-height-label, 22px);
+  }
+}
+
+@media (max-width: 480px) {
+  .table-header-label {
+    gap: 2px;
+  }
+  
+  .table-header-label__text--default {
+    font-size: var(--type-archivo-label-sm, 14px);
+    line-height: var(--type-line-height-label-sm, 17px);
+  }
+  
+  .table-header-label__text--large {
+    font-size: var(--type-archivo-label-sm, 14px);
+    line-height: var(--type-line-height-label-sm, 17px);
+  }
+}
+
+/* === ACCESSIBILITY === */
+
+@media (prefers-reduced-motion: reduce) {
+  .table-header-label--clickable {
+    transition: none;
+  }
+  
+  .table-header-label__help-button {
+    transition: none;
+  }
+}
+
+/* === HIGH CONTRAST MODE === */
+
+@media (prefers-contrast: high) {
+  .table-header-label__text {
+    color: #000;
+  }
+  
+  .table-header-label__help-button:focus {
+    outline-width: 3px;
+  }
+}
+
+/* === FOCUS VISIBLE SUPPORT === */
+
+.table-header-label--clickable:focus-visible {
+  outline: 2px solid var(--primary-blue-blue-400, #6171DF);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.table-header-label--clickable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* === PRINT STYLES === */
+
+@media print {
+  .table-header-label {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  
+  .table-header-label__help-button {
+    display: none;
+  }
+  
+  .table-header-label__sort-icon {
+    display: none;
+  }
+}
