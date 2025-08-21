@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react';
 import { setupResizeObserverErrorHandler } from '../src/utils/resizeObserverHandler';
-import { withErrorBoundary } from '../src/stories/chromatic/ErrorBoundary';
+import { withErrorBoundary } from '../src/stories/chromatic/Debug/ErrorBoundary';
 
 // Initialize enhanced ResizeObserver error handling for Storybook
 setupResizeObserverErrorHandler();
