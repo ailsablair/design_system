@@ -840,14 +840,18 @@
 
 /* Error button variant */
 .button.error {
-  background: var(--status-red);
-  border: var(--spacing-stroke-2px) solid var(--status-red-light-alt);
-  color: var(--base-white);
+  background: var(--status-red, #CE2031);
+  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--status-red-light, #FFF3F3);
+  color: var(--base-white, #FFFFFF);
 }
 
 .button.error .button-icon {
-  color: var(--base-white);
+  color: var(--base-white, #FFFFFF);
   opacity: 0.6;
+}
+
+.button.error .button-text {
+  font-weight: var(--type-weight-medium, 500);
 }
 
 /* Warning button variant */
@@ -926,52 +930,49 @@
 
 /* State variants for error buttons */
 .button.error.default {
-  background: var(--status-red);
-  border: var(--spacing-stroke-2px) solid var(--status-red-light-alt);
-  box-shadow: 3px 3px 0 0 var(--status-red);
+  background: var(--status-red, #CE2031);
+  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--status-red-light, #FFF3F3);
 }
 
 .button.error.hover,
 .button.error:hover:not(.disabled):not(.loading) {
-  background: var(--status-red);
-  border: var(--spacing-stroke-2px) solid var(--status-red-light-alt);
-  box-shadow: 3px 3px 0 0 var(--status-red);
+  background: var(--status-red, #CE2031);
+  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--status-red-light, #FFF3F3);
 }
 
 .button.error.hover .button-text,
 .button.error:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-medium, 500);
 }
 
 .button.error.clicked,
 .button.error:active:not(.disabled):not(.loading) {
-  background: var(--status-red);
-  border: var(--spacing-stroke-2px) solid var(--status-red-light-alt);
-  box-shadow: 3px 3px 0 0 var(--status-red);
+  background: var(--status-red, #CE2031);
+  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--status-red-light, #FFF3F3);
 }
 
 .button.error.clicked .button-text,
 .button.error:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-medium, 500);
 }
 
 .button.error.focused,
 .button.error:focus-visible:not(.disabled):not(.loading) {
-  border: var(--spacing-stroke-3px) solid var(--status-red-light-alt);
-  box-shadow: 3px 3px 0 0 var(--status-red);
+  border: var(--spacing-stroke-2px, 2px) solid var(--status-red-light, #FFF3F3);
+  outline: var(--spacing-stroke-2px, 2px) solid var(--status-red, #CE2031);
+  outline-offset: var(--spacing-sizing-2px, 2px);
 }
 
 .button.error.loading {
-  background: var(--status-red);
-  border: var(--spacing-stroke-2px) solid var(--status-red-light-alt);
-  box-shadow: 3px 3px 0 0 var(--status-red);
+  background: var(--status-red, #CE2031);
+  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--status-red-light, #FFF3F3);
   cursor: wait;
   pointer-events: none;
 }
 
 .button.error.disabled {
   background: var(--neutral-gray-gray-100);
-  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-300);
+  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--neutral-gray-gray-300);
   color: var(--neutral-gray-gray-500);
   cursor: not-allowed;
   pointer-events: none;
@@ -980,6 +981,10 @@
 .button.error.disabled .button-icon {
   color: var(--neutral-gray-gray-500);
   opacity: 0.8;
+}
+
+.button.error.disabled .button-text {
+  font-weight: var(--type-weight-medium, 500);
 }
 
 /* State variants for warning buttons */
@@ -1085,28 +1090,27 @@
 
 /* Force state classes for error buttons */
 .button.error.force-hover {
-  background: var(--status-red) !important;
-  border: var(--spacing-stroke-2px) solid var(--status-red-light-alt) !important;
-  box-shadow: 3px 3px 0 0 var(--status-red) !important;
+  background: var(--status-red, #CE2031) !important;
+  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--status-red-light, #FFF3F3) !important;
 }
 
 .button.error.force-hover .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-medium, 500) !important;
 }
 
 .button.error.force-clicked {
-  background: var(--status-red) !important;
-  border: var(--spacing-stroke-2px) solid var(--status-red-light-alt) !important;
-  box-shadow: 3px 3px 0 0 var(--status-red) !important;
+  background: var(--status-red, #CE2031) !important;
+  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--status-red-light, #FFF3F3) !important;
 }
 
 .button.error.force-clicked .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-medium, 500) !important;
 }
 
 .button.error.force-focused {
-  border: var(--spacing-stroke-3px) solid var(--status-red-light-alt) !important;
-  box-shadow: 3px 3px 0 0 var(--status-red) !important;
+  border: var(--spacing-stroke-2px, 2px) solid var(--status-red-light, #FFF3F3) !important;
+  outline: var(--spacing-stroke-2px, 2px) solid var(--status-red, #CE2031) !important;
+  outline-offset: var(--spacing-sizing-2px, 2px) !important;
 }
 
 /* Force state classes for warning buttons */
