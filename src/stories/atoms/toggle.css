@@ -232,6 +232,24 @@
   }
 }
 
+/* === SVG OPTIMIZATION === */
+
+.toggle-switch svg {
+  display: block;
+  flex-shrink: 0;
+  /* Optimize for crisp rendering */
+  shape-rendering: crispEdges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  /* Prevent selection and interaction */
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+  /* Ensure proper positioning */
+  position: relative;
+  z-index: 1;
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .toggle-slide-area,
