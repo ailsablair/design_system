@@ -15,16 +15,22 @@ const meta: Meta = {
 # ResizeObserver Error Testing
 
 This story tests that ResizeObserver errors are properly handled and suppressed.
-If the error handling is working correctly, you should not see any console errors
-related to ResizeObserver when interacting with these components.
+The enhanced error handling system catches multiple error patterns and timing scenarios.
+
+## Enhanced Error Handling Features
+- **Multiple Pattern Detection**: Catches various ResizeObserver error message formats
+- **Early Initialization**: Error handler runs immediately when modules load
+- **Animation Frame Protection**: Catches errors in requestAnimationFrame callbacks
+- **React StrictMode Compatibility**: Works with React's double-rendering in development
 
 ## Testing Instructions
 1. Open the browser console
-2. Hover over the avatars rapidly
-3. Resize the browser window
-4. Check that no ResizeObserver errors appear in console
+2. Click the "Test ResizeObserver Error Handling" button
+3. Hover over the avatars rapidly
+4. Resize the browser window
+5. Check that no ResizeObserver errors appear in console
 
-Any ResizeObserver errors should be automatically suppressed by our error handler.
+Any ResizeObserver errors should be automatically suppressed by our enhanced error handler.
         `
       }
     }
