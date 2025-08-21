@@ -1,0 +1,115 @@
+/* UserProfile Component */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2);
+  border-radius: var(--border-radius-default);
+  transition: background-color var(--transition-duration-default);
+  width: 100%;
+  min-width: 0; /* Allow text truncation */
+}
+
+/* Interactive State */
+.user-profile--clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.user-profile--clickable:hover {
+  background-color: var(--color-gray-50);
+}
+
+.user-profile--clickable:focus {
+  outline: 2px solid var(--color-primary-blue);
+  outline-offset: 2px;
+}
+
+/* Size Variants */
+.user-profile--small {
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-2);
+}
+
+.user-profile--small .user-profile__name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-sm);
+}
+
+.user-profile--default {
+  gap: var(--space-3);
+  padding: var(--space-2);
+}
+
+.user-profile--default .user-profile__name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+}
+
+.user-profile--large {
+  gap: var(--space-4);
+  padding: var(--space-3);
+}
+
+.user-profile--large .user-profile__name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-lg);
+}
+
+/* Avatar */
+.user-profile__avatar {
+  flex-shrink: 0;
+}
+
+/* Name */
+.user-profile__name {
+  color: var(--color-gray-900);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .user-profile {
+    padding: var(--space-2) var(--space-1);
+  }
+  
+  .user-profile--small {
+    padding: var(--space-1);
+  }
+  
+  .user-profile--large {
+    padding: var(--space-2) var(--space-1);
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .user-profile--clickable:hover {
+    background-color: var(--color-gray-800);
+  }
+  
+  .user-profile__name {
+    color: var(--color-gray-100);
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .user-profile--clickable:focus {
+    outline-width: 3px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .user-profile {
+    transition: none;
+  }
+}
