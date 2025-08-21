@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AvatarGroup } from './AvatarGroup';
+import { AvatarGroup } from '../../atoms/AvatarGroup';
 
 const meta: Meta<typeof AvatarGroup> = {
-  title: 'Debug/Quick Test',
+  title: 'Chromatic/Debug/Quick Test',
   component: AvatarGroup,
   parameters: {
     layout: 'centered',
