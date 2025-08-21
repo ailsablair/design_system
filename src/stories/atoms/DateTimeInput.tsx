@@ -105,6 +105,7 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
   onFocus,
   onBlur,
 }) => {
+  const inputRef = React.useRef<HTMLInputElement>(null);
   const inputId = id || `datetime-input-${Math.random().toString(36).substring(2, 11)}`;
   const isFocused = state === 'focus' || state === 'typing';
   const isTyping = state === 'typing';
@@ -112,6 +113,48 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
 
   const getDefaultPlaceholder = () => {
     return type === 'date' ? 'DD / MMM / YYYY' : '00 : 00 : 00 PM';
+  };
+
+  // Get current date in YYYY-MM-DD format for default value
+  const getCurrentDate = () => {
+    const today = new Date();
+    return today.toISOString().split('T')[0];
+  };
+
+  // Get current time in HH:MM format for default value
+  const getCurrentTime = () => {
+    const now = new Date();
+    return now.toTimeString().substring(0, 5);
+  };
+
+  // Handle input click to focus on current date/time
+  const handleInputClick = () => {
+    if (inputRef.current && !disabled) {
+      if (!value) {
+        // Set current date/time as default when no value is present
+        const defaultValue = type === 'date' ? getCurrentDate() : getCurrentTime();
+        if (onChange) {
+          const event = {
+            target: { value: defaultValue }
+          } as React.ChangeEvent<HTMLInputElement>;
+          onChange(event);
+        }
+      }
+      inputRef.current.focus();
+      inputRef.current.showPicker?.(); // Show native picker if supported
+    }
+  };
+
+  const handleClear = () => {
+    if (onClose) {
+      onClose();
+    }
+    if (onChange) {
+      const event = {
+        target: { value: '' }
+      } as React.ChangeEvent<HTMLInputElement>;
+      onChange(event);
+    }
   };
 
   const renderValue = () => {
@@ -125,7 +168,7 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
         </>
       );
     }
-    
+
     if (isFocused && !value) {
       return <span className="datetime-input-cursor">|</span>;
     }
