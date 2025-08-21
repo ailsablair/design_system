@@ -1,21 +1,48 @@
 import React from 'react';
 import { Checkbox } from '../Checkbox';
 import { Toggle } from '../Toggle';
+import { Avatar } from '../Avatar';
+import { PaymentIcon, type PaymentMethod } from '../PaymentIcon';
+import { FileIcon, type FileType } from '../FileIcon';
 import './tableCell.css';
 
 export interface TableCellProps {
   /** Cell size variant */
   size?: 'small' | 'default';
   /** Cell type determines the layout and content */
-  type?: 'title' | 'title-subtext' | 'toggle' | 'toggle-w-subtext';
+  type?: 
+    | 'avatar-w-title' 
+    | 'avatar-w-subtext' 
+    | 'toggle-avatar-w-title' 
+    | 'toggle-avatar-w-subtext'
+    | 'payment-w-select'
+    | 'payment-w-select-and-expiry'
+    | 'payment-w-toggle'
+    | 'payment-w-toggle-and-expiry'
+    | 'file-w-select'
+    | 'file-w-select-and-expiry'
+    | 'file-w-toggle'
+    | 'file-w-toggle-and-expiry';
   /** Background variant */
-  background?: 'alt-seafoam-25' | 'default' | 'alt-gray-50' | 'disabled' | 'hover';
+  background?: 'default' | 'disabled' | 'hover';
   /** Lead cell indicates this is a primary/leading cell in the row */
   leadCell?: boolean;
   /** Title text */
   title?: string;
   /** Supporting/subtitle text */
   subtext?: string;
+  /** Avatar source URL */
+  avatarSrc?: string;
+  /** Payment method type */
+  paymentMethod?: PaymentMethod;
+  /** File type */
+  fileType?: FileType;
+  /** File name (for file cells) */
+  fileName?: string;
+  /** File size (for file cells with expiry) */
+  fileSize?: string;
+  /** Payment expiry (for payment cells with expiry) */
+  paymentExpiry?: string;
   /** Checkbox checked state */
   checked?: boolean;
   /** Toggle enabled state */
@@ -35,27 +62,32 @@ export interface TableCellProps {
 }
 
 /**
- * Table Cell component based on Figma designs
+ * Comprehensive Table Cell component based on Figma designs
  * 
- * Supports multiple variants:
- * - Checkbox with title only
- * - Checkbox with title and subtext
- * - Toggle switch only
- * - Toggle switch with title and subtext
+ * Supports all cell variants including:
+ * - Avatar cells with checkbox or toggle controls
+ * - Payment method cells with checkbox or toggle controls
+ * - File cells with checkbox or toggle controls
  * 
  * Features different background states and sizes matching the design system
  */
 export const TableCell: React.FC<TableCellProps> = ({
   size = 'default',
-  type = 'title',
+  type = 'avatar-w-title',
   background = 'default',
   leadCell = true,
   title = 'Olivia Rhye',
   subtext = 'olivia@email.com',
+  avatarSrc = 'https://api.builder.io/api/v1/image/assets/TEMP/acb4fa3d49dfd6070fffc9f08acdf9b00172321c',
+  paymentMethod = 'visa',
+  fileType = 'pdf',
+  fileName = 'thisisafilename.pdf',
+  fileSize = '200 MB',
+  paymentExpiry = 'Expiry 01/2001',
   checked = false,
   enabled = true,
   disabled = false,
-  width,
+  width = '320px',
   className = '',
   onCheckboxChange,
   onToggleChange,
@@ -74,13 +106,17 @@ export const TableCell: React.FC<TableCellProps> = ({
   const cellStyle = width ? { width } : undefined;
 
   const renderContent = () => {
-    const showCheckbox = type === 'title' || type === 'title-subtext';
-    const showToggle = type === 'toggle' || type === 'toggle-w-subtext';
-    const showSubtext = type === 'title-subtext' || type === 'toggle-w-subtext';
+    const isAvatarCell = type.includes('avatar');
+    const isPaymentCell = type.includes('payment');
+    const isFileCell = type.includes('file');
+    const hasCheckbox = type.includes('w-select');
+    const hasToggle = type.includes('toggle');
+    const hasSubtext = type.includes('subtext') || type.includes('expiry');
 
     return (
       <>
-        {showCheckbox && (
+        {/* Checkbox Control */}
+        {hasCheckbox && (
           <div className="table-cell-checkbox">
             <Checkbox
               size={size === 'small' ? 'small' : 'default'}
@@ -93,7 +129,8 @@ export const TableCell: React.FC<TableCellProps> = ({
           </div>
         )}
 
-        {showToggle && (
+        {/* Toggle Control */}
+        {hasToggle && (
           <div className="table-cell-toggle">
             <Toggle
               size={size === 'small' ? 'small' : 'default'}
@@ -101,23 +138,58 @@ export const TableCell: React.FC<TableCellProps> = ({
               disabled={disabled}
               onChange={onToggleChange}
               icon={true}
-              state={disabled ? 'disabled' : 'default'}
+              state={disabled ? 'disabled' : (background === 'hover' ? 'hover' : 'default')}
             />
           </div>
         )}
 
-        {(type !== 'toggle') && (
-          <div className="table-cell-content">
-            <div className="table-cell-title">
-              {title}
-            </div>
-            {showSubtext && (
-              <div className="table-cell-subtext">
-                {subtext}
-              </div>
-            )}
+        {/* Avatar */}
+        {isAvatarCell && (
+          <div className="table-cell-avatar">
+            <Avatar
+              size={size === 'small' ? 'x-small' : 'default'}
+              type="empty-state"
+              shape="default"
+              border={false}
+              src={avatarSrc}
+              alt={title}
+            />
           </div>
         )}
+
+        {/* Payment Icon */}
+        {isPaymentCell && (
+          <div className="table-cell-payment-icon">
+            <PaymentIcon
+              method={paymentMethod}
+              size={size === 'small' ? 'small' : 'large'}
+            />
+          </div>
+        )}
+
+        {/* File Icon */}
+        {isFileCell && (
+          <div className="table-cell-file-icon">
+            <FileIcon
+              type={fileType}
+              size={size === 'small' ? 'small' : 'medium'}
+            />
+          </div>
+        )}
+
+        {/* Content */}
+        <div className="table-cell-content">
+          <div className="table-cell-title">
+            {isFileCell ? fileName : isPaymentCell ? `${paymentMethod === 'visa' ? 'Visa' : 'Card'} ending in 1234` : title}
+          </div>
+          {hasSubtext && (
+            <div className="table-cell-subtext">
+              {isPaymentCell && type.includes('expiry') ? paymentExpiry :
+               isFileCell && type.includes('expiry') ? fileSize :
+               subtext}
+            </div>
+          )}
+        </div>
       </>
     );
   };
