@@ -21,6 +21,10 @@
   background: var(--primary-blue-blue-50, #F9F9FE);
 }
 
+.table-header--black {
+  background: var(--neutral-gray-gray-800, #1F2937);
+}
+
 /* === SIZE VARIANTS === */
 
 .table-header--small {
