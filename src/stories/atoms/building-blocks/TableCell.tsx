@@ -4,16 +4,18 @@ import { Toggle } from '../Toggle';
 import { Avatar } from '../Avatar';
 import { PaymentIcon, type PaymentMethod } from '../PaymentIcon';
 import { FileIcon, type FileType } from '../FileIcon';
+import { Star } from '../Star';
+import { Button } from '../Button';
 import './tableCell.css';
 
 export interface TableCellProps {
   /** Cell size variant */
   size?: 'small' | 'default';
   /** Cell type determines the layout and content */
-  type?: 
-    | 'avatar-w-title' 
-    | 'avatar-w-subtext' 
-    | 'toggle-avatar-w-title' 
+  type?:
+    | 'avatar-w-title'
+    | 'avatar-w-subtext'
+    | 'toggle-avatar-w-title'
     | 'toggle-avatar-w-subtext'
     | 'payment-w-select'
     | 'payment-w-select-and-expiry'
@@ -22,9 +24,13 @@ export interface TableCellProps {
     | 'file-w-select'
     | 'file-w-select-and-expiry'
     | 'file-w-toggle'
-    | 'file-w-toggle-and-expiry';
+    | 'file-w-toggle-and-expiry'
+    | 'links'
+    | 'rating'
+    | 'more-actions'
+    | 'icon-only';
   /** Background variant */
-  background?: 'default' | 'disabled' | 'hover';
+  background?: 'default' | 'disabled' | 'hover' | 'alt-seafoam-25' | 'alt-gray-50';
   /** Lead cell indicates this is a primary/leading cell in the row */
   leadCell?: boolean;
   /** Title text */
@@ -47,6 +53,10 @@ export interface TableCellProps {
   checked?: boolean;
   /** Toggle enabled state */
   enabled?: boolean;
+  /** Rating value (for rating cells) - number of filled stars */
+  rating?: number;
+  /** Maximum rating (for rating cells) */
+  maxRating?: number;
   /** Disabled state */
   disabled?: boolean;
   /** Width of the cell */
@@ -59,6 +69,12 @@ export interface TableCellProps {
   onToggleChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /** Click handler for the cell */
   onClick?: () => void;
+  /** Edit action handler (for links cells) */
+  onEdit?: () => void;
+  /** Delete action handler (for links cells) */
+  onDelete?: () => void;
+  /** More actions handler (for more-actions and icon-only cells) */
+  onMoreActions?: () => void;
 }
 
 /**
