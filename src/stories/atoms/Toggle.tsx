@@ -29,19 +29,19 @@ export interface ToggleProps {
 const CheckIcon = ({ size = 'default' }: { size?: 'small' | 'default' | 'large' }) => {
   if (size === 'small') {
     return (
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
         <path d="M10.5 3.49992L4.5 9.49992L1.75 6.74992L2.455 6.04492L4.5 8.08492L9.795 2.79492L10.5 3.49992Z" fill="#227F1A" stroke="#227F1A"/>
       </svg>
     );
   } else if (size === 'default') {
     return (
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
         <path d="M15.75 5.24988L6.75 14.2499L2.625 10.1249L3.6825 9.06738L6.75 12.1274L14.6925 4.19238L15.75 5.24988Z" fill="#227F1A" stroke="#227F1A"/>
       </svg>
     );
   } else {
     return (
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
         <path d="M15.75 5.24988L6.75 14.2499L2.625 10.1249L3.6825 9.06738L6.75 12.1274L14.6925 4.19238L15.75 5.24988Z" fill="#227F1A" stroke="#227F1A"/>
       </svg>
     );
@@ -51,19 +51,19 @@ const CheckIcon = ({ size = 'default' }: { size?: 'small' | 'default' | 'large' 
 const CheckIconClicked = ({ size = 'default' }: { size?: 'small' | 'default' | 'large' }) => {
   if (size === 'small') {
     return (
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
         <path d="M10.5 3.49992L4.5 9.49992L1.75 6.74992L2.455 6.04492L4.5 8.08492L9.795 2.79492L10.5 3.49992Z" fill="#D6F0FB" stroke="#D6F0FB"/>
       </svg>
     );
   } else if (size === 'default') {
     return (
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
         <path d="M15.75 5.24988L6.75 14.2499L2.625 10.1249L3.6825 9.06738L6.75 12.1274L14.6925 4.19238L15.75 5.24988Z" fill="#D6F0FB" stroke="#D6F0FB"/>
       </svg>
     );
   } else {
     return (
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
         <path d="M15.75 5.24988L6.75 14.2499L2.625 10.1249L3.6825 9.06738L6.75 12.1274L14.6925 4.19238L15.75 5.24988Z" fill="#D6F0FB" stroke="#D6F0FB"/>
       </svg>
     );
