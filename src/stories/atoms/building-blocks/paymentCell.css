@@ -1,0 +1,232 @@
+/* PaymentCell Component Styles */
+
+.payment-cell-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-16px, 16px);
+  padding: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-24px, 24px) var(--spacing-sizing-8px, 8px) var(--spacing-sizing-24px, 24px);
+  border-bottom: var(--spacing-stroke-1px, 1px) solid var(--neutral-gray-gray-200, #E5E7EB);
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Size Variants */
+.payment-cell-size-default {
+  height: 72px;
+}
+
+.payment-cell-size-small {
+  height: 52px;
+  padding: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-24px, 24px) var(--spacing-sizing-8px, 8px) var(--spacing-sizing-24px, 24px);
+}
+
+/* Background Variants */
+.payment-cell-bg-white {
+  background: var(--base-white, #FFF);
+}
+
+.payment-cell-bg-alt-gray-50 {
+  background: var(--neutral-gray-gray-50, #F9FAFB);
+}
+
+.payment-cell-bg-alt-seafoam-25 {
+  background: var(--primary-seafoam-seafoam-25, #F9FCFA);
+}
+
+.payment-cell-bg-hover {
+  background: var(--primary-sky-blue-sky-blue-25, #F2FBFF);
+}
+
+.payment-cell-bg-disabled {
+  background: var(--neutral-gray-gray-100, #F3F4F6);
+}
+
+/* Toggle Container */
+.payment-cell-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Payment Icon Container */
+.payment-cell-payment-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.payment-cell-size-default .payment-cell-payment-icon {
+  width: 52px;
+  height: 36px;
+}
+
+.payment-cell-size-small .payment-cell-payment-icon {
+  width: 40px;
+  height: 28px;
+}
+
+/* Content Layout */
+.payment-cell-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-sizing-4px, 4px);
+  flex: 1;
+  min-width: 0; /* Allow text truncation */
+}
+
+.payment-cell-size-small .payment-cell-content {
+  gap: var(--spacing-sizing-6px, 6px);
+}
+
+/* Single content item centering */
+.payment-cell-variant-payment-w-toggle .payment-cell-content {
+  justify-content: center;
+}
+
+/* Typography */
+.payment-cell-payment-name {
+  color: var(--base-black, #1C1C1C);
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-style: normal;
+  font-weight: var(--type-weight-medium, 500);
+  letter-spacing: var(--type-letter-spacing-archivo-label, 0.15px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.payment-cell-size-default .payment-cell-payment-name {
+  font-size: var(--type-archivo-label, 16px);
+  line-height: var(--type-line-height-label, 22px);
+}
+
+.payment-cell-size-small .payment-cell-payment-name {
+  font-size: var(--type-archivo-label-sm, 14px);
+  line-height: var(--type-line-height-label-sm, 17px);
+}
+
+.payment-cell-payment-expiry {
+  color: var(--neutral-gray-gray-500, #6D7280);
+  font-family: var(--type-typeface-roboto-flex, "Roboto Flex");
+  font-style: normal;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.payment-cell-size-default .payment-cell-payment-expiry {
+  font-size: var(--type-roboto-flex-body, 16px);
+  line-height: var(--type-line-height-body, 20px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body, 0.05px);
+}
+
+.payment-cell-size-small .payment-cell-payment-expiry {
+  font-size: var(--type-roboto-flex-body-sm, 14px);
+  line-height: var(--type-line-height-body-sm, 16px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm, -0.15px);
+}
+
+/* Disabled State */
+.payment-cell-disabled .payment-cell-payment-name {
+  color: var(--neutral-gray-gray-400, #9CA3AF);
+}
+
+.payment-cell-disabled .payment-cell-payment-expiry {
+  color: var(--neutral-gray-gray-400, #9CA3AF);
+}
+
+/* Hover Effects */
+.payment-cell-container:hover:not(.payment-cell-disabled) {
+  background: var(--primary-sky-blue-sky-blue-25, #F2FBFF);
+  cursor: pointer;
+}
+
+.payment-cell-bg-hover:hover:not(.payment-cell-disabled) {
+  background: var(--primary-sky-blue-sky-blue-50, #E5F7FF);
+}
+
+/* Focus States for Accessibility */
+.payment-cell-container:focus-within {
+  outline: 2px solid var(--primary-sky-blue-sky-blue, #0BA7EA);
+  outline-offset: -2px;
+  border-radius: var(--spacing-border-radius-4px, 4px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .payment-cell-container {
+    padding: var(--spacing-sizing-8px, 8px) var(--spacing-sizing-16px, 16px);
+    gap: var(--spacing-sizing-12px, 12px);
+  }
+
+  .payment-cell-size-default .payment-cell-payment-icon {
+    width: 44px;
+    height: 30px;
+  }
+
+  .payment-cell-size-small .payment-cell-payment-icon {
+    width: 36px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-cell-container {
+    padding: var(--spacing-sizing-6px, 6px) var(--spacing-sizing-12px, 12px);
+    gap: var(--spacing-sizing-8px, 8px);
+  }
+  
+  .payment-cell-size-default {
+    height: 60px;
+  }
+  
+  .payment-cell-size-small {
+    height: 44px;
+  }
+
+  .payment-cell-size-default .payment-cell-payment-icon {
+    width: 40px;
+    height: 28px;
+  }
+
+  .payment-cell-size-small .payment-cell-payment-icon {
+    width: 32px;
+    height: 22px;
+  }
+}
+
+/* Animation for Smooth Transitions */
+.payment-cell-payment-name,
+.payment-cell-payment-expiry {
+  transition: color 0.2s ease-in-out;
+}
+
+/* Variant-specific adjustments */
+.payment-cell-variant-payment-w-toggle {
+  justify-content: flex-start;
+}
+
+.payment-cell-variant-payment-w-toggle-and-expiry {
+  justify-content: flex-start;
+}
+
+/* Ensure proper width for standard payment cells */
+.payment-cell-container {
+  width: 320px;
+}
+
+/* Fixed width matching Figma designs */
+@media (min-width: 768px) {
+  .payment-cell-container {
+    width: 320px;
+  }
+}
