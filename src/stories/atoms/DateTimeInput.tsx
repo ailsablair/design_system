@@ -193,15 +193,39 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
 
       <div className={`datetime-input-container ${state} ${size} ${disabled ? 'disabled' : ''}`}>
         <div className={`datetime-input-content ${size}`}>
-          <div 
-            className={`datetime-input-text-content ${size}`}
+          {/* Native input for actual functionality */}
+          <input
+            ref={inputRef}
+            id={inputId}
+            type={type}
+            value={value || ''}
+            placeholder={placeholder || getDefaultPlaceholder()}
+            disabled={disabled}
+            onChange={onChange}
+            onFocus={(e) => {
+              if (onFocus) onFocus(e);
+            }}
+            onBlur={(e) => {
+              if (onBlur) onBlur(e);
+            }}
+            onClick={handleInputClick}
+            className={`datetime-input-native ${size} ${state}`}
             style={{ color: getTextColor() }}
+          />
+
+          {/* Visual text content overlay for styling (for Storybook showcase) */}
+          <div
+            className={`datetime-input-text-content ${size}`}
+            style={{
+              color: getTextColor(),
+              display: 'none' // Hide by default, show only for showcase
+            }}
           >
             {renderValue()}
           </div>
         </div>
 
-        <div className={`datetime-input-icon ${size}`}>
+        <div className={`datetime-input-icon ${size}`} onClick={handleInputClick}>
           {type === 'date' ? <CalendarIcon size={size} /> : <ClockIcon size={size} />}
         </div>
 
@@ -209,7 +233,7 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
           <button
             type="button"
             className={`datetime-input-close-button ${size}`}
-            onClick={onClose}
+            onClick={handleClear}
             aria-label="Clear input"
           >
             <CloseCircleIcon size={size} />
