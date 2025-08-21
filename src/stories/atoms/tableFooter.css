@@ -1,0 +1,358 @@
+/* TableFooter Component - Figma Design Implementation */
+
+/* Base Table Footer */
+.table-footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sizing-12px, 12px);
+  border-radius: 0 0 var(--spacing-sizing-12px, 12px) var(--spacing-sizing-12px, 12px);
+  border: var(--spacing-stroke-1px, 1px) solid var(--neutral-gray-gray-200, #E5E7EB);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* === BACKGROUND VARIANTS === */
+
+.table-footer--light-gray {
+  background: var(--neutral-gray-gray-50, #F9FAFB);
+}
+
+.table-footer--blue-50 {
+  background: var(--primary-blue-blue-50, #F9F9FE);
+}
+
+.table-footer--black {
+  background: var(--neutral-gray-gray-800, #1F2937);
+}
+
+/* === SIZE VARIANTS === */
+
+.table-footer--small {
+  padding: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-24px, 24px);
+  min-height: 56px;
+  height: auto;
+}
+
+.table-footer--default {
+  padding: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-24px, 24px);
+  min-height: 70px;
+  height: auto;
+}
+
+/* === TYPE VARIANTS === */
+
+.table-footer--view-more {
+  padding: var(--spacing-sizing-16px, 16px) var(--spacing-sizing-24px, 24px);
+}
+
+.table-footer--view-more.table-footer--default {
+  height: 74px;
+}
+
+.table-footer--view-more.table-footer--small {
+  height: 54px;
+  padding: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-24px, 24px);
+}
+
+.table-footer--no-content.table-footer--default {
+  height: 32px;
+  padding: var(--spacing-sizing-16px, 16px) var(--spacing-sizing-24px, 24px);
+}
+
+.table-footer--no-content.table-footer--small {
+  height: 20px;
+  padding: var(--spacing-sizing-16px, 16px) var(--spacing-sizing-24px, 24px);
+}
+
+/* === NAVIGATION SECTION === */
+
+.table-footer__navigation {
+  display: flex;
+  align-items: center;
+  flex: 1 0 0;
+}
+
+.table-footer__navigation--previous {
+  justify-content: flex-start;
+}
+
+.table-footer__navigation--next {
+  justify-content: flex-end;
+}
+
+.table-footer__nav-button {
+  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--neutral-gray-gray-300, #D2D5DA) !important;
+}
+
+/* === PAGINATION SECTION === */
+
+.table-footer__pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sizing-2px, 2px);
+}
+
+/* === PAGE NUMBER BUTTONS === */
+
+.table-footer__page-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--spacing-sizing-8px, 8px);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-style: normal;
+  font-weight: var(--type-weight-medium, 500);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.table-footer__page-number--default {
+  width: 40px;
+  height: 40px;
+  padding: var(--spacing-sizing-8px, 8px);
+  font-size: var(--type-archivo-heading-5, 19px);
+  line-height: var(--type-line-height-heading-5, 24px);
+  letter-spacing: var(--type-letter-spacing-archivo-heading-5, -0.15px);
+}
+
+.table-footer__page-number--small {
+  width: 32px;
+  height: 32px;
+  padding: var(--spacing-sizing-8px, 8px);
+  font-size: var(--type-archivo-label, 16px);
+  line-height: var(--type-line-height-label, 22px);
+  letter-spacing: var(--type-letter-spacing-archivo-label, 0.15px);
+  aspect-ratio: 1 / 1;
+}
+
+/* Default page number styling */
+.table-footer__page-number {
+  color: var(--base-white, #FFFFFF);
+}
+
+.table-footer__page-number:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.table-footer__page-number:disabled {
+  cursor: default;
+}
+
+/* Active page number styling */
+.table-footer__page-number--active {
+  border: var(--spacing-stroke-3px, 3px) solid var(--primary-yellow-dark-yellow, #E8A317) !important;
+  background: var(--primary-yellow-yellow-100, #FEF4DA) !important;
+  color: var(--base-black, #1C1C1C) !important;
+}
+
+.table-footer__page-number--active.table-footer__page-number--small {
+  font-weight: var(--type-weight-bold, 700);
+}
+
+.table-footer__page-number--active:hover {
+  background: var(--primary-yellow-yellow-100, #FEF4DA) !important;
+}
+
+/* === DOTS === */
+
+.table-footer__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.table-footer--small .table-footer__dots {
+  width: 18px;
+  height: 18px;
+}
+
+/* === VIEW MORE BUTTON === */
+
+.table-footer__view-more {
+  padding: var(--spacing-sizing-4px, 4px) var(--spacing-sizing-8px, 8px) var(--spacing-sizing-4px, 4px) var(--spacing-sizing-16px, 16px) !important;
+  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--neutral-gray-gray-300, #D2D5DA) !important;
+  gap: var(--spacing-sizing-4px, 4px) !important;
+}
+
+.table-footer--default .table-footer__view-more {
+  gap: var(--spacing-sizing-8px, 8px) !important;
+}
+
+/* === LIGHT BACKGROUNDS OVERRIDES === */
+
+.table-footer--light-gray .table-footer__page-number,
+.table-footer--blue-50 .table-footer__page-number {
+  color: var(--base-black, #1C1C1C);
+}
+
+.table-footer--light-gray .table-footer__page-number:hover,
+.table-footer--blue-50 .table-footer__page-number:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* === RESPONSIVE DESIGN === */
+
+@media (max-width: 768px) {
+  .table-footer--default {
+    flex-direction: column;
+    gap: var(--spacing-sizing-16px, 16px);
+    min-height: auto;
+    padding: var(--spacing-sizing-16px, 16px);
+  }
+  
+  .table-footer__navigation {
+    width: 100%;
+    order: 2;
+  }
+  
+  .table-footer__pagination {
+    order: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .table-footer__pagination {
+    gap: var(--spacing-sizing-1px, 1px);
+  }
+  
+  .table-footer__page-number--default {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  
+  .table-footer__page-number--small {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-footer {
+    flex-direction: column;
+    gap: var(--spacing-sizing-12px, 12px);
+    padding: var(--spacing-sizing-12px, 12px);
+  }
+  
+  .table-footer__navigation {
+    width: 100%;
+  }
+  
+  .table-footer__pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* === ACCESSIBILITY === */
+
+.table-footer__page-number:focus-visible {
+  outline: 2px solid var(--primary-blue-blue-400, #6171DF);
+  outline-offset: 2px;
+}
+
+.table-footer__nav-button:focus-visible {
+  outline: 2px solid var(--primary-blue-blue-400, #6171DF);
+  outline-offset: 2px;
+}
+
+/* === HIGH CONTRAST MODE === */
+
+@media (prefers-contrast: high) {
+  .table-footer {
+    border-color: #000;
+  }
+  
+  .table-footer__page-number {
+    border: 1px solid currentColor;
+  }
+  
+  .table-footer__page-number--active {
+    border-width: 3px !important;
+    font-weight: 700 !important;
+  }
+}
+
+/* === REDUCED MOTION === */
+
+@media (prefers-reduced-motion: reduce) {
+  .table-footer * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* === PRINT STYLES === */
+
+@media print {
+  .table-footer {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    break-inside: avoid;
+    border: 1px solid #000;
+    border-radius: 0;
+  }
+  
+  .table-footer__nav-button {
+    display: none;
+  }
+  
+  .table-footer__page-number {
+    color: #000 !important;
+    border: 1px solid #000 !important;
+  }
+  
+  .table-footer__page-number--active {
+    background: #ddd !important;
+    font-weight: 700 !important;
+  }
+}
+
+/* === LAYOUT ADJUSTMENTS === */
+
+/* Ensure proper spacing for different types */
+.table-footer--pagination-only {
+  justify-content: center;
+}
+
+.table-footer--default:not(.table-footer--pagination-only) {
+  justify-content: space-between;
+}
+
+/* Fix button alignment in navigation areas */
+.table-footer__navigation .table-footer__nav-button {
+  align-self: stretch;
+}
+
+/* Ensure dots are properly centered */
+.table-footer__dots svg {
+  display: block;
+}
+
+/* Handle very long pagination */
+@media (max-width: 360px) {
+  .table-footer__pagination {
+    gap: 0;
+  }
+  
+  .table-footer__page-number--default {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+  
+  .table-footer__page-number--small {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+}
