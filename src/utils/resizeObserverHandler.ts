@@ -236,3 +236,8 @@ export const resetResizeObserverErrorHandler = (): void => {
   delete window.__resizeObserverErrorLogged;
   delete window.__resizeObserverSetupComplete;
 };
+
+// Immediate initialization when module loads to catch early ResizeObserver errors
+if (typeof window !== 'undefined' && !window.__resizeObserverSetupComplete) {
+  setupResizeObserverErrorHandler();
+}
