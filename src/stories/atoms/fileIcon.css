@@ -1,4 +1,4 @@
-/* FileIcon Component Styles */
+/* FileIcon Component Styles - SVG Optimized */
 
 .file-icon {
   display: inline-flex;
@@ -7,18 +7,22 @@
   gap: var(--spacing-sizing-4px);
   position: relative;
   contain: layout style;
+  /* Prevent layout shifts */
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .file-icon--clickable {
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .file-icon--clickable:hover {
   transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
-.file-icon--clickable:focus {
+.file-icon--clickable:focus-visible {
   outline: var(--spacing-stroke-2px) solid var(--color-primary-600);
   outline-offset: var(--spacing-sizing-2px);
   border-radius: var(--spacing-radius-4px);
@@ -26,53 +30,50 @@
 
 .file-icon--clickable:active {
   transform: scale(0.98);
+  filter: brightness(0.9);
 }
 
-/* === DOCUMENT CONTAINER === */
+/* === SVG CONTAINER === */
 
-.file-icon__document {
-  position: relative;
+.file-icon__svg-container {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* === DOCUMENT SHAPES === */
-
-.file-icon__page {
-  background: var(--base-white, white);
-  border: 1.5px solid #D0D5DD;
-  border-radius: var(--spacing-radius-4px);
   position: relative;
+  /* Ensure crisp SVG rendering */
+  isolation: isolate;
 }
 
-.file-icon__corner {
-  background: var(--base-white, white);
-  border: 1.5px solid #D0D5DD;
-  border-radius: var(--spacing-radius-4px);
-  position: absolute;
+/* === SVG OPTIMIZATION === */
+
+.file-icon__svg {
+  display: block;
+  flex-shrink: 0;
+  /* Optimize for crisp rendering */
+  shape-rendering: crispEdges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  /* Prevent selection and dragging */
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+  /* Ensure proper scaling */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 /* === SIZE VARIANTS === */
 
 /* Small Size (40x40) */
-.file-icon--small .file-icon__page {
-  width: 30px;
-  height: 38px;
-}
-
-.file-icon--small .file-icon__corner {
-  width: 10.78px;
-  height: 10.93px;
-  top: 0.47px;
-  right: -6.25px;
-}
-
-.file-icon--small .file-icon__document {
+.file-icon--small .file-icon__svg-container {
   width: 40px;
   height: 40px;
-  padding-left: var(--spacing-sizing-4px);
-  padding-top: var(--spacing-sizing-2px);
+}
+
+.file-icon--small .file-icon__svg {
+  width: 40px;
+  height: 40px;
 }
 
 .file-icon--small .file-icon__label {
@@ -84,22 +85,14 @@
 }
 
 /* Medium Size (42x42) */
-.file-icon--medium .file-icon__page {
-  width: 33.60px;
-  height: 42px;
-}
-
-.file-icon--medium .file-icon__corner {
-  width: 12.07px;
-  height: 12.07px;
-  top: 0.53px;
-  right: -7px;
-}
-
-.file-icon--medium .file-icon__document {
+.file-icon--medium .file-icon__svg-container {
   width: 42px;
   height: 42px;
-  padding-left: var(--spacing-sizing-4px);
+}
+
+.file-icon--medium .file-icon__svg {
+  width: 42px;
+  height: 42px;
 }
 
 .file-icon--medium .file-icon__label {
@@ -111,22 +104,14 @@
 }
 
 /* Large Size (46x46) */
-.file-icon--large .file-icon__page {
-  width: 37px;
-  height: 46px;
-}
-
-.file-icon--large .file-icon__corner {
-  width: 12.07px;
-  height: 12.07px;
-  top: 0.53px;
-  right: -6.5px;
-}
-
-.file-icon--large .file-icon__document {
+.file-icon--large .file-icon__svg-container {
   width: 46px;
   height: 46px;
-  padding-left: var(--spacing-sizing-4px);
+}
+
+.file-icon--large .file-icon__svg {
+  width: 46px;
+  height: 46px;
 }
 
 .file-icon--large .file-icon__label {
@@ -137,40 +122,11 @@
   min-width: 28px;
 }
 
-/* === ICON OVERLAY === */
+/* === OVERLAY STYLES === */
 
 .file-icon__overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* SVG overlay styles are handled within the SVG element */
   pointer-events: none;
-}
-
-.file-icon--small .file-icon__overlay {
-  width: 18px;
-  height: 18px;
-}
-
-.file-icon--medium .file-icon__overlay {
-  width: 18.90px;
-  height: 18.90px;
-}
-
-.file-icon--large .file-icon__overlay {
-  width: 18.90px;
-  height: 18.90px;
-}
-
-.file-icon__overlay-content {
-  width: 100%;
-  height: 100%;
-  border: 1.5px solid currentColor;
-  border-radius: var(--spacing-radius-2px);
-  opacity: 0.8;
 }
 
 /* === LABEL STYLES === */
@@ -184,16 +140,23 @@
   text-align: center;
   min-height: 14px;
   white-space: nowrap;
+  /* Ensure consistent rendering */
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .file-icon__text {
   color: var(--base-white, white);
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-family-inter), Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 700;
   font-size: 10px;
   line-height: 1.2;
   letter-spacing: 0.02em;
   word-wrap: break-word;
+  /* Improve text rendering */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* === RESPONSIVE DESIGN === */
@@ -233,16 +196,26 @@
   .file-icon--clickable:active {
     transition: none;
     transform: none;
+    filter: none;
+  }
+  
+  .file-icon--clickable:hover {
+    transform: none;
+    filter: none;
+  }
+  
+  .file-icon--clickable:active {
+    transform: none;
+    filter: none;
   }
 }
 
 /* === HIGH CONTRAST MODE === */
 
 @media (prefers-contrast: high) {
-  .file-icon__page,
-  .file-icon__corner {
-    border-color: #000;
-    border-width: 2px;
+  .file-icon__svg {
+    /* Enhance contrast for SVG elements */
+    filter: contrast(1.5);
   }
   
   .file-icon__label {
@@ -268,10 +241,12 @@
 
 /* === LOADING STATE === */
 
-.file-icon--loading .file-icon__page,
-.file-icon--loading .file-icon__corner {
-  background: #f8f9fa;
+.file-icon--loading .file-icon__svg {
   animation: file-icon-pulse 1.5s ease-in-out infinite;
+}
+
+.file-icon--loading .file-icon__label {
+  opacity: 0.5;
 }
 
 @keyframes file-icon-pulse {
@@ -281,4 +256,58 @@
   50% {
     opacity: 0.5;
   }
+}
+
+/* === DARK MODE SUPPORT === */
+
+@media (prefers-color-scheme: dark) {
+  .file-icon__svg path[fill="white"] {
+    fill: #1a1a1a;
+  }
+  
+  .file-icon__svg path[stroke="#D0D5DD"] {
+    stroke: #404040;
+  }
+}
+
+/* === PRINT STYLES === */
+
+@media print {
+  .file-icon {
+    /* Ensure good print quality */
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  
+  .file-icon__svg {
+    /* Optimize for print */
+    shape-rendering: auto;
+  }
+}
+
+/* === HOVER STATES FOR INTERACTIVE ELEMENTS === */
+
+.file-icon--clickable:hover .file-icon__svg {
+  transform: translateZ(0);
+  /* Slight enhancement on hover */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.file-icon--clickable:active .file-icon__svg {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+/* === PERFORMANCE OPTIMIZATIONS === */
+
+.file-icon--clickable {
+  /* Optimize for smooth animations */
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.file-icon__svg {
+  /* GPU acceleration for smooth rendering */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
