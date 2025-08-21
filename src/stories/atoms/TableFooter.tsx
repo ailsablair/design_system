@@ -8,7 +8,7 @@ export interface TableFooterProps {
   /** Size variant */
   size?: 'small' | 'default';
   /** Background variant */
-  background?: 'light-gray' | 'blue-50' | 'black';
+  background?: 'default' | 'light-gray' | 'blue-50' | 'black';
   /** Current page (1-based) */
   currentPage?: number;
   /** Total pages */
@@ -83,7 +83,7 @@ const DotsHorizontalIconDefault: React.FC = () => (
 export const TableFooter: React.FC<TableFooterProps> = ({
   type = 'default',
   size = 'default',
-  background = 'black',
+  background = 'default',
   currentPage = 1,
   totalPages = 10,
   siblingCount = 1,
