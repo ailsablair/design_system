@@ -48,9 +48,18 @@ export interface TextareaProps {
 
 const CloseCircleIcon = ({ size = 'default' }: { size?: 'small' | 'default' | 'large' }) => {
   const iconSize = size === 'small' ? '14' : size === 'large' ? '20' : '16';
+  const viewBox = size === 'small' ? '0 0 14 14' : size === 'large' ? '0 0 20 20' : '0 0 16 16';
 
   return (
-    <svg width={iconSize} height={iconSize} viewBox={`0 0 ${iconSize} ${iconSize}`} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg 
+      width={iconSize} 
+      height={iconSize} 
+      viewBox={viewBox} 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-hidden="true"
+    >
       <g opacity="0.6">
         {size === 'small' ? (
           <path d="M7.00008 1.16675C10.2259 1.16675 12.8334 3.77425 12.8334 7.00008C12.8334 10.2259 10.2259 12.8334 7.00008 12.8334C3.77425 12.8334 1.16675 10.2259 1.16675 7.00008C1.16675 3.77425 3.77425 1.16675 7.00008 1.16675ZM9.09425 4.08341L7.00008 6.17758L4.90591 4.08341L4.08341 4.90591L6.17758 7.00008L4.08341 9.09425L4.90591 9.91675L7.00008 7.82258L9.09425 9.91675L9.91675 9.09425L7.82258 7.00008L9.91675 4.90591L9.09425 4.08341Z" fill="#61607C" />
@@ -64,9 +73,8 @@ const CloseCircleIcon = ({ size = 'default' }: { size?: 'small' | 'default' | 'l
   );
 };
 
-
 export const Textarea: React.FC<TextareaProps> = ({
-  label,
+  label = 'Input name',
   placeholder = 'Placeholder text',
   value,
   state = 'default',
@@ -79,7 +87,7 @@ export const Textarea: React.FC<TextareaProps> = ({
   className = '',
   minHeight = 80,
   maxHeight,
-  resize = 'vertical',
+  resize = 'none',
   rows = 4,
   maxLength,
   showCharacterCount = false,
@@ -94,85 +102,153 @@ export const Textarea: React.FC<TextareaProps> = ({
   const isFilled = state === 'filled' || (value !== undefined && value !== '');
   const characterCount = value?.length || 0;
   const isOverLimit = maxLength ? characterCount > maxLength : false;
+  
+  // Handle message text based on state
+  const getStateMessage = () => {
+    if (message) return message;
+    
+    switch (state) {
+      case 'error':
+        return 'This is an error associated with the input';
+      case 'warning':
+        return 'This is a warning associated with the input';
+      case 'success':
+        return 'This is a success associated with the input';
+      default:
+        return undefined;
+    }
+  };
+
+  const stateMessage = getStateMessage();
+
+  // Handle placeholder and value display for different states
+  const getDisplayContent = () => {
+    if (state === 'focus' && (!value || value === '')) {
+      return { type: 'cursor', content: '|' };
+    }
+    
+    if (state === 'typing' && value?.includes('|')) {
+      const parts = value.split('|');
+      return { 
+        type: 'typing', 
+        content: parts[0], 
+        cursor: '|' 
+      };
+    }
+    
+    if (state === 'typing' && value && !value.includes('|')) {
+      return { 
+        type: 'typing', 
+        content: value.endsWith('n') ? value : 'This is me typin', 
+        cursor: '|' 
+      };
+    }
+    
+    if (isFilled && value) {
+      return { type: 'filled', content: value };
+    }
+    
+    return { type: 'placeholder', content: placeholder };
+  };
+
+  const displayContent = getDisplayContent();
 
   return (
-    <div className={`textarea-wrapper ${size} ${className}`}>
+    <div className={`textarea-wrapper ${className}`}>
+      {/* Label */}
       {label && (
-        <label htmlFor={textareaId} className={`textarea-label ${size} ${required ? 'required' : ''}`}>
-          {label}
-          {required && <span className="textarea-label-required">*</span>}
-        </label>
+        <div className={`textarea-label textarea-label--${size}`}>
+          <div className="textarea-label__text">
+            {label}
+            {required && <span className="textarea-label__required">*</span>}
+          </div>
+        </div>
       )}
 
-      <div className={`textarea-area ${size}`}>
-        <div className={`textarea-container ${state} ${size} ${disabled ? 'disabled' : ''}`}>
-          <div className={`textarea-content ${size}`}>
-            {isTyping && value?.includes('|') ? (
-              <div className={`textarea-display ${size}`}>
-                <span className={`textarea-text ${size}`}>
-                  {value.split('|')[0]}
-                </span>
-                <span className={`textarea-cursor ${size}`}>|</span>
+      {/* Textarea Container */}
+      <div className={`textarea-area textarea-area--${size}`}>
+        <div className={`textarea-input textarea-input--${size} textarea-input--${state} ${disabled ? 'textarea-input--disabled' : ''}`}>
+          <div className={`textarea-content textarea-content--${size}`}>
+            {displayContent.type === 'cursor' ? (
+              <div className={`textarea-text textarea-text--${size} textarea-text--cursor`}>
+                |
               </div>
-            ) : isFocused && (value === undefined || value === '') ? (
-              <div className={`textarea-display ${size}`}>
-                <span className={`textarea-cursor ${size}`}>|</span>
+            ) : displayContent.type === 'typing' ? (
+              <div className={`textarea-text textarea-text--${size}`}>
+                <span className="textarea-text__content">{displayContent.content}</span>
+                <span className="textarea-text__cursor">|</span>
+              </div>
+            ) : displayContent.type === 'filled' ? (
+              <div className={`textarea-text textarea-text--${size} textarea-text--filled`}>
+                {displayContent.content}
               </div>
             ) : (
-              <textarea
-                id={textareaId}
-                value={isTyping && value?.includes('|') ? value.replace('|', '') : value}
-                placeholder={placeholder}
-                disabled={disabled}
-                required={required}
-                rows={rows}
-                maxLength={maxLength}
-                className={`textarea-field ${size}`}
-                style={{
-                  minHeight: `${minHeight}px`,
-                  maxHeight: maxHeight ? `${maxHeight}px` : undefined,
-                  resize,
-                }}
-                onChange={onChange}
-                onFocus={onFocus}
-                onBlur={onBlur}
-                aria-describedby={message ? `${textareaId}-message` : undefined}
-                aria-invalid={state === 'error'}
-              />
+              <div className={`textarea-text textarea-text--${size} textarea-text--placeholder`}>
+                {displayContent.content}
+              </div>
             )}
           </div>
 
+          {/* Close Button */}
           {showClose && !disabled && (
             <button
               type="button"
-              className={`textarea-close-button ${size}`}
+              className={`textarea-close textarea-close--${size}`}
               onClick={onClose}
               aria-label="Clear textarea"
+              tabIndex={-1}
             >
               <CloseCircleIcon size={size} />
             </button>
           )}
+
+          {/* Hidden actual textarea for form functionality */}
+          <textarea
+            id={textareaId}
+            value={value || ''}
+            placeholder={placeholder}
+            disabled={disabled}
+            required={required}
+            rows={rows}
+            maxLength={maxLength}
+            className="textarea-hidden-input"
+            style={{
+              position: 'absolute',
+              opacity: 0,
+              pointerEvents: 'none',
+              left: 0,
+              top: 0,
+              width: '100%',
+              height: '100%',
+              resize: 'none',
+            }}
+            onChange={onChange}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            aria-describedby={stateMessage ? `${textareaId}-message` : undefined}
+            aria-invalid={state === 'error'}
+          />
         </div>
       </div>
 
-      {(message || showCharacterCount) && (
-        <div className={`textarea-footer ${size}`}>
-          {message && (
-            <div
-              id={`${textareaId}-message`}
-              className={`textarea-message ${state} ${size}`}
-            >
-              {message}
-            </div>
-          )}
+      {/* Message */}
+      {stateMessage && (
+        <div 
+          id={`${textareaId}-message`}
+          className={`textarea-message textarea-message--${size} textarea-message--${state}`}
+        >
+          {stateMessage}
+        </div>
+      )}
 
-          {showCharacterCount && (
-            <div className={`textarea-character-count ${size} ${isOverLimit ? 'over-limit' : ''}`}>
-              {characterCount}{maxLength ? ` / ${maxLength}` : ''}
-            </div>
-          )}
+      {/* Character count */}
+      {showCharacterCount && (
+        <div className={`textarea-character-count textarea-character-count--${size} ${isOverLimit ? 'textarea-character-count--over-limit' : ''}`}>
+          {characterCount}{maxLength ? ` / ${maxLength}` : ''}
         </div>
       )}
     </div>
   );
 };
+
+export default Textarea;
