@@ -8,7 +8,7 @@ export interface FileCellProps {
   /** Cell size variant */
   size?: 'small' | 'default';
   /** Cell variant determines the layout and content */
-  variant?: 'file-w-select' | 'file-w-select-and-size' | 'file-w-toggle' | 'file-w-toggle-and-size';
+  variant?: 'file-w-select' | 'file-w-select-and-expiry' | 'file-w-toggle' | 'file-w-toggle-and-expiry';
   /** Background variant */
   background?: 'white' | 'alt-gray-50' | 'alt-seafoam-25' | 'hover' | 'disabled';
   /** File name */
@@ -40,11 +40,11 @@ export interface FileCellProps {
  * 
  * Supports multiple variants:
  * - file-w-select: Checkbox + file icon + filename
- * - file-w-select-and-size: Checkbox + file icon + filename + file size
+ * - file-w-select-and-expiry: Checkbox + file icon + filename + file size
  * - file-w-toggle: Toggle + file icon + filename
- * - file-w-toggle-and-size: Toggle + file icon + filename + file size
+ * - file-w-toggle-and-expiry: Toggle + file icon + filename + file size
  * 
- * Features responsive design and multiple background states
+ * Features responsive design and multiple background states matching Figma designs
  */
 export const FileCell: React.FC<FileCellProps> = ({
   size = 'default',
@@ -56,7 +56,7 @@ export const FileCell: React.FC<FileCellProps> = ({
   checked = false,
   toggleEnabled = true,
   disabled = false,
-  width,
+  width = '320px',
   className = '',
   onCheckboxChange,
   onToggleChange,
@@ -73,9 +73,9 @@ export const FileCell: React.FC<FileCellProps> = ({
 
   const cellStyle = width ? { width } : undefined;
 
-  const showCheckbox = variant === 'file-w-select' || variant === 'file-w-select-and-size';
-  const showToggle = variant === 'file-w-toggle' || variant === 'file-w-toggle-and-size';
-  const showFileSize = variant === 'file-w-select-and-size' || variant === 'file-w-toggle-and-size';
+  const showCheckbox = variant === 'file-w-select' || variant === 'file-w-select-and-expiry';
+  const showToggle = variant === 'file-w-toggle' || variant === 'file-w-toggle-and-expiry';
+  const showFileSize = variant === 'file-w-select-and-expiry' || variant === 'file-w-toggle-and-expiry';
 
   return (
     <div 
@@ -104,7 +104,7 @@ export const FileCell: React.FC<FileCellProps> = ({
             disabled={disabled}
             onChange={onToggleChange}
             icon={true}
-            state={disabled ? 'disabled' : 'default'}
+            state={disabled ? 'disabled' : (background === 'hover' ? 'hover' : 'default')}
           />
         </div>
       )}
