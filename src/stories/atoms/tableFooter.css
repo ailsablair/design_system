@@ -15,6 +15,10 @@
 
 /* === BACKGROUND VARIANTS === */
 
+.table-footer--default {
+  background: var(--base-white, #FFF);
+}
+
 .table-footer--light-gray {
   background: var(--neutral-gray-gray-50, #F9FAFB);
 }
@@ -178,13 +182,25 @@
   cursor: default;
 }
 
-/* Active page number styling - Blue theme */
+/* Active page number styling - Default: Primary Blue theme */
 .table-footer__page-number--active {
+  border: 1px solid var(--primary-blue-blue-400, #6171DF) !important;
+  background: var(--primary-blue-blue-50, #F9F9FE) !important;
+}
+
+.table-footer__page-text--active {
+  color: var(--primary-blue-blue, #2F42BD) !important;
+}
+
+/* Active page number styling - Light backgrounds: Sky Blue theme */
+.table-footer--light-gray .table-footer__page-number--active,
+.table-footer--blue-50 .table-footer__page-number--active {
   border: 1px solid var(--primary-sky-blue-sky-blue, #0BA7EA) !important;
   background: var(--primary-sky-blue-sky-blue-50, #E5F7FF) !important;
 }
 
-.table-footer__page-text--active {
+.table-footer--light-gray .table-footer__page-text--active,
+.table-footer--blue-50 .table-footer__page-text--active {
   color: var(--primary-sky-blue-dark-sky-blue, #04435E) !important;
 }
 
