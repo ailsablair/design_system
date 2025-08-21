@@ -1,35 +1,38 @@
-/* TableCell Component Styles */
+/* TableCell Component Styles - Comprehensive Implementation */
 
 .table-cell-container {
   display: flex;
   align-items: center;
   gap: var(--spacing-sizing-16px, 16px);
-  padding: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-24px, 24px) var(--spacing-sizing-8px, 8px) var(--spacing-sizing-24px, 24px);
+  flex-shrink: 0;
   border-bottom: var(--spacing-stroke-1px, 1px) solid var(--neutral-gray-gray-200, #E5E7EB);
   box-sizing: border-box;
-  flex-shrink: 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
 /* Size Variants */
 .table-cell-size-default {
   height: 72px;
+  padding: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-24px, 24px) var(--spacing-sizing-8px, 8px) var(--spacing-sizing-24px, 24px);
 }
 
 .table-cell-size-small {
   height: 52px;
+  padding: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-24px, 24px) var(--spacing-sizing-8px, 8px) var(--spacing-sizing-24px, 24px);
+}
+
+/* File cells have different padding */
+.table-cell-type-file-w-select.table-cell-size-small,
+.table-cell-type-file-w-select-and-expiry.table-cell-size-small,
+.table-cell-type-file-w-toggle.table-cell-size-small,
+.table-cell-type-file-w-toggle-and-expiry.table-cell-size-small {
+  padding: var(--spacing-sizing-8px, 8px) var(--spacing-sizing-24px, 24px);
 }
 
 /* Background Variants */
-.table-cell-bg-alt-seafoam-25 {
-  background: var(--primary-seafoam-seafoam-25, #F9FCFA);
-}
-
 .table-cell-bg-default {
   background: var(--base-white, #FFF);
-}
-
-.table-cell-bg-alt-gray-50 {
-  background: var(--neutral-gray-gray-50, #F9FAFB);
 }
 
 .table-cell-bg-disabled {
@@ -40,34 +43,56 @@
   background: var(--primary-sky-blue-sky-blue-25, #F2FBFF);
 }
 
-/* Type Variants - Adjust layout based on content */
-.table-cell-type-toggle {
-  width: 98px; /* Matches Figma width for toggle-only cells */
-}
-
-.table-cell-size-small.table-cell-type-toggle {
-  width: 88px; /* Smaller width for small toggle cells */
-}
-
-.table-cell-type-title,
-.table-cell-type-title-subtext,
-.table-cell-type-toggle-w-subtext {
-  width: 320px; /* Standard width for content cells */
-}
-
 /* Content Layout */
 .table-cell-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: var(--spacing-sizing-6px, 6px);
   align-self: stretch;
   flex: 1;
 }
 
-.table-cell-size-small .table-cell-content {
+/* Single line content */
+.table-cell-type-avatar-w-title .table-cell-content,
+.table-cell-type-toggle-avatar-w-title .table-cell-content,
+.table-cell-type-payment-w-select .table-cell-content,
+.table-cell-type-payment-w-toggle .table-cell-content,
+.table-cell-type-file-w-select .table-cell-content,
+.table-cell-type-file-w-toggle .table-cell-content {
+  gap: 0;
+}
+
+/* Multi-line content */
+.table-cell-type-avatar-w-subtext .table-cell-content,
+.table-cell-type-toggle-avatar-w-subtext .table-cell-content {
+  gap: var(--spacing-sizing-6px, 6px);
+}
+
+.table-cell-type-payment-w-select-and-expiry .table-cell-content,
+.table-cell-type-payment-w-toggle-and-expiry .table-cell-content {
   gap: var(--spacing-sizing-4px, 4px);
+}
+
+.table-cell-type-file-w-select-and-expiry .table-cell-content,
+.table-cell-type-file-w-toggle-and-expiry .table-cell-content {
+  gap: var(--spacing-sizing-4px, 4px);
+}
+
+/* Small size adjustments for multi-line content */
+.table-cell-size-small .table-cell-type-avatar-w-subtext .table-cell-content,
+.table-cell-size-small .table-cell-type-toggle-avatar-w-subtext .table-cell-content,
+.table-cell-size-small .table-cell-type-payment-w-select-and-expiry .table-cell-content,
+.table-cell-size-small .table-cell-type-payment-w-toggle-and-expiry .table-cell-content,
+.table-cell-size-small .table-cell-type-file-w-select-and-expiry .table-cell-content,
+.table-cell-size-small .table-cell-type-file-w-toggle-and-expiry .table-cell-content {
+  gap: var(--spacing-sizing-6px, 6px);
+}
+
+/* File cell content special height */
+.table-cell-type-file-w-select-and-expiry .table-cell-content,
+.table-cell-type-file-w-toggle-and-expiry .table-cell-content {
+  height: 52px;
 }
 
 /* Typography */
@@ -77,6 +102,8 @@
   font-style: normal;
   font-weight: var(--type-weight-medium, 500);
   letter-spacing: var(--type-letter-spacing-archivo-label, 0.15px);
+  leading-trim: both;
+  text-edge: cap;
 }
 
 .table-cell-size-default .table-cell-title {
@@ -90,7 +117,6 @@
 }
 
 .table-cell-subtext {
-  color: var(--neutral-gray-gray-500, #6D7280);
   font-family: var(--type-typeface-roboto-flex, "Roboto Flex");
   font-style: normal;
   font-weight: 400;
@@ -108,6 +134,20 @@
   letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm, -0.15px);
 }
 
+/* Text colors based on background state */
+.table-cell-bg-default .table-cell-subtext,
+.table-cell-bg-hover .table-cell-subtext {
+  color: var(--neutral-gray-gray-500, #6D7280);
+}
+
+.table-cell-bg-disabled .table-cell-title {
+  color: var(--neutral-gray-gray-400, #9CA3AF);
+}
+
+.table-cell-bg-disabled .table-cell-subtext {
+  color: var(--neutral-gray-gray-400, #9CA3AF);
+}
+
 /* Disabled State */
 .table-cell-disabled .table-cell-title {
   color: var(--neutral-gray-gray-400, #9CA3AF);
@@ -117,12 +157,13 @@
   color: var(--neutral-gray-gray-400, #9CA3AF);
 }
 
-/* Checkbox Container */
+/* Control Containers */
 .table-cell-checkbox {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  aspect-ratio: 1/1;
 }
 
 .table-cell-size-default .table-cell-checkbox {
@@ -135,7 +176,6 @@
   height: 18px;
 }
 
-/* Toggle Container */
 .table-cell-toggle {
   display: flex;
   justify-content: center;
@@ -143,14 +183,76 @@
   flex-shrink: 0;
 }
 
-/* Hover Effects */
-.table-cell-container:hover:not(.table-cell-disabled) {
-  background: var(--primary-sky-blue-sky-blue-25, #F2FBFF);
-  cursor: pointer;
+/* Avatar Container */
+.table-cell-avatar {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
 }
 
-.table-cell-bg-hover .table-cell-container:hover:not(.table-cell-disabled) {
+.table-cell-bg-disabled .table-cell-avatar {
+  opacity: 0.5;
+}
+
+/* Payment Icon Container */
+.table-cell-payment-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.table-cell-size-default .table-cell-payment-icon {
+  width: 52px;
+  height: 36px;
+  aspect-ratio: 13/9;
+}
+
+.table-cell-size-small .table-cell-payment-icon {
+  width: 40px;
+  height: 28px;
+  aspect-ratio: 10/7;
+}
+
+.table-cell-bg-disabled .table-cell-payment-icon {
+  opacity: 0.5;
+}
+
+/* File Icon Container */
+.table-cell-file-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.table-cell-size-default .table-cell-file-icon {
+  width: 42px;
+  height: 42px;
+  aspect-ratio: 1/1;
+}
+
+.table-cell-size-small .table-cell-file-icon {
+  width: 40px;
+  height: 40px;
+  aspect-ratio: 1/1;
+}
+
+.table-cell-bg-disabled .table-cell-file-icon {
+  opacity: 0.5;
+}
+
+/* Hover Effects */
+.table-cell-container:hover:not(.table-cell-disabled):not(.table-cell-bg-disabled) {
+  background: var(--primary-sky-blue-sky-blue-25, #F2FBFF);
+}
+
+.table-cell-bg-hover:hover:not(.table-cell-disabled) {
   background: var(--primary-sky-blue-sky-blue-50, #E5F7FF);
+}
+
+/* Focus States for Accessibility */
+.table-cell-container:focus-within {
+  outline: 2px solid var(--primary-sky-blue-sky-blue, #0BA7EA);
+  outline-offset: -2px;
 }
 
 /* Responsive Design */
@@ -158,25 +260,6 @@
   .table-cell-container {
     padding: var(--spacing-sizing-8px, 8px) var(--spacing-sizing-16px, 16px);
     gap: var(--spacing-sizing-12px, 12px);
-  }
-  
-  .table-cell-type-title,
-  .table-cell-type-title-subtext,
-  .table-cell-type-toggle-w-subtext {
-    width: auto;
-    min-width: 200px;
-  }
-  
-  .table-cell-type-toggle {
-    width: auto;
-    min-width: 60px;
-  }
-}
-
-@media (max-width: 480px) {
-  .table-cell-container {
-    padding: var(--spacing-sizing-6px, 6px) var(--spacing-sizing-12px, 12px);
-    gap: var(--spacing-sizing-8px, 8px);
   }
   
   .table-cell-size-default {
@@ -188,18 +271,28 @@
   }
 }
 
-/* Focus States for Accessibility */
-.table-cell-container:focus-within {
-  outline: 2px solid var(--primary-sky-blue-sky-blue, #0BA7EA);
-  outline-offset: -2px;
+@media (max-width: 480px) {
+  .table-cell-container {
+    padding: var(--spacing-sizing-6px, 6px) var(--spacing-sizing-12px, 12px);
+    gap: var(--spacing-sizing-8px, 8px);
+  }
+  
+  .table-cell-size-default {
+    height: 56px;
+  }
+  
+  .table-cell-size-small {
+    height: 40px;
+  }
 }
 
 /* Animation for Smooth Transitions */
-.table-cell-container {
-  transition: background-color 0.2s ease-in-out;
-}
-
 .table-cell-title,
 .table-cell-subtext {
   transition: color 0.2s ease-in-out;
+}
+
+/* Lead cell indicator (optional styling) */
+.table-cell-lead {
+  /* Add any special styling for lead cells if needed */
 }
