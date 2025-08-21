@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { useState, useEffect } from 'react';
 
 const meta: Meta = {
-  title: 'Chromatic/Debug',
+  title: 'Chromatic/Debug/Chromatic Debug',
   parameters: {
     layout: 'padded',
     docs: {
