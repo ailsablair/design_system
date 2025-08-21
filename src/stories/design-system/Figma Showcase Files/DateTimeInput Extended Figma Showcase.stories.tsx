@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DateTimeInput } from './DateTimeInput';
+import { DateTimeInput } from '../../atoms/DateTimeInput';
 
 const meta: Meta<typeof DateTimeInput> = {
-  title: 'Atoms/DateTimeInput - Figma Showcase',
+  title: 'Design System/Figma Showcase Files/DateTimeInput Extended Figma Showcase',
   component: DateTimeInput,
   parameters: {
     layout: 'centered',
