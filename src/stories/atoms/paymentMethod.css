@@ -1,0 +1,197 @@
+/* PaymentMethod Component */
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--border-radius-default);
+  background-color: var(--color-white);
+  transition: all var(--transition-duration-default);
+  width: 100%;
+  min-width: 0; /* Allow text truncation */
+}
+
+/* Interactive States */
+.payment-method--clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.payment-method--clickable:hover {
+  border-color: var(--color-gray-300);
+  box-shadow: var(--shadow-sm);
+}
+
+.payment-method--clickable:focus {
+  outline: 2px solid var(--color-primary-blue);
+  outline-offset: 2px;
+  border-color: var(--color-primary-blue);
+}
+
+.payment-method--selected {
+  border-color: var(--color-primary-blue);
+  background-color: var(--color-blue-50);
+}
+
+.payment-method--selected.payment-method--clickable:hover {
+  border-color: var(--color-primary-blue);
+  background-color: var(--color-blue-100);
+}
+
+/* Size Variants */
+.payment-method--small {
+  gap: var(--space-2);
+  padding: var(--space-2);
+}
+
+.payment-method--small .payment-method__text {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-sm);
+}
+
+.payment-method--default {
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+
+.payment-method--default .payment-method__text {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+
+.payment-method--large {
+  gap: var(--space-4);
+  padding: var(--space-4);
+}
+
+.payment-method--large .payment-method__text {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-lg);
+}
+
+/* Icon */
+.payment-method__icon {
+  flex-shrink: 0;
+}
+
+/* Text */
+.payment-method__text {
+  color: var(--color-gray-900);
+  font-weight: var(--font-weight-medium);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.payment-method__method-name {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+}
+
+.payment-method__card-number {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  font-family: var(--font-family-mono, 'Monaco', 'Menlo', 'Ubuntu Mono', monospace);
+  letter-spacing: 0.05em;
+}
+
+/* Stacked Layout for Large Size with Full Info */
+.payment-method--large .payment-method__text {
+  align-items: flex-start;
+}
+
+.payment-method--large .payment-method__method-name {
+  font-size: var(--font-size-base);
+}
+
+.payment-method--large .payment-method__card-number {
+  font-size: var(--font-size-sm);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .payment-method {
+    padding: var(--space-2);
+    gap: var(--space-2);
+  }
+  
+  .payment-method--small {
+    padding: var(--space-1) var(--space-2);
+  }
+  
+  .payment-method--large {
+    padding: var(--space-3);
+    gap: var(--space-3);
+  }
+  
+  .payment-method__text {
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .payment-method {
+    background-color: var(--color-gray-800);
+    border-color: var(--color-gray-600);
+  }
+  
+  .payment-method--clickable:hover {
+    border-color: var(--color-gray-500);
+    background-color: var(--color-gray-700);
+  }
+  
+  .payment-method--selected {
+    border-color: var(--color-primary-blue);
+    background-color: var(--color-blue-900);
+  }
+  
+  .payment-method--selected.payment-method--clickable:hover {
+    background-color: var(--color-blue-800);
+  }
+  
+  .payment-method__text {
+    color: var(--color-gray-100);
+  }
+  
+  .payment-method__method-name {
+    color: var(--color-gray-100);
+  }
+  
+  .payment-method__card-number {
+    color: var(--color-gray-300);
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .payment-method {
+    border-width: 2px;
+  }
+  
+  .payment-method--clickable:focus {
+    outline-width: 3px;
+  }
+  
+  .payment-method--selected {
+    border-width: 3px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .payment-method {
+    transition: none;
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] .payment-method {
+  flex-direction: row-reverse;
+}
