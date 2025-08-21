@@ -18,7 +18,7 @@
   flex: 1 0 0;
   align-self: stretch;
   position: relative;
-  border-radius: var(--spacing-radius-99999px);
+  border-radius: var(--spacing-radius-full);
   transition: var(--transition-normal);
 }
 
@@ -141,7 +141,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: var(--spacing-radius-99999px);
+  border-radius: var(--spacing-radius-full);
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-dark-sky-blue);
   position: relative;
