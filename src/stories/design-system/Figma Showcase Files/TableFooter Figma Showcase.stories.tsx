@@ -34,7 +34,7 @@ from the Figma designs. Each variant matches the specifications pixel-perfectly.
 
 ## Key Features
 - **Smart Pagination**: Automatic ellipsis for large page ranges
-- **Active State**: Yellow highlighted active page on dark backgrounds
+- **Active State**: Context-appropriate highlighting (primary blue on white, sky blue on light themes, yellow on dark)
 - **Navigation Controls**: Previous/Next buttons with proper disabled states
 - **Responsive Design**: Adapts to different screen sizes
 - **Accessibility**: Proper focus states and keyboard navigation
