@@ -77,27 +77,27 @@
   font-size: var(--type-archivo-label-sm);
   line-height: var(--type-line-height-label-sm);
   letter-spacing: var(--type-letter-spacing-archivo-label-sm);
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-semibold);
 }
 
 .avatar-content__name--x-small.avatar-content__name--roboto {
-  font-size: var(--type-roboto-flex-body);
-  line-height: var(--type-line-height-body);
-  letter-spacing: var(--type-letter-spacing-roboto-flex-body);
+  font-size: var(--type-roboto-flex-body-sm);
+  line-height: var(--type-line-height-body-sm);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
   font-weight: var(--type-weight-semibold);
 }
 
 .avatar-content__name--small {
-  font-size: var(--type-archivo-heading-5);
-  line-height: var(--type-line-height-heading-5);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-5);
-  font-weight: var(--type-weight-medium);
+  font-size: var(--type-archivo-label);
+  line-height: var(--type-line-height-label);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
+  font-weight: var(--type-weight-semibold);
 }
 
 .avatar-content__name--small.avatar-content__name--name-only {
-  font-size: var(--type-archivo-heading-4);
-  line-height: var(--type-line-height-heading-4);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-4);
+  font-size: var(--type-archivo-heading-5);
+  line-height: var(--type-line-height-heading-5);
+  letter-spacing: var(--type-letter-spacing-archivo-heading-5);
   font-weight: var(--type-weight-semibold);
 }
 
@@ -105,14 +105,14 @@
   font-size: var(--type-archivo-label);
   line-height: var(--type-line-height-label);
   letter-spacing: var(--type-letter-spacing-archivo-label);
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-semibold);
 }
 
 .avatar-content__name--default.avatar-content__name--name-only {
-  font-size: var(--type-archivo-heading-3);
-  line-height: var(--type-line-height-heading-3);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-3);
-  font-weight: var(--type-weight-medium);
+  font-size: var(--type-archivo-heading-4);
+  line-height: var(--type-line-height-heading-4);
+  letter-spacing: var(--type-letter-spacing-archivo-heading-4);
+  font-weight: var(--type-weight-semibold);
 }
 
 .avatar-content__name--large {
