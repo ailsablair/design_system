@@ -1,0 +1,284 @@
+/* FileIcon Component Styles */
+
+.file-icon {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sizing-4px);
+  position: relative;
+  contain: layout style;
+}
+
+.file-icon--clickable {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.file-icon--clickable:hover {
+  transform: scale(1.05);
+}
+
+.file-icon--clickable:focus {
+  outline: var(--spacing-stroke-2px) solid var(--color-primary-600);
+  outline-offset: var(--spacing-sizing-2px);
+  border-radius: var(--spacing-radius-4px);
+}
+
+.file-icon--clickable:active {
+  transform: scale(0.98);
+}
+
+/* === DOCUMENT CONTAINER === */
+
+.file-icon__document {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === DOCUMENT SHAPES === */
+
+.file-icon__page {
+  background: var(--base-white, white);
+  border: 1.5px solid #D0D5DD;
+  border-radius: var(--spacing-radius-4px);
+  position: relative;
+}
+
+.file-icon__corner {
+  background: var(--base-white, white);
+  border: 1.5px solid #D0D5DD;
+  border-radius: var(--spacing-radius-4px);
+  position: absolute;
+}
+
+/* === SIZE VARIANTS === */
+
+/* Small Size (40x40) */
+.file-icon--small .file-icon__page {
+  width: 30px;
+  height: 38px;
+}
+
+.file-icon--small .file-icon__corner {
+  width: 10.78px;
+  height: 10.93px;
+  top: 0.47px;
+  right: -6.25px;
+}
+
+.file-icon--small .file-icon__document {
+  width: 40px;
+  height: 40px;
+  padding-left: var(--spacing-sizing-4px);
+  padding-top: var(--spacing-sizing-2px);
+}
+
+.file-icon--small .file-icon__label {
+  margin-top: var(--spacing-sizing-2px);
+  padding: var(--spacing-sizing-2px) 3px;
+  font-size: 10px;
+  line-height: 12px;
+  min-width: 24px;
+}
+
+/* Medium Size (42x42) */
+.file-icon--medium .file-icon__page {
+  width: 33.60px;
+  height: 42px;
+}
+
+.file-icon--medium .file-icon__corner {
+  width: 12.07px;
+  height: 12.07px;
+  top: 0.53px;
+  right: -7px;
+}
+
+.file-icon--medium .file-icon__document {
+  width: 42px;
+  height: 42px;
+  padding-left: var(--spacing-sizing-4px);
+}
+
+.file-icon--medium .file-icon__label {
+  margin-top: var(--spacing-sizing-4px);
+  padding: var(--spacing-sizing-2px) 3px;
+  font-size: 10px;
+  line-height: 12px;
+  min-width: 26px;
+}
+
+/* Large Size (46x46) */
+.file-icon--large .file-icon__page {
+  width: 37px;
+  height: 46px;
+}
+
+.file-icon--large .file-icon__corner {
+  width: 12.07px;
+  height: 12.07px;
+  top: 0.53px;
+  right: -6.5px;
+}
+
+.file-icon--large .file-icon__document {
+  width: 46px;
+  height: 46px;
+  padding-left: var(--spacing-sizing-4px);
+}
+
+.file-icon--large .file-icon__label {
+  margin-top: var(--spacing-sizing-4px);
+  padding: var(--spacing-sizing-2px) 3px;
+  font-size: 10px;
+  line-height: 12px;
+  min-width: 28px;
+}
+
+/* === ICON OVERLAY === */
+
+.file-icon__overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.file-icon--small .file-icon__overlay {
+  width: 18px;
+  height: 18px;
+}
+
+.file-icon--medium .file-icon__overlay {
+  width: 18.90px;
+  height: 18.90px;
+}
+
+.file-icon--large .file-icon__overlay {
+  width: 18.90px;
+  height: 18.90px;
+}
+
+.file-icon__overlay-content {
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid currentColor;
+  border-radius: var(--spacing-radius-2px);
+  opacity: 0.8;
+}
+
+/* === LABEL STYLES === */
+
+.file-icon__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--spacing-radius-2px);
+  background: #7F56D9; /* Default color, overridden by inline styles */
+  text-align: center;
+  min-height: 14px;
+  white-space: nowrap;
+}
+
+.file-icon__text {
+  color: var(--base-white, white);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  word-wrap: break-word;
+}
+
+/* === RESPONSIVE DESIGN === */
+
+@media (max-width: 768px) {
+  .file-icon--large {
+    /* Scale down large icons on mobile */
+    transform: scale(0.9);
+  }
+  
+  .file-icon--medium {
+    /* Slightly scale down medium icons on mobile */
+    transform: scale(0.95);
+  }
+}
+
+@media (max-width: 480px) {
+  .file-icon--large {
+    /* Further scale down on small mobile */
+    transform: scale(0.8);
+  }
+  
+  .file-icon--medium {
+    transform: scale(0.9);
+  }
+  
+  .file-icon__text {
+    font-size: 9px;
+  }
+}
+
+/* === ACCESSIBILITY === */
+
+@media (prefers-reduced-motion: reduce) {
+  .file-icon--clickable,
+  .file-icon--clickable:hover,
+  .file-icon--clickable:active {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* === HIGH CONTRAST MODE === */
+
+@media (prefers-contrast: high) {
+  .file-icon__page,
+  .file-icon__corner {
+    border-color: #000;
+    border-width: 2px;
+  }
+  
+  .file-icon__label {
+    border: 1px solid #000;
+  }
+  
+  .file-icon__text {
+    font-weight: 800;
+  }
+}
+
+/* === FOCUS VISIBLE SUPPORT === */
+
+.file-icon--clickable:focus-visible {
+  outline: var(--spacing-stroke-2px) solid var(--color-primary-600, #7F56D9);
+  outline-offset: var(--spacing-sizing-2px);
+  border-radius: var(--spacing-radius-4px);
+}
+
+.file-icon--clickable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* === LOADING STATE === */
+
+.file-icon--loading .file-icon__page,
+.file-icon--loading .file-icon__corner {
+  background: #f8f9fa;
+  animation: file-icon-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes file-icon-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
