@@ -1,0 +1,187 @@
+/* ProgressBar Component */
+.progress-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: var(--space-3);
+}
+
+/* Container */
+.progress-bar__container {
+  flex: 1;
+  background-color: var(--color-gray-200);
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fill */
+.progress-bar__fill {
+  height: 100%;
+  background-color: var(--color-primary-blue);
+  border-radius: var(--border-radius-full);
+  transition: width var(--transition-duration-default) ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: var(--space-2);
+  min-width: 0;
+}
+
+/* Size Variants */
+.progress-bar--small .progress-bar__container {
+  height: 6px;
+}
+
+.progress-bar--small .progress-bar__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-sm);
+}
+
+.progress-bar--default .progress-bar__container {
+  height: 8px;
+}
+
+.progress-bar--default .progress-bar__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-sm);
+}
+
+.progress-bar--large .progress-bar__container {
+  height: 12px;
+}
+
+.progress-bar--large .progress-bar__label {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+}
+
+/* Color Variants */
+.progress-bar--success .progress-bar__fill {
+  background-color: var(--color-success-green);
+}
+
+.progress-bar--warning .progress-bar__fill {
+  background-color: var(--color-warning-yellow);
+}
+
+.progress-bar--error .progress-bar__fill {
+  background-color: var(--color-error-red);
+}
+
+/* Label Positioning */
+.progress-bar--label-outside {
+  gap: var(--space-3);
+}
+
+.progress-bar--label-inside .progress-bar__container {
+  position: relative;
+}
+
+.progress-bar--label-none {
+  gap: 0;
+}
+
+/* Label Styles */
+.progress-bar__label {
+  color: var(--color-gray-600);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.progress-bar__label--outside {
+  color: var(--color-gray-600);
+}
+
+.progress-bar__label--inside {
+  color: white;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  right: var(--space-2);
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity var(--transition-duration-default);
+}
+
+/* Show inside label when there's enough space */
+.progress-bar__fill[style*="width: 2"] .progress-bar__label--inside,
+.progress-bar__fill[style*="width: 3"] .progress-bar__label--inside,
+.progress-bar__fill[style*="width: 4"] .progress-bar__label--inside,
+.progress-bar__fill[style*="width: 5"] .progress-bar__label--inside,
+.progress-bar__fill[style*="width: 6"] .progress-bar__label--inside,
+.progress-bar__fill[style*="width: 7"] .progress-bar__label--inside,
+.progress-bar__fill[style*="width: 8"] .progress-bar__label--inside,
+.progress-bar__fill[style*="width: 9"] .progress-bar__label--inside {
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .progress-bar {
+    gap: var(--space-2);
+  }
+  
+  .progress-bar--small .progress-bar__container {
+    height: 4px;
+  }
+  
+  .progress-bar--default .progress-bar__container {
+    height: 6px;
+  }
+  
+  .progress-bar--large .progress-bar__container {
+    height: 8px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .progress-bar__container {
+    background-color: var(--color-gray-700);
+  }
+  
+  .progress-bar__label--outside {
+    color: var(--color-gray-300);
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .progress-bar__container {
+    border: 1px solid var(--color-gray-400);
+  }
+  
+  .progress-bar__fill {
+    border: 1px solid var(--color-primary-blue);
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar__fill {
+    transition: none;
+  }
+  
+  .progress-bar__label--inside {
+    transition: none;
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] .progress-bar__fill {
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: var(--space-2);
+}
+
+[dir="rtl"] .progress-bar__label--inside {
+  right: auto;
+  left: var(--space-2);
+}
