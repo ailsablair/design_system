@@ -6,6 +6,7 @@ import { PaymentIcon, type PaymentMethod } from '../PaymentIcon';
 import { FileIcon, type FileType } from '../FileIcon';
 import { Star } from '../Star';
 import { Button } from '../Button';
+import { Icon } from '../../foundations/Icon';
 import './tableCell.css';
 
 export interface TableCellProps {
@@ -28,7 +29,10 @@ export interface TableCellProps {
     | 'links'
     | 'rating'
     | 'more-actions'
-    | 'icon-only';
+    | 'icon-only'
+    | 'icon-group'
+    | 'cta-button'
+    | 'button-group';
   /** Background variant */
   background?: 'default' | 'disabled' | 'hover' | 'alt-seafoam-25' | 'alt-gray-50';
   /** Lead cell indicates this is a primary/leading cell in the row */
@@ -128,6 +132,62 @@ export const TableCell: React.FC<TableCellProps> = ({
     const hasCheckbox = type.includes('w-select');
     const hasToggle = type.includes('toggle');
     const hasSubtext = type.includes('subtext') || type.includes('expiry');
+
+    // New cell types
+    if (type === 'icon-group') {
+      return (
+        <div className="table-cell-icon-group">
+          <Icon name="email" size={size === 'small' ? 'sm' : 'md'} color="#6D7280" opacity={disabled ? 0.5 : 1} />
+          <Icon name="edit" size={size === 'small' ? 'sm' : 'md'} color="#6D7280" opacity={disabled ? 0.5 : 1} />
+          <Icon name="link" size={size === 'small' ? 'sm' : 'md'} color="#6D7280" opacity={disabled ? 0.5 : 1} />
+          <Icon name="share" size={size === 'small' ? 'sm' : 'md'} color="#6D7280" opacity={disabled ? 0.5 : 1} />
+        </div>
+      );
+    }
+
+    if (type === 'cta-button') {
+      return (
+        <div className="table-cell-cta-button">
+          <Button
+            size={size === 'small' ? 'extra-small' : 'small'}
+            type="ghost"
+            state={disabled ? 'disabled' : (background === 'hover' ? 'hover' : 'default')}
+            disabled={disabled}
+            onClick={onEdit}
+            leadingIcon={<Icon name="edit" size="sm" color="currentColor" opacity={0.6} />}
+          >
+            Edit
+          </Button>
+        </div>
+      );
+    }
+
+    if (type === 'button-group') {
+      return (
+        <div className="table-cell-button-group">
+          <Button
+            size={size === 'small' ? 'extra-small' : 'small'}
+            type="ghost"
+            state={disabled ? 'disabled' : 'default'}
+            disabled={disabled}
+            onClick={onEdit}
+            leadingIcon={<Icon name="edit" size="sm" color="currentColor" opacity={0.6} />}
+          >
+            Edit
+          </Button>
+          <Button
+            size={size === 'small' ? 'extra-small' : 'small'}
+            type="ghost"
+            state={disabled ? 'disabled' : 'default'}
+            disabled={disabled}
+            onClick={onDelete}
+            leadingIcon={<Icon name="delete" size="sm" color="currentColor" opacity={0.6} />}
+          >
+            Delete
+          </Button>
+        </div>
+      );
+    }
 
     return (
       <>
