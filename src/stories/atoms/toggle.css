@@ -86,6 +86,10 @@
   align-items: center;
   position: absolute;
   transition: var(--transition-normal);
+  /* Improve rendering performance */
+  will-change: transform;
+  /* Ensure crisp edges */
+  transform: translateZ(0);
 }
 
 /* Small size target area */
@@ -146,6 +150,11 @@
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-dark-sky-blue);
   position: relative;
   transition: var(--transition-normal);
+  /* Ensure proper SVG positioning */
+  flex-shrink: 0;
+  overflow: hidden;
+  /* Prevent layout shifts */
+  contain: layout style;
 }
 
 /* Small size switch */
