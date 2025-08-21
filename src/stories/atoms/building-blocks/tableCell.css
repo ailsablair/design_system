@@ -35,6 +35,14 @@
   background: var(--base-white, #FFF);
 }
 
+.table-cell-bg-alt-seafoam-25 {
+  background: var(--primary-seafoam-seafoam-25, #F9FCFA);
+}
+
+.table-cell-bg-alt-gray-50 {
+  background: var(--neutral-gray-gray-50, #F9FAFB);
+}
+
 .table-cell-bg-disabled {
   background: var(--neutral-gray-gray-100, #F3F4F6);
 }
@@ -136,7 +144,9 @@
 
 /* Text colors based on background state */
 .table-cell-bg-default .table-cell-subtext,
-.table-cell-bg-hover .table-cell-subtext {
+.table-cell-bg-hover .table-cell-subtext,
+.table-cell-bg-alt-seafoam-25 .table-cell-subtext,
+.table-cell-bg-alt-gray-50 .table-cell-subtext {
   color: var(--neutral-gray-gray-500, #6D7280);
 }
 
@@ -191,6 +201,12 @@
 }
 
 .table-cell-bg-disabled .table-cell-avatar {
+  opacity: 0.5;
+}
+
+/* Icon opacity for disabled state */
+.table-cell-bg-disabled .table-cell-icon-group svg,
+.table-cell-disabled .table-cell-icon-group svg {
   opacity: 0.5;
 }
 
@@ -249,6 +265,14 @@
   background: var(--primary-sky-blue-sky-blue-50, #E5F7FF);
 }
 
+.table-cell-bg-alt-seafoam-25:hover:not(.table-cell-disabled) {
+  background: var(--primary-seafoam-seafoam-50, #F0F9F5);
+}
+
+.table-cell-bg-alt-gray-50:hover:not(.table-cell-disabled) {
+  background: var(--neutral-gray-gray-100, #F3F4F6);
+}
+
 /* Focus States for Accessibility */
 .table-cell-container:focus-within {
   outline: 2px solid var(--primary-sky-blue-sky-blue, #0BA7EA);
@@ -284,6 +308,71 @@
   .table-cell-size-small {
     height: 40px;
   }
+}
+
+/* New Cell Type Styles */
+.table-cell-icon-group {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-16px, 16px);
+  flex: 1;
+}
+
+.table-cell-cta-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+}
+
+.table-cell-button-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--spacing-sizing-8px, 8px);
+  flex: 1;
+}
+
+/* Special padding adjustments for new cell types */
+.table-cell-type-icon-group,
+.table-cell-type-cta-button,
+.table-cell-type-button-group {
+  justify-content: space-between;
+}
+
+.table-cell-type-icon-group .table-cell-icon-group {
+  flex: none;
+}
+
+.table-cell-type-cta-button .table-cell-cta-button,
+.table-cell-type-button-group .table-cell-button-group {
+  gap: var(--spacing-sizing-16px, 16px);
+  justify-content: flex-end;
+}
+
+/* Width adjustments for action cells */
+.table-cell-type-icon-group {
+  width: 192px;
+}
+
+.table-cell-type-cta-button {
+  width: 128px;
+}
+
+.table-cell-type-button-group {
+  width: 231px;
+}
+
+.table-cell-size-small.table-cell-type-icon-group {
+  width: 172px;
+}
+
+.table-cell-size-small.table-cell-type-cta-button {
+  width: 108px;
+}
+
+.table-cell-size-small.table-cell-type-button-group {
+  width: 191px;
 }
 
 /* Animation for Smooth Transitions */
