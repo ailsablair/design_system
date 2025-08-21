@@ -60,9 +60,33 @@ export const RapidHoverTest: Story = {
           <h3 style={{ marginBottom: '16px' }}>
             ResizeObserver Error Handling Test (Count: {count})
           </h3>
-          <p style={{ marginBottom: '24px', color: 'var(--neutral-gray-gray-600)' }}>
+          <p style={{ marginBottom: '16px', color: 'var(--neutral-gray-gray-600)' }}>
             Hover rapidly over these components. Check console for ResizeObserver errors - they should be suppressed.
           </p>
+          <div style={{ marginBottom: '24px' }}>
+            <button
+              onClick={() => {
+                const isHandlerActive = checkResizeObserverErrorHandling();
+                console.log(`🔧 ResizeObserver error handler active: ${isHandlerActive}`);
+                testResizeObserverErrorHandling();
+              }}
+              style={{
+                padding: '8px 16px',
+                backgroundColor: '#0BA7EA',
+                color: 'white',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '14px',
+                fontWeight: '500'
+              }}
+            >
+              🧪 Test ResizeObserver Error Handling
+            </button>
+            <p style={{ fontSize: '12px', color: 'var(--neutral-gray-gray-500)', marginTop: '8px' }}>
+              Click to deliberately trigger ResizeObserver errors. They should be suppressed if the handler is working.
+            </p>
+          </div>
         </div>
         
         <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
