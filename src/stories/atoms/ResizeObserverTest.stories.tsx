@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar } from './Avatar';
 import { useState, useEffect } from 'react';
+import { testResizeObserverErrorHandling, checkResizeObserverErrorHandling } from '../../utils/resizeObserverErrorTest';
 
 const meta: Meta = {
   title: 'Atoms/ResizeObserver Test',
