@@ -1,0 +1,200 @@
+/* HeaderWithCount Component - Figma Design Implementation */
+
+/* Base Header with Count */
+.header-with-count {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-12px, 12px);
+  width: 100%;
+  max-width: 547px;
+  height: 42px;
+  flex-shrink: 0;
+  position: relative;
+  contain: layout;
+}
+
+.header-with-count--clickable {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.header-with-count--clickable:hover {
+  transform: translateY(-1px);
+}
+
+.header-with-count--clickable:active {
+  transform: translateY(0);
+}
+
+/* === TITLE STYLES === */
+
+.header-with-count__title {
+  color: var(--base-black, #232F3E);
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-style: normal;
+  font-weight: var(--type-weight-medium, 500);
+  line-height: normal;
+  letter-spacing: -0.25px;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  position: relative;
+}
+
+/* Small size title */
+.header-with-count__title--small {
+  font-size: var(--type-archivo-label-lg, 18px);
+  line-height: var(--type-line-height-label-lg, 24px);
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg, 0.15px);
+}
+
+/* Default size title */
+.header-with-count__title--default {
+  font-size: var(--type-archivo-heading-4, 24px);
+  line-height: var(--type-line-height-heading-4, 24px);
+  letter-spacing: var(--type-letter-spacing-archivo-heading-4, -0.25px);
+}
+
+/* Large size title */
+.header-with-count__title--large {
+  font-size: 28px;
+  line-height: 28px;
+  letter-spacing: -0.3px;
+}
+
+/* === COUNT CONTAINER === */
+
+.header-with-count__count {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Override tag styles for proper integration */
+.header-with-count__count .tag {
+  /* Ensure proper alignment */
+  align-self: center;
+}
+
+/* === SIZE VARIANTS === */
+
+.header-with-count--small {
+  height: 36px;
+  gap: var(--spacing-sizing-8px, 8px);
+}
+
+.header-with-count--large {
+  height: 48px;
+  gap: var(--spacing-sizing-16px, 16px);
+}
+
+/* === RESPONSIVE DESIGN === */
+
+@media (max-width: 768px) {
+  .header-with-count {
+    gap: var(--spacing-sizing-8px, 8px);
+    height: auto;
+    min-height: 36px;
+    flex-wrap: wrap;
+  }
+  
+  .header-with-count__title--default {
+    font-size: var(--type-archivo-label-lg, 18px);
+    line-height: var(--type-line-height-label-lg, 24px);
+  }
+  
+  .header-with-count__title--large {
+    font-size: var(--type-archivo-heading-4, 24px);
+    line-height: var(--type-line-height-heading-4, 24px);
+  }
+}
+
+@media (max-width: 480px) {
+  .header-with-count {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sizing-8px, 8px);
+    height: auto;
+  }
+  
+  .header-with-count__title--default,
+  .header-with-count__title--large {
+    font-size: var(--type-archivo-label, 16px);
+    line-height: var(--type-line-height-label, 22px);
+  }
+  
+  .header-with-count__count {
+    align-self: flex-start;
+  }
+}
+
+/* === ACCESSIBILITY === */
+
+@media (prefers-reduced-motion: reduce) {
+  .header-with-count--clickable {
+    transition: none;
+  }
+  
+  .header-with-count--clickable:hover {
+    transform: none;
+  }
+  
+  .header-with-count--clickable:active {
+    transform: none;
+  }
+}
+
+/* === HIGH CONTRAST MODE === */
+
+@media (prefers-contrast: high) {
+  .header-with-count__title {
+    color: #000;
+    font-weight: 600;
+  }
+}
+
+/* === FOCUS VISIBLE SUPPORT === */
+
+.header-with-count--clickable:focus-visible {
+  outline: 2px solid var(--primary-blue-blue-400, #6171DF);
+  outline-offset: 2px;
+  border-radius: var(--spacing-radius-4px, 4px);
+}
+
+.header-with-count--clickable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* === PRINT STYLES === */
+
+@media print {
+  .header-with-count {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    break-inside: avoid;
+  }
+  
+  .header-with-count__title {
+    color: #000 !important;
+  }
+}
+
+/* === LOADING STATE === */
+
+.header-with-count--loading .header-with-count__title {
+  opacity: 0.6;
+}
+
+.header-with-count--loading .header-with-count__count {
+  opacity: 0.6;
+}
+
+/* === TRUNCATION FOR VERY LONG TITLES === */
+
+@media (max-width: 320px) {
+  .header-with-count__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
