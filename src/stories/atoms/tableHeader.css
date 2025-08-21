@@ -109,6 +109,12 @@
   letter-spacing: var(--type-letter-spacing-archivo-heading-4, -0.25px);
 }
 
+/* === BLACK BACKGROUND TITLE OVERRIDES === */
+
+.table-header--black .table-header__title {
+  color: var(--base-white, #FFFFFF);
+}
+
 /* === COUNT TAG === */
 
 .table-header__count {
