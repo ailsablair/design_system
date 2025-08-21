@@ -121,7 +121,7 @@
 
 .split-button.extra-small .split-button-text {
   font-size: var(--type-archivo-footnote);
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-medium);
   line-height: var(--type-line-height-footnote);
   letter-spacing: var(--type-letter-spacing-archivo-footnote);
 }
@@ -148,7 +148,7 @@
 
 .split-button.small .split-button-text {
   font-size: var(--type-archivo-label-sm);
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-medium);
   line-height: var(--type-line-height-label-sm);
   letter-spacing: var(--type-letter-spacing-archivo-label-sm);
 }
@@ -175,7 +175,7 @@
 
 .split-button.default .split-button-text {
   font-size: var(--type-archivo-label);
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-medium);
   line-height: var(--type-line-height-label);
   letter-spacing: var(--type-letter-spacing-archivo-label);
 }
@@ -202,7 +202,7 @@
 
 .split-button.large .split-button-text {
   font-size: var(--type-archivo-label-lg);
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-medium);
   line-height: var(--type-line-height-label-lg);
   letter-spacing: var(--type-letter-spacing-archivo-label-lg);
 }
