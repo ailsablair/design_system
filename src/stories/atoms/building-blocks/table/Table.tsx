@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './table.css';
-import '../atoms/tableRow.css';
-import { TableRow, TableCell } from '../atoms/TableRow';
-import type { TableRowProps } from '../atoms/TableRow';
+import './tableRow.css';
+import { TableRow, TableCell } from '../../TableRow';
+import type { TableRowProps } from '../../TableRow';
 
 // Re-export TableRowProps for external use
 export type { TableRowProps };
