@@ -11,6 +11,16 @@
   transition: background-color 0.2s ease-in-out;
 }
 
+/* Base cell alignment for different types */
+.table-cell-type-button-group .table-cell-container,
+.table-cell-type-cta-button .table-cell-container {
+  justify-content: flex-end;
+}
+
+.table-cell-type-progress-bar .table-cell-container {
+  justify-content: center;
+}
+
 /* Size Variants */
 .table-cell-size-default {
   height: 72px;
@@ -19,7 +29,7 @@
 
 .table-cell-size-small {
   height: 52px;
-  padding: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-24px, 24px) var(--spacing-sizing-8px, 8px) var(--spacing-sizing-24px, 24px);
+  padding: var(--spacing-sizing-24px, 24px) var(--spacing-sizing-24px, 24px) var(--spacing-sizing-20px, 20px) var(--spacing-sizing-24px, 24px);
 }
 
 /* File cells have different padding */
@@ -114,12 +124,32 @@
   text-edge: cap;
 }
 
+.table-cell-text {
+  color: var(--base-black, #1C1C1C);
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-style: normal;
+  font-weight: var(--type-weight-light, 300);
+  letter-spacing: var(--type-letter-spacing-archivo-label, 0.15px);
+  leading-trim: both;
+  text-edge: cap;
+}
+
 .table-cell-size-default .table-cell-title {
   font-size: var(--type-archivo-label, 16px);
   line-height: var(--type-line-height-label, 22px);
 }
 
 .table-cell-size-small .table-cell-title {
+  font-size: var(--type-archivo-label-sm, 14px);
+  line-height: var(--type-line-height-label-sm, 17px);
+}
+
+.table-cell-size-default .table-cell-text {
+  font-size: var(--type-archivo-label, 16px);
+  line-height: var(--type-line-height-label, 22px);
+}
+
+.table-cell-size-small .table-cell-text {
   font-size: var(--type-archivo-label-sm, 14px);
   line-height: var(--type-line-height-label-sm, 17px);
 }
@@ -160,6 +190,10 @@
 
 /* Disabled State */
 .table-cell-disabled .table-cell-title {
+  color: var(--neutral-gray-gray-400, #9CA3AF);
+}
+
+.table-cell-disabled .table-cell-text {
   color: var(--neutral-gray-gray-400, #9CA3AF);
 }
 
