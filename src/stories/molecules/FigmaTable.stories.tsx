@@ -393,6 +393,119 @@ export const LargeDataset: Story = {
 };
 
 /**
+ * Seafoam Theme - First Figma Design
+ * Exact reproduction of the first Figma design with seafoam/green color scheme
+ */
+export const SeafoamTheme: Story = {
+  name: '🌊 Seafoam Theme',
+  args: {
+    columns: defaultColumns,
+    data: defaultData,
+    size: 'default',
+    title: 'Customers',
+    subtitle: 'These companies have purchased in the last 12 months',
+    itemCount: 100,
+    currentPage: 1,
+    totalPages: 10,
+    showMoreActions: true,
+    showPagination: false,
+    showSubText: true,
+    headerFooterBg: 'seafoam',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: `
+**Seafoam Theme - First Figma Design**
+
+This story reproduces the first Figma design exactly:
+- Dark seafoam header background (#4B6D58)
+- White and seafoam-25 alternating row colors
+- Seafoam borders and accents throughout
+- White text on dark seafoam headers
+- View more button in footer instead of pagination
+        `,
+      },
+    },
+  },
+};
+
+/**
+ * Black Theme with Yellow Accents - Second Figma Design
+ * Exact reproduction of the second Figma design with dark header and yellow highlights
+ */
+export const BlackTheme: Story = {
+  name: '🌙 Black Theme',
+  args: {
+    columns: defaultColumns,
+    data: defaultData,
+    size: 'small',
+    title: 'Customers',
+    subtitle: 'These companies have purchased in the last 12 months',
+    itemCount: 100,
+    currentPage: 1,
+    totalPages: 10,
+    showMoreActions: true,
+    showPagination: true,
+    showSubText: true,
+    headerFooterBg: 'black',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: `
+**Black Theme with Yellow Accents - Second Figma Design**
+
+This story reproduces the second Figma design exactly:
+- Black/dark gray header and footer (#1F2937)
+- Yellow accents and highlights throughout
+- Yellow-100 header background variant
+- White text on dark backgrounds
+- Compact small size with tighter spacing
+- Full pagination controls in footer
+        `,
+      },
+    },
+  },
+};
+
+/**
+ * Yellow Theme
+ * Bright theme with yellow backgrounds and accents
+ */
+export const YellowTheme: Story = {
+  name: '☀️ Yellow Theme',
+  args: {
+    columns: defaultColumns,
+    data: defaultData,
+    size: 'default',
+    title: 'Customers',
+    subtitle: 'These companies have purchased in the last 12 months',
+    itemCount: 100,
+    currentPage: 1,
+    totalPages: 10,
+    showMoreActions: true,
+    showPagination: true,
+    showSubText: true,
+    headerFooterBg: 'yellow',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: `
+**Yellow Theme**
+
+Bright and energetic theme featuring:
+- Yellow-100 header and footer backgrounds
+- Yellow borders and accents
+- Warm color palette perfect for highlighting important data
+        `,
+      },
+    },
+  },
+};
+
+/**
  * Figma Design Showcase - Default Size
  * Exact reproduction of the first Figma design with all specifications
  */
