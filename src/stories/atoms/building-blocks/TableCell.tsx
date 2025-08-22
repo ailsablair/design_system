@@ -2,10 +2,13 @@ import React from 'react';
 import { Checkbox } from '../Checkbox';
 import { Toggle } from '../Toggle';
 import { Avatar } from '../Avatar';
+import { AvatarGroup } from '../AvatarGroup';
 import { PaymentIcon, type PaymentMethod } from '../PaymentIcon';
 import { FileIcon, type FileType } from '../FileIcon';
 import { Star } from '../Star';
 import { Button } from '../Button';
+import { Tag } from '../Tag';
+import { ProgressBar } from '../ProgressBar';
 import { Icon } from '../../foundations/Icon';
 import './tableCell.css';
 
@@ -26,13 +29,18 @@ export interface TableCellProps {
     | 'file-w-select-and-expiry'
     | 'file-w-toggle'
     | 'file-w-toggle-and-expiry'
+    | 'title'
+    | 'text'
+    | 'multi-tag'
+    | 'group-avatars'
+    | 'progress-bar'
+    | 'button-group'
     | 'links'
     | 'rating'
     | 'more-actions'
     | 'icon-only'
     | 'icon-group'
-    | 'cta-button'
-    | 'button-group';
+    | 'cta-button';
   /** Background variant */
   background?: 'default' | 'disabled' | 'hover' | 'alt-seafoam-25' | 'alt-gray-50';
   /** Lead cell indicates this is a primary/leading cell in the row */
@@ -61,6 +69,14 @@ export interface TableCellProps {
   rating?: number;
   /** Maximum rating (for rating cells) */
   maxRating?: number;
+  /** Tags for multi-tag cells */
+  tags?: Array<{ label: string; variant?: string; showClose?: boolean }>;
+  /** Avatar data for group-avatars cells */
+  avatars?: Array<{ id?: string; name?: string; src?: string; initial?: string }>;
+  /** Progress value (0-100) for progress-bar cells */
+  progress?: number;
+  /** Additional overflow count for group-avatars */
+  overflowCount?: number;
   /** Disabled state */
   disabled?: boolean;
   /** Width of the cell */
@@ -93,7 +109,7 @@ export interface TableCellProps {
  */
 export const TableCell: React.FC<TableCellProps> = ({
   size = 'default',
-  type = 'avatar-w-title',
+  type = 'title',
   background = 'default',
   leadCell = true,
   title = 'Olivia Rhye',
@@ -106,12 +122,21 @@ export const TableCell: React.FC<TableCellProps> = ({
   paymentExpiry = 'Expiry 01/2001',
   checked = false,
   enabled = true,
+  rating = 5,
+  maxRating = 5,
+  tags = [{ label: 'Label', variant: 'outline-black', showClose: true }],
+  avatars = [],
+  progress = 30,
+  overflowCount = 4,
   disabled = false,
   width = '320px',
   className = '',
   onCheckboxChange,
   onToggleChange,
   onClick,
+  onEdit,
+  onDelete,
+  onMoreActions,
 }) => {
   const cellClasses = [
     'table-cell-container',
@@ -133,35 +158,107 @@ export const TableCell: React.FC<TableCellProps> = ({
     const hasToggle = type.includes('toggle');
     const hasSubtext = type.includes('subtext') || type.includes('expiry');
 
-    // New cell types
-    if (type === 'icon-group') {
+    // Simple text cell types
+    if (type === 'title') {
       return (
-        <div className="table-cell-icon-group">
-          <Icon name="email" size={size === 'small' ? 'sm' : 'md'} color="#6D7280" opacity={disabled ? 0.5 : 1} />
-          <Icon name="edit" size={size === 'small' ? 'sm' : 'md'} color="#6D7280" opacity={disabled ? 0.5 : 1} />
-          <Icon name="link" size={size === 'small' ? 'sm' : 'md'} color="#6D7280" opacity={disabled ? 0.5 : 1} />
-          <Icon name="share" size={size === 'small' ? 'sm' : 'md'} color="#6D7280" opacity={disabled ? 0.5 : 1} />
+        <>
+          {leadCell && (
+            <div className="table-cell-checkbox">
+              <Checkbox
+                size={size === 'small' ? 'small' : 'default'}
+                checked={checked}
+                disabled={disabled}
+                onChange={onCheckboxChange}
+                variant="default"
+                shape="square"
+              />
+            </div>
+          )}
+          <div className="table-cell-content">
+            <div className="table-cell-title">{title}</div>
+          </div>
+        </>
+      );
+    }
+
+    if (type === 'text') {
+      return (
+        <div className="table-cell-content">
+          <div className="table-cell-text">{title}</div>
         </div>
       );
     }
 
-    if (type === 'cta-button') {
+    // Multi-tag cell type
+    if (type === 'multi-tag') {
       return (
-        <div className="table-cell-cta-button">
-          <Button
-            size={size === 'small' ? 'extra-small' : 'small'}
-            type="ghost"
-            state={disabled ? 'disabled' : (background === 'hover' ? 'hover' : 'default')}
-            disabled={disabled}
-            onClick={onEdit}
-            leadingIcon={<Icon name="edit" size="sm" color="currentColor" opacity={0.6} />}
-          >
-            Edit
-          </Button>
+        <div className="table-cell-multi-tag">
+          <div className="table-cell-tags">
+            {tags.map((tag, index) => (
+              <Tag
+                key={index}
+                label={tag.label}
+                size={size === 'small' ? 'small' : 'default'}
+                variant={tag.variant || 'outline-black'}
+                showClose={tag.showClose !== false}
+                disabled={disabled}
+              />
+            ))}
+            {overflowCount && overflowCount > 0 && (
+              <Tag
+                label={`+${overflowCount}`}
+                size={size === 'small' ? 'small' : 'default'}
+                variant="light-gray"
+                showClose={false}
+                disabled={disabled}
+              />
+            )}
+          </div>
         </div>
       );
     }
 
+    // Group avatars cell type
+    if (type === 'group-avatars') {
+      return (
+        <div className="table-cell-group-avatars">
+          <AvatarGroup
+            type="default"
+            stroke="bordered"
+            size={size === 'small' ? 'small' : 'default'}
+            avatars={avatars}
+            maxCount={5}
+            showOverflow={true}
+          />
+          {overflowCount && overflowCount > 0 && (
+            <Tag
+              label={`+${overflowCount}`}
+              size={size === 'small' ? 'small' : 'default'}
+              variant="light-gray"
+              showClose={false}
+              disabled={disabled}
+            />
+          )}
+        </div>
+      );
+    }
+
+    // Progress bar cell type
+    if (type === 'progress-bar') {
+      return (
+        <div className="table-cell-progress-bar">
+          <ProgressBar
+            value={progress || 0}
+            size={size === 'small' ? 'small' : 'default'}
+            variant="default"
+            showPercentage={true}
+            labelPosition="outside"
+          />
+        </div>
+      );
+    }
+
+    // Button group cell type
     if (type === 'button-group') {
       return (
         <div className="table-cell-button-group">
@@ -181,9 +278,78 @@ export const TableCell: React.FC<TableCellProps> = ({
             state={disabled ? 'disabled' : 'default'}
             disabled={disabled}
             onClick={onDelete}
-            leadingIcon={<Icon name="delete" size="sm" color="currentColor" opacity={0.6} />}
+            leadingIcon={<Icon name="trash-can" size="sm" color="currentColor" opacity={0.6} />}
           >
             Delete
+          </Button>
+        </div>
+      );
+    }
+
+    // Links cell type
+    if (type === 'links') {
+      return (
+        <div className="table-cell-links">
+          <button
+            className="table-cell-link"
+            onClick={onEdit}
+            disabled={disabled}
+          >
+            Edit
+          </button>
+          <button
+            className="table-cell-link"
+            onClick={onDelete}
+            disabled={disabled}
+          >
+            Delete
+          </button>
+        </div>
+      );
+    }
+
+    // Rating cell type
+    if (type === 'rating') {
+      return (
+        <div className="table-cell-rating">
+          <div className="table-cell-stars">
+            {Array.from({ length: maxRating || 5 }, (_, index) => (
+              <Star
+                key={index}
+                fill={index < (rating || 0) ? '100%' : 'empty'}
+                size={size === 'small' ? 'small' : 'default'}
+              />
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    // Icon group cell type
+    if (type === 'icon-group') {
+      return (
+        <div className="table-cell-icon-group">
+          <Icon name="email" size={size === 'small' ? 'sm' : 'md'} color="#6D7280" opacity={disabled ? 0.5 : 1} />
+          <Icon name="edit" size={size === 'small' ? 'sm' : 'md'} color="#6D7280" opacity={disabled ? 0.5 : 1} />
+          <Icon name="link" size={size === 'small' ? 'sm' : 'md'} color="#6D7280" opacity={disabled ? 0.5 : 1} />
+          <Icon name="share" size={size === 'small' ? 'sm' : 'md'} color="#6D7280" opacity={disabled ? 0.5 : 1} />
+        </div>
+      );
+    }
+
+    // CTA button cell type
+    if (type === 'cta-button') {
+      return (
+        <div className="table-cell-cta-button">
+          <Button
+            size={size === 'small' ? 'extra-small' : 'small'}
+            type="ghost"
+            state={disabled ? 'disabled' : (background === 'hover' ? 'hover' : 'default')}
+            disabled={disabled}
+            onClick={onEdit}
+            leadingIcon={<Icon name="edit" size="sm" color="currentColor" opacity={0.6} />}
+          >
+            Edit
           </Button>
         </div>
       );
