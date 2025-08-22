@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TableRow, TableCell } from './TableRow';
-import './tableRow.css';
+import './building-blocks/table/tableRow.css';
 
 const meta: Meta<typeof TableRow> = {
   title: 'Molecules/Building Blocks/TableRow',
