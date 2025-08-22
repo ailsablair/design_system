@@ -58,7 +58,7 @@ export interface FigmaTableProps {
   /** Whether to show subtext in header */
   showSubText?: boolean;
   /** Header/footer background color */
-  headerFooterBg?: 'blue-50' | 'blue-100';
+  headerFooterBg?: 'blue-50' | 'blue-100' | 'seafoam' | 'yellow' | 'black';
   /** Additional CSS classes */
   className?: string;
   /** Column sort handler */
@@ -113,6 +113,7 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
   const containerClasses = [
     'figma-table',
     `figma-table--${size}`,
+    `figma-table--${headerFooterBg}`,
     className
   ].filter(Boolean).join(' ');
 
