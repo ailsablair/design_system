@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Button } from '../atoms/Button';
-import { Tag } from '../atoms/Tag';
-import { Checkbox } from '../atoms/Checkbox';
-import { AvatarGroup } from '../atoms/AvatarGroup';
-import { Star } from '../atoms/Star';
-import { ProgressBar } from '../atoms/ProgressBar';
-import { Icon } from '../foundations/Icon';
+import { Button } from '../../Button';
+import { Tag } from '../../Tag';
+import { Checkbox } from '../../Checkbox';
+import { AvatarGroup } from '../../AvatarGroup';
+import { Star } from '../../Star';
+import { ProgressBar } from '../../ProgressBar';
+import { Icon } from '../../../foundations/Icon';
 import './figmaTable.css';
 
 export interface FigmaTableColumn {
