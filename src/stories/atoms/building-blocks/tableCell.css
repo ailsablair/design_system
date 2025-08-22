@@ -244,6 +244,27 @@
   opacity: 0.5;
 }
 
+/* Disabled states for new cell types */
+.table-cell-disabled .table-cell-tags .tag,
+.table-cell-bg-disabled .table-cell-tags .tag {
+  opacity: 0.5;
+}
+
+.table-cell-disabled .table-cell-stars,
+.table-cell-bg-disabled .table-cell-stars {
+  opacity: 0.5;
+}
+
+.table-cell-disabled .table-cell-group-avatars,
+.table-cell-bg-disabled .table-cell-group-avatars {
+  opacity: 0.5;
+}
+
+.table-cell-disabled .table-cell-progress-bar,
+.table-cell-bg-disabled .table-cell-progress-bar {
+  opacity: 0.5;
+}
+
 /* Payment Icon Container */
 .table-cell-payment-icon {
   display: flex;
@@ -454,7 +475,7 @@
   flex: 1;
 }
 
-/* Special padding adjustments for new cell types */
+/* Special padding and alignment adjustments for cell types */
 .table-cell-type-icon-group,
 .table-cell-type-cta-button,
 .table-cell-type-button-group {
@@ -471,7 +492,23 @@
   justify-content: flex-end;
 }
 
-/* Width adjustments for action cells */
+.table-cell-type-links .table-cell-links {
+  justify-content: flex-start;
+}
+
+.table-cell-type-rating .table-cell-rating {
+  justify-content: flex-start;
+}
+
+.table-cell-type-multi-tag .table-cell-multi-tag {
+  justify-content: flex-start;
+}
+
+.table-cell-type-group-avatars .table-cell-group-avatars {
+  justify-content: flex-start;
+}
+
+/* Width adjustments for specific cell types */
 .table-cell-type-icon-group {
   width: 192px;
 }
@@ -481,7 +518,15 @@
 }
 
 .table-cell-type-button-group {
-  width: 231px;
+  min-width: 231px;
+}
+
+.table-cell-type-links {
+  width: 164px;
+}
+
+.table-cell-type-progress-bar {
+  min-width: 200px;
 }
 
 .table-cell-size-small.table-cell-type-icon-group {
@@ -493,11 +538,20 @@
 }
 
 .table-cell-size-small.table-cell-type-button-group {
-  width: 191px;
+  min-width: 191px;
+}
+
+.table-cell-size-small.table-cell-type-links {
+  width: 144px;
+}
+
+.table-cell-size-small.table-cell-type-progress-bar {
+  min-width: 180px;
 }
 
 /* Animation for Smooth Transitions */
 .table-cell-title,
+.table-cell-text,
 .table-cell-subtext {
   transition: color 0.2s ease-in-out;
 }
