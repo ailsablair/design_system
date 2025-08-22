@@ -1,5 +1,5 @@
 import React from 'react';
-import './tableHeader.css';
+import './building-blocks/table/tableHeader.css';
 import { Tag } from './Tag';
 import { Button } from './Button';
 
