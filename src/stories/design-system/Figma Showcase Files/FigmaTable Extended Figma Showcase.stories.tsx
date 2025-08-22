@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FigmaTable } from '../../molecules/FigmaTable';
-import type { FigmaTableColumn, FigmaTableData } from '../../molecules/FigmaTable';
+import { FigmaTable } from '../../atoms/building-blocks/table/FigmaTable';
+import type { FigmaTableColumn, FigmaTableData } from '../../atoms/building-blocks/table/FigmaTable';
 
 const meta: Meta<typeof FigmaTable> = {
   title: 'Design System/Figma Showcase Files/FigmaTable Extended Figma Showcase',
