@@ -106,6 +106,19 @@
   margin: 0;
 }
 
+.figma-table--black .figma-table__title {
+  color: var(--base-white, white);
+}
+
+.figma-table--black .figma-table__subtitle {
+  color: var(--primary-blue-blue-200, #C5CAED);
+  font-size: 13px;
+  font-family: Archivo;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0.20px;
+}
+
 .figma-table--small .figma-table__subtitle {
   font-size: 13px;
   font-family: Archivo;
