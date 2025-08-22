@@ -580,3 +580,47 @@ This story reproduces the second Figma design exactly:
     },
   },
 };
+
+/**
+ * All Themes Showcase
+ * Demonstrates all available theme variations side by side
+ */
+export const AllThemes: Story = {
+  name: '🎨 All Themes Showcase',
+  args: {
+    columns: defaultColumns,
+    data: defaultData,
+    size: 'default',
+    title: 'Theme Comparison',
+    subtitle: 'Compare all available color themes',
+    itemCount: 100,
+    currentPage: 1,
+    totalPages: 10,
+    showMoreActions: true,
+    showPagination: true,
+    showSubText: true,
+    headerFooterBg: 'blue-50',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: `
+**All Themes Showcase**
+
+This story demonstrates all available theme variations:
+
+1. **Blue 50/100**: Original blue themes for clean, professional interfaces
+2. **Seafoam**: Green-tinted theme matching the first Figma design
+3. **Yellow**: Bright, energetic theme with yellow accents
+4. **Black**: Dark theme with yellow highlights matching the second Figma design
+
+Each theme provides:
+- Consistent color scheme across header, body, and footer
+- Proper contrast ratios for accessibility
+- Semantic color usage matching design system tokens
+- Responsive behavior across all screen sizes
+        `,
+      },
+    },
+  },
+};
