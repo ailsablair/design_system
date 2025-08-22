@@ -35,6 +35,18 @@
   background: var(--primary-blue-blue-100, #E7E9F4);
 }
 
+.figma-table__header--seafoam {
+  background: var(--primary-seafoam-dark-seafoam, #4B6D58);
+}
+
+.figma-table__header--yellow {
+  background: var(--primary-yellow-yellow-100, #FEF4DA);
+}
+
+.figma-table__header--black {
+  background: var(--neutral-gray-gray-800, #1F2937);
+}
+
 .figma-table__header--small {
   padding: 12px 24px;
 }
@@ -138,10 +150,37 @@
   background: var(--primary-blue-blue-100, #E7E9F4);
 }
 
+.figma-table--seafoam .figma-table__thead {
+  background: var(--primary-seafoam-dark-seafoam, #4B6D58);
+}
+
+.figma-table--yellow .figma-table__thead {
+  background: var(--primary-yellow-yellow-100, #FEF4DA);
+}
+
+.figma-table--black .figma-table__thead {
+  background: var(--neutral-gray-gray-800, #1F2937);
+}
+
 .figma-table__header-row {
   height: 44px;
   border-top: 1px var(--primary-blue-blue-200, #C5CAED) solid;
   border-bottom: 1px var(--primary-blue-blue-200, #C5CAED) solid;
+}
+
+.figma-table--seafoam .figma-table__header-row {
+  border-top: 1px var(--primary-seafoam-extra-dark-seafoam, #384C40) solid;
+  border-bottom: 1px var(--primary-seafoam-extra-dark-seafoam, #384C40) solid;
+}
+
+.figma-table--yellow .figma-table__header-row {
+  border-top: 1px var(--primary-yellow-yellow, #F9C846) solid;
+  border-bottom: 1px var(--primary-yellow-yellow, #F9C846) solid;
+}
+
+.figma-table--black .figma-table__header-row {
+  border-top: 1px var(--primary-yellow-yellow, #F9C846) solid;
+  border-bottom: 1px var(--primary-yellow-yellow, #F9C846) solid;
 }
 
 .figma-table__header-cell {
@@ -186,6 +225,14 @@
   word-wrap: break-word;
 }
 
+.figma-table--seafoam .figma-table__header-text {
+  color: var(--base-white, white);
+}
+
+.figma-table--black .figma-table__header-text {
+  color: var(--base-black, #1C1C1C);
+}
+
 .figma-table__header-label--sortable .figma-table__header-text {
   font-weight: 700;
 }
@@ -193,6 +240,18 @@
 .figma-table__sort-icon {
   color: var(--primary-sky-blue-sky-blue, #0BA7EA);
   transition: transform 0.2s ease;
+}
+
+.figma-table--seafoam .figma-table__sort-icon {
+  color: var(--primary-yellow-yellow, #F9C846);
+}
+
+.figma-table--yellow .figma-table__sort-icon {
+  color: var(--primary-yellow-dark-yellow, #E8A317);
+}
+
+.figma-table--black .figma-table__sort-icon {
+  color: var(--primary-yellow-dark-yellow, #E8A317);
 }
 
 .figma-table__sort-icon--asc {
@@ -210,6 +269,18 @@
 }
 
 .figma-table__row--alternate {
+  background: var(--neutral-gray-gray-50, #F9FAFB);
+}
+
+.figma-table--seafoam .figma-table__row--alternate {
+  background: var(--primary-seafoam-seafoam-25, #F9FCFA);
+}
+
+.figma-table--yellow .figma-table__row--alternate {
+  background: var(--neutral-gray-gray-50, #F9FAFB);
+}
+
+.figma-table--black .figma-table__row--alternate {
   background: var(--neutral-gray-gray-50, #F9FAFB);
 }
 
@@ -336,6 +407,18 @@
 
 .figma-table__footer--blue-100 {
   background: var(--primary-blue-blue-100, #E7E9F4);
+}
+
+.figma-table__footer--seafoam {
+  background: var(--base-white, white);
+}
+
+.figma-table__footer--yellow {
+  background: var(--primary-yellow-yellow-100, #FEF4DA);
+}
+
+.figma-table__footer--black {
+  background: var(--neutral-gray-gray-800, #1F2937);
 }
 
 .figma-table__footer-content {
