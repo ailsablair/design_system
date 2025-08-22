@@ -36,8 +36,8 @@ This component is designed to display tabular data with rich content types and c
     },
     headerFooterBg: {
       control: { type: 'radio' },
-      options: ['blue-50', 'blue-100'],
-      description: 'Header and footer background color',
+      options: ['blue-50', 'blue-100', 'seafoam', 'yellow', 'black'],
+      description: 'Header and footer background color theme',
     },
     showMoreActions: {
       control: { type: 'boolean' },
