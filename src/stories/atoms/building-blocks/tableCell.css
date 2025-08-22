@@ -344,7 +344,101 @@
   }
 }
 
-/* New Cell Type Styles */
+/* Multi-tag Cell Styles */
+.table-cell-multi-tag {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.table-cell-tags {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-4px, 4px);
+  flex-wrap: nowrap;
+}
+
+/* Group Avatars Cell Styles */
+.table-cell-group-avatars {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-4px, 4px);
+  flex: 1;
+}
+
+/* Progress Bar Cell Styles */
+.table-cell-progress-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  width: 200px;
+}
+
+/* Button Group Cell Styles */
+.table-cell-button-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--spacing-sizing-8px, 8px);
+  flex: 1;
+}
+
+/* Links Cell Styles */
+.table-cell-links {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-12px, 12px);
+  flex: 1;
+}
+
+.table-cell-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--primary-seafoam-dark-seafoam, #4B6D58);
+  font-family: var(--type-typeface-roboto-flex, "Roboto Flex");
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.table-cell-size-default .table-cell-link {
+  font-size: var(--type-roboto-flex-body-sm, 14px);
+  line-height: var(--type-line-height-body-sm, 16px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm, -0.15px);
+}
+
+.table-cell-size-small .table-cell-link {
+  font-size: var(--type-roboto-flex-body-sm, 14px);
+  line-height: var(--type-line-height-body-sm, 16px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm, -0.15px);
+}
+
+.table-cell-link:hover:not(:disabled) {
+  color: var(--primary-seafoam-seafoam, #4B6D58);
+}
+
+.table-cell-link:disabled {
+  color: var(--neutral-gray-gray-400, #9CA3AF);
+  cursor: not-allowed;
+}
+
+/* Rating Cell Styles */
+.table-cell-rating {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.table-cell-stars {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Icon Group Cell Styles */
 .table-cell-icon-group {
   display: flex;
   align-items: center;
@@ -352,18 +446,11 @@
   flex: 1;
 }
 
+/* CTA Button Cell Styles */
 .table-cell-cta-button {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  flex: 1;
-}
-
-.table-cell-button-group {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: var(--spacing-sizing-8px, 8px);
   flex: 1;
 }
 
