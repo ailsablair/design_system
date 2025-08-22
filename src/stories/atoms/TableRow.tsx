@@ -1,5 +1,5 @@
 import React from 'react';
-import './tableRow.css';
+import './building-blocks/table/tableRow.css';
 import { Icon } from '../foundations/Icon';
 
 export interface TableRowProps {

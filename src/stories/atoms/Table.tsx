@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TableHeaderLabel } from './TableHeaderLabel';
 import { TableRow, TableCell } from './TableRow';
 import { Pagination } from './Pagination';
-import './table.css';
+import './building-blocks/table/table.css';
 
 export interface TableColumn {
   /** Column key */
