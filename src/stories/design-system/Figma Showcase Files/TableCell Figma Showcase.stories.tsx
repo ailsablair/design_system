@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TableCell } from '../../atoms/building-blocks/TableCell';
+import { TableCell } from '../../atoms/building-blocks/table/TableCell';
 
 const meta: Meta<typeof TableCell> = {
   title: 'Design System/Figma Showcase Files/TableCell Figma Showcase',
