@@ -1,15 +1,15 @@
 import React from 'react';
-import { Checkbox } from '../Checkbox';
-import { Toggle } from '../Toggle';
-import { Avatar } from '../Avatar';
-import { AvatarGroup } from '../AvatarGroup';
-import { PaymentIcon, type PaymentMethod } from '../PaymentIcon';
-import { FileIcon, type FileType } from '../FileIcon';
-import { Star } from '../Star';
-import { Button } from '../Button';
-import { Tag } from '../Tag';
-import { ProgressBar } from '../ProgressBar';
-import { Icon } from '../../foundations/Icon';
+import { Checkbox } from '../../Checkbox';
+import { Toggle } from '../../Toggle';
+import { Avatar } from '../../Avatar';
+import { AvatarGroup } from '../../AvatarGroup';
+import { PaymentIcon, type PaymentMethod } from '../../PaymentIcon';
+import { FileIcon, type FileType } from '../../FileIcon';
+import { Star } from '../../Star';
+import { Button } from '../../Button';
+import { Tag } from '../../Tag';
+import { ProgressBar } from '../../ProgressBar';
+import { Icon } from '../../../foundations/Icon';
 import './tableCell.css';
 
 export interface TableCellProps {
