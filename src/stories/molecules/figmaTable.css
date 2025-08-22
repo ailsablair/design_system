@@ -494,6 +494,18 @@
   color: var(--primary-sky-blue-dark-sky-blue, #04435E);
 }
 
+.figma-table--black .figma-table__page-number {
+  color: var(--base-white, white);
+}
+
+.figma-table--black .figma-table__page-number--active {
+  background: var(--primary-yellow-yellow-100, #FEF4DA);
+  outline: 3px var(--primary-yellow-dark-yellow, #E8A317) solid;
+  outline-offset: -1.50px;
+  color: var(--base-black, #1C1C1C);
+  font-weight: 700;
+}
+
 .figma-table__footer-right {
   flex: 1;
   display: flex;
