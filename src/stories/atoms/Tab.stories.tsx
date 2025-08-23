@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Tab, HomeIcon, ChevronDownIcon } from './Tab';
+import React, { useState } from 'react';
 
 const meta: Meta<typeof Tab> = {
   title: 'Atoms/Tab',
@@ -8,10 +9,11 @@ const meta: Meta<typeof Tab> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Tab component with multiple sizes, states, and types. Supports default, secondary, contained, and dark-contained variants with optional badges and icons. Matches the Figma design system specifications.',
+        component: 'Comprehensive Tab component with traditional tabs (with bottom line) and contained tabs (button-style). Features multiple sizes, states, and interactive badges.',
       },
     },
   },
+  tags: ['autodocs'],
   argTypes: {
     size: {
       control: 'select',
@@ -49,12 +51,19 @@ const meta: Meta<typeof Tab> = {
       description: 'Tab text content',
     },
   },
+  args: {
+    children: 'Tab label',
+    showBadge: true,
+    badge: '7',
+    size: 'default',
+    type: 'default',
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Tab>;
 
-// Basic tab examples
+// Basic examples
 export const Default: Story = {
   args: {
     children: 'Tab label',
@@ -70,6 +79,42 @@ export const Secondary: Story = {
     size: 'default',
     type: 'secondary',
     badge: '7',
+  },
+};
+
+export const Contained: Story = {
+  args: {
+    children: 'Tab label',
+    size: 'default',
+    type: 'contained',
+    badge: '7',
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+      values: [
+        { name: 'dark', value: '#2F42BD' },
+        { name: 'light', value: '#ffffff' },
+      ],
+    },
+  },
+};
+
+export const DarkContained: Story = {
+  args: {
+    children: 'Tab label',
+    size: 'default',
+    type: 'dark-contained',
+    badge: '7',
+  },
+  parameters: {
+    backgrounds: {
+      default: 'darker',
+      values: [
+        { name: 'darker', value: '#191E3C' },
+        { name: 'light', value: '#ffffff' },
+      ],
+    },
   },
 };
 
@@ -93,18 +138,7 @@ export const Large: Story = {
 };
 
 // State variants
-export const HoverState: Story = {
-  args: {
-    children: 'Tab label',
-    size: 'default',
-    type: 'default',
-    state: 'hover',
-    className: 'force-hover',
-    badge: '7',
-  },
-};
-
-export const ActiveState: Story = {
+export const Active: Story = {
   args: {
     children: 'Tab label',
     size: 'default',
@@ -114,225 +148,72 @@ export const ActiveState: Story = {
   },
 };
 
-export const DisabledState: Story = {
+export const Disabled: Story = {
   args: {
     children: 'Tab label',
     size: 'default',
     type: 'default',
-    disabled: true,
-    badge: '7',
-  },
-};
-
-// Secondary variants
-export const SecondarySmall: Story = {
-  args: {
-    children: 'Tab label',
-    size: 'small',
-    type: 'secondary',
-    badge: '7',
-  },
-};
-
-export const SecondaryLarge: Story = {
-  args: {
-    children: 'Tab label',
-    size: 'large',
-    type: 'secondary',
-    badge: '7',
-  },
-};
-
-export const SecondaryHover: Story = {
-  args: {
-    children: 'Tab label',
-    size: 'default',
-    type: 'secondary',
-    state: 'hover',
-    className: 'force-hover',
-    badge: '7',
-  },
-};
-
-export const SecondaryActive: Story = {
-  args: {
-    children: 'Tab label',
-    size: 'default',
-    type: 'secondary',
-    state: 'active',
-    badge: '7',
-  },
-};
-
-export const SecondaryDisabled: Story = {
-  args: {
-    children: 'Tab label',
-    size: 'default',
-    type: 'secondary',
     disabled: true,
     badge: '7',
   },
 };
 
 // Contained variants
-export const ContainedDefault: Story = {
-  args: {
-    children: 'Tab label',
-    size: 'small',
-    type: 'contained',
-    badge: '7',
-  },
-};
-
-export const ContainedDefaultMedium: Story = {
-  args: {
-    children: 'Tab label',
-    size: 'default',
-    type: 'contained',
-    badge: '7',
-  },
-};
-
-export const ContainedLarge: Story = {
-  args: {
-    children: 'Tab label',
-    size: 'large',
-    type: 'contained',
-    badge: '7',
-  },
-};
-
 export const ContainedActive: Story = {
   args: {
-    children: 'Tab label',
-    size: 'small',
-    type: 'contained',
-    state: 'active',
-    badge: '7',
-  },
-};
-
-export const ContainedActiveDefault: Story = {
-  args: {
-    children: 'Tab label',
+    children: 'Active Tab',
     size: 'default',
     type: 'contained',
     state: 'active',
-    badge: '7',
+    badge: '12',
   },
-};
-
-export const ContainedActiveLarge: Story = {
-  args: {
-    children: 'Tab label',
-    size: 'large',
-    type: 'contained',
-    state: 'active',
-    badge: '7',
-  },
-};
-
-export const ContainedHover: Story = {
-  args: {
-    children: 'Tab label',
-    size: 'small',
-    type: 'contained',
-    state: 'hover',
-    className: 'force-hover',
-    badge: '7',
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+      values: [
+        { name: 'dark', value: '#2F42BD' },
+      ],
+    },
   },
 };
 
 export const ContainedDisabled: Story = {
   args: {
-    children: 'Tab label',
-    size: 'small',
+    children: 'Disabled Tab',
+    size: 'default',
     type: 'contained',
     disabled: true,
-    badge: '7',
+    badge: '0',
   },
-};
-
-// Dark contained variants
-export const DarkContainedDefault: Story = {
-  args: {
-    children: 'Tab label',
-    size: 'small',
-    type: 'dark-contained',
-    badge: '7',
-  },
-};
-
-export const DarkContainedDefaultMedium: Story = {
-  args: {
-    children: 'Tab label',
-    size: 'default',
-    type: 'dark-contained',
-    badge: '7',
-  },
-};
-
-export const DarkContainedLarge: Story = {
-  args: {
-    children: 'Tab label',
-    size: 'large',
-    type: 'dark-contained',
-    badge: '7',
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+      values: [
+        { name: 'dark', value: '#2F42BD' },
+      ],
+    },
   },
 };
 
 export const DarkContainedActive: Story = {
   args: {
-    children: 'Tab label',
-    size: 'small',
-    type: 'dark-contained',
-    state: 'active',
-    badge: '7',
-  },
-};
-
-export const DarkContainedActiveDefault: Story = {
-  args: {
-    children: 'Tab label',
+    children: 'Active Tab',
     size: 'default',
     type: 'dark-contained',
     state: 'active',
-    badge: '7',
+    badge: '5',
+  },
+  parameters: {
+    backgrounds: {
+      default: 'darker',
+      values: [
+        { name: 'darker', value: '#191E3C' },
+      ],
+    },
   },
 };
 
-export const DarkContainedActiveLarge: Story = {
-  args: {
-    children: 'Tab label',
-    size: 'large',
-    type: 'dark-contained',
-    state: 'active',
-    badge: '7',
-  },
-};
-
-export const DarkContainedHover: Story = {
-  args: {
-    children: 'Tab label',
-    size: 'small',
-    type: 'dark-contained',
-    state: 'hover',
-    className: 'force-hover',
-    badge: '7',
-  },
-};
-
-export const DarkContainedDisabled: Story = {
-  args: {
-    children: 'Tab label',
-    size: 'small',
-    type: 'dark-contained',
-    disabled: true,
-    badge: '7',
-  },
-};
-
-// Without badge
+// Without badges
 export const WithoutBadge: Story = {
   args: {
     children: 'Tab label',
@@ -342,151 +223,226 @@ export const WithoutBadge: Story = {
   },
 };
 
-// Custom icons
-export const CustomIcons: Story = {
+export const ContainedWithoutBadge: Story = {
   args: {
-    children: 'Custom Tab',
+    children: 'Tab label',
     size: 'default',
-    type: 'default',
-    badge: '42',
-    leadingIcon: <HomeIcon size={18} />,
-    trailingIcon: <ChevronDownIcon size={18} />,
+    type: 'contained',
+    showBadge: false,
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+      values: [
+        { name: 'dark', value: '#2F42BD' },
+      ],
+    },
   },
 };
 
-// All sizes comparison
+// Comprehensive showcases
 export const AllSizes: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'center' }}>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Small</h4>
-        <Tab size="small" type="default" badge="7">
-          Tab label
-        </Tab>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', alignItems: 'center' }}>
+      {/* Traditional Tabs */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'center' }}>
+        <h4 style={{ margin: 0, fontSize: '16px', fontWeight: '600' }}>Traditional Tabs</h4>
+        <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-end' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+            <span style={{ fontSize: '12px', fontWeight: '500' }}>Small</span>
+            <Tab size="small" type="default" badge="7">Small Tab</Tab>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+            <span style={{ fontSize: '12px', fontWeight: '500' }}>Default</span>
+            <Tab size="default" type="default" badge="7">Default Tab</Tab>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+            <span style={{ fontSize: '12px', fontWeight: '500' }}>Large</span>
+            <Tab size="large" type="default" badge="7">Large Tab</Tab>
+          </div>
+        </div>
       </div>
-      
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Default</h4>
-        <Tab size="default" type="default" badge="7">
-          Tab label
-        </Tab>
-      </div>
-      
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Large</h4>
-        <Tab size="large" type="default" badge="7">
-          Tab label
-        </Tab>
+
+      {/* Contained Tabs */}
+      <div style={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        gap: '16px', 
+        alignItems: 'center',
+        background: '#2F42BD',
+        padding: '24px',
+        borderRadius: '12px'
+      }}>
+        <h4 style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: 'white' }}>Contained Tabs</h4>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+            <span style={{ fontSize: '12px', fontWeight: '500', color: 'white' }}>Small</span>
+            <Tab size="small" type="contained" badge="7">Small</Tab>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+            <span style={{ fontSize: '12px', fontWeight: '500', color: 'white' }}>Default</span>
+            <Tab size="default" type="contained" badge="7">Default</Tab>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+            <span style={{ fontSize: '12px', fontWeight: '500', color: 'white' }}>Large</span>
+            <Tab size="large" type="contained" badge="7">Large</Tab>
+          </div>
+        </div>
       </div>
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Comparison of all available tab sizes with badges.',
+        story: 'Comparison of all available tab sizes for both traditional and contained variants.',
       },
     },
   },
 };
 
-// All types comparison
 export const AllTypes: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'center' }}>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Default</h4>
-        <Tab size="default" type="default" badge="7">
-          Tab label
-        </Tab>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', alignItems: 'center' }}>
+      {/* Traditional Types */}
+      <div style={{ display: 'flex', gap: '32px', alignItems: 'flex-end' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+          <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Default</h4>
+          <Tab size="default" type="default" badge="7">Default Type</Tab>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+          <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Secondary</h4>
+          <Tab size="default" type="secondary" badge="7">Secondary Type</Tab>
+        </div>
       </div>
-      
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Secondary</h4>
-        <Tab size="default" type="secondary" badge="7">
-          Tab label
-        </Tab>
-      </div>
-      
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Contained</h4>
-        <Tab size="default" type="contained" badge="7">
-          Tab label
-        </Tab>
-      </div>
-      
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-        <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Dark Contained</h4>
-        <Tab size="default" type="dark-contained" badge="7">
-          Tab label
-        </Tab>
+
+      {/* Contained Types */}
+      <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
+        <div style={{ 
+          display: 'flex', 
+          flexDirection: 'column', 
+          gap: '8px', 
+          alignItems: 'center',
+          background: '#2F42BD',
+          padding: '16px',
+          borderRadius: '8px'
+        }}>
+          <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600', color: 'white' }}>Contained</h4>
+          <Tab size="default" type="contained" badge="7">Contained</Tab>
+        </div>
+        <div style={{ 
+          display: 'flex', 
+          flexDirection: 'column', 
+          gap: '8px', 
+          alignItems: 'center',
+          background: '#191E3C',
+          padding: '16px',
+          borderRadius: '8px'
+        }}>
+          <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600', color: 'white' }}>Dark Contained</h4>
+          <Tab size="default" type="dark-contained" badge="7">Dark Contained</Tab>
+        </div>
       </div>
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Comparison of all available tab types.',
+        story: 'Comparison of all available tab types with proper backgrounds.',
       },
     },
   },
 };
 
-// All states comparison
 export const AllStates: Story = {
   render: () => (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '24px', alignItems: 'center', padding: '24px' }}>
-      {/* Header row */}
-      <div style={{ fontWeight: '600', fontSize: '14px' }}>Type</div>
-      <div style={{ fontWeight: '600', fontSize: '14px' }}>Default</div>
-      <div style={{ fontWeight: '600', fontSize: '14px' }}>Hover</div>
-      <div style={{ fontWeight: '600', fontSize: '14px' }}>Active</div>
-      <div style={{ fontWeight: '600', fontSize: '14px' }}>Disabled</div>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', padding: '24px' }}>
+      {/* Traditional Tab States */}
+      <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Traditional Tab States</h3>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-end' }}>
+          <div style={{ textAlign: 'center' }}>
+            <Tab size="default" type="default" badge="7">Default</Tab>
+            <p style={{ fontSize: '12px', margin: '8px 0 0 0' }}>Default</p>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <Tab size="default" type="default" state="active" badge="3">Active</Tab>
+            <p style={{ fontSize: '12px', margin: '8px 0 0 0' }}>Active</p>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <Tab size="default" type="default" disabled badge="0">Disabled</Tab>
+            <p style={{ fontSize: '12px', margin: '8px 0 0 0' }}>Disabled</p>
+          </div>
+        </div>
+      </div>
 
-      {/* Default row */}
-      <div style={{ fontSize: '14px', fontWeight: '500' }}>Default</div>
-      <Tab size="default" type="default" badge="7">Tab label</Tab>
-      <Tab size="default" type="default" state="hover" className="force-hover" badge="7">Tab label</Tab>
-      <Tab size="default" type="default" state="active" badge="7">Tab label</Tab>
-      <Tab size="default" type="default" disabled badge="7">Tab label</Tab>
+      {/* Contained Tab States */}
+      <div style={{ 
+        background: '#2F42BD', 
+        padding: '24px', 
+        borderRadius: '12px' 
+      }}>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600', color: 'white' }}>
+          Contained Tab States
+        </h3>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+          <div style={{ textAlign: 'center' }}>
+            <Tab size="default" type="contained" badge="7">Default</Tab>
+            <p style={{ fontSize: '12px', margin: '8px 0 0 0', color: 'white' }}>Default</p>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <Tab size="default" type="contained" state="active" badge="12">Active</Tab>
+            <p style={{ fontSize: '12px', margin: '8px 0 0 0', color: 'white' }}>Active</p>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <Tab size="default" type="contained" disabled badge="0">Disabled</Tab>
+            <p style={{ fontSize: '12px', margin: '8px 0 0 0', color: 'white' }}>Disabled</p>
+          </div>
+        </div>
+      </div>
 
-      {/* Secondary row */}
-      <div style={{ fontSize: '14px', fontWeight: '500' }}>Secondary</div>
-      <Tab size="default" type="secondary" badge="7">Tab label</Tab>
-      <Tab size="default" type="secondary" state="hover" className="force-hover" badge="7">Tab label</Tab>
-      <Tab size="default" type="secondary" state="active" badge="7">Tab label</Tab>
-      <Tab size="default" type="secondary" disabled badge="7">Tab label</Tab>
-
-      {/* Contained row */}
-      <div style={{ fontSize: '14px', fontWeight: '500' }}>Contained</div>
-      <Tab size="default" type="contained" badge="7">Tab label</Tab>
-      <Tab size="default" type="contained" state="hover" className="force-hover" badge="7">Tab label</Tab>
-      <Tab size="default" type="contained" state="active" badge="7">Tab label</Tab>
-      <Tab size="default" type="contained" disabled badge="7">Tab label</Tab>
-
-      {/* Dark Contained row */}
-      <div style={{ fontSize: '14px', fontWeight: '500' }}>Dark Contained</div>
-      <Tab size="default" type="dark-contained" badge="7">Tab label</Tab>
-      <Tab size="default" type="dark-contained" state="hover" className="force-hover" badge="7">Tab label</Tab>
-      <Tab size="default" type="dark-contained" state="active" badge="7">Tab label</Tab>
-      <Tab size="default" type="dark-contained" disabled badge="7">Tab label</Tab>
+      {/* Dark Contained Tab States */}
+      <div style={{ 
+        background: '#191E3C', 
+        padding: '24px', 
+        borderRadius: '12px' 
+      }}>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600', color: 'white' }}>
+          Dark Contained Tab States
+        </h3>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+          <div style={{ textAlign: 'center' }}>
+            <Tab size="default" type="dark-contained" badge="5">Default</Tab>
+            <p style={{ fontSize: '12px', margin: '8px 0 0 0', color: 'white' }}>Default</p>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <Tab size="default" type="dark-contained" state="active" badge="8">Active</Tab>
+            <p style={{ fontSize: '12px', margin: '8px 0 0 0', color: 'white' }}>Active</p>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <Tab size="default" type="dark-contained" disabled badge="0">Disabled</Tab>
+            <p style={{ fontSize: '12px', margin: '8px 0 0 0', color: 'white' }}>Disabled</p>
+          </div>
+        </div>
+      </div>
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Complete showcase of all tab states for all types.',
+        story: 'Complete showcase of all tab states across different types.',
       },
     },
   },
 };
 
-// Tab group simulation
-export const TabGroup: Story = {
+// Interactive examples
+export const InteractiveTabGroup: Story = {
   render: () => {
-    const [activeTab, setActiveTab] = React.useState(0);
+    const [activeTab, setActiveTab] = useState(0);
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <h3 style={{ margin: 0, fontSize: '16px', fontWeight: '600' }}>Traditional Tab Group</h3>
         <div style={{ display: 'flex', gap: '0', alignItems: 'flex-end' }}>
           <Tab
             size="default"
@@ -495,7 +451,7 @@ export const TabGroup: Story = {
             onClick={() => setActiveTab(0)}
             badge="7"
           >
-            Home
+            Dashboard
           </Tab>
           <Tab
             size="default"
@@ -504,7 +460,7 @@ export const TabGroup: Story = {
             onClick={() => setActiveTab(1)}
             badge="3"
           >
-            Dashboard
+            Analytics
           </Tab>
           <Tab
             size="default"
@@ -513,7 +469,7 @@ export const TabGroup: Story = {
             onClick={() => setActiveTab(2)}
             badge="12"
           >
-            Settings
+            Reports
           </Tab>
           <Tab
             size="default"
@@ -521,13 +477,13 @@ export const TabGroup: Story = {
             disabled
             badge="0"
           >
-            Disabled
+            Settings
           </Tab>
         </div>
         
         <div style={{ padding: '16px', background: '#f8f9fa', borderRadius: '4px' }}>
           <p style={{ margin: 0 }}>
-            Current active tab: <strong>{['Home', 'Dashboard', 'Settings'][activeTab]}</strong>
+            Current active tab: <strong>{['Dashboard', 'Analytics', 'Reports'][activeTab]}</strong>
           </p>
         </div>
       </div>
@@ -536,23 +492,32 @@ export const TabGroup: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Interactive tab group simulation with click handlers.',
+        story: 'Interactive traditional tab group with click handlers.',
       },
     },
   },
 };
 
-// Secondary tab group simulation
-export const SecondaryTabGroup: Story = {
+export const InteractiveContainedTabGroup: Story = {
   render: () => {
-    const [activeTab, setActiveTab] = React.useState(0);
+    const [activeTab, setActiveTab] = useState(0);
 
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        <div style={{ display: 'flex', gap: '0', alignItems: 'flex-end' }}>
+      <div style={{ 
+        background: '#2F42BD', 
+        padding: '24px', 
+        borderRadius: '12px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '16px'
+      }}>
+        <h3 style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: 'white' }}>
+          Contained Tab Group
+        </h3>
+        <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
           <Tab
             size="default"
-            type="secondary"
+            type="contained"
             active={activeTab === 0}
             onClick={() => setActiveTab(0)}
             badge="5"
@@ -561,7 +526,7 @@ export const SecondaryTabGroup: Story = {
           </Tab>
           <Tab
             size="default"
-            type="secondary"
+            type="contained"
             active={activeTab === 1}
             onClick={() => setActiveTab(1)}
             badge="8"
@@ -570,18 +535,26 @@ export const SecondaryTabGroup: Story = {
           </Tab>
           <Tab
             size="default"
-            type="secondary"
+            type="contained"
             active={activeTab === 2}
             onClick={() => setActiveTab(2)}
             badge="2"
           >
-            Reports
+            Tasks
+          </Tab>
+          <Tab
+            size="default"
+            type="contained"
+            disabled
+            badge="0"
+          >
+            Archive
           </Tab>
         </div>
         
-        <div style={{ padding: '16px', background: '#f0f9ff', borderRadius: '4px' }}>
-          <p style={{ margin: 0 }}>
-            Current active tab: <strong>{['Projects', 'Team', 'Reports'][activeTab]}</strong>
+        <div style={{ padding: '16px', background: 'rgba(255,255,255,0.1)', borderRadius: '8px' }}>
+          <p style={{ margin: 0, color: 'white' }}>
+            Current active tab: <strong>{['Projects', 'Team', 'Tasks'][activeTab]}</strong>
           </p>
         </div>
       </div>
@@ -590,108 +563,130 @@ export const SecondaryTabGroup: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Interactive secondary tab group simulation.',
+        story: 'Interactive contained tab group demonstrating the button-like behavior.',
       },
     },
   },
 };
 
-// Figma design showcase
+// Comprehensive Figma showcase
 export const FigmaDesignShowcase: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', padding: '24px' }}>
-      <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
-        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Tab Components - Figma Design</h3>
-        <p style={{ margin: '0 0 24px 0', fontSize: '14px', color: '#666' }}>
-          Complete implementation of tab components matching the exact Figma specifications.
-          Features multiple sizes, types, states, and interactive badges.
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', padding: '24px' }}>
+      <div style={{ textAlign: 'center' }}>
+        <h2 style={{ margin: '0 0 16px 0', fontSize: '24px', fontWeight: '700' }}>
+          Complete Tab Component Showcase
+        </h2>
+        <p style={{ margin: '0 0 32px 0', fontSize: '16px', color: '#666', maxWidth: '600px', margin: '0 auto 32px auto' }}>
+          Comprehensive implementation of both traditional tabs (with bottom lines) and contained tabs (button-style).
+          Matches Figma design specifications with proper states and interactions.
         </p>
       </div>
 
+      {/* Traditional Tabs */}
       <div>
-        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Default Tabs - All Sizes</h4>
-        <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-end', flexWrap: 'wrap' }}>
-          <Tab size="small" type="default" badge="7">Tab label</Tab>
-          <Tab size="default" type="default" badge="7">Tab label</Tab>
-          <Tab size="large" type="default" badge="7">Tab label</Tab>
+        <h3 style={{ margin: '0 0 20px 0', fontSize: '20px', fontWeight: '600' }}>Traditional Tabs</h3>
+        
+        <div style={{ marginBottom: '24px' }}>
+          <h4 style={{ margin: '0 0 12px 0', fontSize: '16px', fontWeight: '600' }}>Default Type - All Sizes</h4>
+          <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-end' }}>
+            <Tab size="small" type="default" badge="7">Small Default</Tab>
+            <Tab size="default" type="default" badge="12">Default</Tab>
+            <Tab size="large" type="default" badge="5">Large Default</Tab>
+            <Tab size="default" type="default" state="active" badge="3">Active</Tab>
+          </div>
+        </div>
+
+        <div>
+          <h4 style={{ margin: '0 0 12px 0', fontSize: '16px', fontWeight: '600' }}>Secondary Type - All Sizes</h4>
+          <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-end' }}>
+            <Tab size="small" type="secondary" badge="7">Small Secondary</Tab>
+            <Tab size="default" type="secondary" badge="12">Secondary</Tab>
+            <Tab size="large" type="secondary" badge="5">Large Secondary</Tab>
+            <Tab size="default" type="secondary" state="active" badge="8">Active</Tab>
+          </div>
         </div>
       </div>
 
-      <div>
-        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Secondary Tabs - All Sizes</h4>
-        <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-end', flexWrap: 'wrap' }}>
-          <Tab size="small" type="secondary" badge="7">Tab label</Tab>
-          <Tab size="default" type="secondary" badge="7">Tab label</Tab>
-          <Tab size="large" type="secondary" badge="7">Tab label</Tab>
+      {/* Contained Tabs */}
+      <div style={{ 
+        background: '#2F42BD', 
+        padding: '32px', 
+        borderRadius: '16px',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
+      }}>
+        <h3 style={{ margin: '0 0 20px 0', fontSize: '20px', fontWeight: '600', color: 'white' }}>
+          Contained Tabs
+        </h3>
+        
+        <div style={{ marginBottom: '24px' }}>
+          <h4 style={{ margin: '0 0 12px 0', fontSize: '16px', fontWeight: '600', color: 'white' }}>
+            All Sizes
+          </h4>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Tab size="small" type="contained" badge="7">Small</Tab>
+            <Tab size="default" type="contained" badge="12">Default</Tab>
+            <Tab size="large" type="contained" badge="5">Large</Tab>
+            <Tab size="default" type="contained" state="active" badge="3">Active</Tab>
+            <Tab size="default" type="contained" disabled badge="0">Disabled</Tab>
+          </div>
+        </div>
+
+        <div>
+          <h4 style={{ margin: '0 0 12px 0', fontSize: '16px', fontWeight: '600', color: 'white' }}>
+            Without Badges
+          </h4>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Tab size="small" type="contained" showBadge={false}>Small</Tab>
+            <Tab size="default" type="contained" showBadge={false}>Default</Tab>
+            <Tab size="large" type="contained" showBadge={false}>Large</Tab>
+            <Tab size="default" type="contained" state="active" showBadge={false}>Active</Tab>
+          </div>
         </div>
       </div>
 
-      <div>
-        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Contained Tabs - All Sizes</h4>
-        <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-end', flexWrap: 'wrap', background: '#2F42BD', padding: '16px', borderRadius: '8px' }}>
-          <Tab size="small" type="contained" badge="7">Tab label</Tab>
-          <Tab size="default" type="contained" badge="7">Tab label</Tab>
-          <Tab size="large" type="contained" badge="7">Tab label</Tab>
-          <Tab size="default" type="contained" state="active" badge="12">Active Tab</Tab>
+      {/* Dark Contained Tabs */}
+      <div style={{ 
+        background: '#191E3C', 
+        padding: '32px', 
+        borderRadius: '16px',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.2)'
+      }}>
+        <h3 style={{ margin: '0 0 20px 0', fontSize: '20px', fontWeight: '600', color: 'white' }}>
+          Dark Contained Tabs
+        </h3>
+        
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+          <Tab size="small" type="dark-contained" badge="7">Small</Tab>
+          <Tab size="default" type="dark-contained" badge="12">Default</Tab>
+          <Tab size="large" type="dark-contained" badge="5">Large</Tab>
+          <Tab size="default" type="dark-contained" state="active" badge="8">Active</Tab>
+          <Tab size="default" type="dark-contained" disabled badge="0">Disabled</Tab>
         </div>
       </div>
 
-      <div>
-        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Dark Contained Tabs - All Sizes</h4>
-        <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-end', flexWrap: 'wrap', background: '#191E3C', padding: '16px', borderRadius: '8px' }}>
-          <Tab size="small" type="dark-contained" badge="7">Tab label</Tab>
-          <Tab size="default" type="dark-contained" badge="7">Tab label</Tab>
-          <Tab size="large" type="dark-contained" badge="7">Tab label</Tab>
-          <Tab size="default" type="dark-contained" state="active" badge="5">Active Tab</Tab>
-        </div>
-      </div>
-
-      <div>
-        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Active States Comparison</h4>
-        <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-end', flexWrap: 'wrap' }}>
-          <Tab size="default" type="default" state="active" badge="7">Default Active</Tab>
-          <Tab size="default" type="secondary" state="active" badge="7">Secondary Active</Tab>
-        </div>
-      </div>
-
-      <div>
-        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Interactive Demo</h4>
-        <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-end', flexWrap: 'wrap' }}>
-          <Tab
-            size="default"
-            type="default"
-            onClick={() => alert('Default tab clicked!')}
-            badge="7"
-          >
-            Click Me
-          </Tab>
-          <Tab
-            size="default"
-            type="secondary"
-            onClick={() => alert('Secondary tab clicked!')}
-            badge="3"
-          >
-            Secondary
-          </Tab>
-          <Tab size="default" type="default" disabled badge="0">Disabled</Tab>
-        </div>
-      </div>
-
-      <div>
-        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Design Specifications</h4>
-        <div style={{
-          background: '#f8f9fa',
-          padding: '16px',
-          borderRadius: '8px',
-          fontSize: '14px',
-          fontFamily: 'monospace'
-        }}>
-          <div style={{ marginBottom: '8px' }}><strong>Icons:</strong> Home (leading), Chevron Down (trailing)</div>
-          <div style={{ marginBottom: '8px' }}><strong>Badge:</strong> Circular with number, size varies by tab size</div>
-          <div style={{ marginBottom: '8px' }}><strong>Colors:</strong> Blue theme (default), Green theme (secondary)</div>
-          <div style={{ marginBottom: '8px' }}><strong>States:</strong> Default, Hover, Active, Disabled</div>
-          <div style={{ marginBottom: '8px' }}><strong>Line:</strong> 2px bottom border, changes color on active</div>
-          <div><strong>Font:</strong> Archivo, weight changes with state</div>
+      {/* Usage Guidelines */}
+      <div style={{ 
+        background: '#F8FAFC', 
+        padding: '24px', 
+        borderRadius: '12px',
+        border: '1px solid #E2E8F0'
+      }}>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600', color: '#1E293B' }}>
+          Usage Guidelines
+        </h3>
+        <div style={{ fontSize: '14px', lineHeight: '1.6', color: '#475569' }}>
+          <p style={{ margin: '0 0 12px 0' }}>
+            <strong>Traditional Tabs:</strong> Use for navigation within a container or page section. 
+            They work well with content that changes based on selection.
+          </p>
+          <p style={{ margin: '0 0 12px 0' }}>
+            <strong>Contained Tabs:</strong> Use as filter buttons or action buttons on colored backgrounds. 
+            They work well for toggles and selections within colored interface areas.
+          </p>
+          <p style={{ margin: '0' }}>
+            <strong>Dark Contained Tabs:</strong> Specialized version for very dark backgrounds and themes.
+          </p>
         </div>
       </div>
     </div>
@@ -699,100 +694,8 @@ export const FigmaDesignShowcase: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Comprehensive showcase of tab components matching the exact Figma design specifications with all variants and interactive features.',
+        story: 'Complete showcase of all tab variants matching Figma design specifications.',
       },
     },
   },
 };
-
-// Interactive examples
-export const Interactive: Story = {
-  render: () => {
-    const handleClick = (type: string) => {
-      alert(`${type} tab clicked!`);
-    };
-
-    return (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'center' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-          <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Default Tabs</h4>
-          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-end' }}>
-            <Tab
-              size="default"
-              type="default"
-              onClick={() => handleClick('Default')}
-              badge="7"
-            >
-              Tab 1
-            </Tab>
-
-            <Tab
-              size="default"
-              type="default"
-              onClick={() => handleClick('Default')}
-              badge="3"
-            >
-              Tab 2
-            </Tab>
-
-            <Tab
-              size="default"
-              type="default"
-              state="active"
-              onClick={() => handleClick('Active Default')}
-              badge="12"
-            >
-              Active Tab
-            </Tab>
-          </div>
-        </div>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-          <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Secondary Tabs</h4>
-          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-end' }}>
-            <Tab
-              size="default"
-              type="secondary"
-              onClick={() => handleClick('Secondary')}
-              badge="5"
-            >
-              Projects
-            </Tab>
-
-            <Tab
-              size="default"
-              type="secondary"
-              state="active"
-              onClick={() => handleClick('Active Secondary')}
-              badge="8"
-            >
-              Active
-            </Tab>
-
-            <Tab
-              size="default"
-              type="secondary"
-              onClick={() => handleClick('Secondary')}
-              badge="2"
-            >
-              Reports
-            </Tab>
-          </div>
-        </div>
-      </div>
-    );
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Interactive tabs with click handlers, showcasing default and secondary types.',
-      },
-    },
-  },
-};
-
-// React import for interactive examples
-const React = { useState: (initial: any) => {
-  const [state, setState] = (globalThis as any).React?.useState?.(initial) || [initial, () => {}];
-  return [state, setState];
-}};
