@@ -529,19 +529,23 @@
 
 /* Disabled contained variants */
 .tab.contained.disabled {
-  color: var(--neutral-gray-gray-500);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tab.contained.disabled .tab-icon {
-  color: var(--neutral-gray-gray-500);
+  color: rgba(255, 255, 255, 0.4);
+  opacity: 0.5;
 }
 
 .tab.contained.disabled .tab-badge {
-  background: var(--neutral-gray-gray-400);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tab.contained.disabled .tab-badge-text {
-  color: var(--base-white);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .tab.dark-contained.disabled {
