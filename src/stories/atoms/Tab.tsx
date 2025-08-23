@@ -88,9 +88,9 @@ export const Tab: React.FC<TabProps> = ({
     }
   };
 
-  // Default icons if not provided
-  const defaultLeadingIcon = leadingIcon || <HomeIcon size={iconSize} />;
-  const defaultTrailingIcon = trailingIcon || <ChevronDownIcon size={iconSize} />;
+  // Use provided icons or defaults
+  const leadingIconElement = leadingIcon || <HomeIcon size={iconSize} />;
+  const trailingIconElement = trailingIcon || <ChevronDownIcon size={iconSize} />;
 
   return (
     <div className={`tab-container ${className}`}>
