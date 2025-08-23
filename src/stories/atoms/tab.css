@@ -472,29 +472,32 @@
 
 /* Hover contained variants */
 .tab.contained.hover,
-.tab.contained:hover:not(.disabled) {
+.tab.contained:hover:not(.disabled):not(.active) {
+  background: rgba(255, 255, 255, 0.2);
   color: var(--base-white);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .tab.contained.hover .tab-icon,
-.tab.contained:hover:not(.disabled) .tab-icon {
+.tab.contained:hover:not(.disabled):not(.active) .tab-icon {
   color: var(--base-white);
+  opacity: 0.9;
 }
 
 .tab.contained.hover .tab-text,
-.tab.contained:hover:not(.disabled) .tab-text {
+.tab.contained:hover:not(.disabled):not(.active) .tab-text {
   font-weight: var(--type-weight-medium);
 }
 
 .tab.contained.hover .tab-badge,
-.tab.contained:hover:not(.disabled) .tab-badge {
+.tab.contained:hover:not(.disabled):not(.active) .tab-badge {
   background: var(--base-white);
-  border: 1px solid var(--neutral-gray-gray-300);
+  border: 1px solid var(--base-white);
 }
 
 .tab.contained.hover .tab-badge-text,
-.tab.contained:hover:not(.disabled) .tab-badge-text {
-  color: var(--base-black);
+.tab.contained:hover:not(.disabled):not(.active) .tab-badge-text {
+  color: var(--primary-blue-blue);
 }
 
 /* Hover dark contained variants */
