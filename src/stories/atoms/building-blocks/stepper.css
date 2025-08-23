@@ -1,0 +1,280 @@
+/* Import design tokens */
+@import '../../foundations/tokens.css';
+
+/* === STEPPER COMPONENT === */
+.stepper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sizing-16px);
+  
+  /* Make it interactive if click handler is provided */
+  &.stepper-interactive {
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    
+    &:hover {
+      transform: var(--transform-scale-up);
+    }
+    
+    &:active {
+      transform: var(--transform-scale-down);
+    }
+    
+    &:focus {
+      outline: 2px solid var(--primary-blue-blue);
+      outline-offset: var(--spacing-sizing-2px);
+      border-radius: var(--spacing-radius-8px);
+    }
+  }
+}
+
+/* === STEP INDICATOR === */
+.stepper-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+/* Number indicator styling */
+.stepper-number {
+  width: 100px;
+  height: 100px;
+  
+  /* Default size */
+  .stepper-size-default & {
+    width: 100px;
+    height: 100px;
+  }
+  
+  /* Large size */
+  .stepper-size-large & {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+.stepper-number-text {
+  font-family: var(--type-typeface-archivo);
+  font-weight: var(--type-weight-bold);
+  text-align: center;
+  line-height: 1;
+  
+  /* Default size typography */
+  .stepper-size-default & {
+    font-size: var(--type-size-4xl); /* 36px */
+    line-height: 38px;
+    letter-spacing: var(--type-letter-spacing-archivo-heading-2); /* -1px */
+  }
+  
+  /* Large size typography */
+  .stepper-size-large & {
+    font-size: var(--type-size-6xl); /* 60px */
+    line-height: 38px;
+    letter-spacing: var(--type-letter-spacing-archivo-heading-2); /* -1px */
+  }
+}
+
+/* Check icon indicator styling */
+.stepper-check {
+  background: var(--primary-blue-blue);
+  border-radius: 50%;
+  
+  /* Default size */
+  .stepper-size-default & {
+    width: 100px;
+    height: 100px;
+  }
+  
+  /* Large size */
+  .stepper-size-large & {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+.stepper-check-icon {
+  color: var(--primary-blue-blue-50); /* #F9F9FE */
+  fill: currentColor;
+}
+
+/* === STEP LABEL === */
+.stepper-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--type-typeface-archivo);
+  transition: all 0.2s ease;
+  
+  /* Default size typography */
+  .stepper-size-default & {
+    font-size: var(--type-archivo-heading-5); /* 19px */
+    line-height: var(--type-line-height-heading-5); /* 24px */
+    letter-spacing: var(--type-letter-spacing-archivo-heading-5); /* -0.15px */
+    width: 100px;
+    min-height: 38px;
+  }
+  
+  /* Large size typography */
+  .stepper-size-large & {
+    font-size: var(--type-archivo-heading-4); /* 24px */
+    line-height: var(--type-line-height-heading-4); /* 24px */
+    letter-spacing: var(--type-letter-spacing-archivo-heading-4); /* -0.25px */
+    width: 140px;
+    min-height: 38px;
+  }
+}
+
+/* === STATE VARIATIONS === */
+
+/* Default state */
+.stepper-state-default {
+  .stepper-number-text {
+    color: var(--base-black); /* #1C1C1C */
+  }
+  
+  .stepper-label {
+    color: var(--base-black);
+    font-weight: var(--type-weight-light); /* 300 */
+  }
+}
+
+/* Active state */
+.stepper-state-active {
+  .stepper-number-text {
+    color: var(--primary-blue-blue); /* #2F42BD */
+  }
+  
+  .stepper-label {
+    color: var(--primary-blue-blue);
+    font-weight: var(--type-weight-medium); /* 500 */
+  }
+}
+
+/* Completed state */
+.stepper-state-completed {
+  .stepper-label {
+    color: var(--primary-blue-blue);
+    font-weight: var(--type-weight-medium); /* 500 */
+  }
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .stepper {
+    gap: var(--spacing-sizing-12px);
+  }
+  
+  /* Scale down indicators on mobile */
+  .stepper-size-large {
+    .stepper-number,
+    .stepper-check {
+      width: 120px;
+      height: 120px;
+    }
+    
+    .stepper-number-text {
+      font-size: 48px;
+    }
+    
+    .stepper-label {
+      font-size: var(--type-size-xl); /* 20px */
+      width: 120px;
+    }
+  }
+  
+  .stepper-size-default {
+    .stepper-number,
+    .stepper-check {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .stepper-number-text {
+      font-size: var(--type-size-3xl); /* 30px */
+    }
+    
+    .stepper-label {
+      font-size: var(--type-size-base); /* 16px */
+      width: 80px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further scale down for small mobile screens */
+  .stepper-size-large {
+    .stepper-number,
+    .stepper-check {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .stepper-number-text {
+      font-size: var(--type-size-4xl); /* 36px */
+    }
+    
+    .stepper-label {
+      font-size: var(--type-size-lg); /* 18px */
+      width: 100px;
+    }
+  }
+  
+  .stepper-size-default {
+    .stepper-number,
+    .stepper-check {
+      width: 70px;
+      height: 70px;
+    }
+    
+    .stepper-number-text {
+      font-size: var(--type-size-2xl); /* 24px */
+    }
+    
+    .stepper-label {
+      font-size: var(--type-size-sm); /* 14px */
+      width: 70px;
+    }
+  }
+}
+
+/* === ACCESSIBILITY === */
+.stepper:focus-visible {
+  outline: 2px solid var(--primary-blue-blue);
+  outline-offset: var(--spacing-sizing-4px);
+  border-radius: var(--spacing-radius-8px);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .stepper-state-default .stepper-number-text,
+  .stepper-state-default .stepper-label {
+    color: var(--base-black);
+  }
+  
+  .stepper-state-active .stepper-number-text,
+  .stepper-state-active .stepper-label,
+  .stepper-state-completed .stepper-label {
+    color: var(--primary-blue-dark-blue);
+  }
+  
+  .stepper-check {
+    background: var(--primary-blue-dark-blue);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .stepper,
+  .stepper-indicator,
+  .stepper-label {
+    transition: none;
+  }
+  
+  .stepper-interactive:hover {
+    transform: none;
+  }
+}
