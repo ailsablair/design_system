@@ -71,10 +71,10 @@ export const Tab: React.FC<TabProps> = ({
   // Get badge size based on tab size
   const getBadgeSize = () => {
     switch (size) {
-      case 'small': return 'x-small';
-      case 'default': return 'small';
-      case 'large': return 'default';
-      default: return 'small';
+      case 'small': return 'small';
+      case 'default': return 'default';
+      case 'large': return 'large';
+      default: return 'default';
     }
   };
 
@@ -92,38 +92,74 @@ export const Tab: React.FC<TabProps> = ({
   const leadingIconElement = leadingIcon || <HomeIcon size={iconSize} />;
   const trailingIconElement = trailingIcon || <ChevronDownIcon size={iconSize} />;
 
-  return (
-    <div className={`tab-container ${className}`}>
-      <div
-        className={`tab ${size} ${type} ${actualState}`}
+  // For contained and dark-contained types, render as a self-contained button-like component
+  if (type === 'contained' || type === 'dark-contained') {
+    return (
+      <button
+        className={`tab-contained ${size} ${type} ${actualState} ${className}`}
         onClick={handleClick}
+        disabled={disabled}
         role="tab"
         aria-selected={actualState === 'active'}
         aria-disabled={disabled}
-        tabIndex={disabled ? -1 : 0}
+        type="button"
+      >
+        <div className="tab-contained-content">
+          {leadingIcon && (
+            <span className="tab-contained-icon tab-contained-leading-icon">
+              {leadingIconElement}
+            </span>
+          )}
+          
+          <span className="tab-contained-text">{children}</span>
+
+          {trailingIcon && (
+            <span className="tab-contained-icon tab-contained-trailing-icon">
+              {trailingIconElement}
+            </span>
+          )}
+
+          {showBadge && badge && (
+            <span className={`tab-contained-badge ${badgeSize}`}>
+              {badge}
+            </span>
+          )}
+        </div>
+      </button>
+    );
+  }
+
+  // For default and secondary types, render as traditional tabs with bottom line
+  return (
+    <div className={`tab-container ${className}`}>
+      <button
+        className={`tab ${size} ${type} ${actualState}`}
+        onClick={handleClick}
+        disabled={disabled}
+        role="tab"
+        aria-selected={actualState === 'active'}
+        aria-disabled={disabled}
+        type="button"
       >
         <div className="tab-content">
           <span className="tab-icon tab-leading-icon">
             {leadingIconElement}
           </span>
 
-          <div className="tab-label">
-            <span className="tab-text">{children}</span>
-          </div>
+          <span className="tab-text">{children}</span>
 
           <span className="tab-icon tab-trailing-icon">
             {trailingIconElement}
           </span>
 
           {showBadge && badge && (
-            <div className={`tab-badge ${badgeSize} ${type}`}>
-              <span className="tab-badge-text">{badge}</span>
-            </div>
+            <span className={`tab-badge ${badgeSize}`}>
+              {badge}
+            </span>
           )}
         </div>
-      </div>
+      </button>
       
-      <div className="tab-spacer"></div>
       <div className={`tab-line ${type} ${actualState}`}></div>
     </div>
   );
