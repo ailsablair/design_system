@@ -367,8 +367,9 @@
 
 /* Contained variants */
 .tab.contained {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: var(--spacing-radius-4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .tab.contained .tab-content {
@@ -377,19 +378,21 @@
 }
 
 .tab.contained.default {
-  color: var(--base-black);
+  color: var(--base-white);
 }
 
 .tab.contained.default .tab-icon {
-  color: var(--base-black);
+  color: var(--base-white);
+  opacity: 0.7;
 }
 
 .tab.contained.default .tab-badge {
-  background: var(--secondary-navy-light);
+  background: var(--base-white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .tab.contained.default .tab-badge-text {
-  color: var(--secondary-navy);
+  color: var(--primary-blue-blue);
 }
 
 /* Dark contained variants */
