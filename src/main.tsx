@@ -1,6 +1,20 @@
 // Import and set up ResizeObserver error handling FIRST
 import { setupResizeObserverErrorHandler } from './utils/resizeObserverHandler'
 
+// Emergency early suppression before full setup
+if (typeof window !== 'undefined') {
+  const originalError = window.console.error;
+  window.console.error = (...args: any[]) => {
+    const isResizeError = args.some(arg =>
+      String(arg).toLowerCase().includes('resizeobserver') ||
+      String(arg).toLowerCase().includes('undelivered notifications')
+    );
+    if (!isResizeError) {
+      originalError.apply(window.console, args);
+    }
+  };
+}
+
 // Set up ResizeObserver error handling immediately
 setupResizeObserverErrorHandler()
 
