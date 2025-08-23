@@ -103,21 +103,17 @@ export const Tab: React.FC<TabProps> = ({
         tabIndex={disabled ? -1 : 0}
       >
         <div className="tab-content">
-          {defaultLeadingIcon && (
-            <span className="tab-icon tab-leading-icon">
-              {defaultLeadingIcon}
-            </span>
-          )}
-          
+          <span className="tab-icon tab-leading-icon">
+            {leadingIconElement}
+          </span>
+
           <div className="tab-label">
             <span className="tab-text">{children}</span>
           </div>
 
-          {defaultTrailingIcon && (
-            <span className="tab-icon tab-trailing-icon">
-              {defaultTrailingIcon}
-            </span>
-          )}
+          <span className="tab-icon tab-trailing-icon">
+            {trailingIconElement}
+          </span>
 
           {showBadge && badge && (
             <div className={`tab-badge ${badgeSize} ${type}`}>
