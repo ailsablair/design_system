@@ -665,3 +665,28 @@
 .tab.dark-contained.force-hover .tab-badge-text {
   color: var(--base-black) !important;
 }
+
+/* Force state classes for contained tabs */
+.tab.contained.force-hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: var(--base-white) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+.tab.contained.force-hover .tab-icon {
+  color: var(--base-white) !important;
+  opacity: 0.9 !important;
+}
+
+.tab.contained.force-hover .tab-text {
+  font-weight: var(--type-weight-medium) !important;
+}
+
+.tab.contained.force-hover .tab-badge {
+  background: var(--base-white) !important;
+  border: 1px solid var(--base-white) !important;
+}
+
+.tab.contained.force-hover .tab-badge-text {
+  color: var(--primary-blue-blue) !important;
+}
