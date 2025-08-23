@@ -65,10 +65,10 @@ export const Tab: React.FC<TabProps> = ({
   // Get icon sizes based on tab size
   const getIconSize = () => {
     switch (size) {
-      case 'small': return 16;
-      case 'default': return 18;
-      case 'large': return 22;
-      default: return 18;
+      case 'small': return 14;
+      case 'default': return 16;
+      case 'large': return 20;
+      default: return 16;
     }
   };
 
