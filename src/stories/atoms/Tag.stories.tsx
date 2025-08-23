@@ -220,7 +220,7 @@ export const AllColors: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'All available color variants for tags in default size.',
+        story: 'All available color variants for tags in default size with close buttons.',
       },
     },
   },
