@@ -4,7 +4,7 @@ import { ProgressBar } from '../atoms/ProgressBar';
 import { PaymentMethod } from '../atoms/PaymentMethod';
 
 const meta: Meta = {
-  title: 'Design System/Figma New Variants Showcase',
+  title: 'Design System/Figma Showcase Files/Figma New Variants Showcase',
   parameters: {
     layout: 'centered',
     docs: {

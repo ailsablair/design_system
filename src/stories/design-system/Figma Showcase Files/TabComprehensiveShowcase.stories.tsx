@@ -3,7 +3,7 @@ import { Tab } from './Tab';
 import React, { useState } from 'react';
 
 const meta: Meta<typeof Tab> = {
-  title: 'Design System/Tab Complete Redesign Showcase',
+  title: 'Design System/Figma Showcase Files/Tab Complete Redesign Showcase',
   component: Tab,
   parameters: {
     layout: 'padded',
