@@ -8,7 +8,7 @@ const meta: Meta<typeof Tag> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Tag component with multiple sizes, variants, and interactive elements based on Echo design system.',
+        component: 'Tag component with multiple sizes, variants, and interactive elements. Features comprehensive color options, size variants, and customizable close buttons for filtering, categorization, and labeling use cases.',
       },
     },
   },
@@ -21,12 +21,20 @@ const meta: Meta<typeof Tag> = {
     },
     variant: {
       control: { type: 'select' },
-      options: ['light-gray', 'primary', 'secondary', 'blue', 'cyan', 'orange', 'gray', 'purple', 'green', 'red', 'yellow', 'black'],
+      options: [
+        'light-gray', 'primary', 'secondary',
+        'blue', 'cyan', 'purple', 'orange', 'green', 'red', 'yellow', 'gray', 'black',
+        'outline-blue', 'outline-info-blue'
+      ],
       description: 'Color variant of the tag',
     },
     showClose: {
       control: { type: 'boolean' },
       description: 'Show close/remove button',
+    },
+    light: {
+      control: { type: 'boolean' },
+      description: 'Light variant with subtle background colors',
     },
     disabled: {
       control: { type: 'boolean' },
@@ -34,8 +42,9 @@ const meta: Meta<typeof Tag> = {
     },
   },
   args: {
-    label: 'Label',
+    label: 'Tag Label',
     showClose: true,
+    light: false,
     disabled: false,
     size: 'default',
     variant: 'light-gray',
