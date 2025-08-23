@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { UserProfile } from '../atoms/UserProfile';
-import { ProgressBar } from '../atoms/ProgressBar';
-import { PaymentMethod } from '../atoms/PaymentMethod';
+import { UserProfile } from '../../atoms/UserProfile';
+import { ProgressBar } from '../../atoms/ProgressBar';
+import { PaymentMethod } from '../../atoms/PaymentMethod';
 
 const meta: Meta = {
   title: 'Design System/Figma Showcase Files/Figma New Variants Showcase',

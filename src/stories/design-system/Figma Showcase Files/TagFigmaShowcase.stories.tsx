@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Tag } from './Tag';
+import { Tag } from '../../atoms/Tag';
 
 const meta: Meta<typeof Tag> = {
   title: 'Design System/Figma Showcase Files/Tag Figma Showcase',
