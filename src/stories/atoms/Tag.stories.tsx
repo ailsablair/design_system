@@ -253,7 +253,7 @@ export const AllColorsNoClose: Story = {
   },
 };
 
-// Size variations for all new colors
+// Size variations for all colors
 export const ColorSizeMatrix: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -278,7 +278,74 @@ export const ColorSizeMatrix: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Matrix showing all new color variants in different sizes, replicating the Figma design system.',
+        story: 'Matrix showing all color variants in different sizes, exactly matching the Figma design system specifications.',
+      },
+    },
+  },
+};
+
+// Light variants showcase
+export const LightVariants: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+      <Tag label="Blue Light" variant="blue" light />
+      <Tag label="Cyan Light" variant="cyan" light />
+      <Tag label="Purple Light" variant="purple" light />
+      <Tag label="Orange Light" variant="orange" light />
+      <Tag label="Green Light" variant="green" light />
+      <Tag label="Red Light" variant="red" light />
+      <Tag label="Yellow Light" variant="yellow" light />
+      <Tag label="Gray Light" variant="gray" light />
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Light variants with subtle background colors and darker text for better readability.',
+      },
+    },
+  },
+};
+
+// Outline variants showcase
+export const OutlineVariants: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+      <Tag label="Outline Blue" variant="outline-blue" />
+      <Tag label="Outline Info" variant="outline-info-blue" />
+      <Tag label="Outline Blue" variant="outline-blue" showClose={false} />
+      <Tag label="Outline Info" variant="outline-info-blue" showClose={false} />
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Outline style variants with border emphasis and transparent backgrounds.',
+      },
+    },
+  },
+};
+
+// Interactive states demonstration
+export const InteractiveStates: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <span style={{ fontWeight: '600', minWidth: '80px' }}>Normal:</span>
+        <Tag label="Click me" variant="blue" onClick={() => alert('Tag clicked!')} />
+        <Tag label="Hover me" variant="green" onClick={() => alert('Green clicked!')} />
+      </div>
+      <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <span style={{ fontWeight: '600', minWidth: '80px' }}>Disabled:</span>
+        <Tag label="Disabled" variant="blue" disabled />
+        <Tag label="Disabled" variant="red" disabled />
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Interactive states showing normal, hover, and disabled tag behaviors.',
       },
     },
   },
