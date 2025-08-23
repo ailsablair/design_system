@@ -368,6 +368,7 @@
 /* Contained variants */
 .tab.contained {
   background: transparent;
+  border-radius: var(--spacing-radius-4px);
 }
 
 .tab.contained .tab-content {
