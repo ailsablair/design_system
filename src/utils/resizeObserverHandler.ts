@@ -19,20 +19,56 @@ declare global {
 const isResizeObserverError = (message: any): boolean => {
   if (!message) return false;
 
-  // Convert to string and normalize
-  const messageStr = String(message).toLowerCase();
+  // Convert to string and normalize - handle different input types
+  let messageStr: string;
 
+  if (typeof message === 'string') {
+    messageStr = message;
+  } else if (message instanceof Error) {
+    messageStr = message.message || message.toString();
+  } else if (typeof message === 'object' && message.message) {
+    messageStr = message.message;
+  } else {
+    messageStr = String(message);
+  }
+
+  // Normalize to lowercase and trim whitespace
+  messageStr = messageStr.toLowerCase().trim();
+
+  // Enhanced patterns to catch more variations
   const resizeObserverPatterns = [
+    // Standard patterns
     'resizeobserver loop completed with undelivered notifications',
+    'resizeobserver loop completed with undelivered notifications.',
     'resizeobserver loop limit exceeded',
     'resizeobserver loop',
     'resizeobserver callback threw an exception',
     'resizeobserver',
     'non-finite css pixel',
+
+    // Variations with spaces
+    'resize observer loop completed with undelivered notifications',
+    'resize observer loop completed with undelivered notifications.',
+    'resize observer loop limit exceeded',
     'resize observer loop',
     'resize observer callback',
+    'resize observer',
+
+    // Partial patterns
     'loop completed with undelivered notifications',
-    'undelivered notifications'
+    'undelivered notifications',
+    'undelivered notification',
+
+    // Browser-specific variations
+    'resizeobserver loop completed with undelivered',
+    'observer loop completed',
+    'loop completed',
+
+    // Edge cases
+    'resize-observer',
+    'resizeobserver error',
+    'observer error',
+    'css pixel'
   ];
 
   return resizeObserverPatterns.some(pattern =>
