@@ -30,18 +30,14 @@ export interface TabProps {
 
 // Default icons for tabs
 const HomeIcon: React.FC<{ size: number }> = ({ size }) => (
-  <svg width={size} height={size} viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g opacity="0.6">
-      <path d="M7.5 15V10.5H10.5V15H14.25V9H16.5L9 2.25L1.5 9H3.75V15H7.5Z" fill="currentColor"/>
-    </g>
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z" fill="currentColor"/>
   </svg>
 );
 
 const ChevronDownIcon: React.FC<{ size: number }> = ({ size }) => (
-  <svg width={size} height={size} viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g opacity="0.6">
-      <path d="M5.5575 6.435L9 9.8775L12.4425 6.435L13.5 7.5L9 12L4.5 7.5L5.5575 6.435Z" fill="currentColor"/>
-    </g>
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z" fill="currentColor"/>
   </svg>
 );
 
