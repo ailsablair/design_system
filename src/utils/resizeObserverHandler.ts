@@ -165,8 +165,7 @@ export const setupResizeObserverErrorHandler = (): void => {
     }
   }, true); // Use capture phase
 
-  // Additional safety net: try to catch any remaining ResizeObserver errors
-  // that might slip through with a more aggressive pattern
+  // Enhanced requestAnimationFrame wrapping
   const originalRequestAnimationFrame = window.requestAnimationFrame;
   window.requestAnimationFrame = (callback) => {
     return originalRequestAnimationFrame.call(window, (...args) => {
@@ -181,6 +180,67 @@ export const setupResizeObserverErrorHandler = (): void => {
       }
     });
   };
+
+  // Wrap setTimeout and setInterval to catch ResizeObserver errors in async operations
+  const originalSetTimeout = window.setTimeout;
+  window.setTimeout = (callback: any, delay?: number, ...args: any[]) => {
+    if (typeof callback === 'function') {
+      const wrappedCallback = (...callbackArgs: any[]) => {
+        try {
+          return callback(...callbackArgs);
+        } catch (error) {
+          if (error instanceof Error && isResizeObserverError(error.message)) {
+            return; // Silently suppress
+          }
+          throw error;
+        }
+      };
+      return originalSetTimeout.call(window, wrappedCallback, delay, ...args);
+    }
+    return originalSetTimeout.call(window, callback, delay, ...args);
+  };
+
+  // Additional queueMicrotask wrapping for microtask errors
+  if (window.queueMicrotask) {
+    const originalQueueMicrotask = window.queueMicrotask;
+    window.queueMicrotask = (callback) => {
+      return originalQueueMicrotask.call(window, () => {
+        try {
+          callback();
+        } catch (error) {
+          if (error instanceof Error && isResizeObserverError(error.message)) {
+            return; // Silently suppress
+          }
+          throw error;
+        }
+      });
+    };
+  }
+
+  // Override the ResizeObserver constructor to add additional safety
+  if (window.ResizeObserver) {
+    const OriginalResizeObserver = window.ResizeObserver;
+    window.ResizeObserver = class SafeResizeObserver extends OriginalResizeObserver {
+      constructor(callback: ResizeObserverCallback) {
+        const safeCallback: ResizeObserverCallback = (entries, observer) => {
+          try {
+            callback(entries, observer);
+          } catch (error) {
+            if (error instanceof Error && !isResizeObserverError(error.message)) {
+              console.error('ResizeObserver callback error:', error);
+            }
+            // ResizeObserver errors are silently suppressed
+          }
+        };
+        super(safeCallback);
+      }
+    };
+  }
+
+  // Log successful initialization in development
+  if (process.env.NODE_ENV === 'development') {
+    console.debug('🔧 Enhanced ResizeObserver error handler initialized');
+  }
 };
 
 /**
