@@ -88,16 +88,29 @@ export const setupResizeObserverErrorHandler = (): void => {
 
   // Set up immediately to catch early errors
   window.__resizeObserverSetupComplete = true;
-  
+
   // Store original console.error if not already stored
   if (!window.__resizeObserverOriginalError) {
     window.__resizeObserverOriginalError = window.console.error;
   }
 
-  // Override console.error to catch ResizeObserver errors
+  // Enhanced console.error override with better argument checking
   window.console.error = (...args: any[]) => {
-    // Check all arguments for ResizeObserver patterns
-    const isResizeError = args.some(arg => isResizeObserverError(arg));
+    // Check all arguments and their nested properties for ResizeObserver patterns
+    const isResizeError = args.some(arg => {
+      // Direct message check
+      if (isResizeObserverError(arg)) return true;
+
+      // Check nested properties for error objects
+      if (arg && typeof arg === 'object') {
+        if (isResizeObserverError(arg.message)) return true;
+        if (isResizeObserverError(arg.error)) return true;
+        if (isResizeObserverError(arg.stack)) return true;
+        if (isResizeObserverError(arg.toString())) return true;
+      }
+
+      return false;
+    });
 
     if (isResizeError) {
       // In development, show a friendly warning once
