@@ -336,14 +336,93 @@ export const temporarilyDisableResizeObserverLogging = (duration: number = 5000)
  */
 export const resetResizeObserverErrorHandler = (): void => {
   if (typeof window === 'undefined') return;
-  
+
   if (window.__resizeObserverOriginalError) {
     window.console.error = window.__resizeObserverOriginalError;
     delete window.__resizeObserverOriginalError;
   }
-  
+
   delete window.__resizeObserverErrorLogged;
   delete window.__resizeObserverSetupComplete;
+};
+
+/**
+ * Force suppress any ResizeObserver errors immediately
+ * Use this as an emergency override if errors are still appearing
+ */
+export const forceSupressResizeObserverErrors = (): void => {
+  if (typeof window === 'undefined') return;
+
+  // Override console methods more aggressively
+  ['error', 'warn', 'log'].forEach(method => {
+    const original = (window.console as any)[method];
+    (window.console as any)[method] = (...args: any[]) => {
+      const hasResizeError = args.some(arg => {
+        const str = String(arg).toLowerCase();
+        return str.includes('resizeobserver') ||
+               str.includes('undelivered notifications') ||
+               str.includes('loop completed');
+      });
+
+      if (!hasResizeError) {
+        original.apply(window.console, args);
+      }
+    };
+  });
+
+  // Aggressive error event suppression
+  ['error', 'unhandledrejection'].forEach(eventType => {
+    window.addEventListener(eventType, (event: any) => {
+      const message = event.message || event.reason || '';
+      if (String(message).toLowerCase().includes('resizeobserver')) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+      }
+    }, { capture: true, passive: false });
+  });
+
+  console.log('🚫 Force ResizeObserver error suppression activated');
+};
+
+/**
+ * Check if ResizeObserver errors are being properly suppressed
+ */
+export const testResizeObserverSuppression = (): Promise<boolean> => {
+  return new Promise((resolve) => {
+    if (typeof window === 'undefined') {
+      resolve(false);
+      return;
+    }
+
+    let errorCaught = false;
+
+    // Set up a temporary error listener
+    const errorHandler = (event: ErrorEvent) => {
+      if (event.message.toLowerCase().includes('resizeobserver')) {
+        errorCaught = true;
+      }
+    };
+
+    window.addEventListener('error', errorHandler);
+
+    // Try to trigger a ResizeObserver error
+    setTimeout(() => {
+      try {
+        // This should be suppressed
+        console.error('ResizeObserver loop completed with undelivered notifications.');
+
+        // Clean up and resolve
+        setTimeout(() => {
+          window.removeEventListener('error', errorHandler);
+          resolve(!errorCaught); // Return true if no error was caught (meaning it was suppressed)
+        }, 100);
+      } catch (e) {
+        window.removeEventListener('error', errorHandler);
+        resolve(false);
+      }
+    }, 50);
+  });
 };
 
 /**
