@@ -424,12 +424,14 @@
 
 /* Active contained variants */
 .tab.contained.active {
-  color: var(--base-white);
+  background: var(--base-white);
+  color: var(--primary-blue-blue);
+  border: 1px solid var(--base-white);
 }
 
 .tab.contained.active .tab-icon {
-  color: var(--base-white);
-  opacity: 0.6;
+  color: var(--primary-blue-blue);
+  opacity: 0.8;
 }
 
 .tab.contained.active .tab-text {
@@ -438,6 +440,7 @@
 
 .tab.contained.active .tab-badge {
   background: var(--primary-yellow-yellow);
+  border: 1px solid var(--primary-yellow-yellow);
 }
 
 .tab.contained.active .tab-badge-text {
