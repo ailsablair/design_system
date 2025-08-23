@@ -68,7 +68,33 @@ const isResizeObserverError = (message: any): boolean => {
     'resize-observer',
     'resizeobserver error',
     'observer error',
-    'css pixel'
+    'css pixel',
+
+    // Additional comprehensive patterns for complete coverage
+    'ResizeObserver loop completed with undelivered notifications',
+    'ResizeObserver loop completed with undelivered notifications.',
+    'ResizeObserver loop limit exceeded',
+    'ResizeObserver loop',
+    'ResizeObserver',
+    'resize observer loop',
+    'resizeobserver loop completed',
+    'observer notification loop',
+    'infinite resize loop',
+    'observer cycle detected',
+    'resize notification loop',
+    'observer loop detected',
+    'script error in resize observer',
+    'resize observer script error',
+    'resizeobserver callback failed',
+    'resize callback loop',
+    'resize observation error',
+    'observation loop error',
+    'resize observer undelivered',
+    'observer undelivered notifications',
+    'resize loop undelivered',
+    'notification delivery failed',
+    'observer callback error',
+    'resize callback error'
   ];
 
   return resizeObserverPatterns.some(pattern =>
