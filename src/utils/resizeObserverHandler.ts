@@ -346,7 +346,40 @@ export const resetResizeObserverErrorHandler = (): void => {
   delete window.__resizeObserverSetupComplete;
 };
 
-// Immediate initialization when module loads to catch early ResizeObserver errors
-if (typeof window !== 'undefined' && !window.__resizeObserverSetupComplete) {
-  setupResizeObserverErrorHandler();
+/**
+ * Immediate early error suppression for very early ResizeObserver errors
+ * This runs before the full setup to catch errors that occur during module loading
+ */
+if (typeof window !== 'undefined') {
+  // Quick early suppression
+  const originalConsoleError = window.console.error;
+  window.console.error = (...args: any[]) => {
+    const hasResizeObserverError = args.some(arg => {
+      const str = String(arg).toLowerCase();
+      return str.includes('resizeobserver') || str.includes('undelivered notifications');
+    });
+
+    if (!hasResizeObserverError) {
+      originalConsoleError.apply(window.console, args);
+    }
+  };
+
+  // Immediate setup if not already done
+  if (!window.__resizeObserverSetupComplete) {
+    setupResizeObserverErrorHandler();
+  }
+}
+
+/**
+ * Emergency ResizeObserver error suppression - runs immediately
+ * This is a fallback for environments where the main handler might not catch everything
+ */
+if (typeof globalThis !== 'undefined' && typeof globalThis.addEventListener === 'function') {
+  globalThis.addEventListener('error', (event) => {
+    if (event.message && event.message.toLowerCase().includes('resizeobserver')) {
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+    }
+  }, true);
 }
