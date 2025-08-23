@@ -632,6 +632,7 @@ export const FigmaDesignShowcase: Story = {
           <Tab size="small" type="contained" badge="7">Tab label</Tab>
           <Tab size="default" type="contained" badge="7">Tab label</Tab>
           <Tab size="large" type="contained" badge="7">Tab label</Tab>
+          <Tab size="default" type="contained" state="active" badge="12">Active Tab</Tab>
         </div>
       </div>
 
