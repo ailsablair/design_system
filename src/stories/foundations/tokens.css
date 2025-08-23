@@ -211,6 +211,12 @@
   /* Legacy Seafoam (maintain backward compatibility) */
   --primary-seafoam-seafoam-100: #DCECE2;
 
+  /* Figma Specific Seafoam Tokens (for Tabs and other components) */
+  --primary-seafoam-extra-dark-seafoam: #384C40;
+  --primary-seafoam-seafoam: #8BBF9F;
+  --primary-seafoam-dark-seafoam: #4B6D58;
+  --primary-seafoam-seafoam-25: #F9FCFA;
+
   /* === SECONDARY COLORS === */
   --secondary-blue-gray: #61607C;
   --secondary-blue-gray-light: #C8C7D1;
