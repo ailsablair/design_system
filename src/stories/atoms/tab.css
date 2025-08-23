@@ -395,6 +395,7 @@
 /* Dark contained variants */
 .tab.dark-contained {
   background: transparent;
+  border-radius: var(--spacing-radius-4px);
 }
 
 .tab.dark-contained .tab-content {
