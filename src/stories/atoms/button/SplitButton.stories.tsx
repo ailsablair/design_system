@@ -2,10 +2,10 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { SplitButton } from './SplitButton';
 import type { SplitButtonMenuItem } from './SplitButton';
-import { AlarmIcon } from './Button';
+import { AlarmIcon } from '../Button';
 
 const meta: Meta<typeof SplitButton> = {
-  title: 'Atoms/SplitButton',
+  title: 'Atoms/Button/SplitButton',
   component: SplitButton,
   parameters: {
     layout: 'centered',
