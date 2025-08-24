@@ -1,59 +1,76 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Slider } from '../Slider';
+import { Slider } from './Slider';
 
 const meta: Meta<typeof Slider> = {
-  title: 'Atoms/Building Blocks/Slider',
+  title: 'Atoms/Slider Component',
   component: Slider,
   parameters: {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Slider building block - a fundamental UI element with sky-blue dots and connecting track that can be filled or unfilled. Used as a building block for progressive sliders and other components.',
+        component: 'Slider component based on the building-blocks/slider Figma design. Supports multiple sizes, filled/unfilled states, and optional number displays.',
       },
     },
   },
   argTypes: {
     size: {
-      control: 'select',
+      control: { type: 'select' },
       options: ['small', 'default', 'large'],
-      description: 'Size variant',
+      description: 'Size variant of the slider',
     },
     filled: {
-      control: 'boolean',
-      description: 'Whether the track is filled (shows progress)',
+      control: { type: 'boolean' },
+      description: 'Whether the track shows progress (filled)',
     },
     showStart: {
-      control: 'boolean',
-      description: 'Show start number and dot',
+      control: { type: 'boolean' },
+      description: 'Whether to show start number',
     },
     showEnd: {
-      control: 'boolean',
-      description: 'Show end number and dot',
+      control: { type: 'boolean' },
+      description: 'Whether to show end number',
     },
     showNumber: {
-      control: 'boolean',
-      description: 'Show numbers on dots',
+      control: { type: 'boolean' },
+      description: 'Whether to show numbers above dots',
     },
     startValue: {
       control: { type: 'number' },
-      description: 'Start value',
+      description: 'Start value to display',
     },
     endValue: {
       control: { type: 'number' },
-      description: 'End value',
+      description: 'End value to display',
+    },
+    value: {
+      control: { type: 'number', min: 0, max: 1, step: 0.1 },
+      description: 'Current slider value',
+    },
+    min: {
+      control: { type: 'number' },
+      description: 'Minimum value',
+    },
+    max: {
+      control: { type: 'number' },
+      description: 'Maximum value',
+    },
+    step: {
+      control: { type: 'number', min: 0.01, max: 1, step: 0.01 },
+      description: 'Step size',
     },
     disabled: {
-      control: 'boolean',
-      description: 'Disabled state',
+      control: { type: 'boolean' },
+      description: 'Whether the slider is disabled',
     },
+    onChange: { action: 'changed' },
+    onInput: { action: 'input' },
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof Slider>;
 
-// Basic building blocks
-export const UnfilledDefault: Story = {
+export const Default: Story = {
   args: {
     size: 'default',
     filled: false,
@@ -62,18 +79,15 @@ export const UnfilledDefault: Story = {
     showNumber: true,
     startValue: 0,
     endValue: 1,
-    value: 0,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Default unfilled slider building block with grey track between sky-blue dots.',
-      },
-    },
+    value: 0.5,
+    min: 0,
+    max: 1,
+    step: 0.1,
+    disabled: false,
   },
 };
 
-export const FilledDefault: Story = {
+export const Filled: Story = {
   args: {
     size: 'default',
     filled: true,
@@ -82,238 +96,186 @@ export const FilledDefault: Story = {
     showNumber: true,
     startValue: 0,
     endValue: 1,
-    value: 1,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Default filled slider building block with dark-blue track between sky-blue dots.',
-      },
-    },
+    value: 0.7,
+    min: 0,
+    max: 1,
+    step: 0.1,
+    disabled: false,
   },
 };
 
-// Size variants - unfilled
-export const SmallUnfilled: Story = {
-  args: {
-    size: 'small',
-    filled: false,
-    showStart: true,
-    showEnd: true,
-    showNumber: true,
-    startValue: 0,
-    endValue: 1,
-  },
-};
-
-export const LargeUnfilled: Story = {
-  args: {
-    size: 'large',
-    filled: false,
-    showStart: true,
-    showEnd: true,
-    showNumber: true,
-    startValue: 0,
-    endValue: 1,
-  },
-};
-
-// Size variants - filled
-export const SmallFilled: Story = {
-  args: {
-    size: 'small',
-    filled: true,
-    showStart: true,
-    showEnd: true,
-    showNumber: true,
-    startValue: 0,
-    endValue: 1,
-    value: 1,
-  },
-};
-
-export const LargeFilled: Story = {
-  args: {
-    size: 'large',
-    filled: true,
-    showStart: true,
-    showEnd: true,
-    showNumber: true,
-    startValue: 0,
-    endValue: 1,
-    value: 1,
-  },
-};
-
-// Track only (no numbers)
-export const TrackOnlyUnfilled: Story = {
-  args: {
-    size: 'default',
-    filled: false,
-    showStart: false,
-    showEnd: false,
-    showNumber: false,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Track-only building block without numbers or dots - just the grey connecting line.',
-      },
-    },
-  },
-};
-
-export const TrackOnlyFilled: Story = {
+export const WithoutNumbers: Story = {
   args: {
     size: 'default',
     filled: true,
     showStart: false,
     showEnd: false,
     showNumber: false,
-    value: 1,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Track-only building block without numbers or dots - just the dark-blue connecting line.',
-      },
-    },
+    value: 0.3,
+    min: 0,
+    max: 1,
+    step: 0.1,
+    disabled: false,
   },
 };
 
-// Start dot only
-export const StartDotOnly: Story = {
-  args: {
-    size: 'default',
-    filled: false,
-    showStart: true,
-    showEnd: false,
-    showNumber: true,
-    startValue: 0,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Start dot building block - single sky-blue dot with number for beginning of sequences.',
-      },
-    },
-  },
-};
-
-// End dot only
-export const EndDotOnly: Story = {
-  args: {
-    size: 'default',
-    filled: false,
-    showStart: false,
-    showEnd: true,
-    showNumber: true,
-    endValue: 10,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'End dot building block - single sky-blue dot with number for end of sequences.',
-      },
-    },
-  },
-};
-
-// Disabled states
-export const DisabledUnfilled: Story = {
-  args: {
-    size: 'default',
-    filled: false,
-    disabled: true,
-    showStart: true,
-    showEnd: true,
-    showNumber: true,
-    startValue: 0,
-    endValue: 1,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Disabled unfilled slider building block with reduced opacity.',
-      },
-    },
-  },
-};
-
-export const DisabledFilled: Story = {
+export const Disabled: Story = {
   args: {
     size: 'default',
     filled: true,
-    disabled: true,
     showStart: true,
     showEnd: true,
     showNumber: true,
     startValue: 0,
     endValue: 1,
-    value: 1,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Disabled filled slider building block with reduced opacity.',
-      },
-    },
+    value: 0.4,
+    min: 0,
+    max: 1,
+    step: 0.1,
+    disabled: true,
   },
 };
 
-// Building blocks showcase
-export const AllBuildingBlocks: Story = {
+// Size Variants
+export const SmallSize: Story = {
+  args: {
+    size: 'small',
+    filled: true,
+    showStart: true,
+    showEnd: true,
+    showNumber: true,
+    startValue: 0,
+    endValue: 1,
+    value: 0.6,
+    min: 0,
+    max: 1,
+    step: 0.1,
+    disabled: false,
+  },
+};
+
+export const LargeSize: Story = {
+  args: {
+    size: 'large',
+    filled: true,
+    showStart: true,
+    showEnd: true,
+    showNumber: true,
+    startValue: 0,
+    endValue: 1,
+    value: 0.8,
+    min: 0,
+    max: 1,
+    step: 0.1,
+    disabled: false,
+  },
+};
+
+// Custom Range
+export const CustomRange: Story = {
+  args: {
+    size: 'default',
+    filled: true,
+    showStart: true,
+    showEnd: true,
+    showNumber: true,
+    startValue: 10,
+    endValue: 100,
+    value: 55,
+    min: 10,
+    max: 100,
+    step: 5,
+    disabled: false,
+  },
+};
+
+// Comprehensive showcase
+export const AllSizes: Story = {
   render: () => (
-    <div style={{ 
-      display: 'flex', 
-      flexDirection: 'column', 
-      gap: '24px',
-      padding: '20px',
-      fontFamily: 'var(--type-typeface-archivo)',
-      maxWidth: '600px'
-    }}>
-      <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>
-        Slider Building Blocks - All States
-      </h3>
-      
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500', color: '#666' }}>Unfilled (Grey Track)</h4>
-          <Slider size="default" filled={false} showStart={true} showEnd={true} showNumber={true} startValue={0} endValue={1} />
-        </div>
-        
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500', color: '#666' }}>Filled (Dark-Blue Track)</h4>
-          <Slider size="default" filled={true} showStart={true} showEnd={true} showNumber={true} startValue={0} endValue={1} value={1} />
-        </div>
-        
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500', color: '#666' }}>Track Only - Unfilled</h4>
-          <Slider size="default" filled={false} showStart={false} showEnd={false} showNumber={false} />
-        </div>
-        
-        <div>
-          <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500', color: '#666' }}>Track Only - Filled</h4>
-          <Slider size="default" filled={true} showStart={false} showEnd={false} showNumber={false} value={1} />
-        </div>
-        
-        <div style={{ display: 'flex', gap: '24px' }}>
-          <div style={{ flex: 1 }}>
-            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500', color: '#666' }}>Start Dot Only</h4>
-            <Slider size="default" filled={false} showStart={true} showEnd={false} showNumber={true} startValue={0} />
-          </div>
-          <div style={{ flex: 1 }}>
-            <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', fontWeight: '500', color: '#666' }}>End Dot Only</h4>
-            <Slider size="default" filled={false} showStart={false} showEnd={true} showNumber={true} endValue={10} />
-          </div>
-        </div>
+    <div style={{ display: 'flex', gap: '32px', alignItems: 'center', flexDirection: 'column', width: '400px' }}>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center', width: '100%' }}>
+        <div style={{ fontSize: '14px', minWidth: '60px' }}>Small:</div>
+        <Slider size="small" filled={false} showStart={true} showEnd={true} showNumber={true} startValue={0} endValue={1} value={0.3} />
+      </div>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center', width: '100%' }}>
+        <div style={{ fontSize: '14px', minWidth: '60px' }}>Default:</div>
+        <Slider size="default" filled={false} showStart={true} showEnd={true} showNumber={true} startValue={0} endValue={1} value={0.5} />
+      </div>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center', width: '100%' }}>
+        <div style={{ fontSize: '14px', minWidth: '60px' }}>Large:</div>
+        <Slider size="large" filled={false} showStart={true} showEnd={true} showNumber={true} startValue={0} endValue={1} value={0.7} />
       </div>
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Complete showcase of all slider building block configurations used to construct progressive sliders and other components.',
+        story: 'Overview of all slider sizes showing unfilled state.',
+      },
+    },
+  },
+};
+
+export const FilledVsUnfilled: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: '32px', alignItems: 'center', flexDirection: 'column', width: '400px' }}>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center', width: '100%' }}>
+        <div style={{ fontSize: '14px', minWidth: '80px' }}>Unfilled:</div>
+        <Slider size="default" filled={false} showStart={true} showEnd={true} showNumber={true} startValue={0} endValue={1} value={0.4} />
+      </div>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center', width: '100%' }}>
+        <div style={{ fontSize: '14px', minWidth: '80px' }}>Filled:</div>
+        <Slider size="default" filled={true} showStart={true} showEnd={true} showNumber={true} startValue={0} endValue={1} value={0.4} />
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Comparison between filled and unfilled slider states.',
+      },
+    },
+  },
+};
+
+export const AllSizesAndStates: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: '24px', alignItems: 'center', flexDirection: 'column', width: '500px' }}>
+      <h3 style={{ margin: '0', fontSize: '16px', fontWeight: 'bold' }}>Small Size</h3>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center', width: '100%' }}>
+        <div style={{ fontSize: '14px', minWidth: '80px' }}>Unfilled:</div>
+        <Slider size="small" filled={false} showStart={true} showEnd={true} showNumber={true} startValue={0} endValue={1} value={0.3} />
+      </div>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center', width: '100%' }}>
+        <div style={{ fontSize: '14px', minWidth: '80px' }}>Filled:</div>
+        <Slider size="small" filled={true} showStart={true} showEnd={true} showNumber={true} startValue={0} endValue={1} value={0.3} />
+      </div>
+      
+      <h3 style={{ margin: '0', fontSize: '16px', fontWeight: 'bold' }}>Default Size</h3>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center', width: '100%' }}>
+        <div style={{ fontSize: '14px', minWidth: '80px' }}>Unfilled:</div>
+        <Slider size="default" filled={false} showStart={true} showEnd={true} showNumber={true} startValue={0} endValue={1} value={0.5} />
+      </div>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center', width: '100%' }}>
+        <div style={{ fontSize: '14px', minWidth: '80px' }}>Filled:</div>
+        <Slider size="default" filled={true} showStart={true} showEnd={true} showNumber={true} startValue={0} endValue={1} value={0.5} />
+      </div>
+      
+      <h3 style={{ margin: '0', fontSize: '16px', fontWeight: 'bold' }}>Large Size</h3>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center', width: '100%' }}>
+        <div style={{ fontSize: '14px', minWidth: '80px' }}>Unfilled:</div>
+        <Slider size="large" filled={false} showStart={true} showEnd={true} showNumber={true} startValue={0} endValue={1} value={0.7} />
+      </div>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center', width: '100%' }}>
+        <div style={{ fontSize: '14px', minWidth: '80px' }}>Filled:</div>
+        <Slider size="large" filled={true} showStart={true} showEnd={true} showNumber={true} startValue={0} endValue={1} value={0.7} />
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Complete overview of all slider sizes and states.',
       },
     },
   },
