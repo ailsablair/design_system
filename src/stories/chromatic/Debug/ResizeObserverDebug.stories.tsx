@@ -5,10 +5,10 @@ import {
   forceSupressResizeObserverErrors,
   testResizeObserverSuppression,
   resetResizeObserverErrorHandler
-} from '../../utils/resizeObserverHandler';
+} from '../../../utils/resizeObserverHandler';
 
 const meta: Meta = {
-  title: 'Debug/ResizeObserver Error Suppression',
+  title: 'Chromatic/Debug/ResizeObserver Error Suppression',
   parameters: {
     layout: 'padded',
     chromatic: { disable: true }, // Disable in visual testing

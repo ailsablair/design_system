@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Avatar } from './Avatar';
+import { Avatar } from '../../atoms/Avatar';
 import { useState, useEffect } from 'react';
-import { testResizeObserverErrorHandling, checkResizeObserverErrorHandling } from '../../utils/resizeObserverErrorTest';
+import { testResizeObserverErrorHandling, checkResizeObserverErrorHandling } from '../../../utils/resizeObserverErrorTest';
 
 const meta: Meta = {
-  title: 'Atoms/ResizeObserver Test',
+  title: 'Chromatic/Debug/ResizeObserver Test',
   parameters: {
     layout: 'padded',
     // Disable in Chromatic since this has animated content and timers
