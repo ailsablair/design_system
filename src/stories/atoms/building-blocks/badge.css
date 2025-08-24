@@ -1,4 +1,4 @@
-@import '../foundations/tokens.css';
+@import '../../foundations/tokens.css';
 
 .badge {
   display: inline-flex;
