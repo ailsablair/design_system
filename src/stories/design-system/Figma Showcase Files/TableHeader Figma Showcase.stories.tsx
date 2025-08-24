@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TableHeader } from '../../atoms/TableHeader';
+import { TableHeader } from '../../atoms/building-blocks/TableHeader';
 
 const meta: Meta<typeof TableHeader> = {
   title: 'Design System/Figma Showcase Files/TableHeader Figma Showcase',

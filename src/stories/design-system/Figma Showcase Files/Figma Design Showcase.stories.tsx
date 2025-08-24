@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Badge } from '../../atoms/Badge';
+import { Badge } from '../../atoms/building-blocks/Badge';
 import { Tag } from '../../atoms/Tag';
 
 const meta: Meta = {
