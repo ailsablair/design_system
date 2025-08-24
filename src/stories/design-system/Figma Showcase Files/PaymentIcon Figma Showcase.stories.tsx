@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { PaymentIcon, type PaymentMethod } from '../../atoms/PaymentIcon';
+import { PaymentIcon, type PaymentMethod } from '../../atoms/building-blocks/PaymentIcon';
 
 const meta: Meta<typeof PaymentIcon> = {
   title: 'Design System/Figma Showcase Files/PaymentIcon Figma Showcase',

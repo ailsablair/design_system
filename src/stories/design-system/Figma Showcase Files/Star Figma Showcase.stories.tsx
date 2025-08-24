@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Star } from '../../atoms/Star';
+import { Star } from '../../atoms/building-blocks/Star';
 
 const meta = {
   title: 'Design System/Figma Showcase Files/Star Figma Showcase',
