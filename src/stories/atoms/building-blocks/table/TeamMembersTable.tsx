@@ -3,7 +3,7 @@ import { Button } from '../../Button';
 import { Tag } from '../../Tag';
 import { Checkbox } from '../../Checkbox';
 import { AvatarGroup } from '../../AvatarGroup';
-import { Star } from '../../Star';
+import { Star } from '../Star';
 import { ProgressBar } from '../../ProgressBar';
 import { Icon } from '../../../foundations/Icon';
 import './teamMembersTable.css';
