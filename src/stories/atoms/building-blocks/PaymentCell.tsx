@@ -1,6 +1,6 @@
 import React from 'react';
 import { Checkbox } from '../Checkbox';
-import { Toggle } from '../Toggle';
+import { Toggle } from './Toggle';
 import { PaymentIcon, type PaymentMethod } from '../PaymentIcon';
 import './paymentCell.css';
 
