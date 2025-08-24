@@ -577,7 +577,7 @@ export const FigmaDesignShowcase: Story = {
         <h2 style={{ margin: '0 0 16px 0', fontSize: '24px', fontWeight: '700' }}>
           Complete Tab Component Showcase
         </h2>
-        <p style={{ margin: '0 0 32px 0', fontSize: '16px', color: '#666', maxWidth: '600px', margin: '0 auto 32px auto' }}>
+        <p style={{ fontSize: '16px', color: '#666', maxWidth: '600px', margin: '0 auto 32px auto' }}>
           Comprehensive implementation of both traditional tabs (with bottom lines) and contained tabs (button-style).
           Matches Figma design specifications with proper states and interactions.
         </p>
