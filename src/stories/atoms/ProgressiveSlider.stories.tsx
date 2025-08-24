@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Slider } from './Slider';
+import { Slider } from './building-blocks/Slider';
 
 const meta: Meta<typeof Slider> = {
   title: 'Atoms/Progressive Slider',
