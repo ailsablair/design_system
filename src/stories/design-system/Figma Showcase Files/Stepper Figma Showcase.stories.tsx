@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StepperGroup } from '../../../atoms/building-blocks/StepperGroup';
-import '../../../atoms/building-blocks/stepperGroup.css';
+import { StepperGroup } from '../../atoms/building-blocks/StepperGroup';
+import '../../atoms/building-blocks/stepperGroup.css';
 
 const meta: Meta<typeof StepperGroup> = {
   title: 'Design System/Figma Showcase Files/Stepper Figma Showcase',
