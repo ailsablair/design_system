@@ -50,20 +50,112 @@ export const Overview: Story = {
         marginBottom: '16px',
         marginTop: '32px'
       }}>
-        What Goes Here
+        Available Components
       </h2>
-      
+
+      <div style={{
+        display: 'grid',
+        gap: '16px',
+        marginBottom: '32px'
+      }}>
+        <div style={{
+          padding: '16px',
+          border: '1px solid var(--neutral-gray-gray-200)',
+          borderRadius: 'var(--spacing-radius-8px)',
+          backgroundColor: 'var(--base-white)'
+        }}>
+          <h3 style={{
+            fontSize: '18px',
+            fontWeight: '500',
+            color: 'var(--base-black)',
+            marginBottom: '8px',
+            margin: 0
+          }}>
+            📊 DataTable
+          </h3>
+          <p style={{
+            fontSize: '14px',
+            color: 'var(--neutral-gray-gray-600)',
+            margin: '8px 0 0 0',
+            lineHeight: '1.5'
+          }}>
+            Comprehensive table component with multiple cell types, selection, sorting, and pagination.
+            Perfect for data display, user management, and admin interfaces.
+          </p>
+        </div>
+
+        <div style={{
+          padding: '16px',
+          border: '1px solid var(--neutral-gray-gray-200)',
+          borderRadius: 'var(--spacing-radius-8px)',
+          backgroundColor: 'var(--base-white)'
+        }}>
+          <h3 style={{
+            fontSize: '18px',
+            fontWeight: '500',
+            color: 'var(--base-black)',
+            marginBottom: '8px',
+            margin: 0
+          }}>
+            🍔 DropdownMenu
+          </h3>
+          <p style={{
+            fontSize: '14px',
+            color: 'var(--neutral-gray-gray-600)',
+            margin: '8px 0 0 0',
+            lineHeight: '1.5'
+          }}>
+            Flexible dropdown menu system with support for nested items, icons, and keyboard navigation.
+          </p>
+        </div>
+
+        <div style={{
+          padding: '16px',
+          border: '1px solid var(--neutral-gray-gray-200)',
+          borderRadius: 'var(--spacing-radius-8px)',
+          backgroundColor: 'var(--base-white)'
+        }}>
+          <h3 style={{
+            fontSize: '18px',
+            fontWeight: '500',
+            color: 'var(--base-black)',
+            marginBottom: '8px',
+            margin: 0
+          }}>
+            📋 Menu
+          </h3>
+          <p style={{
+            fontSize: '14px',
+            color: 'var(--neutral-gray-gray-600)',
+            margin: '8px 0 0 0',
+            lineHeight: '1.5'
+          }}>
+            Context menu and navigation menu patterns with various styling options.
+          </p>
+        </div>
+      </div>
+
+      <h2 style={{
+        fontSize: '24px',
+        fontWeight: '500',
+        color: 'var(--base-black)',
+        marginBottom: '16px',
+        marginTop: '32px'
+      }}>
+        Component Categories
+      </h2>
+
       <ul style={{
         fontSize: '16px',
         color: 'var(--base-black)',
         lineHeight: '1.6',
         marginBottom: '32px'
       }}>
-        <li>Complex UI patterns made from multiple atoms</li>
-        <li>Reusable interface components</li>
-        <li>Data display patterns (tables, cards, lists)</li>
-        <li>Navigation patterns (menus, breadcrumbs)</li>
-        <li>Form patterns (field groups, multi-step forms)</li>
+        <li><strong>Data Display:</strong> Tables, cards, lists with complex data patterns</li>
+        <li><strong>Navigation:</strong> Menus, breadcrumbs, pagination controls</li>
+        <li><strong>Form Patterns:</strong> Field groups, multi-step forms, form sections</li>
+        <li><strong>Interactive Elements:</strong> Dropdowns, modals, tooltips</li>
+        <li><strong>Content Layouts:</strong> Media objects, content cards, timeline patterns</li>
       </ul>
 
       <h2 style={{
