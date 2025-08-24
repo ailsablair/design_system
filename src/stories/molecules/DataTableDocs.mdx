@@ -1,0 +1,440 @@
+import { Meta, Story, Canvas, ArgsTable, Description } from '@storybook/addon-docs';
+import { DataTable } from './DataTable';
+
+<Meta 
+  title="Molecules/DataTable/Documentation" 
+  component={DataTable}
+  parameters={{
+    docs: {
+      description: {
+        component: 'Comprehensive documentation for the DataTable component'
+      }
+    }
+  }}
+/>
+
+# DataTable Component
+
+The DataTable component is a comprehensive, production-ready table solution that implements the exact Figma design specifications. It supports multiple cell types, row selection, column sorting, pagination, and responsive behavior.
+
+## Features
+
+### 🎯 Core Features
+- **Multiple Cell Types**: text, title, multi-tag, links, rating, avatars, progress, actions
+- **Row Selection**: Individual and bulk selection with indeterminate states
+- **Column Sorting**: Sortable columns with visual indicators
+- **Pagination**: Complete pagination with ellipsis and navigation
+- **Responsive Design**: Adapts to different screen sizes
+- **Accessibility**: Full keyboard navigation and screen reader support
+
+### 📱 Responsive Behavior
+- **Desktop**: Full table layout with all features
+- **Tablet**: Horizontal scrolling for table overflow
+- **Mobile**: Optimized layout with adjusted spacing
+
+### 🎨 Visual Features
+- **Alternating Rows**: Seafoam-25 background for better readability
+- **Hover States**: Row highlighting on hover
+- **Selection States**: Visual feedback for selected rows
+- **Loading States**: Spinner and disabled state during data loading
+- **Empty States**: Proper messaging when no data is available
+
+## Usage Examples
+
+### Basic Implementation
+
+```tsx
+import { DataTable } from './DataTable';
+
+const columns = [
+  {
+    key: 'name',
+    title: 'Name',
+    type: 'title',
+    isLead: true,
+    sortable: true,
+  },
+  {
+    key: 'email',
+    title: 'Email',
+    type: 'text',
+  },
+  {
+    key: 'role',
+    title: 'Role',
+    type: 'text',
+  },
+];
+
+const data = [
+  { id: '1', name: 'John Doe', email: 'john@example.com', role: 'Admin' },
+  { id: '2', name: 'Jane Smith', email: 'jane@example.com', role: 'User' },
+];
+
+<DataTable
+  title="Users"
+  itemCount={2}
+  columns={columns}
+  data={data}
+  onSort={handleSort}
+  onRowSelect={handleRowSelect}
+  onPageChange={handlePageChange}
+/>
+```
+
+### With Selection Management
+
+```tsx
+const [selectedRows, setSelectedRows] = useState(['1']);
+
+<DataTable
+  title="Team Members"
+  itemCount={100}
+  columns={columns}
+  data={data}
+  selectedRowIds={selectedRows}
+  onRowSelect={(rowId, selected) => {
+    if (selected) {
+      setSelectedRows([...selectedRows, rowId]);
+    } else {
+      setSelectedRows(selectedRows.filter(id => id !== rowId));
+    }
+  }}
+  onSelectAll={(selected) => {
+    setSelectedRows(selected ? data.map(row => row.id) : []);
+  }}
+/>
+```
+
+### Custom Cell Renderer
+
+```tsx
+const columns = [
+  {
+    key: 'status',
+    title: 'Status',
+    type: 'text',
+    render: (value, record) => (
+      <span className={`status-badge status-${value.toLowerCase()}`}>
+        {value}
+      </span>
+    ),
+  },
+];
+```
+
+## Column Configuration
+
+### Column Types
+
+| Type | Description | Use Case |
+|------|-------------|----------|
+| `text` | Basic text content | General data display |
+| `title` | Bold primary text | Main identifier column |
+| `multi-tag` | Multiple tags with icons | Categories, preferences |
+| `links` | Action text links | Edit/Delete actions |
+| `rating` | Star rating display | Reviews, ratings |
+| `avatars` | Avatar group with overflow | Team members, assignees |
+| `progress` | Progress bar with percentage | Task completion, progress |
+| `actions` | Button group | Row-level actions |
+
+### Column Properties
+
+```tsx
+interface DataTableColumn {
+  key: string;                    // Unique identifier
+  title: string;                  // Header display text
+  type: CellType;                 // Rendering type
+  width?: string | number;        // Column width
+  minWidth?: string | number;     // Minimum width
+  sortable?: boolean;             // Enable sorting
+  sortDirection?: 'asc' | 'desc'; // Current sort direction
+  isLead?: boolean;               // First column with checkboxes
+  showHelpIcon?: boolean;         // Show help icon in header
+  render?: Function;              // Custom render function
+}
+```
+
+## Data Management
+
+### Row Data Structure
+
+```tsx
+interface DataTableRow {
+  id: string;                     // Required unique identifier
+  selected?: boolean;             // Selection state
+  [key: string]: any;            // Column data
+}
+```
+
+### Pagination
+
+```tsx
+<DataTable
+  currentPage={1}
+  totalPages={10}
+  pageSize={10}
+  onPageChange={(page) => {
+    // Handle page change
+    fetchData(page);
+  }}
+/>
+```
+
+## Event Handlers
+
+### Selection Events
+
+```tsx
+// Individual row selection
+onRowSelect={(rowId: string, selected: boolean) => {
+  // Handle individual row selection
+}}
+
+// Bulk selection (select all)
+onSelectAll={(selected: boolean) => {
+  // Handle select all/none
+}}
+```
+
+### Sorting Events
+
+```tsx
+onSort={(columnKey: string, direction: 'asc' | 'desc') => {
+  // Handle column sorting
+  const sortedData = sortData(data, columnKey, direction);
+  setData(sortedData);
+}}
+```
+
+### Action Events
+
+```tsx
+onEdit={(rowId: string) => {
+  // Handle edit action
+  const row = data.find(item => item.id === rowId);
+  openEditModal(row);
+}}
+
+onDelete={(rowId: string) => {
+  // Handle delete action
+  confirmDelete(rowId);
+}}
+```
+
+## Styling and Theming
+
+### CSS Custom Properties
+
+The component uses CSS custom properties for theming:
+
+```css
+--base-white: #FFFFFF
+--base-black: #1C1C1C
+--neutral-gray-gray-50: #F9FAFB
+--neutral-gray-gray-200: #E5E7EB
+--primary-seafoam-seafoam-25: #F9FCFA
+--primary-blue-blue: #2F42BD
+--spacing-sizing-12px: 12px
+--spacing-sizing-24px: 24px
+--spacing-radius-8px: 8px
+```
+
+### Size Variants
+
+```tsx
+// Default size
+<DataTable size="default" />
+
+// Small size (reduced padding and fonts)
+<DataTable size="small" />
+```
+
+### Variant Styles
+
+```tsx
+// Default variant
+<DataTable variant="default" />
+
+// Compact variant (tighter spacing)
+<DataTable variant="compact" />
+```
+
+## States
+
+### Loading State
+
+```tsx
+<DataTable
+  loading={true}
+  data={[]}
+  // ... other props
+/>
+```
+
+### Empty State
+
+```tsx
+<DataTable
+  data={[]}
+  // Shows "No data available" message
+/>
+```
+
+### Error Handling
+
+```tsx
+const [error, setError] = useState(null);
+
+if (error) {
+  return <div className="error-message">{error}</div>;
+}
+
+<DataTable
+  data={data}
+  loading={loading}
+  // ... other props
+/>
+```
+
+## Accessibility
+
+### Keyboard Navigation
+
+- **Tab**: Navigate through interactive elements
+- **Space**: Toggle row selection
+- **Enter**: Activate buttons and links
+- **Arrow Keys**: Navigate table cells (when focused)
+
+### Screen Reader Support
+
+- Proper ARIA labels on interactive elements
+- Table headers properly associated with cells
+- Selection state announced
+- Sort state indicated
+
+### Focus Management
+
+- Clear focus indicators
+- Logical tab order
+- Skip links for large tables
+
+## Performance Considerations
+
+### Virtualization
+
+For large datasets (1000+ rows), consider implementing virtualization:
+
+```tsx
+// Example with react-window or similar
+<DataTable
+  data={virtualizedData}
+  onScroll={handleVirtualScroll}
+/>
+```
+
+### Pagination vs Infinite Scroll
+
+- **Pagination**: Better for exact navigation and performance
+- **Infinite Scroll**: Better for browsing and mobile experience
+
+### Memoization
+
+```tsx
+const memoizedColumns = useMemo(() => columns, []);
+const memoizedData = useMemo(() => processData(rawData), [rawData]);
+
+<DataTable
+  columns={memoizedColumns}
+  data={memoizedData}
+/>
+```
+
+## Best Practices
+
+### Column Design
+
+1. **Lead Column**: Always use checkbox selection for the primary identifier
+2. **Width Management**: Set appropriate widths for different content types
+3. **Sorting**: Enable sorting for columns users need to organize
+4. **Help Icons**: Use sparingly for complex or unclear column headers
+
+### Data Management
+
+1. **Unique IDs**: Always provide unique row IDs
+2. **Consistent Types**: Ensure data types match column expectations
+3. **Null Handling**: Handle missing data gracefully
+4. **Loading States**: Always show loading feedback for async operations
+
+### UX Guidelines
+
+1. **Selection Feedback**: Provide clear visual feedback for selection states
+2. **Action Placement**: Keep primary actions easily accessible
+3. **Pagination Size**: Use appropriate page sizes (10-50 items typically)
+4. **Responsive Behavior**: Test on various screen sizes
+
+## Migration from Other Tables
+
+### From Basic HTML Tables
+
+```tsx
+// Before: HTML table
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>John</td>
+      <td>john@example.com</td>
+    </tr>
+  </tbody>
+</table>
+
+// After: DataTable
+<DataTable
+  columns={[
+    { key: 'name', title: 'Name', type: 'title', isLead: true },
+    { key: 'email', title: 'Email', type: 'text' },
+  ]}
+  data={[
+    { id: '1', name: 'John', email: 'john@example.com' },
+  ]}
+/>
+```
+
+### From Other Libraries
+
+Most table libraries can be migrated by:
+
+1. Converting column definitions to DataTable format
+2. Adapting data structure to include required `id` field
+3. Replacing event handlers with DataTable equivalents
+4. Updating styling to use CSS custom properties
+
+## Troubleshooting
+
+### Common Issues
+
+**Data not displaying**
+- Check that data has `id` field
+- Verify column `key` matches data properties
+- Ensure `type` is specified for each column
+
+**Selection not working**
+- Verify `onRowSelect` and `onSelectAll` handlers
+- Check that `isLead` is set on first column
+- Ensure row IDs are unique
+
+**Styling issues**
+- Verify CSS custom properties are defined
+- Check for conflicting CSS rules
+- Use browser dev tools to inspect styles
+
+**Performance problems**
+- Implement pagination for large datasets
+- Use memoization for heavy computations
+- Consider virtualization for very large lists
