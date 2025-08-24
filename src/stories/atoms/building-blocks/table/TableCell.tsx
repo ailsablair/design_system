@@ -5,7 +5,7 @@ import { Avatar } from '../../Avatar';
 import { AvatarGroup } from '../../AvatarGroup';
 import { PaymentIcon, type PaymentMethod } from '../../PaymentIcon';
 import { FileIcon, type FileType } from '../../FileIcon';
-import { Star } from '../../Star';
+import { Star } from '../Star';
 import { Button } from '../../Button';
 import { Tag } from '../../Tag';
 import { ProgressBar } from '../../ProgressBar';
