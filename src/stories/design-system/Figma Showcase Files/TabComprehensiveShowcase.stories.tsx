@@ -41,9 +41,8 @@ export const CompleteRedesignShowcase: Story = {
         }}>
           ✨ Complete Tab Redesign
         </h1>
-        <p style={{ 
-          margin: '0', 
-          fontSize: '18px', 
+        <p style={{
+          fontSize: '18px',
           color: '#6B7280',
           maxWidth: '700px',
           margin: '0 auto',
