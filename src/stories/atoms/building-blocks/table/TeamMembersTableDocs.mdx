@@ -1,0 +1,282 @@
+import { Canvas, Meta, Story } from '@storybook/blocks';
+import * as TeamMembersTableStories from './TeamMembersTable.stories';
+
+<Meta of={TeamMembersTableStories} />
+
+# Team Members Table
+
+A comprehensive table component that displays team member data with various interactive features and cell types. This component exactly matches the Figma design specifications and provides a complete solution for displaying tabular data with rich content.
+
+## Overview
+
+The Team Members Table is designed to handle complex data structures with multiple cell types, interactive features, and responsive design. It includes built-in pagination, selection capabilities, and various action handlers.
+
+<Canvas of={TeamMembersTableStories.Default} />
+
+## Features
+
+### 🎯 Core Features
+- **Responsive Design**: Adapts to all screen sizes with proper mobile layouts
+- **Accessibility**: Full keyboard navigation and screen reader support
+- **Selection**: Row selection with checkboxes and indeterminate states
+- **Pagination**: Built-in pagination with previous/next navigation
+- **Actions**: Multiple action types including links and buttons
+
+### 📱 Cell Types
+1. **Title Cell**: Primary content with checkbox selection
+2. **Text Cell**: Secondary text content
+3. **Multi-tag Cell**: Tags with icons and overflow handling
+4. **Links Cell**: Action links for edit/delete operations
+5. **Rating Cell**: 5-star rating display
+6. **Group Avatars Cell**: Avatar groups with overflow count
+7. **Progress Bar Cell**: Progress indicators with percentage
+8. **Button Group Cell**: Action buttons for operations
+
+### 🎨 Visual Features
+- **Alternating Rows**: Seafoam-25 background for odd rows
+- **Design Tokens**: Uses proper design system tokens
+- **Typography**: Archivo font family with proper weights
+- **Shadows**: Box shadow matching Figma specifications
+- **Borders**: Proper border radius and colors
+
+## Usage
+
+### Basic Implementation
+
+```tsx
+import { TeamMembersTable } from './TeamMembersTable';
+
+const teamData = [
+  {
+    id: '1',
+    contactName: 'Olivia Rhye',
+    company: 'Olivia Rhye Corp',
+    preferences: [
+      { label: 'Design', icon: 'alarm-light', closable: true }
+    ],
+    rating: 5,
+    status: {
+      avatars: [
+        { src: '/avatar1.jpg', name: 'User 1' },
+        { src: '/avatar2.jpg', name: 'User 2' }
+      ],
+      additionalCount: 3
+    },
+    progress: 75
+  }
+];
+
+<TeamMembersTable
+  title="Team members"
+  itemCount={100}
+  data={teamData}
+  size="small"
+  currentPage={1}
+  totalPages={10}
+  onEdit={(id) => console.log('Edit:', id)}
+  onDelete={(id) => console.log('Delete:', id)}
+  onPageChange={(page) => console.log('Page:', page)}
+/>
+```
+
+## Size Variants
+
+The component supports two size variants:
+
+### Small Size
+<Canvas of={TeamMembersTableStories.SmallSize} />
+
+### Default Size
+<Canvas of={TeamMembersTableStories.DefaultSize} />
+
+## Interactive Features
+
+### Selection
+Test the checkbox selection functionality:
+<Canvas of={TeamMembersTableStories.InteractiveSelection} />
+
+### Pagination
+Test the pagination with multiple pages:
+<Canvas of={TeamMembersTableStories.InteractivePagination} />
+
+### Actions
+Test the edit and delete actions:
+<Canvas of={TeamMembersTableStories.InteractiveActions} />
+
+## Data Variations
+
+### Varying Ratings
+Shows different star ratings:
+<Canvas of={TeamMembersTableStories.VaryingRatings} />
+
+### Varying Progress
+Shows different progress values:
+<Canvas of={TeamMembersTableStories.VaryingProgress} />
+
+### Extended Data
+Shows more team members:
+<Canvas of={TeamMembersTableStories.ExtendedTeamData} />
+
+## Edge Cases
+
+### First Page
+<Canvas of={TeamMembersTableStories.FirstPage} />
+
+### Last Page
+<Canvas of={TeamMembersTableStories.LastPage} />
+
+### Minimal Data
+<Canvas of={TeamMembersTableStories.MinimalData} />
+
+### Empty State
+<Canvas of={TeamMembersTableStories.EmptyState} />
+
+## API Reference
+
+### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `string` | `'Team members'` | Table title displayed in header |
+| `itemCount` | `number` | `100` | Item count shown in badge |
+| `data` | `TeamMember[]` | `[]` | Array of team member data |
+| `size` | `'default' \| 'small'` | `'small'` | Size variant of the table |
+| `currentPage` | `number` | `1` | Current page number |
+| `totalPages` | `number` | `10` | Total number of pages |
+| `className` | `string` | `''` | Additional CSS classes |
+| `onRowSelect` | `(rowId: string, selected: boolean) => void` | - | Row selection handler |
+| `onSelectAll` | `(selected: boolean) => void` | - | Select all handler |
+| `onPageChange` | `(page: number) => void` | - | Page change handler |
+| `onEdit` | `(rowId: string) => void` | - | Edit action handler |
+| `onDelete` | `(rowId: string) => void` | - | Delete action handler |
+| `onMoreActions` | `() => void` | - | More actions handler |
+
+### TeamMember Interface
+
+```typescript
+interface TeamMember {
+  id: string;
+  contactName: string;
+  company: string;
+  preferences: {
+    label: string;
+    icon?: string;
+    closable?: boolean;
+  }[];
+  rating: number; // 1-5
+  status: {
+    avatars: Array<{ src: string; name: string }>;
+    additionalCount: number;
+  };
+  progress: number; // 0-100
+  selected?: boolean;
+}
+```
+
+## Accessibility
+
+The component includes comprehensive accessibility features:
+
+- **Keyboard Navigation**: All interactive elements are keyboard accessible
+- **Screen Reader Support**: Proper ARIA labels and descriptions
+- **Focus Management**: Clear focus indicators and logical tab order
+- **High Contrast**: Supports high contrast mode
+- **Reduced Motion**: Respects user's motion preferences
+
+### Keyboard Shortcuts
+
+| Key | Action |
+|-----|--------|
+| `Tab` | Navigate between interactive elements |
+| `Space` | Toggle checkbox selection |
+| `Enter` | Activate buttons and links |
+| `Arrow Keys` | Navigate within table cells |
+
+## Responsive Behavior
+
+The table adapts to different screen sizes:
+
+- **Desktop (>1200px)**: Full table layout with all columns visible
+- **Tablet (768px-1200px)**: Horizontal scroll for column overflow
+- **Mobile (<768px)**: Stacked layout with headers and content paired
+
+## Design Tokens
+
+The component uses the following design tokens:
+
+### Colors
+- `--base-white`: Background color
+- `--base-black`: Primary text color
+- `--neutral-gray-gray-200`: Border color
+- `--neutral-gray-gray-50`: Header background
+- `--primary-seafoam-seafoam-25`: Alternate row background
+- `--primary-blue-blue`: Active states
+
+### Typography
+- **Font Family**: Archivo (primary), Roboto Flex (secondary)
+- **Font Weights**: 300 (light), 500 (medium), 700 (bold)
+- **Font Sizes**: 14px (body), 16px (headers), 19px (title)
+
+### Spacing
+- **Padding**: 12px, 16px, 24px
+- **Gaps**: 4px, 8px, 12px, 16px
+- **Border Radius**: 8px, 12px
+
+### Shadows
+- **Box Shadow**: `0 12px 20px -2px rgba(39, 39, 39, 0.15)`
+
+## Best Practices
+
+### Data Management
+- Always provide unique `id` values for each team member
+- Keep avatar arrays reasonably sized (5-10 avatars max)
+- Use meaningful progress values (0-100)
+- Provide proper alt text for avatars
+
+### Performance
+- Implement virtualization for large datasets (>1000 rows)
+- Use proper memoization for expensive calculations
+- Optimize image loading for avatars
+- Consider pagination for better UX
+
+### UX Guidelines
+- Provide clear feedback for actions
+- Use consistent language for buttons and links
+- Implement proper loading states
+- Handle error states gracefully
+
+## Customization
+
+The component can be customized through:
+
+1. **CSS Custom Properties**: Override design tokens
+2. **CSS Classes**: Add custom styling via className prop
+3. **Component Props**: Configure behavior and appearance
+4. **Theme Integration**: Integrate with design system themes
+
+## Related Components
+
+- **Avatar**: Used in status cells
+- **AvatarGroup**: Used for avatar groupings
+- **Button**: Used for actions
+- **Checkbox**: Used for selection
+- **Icon**: Used throughout for visual elements
+- **ProgressBar**: Used for progress display
+- **Star**: Used for ratings
+- **Tag**: Used for preferences
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Images not loading**: Check avatar src URLs
+2. **Selection not working**: Verify onRowSelect handler
+3. **Pagination issues**: Check currentPage and totalPages values
+4. **Styling problems**: Ensure design tokens are loaded
+
+### Debug Tips
+
+- Use browser dev tools to inspect CSS variables
+- Check console for any JavaScript errors
+- Verify data structure matches TeamMember interface
+- Test with minimal data first
