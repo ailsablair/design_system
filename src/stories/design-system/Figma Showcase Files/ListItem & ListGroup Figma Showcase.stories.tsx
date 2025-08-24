@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ListItem } from '../../atoms/ListItem';
-import { ListGroup } from '../../atoms/ListGroup';
+import { ListItem } from '../../atoms/building-blocks/ListItem';
+import { ListGroup } from '../../atoms/building-blocks/ListGroup';
 
 const meta = {
   title: 'Design System/Figma Showcase Files/ListItem & ListGroup Figma Showcase',

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Toggle } from '../../atoms/Toggle';
-import { Slider } from '../../atoms/Slider';
+import { Toggle } from '../../atoms/building-blocks/Toggle';
+import { Slider } from '../../atoms/building-blocks/Slider';
 import { DateTimeInput } from '../../atoms/DateTimeInput';
 import { Tag } from '../../atoms/Tag';
-import { Badge } from '../../atoms/Badge';
+import { Badge } from '../../atoms/building-blocks/Badge';
 import { InputNumbers } from '../../atoms/InputNumbers';
 
 const meta: Meta = {

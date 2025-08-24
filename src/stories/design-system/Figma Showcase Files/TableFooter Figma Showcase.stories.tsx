@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TableFooter } from '../../atoms/TableFooter';
+import { TableFooter } from '../../atoms/building-blocks/TableFooter';
 
 const meta: Meta<typeof TableFooter> = {
   title: 'Design System/Figma Showcase Files/TableFooter Figma Showcase',
