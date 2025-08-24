@@ -5,7 +5,7 @@ import './stepper.css';
 import './stepperLine.css';
 
 const meta: Meta = {
-  title: 'Design System/Atoms/Building Blocks/Stepper Complete',
+  title: 'Atoms/Building Blocks/Stepper Complete',
   parameters: {
     layout: 'centered',
     docs: {
