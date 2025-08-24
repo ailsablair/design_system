@@ -3,7 +3,7 @@ import { Button } from '../atoms/Button';
 import { Tag } from '../atoms/Tag';
 import { Checkbox } from '../atoms/Checkbox';
 import { AvatarGroup } from '../atoms/AvatarGroup';
-import { Star } from '../atoms/Star';
+import { Star } from '../atoms/building-blocks/Star';
 import { ProgressBar } from '../atoms/ProgressBar';
 import { Icon } from '../foundations/Icon';
 import './dataTable.css';
