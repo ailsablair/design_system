@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Menu } from './Menu';
-import { MenuItem } from '../atoms/MenuItem';
+import { MenuItem } from '../atoms/building-blocks/MenuItem';
 
 const meta: Meta<typeof Menu> = {
   title: 'Molecules/Menu',
