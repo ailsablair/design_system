@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { TableHeader } from './TableHeader';
-import { Button } from './Button';
+import { Button } from '../Button';
 
 const meta: Meta<typeof TableHeader> = {
-  title: 'Atoms/TableHeader',
+  title: 'Atoms/Building Blocks/TableHeader',
   component: TableHeader,
   parameters: {
     layout: 'padded',
