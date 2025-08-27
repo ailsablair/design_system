@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TableHeaderLabel } from './TableHeaderLabel';
+import { TableHeaderLabel } from './building-blocks/TableHeaderLabel';
 import { TableRow, TableCell } from './TableRow';
 import { Pagination } from './Pagination';
 import './building-blocks/table/table.css';
