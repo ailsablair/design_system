@@ -1,6 +1,6 @@
 import React from 'react';
 import './headerWithCount.css';
-import { Tag } from './Tag';
+import { Tag } from '../Tag';
 
 export interface HeaderWithCountProps {
   /** Header title text */
