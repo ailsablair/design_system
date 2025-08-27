@@ -1,5 +1,5 @@
 import React from 'react';
-import './building-blocks/table/tableFooter.css';
+import './table/tableFooter.css';
 import { Button } from './Button';
 
 export interface TableFooterProps {
