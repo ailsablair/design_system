@@ -78,13 +78,13 @@ Perfect for data tables, user lists, admin panels, and any interface requiring s
     },
   },
   args: {
-    onSort: fn(),
-    onRowSelect: fn(),
-    onSelectAll: fn(),
-    onPageChange: fn(),
-    onEdit: fn(),
-    onDelete: fn(),
-    onMoreActions: fn(),
+    onSort: () => {},
+    onRowSelect: () => {},
+    onSelectAll: () => {},
+    onPageChange: () => {},
+    onEdit: () => {},
+    onDelete: () => {},
+    onMoreActions: () => {},
   },
 };
 
