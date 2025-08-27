@@ -1,7 +1,7 @@
 import React from 'react';
-import './building-blocks/table/tableHeader.css';
-import { Tag } from './Tag';
-import { Button } from './Button';
+import './table/tableHeader.css';
+import { Tag } from '../Tag';
+import { Button } from '../Button';
 
 export interface TableHeaderProps {
   /** Header title text */
