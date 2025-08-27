@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DataTable } from './DataTable';
-import { action } from '@storybook/addon-actions';
+import { fn } from '@storybook/test';
 
 const meta: Meta<typeof DataTable> = {
   title: 'Molecules/DataTable',
