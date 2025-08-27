@@ -1,5 +1,5 @@
 import React from 'react';
-import './building-blocks/table/tableHeaderLabel.css';
+import './table/tableHeaderLabel.css';
 
 export interface TableHeaderLabelProps {
   /** Header label text */
