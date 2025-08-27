@@ -1,6 +1,6 @@
 import React from 'react';
 import './table/tableFooter.css';
-import { Button } from './Button';
+import { Button } from '../Button';
 
 export interface TableFooterProps {
   /** Footer type/layout variant */
