@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DataTable } from './DataTable';
-import { fn } from '@storybook/test';
+// Mock functions for Storybook args
 
 const meta: Meta<typeof DataTable> = {
   title: 'Molecules/DataTable',
