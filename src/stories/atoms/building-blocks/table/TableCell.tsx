@@ -1,6 +1,6 @@
 import React from 'react';
 import { Checkbox } from '../../Checkbox';
-import { Toggle } from '../../Toggle';
+import { Toggle } from '../Toggle';
 import { Avatar } from '../../Avatar';
 import { AvatarGroup } from '../../AvatarGroup';
 import { PaymentIcon, type PaymentMethod } from '../../PaymentIcon';
