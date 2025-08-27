@@ -1,7 +1,7 @@
 import React from 'react';
 import { Checkbox } from '../Checkbox';
 import { Toggle } from './Toggle';
-import { FileIcon, type FileType } from '../FileIcon';
+import { FileIcon, type FileType } from './FileIcon';
 import './fileCell.css';
 
 export interface FileCellProps {
