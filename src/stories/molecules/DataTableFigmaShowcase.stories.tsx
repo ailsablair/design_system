@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DataTable } from './DataTable';
-import { action } from '@storybook/addon-actions';
+// Mock functions for Storybook args
 
 const meta: Meta<typeof DataTable> = {
   title: 'Molecules/DataTable/Figma Showcase',
