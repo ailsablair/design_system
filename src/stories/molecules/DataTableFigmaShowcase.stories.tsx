@@ -48,13 +48,13 @@ This showcases the exact implementation of the DataTable component as designed i
     data: { control: false },
   },
   args: {
-    onSort: action('onSort'),
-    onRowSelect: action('onRowSelect'),
-    onSelectAll: action('onSelectAll'),
-    onPageChange: action('onPageChange'),
-    onEdit: action('onEdit'),
-    onDelete: action('onDelete'),
-    onMoreActions: action('onMoreActions'),
+    onSort: () => {},
+    onRowSelect: () => {},
+    onSelectAll: () => {},
+    onPageChange: () => {},
+    onEdit: () => {},
+    onDelete: () => {},
+    onMoreActions: () => {},
   },
 };
 
