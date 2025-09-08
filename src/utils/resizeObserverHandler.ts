@@ -142,7 +142,7 @@ export const setupResizeObserverErrorHandler = (): void => {
       // In development, show a friendly warning once
       if (process.env.NODE_ENV === 'development' && !window.__resizeObserverErrorLogged) {
         console.warn(
-          '🔧 ResizeObserver loops detected and suppressed.\n' +
+          '�� ResizeObserver loops detected and suppressed.\n' +
           'These are typically harmless warnings caused by CSS transforms or Storybook.\n' +
           'For more info: https://github.com/WICG/ResizeObserver/issues/38'
         );
@@ -452,10 +452,12 @@ export const testResizeObserverSuppression = (): Promise<boolean> => {
 };
 
 /**
- * Immediate early error suppression for very early ResizeObserver errors
- * This runs before the full setup to catch errors that occur during module loading
+ * Initialize early ResizeObserver error suppression
+ * Call this function to activate error suppression during application startup
  */
-if (typeof window !== 'undefined') {
+export const initEarlyErrorSuppression = (): void => {
+  if (typeof window === 'undefined') return;
+
   // Quick early suppression
   const originalConsoleError = window.console.error;
   window.console.error = (...args: any[]) => {
@@ -469,22 +471,19 @@ if (typeof window !== 'undefined') {
     }
   };
 
-  // Immediate setup if not already done
+  // Setup handler if not already done
   if (!window.__resizeObserverSetupComplete) {
     setupResizeObserverErrorHandler();
   }
-}
 
-/**
- * Emergency ResizeObserver error suppression - runs immediately
- * This is a fallback for environments where the main handler might not catch everything
- */
-if (typeof globalThis !== 'undefined' && typeof globalThis.addEventListener === 'function') {
-  globalThis.addEventListener('error', (event) => {
-    if (event.message && event.message.toLowerCase().includes('resizeobserver')) {
-      event.preventDefault();
-      event.stopPropagation();
-      event.stopImmediatePropagation();
-    }
-  }, true);
-}
+  // Additional global error handling
+  if (typeof globalThis !== 'undefined' && typeof globalThis.addEventListener === 'function') {
+    globalThis.addEventListener('error', (event) => {
+      if (event.message && event.message.toLowerCase().includes('resizeobserver')) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+      }
+    }, true);
+  }
+};

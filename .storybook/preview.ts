@@ -1,12 +1,17 @@
 import type { Preview } from '@storybook/react';
-// IMMEDIATE suppression must be first import
-import '../src/utils/immediateResizeObserverSuppression';
-import { setupResizeObserverErrorHandler, forceSupressResizeObserverErrors } from '../src/utils/resizeObserverHandler';
+import { initImmediateSuppression } from '../src/utils/immediateResizeObserverSuppression';
+import { setupResizeObserverErrorHandler, forceSupressResizeObserverErrors, initEarlyErrorSuppression } from '../src/utils/resizeObserverHandler';
 import { withErrorBoundary } from '../src/stories/chromatic/Debug/ErrorBoundary';
 
-// Immediate aggressive suppression for Storybook
+// Initialize ResizeObserver error handling for Storybook runtime
 if (typeof window !== 'undefined') {
-  // Override all console methods immediately
+  // Initialize all error suppression layers
+  initEarlyErrorSuppression();
+  initImmediateSuppression();
+  setupResizeObserverErrorHandler();
+  forceSupressResizeObserverErrors();
+
+  // Additional Storybook-specific console method overrides
   ['error', 'warn', 'log', 'info', 'debug'].forEach(method => {
     const original = (window.console as any)[method];
     (window.console as any)[method] = (...args: any[]) => {
@@ -25,14 +30,8 @@ if (typeof window !== 'undefined') {
       }
     };
   });
-}
 
-// Initialize all error handling layers
-setupResizeObserverErrorHandler();
-forceSupressResizeObserverErrors();
-
-// Additional Storybook-specific error event suppression
-if (typeof window !== 'undefined') {
+  // Additional Storybook-specific error event suppression
   ['error', 'unhandledrejection'].forEach(eventType => {
     window.addEventListener(eventType, (event: any) => {
       const message = event.message || event.reason || '';

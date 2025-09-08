@@ -1,28 +1,24 @@
-// IMMEDIATE ResizeObserver suppression - must be first import
-import './utils/immediateResizeObserverSuppression'
+// ResizeObserver error handling imports (no immediate execution)
+import { initImmediateSuppression } from './utils/immediateResizeObserverSuppression'
+import { setupResizeObserverErrorHandler, forceSupressResizeObserverErrors, initEarlyErrorSuppression } from './utils/resizeObserverHandler'
 
-// Additional comprehensive error handling
-import { setupResizeObserverErrorHandler, forceSupressResizeObserverErrors } from './utils/resizeObserverHandler'
-
-// Set up all error handling layers immediately
-setupResizeObserverErrorHandler()
-forceSupressResizeObserverErrors()
-
-// Additional immediate suppression for any edge cases
+// Initialize ResizeObserver error handling after DOM is ready
 if (typeof window !== 'undefined') {
-  const originalError = window.console.error;
-  window.console.error = (...args: any[]) => {
-    const isResizeError = args.some(arg => {
-      const str = String(arg).toLowerCase();
-      return str.includes('resizeobserver') ||
-             str.includes('undelivered notifications') ||
-             str.includes('observer loop') ||
-             str.includes('loop completed');
+  // Wait for DOM ready to avoid build-time side effects
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      initEarlyErrorSuppression();
+      initImmediateSuppression();
+      setupResizeObserverErrorHandler();
+      forceSupressResizeObserverErrors();
     });
-    if (!isResizeError) {
-      originalError.apply(window.console, args);
-    }
-  };
+  } else {
+    // DOM already loaded
+    initEarlyErrorSuppression();
+    initImmediateSuppression();
+    setupResizeObserverErrorHandler();
+    forceSupressResizeObserverErrors();
+  }
 }
 
 // Now import React and other dependencies
