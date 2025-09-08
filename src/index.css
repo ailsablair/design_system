@@ -2,7 +2,7 @@
 @import './stories/foundations/tokens.css';
 
 :root {
-  font-family: var(--type-typeface-inter);
+  font-family: var(--type-typeface-roboto-flex);
   line-height: var(--type-line-height-normal);
   font-weight: var(--type-weight-regular);
 
