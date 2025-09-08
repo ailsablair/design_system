@@ -13,8 +13,8 @@ const preview: Preview = {
           'Test',
           '*'
         ],
-        method: 'alphabetical',
-        includeNames: true,
+        method: 'configure',
+        locales: 'en-US',
       },
     },
     controls: {
