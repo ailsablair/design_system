@@ -1,31 +1,48 @@
 import type { Preview } from '@storybook/react';
+// IMMEDIATE suppression must be first import
+import '../src/utils/immediateResizeObserverSuppression';
 import { setupResizeObserverErrorHandler, forceSupressResizeObserverErrors } from '../src/utils/resizeObserverHandler';
 import { withErrorBoundary } from '../src/stories/chromatic/Debug/ErrorBoundary';
 
-// Early ResizeObserver error suppression for Storybook
+// Immediate aggressive suppression for Storybook
 if (typeof window !== 'undefined') {
-  // Quick early suppression before full setup
-  const originalError = window.console.error;
-  window.console.error = (...args: any[]) => {
-    const hasResizeError = args.some(arg =>
-      String(arg).toLowerCase().includes('resizeobserver') ||
-      String(arg).toLowerCase().includes('undelivered notifications') ||
-      String(arg).toLowerCase().includes('loop completed')
-    );
-    if (!hasResizeError) {
-      originalError.apply(window.console, args);
-    }
-  };
+  // Override all console methods immediately
+  ['error', 'warn', 'log', 'info', 'debug'].forEach(method => {
+    const original = (window.console as any)[method];
+    (window.console as any)[method] = (...args: any[]) => {
+      const hasResizeError = args.some(arg => {
+        const str = String(arg).toLowerCase();
+        return str.includes('resizeobserver') ||
+               str.includes('resize observer') ||
+               str.includes('undelivered notifications') ||
+               str.includes('observer loop') ||
+               str.includes('loop completed') ||
+               str.includes('resize loop') ||
+               str.includes('css pixel');
+      });
+      if (!hasResizeError) {
+        original.apply(window.console, args);
+      }
+    };
+  });
 }
 
-// Initialize enhanced ResizeObserver error handling for Storybook
+// Initialize all error handling layers
 setupResizeObserverErrorHandler();
+forceSupressResizeObserverErrors();
 
-// Apply force suppression for Storybook environment (where ResizeObserver errors are common)
+// Additional Storybook-specific error event suppression
 if (typeof window !== 'undefined') {
-  setTimeout(() => {
-    forceSupressResizeObserverErrors();
-  }, 100);
+  ['error', 'unhandledrejection'].forEach(eventType => {
+    window.addEventListener(eventType, (event: any) => {
+      const message = event.message || event.reason || '';
+      if (String(message).toLowerCase().includes('resizeobserver')) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+      }
+    }, { capture: true, passive: false });
+  });
 }
 
 const preview: Preview = {
