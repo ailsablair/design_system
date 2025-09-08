@@ -14,6 +14,7 @@
     "build-storybook:optimized": "NODE_OPTIONS='--max-old-space-size=8192 --optimize-for-size' storybook build --webpack-stats-json --quiet --loglevel warn",
     "build-storybook:memory": "NODE_OPTIONS='--max-old-space-size=4096 --optimize-for-size' storybook build --quiet",
     "build-storybook:fast": "NODE_OPTIONS='--max-old-space-size=8192' storybook build --quiet --loglevel error",
+    "build-storybook:safe": "NODE_OPTIONS='--max-old-space-size=6144' storybook build --quiet",
     "analyze-storybook": "npm run build-storybook:optimized && npx storybook-analyzer",
     "chromatic": "npx chromatic --project-token=chpt_3b449a46cc629ec",
     "chromatic:ci": "npx chromatic --project-token=chpt_3b449a46cc629ec --exit-zero-on-changes",
