@@ -252,3 +252,6 @@ export const PaymentIcon: React.FC<PaymentIconProps> = ({
 };
 
 export default PaymentIcon;
+
+// Explicit re-exports to ensure they're available for import
+export type { PaymentMethod, PaymentIconSize, PaymentIconProps };
