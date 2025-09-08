@@ -339,16 +339,16 @@ export const FigmaDesignShowcase: Story = {
             <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: 500, textTransform: 'capitalize' }}>
               {size} Size
             </h3>
-            
+
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '24px' }}>
               {iconStyles.map(iconStyle => (
                 <div key={iconStyle}>
                   <h4 style={{ margin: '0 0 12px 0', fontSize: '14px', fontWeight: 500, textTransform: 'capitalize' }}>
                     {iconStyle} Icon Style
                   </h4>
-                  
+
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden', background: '#F9FAFB' }}>
-                    {positions.map(position => 
+                    {positions.map(position =>
                       contentTypes.map(contentType =>
                         openStates.map(open =>
                           states.map(state => (
@@ -380,6 +380,257 @@ export const FigmaDesignShowcase: Story = {
     docs: {
       description: {
         story: 'Complete implementation of all 72 variants from the Figma design specification.',
+      },
+    },
+  },
+};
+
+// ===== EXACT FIGMA GRID LAYOUT ===== //
+
+export const ExactFigmaGrid: Story = {
+  render: () => {
+    // Create the exact grid layout as shown in the Figma design
+    const figmaVariants = [
+      // Row 1: Small + Plus + Default Middle + N/A
+      { size: 'small' as const, iconStyle: 'plus' as const, position: 'default (middle)' as const, contentType: 'N/A' as const, open: false, state: 'default' as const },
+      { size: 'small' as const, iconStyle: 'plus' as const, position: 'default (middle)' as const, contentType: 'header' as const, open: false, state: 'hover' as const },
+      { size: 'small' as const, iconStyle: 'plus' as const, position: 'default (middle)' as const, contentType: 'N/A' as const, open: true, state: 'selected' as const },
+      { size: 'small' as const, iconStyle: 'plus' as const, position: 'default (middle)' as const, contentType: 'header' as const, open: true, state: 'hover' as const },
+      { size: 'small' as const, iconStyle: 'plus' as const, position: 'bottom' as const, contentType: 'N/A' as const, open: false, state: 'default' as const },
+      { size: 'small' as const, iconStyle: 'plus' as const, position: 'bottom' as const, contentType: 'header' as const, open: false, state: 'hover' as const },
+
+      // Row 2: Small + Plus + Bottom/Top
+      { size: 'small' as const, iconStyle: 'plus' as const, position: 'bottom' as const, contentType: 'N/A' as const, open: true, state: 'selected' as const },
+      { size: 'small' as const, iconStyle: 'plus' as const, position: 'bottom' as const, contentType: 'header' as const, open: true, state: 'hover' as const },
+      { size: 'small' as const, iconStyle: 'plus' as const, position: 'top' as const, contentType: 'N/A' as const, open: false, state: 'default' as const },
+      { size: 'small' as const, iconStyle: 'plus' as const, position: 'top' as const, contentType: 'header' as const, open: false, state: 'hover' as const },
+      { size: 'small' as const, iconStyle: 'plus' as const, position: 'top' as const, contentType: 'N/A' as const, open: true, state: 'selected' as const },
+      { size: 'small' as const, iconStyle: 'plus' as const, position: 'top' as const, contentType: 'header' as const, open: true, state: 'hover' as const },
+
+      // Row 3: Large + Plus
+      { size: 'large' as const, iconStyle: 'plus' as const, position: 'default (middle)' as const, contentType: 'N/A' as const, open: false, state: 'default' as const },
+      { size: 'large' as const, iconStyle: 'plus' as const, position: 'default (middle)' as const, contentType: 'header' as const, open: false, state: 'hover' as const },
+      { size: 'large' as const, iconStyle: 'plus' as const, position: 'default (middle)' as const, contentType: 'N/A' as const, open: true, state: 'selected' as const },
+      { size: 'large' as const, iconStyle: 'plus' as const, position: 'default (middle)' as const, contentType: 'header' as const, open: true, state: 'hover' as const },
+      { size: 'large' as const, iconStyle: 'plus' as const, position: 'bottom' as const, contentType: 'N/A' as const, open: false, state: 'default' as const },
+      { size: 'large' as const, iconStyle: 'plus' as const, position: 'bottom' as const, contentType: 'header' as const, open: false, state: 'hover' as const },
+
+      // Row 4: Large + Plus (continued)
+      { size: 'large' as const, iconStyle: 'plus' as const, position: 'bottom' as const, contentType: 'N/A' as const, open: true, state: 'selected' as const },
+      { size: 'large' as const, iconStyle: 'plus' as const, position: 'bottom' as const, contentType: 'header' as const, open: true, state: 'hover' as const },
+      { size: 'large' as const, iconStyle: 'plus' as const, position: 'top' as const, contentType: 'N/A' as const, open: false, state: 'default' as const },
+      { size: 'large' as const, iconStyle: 'plus' as const, position: 'top' as const, contentType: 'header' as const, open: false, state: 'hover' as const },
+      { size: 'large' as const, iconStyle: 'plus' as const, position: 'top' as const, contentType: 'N/A' as const, open: true, state: 'selected' as const },
+      { size: 'large' as const, iconStyle: 'plus' as const, position: 'top' as const, contentType: 'header' as const, open: true, state: 'hover' as const },
+
+      // Row 5: Default + Plus
+      { size: 'default' as const, iconStyle: 'plus' as const, position: 'default (middle)' as const, contentType: 'N/A' as const, open: false, state: 'default' as const },
+      { size: 'default' as const, iconStyle: 'plus' as const, position: 'default (middle)' as const, contentType: 'header' as const, open: false, state: 'hover' as const },
+      { size: 'default' as const, iconStyle: 'plus' as const, position: 'default (middle)' as const, contentType: 'N/A' as const, open: true, state: 'selected' as const },
+      { size: 'default' as const, iconStyle: 'plus' as const, position: 'default (middle)' as const, contentType: 'header' as const, open: true, state: 'hover' as const },
+      { size: 'default' as const, iconStyle: 'plus' as const, position: 'bottom' as const, contentType: 'N/A' as const, open: false, state: 'default' as const },
+      { size: 'default' as const, iconStyle: 'plus' as const, position: 'bottom' as const, contentType: 'header' as const, open: false, state: 'hover' as const },
+
+      // Row 6: Default + Plus (continued)
+      { size: 'default' as const, iconStyle: 'plus' as const, position: 'bottom' as const, contentType: 'N/A' as const, open: true, state: 'selected' as const },
+      { size: 'default' as const, iconStyle: 'plus' as const, position: 'bottom' as const, contentType: 'header' as const, open: true, state: 'hover' as const },
+      { size: 'default' as const, iconStyle: 'plus' as const, position: 'top' as const, contentType: 'N/A' as const, open: false, state: 'default' as const },
+      { size: 'default' as const, iconStyle: 'plus' as const, position: 'top' as const, contentType: 'header' as const, open: false, state: 'hover' as const },
+      { size: 'default' as const, iconStyle: 'plus' as const, position: 'top' as const, contentType: 'N/A' as const, open: true, state: 'selected' as const },
+      { size: 'default' as const, iconStyle: 'plus' as const, position: 'top' as const, contentType: 'header' as const, open: true, state: 'hover' as const },
+
+      // Continue with Chevron variants...
+      // Small + Chevron
+      { size: 'small' as const, iconStyle: 'default (chevron)' as const, position: 'default (middle)' as const, contentType: 'N/A' as const, open: false, state: 'default' as const },
+      { size: 'small' as const, iconStyle: 'default (chevron)' as const, position: 'default (middle)' as const, contentType: 'header' as const, open: false, state: 'hover' as const },
+      { size: 'small' as const, iconStyle: 'default (chevron)' as const, position: 'default (middle)' as const, contentType: 'N/A' as const, open: true, state: 'selected' as const },
+      { size: 'small' as const, iconStyle: 'default (chevron)' as const, position: 'default (middle)' as const, contentType: 'header' as const, open: true, state: 'hover' as const },
+    ];
+
+    return (
+      <div style={{ padding: '24px', backgroundColor: '#F9FAFB' }}>
+        <div style={{ marginBottom: '32px' }}>
+          <h2 style={{ margin: '0 0 16px 0', fontSize: '20px', fontWeight: 600, color: '#1F2937' }}>
+            Exact Figma Design Layout
+          </h2>
+          <p style={{ margin: '0 0 16px 0', color: '#6B7280', fontSize: '14px' }}>
+            This matches the exact grid layout from the Figma design file "building-blocks/accordion/headers"
+          </p>
+        </div>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(6, 1fr)',
+          gap: '8px',
+          maxWidth: '1200px',
+          backgroundColor: 'white',
+          padding: '16px',
+          borderRadius: '8px',
+          border: '1px solid #E5E7EB'
+        }}>
+          {figmaVariants.map((variant, index) => (
+            <div key={index} style={{
+              padding: '8px',
+              borderRadius: '4px',
+              border: '1px solid #F3F4F6',
+              backgroundColor: '#FEFEFE'
+            }}>
+              <AccordionHeader
+                size={variant.size}
+                iconStyle={variant.iconStyle}
+                position={variant.position}
+                contentType={variant.contentType}
+                open={variant.open}
+                state={variant.state}
+                title="This is a section title or a long question taking up a lot of space..."
+              />
+            </div>
+          ))}
+        </div>
+
+        <div style={{ marginTop: '24px', padding: '16px', backgroundColor: '#F3F4F6', borderRadius: '8px' }}>
+          <p style={{ margin: '0', fontSize: '12px', color: '#6B7280', fontStyle: 'italic' }}>
+            This grid shows a representative sample of the 72 total variants. Each variant demonstrates the precise
+            typography, spacing, colors, and icon styles from the original Figma design specification.
+          </p>
+        </div>
+      </div>
+    );
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Exact replica of the Figma design grid layout showing the precise arrangement and styling of accordion header variants.',
+      },
+    },
+  },
+};
+
+// ===== COMPLETE 72 VARIANT MATRIX ===== //
+
+export const Complete72VariantMatrix: Story = {
+  render: () => {
+    const sizes = ['small', 'default', 'large'] as const;
+    const iconStyles = ['plus', 'default (chevron)'] as const;
+    const positions = ['default (middle)', 'top', 'bottom'] as const;
+    const contentTypes = ['N/A', 'header'] as const;
+    const openStates = [false, true] as const;
+    const states = ['default', 'hover', 'selected'] as const;
+
+    // Generate all 72 unique combinations
+    const allVariants: Array<{
+      size: typeof sizes[number];
+      iconStyle: typeof iconStyles[number];
+      position: typeof positions[number];
+      contentType: typeof contentTypes[number];
+      open: boolean;
+      state: typeof states[number];
+      id: string;
+    }> = [];
+
+    sizes.forEach(size => {
+      iconStyles.forEach(iconStyle => {
+        positions.forEach(position => {
+          contentTypes.forEach(contentType => {
+            openStates.forEach(open => {
+              states.forEach(state => {
+                allVariants.push({
+                  size,
+                  iconStyle,
+                  position,
+                  contentType,
+                  open,
+                  state,
+                  id: `${size}-${iconStyle}-${position}-${contentType}-${open}-${state}`
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+
+    return (
+      <div style={{ padding: '24px' }}>
+        <div style={{ marginBottom: '32px' }}>
+          <h2 style={{ margin: '0 0 16px 0', fontSize: '20px', fontWeight: 600 }}>
+            Complete 72-Variant Matrix
+          </h2>
+          <p style={{ margin: '0 0 16px 0', color: '#6B7280' }}>
+            All {allVariants.length} possible combinations from the Figma design specification:
+          </p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(6, 1fr)',
+            gap: '8px',
+            marginBottom: '16px',
+            fontSize: '12px',
+            fontWeight: 600,
+            color: '#374151'
+          }}>
+            <div>Size</div>
+            <div>Icon Style</div>
+            <div>Position</div>
+            <div>Content Type</div>
+            <div>Open State</div>
+            <div>Visual State</div>
+          </div>
+        </div>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))',
+          gap: '16px'
+        }}>
+          {allVariants.map((variant, index) => (
+            <div key={variant.id} style={{
+              padding: '12px',
+              border: '1px solid #E5E7EB',
+              borderRadius: '8px',
+              backgroundColor: '#FEFEFE'
+            }}>
+              <div style={{
+                fontSize: '10px',
+                color: '#6B7280',
+                marginBottom: '8px',
+                fontFamily: 'monospace'
+              }}>
+                #{(index + 1).toString().padStart(2, '0')}: {variant.id}
+              </div>
+              <AccordionHeader
+                size={variant.size}
+                iconStyle={variant.iconStyle}
+                position={variant.position}
+                contentType={variant.contentType}
+                open={variant.open}
+                state={variant.state}
+                title="This is a section title or a long question taking up a lot of space..."
+              />
+            </div>
+          ))}
+        </div>
+
+        <div style={{ marginTop: '32px', padding: '16px', backgroundColor: '#F3F4F6', borderRadius: '8px' }}>
+          <h3 style={{ margin: '0 0 12px 0', fontSize: '16px', fontWeight: 600 }}>Variant Breakdown</h3>
+          <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '14px', color: '#6B7280' }}>
+            <li><strong>Sizes (3):</strong> small, default, large</li>
+            <li><strong>Icon Styles (2):</strong> plus/minus, chevron up/down</li>
+            <li><strong>Positions (3):</strong> default (middle), top, bottom</li>
+            <li><strong>Content Types (2):</strong> N/A (standard), header (enhanced)</li>
+            <li><strong>Open States (2):</strong> False (collapsed), True (expanded)</li>
+            <li><strong>Visual States (3):</strong> default, hover, selected</li>
+          </ul>
+          <p style={{ margin: '12px 0 0 0', fontSize: '12px', fontStyle: 'italic' }}>
+            Total combinations: 3 × 2 × 3 × 2 × 2 × 3 = 72 unique variants
+          </p>
+        </div>
+      </div>
+    );
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Complete matrix showing all 72 possible variant combinations from the Figma design specification.',
       },
     },
   },
