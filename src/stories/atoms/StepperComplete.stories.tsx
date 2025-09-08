@@ -1,16 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Stepper } from './Stepper';
-import { StepperLine } from './StepperLine';
-import './stepper.css';
-import './stepperLine.css';
+import { Stepper } from './building-blocks/Stepper';
+import { StepperLine } from './building-blocks/StepperLine';
+import './building-blocks/stepper.css';
+import './building-blocks/stepperLine.css';
 
 const meta: Meta = {
-  title: 'Atoms/Building Blocks/Stepper Complete',
+  title: 'Atoms/Stepper Complete',
   parameters: {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Complete stepper workflows combining Stepper components with StepperLine connectors to create cohesive multi-step user interfaces.',
+        component:
+          'Complete stepper workflows combining Stepper components with StepperLine connectors to create cohesive multi-step user interfaces.',
       },
     },
   },
@@ -23,14 +24,16 @@ type Story = StoryObj;
 // Horizontal workflow
 export const HorizontalWorkflow: Story = {
   render: () => (
-    <div style={{ 
-      display: 'flex', 
-      alignItems: 'center', 
-      justifyContent: 'center',
-      gap: '0px',
-      padding: '40px',
-      flexWrap: 'wrap'
-    }}>
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '0px',
+        padding: '40px',
+        flexWrap: 'wrap',
+      }}
+    >
       <Stepper stepNumber="01" label="Account" state="completed" />
       <StepperLine type="solid" stroke="2px" width="80px" />
       <Stepper stepNumber="02" label="Personal" state="completed" />
@@ -45,7 +48,8 @@ export const HorizontalWorkflow: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Horizontal workflow showing completed, active, and pending steps with connecting lines.',
+        story:
+          'Horizontal workflow showing completed, active, and pending steps with connecting lines.',
       },
     },
   },
@@ -54,14 +58,16 @@ export const HorizontalWorkflow: Story = {
 // Large horizontal workflow
 export const LargeHorizontalWorkflow: Story = {
   render: () => (
-    <div style={{ 
-      display: 'flex', 
-      alignItems: 'center', 
-      justifyContent: 'center',
-      gap: '0px',
-      padding: '40px',
-      flexWrap: 'wrap'
-    }}>
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '0px',
+        padding: '40px',
+        flexWrap: 'wrap',
+      }}
+    >
       <Stepper size="large" stepNumber="01" label="Setup" state="completed" />
       <StepperLine type="solid" stroke="2px" width="100px" />
       <Stepper size="large" stepNumber="02" label="Configure" state="active" current={true} />
@@ -81,14 +87,16 @@ export const LargeHorizontalWorkflow: Story = {
 // Vertical workflow
 export const VerticalWorkflow: Story = {
   render: () => (
-    <div style={{ 
-      display: 'flex', 
-      flexDirection: 'column',
-      alignItems: 'center', 
-      justifyContent: 'center',
-      gap: '0px',
-      padding: '40px'
-    }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '0px',
+        padding: '40px',
+      }}
+    >
       <Stepper stepNumber="01" label="Start" state="completed" />
       <StepperLine type="solid" stroke="2px" orientation="vertical" height="60px" />
       <Stepper stepNumber="02" label="Process" state="completed" />
@@ -110,14 +118,16 @@ export const VerticalWorkflow: Story = {
 // Dashed line workflow
 export const DashedLineWorkflow: Story = {
   render: () => (
-    <div style={{ 
-      display: 'flex', 
-      alignItems: 'center', 
-      justifyContent: 'center',
-      gap: '0px',
-      padding: '40px',
-      flexWrap: 'wrap'
-    }}>
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '0px',
+        padding: '40px',
+        flexWrap: 'wrap',
+      }}
+    >
       <Stepper stepNumber="01" label="Begin" state="completed" />
       <StepperLine type="dashed" stroke="2px" width="80px" />
       <Stepper stepNumber="02" label="Progress" state="active" current={true} />
@@ -137,14 +147,16 @@ export const DashedLineWorkflow: Story = {
 // Dotted line workflow
 export const DottedLineWorkflow: Story = {
   render: () => (
-    <div style={{ 
-      display: 'flex', 
-      alignItems: 'center', 
-      justifyContent: 'center',
-      gap: '0px',
-      padding: '40px',
-      flexWrap: 'wrap'
-    }}>
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '0px',
+        padding: '40px',
+        flexWrap: 'wrap',
+      }}
+    >
       <Stepper stepNumber="01" label="Alpha" state="completed" />
       <StepperLine type="dotted" stroke="2px" width="80px" />
       <Stepper stepNumber="02" label="Beta" state="completed" />
@@ -164,14 +176,16 @@ export const DottedLineWorkflow: Story = {
 // Complex workflow with mixed states
 export const ComplexWorkflow: Story = {
   render: () => (
-    <div style={{ 
-      display: 'flex', 
-      alignItems: 'center', 
-      justifyContent: 'center',
-      gap: '0px',
-      padding: '40px',
-      flexWrap: 'wrap'
-    }}>
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '0px',
+        padding: '40px',
+        flexWrap: 'wrap',
+      }}
+    >
       <Stepper stepNumber="01" label="Registration" state="completed" />
       <StepperLine type="solid" stroke="2px" width="60px" />
       <Stepper stepNumber="02" label="Verification" state="completed" />
@@ -188,7 +202,8 @@ export const ComplexWorkflow: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Complex workflow with multiple steps and mixed line styles to indicate progress.',
+        story:
+          'Complex workflow with multiple steps and mixed line styles to indicate progress.',
       },
     },
   },
@@ -202,32 +217,34 @@ export const InteractiveWorkflow: Story = {
     };
 
     return (
-      <div style={{ 
-        display: 'flex', 
-        alignItems: 'center', 
-        justifyContent: 'center',
-        gap: '0px',
-        padding: '40px',
-        flexWrap: 'wrap'
-      }}>
-        <Stepper 
-          stepNumber="01" 
-          label="Login" 
-          state="completed" 
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '0px',
+          padding: '40px',
+          flexWrap: 'wrap',
+        }}
+      >
+        <Stepper
+          stepNumber="01"
+          label="Login"
+          state="completed"
           onClick={() => handleStepClick('01')}
         />
         <StepperLine type="solid" stroke="2px" width="80px" />
-        <Stepper 
-          stepNumber="02" 
-          label="Dashboard" 
-          state="active" 
+        <Stepper
+          stepNumber="02"
+          label="Dashboard"
+          state="active"
           current={true}
           onClick={() => handleStepClick('02')}
         />
         <StepperLine type="solid" stroke="2px" width="80px" />
-        <Stepper 
-          stepNumber="03" 
-          label="Settings" 
+        <Stepper
+          stepNumber="03"
+          label="Settings"
           state="default"
           onClick={() => handleStepClick('03')}
         />
@@ -249,22 +266,26 @@ export const ResponsiveWorkflow: Story = {
     <div style={{ width: '100%', maxWidth: '100%' }}>
       {/* Desktop view */}
       <div style={{ marginBottom: '48px' }}>
-        <h3 style={{ 
-          textAlign: 'center', 
-          marginBottom: '24px', 
-          fontFamily: 'Archivo', 
-          fontSize: '18px', 
-          fontWeight: '600' 
-        }}>
+        <h3
+          style={{
+            textAlign: 'center',
+            marginBottom: '24px',
+            fontFamily: 'Archivo',
+            fontSize: '18px',
+            fontWeight: '600',
+          }}
+        >
           Desktop Layout
         </h3>
-        <div style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center',
-          gap: '0px',
-          flexWrap: 'wrap'
-        }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0px',
+            flexWrap: 'wrap',
+          }}
+        >
           <Stepper size="large" stepNumber="01" label="Plan" state="completed" />
           <StepperLine type="solid" stroke="2px" width="100px" />
           <Stepper size="large" stepNumber="02" label="Build" state="active" current={true} />
@@ -277,22 +298,26 @@ export const ResponsiveWorkflow: Story = {
 
       {/* Mobile view */}
       <div>
-        <h3 style={{ 
-          textAlign: 'center', 
-          marginBottom: '24px', 
-          fontFamily: 'Archivo', 
-          fontSize: '18px', 
-          fontWeight: '600' 
-        }}>
+        <h3
+          style={{
+            textAlign: 'center',
+            marginBottom: '24px',
+            fontFamily: 'Archivo',
+            fontSize: '18px',
+            fontWeight: '600',
+          }}
+        >
           Mobile Layout
         </h3>
-        <div style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center',
-          gap: '0px',
-          flexWrap: 'wrap'
-        }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0px',
+            flexWrap: 'wrap',
+          }}
+        >
           <Stepper stepNumber="01" label="Plan" state="completed" />
           <StepperLine type="solid" stroke="2px" width="60px" />
           <Stepper stepNumber="02" label="Build" state="active" current={true} />
@@ -316,30 +341,36 @@ export const ResponsiveWorkflow: Story = {
 // All states showcase
 export const AllStatesShowcase: Story = {
   render: () => (
-    <div style={{ 
-      display: 'flex', 
-      flexDirection: 'column',
-      alignItems: 'center', 
-      gap: '48px',
-      padding: '40px'
-    }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '48px',
+        padding: '40px',
+      }}
+    >
       {/* Default size showcase */}
       <div style={{ textAlign: 'center' }}>
-        <h3 style={{ 
-          marginBottom: '24px', 
-          fontFamily: 'Archivo', 
-          fontSize: '18px', 
-          fontWeight: '600' 
-        }}>
+        <h3
+          style={{
+            marginBottom: '24px',
+            fontFamily: 'Archivo',
+            fontSize: '18px',
+            fontWeight: '600',
+          }}
+        >
           Default Size
         </h3>
-        <div style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center',
-          gap: '0px',
-          flexWrap: 'wrap'
-        }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0px',
+            flexWrap: 'wrap',
+          }}
+        >
           <Stepper stepNumber="01" label="Complete" state="completed" />
           <StepperLine type="solid" stroke="2px" width="80px" />
           <Stepper stepNumber="02" label="Active" state="active" current={true} />
@@ -350,21 +381,25 @@ export const AllStatesShowcase: Story = {
 
       {/* Large size showcase */}
       <div style={{ textAlign: 'center' }}>
-        <h3 style={{ 
-          marginBottom: '24px', 
-          fontFamily: 'Archivo', 
-          fontSize: '18px', 
-          fontWeight: '600' 
-        }}>
+        <h3
+          style={{
+            marginBottom: '24px',
+            fontFamily: 'Archivo',
+            fontSize: '18px',
+            fontWeight: '600',
+          }}
+        >
           Large Size
         </h3>
-        <div style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center',
-          gap: '0px',
-          flexWrap: 'wrap'
-        }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0px',
+            flexWrap: 'wrap',
+          }}
+        >
           <Stepper size="large" stepNumber="01" label="Complete" state="completed" />
           <StepperLine type="solid" stroke="2px" width="100px" />
           <Stepper size="large" stepNumber="02" label="Active" state="active" current={true} />
