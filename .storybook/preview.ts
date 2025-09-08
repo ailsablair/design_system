@@ -86,10 +86,14 @@ import type { Preview } from '@storybook/react';
 
 // Import comprehensive ResizeObserver error fix
 import { applyResizeObserverFix } from '../src/utils/resizeObserverFix';
+import { emergencySuppress } from '../src/utils/emergencyResizeObserverFix';
 
 // Apply comprehensive fix when window is available
 if (typeof window !== 'undefined') {
   applyResizeObserverFix();
+
+  // Apply emergency suppression as backup
+  emergencySuppress();
 }
 
 const preview: Preview = {
