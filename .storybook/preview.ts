@@ -1,7 +1,16 @@
 import type { Preview } from '@storybook/react';
 
-// Import ResizeObserver error suppression
-import '../src/utils/resizeObserverSuppression';
+// Inline ResizeObserver error suppression
+if (typeof console !== 'undefined') {
+  const originalError = console.error;
+  console.error = function(...args: any[]) {
+    const message = args.join(' ').toLowerCase();
+    if (message.includes('resizeobserver') && message.includes('undelivered notifications')) {
+      return; // Suppress ResizeObserver errors
+    }
+    originalError.apply(console, args);
+  };
+}
 
 const preview: Preview = {
   parameters: {
