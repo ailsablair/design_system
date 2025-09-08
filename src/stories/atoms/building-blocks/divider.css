@@ -397,6 +397,79 @@
   /* Text dividers accessibility */
 }
 
+/* === VERTICAL DIVIDERS WITH TEXT LABELS === */
+
+.divider-with-text-vertical {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 306px;
+}
+
+.divider-line-vertical {
+  background-color: var(--neutral-gray-gray-300);
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Vertical line styles */
+.divider-line-vertical.divider-line-solid {
+  background-color: var(--neutral-gray-gray-300);
+  border: none;
+}
+
+.divider-line-vertical.divider-line-dashed {
+  background-color: transparent;
+  border-style: dashed;
+  border-color: var(--neutral-gray-gray-300);
+  border-left-width: var(--divider-thickness, 0.5px);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.divider-line-vertical.divider-line-dotted {
+  background-color: transparent;
+  border-style: dotted;
+  border-color: var(--neutral-gray-gray-300);
+  border-left-width: var(--divider-thickness, 0.5px);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* Vertical label positioning */
+.divider-label-vertical {
+  background: var(--base-white);
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-16px) var(--spacing-sizing-12px) var(--spacing-sizing-16px);
+  color: var(--base-black);
+  font-family: var(--type-typeface-archivo);
+  white-space: nowrap;
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+}
+
+/* Top positioned label */
+.divider-with-text-vertical-top .divider-label-vertical {
+  top: var(--spacing-sizing-8px);
+  transform: none;
+}
+
+/* Middle positioned label */
+.divider-with-text-vertical-middle .divider-label-vertical {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Bottom positioned label */
+.divider-with-text-vertical-bottom .divider-label-vertical {
+  bottom: var(--spacing-sizing-8px);
+  transform: none;
+}
+
 /* === UTILITY CLASSES === */
 
 .divider-spacer-small {
