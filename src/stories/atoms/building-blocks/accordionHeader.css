@@ -107,26 +107,30 @@
 }
 
 /* ===== SIZE VARIANTS - TITLE TYPOGRAPHY ===== */
+/* Matches exact Figma specifications for all 3 sizes */
 
-/* Small size */
+/* Small size - 18px label typography */
 .accordion-header--size-small .accordion-header__title {
-  font-size: var(--type-archivo-label-lg);
-  line-height: var(--type-line-height-label-lg);
-  letter-spacing: var(--type-letter-spacing-archivo-label-lg);
+  font-size: var(--type-archivo-label-lg); /* 18px */
+  line-height: var(--type-line-height-label-lg); /* 24px - 133.333% */
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg); /* 0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
 }
 
-/* Default size */
+/* Default size - 19px heading typography */
 .accordion-header--size-default .accordion-header__title {
-  font-size: var(--type-archivo-heading-5);
-  line-height: var(--type-line-height-heading-5);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-5);
+  font-size: var(--type-archivo-heading-5); /* 19px */
+  line-height: var(--type-line-height-heading-5); /* 24px - 126.316% */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-5); /* -0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
 }
 
-/* Large size */
+/* Large size - 24px heading typography */
 .accordion-header--size-large .accordion-header__title {
-  font-size: var(--type-archivo-heading-4);
-  line-height: var(--type-line-height-heading-4);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-4);
+  font-size: var(--type-archivo-heading-4); /* 24px */
+  line-height: var(--type-line-height-heading-4); /* 24px - 100% */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-4); /* -0.25px */
+  font-weight: var(--type-weight-medium); /* 500 */
 }
 
 /* ===== TOGGLE ICON STYLES ===== */
@@ -160,16 +164,17 @@
 }
 
 /* ===== STATE VARIANTS ===== */
+/* Matches exact Figma color specifications */
 
-/* Default state */
+/* Default state - Primary blue dark blue for title */
 .accordion-header--state-default .accordion-header__title {
-  color: var(--primary-blue-dark-blue);
+  color: var(--primary-blue-dark-blue); /* #191E3C */
 }
 
-/* Hover state */
+/* Hover state - Enhanced colors for better interaction feedback */
 .accordion-header--state-hover .accordion-header__title,
 .accordion-header--interactive:hover .accordion-header__title {
-  color: var(--primary-blue-blue);
+  color: var(--primary-blue-blue); /* #2F42BD */
 }
 
 .accordion-header--state-hover .accordion-header__bell-icon,
@@ -177,9 +182,9 @@
   opacity: 0.7;
 }
 
-/* Selected state */
+/* Selected state - Uses base black for stronger emphasis */
 .accordion-header--state-selected .accordion-header__title {
-  color: var(--base-black);
+  color: var(--base-black); /* #1C1C1C */
   font-weight: var(--type-weight-medium);
 }
 
@@ -187,13 +192,18 @@
   opacity: 0.6;
 }
 
-/* Open state */
+/* Open state - Primary blue for expanded state */
 .accordion-header--open .accordion-header__title {
-  color: var(--primary-blue-blue);
+  color: var(--primary-blue-blue); /* #2F42BD */
 }
 
 .accordion-header--open .accordion-header__bell-icon {
   opacity: 0.7;
+}
+
+/* Combined states - Open + Selected uses base black (from Figma) */
+.accordion-header--open.accordion-header--state-selected .accordion-header__title {
+  color: var(--base-black); /* #1C1C1C */
 }
 
 /* ===== POSITION VARIANTS ===== */
@@ -212,14 +222,20 @@
 }
 
 /* ===== CONTENT TYPE VARIANTS ===== */
+/* Matches Figma "content-type" variants exactly */
 
 .accordion-header--content-default {
-  /* Default content type */
+  /* N/A content type - default styling */
 }
 
 .accordion-header--content-header {
-  /* Header content type - can have enhanced styling */
+  /* Header content type - enhanced styling for header context */
   font-weight: 600;
+
+  /* Header content may have different color treatment */
+  .accordion-header__title {
+    color: var(--primary-blue-dark-blue);
+  }
 }
 
 /* ===== GROUPED VARIANT ===== */

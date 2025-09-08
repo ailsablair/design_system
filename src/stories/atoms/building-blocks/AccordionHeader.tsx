@@ -2,17 +2,17 @@ import React from 'react';
 import './accordionHeader.css';
 
 export interface AccordionHeaderProps {
-  /** Size of the accordion header */
+  /** Size of the accordion header - matches Figma variants exactly */
   size?: 'small' | 'default' | 'large';
-  /** Icon style for expand/collapse */
-  iconStyle?: 'plus' | 'chevron';
-  /** Position variant affecting visual alignment */
-  position?: 'top' | 'middle' | 'bottom';
-  /** Content type variant */
-  contentType?: 'default' | 'header';
-  /** Whether the accordion is open */
+  /** Icon style for expand/collapse - matches Figma "icon-style" variants */
+  iconStyle?: 'plus' | 'default (chevron)';
+  /** Position variant affecting visual alignment - matches Figma "position" variants */
+  position?: 'default (middle)' | 'top' | 'bottom';
+  /** Content type variant - matches Figma "content-type" variants */
+  contentType?: 'N/A' | 'header';
+  /** Whether the accordion is open - matches Figma "open" variants */
   open?: boolean;
-  /** Visual state */
+  /** Visual state - matches Figma "state" variants */
   state?: 'default' | 'hover' | 'selected';
   /** Title text content */
   title?: string;
@@ -41,8 +41,8 @@ export interface AccordionHeaderProps {
 export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   size = 'default',
   iconStyle = 'plus',
-  position = 'middle',
-  contentType = 'default',
+  position = 'default (middle)',
+  contentType = 'N/A',
   open = false,
   state = 'default',
   title = 'This is a section title or a long question taking up a lot of space...',
@@ -52,13 +52,17 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   'aria-label': ariaLabel,
   grouped = false,
 }) => {
-  // Generate CSS classes
+  // Generate CSS classes - matches Figma variant naming exactly
+  const normalizedIconStyle = iconStyle === 'default (chevron)' ? 'chevron' : iconStyle;
+  const normalizedPosition = position === 'default (middle)' ? 'middle' : position;
+  const normalizedContentType = contentType === 'N/A' ? 'default' : contentType;
+
   const headerClasses = [
     'accordion-header',
     `accordion-header--size-${size}`,
-    `accordion-header--icon-${iconStyle}`,
-    `accordion-header--position-${position}`,
-    `accordion-header--content-${contentType}`,
+    `accordion-header--icon-${normalizedIconStyle}`,
+    `accordion-header--position-${normalizedPosition}`,
+    `accordion-header--content-${normalizedContentType}`,
     open ? 'accordion-header--open' : 'accordion-header--closed',
     `accordion-header--state-${state}`,
     grouped && 'accordion-header--grouped',
@@ -143,11 +147,12 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
     </svg>
   );
 
-  // Get the appropriate toggle icon
+  // Get the appropriate toggle icon based on Figma design
   const getToggleIcon = () => {
     if (iconStyle === 'plus') {
       return open ? <MinusIcon /> : <PlusIcon />;
     }
+    // Default is chevron (matches Figma "default (chevron)")
     return open ? <ChevronUpIcon /> : <ChevronDownIcon />;
   };
 
