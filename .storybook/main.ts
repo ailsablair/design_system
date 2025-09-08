@@ -1,5 +1,21 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
+// Immediate ResizeObserver error suppression at config level
+if (typeof global !== 'undefined' && global.console) {
+  const originalError = global.console.error;
+  global.console.error = function(...args) {
+    const message = args.join(' ').toLowerCase();
+    if (
+      message.includes('resizeobserver') ||
+      message.includes('undelivered notifications') ||
+      message.includes('loop completed')
+    ) {
+      return; // Suppress ResizeObserver errors
+    }
+    originalError.apply(global.console, args);
+  };
+}
+
 const config: StorybookConfig = {
   "stories": [
     "../src/stories/*.stories.tsx",
