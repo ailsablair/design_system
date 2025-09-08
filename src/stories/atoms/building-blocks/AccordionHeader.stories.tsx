@@ -116,7 +116,7 @@ import { AccordionHeader } from './AccordionHeader';
     contentType: 'N/A',
     open: false,
     state: 'default',
-    title: 'This is a section title or a long question taking up a lot of space...',
+    title: 'This is an accordion section title',
   },
 };
 
