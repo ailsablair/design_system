@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { TableFooter } from './TableFooter';
 
 const meta: Meta<typeof TableFooter> = {
-  title: 'Atoms/Building Blocks/TableFooter',
+  title: 'Atoms/🧱 Building Blocks/TableFooter',
   component: TableFooter,
   parameters: {
     layout: 'padded',
