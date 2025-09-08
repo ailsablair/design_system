@@ -30,11 +30,28 @@ const config: StorybookConfig = {
     "autodocs": false,
   },
   "viteFinal": async (config) => {
-    // Minimal config for build stability
+    // Optimize for memory and performance
     if (config.build) {
-      config.build.chunkSizeWarningLimit = 2000;
+      config.build.chunkSizeWarningLimit = 3000;
       config.build.sourcemap = false;
+      config.build.minify = 'esbuild';
+      config.build.rollupOptions = {
+        ...config.build.rollupOptions,
+        output: {
+          ...config.build.rollupOptions?.output,
+          manualChunks: {
+            vendor: ['react', 'react-dom'],
+            storybook: ['@storybook/react'],
+          },
+        },
+      };
     }
+
+    // Reduce memory usage
+    if (config.optimizeDeps) {
+      config.optimizeDeps.force = true;
+    }
+
     return config;
   },
 };
