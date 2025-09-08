@@ -4,7 +4,7 @@ import { Table } from './Table';
 import type { TableColumn, TableData } from './Table';
 
 const meta: Meta<typeof Table> = {
-  title: 'Atoms/Building Blocks/Table/Table',
+  title: 'Atoms/🧱 Building Blocks/Table/Table',
   component: Table,
   parameters: {
     layout: 'padded',
