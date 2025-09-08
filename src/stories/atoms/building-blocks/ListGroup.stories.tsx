@@ -3,7 +3,7 @@ import { ListGroup } from './ListGroup';
 import type { ListItemProps } from './ListItem';
 
 const meta = {
-  title: 'Atoms/🧱 Building Blocks/ListGroup',
+  title: 'Atoms/~ Building Blocks/ListGroup',
   component: ListGroup,
   parameters: {
     layout: 'centered',

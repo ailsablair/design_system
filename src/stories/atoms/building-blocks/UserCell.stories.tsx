@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { UserCell } from './UserCell';
 
 const meta: Meta<typeof UserCell> = {
-  title: 'Atoms/🧱 Building Blocks/UserCell',
+  title: 'Atoms/~ Building Blocks/UserCell',
   component: UserCell,
   parameters: {
     layout: 'padded',
