@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta = {
-  title: 'Atoms/ZZ 🧱 Building Blocks/Table/Overview',
+  title: 'Atoms/🧱 Building Blocks/Table/Overview',
   parameters: {
     layout: 'padded',
     docs: {
