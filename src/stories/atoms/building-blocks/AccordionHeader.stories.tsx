@@ -10,27 +10,45 @@ const meta: Meta<typeof AccordionHeader> = {
     docs: {
       description: {
         component: `
-# AccordionHeader Component
+# AccordionHeader Component - New Figma Design
 
-A comprehensive accordion header component implementing the exact Figma design specifications with all 72 variants.
+A comprehensive accordion header component implementing the exact new Figma design specifications with **72 total variants**.
 
-This component represents the header portion of an accordion with:
-- Bell notification icon on the left
-- Title text in the middle  
-- Expand/collapse icon on the right
-- Multiple size, state, and style variants
-- Pixel-perfect match to Figma design
+## Updated Figma Design Implementation
 
-## Features
+This component now matches the updated Figma design "building-blocks/accordion/headers" with complete variant coverage:
 
-- **Sizes**: Small, Default, Large with exact typography and dimensions
-- **Icon Styles**: Plus/minus or chevron expand/collapse icons
-- **States**: Default, Hover, Selected with appropriate color changes
-- **Positions**: Top, Middle, Bottom for different layout contexts
-- **Content Types**: Default and Header variants
-- **Interactive**: Click handling and keyboard navigation
-- **Accessible**: ARIA attributes and focus management
-- **Responsive**: Mobile-optimized layout and typography
+### Variant Matrix (3×2×3×2×2×3 = 72 variants)
+
+- **3 Sizes**: small (18px), default (19px), large (24px)
+- **2 Icon Styles**: plus/minus, default (chevron up/down)
+- **3 Positions**: default (middle), top, bottom
+- **2 Content Types**: N/A, header
+- **2 Open States**: False (collapsed), True (expanded)
+- **3 Visual States**: default, hover, selected
+
+## Key Features
+
+### Exact Figma Typography
+- **Small**: 18px font, 24px line-height, 0.15px letter-spacing
+- **Default**: 19px font, 24px line-height, -0.15px letter-spacing
+- **Large**: 24px font, 24px line-height, -0.25px letter-spacing
+
+### Icon System
+- **Bell Icon**: 0.5 opacity, #2F42BD color, responsive sizing
+- **Toggle Icons**: Size-responsive (20px/28px/32px), #2F42BD color
+- **Plus/Minus**: For expand/collapse interaction
+- **Chevron Up/Down**: Alternative expand/collapse style
+
+### Color Palette
+- **Default Text**: #191E3C (var(--primary-blue-dark-blue))
+- **Selected Text**: #1C1C1C (var(--base-black))
+- **Icon Color**: #2F42BD (consistent across all icons)
+
+### Responsive Design
+- Mobile-optimized scaling
+- Touch-friendly interactive areas
+- Accessibility-first approach
 
 ## Usage
 
@@ -40,11 +58,11 @@ import { AccordionHeader } from './AccordionHeader';
 <AccordionHeader
   size="default"
   iconStyle="plus"
-  position="middle"
-  contentType="default"
+  position="default (middle)"
+  contentType="N/A"
   open={false}
   state="default"
-  title="This is a section title or a long question taking up a lot of space..."
+  title="This is an accordion section title"
   onClick={() => {}}
 />
 \`\`\`
