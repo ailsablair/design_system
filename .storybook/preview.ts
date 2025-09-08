@@ -1,5 +1,8 @@
 import type { Preview } from '@storybook/react';
 
+// Import ResizeObserver error suppression
+import '../src/utils/resizeObserverSuppression';
+
 const preview: Preview = {
   parameters: {
     options: {
