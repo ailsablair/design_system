@@ -27,21 +27,11 @@ const config: StorybookConfig = {
     "autodocs": false,
   },
   "viteFinal": async (config) => {
-    // Simple optimization to avoid conflicts
-    if (config.plugins) {
-      config.plugins = config.plugins.filter((plugin) => {
-        if (plugin && typeof plugin === 'object' && 'name' in plugin) {
-          return !plugin.name?.includes('react-docgen-typescript');
-        }
-        return true;
-      });
-    }
-    
-    // Basic memory optimization
+    // Minimal config for build stability
     if (config.build) {
-      config.build.chunkSizeWarningLimit = 1000;
+      config.build.chunkSizeWarningLimit = 2000;
+      config.build.sourcemap = false;
     }
-    
     return config;
   },
 };
