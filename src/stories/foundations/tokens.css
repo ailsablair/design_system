@@ -7,7 +7,7 @@
   --spacing-sizing-4px: 4px;
   --spacing-sizing-6px: 6px;
   --spacing-sizing-8px: 8px;
-  --spacing-sizing-12px: 12px;
+  --spacing-sizing-12px: 12px; /* Figma design token match */
   --spacing-sizing-16px: 16px;
   --spacing-sizing-20px: 20px;
   --spacing-sizing-24px: 24px;
@@ -55,7 +55,7 @@
   --icon-opacity-full: 1.0;
 
   /* === PRIMARY COLOR PALETTE === */
-  --primary-blue-dark-blue: #191E3C;
+  --primary-blue-dark-blue: #191E3C; /* Figma design token match */
   --primary-blue-blue: #2F42BD;
   --primary-blue-blue-50: #F9F9FE;
   --primary-blue-blue-100: #E8EBFA;
@@ -113,7 +113,7 @@
 
   /* === BASE COLORS === */
   --base-white: #FFFFFF;
-  --base-black: #1C1C1C;
+  --base-black: #1C1C1C; /* Figma design token match */
   --base-transparent: transparent;
 
   /* === PEACH CREAM BASE COLORS === */
@@ -338,7 +338,7 @@
   --functional-yellow-yellow-900: #713F12;
 
   /* === TYPOGRAPHY TOKENS === */
-  --type-typeface-archivo: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --type-typeface-archivo: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Figma design token match */
   --type-typeface-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --type-typeface-roboto-flex: 'Roboto Flex', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
@@ -357,7 +357,7 @@
   /* Figma Specific Typography Tokens */
   --type-archivo-label-sm: 14px;
   --type-archivo-label: 16px;
-  --type-archivo-label-lg: 18px;
+  --type-archivo-label-lg: 18px; /* Figma design token match */
   --type-archivo-footnote: 13px;
   --type-roboto-flex-body-sm: 14px;
   --type-roboto-flex-body: 16px;
@@ -366,14 +366,14 @@
   /* Archivo Heading Sizes */
   --type-archivo-heading-2: 32px;
   --type-archivo-heading-3: 28px;
-  --type-archivo-heading-4: 24px;
-  --type-archivo-heading-5: 19px;
+  --type-archivo-heading-4: 24px; /* Figma design token match */
+  --type-archivo-heading-5: 19px; /* Figma design token match */
 
   /* Font Weights */
   --type-weight-light: 300;
   --type-weight-default: 400;
   --type-weight-regular: 400;
-  --type-weight-medium: 500;
+  --type-weight-medium: 500; /* Figma design token match */
   --type-weight-semibold: 600;
   --type-weight-bold: 700;
   --type-weight-extrabold: 800;
@@ -384,7 +384,7 @@
   --type-line-height-relaxed: 1.75;
   --type-line-height-label: 22px;
   --type-line-height-label-sm: 17px;
-  --type-line-height-label-lg: 24px;
+  --type-line-height-label-lg: 24px; /* Figma design token match */
   --type-line-height-footnote: 15px;
   --type-line-height-body-sm: 16px;
   --type-line-height-body: 20px;
@@ -393,8 +393,8 @@
   /* Archivo Heading Line Heights */
   --type-line-height-heading-2: 34px;
   --type-line-height-heading-3: 28px;
-  --type-line-height-heading-4: 24px;
-  --type-line-height-heading-5: 24px;
+  --type-line-height-heading-4: 24px; /* Figma design token match */
+  --type-line-height-heading-5: 24px; /* Figma design token match */
 
   /* Letter Spacing */
   --type-letter-spacing-tight: -0.025em;
@@ -402,7 +402,7 @@
   --type-letter-spacing-wide: 0.025em;
   --type-letter-spacing-archivo-label: 0.15px;
   --type-letter-spacing-archivo-label-sm: 0.15px;
-  --type-letter-spacing-archivo-label-lg: 0.15px;
+  --type-letter-spacing-archivo-label-lg: 0.15px; /* Figma design token match */
   --type-letter-spacing-archivo-footnote: 0.2px;
   --type-letter-spacing-roboto-flex-body-sm: -0.15px;
   --type-letter-spacing-roboto-flex-body: 0.05px;
@@ -411,8 +411,8 @@
   /* Archivo Heading Letter Spacing */
   --type-letter-spacing-archivo-heading-2: -1px;
   --type-letter-spacing-archivo-heading-3: -0.5px;
-  --type-letter-spacing-archivo-heading-4: -0.25px;
-  --type-letter-spacing-archivo-heading-5: -0.15px;
+  --type-letter-spacing-archivo-heading-4: -0.25px; /* Figma design token match */
+  --type-letter-spacing-archivo-heading-5: -0.15px; /* Figma design token match */
 
   /* Additional Roboto Flex Tokens */
   --type-letter-spacing-roboto-flex-heading-5: 0.5px;
