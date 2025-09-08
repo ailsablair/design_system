@@ -9,10 +9,16 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "storybook:dev": "NODE_OPTIONS='--max-old-space-size=4096' storybook dev -p 6006",
+    "build-storybook": "NODE_OPTIONS='--max-old-space-size=8192' storybook build",
+    "build-storybook:optimized": "NODE_OPTIONS='--max-old-space-size=8192 --optimize-for-size' storybook build --webpack-stats-json --quiet --loglevel warn",
+    "build-storybook:memory": "NODE_OPTIONS='--max-old-space-size=4096 --optimize-for-size' storybook build --quiet",
+    "build-storybook:fast": "NODE_OPTIONS='--max-old-space-size=8192' storybook build --quiet --loglevel error",
+    "analyze-storybook": "npm run build-storybook:optimized && npx storybook-analyzer",
     "chromatic": "npx chromatic --project-token=chpt_3b449a46cc629ec",
     "chromatic:ci": "npx chromatic --project-token=chpt_3b449a46cc629ec --exit-zero-on-changes",
-    "deploy": "npm run build-storybook && npm run chromatic:ci",
+    "deploy": "npm run build-storybook:optimized && npm run chromatic:ci",
+    "deploy:fast": "npm run build-storybook:fast && npm run chromatic:ci",
     "debug:chromatic": "node scripts/debug-chromatic.js"
   },
   "dependencies": {

@@ -1,0 +1,10 @@
+{
+  "name": "storybook-config",
+  "private": true,
+  "scripts": {
+    "build-storybook:optimized": "NODE_OPTIONS='--max-old-space-size=8192' storybook build --webpack-stats-json",
+    "build-storybook:memory": "NODE_OPTIONS='--max-old-space-size=4096 --optimize-for-size' storybook build",
+    "build-storybook:fast": "NODE_OPTIONS='--max-old-space-size=8192' storybook build --quiet --loglevel warn",
+    "analyze-bundle": "npx webpack-bundle-analyzer storybook-static/static/js/*.js"
+  }
+}
