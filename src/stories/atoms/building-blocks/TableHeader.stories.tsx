@@ -3,7 +3,7 @@ import { TableHeader } from './TableHeader';
 import { Button } from '../Button';
 
 const meta: Meta<typeof TableHeader> = {
-  title: 'Atoms/~ Building Blocks/TableHeader',
+  title: 'Atoms/🧱 Building Blocks/TableHeader',
   component: TableHeader,
   parameters: {
     layout: 'padded',
