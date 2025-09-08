@@ -78,8 +78,6 @@ jobs:
           skip: ${{ github.event.pull_request.draft == true }}
           # Don't fail on component errors for now while we debug
           exitOnceUploaded: false
-          # Continue to run tests even if there are component errors
-          allowConsoleErrors: true
           
       - name: Chromatic Summary
         if: always()

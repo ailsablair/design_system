@@ -1,13 +1,3 @@
-// Basic ResizeObserver error suppression for config level
-const originalConfigError = console.error;
-console.error = function(...args: any[]) {
-  const message = String(args.join(' '));
-  if (message.includes('ResizeObserver loop completed with undelivered notifications')) {
-    return; // Suppress this specific error
-  }
-  originalConfigError.apply(console, args);
-};
-
 import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
