@@ -1,24 +1,14 @@
 import type { Preview } from '@storybook/react';
 
-// Import ResizeObserver error suppression utilities
-import {
-  setupResizeObserverErrorHandler,
-  forceSupressResizeObserverErrors,
-  initEarlyErrorSuppression
-} from '../src/utils/resizeObserverHandler';
-import { initImmediateSuppression } from '../src/utils/immediateResizeObserverSuppression';
+// Import comprehensive ResizeObserver error fix
+import { applyResizeObserverFix } from '../src/utils/resizeObserverFix';
 
 // Initialize ResizeObserver error suppression for Storybook
 if (typeof window !== 'undefined') {
-  // Apply immediate suppression first
-  initImmediateSuppression();
+  // Apply comprehensive fix
+  applyResizeObserverFix();
 
-  // Then apply comprehensive error handling
-  initEarlyErrorSuppression();
-  setupResizeObserverErrorHandler();
-  forceSupressResizeObserverErrors();
-
-  console.debug('🔧 ResizeObserver error suppression initialized for Storybook');
+  console.debug('🔧 Comprehensive ResizeObserver error fix applied for Storybook');
 }
 
 const preview: Preview = {
