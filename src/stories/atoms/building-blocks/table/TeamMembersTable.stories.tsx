@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { TeamMembersTable } from './TeamMembersTable';
 
 const meta: Meta<typeof TeamMembersTable> = {
-  title: 'Atoms/~ Building Blocks/Table/TeamMembersTable',
+  title: 'Atoms/🧱 Building Blocks/Table/TeamMembersTable',
   component: TeamMembersTable,
   parameters: {
     layout: 'fullscreen',
