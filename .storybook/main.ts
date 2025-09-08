@@ -1,5 +1,8 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
+// Import ResizeObserver error suppression
+import '../src/utils/resizeObserverSuppression';
+
 const config: StorybookConfig = {
   "stories": [
     "../src/stories/**/*.stories.tsx"
