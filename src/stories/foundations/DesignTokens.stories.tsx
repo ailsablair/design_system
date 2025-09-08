@@ -204,11 +204,11 @@ export const Typography: Story = {
             </div>
           </div>
           <div style={{ padding: '1rem', border: '1px solid #e5e7eb', borderRadius: '8px' }}>
-            <div style={{ fontFamily: 'var(--type-typeface-inter)', fontSize: '1.5rem', marginBottom: '0.5rem' }}>
-              Inter Font Family
+            <div style={{ fontFamily: 'var(--type-typeface-roboto-flex)', fontSize: '1.5rem', marginBottom: '0.5rem' }}>
+              Roboto Flex Font Family
             </div>
             <div style={{ fontSize: '0.875rem', color: '#6b7280', fontFamily: 'monospace' }}>
-              --type-typeface-inter
+              --type-typeface-roboto-flex
             </div>
           </div>
         </div>

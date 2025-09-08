@@ -59,7 +59,7 @@ export const ColorPalette: Story = {
       gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',
       gap: 'var(--spacing-sizing-16px)',
       padding: 'var(--spacing-sizing-16px)',
-      fontFamily: 'var(--type-typeface-inter)'
+      fontFamily: 'var(--type-typeface-roboto-flex)'
     }}>
       {Object.entries(colorPalette).map(([name, hex]) => (
         <ColorSwatch key={name} name={name} hex={hex} />
@@ -82,7 +82,7 @@ export const HighContrastCombinations: Story = {
     
     return (
       <div style={{
-        fontFamily: 'var(--type-typeface-inter)',
+        fontFamily: 'var(--type-typeface-roboto-flex)',
         padding: 'var(--spacing-sizing-16px)'
       }}>
         <h2 style={{
@@ -119,7 +119,7 @@ export const FailingCombinations: Story = {
     
     return (
       <div style={{
-        fontFamily: 'var(--type-typeface-inter)',
+        fontFamily: 'var(--type-typeface-roboto-flex)',
         padding: 'var(--spacing-sizing-16px)'
       }}>
         <h2 style={{
@@ -166,7 +166,7 @@ export const AAACombinations: Story = {
     
     return (
       <div style={{
-        fontFamily: 'var(--type-typeface-inter)',
+        fontFamily: 'var(--type-typeface-roboto-flex)',
         padding: 'var(--spacing-sizing-16px)'
       }}>
         <h2 style={{
@@ -235,7 +235,7 @@ export const RecommendedCombinations: Story = {
     
     return (
       <div style={{
-        fontFamily: 'var(--type-typeface-inter)',
+        fontFamily: 'var(--type-typeface-roboto-flex)',
         padding: 'var(--spacing-sizing-16px)'
       }}>
         <h2 style={{
@@ -294,7 +294,7 @@ export const ContrastChecker: Story = {
     
     return (
       <div style={{
-        fontFamily: 'var(--type-typeface-inter)',
+        fontFamily: 'var(--type-typeface-roboto-flex)',
         padding: 'var(--spacing-sizing-16px)'
       }}>
         <h2 style={{
