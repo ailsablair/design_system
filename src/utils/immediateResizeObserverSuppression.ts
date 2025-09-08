@@ -275,7 +275,12 @@ export const isImmediateSuppressionActive = (): boolean => {
   return typeof window !== 'undefined' && !!window.__immediateResizeSuppressionActive;
 };
 
-// IMMEDIATELY run suppression when this module loads
-suppressImmediately();
+/**
+ * Initialize immediate ResizeObserver error suppression
+ * Call this function when you want to activate suppression
+ */
+export const initImmediateSuppression = (): void => {
+  suppressImmediately();
+};
 
-export default suppressImmediately;
+export default initImmediateSuppression;
