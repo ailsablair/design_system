@@ -1,26 +1,4 @@
-/* ===== ACCORDION HEADER COMPONENT ===== */
-
-/* CSS Custom Properties from Figma design tokens */
-.accordion-header {
-  /* Design tokens from Figma */
-  --spacing-sizing-12px: 12px;
-  --primary-blue-dark-blue: #191E3C;
-  --type-typeface-archivo: Archivo, -apple-system, Roboto, Helvetica, sans-serif;
-  --type-archivo-label-lg: 18px;
-  --type-weight-medium: 500;
-  --type-line-height-label-lg: 24px;
-  --type-letter-spacing-archivo-label-lg: 0.15px;
-  --type-archivo-heading-4: 24px;
-  --type-line-height-heading-4: 24px;
-  --type-letter-spacing-archivo-heading-4: -0.25px;
-  --type-archivo-heading-5: 19px;
-  --type-line-height-heading-5: 24px;
-  --type-letter-spacing-archivo-heading-5: -0.15px;
-  --base-black: #1C1C1C;
-  --primary-blue-blue: #2F42BD;
-}
-
-/* ===== BASE ACCORDION HEADER STYLES ===== */
+/* ===== ACCORDION HEADER COMPONENT - FIGMA DESIGN MATCH ===== */
 
 .accordion-header {
   display: flex;
@@ -30,17 +8,17 @@
   border: none;
   padding: 0;
   cursor: default;
-  transition: all 0.2s ease-in-out;
+  transition: var(--transition-normal);
 }
 
 .accordion-header--interactive {
   cursor: pointer;
 }
 
-.accordion-header--interactive:focus {
-  outline: 2px solid var(--primary-blue-blue);
-  outline-offset: 2px;
-  border-radius: 4px;
+.accordion-header--interactive:focus-visible {
+  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
+  outline-offset: var(--spacing-sizing-2px);
+  border-radius: var(--spacing-radius-4px);
 }
 
 .accordion-header__content {
@@ -52,30 +30,58 @@
   position: relative;
 }
 
-/* ===== BELL ICON STYLES ===== */
+/* ===== BELL ICON STYLES - WITH PROPER STROKES ===== */
 
 .accordion-header__bell {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  /* Add subtle frame around bell icon */
+  border-radius: var(--spacing-radius-full);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-200);
+  background: var(--primary-sky-blue-50);
+  padding: var(--spacing-sizing-4px);
+  transition: var(--transition-normal);
 }
 
 .accordion-header__bell-icon {
   display: block;
-  opacity: 0.5;
-  transition: opacity 0.2s ease-in-out;
+  opacity: var(--icon-opacity-medium); /* 0.6 */
+  transition: var(--transition-normal);
+  color: var(--primary-sky-blue-500);
 }
 
-/* Bell icon sizes */
+/* Bell icon sizes with proper strokes */
+.accordion-header--size-small .accordion-header__bell {
+  width: 26px;
+  height: 26px;
+  padding: var(--spacing-sizing-4px);
+  border-width: var(--spacing-stroke-1px);
+}
+
 .accordion-header--size-small .accordion-header__bell-icon {
   width: 18px;
   height: 18px;
 }
 
+.accordion-header--size-default .accordion-header__bell {
+  width: 30px;
+  height: 30px;
+  padding: var(--spacing-sizing-4px);
+  border-width: var(--spacing-stroke-1px);
+}
+
 .accordion-header--size-default .accordion-header__bell-icon {
   width: 22px;
   height: 22px;
+}
+
+.accordion-header--size-large .accordion-header__bell {
+  width: 34px;
+  height: 34px;
+  padding: var(--spacing-sizing-4px);
+  border-width: var(--spacing-stroke-2px); /* Thicker stroke for large */
 }
 
 .accordion-header--size-large .accordion-header__bell-icon {
@@ -95,10 +101,10 @@
 .accordion-header__title {
   flex: 1;
   font-family: var(--type-typeface-archivo);
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-semibold); /* 600 - proper Figma weight */
   color: var(--primary-blue-dark-blue);
   line-height: 1;
-  transition: color 0.2s ease-in-out;
+  transition: var(--transition-normal);
   
   /* Text overflow handling */
   overflow: hidden;
@@ -106,147 +112,240 @@
   white-space: nowrap;
 }
 
-/* ===== SIZE VARIANTS - TITLE TYPOGRAPHY ===== */
-/* Matches exact Figma specifications for all 3 sizes */
+/* ===== SIZE VARIANTS - EXACT FIGMA TYPOGRAPHY ===== */
 
 /* Small size - 18px label typography */
 .accordion-header--size-small .accordion-header__title {
   font-size: var(--type-archivo-label-lg); /* 18px */
-  line-height: var(--type-line-height-label-lg); /* 24px - 133.333% */
+  line-height: var(--type-line-height-label-lg); /* 24px */
   letter-spacing: var(--type-letter-spacing-archivo-label-lg); /* 0.15px */
-  font-weight: var(--type-weight-medium); /* 500 */
+  font-weight: var(--type-weight-semibold); /* 600 */
 }
 
 /* Default size - 19px heading typography */
 .accordion-header--size-default .accordion-header__title {
   font-size: var(--type-archivo-heading-5); /* 19px */
-  line-height: var(--type-line-height-heading-5); /* 24px - 126.316% */
+  line-height: var(--type-line-height-heading-5); /* 24px */
   letter-spacing: var(--type-letter-spacing-archivo-heading-5); /* -0.15px */
-  font-weight: var(--type-weight-medium); /* 500 */
+  font-weight: var(--type-weight-semibold); /* 600 */
 }
 
 /* Large size - 24px heading typography */
 .accordion-header--size-large .accordion-header__title {
   font-size: var(--type-archivo-heading-4); /* 24px */
-  line-height: var(--type-line-height-heading-4); /* 24px - 100% */
+  line-height: var(--type-line-height-heading-4); /* 24px */
   letter-spacing: var(--type-letter-spacing-archivo-heading-4); /* -0.25px */
-  font-weight: var(--type-weight-medium); /* 500 */
+  font-weight: var(--type-weight-semibold); /* 600 */
 }
 
-/* ===== TOGGLE ICON STYLES ===== */
+/* ===== TOGGLE ICON STYLES - WITH PROPER STROKES ===== */
 
 .accordion-header__toggle {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  /* Add visible frame around toggle icon */
+  border-radius: var(--spacing-radius-full);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
+  background: var(--neutral-gray-gray-50);
+  transition: var(--transition-normal);
 }
 
 .accordion-header__toggle-icon {
   display: block;
-  transition: transform 0.2s ease-in-out;
+  transition: var(--transition-normal);
+  color: var(--primary-blue-blue);
+  opacity: var(--icon-opacity-strong); /* 0.7 */
 }
 
-/* Toggle icon sizes */
+/* Toggle icon sizes with visible strokes */
+.accordion-header--size-small .accordion-header__toggle {
+  width: 24px;
+  height: 24px;
+  padding: var(--spacing-sizing-2px);
+  border-width: var(--spacing-stroke-1px);
+}
+
 .accordion-header--size-small .accordion-header__toggle-icon {
   width: 20px;
   height: 20px;
 }
 
+.accordion-header--size-default .accordion-header__toggle {
+  width: 28px;
+  height: 28px;
+  padding: var(--spacing-sizing-2px);
+  border-width: var(--spacing-stroke-1px);
+}
+
 .accordion-header--size-default .accordion-header__toggle-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.accordion-header--size-large .accordion-header__toggle {
+  width: 32px;
+  height: 32px;
+  padding: var(--spacing-sizing-2px);
+  border-width: var(--spacing-stroke-2px); /* Thicker stroke for large */
+}
+
+.accordion-header--size-large .accordion-header__toggle-icon {
   width: 28px;
   height: 28px;
 }
 
-.accordion-header--size-large .accordion-header__toggle-icon {
-  width: 32px;
-  height: 32px;
-}
+/* ===== STATE VARIANTS - EXACT FIGMA COLORS ===== */
 
-/* ===== STATE VARIANTS ===== */
-/* Matches exact Figma color specifications */
-
-/* Default state - Primary blue dark blue for title */
+/* Default state */
 .accordion-header--state-default .accordion-header__title {
   color: var(--primary-blue-dark-blue); /* #191E3C */
+  font-weight: var(--type-weight-semibold); /* 600 */
 }
 
-/* Hover state - Enhanced colors for better interaction feedback */
+.accordion-header--state-default .accordion-header__bell {
+  border-color: var(--primary-sky-blue-200);
+  background: var(--primary-sky-blue-50);
+}
+
+.accordion-header--state-default .accordion-header__bell-icon {
+  color: var(--primary-sky-blue-500);
+  opacity: var(--icon-opacity-medium); /* 0.6 */
+}
+
+.accordion-header--state-default .accordion-header__toggle {
+  border-color: var(--neutral-gray-gray-200);
+  background: var(--neutral-gray-gray-50);
+}
+
+/* Hover state */
 .accordion-header--state-hover .accordion-header__title,
 .accordion-header--interactive:hover .accordion-header__title {
   color: var(--primary-blue-blue); /* #2F42BD */
+  font-weight: var(--type-weight-bold); /* 700 on hover */
+}
+
+.accordion-header--state-hover .accordion-header__bell,
+.accordion-header--interactive:hover .accordion-header__bell {
+  border-color: var(--primary-blue-blue-200);
+  background: var(--base-white);
+  box-shadow: var(--shadow-sm);
 }
 
 .accordion-header--state-hover .accordion-header__bell-icon,
 .accordion-header--interactive:hover .accordion-header__bell-icon {
-  opacity: 0.7;
+  color: var(--primary-blue-blue);
+  opacity: var(--icon-opacity-strong); /* 0.7 */
 }
 
-/* Selected state - Uses base black for stronger emphasis */
+.accordion-header--state-hover .accordion-header__toggle,
+.accordion-header--interactive:hover .accordion-header__toggle {
+  border-color: var(--neutral-gray-gray-300);
+  background: var(--base-white);
+}
+
+/* Selected state */
 .accordion-header--state-selected .accordion-header__title {
   color: var(--base-black); /* #1C1C1C */
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-bold); /* 700 when selected */
+}
+
+.accordion-header--state-selected .accordion-header__bell {
+  border-color: var(--primary-blue-blue-300);
+  background: var(--primary-blue-blue-50);
 }
 
 .accordion-header--state-selected .accordion-header__bell-icon {
-  opacity: 0.6;
+  color: var(--primary-blue-blue);
+  opacity: var(--icon-opacity-strong); /* 0.7 */
 }
 
-/* Open state - Primary blue for expanded state */
+.accordion-header--state-selected .accordion-header__toggle {
+  border-color: var(--primary-blue-blue-200);
+  background: var(--primary-blue-blue-50);
+}
+
+/* Open state */
 .accordion-header--open .accordion-header__title {
   color: var(--primary-blue-blue); /* #2F42BD */
+  font-weight: var(--type-weight-bold); /* 700 when open */
+}
+
+.accordion-header--open .accordion-header__bell {
+  border-color: var(--primary-blue-blue-200);
+  background: var(--base-white);
 }
 
 .accordion-header--open .accordion-header__bell-icon {
-  opacity: 0.7;
+  color: var(--primary-blue-blue);
+  opacity: var(--icon-opacity-strong); /* 0.7 */
 }
 
-/* Combined states - Open + Selected uses base black (from Figma) */
+.accordion-header--open .accordion-header__toggle {
+  border-color: var(--primary-blue-blue);
+  background: var(--primary-blue-blue-50);
+}
+
+/* Combined states - Open + Selected */
 .accordion-header--open.accordion-header--state-selected .accordion-header__title {
   color: var(--base-black); /* #1C1C1C */
+  font-weight: var(--type-weight-extrabold); /* 800 for emphasis */
+}
+
+.accordion-header--open.accordion-header--state-selected .accordion-header__bell {
+  border-color: var(--primary-blue-blue);
+  background: var(--primary-blue-blue-100);
+  box-shadow: var(--shadow-md);
 }
 
 /* ===== POSITION VARIANTS ===== */
 
-/* Position variants can affect padding and alignment */
 .accordion-header--position-top {
-  /* Top position styling if needed */
+  /* Top position specific styles if needed */
 }
 
 .accordion-header--position-middle {
-  /* Middle position is default */
+  /* Middle is default */
 }
 
 .accordion-header--position-bottom {
-  /* Bottom position styling if needed */
+  /* Bottom position specific styles if needed */
 }
 
 /* ===== CONTENT TYPE VARIANTS ===== */
-/* Matches Figma "content-type" variants exactly */
 
 .accordion-header--content-default {
-  /* N/A content type - default styling */
+  /* Default content type */
 }
 
 .accordion-header--content-header {
-  /* Header content type - enhanced styling for header context */
-  font-weight: 600;
-
-  /* Header content may have different color treatment */
+  /* Header content type - enhanced styling */
   .accordion-header__title {
-    color: var(--primary-blue-dark-blue);
+    font-weight: var(--type-weight-bold); /* 700 for header context */
+  }
+  
+  .accordion-header__bell {
+    border-width: var(--spacing-stroke-2px); /* Thicker border for headers */
+  }
+  
+  .accordion-header__toggle {
+    border-width: var(--spacing-stroke-2px); /* Thicker border for headers */
   }
 }
 
 /* ===== GROUPED VARIANT ===== */
 
 .accordion-header--grouped {
-  /* Styling for grouped accordion headers */
-  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+  border-bottom: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
+  padding-bottom: var(--spacing-sizing-8px);
+  margin-bottom: var(--spacing-sizing-8px);
 }
 
 .accordion-header--grouped:last-child {
   border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 /* ===== INTERACTION STATES ===== */
@@ -255,42 +354,62 @@
   transform: scale(0.95);
 }
 
+.accordion-header--interactive:active .accordion-header__toggle {
+  border-color: var(--primary-blue-blue);
+  background: var(--primary-blue-blue-100);
+}
+
 .accordion-header--interactive:focus-visible {
-  outline: 2px solid var(--primary-blue-blue);
-  outline-offset: 2px;
+  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
+  outline-offset: var(--spacing-sizing-2px);
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
 
 @media (max-width: 768px) {
   .accordion-header--size-default .accordion-header__title {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: var(--type-archivo-label-lg); /* 18px */
+    line-height: var(--type-line-height-label-lg); /* 24px */
   }
   
   .accordion-header--size-large .accordion-header__title {
-    font-size: 20px;
-    line-height: 24px;
+    font-size: var(--type-size-xl); /* 20px */
+    line-height: var(--type-line-height-body-lg); /* 22px */
   }
   
   .accordion-header__content {
-    gap: 8px;
+    gap: var(--spacing-sizing-8px);
   }
 }
 
 @media (max-width: 480px) {
   .accordion-header__title {
-    font-size: 16px !important;
-    line-height: 20px !important;
+    font-size: var(--type-size-base) !important; /* 16px */
+    line-height: var(--type-line-height-body) !important; /* 20px */
+    font-weight: var(--type-weight-semibold) !important; /* 600 */
   }
   
   .accordion-header__content {
-    gap: 6px;
+    gap: var(--spacing-sizing-6px);
+  }
+  
+  .accordion-header__bell {
+    width: 20px !important;
+    height: 20px !important;
+    padding: var(--spacing-sizing-2px) !important;
+    border-width: var(--spacing-stroke-1px) !important;
   }
   
   .accordion-header__bell-icon {
     width: 16px !important;
     height: 16px !important;
+  }
+  
+  .accordion-header__toggle {
+    width: 20px !important;
+    height: 20px !important;
+    padding: var(--spacing-sizing-1px) !important;
+    border-width: var(--spacing-stroke-1px) !important;
   }
   
   .accordion-header__toggle-icon {
@@ -304,7 +423,9 @@
 @media (prefers-reduced-motion: reduce) {
   .accordion-header,
   .accordion-header__title,
+  .accordion-header__bell,
   .accordion-header__bell-icon,
+  .accordion-header__toggle,
   .accordion-header__toggle-icon {
     transition: none;
   }
@@ -312,12 +433,20 @@
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-  .accordion-header--interactive:focus {
-    outline-width: 3px;
+  .accordion-header--interactive:focus-visible {
+    outline-width: var(--spacing-stroke-3px);
   }
   
   .accordion-header__title {
-    font-weight: 600;
+    font-weight: var(--type-weight-bold); /* Bolder in high contrast */
+  }
+  
+  .accordion-header__bell {
+    border-width: var(--spacing-stroke-2px) !important;
+  }
+  
+  .accordion-header__toggle {
+    border-width: var(--spacing-stroke-2px) !important;
   }
 }
 
@@ -328,6 +457,10 @@
     --primary-blue-dark-blue: #E5E7EB;
     --base-black: #F9FAFB;
     --primary-blue-blue: #60A5FA;
+    --neutral-gray-gray-200: #374151;
+    --neutral-gray-gray-50: #1F2937;
+    --primary-sky-blue-200: #0369A1;
+    --primary-sky-blue-50: #0C4A6E;
   }
 }
 
@@ -344,6 +477,12 @@
   
   .accordion-header__title {
     color: black !important;
+    font-weight: var(--type-weight-bold) !important;
+  }
+  
+  .accordion-header__bell {
+    border: var(--spacing-stroke-1px) solid black !important;
+    background: white !important;
   }
 }
 
@@ -351,13 +490,13 @@
 
 .accordion-header--compact {
   .accordion-header__content {
-    gap: 8px;
+    gap: var(--spacing-sizing-8px);
   }
 }
 
 .accordion-header--spacious {
   .accordion-header__content {
-    gap: 16px;
+    gap: var(--spacing-sizing-16px);
   }
 }
 
