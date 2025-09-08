@@ -3,7 +3,7 @@ import { TableCell } from './TableCell';
 import './tableCell.css';
 
 const meta: Meta = {
-  title: 'Atoms/Building Blocks/Table/Figma Table Variants',
+  title: 'Atoms/🧱 Building Blocks/Table/Figma Table Variants',
   parameters: {
     layout: 'fullscreen',
     docs: {
