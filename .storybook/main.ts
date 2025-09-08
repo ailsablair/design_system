@@ -2,7 +2,8 @@ import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
   "stories": [
-    "../src/stories/**/*.stories.tsx"
+    "../src/stories/**/*.stories.tsx",
+    "../src/stories/**/*.mdx"
   ],
   "addons": [
     "@chromatic-com/storybook",
@@ -22,6 +23,23 @@ const config: StorybookConfig = {
   },
   "docs": {
     "autodocs": false,
+  },
+  "viteFinal": async (config) => {
+    // Optimizations for large design system
+    if (config.build) {
+      config.build.chunkSizeWarningLimit = 3000;
+      config.build.sourcemap = false;
+      config.build.minify = 'esbuild';
+    }
+
+    // Improve dev server performance
+    if (config.server) {
+      config.server.fs = {
+        allow: ['..']
+      };
+    }
+
+    return config;
   },
 };
 
