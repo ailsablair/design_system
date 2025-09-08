@@ -6,8 +6,11 @@ const preview: Preview = {
       storySort: {
         order: [
           'Design System',
+          'Foundations',
           'Atoms',
           'Molecules',
+          'Chromatic',
+          ['Chromatic', ['Debug', 'Test']],
           '*'
         ],
       },
