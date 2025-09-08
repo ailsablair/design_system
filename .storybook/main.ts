@@ -48,6 +48,23 @@ const config: StorybookConfig = {
       config.optimizeDeps.force = true;
     }
 
+    // Add ResizeObserver error suppression for Vite dev server
+    if (config.define) {
+      config.define['process.env.SUPPRESS_RESIZE_OBSERVER_ERRORS'] = '"true"';
+    } else {
+      config.define = {
+        'process.env.SUPPRESS_RESIZE_OBSERVER_ERRORS': '"true"'
+      };
+    }
+
+    // Configure esbuild to handle ResizeObserver errors during build
+    if (config.esbuild) {
+      config.esbuild.logOverride = {
+        ...config.esbuild.logOverride,
+        'this-is-undefined-in-esm': 'silent'
+      };
+    }
+
     return config;
   },
 };
