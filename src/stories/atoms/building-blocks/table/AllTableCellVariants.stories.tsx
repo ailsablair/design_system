@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { TableCell } from './TableCell';
 
 const meta: Meta<typeof TableCell> = {
-  title: 'Atoms/~ Building Blocks/Table/All Table Cell Variants',
+  title: 'Atoms/🧱 Building Blocks/Table/All Table Cell Variants',
   component: TableCell,
   parameters: {
     layout: 'fullscreen',

@@ -3,7 +3,7 @@ import { FigmaTable } from './FigmaTable';
 import type { FigmaTableColumn, FigmaTableData } from './FigmaTable';
 
 const meta: Meta<typeof FigmaTable> = {
-  title: 'Atoms/~ Building Blocks/Table/FigmaTable',
+  title: 'Atoms/🧱 Building Blocks/Table/FigmaTable',
   component: FigmaTable,
   parameters: {
     layout: 'centered',
