@@ -27,6 +27,7 @@ We've implemented a professional-grade color system with **67 design tokens** or
 
 ### Design Token Architecture
 All colors follow consistent naming conventions:
+
 ```css
 --primary-[color]-[weight]     /* Primary palettes */
 --base-gray-[weight]           /* Neutral grays */
@@ -37,6 +38,15 @@ All colors follow consistent naming conventions:
 
 ### Atoms
 Our atomic components provide the foundation for all interface elements:
+
+#### AccordionHeader Component
+- **72 Complete Variants**: All Figma design variations implemented
+- **Size Options**: Small (18px), Default (19px), Large (24px) typography
+- **Icon Styles**: Plus/minus and chevron expand/collapse icons
+- **Position Variants**: Top, middle, bottom for different layouts
+- **Content Types**: N/A and header variants
+- **Interactive States**: Default, hover, selected with proper color changes
+- **Accessibility**: Full keyboard navigation and ARIA support
 
 #### Input Component
 - **Multiple Variants**: Simple and tag-based inputs
@@ -70,6 +80,7 @@ Our atomic components provide the foundation for all interface elements:
 - **Hardware Acceleration**: GPU-accelerated animations
 - **Error Handling**: ResizeObserver error suppression
 - **Build Optimization**: Efficient bundling and tree-shaking
+- **Memory Management**: Optimized for large story sets
 
 ### Accessibility
 - **WCAG Compliance**: AA-level contrast ratios across all color combinations
@@ -80,10 +91,11 @@ Our atomic components provide the foundation for all interface elements:
 ## 📚 Documentation Features
 
 ### Storybook Integration
-- **79 Comprehensive Stories**: Every component state and variant documented
+- **Comprehensive Stories**: Every component state and variant documented
 - **Interactive Controls**: Live editing of component properties
 - **Visual Regression Testing**: Chromatic integration for design consistency
 - **Responsive Previews**: Multiple viewport testing
+- **Performance Optimized**: Fast builds with memory optimization
 
 ### Developer Experience
 - **TypeScript Support**: Full type safety and IntelliSense
@@ -95,14 +107,39 @@ Our atomic components provide the foundation for all interface elements:
 
 ### Installation
 The design system is ready to use with all dependencies configured:
+
 ```bash
 npm install
 npm run storybook
 ```
 
+### Optimized Build Commands
+```bash
+# Fast build with memory optimization
+npm run build-storybook:fast
+
+# Memory-optimized build
+npm run build-storybook:memory
+
+# Full optimization with analytics
+npm run build-storybook:optimized
+```
+
 ### Basic Usage
 ```tsx
-import { Input, Textarea, Tag } from './components';
+import { AccordionHeader, Input, Textarea, Tag } from './components';
+
+// Accordion header with all Figma variants
+<AccordionHeader 
+  size="default"
+  iconStyle="plus"
+  position="default (middle)"
+  contentType="N/A"
+  open={false}
+  state="default"
+  title="This is a section title or a long question taking up a lot of space..."
+  onClick={() => {}}
+/>
 
 // Basic input with validation
 <Input 
@@ -132,11 +169,20 @@ import { Input, Textarea, Tag } from './components';
 ## 🔄 Recent Updates
 
 ### Version 2.0 Features
+- **Complete AccordionHeader Implementation**: All 72 Figma variants
 - **Comprehensive Color System**: 67 new design tokens
 - **Enhanced Components**: Input, Textarea, and Tag improvements
 - **Performance Optimizations**: ResizeObserver fixes and CSS containment
+- **Storybook 9.x Optimization**: Memory management and build performance
 - **Documentation Expansion**: Complete Storybook coverage
 - **GitHub Actions**: Automated deployment and testing
+
+### Build Optimizations
+- **Memory Management**: 8GB heap allocation for large builds
+- **Bundle Splitting**: Optimized chunk sizes for better loading
+- **Tree Shaking**: Efficient dead code elimination
+- **Source Maps**: Development-only for faster production builds
+- **Parallel Processing**: Optimized build parallelization
 
 ### Quality Assurance
 - **Visual Regression Testing**: Chromatic integration
@@ -156,7 +202,7 @@ Built with accessibility-first principles, ensuring usable interfaces for all us
 The token-based architecture allows for easy theming, customization, and expansion as needs grow.
 
 ### Performance
-Optimized for modern browsers with minimal runtime overhead and efficient rendering.
+Optimized for modern browsers with minimal runtime overhead and efficient rendering. Build process optimized for memory usage and speed.
 
 ---
 
