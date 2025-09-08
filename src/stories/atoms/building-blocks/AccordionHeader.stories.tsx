@@ -56,31 +56,31 @@ import { AccordionHeader } from './AccordionHeader';
     size: {
       control: 'select',
       options: ['small', 'default', 'large'],
-      description: 'Size variant affecting typography and dimensions',
+      description: 'Size variant affecting typography and dimensions - matches Figma "size" property',
     },
     iconStyle: {
       control: 'select',
-      options: ['plus', 'chevron'],
-      description: 'Style of expand/collapse icon',
+      options: ['plus', 'default (chevron)'],
+      description: 'Style of expand/collapse icon - matches Figma "icon-style" property',
     },
     position: {
       control: 'select',
-      options: ['top', 'middle', 'bottom'],
-      description: 'Position variant for layout context',
+      options: ['default (middle)', 'top', 'bottom'],
+      description: 'Position variant for layout context - matches Figma "position" property',
     },
     contentType: {
       control: 'select',
-      options: ['default', 'header'],
-      description: 'Content type variant',
+      options: ['N/A', 'header'],
+      description: 'Content type variant - matches Figma "content-type" property',
     },
     open: {
       control: 'boolean',
-      description: 'Whether the accordion is expanded',
+      description: 'Whether the accordion is expanded - matches Figma "open" property (False/True)',
     },
     state: {
       control: 'select',
       options: ['default', 'hover', 'selected'],
-      description: 'Visual state of the header',
+      description: 'Visual state of the header - matches Figma "state" property',
     },
     title: {
       control: 'text',
@@ -94,8 +94,8 @@ import { AccordionHeader } from './AccordionHeader';
   args: {
     size: 'default',
     iconStyle: 'plus',
-    position: 'middle',
-    contentType: 'default',
+    position: 'default (middle)',
+    contentType: 'N/A',
     open: false,
     state: 'default',
     title: 'This is a section title or a long question taking up a lot of space...',
@@ -121,7 +121,7 @@ export const Default: Story = {
 export const ChevronIcon: Story = {
   args: {
     ...Default.args,
-    iconStyle: 'chevron',
+    iconStyle: 'default (chevron)',
   },
 };
 
@@ -304,11 +304,11 @@ export const ContentTypeVariants: Story = {
 
 export const FigmaDesignShowcase: Story = {
   render: () => {
-    // Generate all 72 variants as shown in Figma
+    // Generate all 72 variants exactly as shown in Figma design
     const sizes = ['small', 'default', 'large'] as const;
-    const iconStyles = ['plus', 'chevron'] as const;
-    const positions = ['top', 'middle', 'bottom'] as const;
-    const contentTypes = ['default', 'header'] as const;
+    const iconStyles = ['plus', 'default (chevron)'] as const;
+    const positions = ['default (middle)', 'top', 'bottom'] as const;
+    const contentTypes = ['N/A', 'header'] as const;
     const openStates = [false, true] as const;
     const states = ['default', 'hover', 'selected'] as const;
 
@@ -316,10 +316,21 @@ export const FigmaDesignShowcase: Story = {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
         <div>
           <h2 style={{ margin: '0 0 16px 0', fontSize: '20px', fontWeight: 600 }}>
-            Complete Figma Design Implementation
+            Complete Figma Design Implementation - All 72 Variants
           </h2>
-          <p style={{ margin: '0 0 24px 0', color: '#6B7280' }}>
-            All 72 variants from the Figma design specification showing every combination of size, icon style, position, content type, open state, and visual state.
+          <p style={{ margin: '0 0 16px 0', color: '#6B7280' }}>
+            This showcases all 72 variants from the Figma design specification "building-blocks/accordion/headers" showing every combination of:
+          </p>
+          <ul style={{ margin: '0 0 24px 0', color: '#6B7280', paddingLeft: '20px' }}>
+            <li><strong>Size</strong>: small, default, large (3 variants)</li>
+            <li><strong>Icon Style</strong>: plus, default (chevron) (2 variants)</li>
+            <li><strong>Position</strong>: default (middle), top, bottom (3 variants)</li>
+            <li><strong>Content Type</strong>: N/A, header (2 variants)</li>
+            <li><strong>Open</strong>: False, True (2 variants)</li>
+            <li><strong>State</strong>: default, hover, selected (3 variants)</li>
+          </ul>
+          <p style={{ margin: '0 0 24px 0', color: '#6B7280', fontSize: '14px', fontStyle: 'italic' }}>
+            Total: 3 × 2 × 3 × 2 × 2 × 3 = 216 possible combinations (showing representative samples for readability)
           </p>
         </div>
 
