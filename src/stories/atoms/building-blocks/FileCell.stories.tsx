@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { FileCell } from './FileCell';
 
 const meta: Meta<typeof FileCell> = {
-  title: 'Atoms/~ Building Blocks/FileCell',
+  title: 'Atoms/🧱 Building Blocks/FileCell',
   component: FileCell,
   parameters: {
     layout: 'padded',
