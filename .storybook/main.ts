@@ -5,9 +5,7 @@ const config: StorybookConfig = {
     "../src/stories/**/*.stories.tsx"
   ],
   "addons": [
-    "@chromatic-com/storybook",
-    "@storybook/addon-docs",
-    "@storybook/addon-a11y"
+    "@storybook/addon-docs"
   ],
   "framework": {
     "name": "@storybook/react-vite",
@@ -22,16 +20,6 @@ const config: StorybookConfig = {
   },
   "docs": {
     "autodocs": false,
-  },
-  "viteFinal": async (config) => {
-    // Basic optimizations
-    if (config.build) {
-      config.build.chunkSizeWarningLimit = 3000;
-      config.build.sourcemap = false;
-      config.build.minify = 'esbuild';
-    }
-
-    return config;
   },
 };
 
