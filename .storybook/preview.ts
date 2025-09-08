@@ -10,11 +10,10 @@ const preview: Preview = {
           'Atoms',
           'Molecules',
           'Chromatic',
-          ['Chromatic', ['Debug', 'Test']],
+          'Test',
           '*'
         ],
-        method: 'alphabetical',
-        includeNames: true,
+        locales: 'en-US',
       },
     },
     controls: {
