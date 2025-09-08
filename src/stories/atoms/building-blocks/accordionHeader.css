@@ -101,7 +101,7 @@
 .accordion-header__title {
   flex: 1;
   font-family: var(--type-typeface-archivo);
-  font-weight: var(--type-weight-semibold); /* 600 - proper Figma weight */
+  font-weight: var(--type-weight-regular); /* 400 - matches Figma default state */
   color: var(--primary-blue-dark-blue);
   line-height: 1;
   transition: var(--transition-normal);
@@ -119,7 +119,7 @@
   font-size: var(--type-archivo-label-lg); /* 18px */
   line-height: var(--type-line-height-label-lg); /* 24px */
   letter-spacing: var(--type-letter-spacing-archivo-label-lg); /* 0.15px */
-  font-weight: var(--type-weight-semibold); /* 600 */
+  font-weight: var(--type-weight-regular); /* 400 - matches Figma */
 }
 
 /* Default size - 19px heading typography */
@@ -127,7 +127,7 @@
   font-size: var(--type-archivo-heading-5); /* 19px */
   line-height: var(--type-line-height-heading-5); /* 24px */
   letter-spacing: var(--type-letter-spacing-archivo-heading-5); /* -0.15px */
-  font-weight: var(--type-weight-semibold); /* 600 */
+  font-weight: var(--type-weight-regular); /* 400 - matches Figma */
 }
 
 /* Large size - 24px heading typography */
@@ -135,7 +135,7 @@
   font-size: var(--type-archivo-heading-4); /* 24px */
   line-height: var(--type-line-height-heading-4); /* 24px */
   letter-spacing: var(--type-letter-spacing-archivo-heading-4); /* -0.25px */
-  font-weight: var(--type-weight-semibold); /* 600 */
+  font-weight: var(--type-weight-regular); /* 400 - matches Figma */
 }
 
 /* ===== TOGGLE ICON STYLES - WITH PROPER STROKES ===== */
@@ -201,7 +201,7 @@
 /* Default state */
 .accordion-header--state-default .accordion-header__title {
   color: var(--primary-blue-dark-blue); /* #191E3C */
-  font-weight: var(--type-weight-semibold); /* 600 */
+  font-weight: var(--type-weight-regular); /* 400 - matches Figma default state */
 }
 
 .accordion-header--state-default .accordion-header__bell {
@@ -222,8 +222,8 @@
 /* Hover state */
 .accordion-header--state-hover .accordion-header__title,
 .accordion-header--interactive:hover .accordion-header__title {
-  color: var(--primary-blue-blue); /* #2F42BD */
-  font-weight: var(--type-weight-bold); /* 700 on hover */
+  color: var(--primary-blue-dark-blue); /* #191E3C - matches Figma hover */
+  font-weight: var(--type-weight-regular); /* 400 - matches Figma hover */
 }
 
 .accordion-header--state-hover .accordion-header__bell,
@@ -247,8 +247,8 @@
 
 /* Selected state */
 .accordion-header--state-selected .accordion-header__title {
-  color: var(--base-black); /* #1C1C1C */
-  font-weight: var(--type-weight-bold); /* 700 when selected */
+  color: var(--base-black); /* #1C1C1C - matches Figma selected state */
+  font-weight: var(--type-weight-regular); /* 400 - matches Figma selected */
 }
 
 .accordion-header--state-selected .accordion-header__bell {
@@ -266,10 +266,10 @@
   background: var(--primary-blue-blue-50);
 }
 
-/* Open state */
+/* Open state - matches Figma True state */
 .accordion-header--open .accordion-header__title {
-  color: var(--primary-blue-blue); /* #2F42BD */
-  font-weight: var(--type-weight-bold); /* 700 when open */
+  color: var(--primary-blue-dark-blue); /* #191E3C - matches Figma */
+  font-weight: var(--type-weight-regular); /* 400 - matches Figma */
 }
 
 .accordion-header--open .accordion-header__bell {
