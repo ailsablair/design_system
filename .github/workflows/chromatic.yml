@@ -56,7 +56,7 @@ jobs:
       - name: Build Storybook (test)
         run: |
           echo "Testing Storybook build before Chromatic..."
-          npm run build-storybook
+          npm run build-storybook:memory
           echo "✅ Storybook build successful!"
           echo "📊 Build stats:"
           du -sh storybook-static/
