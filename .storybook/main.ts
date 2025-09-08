@@ -14,6 +14,28 @@ const config: StorybookConfig = {
   "framework": {
     "name": "@storybook/react-vite",
     "options": {}
-  }
+  },
+  "typescript": {
+    "reactDocgen": "react-docgen",
+    "reactDocgenTypescriptOptions": {
+      "shouldExtractLiteralValuesFromEnum": true,
+      "propFilter": (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
+    },
+  },
+  "core": {
+    "disableTelemetry": true,
+  },
+  "viteFinal": async (config) => {
+    // Remove any react-docgen-typescript plugins that might conflict with React 19
+    if (config.plugins) {
+      config.plugins = config.plugins.filter((plugin) => {
+        if (plugin && typeof plugin === 'object' && 'name' in plugin) {
+          return !plugin.name?.includes('react-docgen-typescript');
+        }
+        return true;
+      });
+    }
+    return config;
+  },
 };
 export default config;
