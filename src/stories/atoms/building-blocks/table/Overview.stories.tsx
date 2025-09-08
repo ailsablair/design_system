@@ -79,7 +79,7 @@ export const Introduction: Story = {
       padding: '2rem',
       maxWidth: '800px',
       margin: '0 auto',
-      fontFamily: 'var(--type-typeface-inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif)',
+      fontFamily: 'var(--type-typeface-roboto-flex, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif)',
       lineHeight: 1.6
     }}>
       <h1 style={{ 

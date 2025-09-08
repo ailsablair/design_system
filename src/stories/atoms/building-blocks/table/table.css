@@ -94,7 +94,7 @@
   width: 100%;
   border-collapse: collapse;
   table-layout: auto;
-  font-family: var(--type-typeface-inter, Inter);
+  font-family: var(--type-typeface-roboto-flex, 'Roboto Flex');
 }
 
 /* === TABLE HEADER === */
