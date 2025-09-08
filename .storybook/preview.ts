@@ -1,6 +1,8 @@
 import type { Preview } from '@storybook/react';
+import { withResizeObserverSuppression } from '../src/utils/resizeObserverDecorator';
 
 const preview: Preview = {
+  decorators: [withResizeObserverSuppression],
   parameters: {
     options: {
       storySort: {
