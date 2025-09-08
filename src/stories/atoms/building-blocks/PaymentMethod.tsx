@@ -1,5 +1,5 @@
 import React from 'react';
-import { PaymentIcon, PaymentMethod as PaymentMethodType, PaymentIconSize } from './PaymentIcon';
+import { PaymentIcon, type PaymentMethod as PaymentMethodType, type PaymentIconSize } from './PaymentIcon';
 import './paymentMethod.css';
 
 export type PaymentMethodSize = 'small' | 'default' | 'large';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stepper, StepperProps } from './Stepper';
+import { Stepper, type StepperProps } from './Stepper';
 import { StepperLine } from './StepperLine';
 import './stepperGroup.css';
 

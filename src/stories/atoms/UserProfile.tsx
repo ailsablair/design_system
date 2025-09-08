@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, AvatarProps } from './Avatar';
+import { Avatar, type AvatarProps } from './Avatar';
 import './userProfile.css';
 
 export type UserProfileSize = 'small' | 'default' | 'large';
