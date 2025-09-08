@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { PaymentIcon, type PaymentIconProps, type PaymentMethod } from './PaymentIcon';
 
 const meta: Meta<typeof PaymentIcon> = {
-  title: 'Atoms/ZZ 🧱 Building Blocks/PaymentIcon',
+  title: 'Atoms/🧱 Building Blocks/PaymentIcon',
   component: PaymentIcon,
   parameters: {
     layout: 'centered',

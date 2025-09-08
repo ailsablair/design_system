@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { PaymentMethod } from './PaymentMethod';
 
 const meta: Meta<typeof PaymentMethod> = {
-  title: 'Atoms/ZZ 🧱 Building Blocks/Payment Method',
+  title: 'Atoms/🧱 Building Blocks/Payment Method',
   component: PaymentMethod,
   parameters: {
     layout: 'centered',
