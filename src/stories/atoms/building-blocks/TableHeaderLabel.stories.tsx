@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { TableHeaderLabel } from './TableHeaderLabel';
 
 const meta: Meta<typeof TableHeaderLabel> = {
-  title: 'Atoms/Building Blocks/TableHeaderLabel',
+  title: 'Atoms/ZZ Building Blocks/TableHeaderLabel',
   component: TableHeaderLabel,
   parameters: {
     layout: 'centered',

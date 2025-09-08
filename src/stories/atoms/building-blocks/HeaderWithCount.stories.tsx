@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { HeaderWithCount } from './HeaderWithCount';
 
 const meta: Meta<typeof HeaderWithCount> = {
-  title: 'Atoms/Building Blocks/HeaderWithCount',
+  title: 'Atoms/ZZ Building Blocks/HeaderWithCount',
   component: HeaderWithCount,
   parameters: {
     layout: 'centered',
