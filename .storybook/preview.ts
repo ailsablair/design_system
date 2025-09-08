@@ -7,16 +7,14 @@ const preview: Preview = {
         order: [
           'Design System',
           'Foundations',
-          ['Foundations', '*', 'Foundations/Building Blocks'],
           'Atoms',
-          ['Atoms', '*', 'Atoms/Building Blocks'],
           'Molecules',
-          ['Molecules', '*', 'Molecules/Building Blocks'],
           'Chromatic',
           'Test',
           '*'
         ],
-        locales: 'en-US',
+        method: 'alphabetical',
+        includeNames: true,
       },
     },
     controls: {
