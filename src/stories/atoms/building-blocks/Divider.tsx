@@ -10,10 +10,10 @@ export interface DividerProps {
   alignment?: 'horizontal' | 'vertical';
   /** Text label to display with the divider */
   label?: string;
-  /** Position of the text label for horizontal dividers */
-  textAlign?: 'left' | 'center' | 'right';
+  /** Position of the text label - matches Figma design alignment options */
+  textAlign?: 'none' | 'left' | 'centre' | 'center' | 'right' | 'middle' | 'top' | 'bottom';
   /** Text style variant */
-  textStyle?: 'label-sm' | 'title';
+  textStyle?: 'none' | 'label-sm' | 'title';
   /** Custom width for horizontal dividers (in px or any valid CSS unit) */
   width?: string | number;
   /** Custom height for vertical dividers (in px or any valid CSS unit) */
@@ -32,11 +32,11 @@ export interface DividerProps {
 
 export const Divider: React.FC<DividerProps> = ({
   line = 'solid',
-  thickness = '1px',
+  thickness = '0.5px',
   alignment = 'horizontal',
   label,
-  textAlign = 'left',
-  textStyle = 'label-sm',
+  textAlign = 'none',
+  textStyle = 'none',
   width,
   height,
   color,
@@ -45,28 +45,69 @@ export const Divider: React.FC<DividerProps> = ({
   'aria-label': ariaLabel,
   role = 'separator',
 }) => {
-  // If there's a label, we need to render a different structure
-  if (label && alignment === 'horizontal') {
-    return (
-      <div
-        className={`divider-with-text divider-with-text-${textAlign} ${className}`}
-        style={style}
-        role={role}
-        aria-label={ariaLabel || `${line} divider with ${label}`}
-        aria-orientation="horizontal"
-      >
-        <div 
-          className={`divider-line divider-line-${line} divider-thickness-${thickness.replace('.', '_')}`}
+  // Normalize textAlign - 'center' and 'centre' are equivalent
+  const normalizedTextAlign = textAlign === 'center' ? 'centre' : textAlign;
+
+  // If there's a label and textAlign is not 'none', render labeled divider
+  if (label && textStyle !== 'none' && normalizedTextAlign !== 'none') {
+    const isHorizontalWithText = alignment === 'horizontal' && ['left', 'centre', 'right'].includes(normalizedTextAlign);
+    const isVerticalWithText = alignment === 'vertical' && ['top', 'middle', 'bottom'].includes(normalizedTextAlign);
+
+    if (isHorizontalWithText) {
+      return (
+        <div
+          className={`divider-with-text divider-with-text-${normalizedTextAlign} ${className}`}
           style={{
+            ...style,
             ...(width && { width: typeof width === 'number' ? `${width}px` : width }),
-            ...(color && { backgroundColor: line === 'solid' ? color : 'transparent', borderColor: color }),
           }}
-        />
-        <div className={`divider-label divider-label-${textStyle}`}>
-          {label}
+          role={role}
+          aria-label={ariaLabel || `${line} divider with ${label}`}
+          aria-orientation="horizontal"
+        >
+          <div
+            className={`divider-line divider-line-${line} divider-thickness-${thickness.replace('.', '_')}`}
+            style={{
+              ...(color && { backgroundColor: line === 'solid' ? color : 'transparent', borderColor: color }),
+            }}
+          />
+          <div className={`divider-label divider-label-${textStyle}`}>
+            {label}
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
+
+    if (isVerticalWithText) {
+      return (
+        <div
+          className={`divider-with-text-vertical divider-with-text-vertical-${normalizedTextAlign} ${className}`}
+          style={{
+            ...style,
+            ...(height && { height: typeof height === 'number' ? `${height}px` : height }),
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            position: 'relative',
+          }}
+          role={role}
+          aria-label={ariaLabel || `${line} divider with ${label}`}
+          aria-orientation="vertical"
+        >
+          <div
+            className={`divider-line-vertical divider-line-${line} divider-thickness-${thickness.replace('.', '_')}`}
+            style={{
+              width: thickness,
+              height: height ? (typeof height === 'number' ? `${height}px` : height) : '306px',
+              ...(color && { backgroundColor: line === 'solid' ? color : 'transparent', borderColor: color }),
+            }}
+          />
+          <div className={`divider-label-vertical divider-label-${textStyle} divider-label-${normalizedTextAlign}`}>
+            {label}
+          </div>
+        </div>
+      );
+    }
   }
 
   // Standard divider without text
@@ -79,7 +120,7 @@ export const Divider: React.FC<DividerProps> = ({
   ].filter(Boolean).join(' ');
 
   // Default dimensions based on Figma design
-  const defaultWidth = alignment === 'horizontal' ? '500px' : undefined;
+  const defaultWidth = alignment === 'horizontal' ? '1220px' : undefined;
   const defaultHeight = alignment === 'vertical' ? '306px' : undefined;
 
   const dividerStyle: React.CSSProperties = {
