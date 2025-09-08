@@ -50,7 +50,7 @@ jobs:
       - name: Test Storybook build
         run: |
           echo "Testing Storybook build..."
-          npm run build-storybook
+          npm run build-storybook:memory
           echo "✅ Storybook build successful!"
           echo "📊 Build stats:"
           du -sh storybook-static/
