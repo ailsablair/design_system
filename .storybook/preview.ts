@@ -1,5 +1,17 @@
 import type { Preview } from '@storybook/react';
 
+// Minimal ResizeObserver error suppression
+(function() {
+  if (typeof window !== 'undefined') {
+    window.addEventListener('error', (event) => {
+      if (event.message && event.message.includes('ResizeObserver loop completed with undelivered notifications')) {
+        event.preventDefault();
+        return false;
+      }
+    }, true);
+  }
+})();
+
 const preview: Preview = {
   parameters: {
     options: {
