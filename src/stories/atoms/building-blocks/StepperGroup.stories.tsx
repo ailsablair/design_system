@@ -3,7 +3,7 @@ import { StepperGroup } from './StepperGroup';
 import './stepperGroup.css';
 
 const meta: Meta<typeof StepperGroup> = {
-  title: 'Atoms/ZZ 🧱 Building Blocks/Stepper Group',
+  title: 'Atoms/🧱 Building Blocks/Stepper Group',
   component: StepperGroup,
   parameters: {
     layout: 'padded',
