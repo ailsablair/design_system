@@ -3,7 +3,7 @@ import { StepperLine } from './StepperLine';
 import './stepperLine.css';
 
 const meta: Meta<typeof StepperLine> = {
-  title: 'Atoms/ZZ Building Blocks/Stepper Line',
+  title: 'Atoms/Building Blocks/Stepper Line',
   component: StepperLine,
   parameters: {
     layout: 'centered',

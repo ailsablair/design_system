@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { FileIcon, type FileIconProps, type FileType } from './FileIcon';
 
 const meta: Meta<typeof FileIcon> = {
-  title: 'Atoms/ZZ Building Blocks/FileIcon',
+  title: 'Atoms/Building Blocks/FileIcon',
   component: FileIcon,
   parameters: {
     layout: 'centered',

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Star } from './Star';
 
 const meta = {
-  title: 'Atoms/ZZ Building Blocks/Star',
+  title: 'Atoms/Building Blocks/Star',
   component: Star,
   parameters: {
     layout: 'centered',

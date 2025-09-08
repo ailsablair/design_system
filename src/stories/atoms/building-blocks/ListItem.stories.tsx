@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ListItem } from './ListItem';
 
 const meta = {
-  title: 'Atoms/ZZ Building Blocks/ListItem',
+  title: 'Atoms/Building Blocks/ListItem',
   component: ListItem,
   parameters: {
     layout: 'centered',
