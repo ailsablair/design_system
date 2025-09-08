@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta = {
@@ -213,6 +214,3 @@ export const ImmediateTest: Story = {
     },
   },
 };
-
-// Need to import React for useEffect
-import React from 'react';
