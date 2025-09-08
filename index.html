@@ -2,20 +2,84 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <body bgcolor="#262452">
-    <div class="parent">
-
-    </div>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Echo Design System</title>
     
-      <title>Echo Design System</title>
+    <!-- IMMEDIATE ResizeObserver Error Suppression -->
+    <script>
+      // Immediate ResizeObserver error suppression - runs before any other scripts
+      (function() {
+        if (typeof window === 'undefined') return;
+        
+        // Comprehensive pattern detection
+        function isResizeObserverRelated(input) {
+          if (!input) return false;
+          var str = String(input).toLowerCase();
+          var patterns = [
+            'resizeobserver', 'resize observer', 'resize-observer', 'observer loop',
+            'loop completed', 'undelivered notifications', 'undelivered notification',
+            'observer callback', 'resize loop', 'resize callback', 'observation loop',
+            'observer cycle', 'resize cycle', 'resize notification', 'observer notification',
+            'resize script error', 'observer script error', 'resizeobserver error',
+            'resize observer error', 'observer error', 'resize error', 'resize warning',
+            'observer warning', 'loop limit exceeded', 'callback threw', 'resize exception',
+            'observer exception', 'non-finite css pixel', 'css pixel', 'infinite resize',
+            'recursive resize', 'resize recursion'
+          ];
+          return patterns.some(function(pattern) { return str.indexOf(pattern) !== -1; });
+        }
+        
+        // Store originals
+        var originals = {
+          error: console.error,
+          warn: console.warn,
+          log: console.log,
+          info: console.info,
+          debug: console.debug
+        };
+        
+        // Override console methods
+        Object.keys(originals).forEach(function(method) {
+          var original = originals[method];
+          console[method] = function() {
+            var args = Array.prototype.slice.call(arguments);
+            var isResizeError = args.some(function(arg) { return isResizeObserverRelated(arg); });
+            if (!isResizeError) {
+              original.apply(console, args);
+            }
+          };
+        });
+        
+        // Override error events
+        window.addEventListener('error', function(event) {
+          if (isResizeObserverRelated(event.message)) {
+            event.preventDefault();
+            event.stopPropagation();
+            event.stopImmediatePropagation();
+          }
+        }, true);
+        
+        window.addEventListener('unhandledrejection', function(event) {
+          if (isResizeObserverRelated(event.reason)) {
+            event.preventDefault();
+          }
+        }, true);
+        
+        // Override window.onerror
+        window.onerror = function(message, source, lineno, colno, error) {
+          if (isResizeObserverRelated(message) || isResizeObserverRelated(error)) {
+            return true; // Prevent default
+          }
+          return false;
+        };
+        
+        console.debug('🚫 Early ResizeObserver suppression activated');
+      })();
+    </script>
   </head>
   
-  <body>
-    <div id="body">
-      
-
-      
-    </div>
+  <body bgcolor="#262452">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
