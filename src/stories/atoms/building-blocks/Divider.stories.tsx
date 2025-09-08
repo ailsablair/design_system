@@ -176,9 +176,9 @@ export const FigmaDesignShowcase: Story = {
                     {thickness} thickness
                   </h4>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                    <Divider line=\"solid\" thickness={thickness} alignment=\"horizontal\" width=\"500px\" />
-                    <Divider line=\"dashed\" thickness={thickness} alignment=\"horizontal\" width=\"500px\" />
-                    <Divider line=\"dotted\" thickness={thickness} alignment=\"horizontal\" width=\"500px\" />
+                    <Divider line="solid" thickness={thickness} alignment="horizontal" width="500px" />
+                    <Divider line="dashed" thickness={thickness} alignment="horizontal" width="500px" />
+                    <Divider line="dotted" thickness={thickness} alignment="horizontal" width="500px" />
                   </div>
                 </div>
               ))}
@@ -196,9 +196,9 @@ export const FigmaDesignShowcase: Story = {
                     {thickness}
                   </h4>
                   <div style={{ display: 'flex', gap: '16px', alignItems: 'end' }}>
-                    <Divider line=\"solid\" thickness={thickness} alignment=\"vertical\" height=\"306px\" />
-                    <Divider line=\"dashed\" thickness={thickness} alignment=\"vertical\" height=\"306px\" />
-                    <Divider line=\"dotted\" thickness={thickness} alignment=\"vertical\" height=\"306px\" />
+                    <Divider line="solid" thickness={thickness} alignment="vertical" height="306px" />
+                    <Divider line="dashed" thickness={thickness} alignment="vertical" height="306px" />
+                    <Divider line="dotted" thickness={thickness} alignment="vertical" height="306px" />
                   </div>
                 </div>
               ))}
@@ -235,37 +235,37 @@ export const FigmaDesignShowcase: Story = {
                   <div>
                     <p style={{ margin: '0 0 12px 0', fontSize: '14px', color: '#666' }}>Left aligned</p>
                     <Divider 
-                      line=\"solid\" 
-                      thickness=\"0.5px\" 
-                      alignment=\"horizontal\" 
-                      label=\"Divider Label\" 
-                      textAlign=\"left\" 
-                      textStyle=\"label-sm\"
-                      width=\"100%\"
+                      line="solid" 
+                      thickness="0.5px" 
+                      alignment="horizontal" 
+                      label="Divider Label" 
+                      textAlign="left" 
+                      textStyle="label-sm"
+                      width="100%"
                     />
                   </div>
                   <div>
                     <p style={{ margin: '0 0 12px 0', fontSize: '14px', color: '#666' }}>Center aligned</p>
                     <Divider 
-                      line=\"solid\" 
-                      thickness=\"0.5px\" 
-                      alignment=\"horizontal\" 
-                      label=\"Divider Label\" 
-                      textAlign=\"centre\" 
-                      textStyle=\"label-sm\"
-                      width=\"100%\"
+                      line="solid" 
+                      thickness="0.5px" 
+                      alignment="horizontal" 
+                      label="Divider Label" 
+                      textAlign="centre" 
+                      textStyle="label-sm"
+                      width="100%"
                     />
                   </div>
                   <div>
                     <p style={{ margin: '0 0 12px 0', fontSize: '14px', color: '#666' }}>Right aligned</p>
                     <Divider 
-                      line=\"solid\" 
-                      thickness=\"0.5px\" 
-                      alignment=\"horizontal\" 
-                      label=\"Divider Label\" 
-                      textAlign=\"right\" 
-                      textStyle=\"label-sm\"
-                      width=\"100%\"
+                      line="solid" 
+                      thickness="0.5px" 
+                      alignment="horizontal" 
+                      label="Divider Label" 
+                      textAlign="right" 
+                      textStyle="label-sm"
+                      width="100%"
                     />
                   </div>
                 </div>
@@ -278,37 +278,37 @@ export const FigmaDesignShowcase: Story = {
                   <div>
                     <p style={{ margin: '0 0 12px 0', fontSize: '14px', color: '#666' }}>Left aligned</p>
                     <Divider 
-                      line=\"solid\" 
-                      thickness=\"0.5px\" 
-                      alignment=\"horizontal\" 
-                      label=\"Divider Label\" 
-                      textAlign=\"left\" 
-                      textStyle=\"title\"
-                      width=\"100%\"
+                      line="solid" 
+                      thickness="0.5px" 
+                      alignment="horizontal" 
+                      label="Divider Label" 
+                      textAlign="left" 
+                      textStyle="title"
+                      width="100%"
                     />
                   </div>
                   <div>
                     <p style={{ margin: '0 0 12px 0', fontSize: '14px', color: '#666' }}>Center aligned</p>
                     <Divider 
-                      line=\"solid\" 
-                      thickness=\"0.5px\" 
-                      alignment=\"horizontal\" 
-                      label=\"Divider Label\" 
-                      textAlign=\"centre\" 
-                      textStyle=\"title\"
-                      width=\"100%\"
+                      line="solid" 
+                      thickness="0.5px" 
+                      alignment="horizontal" 
+                      label="Divider Label" 
+                      textAlign="centre" 
+                      textStyle="title"
+                      width="100%"
                     />
                   </div>
                   <div>
                     <p style={{ margin: '0 0 12px 0', fontSize: '14px', color: '#666' }}>Right aligned</p>
                     <Divider 
-                      line=\"solid\" 
-                      thickness=\"0.5px\" 
-                      alignment=\"horizontal\" 
-                      label=\"Divider Label\" 
-                      textAlign=\"right\" 
-                      textStyle=\"title\"
-                      width=\"100%\"
+                      line="solid" 
+                      thickness="0.5px" 
+                      alignment="horizontal" 
+                      label="Divider Label" 
+                      textAlign="right" 
+                      textStyle="title"
+                      width="100%"
                     />
                   </div>
                 </div>
@@ -328,37 +328,37 @@ export const FigmaDesignShowcase: Story = {
                   <div style={{ textAlign: 'center' }}>
                     <p style={{ margin: '0 0 12px 0', fontSize: '12px', color: '#666' }}>Top</p>
                     <Divider 
-                      line=\"solid\" 
-                      thickness=\"0.5px\" 
-                      alignment=\"vertical\" 
-                      label=\"Divider Label\" 
-                      textAlign=\"top\" 
-                      textStyle=\"label-sm\"
-                      height=\"306px\"
+                      line="solid" 
+                      thickness="0.5px" 
+                      alignment="vertical" 
+                      label="Divider Label" 
+                      textAlign="top" 
+                      textStyle="label-sm"
+                      height="306px"
                     />
                   </div>
                   <div style={{ textAlign: 'center' }}>
                     <p style={{ margin: '0 0 12px 0', fontSize: '12px', color: '#666' }}>Middle</p>
                     <Divider 
-                      line=\"solid\" 
-                      thickness=\"0.5px\" 
-                      alignment=\"vertical\" 
-                      label=\"Divider Label\" 
-                      textAlign=\"middle\" 
-                      textStyle=\"label-sm\"
-                      height=\"306px\"
+                      line="solid" 
+                      thickness="0.5px" 
+                      alignment="vertical" 
+                      label="Divider Label" 
+                      textAlign="middle" 
+                      textStyle="label-sm"
+                      height="306px"
                     />
                   </div>
                   <div style={{ textAlign: 'center' }}>
                     <p style={{ margin: '0 0 12px 0', fontSize: '12px', color: '#666' }}>Bottom</p>
                     <Divider 
-                      line=\"solid\" 
-                      thickness=\"0.5px\" 
-                      alignment=\"vertical\" 
-                      label=\"Divider Label\" 
-                      textAlign=\"bottom\" 
-                      textStyle=\"label-sm\"
-                      height=\"306px\"
+                      line="solid" 
+                      thickness="0.5px" 
+                      alignment="vertical" 
+                      label="Divider Label" 
+                      textAlign="bottom" 
+                      textStyle="label-sm"
+                      height="306px"
                     />
                   </div>
                 </div>
@@ -371,37 +371,37 @@ export const FigmaDesignShowcase: Story = {
                   <div style={{ textAlign: 'center' }}>
                     <p style={{ margin: '0 0 12px 0', fontSize: '12px', color: '#666' }}>Top</p>
                     <Divider 
-                      line=\"solid\" 
-                      thickness=\"0.5px\" 
-                      alignment=\"vertical\" 
-                      label=\"Divider Label\" 
-                      textAlign=\"top\" 
-                      textStyle=\"title\"
-                      height=\"306px\"
+                      line="solid" 
+                      thickness="0.5px" 
+                      alignment="vertical" 
+                      label="Divider Label" 
+                      textAlign="top" 
+                      textStyle="title"
+                      height="306px"
                     />
                   </div>
                   <div style={{ textAlign: 'center' }}>
                     <p style={{ margin: '0 0 12px 0', fontSize: '12px', color: '#666' }}>Middle</p>
                     <Divider 
-                      line=\"solid\" 
-                      thickness=\"0.5px\" 
-                      alignment=\"vertical\" 
-                      label=\"Divider Label\" 
-                      textAlign=\"middle\" 
-                      textStyle=\"title\"
-                      height=\"306px\"
+                      line="solid" 
+                      thickness="0.5px" 
+                      alignment="vertical" 
+                      label="Divider Label" 
+                      textAlign="middle" 
+                      textStyle="title"
+                      height="306px"
                     />
                   </div>
                   <div style={{ textAlign: 'center' }}>
                     <p style={{ margin: '0 0 12px 0', fontSize: '12px', color: '#666' }}>Bottom</p>
                     <Divider 
-                      line=\"solid\" 
-                      thickness=\"0.5px\" 
-                      alignment=\"vertical\" 
-                      label=\"Divider Label\" 
-                      textAlign=\"bottom\" 
-                      textStyle=\"title\"
-                      height=\"306px\"
+                      line="solid" 
+                      thickness="0.5px" 
+                      alignment="vertical" 
+                      label="Divider Label" 
+                      textAlign="bottom" 
+                      textStyle="title"
+                      height="306px"
                     />
                   </div>
                 </div>
@@ -439,7 +439,7 @@ export const BuildingBlocksDividers: Story = {
                   <p style={{ margin: '0', fontSize: '12px', color: '#666' }}>
                     {line}, {thickness}, horizontal
                   </p>
-                  <Divider line={line} thickness={thickness} alignment=\"horizontal\" width=\"400px\" />
+                  <Divider line={line} thickness={thickness} alignment="horizontal" width="400px" />
                 </div>
               ))
             )}
@@ -455,7 +455,7 @@ export const BuildingBlocksDividers: Story = {
                   <p style={{ margin: '0', fontSize: '10px', color: '#666', textAlign: 'center', width: '60px' }}>
                     {line}, {thickness}
                   </p>
-                  <Divider line={line} thickness={thickness} alignment=\"vertical\" height=\"100px\" />
+                  <Divider line={line} thickness={thickness} alignment="vertical" height="100px" />
                 </div>
               ))
             )}
@@ -489,13 +489,13 @@ export const LabeledDividers: Story = {
                     {alignment}, {textStyle}
                   </p>
                   <Divider 
-                    line=\"solid\" 
-                    thickness=\"0.5px\" 
-                    alignment=\"horizontal\" 
-                    label=\"Divider Label\" 
+                    line="solid" 
+                    thickness="0.5px" 
+                    alignment="horizontal" 
+                    label="Divider Label" 
                     textAlign={alignment} 
                     textStyle={textStyle}
-                    width=\"100%\"
+                    width="100%"
                   />
                 </div>
               ))
@@ -515,13 +515,13 @@ export const LabeledDividers: Story = {
                   <div key={textStyle} style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
                     <p style={{ margin: '0', fontSize: '12px', color: '#999' }}>{textStyle}</p>
                     <Divider 
-                      line=\"solid\" 
-                      thickness=\"0.5px\" 
-                      alignment=\"vertical\" 
-                      label=\"Divider Label\" 
+                      line="solid" 
+                      thickness="0.5px" 
+                      alignment="vertical" 
+                      label="Divider Label" 
                       textAlign={alignment} 
                       textStyle={textStyle}
-                      height=\"200px\"
+                      height="200px"
                     />
                   </div>
                 ))}
@@ -557,12 +557,12 @@ export const UsageInLayouts: Story = {
         </div>
         
         <Divider 
-          line=\"solid\" 
-          thickness=\"0.5px\" 
-          alignment=\"horizontal\" 
-          label=\"Section Divider\" 
-          textAlign=\"centre\" 
-          textStyle=\"title\"
+          line="solid" 
+          thickness="0.5px" 
+          alignment="horizontal" 
+          label="Section Divider" 
+          textAlign="centre" 
+          textStyle="title"
         />
         
         <div style={{ padding: '16px', backgroundColor: '#f8f9fa', borderRadius: '4px' }}>
@@ -572,7 +572,7 @@ export const UsageInLayouts: Story = {
           </p>
         </div>
         
-        <Divider line=\"dashed\" thickness=\"1px\" alignment=\"horizontal\" />
+        <Divider line="dashed" thickness="1px" alignment="horizontal" />
         
         <div style={{ padding: '16px', backgroundColor: '#f8f9fa', borderRadius: '4px' }}>
           <h4 style={{ margin: '0 0 8px 0', fontSize: '16px' }}>Section 3</h4>
@@ -590,13 +590,13 @@ export const UsageInLayouts: Story = {
           </div>
           
           <Divider 
-            line=\"solid\" 
-            thickness=\"0.5px\" 
-            alignment=\"vertical\" 
-            label=\"OR\" 
-            textAlign=\"middle\" 
-            textStyle=\"label-sm\"
-            height=\"60px\" 
+            line="solid" 
+            thickness="0.5px" 
+            alignment="vertical" 
+            label="OR" 
+            textAlign="middle" 
+            textStyle="label-sm"
+            height="60px" 
           />
           
           <div style={{ padding: '16px', backgroundColor: '#f8f9fa', borderRadius: '4px', flex: 1 }}>
