@@ -64,7 +64,7 @@
   min-width: 0; /* Allow text truncation when needed */
   font-family: var(--type-typeface-archivo);
   font-weight: var(--type-weight-regular); /* 400 - exact Figma weight from spans */
-  color: var(--primary-blue-dark-blue);
+  color: var(--base-black); /* Always black */
   transition: var(--transition-normal);
 
   /* Ensure text behaves properly */
@@ -74,7 +74,7 @@
 }
 
 .accordion--open .accordion__title {
-  color: var(--primary-blue-blue) !important;
+  color: var(--base-black); /* Keep title black at all times */
   font-weight: var(--type-weight-regular); /* 400 - maintain consistent weight when open */
 }
 
@@ -368,7 +368,7 @@
 /* ===== HOVER STATES - ENHANCED ===== */
 
 .accordion__trigger:hover .accordion__title {
-  color: var(--primary-blue-blue) !important;
+  color: var(--base-black); /* Keep title black at all times */
   font-weight: var(--type-weight-regular); /* 400 - maintain consistent weight on hover */
 }
 
@@ -405,7 +405,7 @@
 }
 
 .accordion__trigger:focus-visible .accordion__title {
-  color: var(--primary-blue-blue) !important;
+  color: var(--base-black); /* Keep title black at all times */
 }
 
 .accordion__trigger:focus-visible .accordion__icon-frame {
@@ -435,7 +435,7 @@
 }
 
 .accordion__trigger:active .accordion__title {
-  color: var(--primary-blue-blue-600) !important; /* Darker blue for active press */
+  color: var(--base-black); /* Keep title black at all times */
 }
 
 .accordion__trigger:active .accordion__icon-frame {
