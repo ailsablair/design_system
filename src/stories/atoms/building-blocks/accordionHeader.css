@@ -335,57 +335,57 @@
 /* ===== POSITION VARIANTS ===== */
 
 /* ===== POSITION VARIANTS - EXACT FIGMA SPECIFICATIONS ===== */
-/* Note: Position variants are for grouped accordions with single border around entire group */
 
-/* Top position - no individual border, only separator */
+/* Top position with rounded top corners - exact Figma specs */
 .accordion-header--position-top {
-  border: none; /* Remove individual border */
-  border-bottom: 1px solid var(--neutral-gray-gray-200); /* Separator only */
-  border-radius: 0; /* No border radius on individual element */
+  border-radius: var(--spacing-radius-12px) var(--spacing-radius-12px) 0 0; /* Small size */
   padding: 20px 32px 16px 32px; /* Exact Figma padding */
 }
 
 .accordion-header--position-top.accordion-header--size-default {
+  border-radius: var(--spacing-radius-16px) var(--spacing-radius-16px) 0 0; /* Default size */
   padding: 20px 32px 16px 32px; /* Exact Figma padding */
   height: 64px; /* Exact Figma height */
 }
 
 .accordion-header--position-top.accordion-header--size-large {
+  border-radius: var(--spacing-radius-20px) var(--spacing-radius-20px) 0 0; /* Large size */
   padding: 20px 32px 16px 32px; /* Exact Figma padding */
   height: 68px; /* Exact Figma height */
 }
 
 .accordion-header--position-top.accordion-header--size-small {
+  border-radius: var(--spacing-radius-12px) var(--spacing-radius-12px) 0 0; /* Small size */
   padding: 20px 32px 16px 32px; /* Exact Figma padding */
   height: 56px; /* Exact Figma height */
 }
 
-/* Middle position - no individual border, only separator */
+/* Middle position - default with no border radius */
 .accordion-header--position-middle {
-  border: none; /* Remove individual border */
-  border-bottom: 1px solid var(--neutral-gray-gray-200); /* Separator only */
   border-radius: 0;
   padding: 16px 32px; /* Default padding */
 }
 
-/* Bottom position - no individual border, no separator */
+/* Bottom position with rounded bottom corners - exact Figma specs */
 .accordion-header--position-bottom {
-  border: none; /* Remove individual border */
-  border-radius: 0; /* No border radius on individual element */
+  border-radius: 0 0 var(--spacing-radius-12px) var(--spacing-radius-12px); /* Same for all sizes per Figma */
   padding: 16px 32px 20px 32px; /* Exact Figma padding */
 }
 
 .accordion-header--position-bottom.accordion-header--size-default {
+  border-radius: 0 0 var(--spacing-radius-12px) var(--spacing-radius-12px);
   padding: 16px 32px 20px 32px;
   height: 64px; /* Exact Figma height */
 }
 
 .accordion-header--position-bottom.accordion-header--size-large {
+  border-radius: 0 0 var(--spacing-radius-12px) var(--spacing-radius-12px);
   padding: 16px 32px 20px 32px;
   height: 68px; /* Exact Figma height */
 }
 
 .accordion-header--position-bottom.accordion-header--size-small {
+  border-radius: 0 0 var(--spacing-radius-12px) var(--spacing-radius-12px);
   padding: 16px 32px 20px 32px;
   height: 56px; /* Exact Figma height */
 }
