@@ -379,15 +379,25 @@
 
 /* Open state */
 .image-accordion--status-open {
-  /* Content overlay will be visible when content is 'text' */
+  /* Content overlay will be visible when content is 'text-img' */
 }
 
-/* Content variants */
+/* ===== TYPE VARIANTS ===== */
+
+/* Image type - default image accordion behavior */
+.image-accordion--type-image {
+  /* Default image accordion styles */
+}
+
+/* ===== CONTENT VARIANTS ===== */
+
+/* No content overlay */
 .image-accordion--content-none {
   /* No content overlay */
 }
 
-.image-accordion--content-text.image-accordion--content-visible {
+/* Text-img content overlay when visible */
+.image-accordion--content-text-img.image-accordion--content-visible {
   /* Text content overlay is visible */
 }
 
