@@ -5,8 +5,12 @@
  * This script analyzes stories and identifies potential issues
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Colors for console output
 const colors = {
@@ -85,6 +89,21 @@ function analyzeStoryFile(filePath) {
       pattern: /chromatic:\s*{\s*disable:\s*true\s*}/g,
       severity: 'info',
       message: 'Disabled in Chromatic'
+    },
+    {
+      pattern: /backgroundImage.*unsplash/g,
+      severity: 'medium',
+      message: 'Uses external image URLs (may cause network issues in Chromatic)'
+    },
+    {
+      pattern: /filter="url\(#filter\d*_d_\w*\)"/g,
+      severity: 'medium',
+      message: 'Contains SVG filters with IDs (may cause conflicts)'
+    },
+    {
+      pattern: /<svg[^>]*>\s*<g[^>]*filter="url\(#[^)]+\)"/g,
+      severity: 'medium',
+      message: 'SVG with filter references'
     }
   ];
   
@@ -104,6 +123,18 @@ function analyzeStoryFile(filePath) {
       severity: 'medium',
       message: 'Uses React but may be missing React import'
     });
+  }
+  
+  // Check for SVG filter ID conflicts
+  const svgFilterMatches = content.match(/id="filter\d*_d_\w*"/g);
+  if (svgFilterMatches && svgFilterMatches.length > 1) {
+    const uniqueIds = new Set(svgFilterMatches);
+    if (uniqueIds.size !== svgFilterMatches.length) {
+      issues.push({
+        severity: 'high',
+        message: 'Duplicate SVG filter IDs detected - will cause rendering conflicts'
+      });
+    }
   }
   
   return issues;
@@ -166,8 +197,10 @@ function main() {
     log('cyan', '💡 Recommendations:');
     log('reset', '1. Fix HIGH severity issues first');
     log('reset', '2. Consider disabling problematic stories in Chromatic with: chromatic: { disable: true }');
-    log('reset', '3. Wrap stories with error boundaries for better error handling');
-    log('reset', '4. Test stories individually in Storybook before Chromatic deployment');
+    log('reset', '3. Replace external image URLs with local assets or data URLs');
+    log('reset', '4. Fix SVG filter ID conflicts by using unique IDs');
+    log('reset', '5. Wrap stories with error boundaries for better error handling');
+    log('reset', '6. Test stories individually in Storybook before Chromatic deployment');
     
   } else {
     log('green', '✅ No obvious issues found in story files!');
@@ -185,8 +218,4 @@ function main() {
   log('reset', '3. Use the ChromaticDebug stories to validate environment');
 }
 
-if (require.main === module) {
-  main();
-}
-
-module.exports = { findStoryFiles, analyzeStoryFile };
+main();
