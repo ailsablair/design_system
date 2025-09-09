@@ -360,6 +360,18 @@ if (typeof window !== 'undefined') {
   setTimeout(() => {
     suppressResizeObserverErrors();
   }, 0);
+
+  // Make emergency functions globally available for browser console use
+  window.__EMERGENCY_SUPPRESS_RESIZE_OBSERVER = emergencySuppressionOverride;
+  window.__EMERGENCY_CONFIG_SUPPRESS = emergencySuppressionOverride; // Alias for compatibility
+  window.__EMERGENCY_TEST_SUPPRESSION = testErrorSuppression;
+  window.__EMERGENCY_RESTORE_CONSOLE = restoreOriginalMethods;
+
+  console.debug('🔧 ResizeObserver emergency functions available globally:\n' +
+    '  - __EMERGENCY_SUPPRESS_RESIZE_OBSERVER()\n' +
+    '  - __EMERGENCY_CONFIG_SUPPRESS()\n' +
+    '  - __EMERGENCY_TEST_SUPPRESSION()\n' +
+    '  - __EMERGENCY_RESTORE_CONSOLE()');
 }
 
 // Export types for TypeScript users
