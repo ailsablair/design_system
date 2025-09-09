@@ -16,10 +16,22 @@ export interface AccordionProps {
   position?: 'default' | 'top' | 'bottom';
   /** Visual interaction state - matches Figma state */
   interactionState?: 'default' | 'hover' | 'selected';
+  /** Content type variant - matches Figma content-type */
+  contentType?: 'text' | 'list' | 'text-img' | 'metrics';
   /** Title text */
   title?: string;
   /** Content text */
   content?: string;
+  /** List items for list content type */
+  listItems?: string[];
+  /** Image URL for text-img content type */
+  imageUrl?: string;
+  /** Metrics data for metrics content type */
+  metrics?: {
+    projectsCompleted?: string;
+    status?: string;
+    users?: string;
+  };
   /** Icon to display (for decorative types) */
   icon?: React.ReactNode;
   /** Number to display (for number type) */
@@ -65,8 +77,16 @@ export const Accordion: React.FC<AccordionProps> = ({
   openIcon = 'chevron',
   position = 'default',
   interactionState = 'default',
+  contentType = 'text',
   title = 'This is an accordion section title',
   content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rutrum ac tortor et lacinia. Suspendisse hendrerit mi vitae mauris dictum interdum vitae eget dui. Vivamus urna eros, facilisis et laoreet accumsan, feugiat sed sapien. Vestibulum euismod massa enim, nec malesuada tellus scelerisque in. Donec sodales posuere convallis. Donec vel urna finibus augue accumsan posuere in et nunc.',
+  listItems,
+  imageUrl,
+  metrics = {
+    projectsCompleted: '235,000',
+    status: 'On time',
+    users: '3,500'
+  },
   icon,
   number = '01',
   label,
@@ -94,6 +114,7 @@ export const Accordion: React.FC<AccordionProps> = ({
     `accordion--type-${type}`,
     `accordion--size-${size}`,
     `accordion--position-${position}`,
+    `accordion--content-${contentType}`,
     `accordion--icon-${openIcon}`,
     contained ? 'accordion--contained' : 'accordion--uncontained',
     isOpen ? 'accordion--open' : 'accordion--closed',
@@ -145,6 +166,102 @@ export const Accordion: React.FC<AccordionProps> = ({
       return isOpen ? <MinusIcon /> : <PlusIcon />;
     }
     return isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />;
+  };
+
+  // Check icon component - exact from Figma design
+  const CheckIcon = ({ size: iconSize = size }: { size?: string }) => {
+    const getIconSize = () => {
+      switch (iconSize) {
+        case 'small': return { width: 18, height: 18, viewBox: '0 0 18 18' };
+        case 'large': return { width: 26, height: 26, viewBox: '0 0 26 26' };
+        default: return { width: 22, height: 22, viewBox: '0 0 22 22' };
+      }
+    };
+
+    const iconProps = getIconSize();
+    const pathData = iconProps.viewBox === '0 0 18 18'
+      ? "M6.74979 15.3152L2.09229 10.6577L4.21479 8.53516L6.74979 11.0777L14.1598 3.66016L16.2823 5.78266L6.74979 15.3152Z"
+      : iconProps.viewBox === '0 0 26 26'
+      ? "M9.74996 22.1216L3.02246 15.3941L6.08829 12.3283L9.74996 16.0008L20.4533 5.28662L23.5191 8.35245L9.74996 22.1216Z"
+      : "M8.25012 18.7181L2.55762 13.0256L5.15178 10.4315L8.25012 13.539L17.3068 4.47314L19.9009 7.06731L8.25012 18.7181Z";
+
+    return (
+      <svg
+        width={iconProps.width}
+        height={iconProps.height}
+        viewBox={iconProps.viewBox}
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ opacity: 0.5 }}
+      >
+        <g opacity="0.5">
+          <path d={pathData} fill="#227F1A" />
+        </g>
+      </svg>
+    );
+  };
+
+  // Render content based on content type
+  const renderContent = () => {
+    if (children) {
+      return children;
+    }
+
+    switch (contentType) {
+      case 'list':
+        const defaultListItems = [
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rutrum ac tortor et lacinia. Suspendisse hendrerit mi vitae mauris dictum interdum vitae eget dui. Vivamus urna eros, facilisis et laoreet accumsan, feugiat sed sapien.',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rutrum ac tortor et lacinia. Suspendisse hendrerit mi vitae mauris dictum interdum vitae eget dui. Vivamus urna eros, facilisis et laoreet accumsan, feugiat sed sapien.',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rutrum ac tortor et lacinia. Suspendisse hendrerit mi vitae mauris dictum interdum vitae eget dui. Vivamus urna eros, facilisis et laoreet accumsan, feugiat sed sapien.'
+        ];
+        const items = listItems || defaultListItems;
+        return (
+          <div className="accordion__list-content">
+            {items.map((item, index) => (
+              <div key={index} className="accordion__list-item">
+                <CheckIcon size={size} />
+                <div className="accordion__list-text">{item}</div>
+              </div>
+            ))}
+          </div>
+        );
+
+      case 'text-img':
+        return (
+          <div className="accordion__text-img-content">
+            <div className="accordion__text-content">{content}</div>
+            <div className="accordion__image-container">
+              {imageUrl ? (
+                <img src={imageUrl} alt="Accordion content" className="accordion__image" />
+              ) : (
+                <div className="accordion__image-placeholder" />
+              )}
+            </div>
+          </div>
+        );
+
+      case 'metrics':
+        return (
+          <div className="accordion__metrics-content">
+            <div className="accordion__stat">
+              <div className="accordion__stat-number">{metrics.projectsCompleted}</div>
+              <div className="accordion__stat-label">Projects completed</div>
+            </div>
+            <div className="accordion__stat">
+              <div className="accordion__stat-number">{metrics.status}</div>
+              <div className="accordion__stat-label">Project status</div>
+            </div>
+            <div className="accordion__stat">
+              <div className="accordion__stat-number">{metrics.users}</div>
+              <div className="accordion__stat-label">Unique Users</div>
+            </div>
+          </div>
+        );
+
+      case 'text':
+      default:
+        return <div className="accordion__text-content">{content}</div>;
+    }
   };
 
   // Render header content based on type
@@ -221,7 +338,7 @@ export const Accordion: React.FC<AccordionProps> = ({
       
       {isOpen && (
         <div className="accordion__content">
-          {children || content}
+          {renderContent()}
         </div>
       )}
     </div>
