@@ -640,12 +640,12 @@
 
 /* Contained type - full border radius and complete border */
 .accordion--type-contained {
-  border-radius: 16px; /* Default size */
+  border-radius: var(--spacing-radius-16px); /* Default size */
   border: 1px solid var(--neutral-gray-gray-300); /* Full border */
 }
 
 .accordion--type-contained.accordion--size-small {
-  border-radius: 12px; /* Small size */
+  border-radius: var(--spacing-radius-12px); /* Small size */
 }
 
 .accordion--type-contained.accordion--size-large {

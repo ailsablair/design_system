@@ -338,12 +338,12 @@
 
 /* Top position with rounded top corners - exact Figma specs */
 .accordion-header--position-top {
-  border-radius: 12px 12px 0 0; /* Small size */
+  border-radius: var(--spacing-radius-12px) var(--spacing-radius-12px) 0 0; /* Small size */
   padding: 20px 32px 16px 32px; /* Exact Figma padding */
 }
 
 .accordion-header--position-top.accordion-header--size-default {
-  border-radius: 16px 16px 0 0; /* Default size */
+  border-radius: var(--spacing-radius-16px) var(--spacing-radius-16px) 0 0; /* Default size */
   padding: 20px 32px 16px 32px; /* Exact Figma padding */
   height: 64px; /* Exact Figma height */
 }
@@ -355,7 +355,7 @@
 }
 
 .accordion-header--position-top.accordion-header--size-small {
-  border-radius: 12px 12px 0 0; /* Small size */
+  border-radius: var(--spacing-radius-12px) var(--spacing-radius-12px) 0 0; /* Small size */
   padding: 20px 32px 16px 32px; /* Exact Figma padding */
   height: 56px; /* Exact Figma height */
 }
