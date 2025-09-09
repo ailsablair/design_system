@@ -4,12 +4,15 @@
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   gap: var(--spacing-sizing-4px);
   position: relative;
   contain: layout style;
   /* Prevent layout shifts */
   flex-shrink: 0;
-  vertical-align: middle;
+  vertical-align: top;
+  /* Ensure consistent alignment */
+  box-sizing: border-box;
 }
 
 .file-icon--clickable {
@@ -42,6 +45,9 @@
   position: relative;
   /* Ensure crisp SVG rendering */
   isolation: isolate;
+  /* Prevent any layout issues */
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 /* === SVG OPTIMIZATION === */
@@ -50,25 +56,33 @@
   display: block;
   flex-shrink: 0;
   /* Optimize for crisp rendering */
-  shape-rendering: crispEdges;
+  shape-rendering: geometricPrecision;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: optimize-contrast;
   /* Prevent selection and dragging */
   user-select: none;
   -webkit-user-drag: none;
   pointer-events: none;
-  /* Ensure proper scaling */
-  max-width: 100%;
-  max-height: 100%;
+  /* Ensure proper scaling and alignment */
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  /* Fix potential alignment issues */
+  vertical-align: top;
 }
 
 /* === SIZE VARIANTS === */
 
 /* Small Size (40x40) */
+.file-icon--small {
+  gap: 2px;
+}
+
 .file-icon--small .file-icon__svg-container {
   width: 40px;
   height: 40px;
+  min-width: 40px;
+  min-height: 40px;
 }
 
 .file-icon--small .file-icon__svg {
@@ -77,17 +91,24 @@
 }
 
 .file-icon--small .file-icon__label {
-  margin-top: var(--spacing-sizing-2px);
-  padding: var(--spacing-sizing-2px) 3px;
+  padding: 1px 3px;
   font-size: 10px;
   line-height: 12px;
   min-width: 24px;
+  height: 14px;
+  min-height: 14px;
 }
 
 /* Medium Size (42x42) */
+.file-icon--medium {
+  gap: 4px;
+}
+
 .file-icon--medium .file-icon__svg-container {
   width: 42px;
   height: 42px;
+  min-width: 42px;
+  min-height: 42px;
 }
 
 .file-icon--medium .file-icon__svg {
@@ -96,17 +117,24 @@
 }
 
 .file-icon--medium .file-icon__label {
-  margin-top: var(--spacing-sizing-4px);
-  padding: var(--spacing-sizing-2px) 3px;
+  padding: 1px 3px;
   font-size: 10px;
   line-height: 12px;
   min-width: 26px;
+  height: 14px;
+  min-height: 14px;
 }
 
 /* Large Size (46x46) */
+.file-icon--large {
+  gap: 4px;
+}
+
 .file-icon--large .file-icon__svg-container {
   width: 46px;
   height: 46px;
+  min-width: 46px;
+  min-height: 46px;
 }
 
 .file-icon--large .file-icon__svg {
@@ -115,11 +143,12 @@
 }
 
 .file-icon--large .file-icon__label {
-  margin-top: var(--spacing-sizing-4px);
-  padding: var(--spacing-sizing-2px) 3px;
+  padding: 1px 3px;
   font-size: 10px;
   line-height: 12px;
   min-width: 28px;
+  height: 14px;
+  min-height: 14px;
 }
 
 /* === OVERLAY STYLES === */
@@ -138,11 +167,13 @@
   border-radius: var(--spacing-radius-2px);
   background: #7F56D9; /* Default color, overridden by inline styles */
   text-align: center;
-  min-height: 14px;
   white-space: nowrap;
   /* Ensure consistent rendering */
   box-sizing: border-box;
   flex-shrink: 0;
+  /* Fix alignment issues */
+  vertical-align: top;
+  align-self: center;
 }
 
 .file-icon__text {
@@ -150,13 +181,17 @@
   font-family: var(--font-family-inter), Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 700;
   font-size: 10px;
-  line-height: 1.2;
+  line-height: 12px;
   letter-spacing: 0.02em;
   word-wrap: break-word;
   /* Improve text rendering */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Fix text alignment */
+  display: block;
+  text-align: center;
+  vertical-align: baseline;
 }
 
 /* === RESPONSIVE DESIGN === */

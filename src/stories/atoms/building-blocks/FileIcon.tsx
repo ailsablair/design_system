@@ -259,15 +259,16 @@ export const FileIcon: React.FC<FileIconProps> = ({
       aria-label={`${label} file`}
     >
       <div className="file-icon__svg-container">
-        <svg 
-          width={width} 
-          height={height} 
-          viewBox="0 0 40 40" 
-          fill="none" 
+        <svg
+          width={width}
+          height={height}
+          viewBox="0 0 40 40"
+          fill="none"
           xmlns="http://www.w3.org/2000/svg"
           role="img"
           aria-hidden="true"
           className="file-icon__svg"
+          preserveAspectRatio="xMidYMid meet"
         >
           {/* Document background */}
           <path 
