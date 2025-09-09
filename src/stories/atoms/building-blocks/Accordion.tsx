@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './accordion.css';
 
 export interface AccordionProps {
-  /** Type of accordion */
-  type?: 'simple' | 'decorative' | 'decorative-plus' | 'number' | 'label';
+  /** Type variant - matches Figma design exactly */
+  type?: 'contained' | 'top' | 'middle' | 'bottom' | 'simple' | 'decorative' | 'decorative-plus' | 'number' | 'label';
   /** Open/closed state */
   state?: 'default' | 'open';
   /** Whether accordion has contained styling */
@@ -13,7 +13,7 @@ export interface AccordionProps {
   /** Icon type for open/close - matches Figma icon-style */
   openIcon?: 'chevron' | 'plus';
   /** Position variant affecting visual alignment - matches Figma position */
-  position?: 'default' | 'top' | 'bottom';
+  position?: 'default' | 'top' | 'bottom' | 'middle';
   /** Visual interaction state - matches Figma state */
   interactionState?: 'default' | 'hover' | 'selected';
   /** Content type variant - matches Figma content-type */
@@ -70,7 +70,7 @@ export interface AccordionProps {
  * - Accessibility support
  */
 export const Accordion: React.FC<AccordionProps> = ({
-  type = 'simple',
+  type = 'contained',
   state = 'default',
   contained = false,
   size = 'default',
@@ -116,7 +116,7 @@ export const Accordion: React.FC<AccordionProps> = ({
     `accordion--position-${position}`,
     `accordion--content-${contentType}`,
     `accordion--icon-${openIcon}`,
-    contained ? 'accordion--contained' : 'accordion--uncontained',
+    contained || type === 'contained' ? 'accordion--contained' : 'accordion--uncontained',
     isOpen ? 'accordion--open' : 'accordion--closed',
     interactionState !== 'default' && `accordion--state-${interactionState}`,
     interactionState === 'selected' && 'accordion--selected',
@@ -267,6 +267,23 @@ export const Accordion: React.FC<AccordionProps> = ({
   // Render header content based on type
   const renderHeader = () => {
     switch (type) {
+      case 'contained':
+      case 'top':
+      case 'middle':
+      case 'bottom':
+        // Figma building-blocks/accordion/headers layout
+        return (
+          <div className="accordion__header">
+            <div className="accordion__heading-icon">
+              {showIcon && (customIcon || <BellRingIcon />)}
+              <div className="accordion__title">{title}</div>
+            </div>
+            <div className="accordion__toggle-icon">
+              {getToggleIcon()}
+            </div>
+          </div>
+        );
+
       case 'decorative':
       case 'decorative-plus':
         return (
@@ -338,6 +355,7 @@ export const Accordion: React.FC<AccordionProps> = ({
       
       {isOpen && (
         <div className="accordion__content">
+          <div className="accordion__content-spacer" />
           {renderContent()}
         </div>
       )}
