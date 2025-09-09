@@ -115,7 +115,7 @@
   font-size: 18px; /* Exact Figma size */
   line-height: 24px; /* 133.333% - exact Figma line height */
   letter-spacing: 0.15px; /* Exact Figma letter spacing */
-  font-weight: 500; /* Figma font-weight: medium in designs, 400 in spans */
+  font-weight: 400; /* Exact Figma font-weight from spans */
 }
 
 /* Default size - 19px exact Figma specs */
@@ -123,7 +123,7 @@
   font-size: 19px; /* Exact Figma size */
   line-height: 24px; /* 126.316% - exact Figma line height */
   letter-spacing: -0.15px; /* Exact Figma letter spacing */
-  font-weight: 500; /* Figma font-weight: medium in designs, 400 in spans */
+  font-weight: 400; /* Exact Figma font-weight from spans */
 }
 
 /* Large size - 24px exact Figma specs */
@@ -131,7 +131,7 @@
   font-size: 24px; /* Exact Figma size */
   line-height: 24px; /* 100% - exact Figma line height */
   letter-spacing: -0.25px; /* Exact Figma letter spacing */
-  font-weight: 500; /* Figma font-weight: medium in designs, 400 in spans */
+  font-weight: 400; /* Exact Figma font-weight from spans */
 }
 
 /* ===== TOGGLE ICON STYLES - EXACT FIGMA SPECS ===== */
