@@ -1,4 +1,14 @@
-/* FileIcon Component Styles - SVG Optimized */
+/* FileIcon Component Styles - SVG Optimized with Alignment Fixes */
+
+/*
+ * Alignment Fixes Applied:
+ * - Fixed vertical-align from 'middle' to 'top' for consistent baseline alignment
+ * - Added explicit box-sizing and dimensions to prevent layout shifts
+ * - Fixed SVG rendering with preserveAspectRatio and proper dimensions
+ * - Consistent gap spacing between icon and label across all sizes
+ * - Fixed text baseline alignment within labels
+ * - Improved responsive scaling with proper transform-origin
+ */
 
 .file-icon {
   display: inline-flex;
