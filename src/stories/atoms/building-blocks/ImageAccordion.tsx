@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useId } from 'react';
 import './imageAccordion.css';
 
 export interface ImageAccordionProps {
@@ -60,6 +60,7 @@ export const ImageAccordion: React.FC<ImageAccordionProps> = ({
 }) => {
   const [internalIsOpen, setInternalIsOpen] = useState(status === 'open');
   const isOpen = controlledIsOpen !== undefined ? controlledIsOpen : internalIsOpen;
+  const uniqueId = useId();
 
   const handleToggle = () => {
     const newIsOpen = !isOpen;
@@ -80,68 +81,74 @@ export const ImageAccordion: React.FC<ImageAccordionProps> = ({
   ].filter(Boolean).join(' ');
 
   // Plus Circle Icon - exact from Figma with proper sizing and filter
-  const PlusCircleIcon = () => (
-    <svg 
-      className="image-accordion__icon"
-      width="40" 
-      height="40" 
-      viewBox="0 0 70 63" 
-      fill="none" 
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g filter="url(#filter0_d_plus)">
-        <path 
-          d="M43.3333 24.6663H36.6666V31.333H33.3333V24.6663H26.6666V21.333H33.3333V14.6663H36.6666V21.333H43.3333M34.9999 6.33301C32.8112 6.33301 30.644 6.7641 28.6219 7.60168C26.5998 8.43926 24.7624 9.66692 23.2148 11.2146C20.0892 14.3402 18.3333 18.5794 18.3333 22.9997C18.3333 27.42 20.0892 31.6592 23.2148 34.7848C24.7624 36.3324 26.5998 37.5601 28.6219 38.3977C30.644 39.2352 32.8112 39.6663 34.9999 39.6663C39.4202 39.6663 43.6594 37.9104 46.785 34.7848C49.9106 31.6592 51.6666 27.42 51.6666 22.9997C51.6666 20.811 51.2355 18.6437 50.3979 16.6216C49.5603 14.5995 48.3327 12.7622 46.785 11.2146C45.2374 9.66692 43.4001 8.43926 41.378 7.60168C39.3559 6.7641 37.1886 6.33301 34.9999 6.33301Z" 
-          fill="white"
-        />
-      </g>
-      <defs>
-        <filter id="filter0_d_plus" x="-3" y="-3" width="76" height="76" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-          <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect1_dropShadow_plus"/>
-          <feOffset dy="12"/>
-          <feGaussianBlur stdDeviation="10"/>
-          <feComposite in2="hardAlpha" operator="out"/>
-          <feColorMatrix type="matrix" values="0 0 0 0 0.152941 0 0 0 0 0.152941 0 0 0 0 0.152941 0 0 0 0.15 0"/>
-          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_plus"/>
-          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_plus" result="shape"/>
-        </filter>
-      </defs>
-    </svg>
-  );
+  const PlusCircleIcon = () => {
+    const plusFilterId = `filter_plus_${uniqueId}`;
+    return (
+      <svg
+        className="image-accordion__icon"
+        width="40"
+        height="40"
+        viewBox="0 0 70 63"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g filter={`url(#${plusFilterId})`}>
+          <path
+            d="M43.3333 24.6663H36.6666V31.333H33.3333V24.6663H26.6666V21.333H33.3333V14.6663H36.6666V21.333H43.3333M34.9999 6.33301C32.8112 6.33301 30.644 6.7641 28.6219 7.60168C26.5998 8.43926 24.7624 9.66692 23.2148 11.2146C20.0892 14.3402 18.3333 18.5794 18.3333 22.9997C18.3333 27.42 20.0892 31.6592 23.2148 34.7848C24.7624 36.3324 26.5998 37.5601 28.6219 38.3977C30.644 39.2352 32.8112 39.6663 34.9999 39.6663C39.4202 39.6663 43.6594 37.9104 46.785 34.7848C49.9106 31.6592 51.6666 27.42 51.6666 22.9997C51.6666 20.811 51.2355 18.6437 50.3979 16.6216C49.5603 14.5995 48.3327 12.7622 46.785 11.2146C45.2374 9.66692 43.4001 8.43926 41.378 7.60168C39.3559 6.7641 37.1886 6.33301 34.9999 6.33301Z"
+            fill="white"
+          />
+        </g>
+        <defs>
+          <filter id={plusFilterId} x="-3" y="-3" width="76" height="76" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect1_dropShadow_plus"/>
+            <feOffset dy="12"/>
+            <feGaussianBlur stdDeviation="10"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0.152941 0 0 0 0 0.152941 0 0 0 0 0.152941 0 0 0 0.15 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_plus"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_plus" result="shape"/>
+          </filter>
+        </defs>
+      </svg>
+    );
+  };
 
   // Minus Circle Icon - exact from Figma with proper sizing and filter
-  const MinusCircleIcon = () => (
-    <svg 
-      className="image-accordion__icon image-accordion__icon--open"
-      width="40" 
-      height="40" 
-      viewBox="0 0 70 63" 
-      fill="none" 
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g filter="url(#filter0_d_minus)">
-        <path 
-          d="M43.3333 24.6663H26.6666V21.333H43.3333M34.9999 6.33301C32.8112 6.33301 30.644 6.7641 28.6219 7.60168C26.5998 8.43926 24.7624 9.66692 23.2148 11.2146C20.0892 14.3402 18.3333 18.5794 18.3333 22.9997C18.3333 27.42 20.0892 31.6592 23.2148 34.7848C24.7624 36.3324 26.5998 37.5601 28.6219 38.3977C30.644 39.2352 32.8112 39.6663 34.9999 39.6663C39.4202 39.6663 43.6594 37.9104 46.785 34.7848C49.9106 31.6592 51.6666 27.42 51.6666 22.9997C51.6666 20.811 51.2355 18.6437 50.3979 16.6216C49.5603 14.5995 48.3327 12.7622 46.785 11.2146C45.2374 9.66692 43.4001 8.43926 41.378 7.60168C39.3559 6.7641 37.1886 6.33301 34.9999 6.33301Z" 
-          fill="#2F42BD"
-        />
-      </g>
-      <defs>
-        <filter id="filter0_d_minus" x="-3" y="-3" width="76" height="76" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-          <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect1_dropShadow_minus"/>
-          <feOffset dy="12"/>
-          <feGaussianBlur stdDeviation="10"/>
-          <feComposite in2="hardAlpha" operator="out"/>
-          <feColorMatrix type="matrix" values="0 0 0 0 0.152941 0 0 0 0 0.152941 0 0 0 0 0.152941 0 0 0 0.15 0"/>
-          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_minus"/>
-          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_minus" result="shape"/>
-        </filter>
-      </defs>
-    </svg>
-  );
+  const MinusCircleIcon = () => {
+    const minusFilterId = `filter_minus_${uniqueId}`;
+    return (
+      <svg
+        className="image-accordion__icon image-accordion__icon--open"
+        width="40"
+        height="40"
+        viewBox="0 0 70 63"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g filter={`url(#${minusFilterId})`}>
+          <path
+            d="M43.3333 24.6663H26.6666V21.333H43.3333M34.9999 6.33301C32.8112 6.33301 30.644 6.7641 28.6219 7.60168C26.5998 8.43926 24.7624 9.66692 23.2148 11.2146C20.0892 14.3402 18.3333 18.5794 18.3333 22.9997C18.3333 27.42 20.0892 31.6592 23.2148 34.7848C24.7624 36.3324 26.5998 37.5601 28.6219 38.3977C30.644 39.2352 32.8112 39.6663 34.9999 39.6663C39.4202 39.6663 43.6594 37.9104 46.785 34.7848C49.9106 31.6592 51.6666 27.42 51.6666 22.9997C51.6666 20.811 51.2355 18.6437 50.3979 16.6216C49.5603 14.5995 48.3327 12.7622 46.785 11.2146C45.2374 9.66692 43.4001 8.43926 41.378 7.60168C39.3559 6.7641 37.1886 6.33301 34.9999 6.33301Z"
+            fill="#2F42BD"
+          />
+        </g>
+        <defs>
+          <filter id={minusFilterId} x="-3" y="-3" width="76" height="76" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feMorphology radius="2" operator="erode" in="SourceAlpha" result="effect1_dropShadow_minus"/>
+            <feOffset dy="12"/>
+            <feGaussianBlur stdDeviation="10"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0.152941 0 0 0 0 0.152941 0 0 0 0 0.152941 0 0 0 0.15 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_minus"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_minus" result="shape"/>
+          </filter>
+        </defs>
+      </svg>
+    );
+  };
 
   return (
     <div 
