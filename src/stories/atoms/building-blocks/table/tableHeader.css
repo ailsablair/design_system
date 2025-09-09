@@ -5,7 +5,7 @@
   display: flex;
   width: 100%;
   align-items: center;
-  border-radius: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-12px, 12px) 0 0;
+  border-radius: var(--spacing-radius-12px) var(--spacing-radius-12px) 0 0;
   border: var(--spacing-stroke-1px, 1px) solid var(--neutral-gray-gray-200, #E5E7EB);
   position: relative;
   box-sizing: border-box;
