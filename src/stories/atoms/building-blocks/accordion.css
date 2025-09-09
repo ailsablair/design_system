@@ -328,7 +328,7 @@
 
 .accordion__trigger:hover .accordion__title {
   color: var(--primary-blue-blue);
-  font-weight: var(--type-weight-bold); /* 700 on hover */
+  font-weight: var(--type-weight-regular); /* 400 - maintain consistent weight on hover */
 }
 
 .accordion__trigger:hover .accordion__icon-frame {
@@ -376,7 +376,7 @@
   .accordion__title {
     font-size: var(--type-size-base) !important; /* 16px */
     line-height: var(--type-line-height-body); /* 20px */
-    font-weight: var(--type-weight-semibold) !important; /* 600 */
+    font-weight: var(--type-weight-regular) !important; /* 400 - consistent on mobile */
   }
   
   .accordion__header {
@@ -426,7 +426,7 @@
   }
   
   .accordion__title {
-    font-weight: var(--type-weight-bold); /* Bolder in high contrast */
+    font-weight: var(--type-weight-semibold); /* 600 - slightly bolder for high contrast readability */
   }
 }
 
@@ -447,6 +447,6 @@
   
   .accordion__title {
     color: black !important;
-    font-weight: var(--type-weight-bold) !important;
+    font-weight: var(--type-weight-semibold) !important; /* 600 - slightly bolder for print readability */
   }
 }
