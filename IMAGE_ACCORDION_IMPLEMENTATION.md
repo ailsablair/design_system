@@ -7,17 +7,17 @@ I've successfully implemented the image accordion variants from your Figma desig
 ## 📁 **Files Created**
 
 ### 1. **ImageAccordion.tsx**
-- **Location**: `src/stories/molecules/building-blocks/ImageAccordion.tsx`
+- **Location**: `src/stories/atoms/building-blocks/ImageAccordion.tsx`
 - **Component**: React component with full TypeScript support
 - **Props**: Matches Figma variant properties exactly
 
 ### 2. **imageAccordion.css**
-- **Location**: `src/stories/molecules/building-blocks/imageAccordion.css`
+- **Location**: `src/stories/atoms/building-blocks/imageAccordion.css`
 - **Styling**: Pixel-perfect match to Figma specifications
 - **Features**: Responsive design, accessibility, animations
 
 ### 3. **ImageAccordion.stories.tsx**
-- **Location**: `src/stories/molecules/building-blocks/ImageAccordion.stories.tsx`
+- **Location**: `src/stories/atoms/building-blocks/ImageAccordion.stories.tsx`
 - **Stories**: Comprehensive showcase of all variants and use cases
 
 ### 4. **Design Tokens Updated**
@@ -158,7 +158,7 @@ const [isOpen, setIsOpen] = useState(false);
 
 The ImageAccordion component is now fully integrated into your design system and available in Storybook. You can:
 
-1. **View in Storybook**: Navigate to "Design System > Molecules > Building Blocks > Image Accordion"
+1. **View in Storybook**: Navigate to "Design System > Atoms > Building Blocks > Image Accordion"
 2. **Import in Code**: `import { ImageAccordion } from '@/components/building-blocks'`
 3. **Customize**: Use the extensive props API for your specific needs
 4. **Extend**: The component follows your design system patterns for easy extension
