@@ -3,7 +3,8 @@
 .accordion-header {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 100%; /* FILL: Take full width of parent container */
+  max-width: 100%; /* Prevent overflow */
   background: transparent;
   border: none;
   padding: 0;
@@ -11,6 +12,7 @@
   transition: var(--transition-normal);
   /* Figma-specific styling for all 72 variants */
   position: relative;
+  box-sizing: border-box;
 }
 
 .accordion-header--interactive {
@@ -27,10 +29,12 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-sizing-12px); /* 12px - exact Figma spec */
-  width: 100%;
-  flex: 1;
+  width: 100%; /* FILL: Full width of header */
+  flex: 1; /* FILL: Expand to available space */
+  min-width: 0; /* Allow flex children to shrink below content size */
   position: relative;
   /* Figma heading+icon layout */
+  box-sizing: border-box;
 }
 
 /* ===== BELL ICON STYLES - EXACT FIGMA SPECS ===== */
@@ -39,7 +43,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  flex-shrink: 0; /* FIXED: Maintain consistent icon size */
   /* Figma bell icon container - no background or border by default */
   transition: var(--transition-normal);
 }
@@ -49,7 +53,7 @@
   opacity: 0.5; /* Exact Figma opacity from design */
   transition: var(--transition-normal);
   color: #2F42BD; /* Exact Figma blue color */
-  flex-shrink: 0;
+  flex-shrink: 0; /* FIXED: Prevent icon distortion */
 }
 
 /* Bell icon sizes - exact Figma specifications */
@@ -88,18 +92,19 @@
 .accordion-header__main {
   display: flex;
   align-items: center;
-  flex: 1;
-  min-width: 0; /* Allow text truncation */
+  flex: 1; /* FILL: Take remaining space between bell and toggle icons */
+  min-width: 0; /* Allow text truncation when space is limited */
 }
 
 .accordion-header__title {
-  flex: 1;
+  flex: 1; /* FILL: Take all available space in main area */
+  min-width: 0; /* Allow shrinking below content size for truncation */
   font-family: var(--type-typeface-archivo); /* Archivo - exact Figma font */
   font-weight: 400; /* Regular weight - exact Figma spec */
   color: #191E3C; /* Exact Figma color var(--primary-blue-dark-blue) */
   transition: var(--transition-normal);
 
-  /* Text overflow handling */
+  /* Text overflow handling - HUG content height, FILL width */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -140,7 +145,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  flex-shrink: 0; /* FIXED: Maintain consistent toggle icon size */
   /* Figma toggle icon container - no background or border by default */
   transition: var(--transition-normal);
 }
@@ -149,7 +154,7 @@
   display: block;
   transition: var(--transition-normal);
   color: #2F42BD; /* Exact Figma blue color */
-  flex-shrink: 0;
+  flex-shrink: 0; /* FIXED: Prevent icon distortion */
   opacity: 1; /* Full opacity for toggle icons in Figma */
 }
 
@@ -339,9 +344,9 @@
 
 @media (max-width: 480px) {
   .accordion-header__title {
-    font-size: 16px !important; /* Mobile size */
-    line-height: 20px !important;
-    font-weight: 400 !important; /* Maintain consistent weight on mobile */
+    font-size: 16px; /* Mobile size - remove !important for cleaner CSS */
+    line-height: 20px;
+    font-weight: 400; /* Maintain consistent weight on mobile */
   }
 
   .accordion-header__content {
@@ -349,23 +354,25 @@
   }
 
   .accordion-header__bell {
-    width: 16px !important;
-    height: 16px !important;
+    width: 16px; /* FIXED: Consistent mobile bell icon size */
+    height: 16px;
+    flex-shrink: 0;
   }
 
   .accordion-header__bell-icon {
-    width: 16px !important;
-    height: 16px !important;
+    width: 16px;
+    height: 16px;
   }
 
   .accordion-header__toggle {
-    width: 18px !important;
-    height: 18px !important;
+    width: 18px; /* FIXED: Consistent mobile toggle size */
+    height: 18px;
+    flex-shrink: 0;
   }
 
   .accordion-header__toggle-icon {
-    width: 18px !important;
-    height: 18px !important;
+    width: 18px;
+    height: 18px;
   }
 }
 
