@@ -453,7 +453,8 @@ export const GridLayout: Story = {
           height={250}
           backgroundImage={item.image}
           status={item.status}
-          content="text"
+          type="image"
+          content="text-img"
           title={item.title}
           body={item.body}
         />
