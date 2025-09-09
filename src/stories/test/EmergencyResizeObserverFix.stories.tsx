@@ -1,5 +1,11 @@
 import React, { useEffect } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import {
+  emergencySuppressionOverride,
+  testErrorSuppression,
+  getSuppressionStatus,
+  restoreOriginalMethods
+} from '../../utils/resizeObserverSuppression';
 
 const meta: Meta = {
   title: 'Test/Emergency ResizeObserver Fix',
