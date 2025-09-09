@@ -11,6 +11,7 @@ const meta: Meta = {
   title: 'Test/Emergency ResizeObserver Fix',
   parameters: {
     layout: 'centered',
+    chromatic: { disable: true }, // Disable in Chromatic due to console errors
     docs: {
       description: {
         component: `

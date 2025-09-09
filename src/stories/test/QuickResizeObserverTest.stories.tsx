@@ -5,6 +5,7 @@ const meta: Meta = {
   title: 'Test/Quick ResizeObserver Error Test',
   parameters: {
     layout: 'centered',
+    chromatic: { disable: true }, // Disable in Chromatic due to console errors
     docs: {
       description: {
         component: `
