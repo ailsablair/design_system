@@ -101,6 +101,7 @@ export const ClosedNoContent: Story = {
   args: {
     ...defaultProps,
     status: 'closed',
+    type: 'image',
     content: 'none',
     icon: true,
   },
@@ -109,17 +110,19 @@ export const ClosedNoContent: Story = {
 export const OpenNoContent: Story = {
   args: {
     ...defaultProps,
-    status: 'open', 
+    status: 'open',
+    type: 'image',
     content: 'none',
     icon: true,
   },
 };
 
-export const OpenWithText: Story = {
+export const OpenWithTextImg: Story = {
   args: {
     ...defaultProps,
     status: 'open',
-    content: 'text',
+    type: 'image',
+    content: 'text-img',
     icon: true,
   },
 };
