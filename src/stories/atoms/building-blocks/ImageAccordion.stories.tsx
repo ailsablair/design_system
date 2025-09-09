@@ -333,7 +333,8 @@ export const ResponsiveShowcase: Story = {
         height={300}
         backgroundImage="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
         status="open"
-        content="text"
+        type="image"
+        content="text-img"
         title="Tablet Size"
         body="Perfect for tablet devices with balanced proportions."
       />
@@ -342,7 +343,8 @@ export const ResponsiveShowcase: Story = {
         height={350}
         backgroundImage="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
         status="open"
-        content="text"
+        type="image"
+        content="text-img"
         title="Desktop Size"
         body="Ideal for desktop displays with full detail visibility."
       />
