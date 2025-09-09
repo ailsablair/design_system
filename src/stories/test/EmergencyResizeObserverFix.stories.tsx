@@ -113,46 +113,7 @@ export const ImmediateSuppressionTest: Story = {
 
     const applyEmergencyFix = () => {
       console.log('🚨 APPLYING EMERGENCY FIX...');
-      
-      // Apply maximum suppression
-      if (typeof (window as any).__EMERGENCY_SUPPRESS_RESIZE_OBSERVER === 'function') {
-        (window as any).__EMERGENCY_SUPPRESS_RESIZE_OBSERVER();
-      }
-
-      if (typeof (window as any).__EMERGENCY_CONFIG_SUPPRESS === 'function') {
-        (window as any).__EMERGENCY_CONFIG_SUPPRESS();
-      }
-
-      // Manual maximum suppression as backup
-      const _orig_error = console.error;
-      const _orig_warn = console.warn;
-      
-      console.error = function(...args: any[]) {
-        const msg = String(args.join(' ')).toLowerCase();
-        if (
-          msg.includes('resize') ||
-          msg.includes('observer') ||
-          msg.includes('undelivered') ||
-          msg.includes('loop')
-        ) {
-          return; // TOTAL SUPPRESSION
-        }
-        _orig_error.apply(console, args);
-      };
-      
-      console.warn = function(...args: any[]) {
-        const msg = String(args.join(' ')).toLowerCase();
-        if (
-          msg.includes('resize') ||
-          msg.includes('observer') ||
-          msg.includes('undelivered') ||
-          msg.includes('loop')
-        ) {
-          return; // TOTAL SUPPRESSION
-        }
-        _orig_warn.apply(console, args);
-      };
-
+      emergencySuppressionOverride();
       console.log('✅ EMERGENCY FIX APPLIED - All ResizeObserver output suppressed');
     };
 
