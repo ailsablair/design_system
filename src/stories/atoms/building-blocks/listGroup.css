@@ -175,7 +175,7 @@
   width: 8px;
   height: 24px;
   background: var(--neutral-gray-gray-300);
-  border-radius: 2px;
+  border-radius: var(--spacing-radius-2px);
   flex-shrink: 0;
 }
 

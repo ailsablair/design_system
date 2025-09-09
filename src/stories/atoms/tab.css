@@ -107,7 +107,7 @@
   height: 2px;
   background: var(--neutral-gray-gray-200);
   width: 100%;
-  border-radius: 1px;
+  border-radius: var(--spacing-radius-2px);
   transition: background-color var(--transition-fast);
 }
 
