@@ -51,8 +51,8 @@ Perfect for FAQs, product information, settings panels, help documentation, and 
   argTypes: {
     type: {
       control: 'select',
-      options: ['simple', 'decorative', 'decorative-plus', 'number', 'label'],
-      description: 'Type of accordion',
+      options: ['contained', 'top', 'middle', 'bottom', 'simple', 'decorative', 'decorative-plus', 'number', 'label'],
+      description: 'Type of accordion - includes Figma position variants (contained, top, middle, bottom)',
     },
     state: {
       control: 'select',
