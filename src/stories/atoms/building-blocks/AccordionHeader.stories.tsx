@@ -713,8 +713,15 @@ export const InteractiveExample: Story = {
         <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: 500 }}>
           Interactive Accordion Headers
         </h3>
-        
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
+
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          border: '1px solid #E5E7EB',
+          borderRadius: '8px',
+          overflow: 'hidden',
+          backgroundColor: '#FFFFFF'
+        }}>
           <AccordionHeader
             size="default"
             iconStyle="plus"
@@ -723,7 +730,7 @@ export const InteractiveExample: Story = {
             title="How do I reset my password?"
             onClick={() => toggleAccordion('item1')}
           />
-          
+
           <AccordionHeader
             size="default"
             iconStyle="plus"
@@ -732,7 +739,7 @@ export const InteractiveExample: Story = {
             title="What payment methods do you accept?"
             onClick={() => toggleAccordion('item2')}
           />
-          
+
           <AccordionHeader
             size="default"
             iconStyle="plus"
@@ -742,9 +749,9 @@ export const InteractiveExample: Story = {
             onClick={() => toggleAccordion('item3')}
           />
         </div>
-        
+
         <div style={{ marginTop: '16px', padding: '12px', background: '#F3F4F6', borderRadius: '6px', fontSize: '14px', color: '#6B7280' }}>
-          <strong>Click any header to toggle its state.</strong> This demonstrates the interactive functionality with proper state management.
+          <strong>Click any header to toggle its state.</strong> This demonstrates the interactive functionality with proper state management and the single-border group pattern.
         </div>
       </div>
     );
@@ -752,7 +759,7 @@ export const InteractiveExample: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Interactive example showing click handling and state management for accordion headers.',
+        story: 'Interactive example showing click handling and state management for accordion headers with the proper single-border group styling.',
       },
     },
   },
