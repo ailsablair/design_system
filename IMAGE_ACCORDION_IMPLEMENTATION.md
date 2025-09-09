@@ -158,7 +158,7 @@ const [isOpen, setIsOpen] = useState(false);
 
 The ImageAccordion component is now fully integrated into your design system and available in Storybook. You can:
 
-1. **View in Storybook**: Navigate to "Design System > Atoms > Building Blocks > Image Accordion"
+1. **View in Storybook**: Navigate to "Atoms > Image Accordion"
 2. **Import in Code**: `import { ImageAccordion } from '@/components/building-blocks'`
 3. **Customize**: Use the extensive props API for your specific needs
 4. **Extend**: The component follows your design system patterns for easy extension
