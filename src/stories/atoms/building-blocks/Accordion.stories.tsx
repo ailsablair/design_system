@@ -73,13 +73,18 @@ Perfect for FAQs, product information, settings panels, help documentation, and 
       options: ['chevron', 'plus'],
       description: 'Icon type for open/close indicator',
     },
+    contentType: {
+      control: 'select',
+      options: ['text', 'list', 'text-img', 'metrics'],
+      description: 'Content type determining layout and styling of accordion content',
+    },
     title: {
       control: 'text',
       description: 'Title text',
     },
     content: {
       control: 'text',
-      description: 'Content text when expanded',
+      description: 'Content text when expanded (for text and text-img types)',
     },
     showIcon: {
       control: 'boolean',
