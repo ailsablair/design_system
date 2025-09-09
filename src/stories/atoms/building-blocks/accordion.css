@@ -2,11 +2,13 @@
 
 .accordion {
   /* Use exact design tokens from tokens.css */
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  width: 100%; /* FILL: Take full width of parent container */
-  max-width: 100%; /* Prevent overflow */
-  border-radius: 0;
+  min-width: 200px;
+  max-width: 1280px;
+  border: 1px solid var(--neutral-gray-gray-300);
+  background: var(--base-white);
+  border-radius: 0; /* Default - will be overridden by position variants */
   transition: var(--transition-normal);
   box-sizing: border-box;
 }
@@ -35,10 +37,23 @@
   align-items: center;
   justify-content: space-between;
   width: 100%; /* FILL: Full width of trigger */
-  min-height: 56px; /* FIXED: Minimum height for touch targets */
-  padding: var(--spacing-sizing-16px);
+  gap: 12px; /* Exact Figma gap */
+  padding: 16px 32px; /* Exact Figma padding */
   transition: var(--transition-normal);
   box-sizing: border-box;
+  /* Min heights based on size */
+}
+
+.accordion--size-small .accordion__header {
+  height: 52px; /* Exact Figma height */
+}
+
+.accordion--size-default .accordion__header {
+  height: 60px; /* Exact Figma height */
+}
+
+.accordion--size-large .accordion__header {
+  height: 64px; /* Exact Figma height */
 }
 
 .accordion__header-wrapper {
@@ -63,14 +78,21 @@
   flex: 1; /* FILL: Take remaining space after icons */
   min-width: 0; /* Allow text truncation when needed */
   font-family: var(--type-typeface-archivo);
-  font-weight: var(--type-weight-regular); /* 400 - exact Figma weight from spans */
-  color: var(--base-black); /* Always black */
+  font-weight: 400; /* Exact Figma weight from spans - using direct value */
+  color: var(--primary-blue-dark-blue); /* Default color: rgba(25,30,60,1) from Figma */
   transition: var(--transition-normal);
+  font-style: normal;
+  position: relative;
 
   /* Ensure text behaves properly */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* Selected state gets black color as shown in Figma */
+.accordion--selected .accordion__title {
+  color: var(--base-black); /* rgba(28,28,28,1) for selected state */
 }
 
 .accordion--open .accordion__title {
@@ -103,28 +125,28 @@
 
 /* ===== SIZE VARIANTS - FIGMA TYPOGRAPHY TOKENS ===== */
 
-/* Small size - Using Figma label typography */
+/* Small size - Exact Figma typography specifications */
 .accordion--size-small .accordion__title {
-  font-size: var(--type-archivo-label-lg); /* 18px */
-  line-height: var(--type-line-height-label-lg); /* 24px */
-  letter-spacing: var(--type-letter-spacing-archivo-label-lg); /* 0.15px */
-  font-weight: var(--type-weight-regular); /* 400 - exact Figma weight */
+  font-size: 18px; /* Exact Figma: font-size:18px */
+  line-height: 24px; /* Exact Figma: line-height:24px (133.333%) */
+  letter-spacing: 0.15px; /* Exact Figma: letter-spacing:0.15px */
+  font-weight: 400; /* Exact Figma font-weight from spans */
 }
 
-/* Default size - Using Figma heading 5 typography */
+/* Default size - Exact Figma typography specifications */
 .accordion--size-default .accordion__title {
-  font-size: var(--type-archivo-heading-5); /* 19px */
-  line-height: var(--type-line-height-heading-5); /* 24px */
-  letter-spacing: var(--type-letter-spacing-archivo-heading-5); /* -0.15px */
-  font-weight: var(--type-weight-regular); /* 400 - exact Figma weight */
+  font-size: 19px; /* Exact Figma: font-size:19px */
+  line-height: 24px; /* Exact Figma: line-height:24px (126.316%) */
+  letter-spacing: -0.15px; /* Exact Figma: letter-spacing:-0.15px */
+  font-weight: 400; /* Exact Figma font-weight from spans */
 }
 
-/* Large size - Using Figma heading 4 typography */
+/* Large size - Exact Figma typography specifications */
 .accordion--size-large .accordion__title {
-  font-size: var(--type-archivo-heading-4); /* 24px */
-  line-height: var(--type-line-height-heading-4); /* 24px */
-  letter-spacing: var(--type-letter-spacing-archivo-heading-4); /* -0.25px */
-  font-weight: var(--type-weight-regular); /* 400 - exact Figma weight */
+  font-size: 24px; /* Exact Figma: font-size:24px */
+  line-height: 24px; /* Exact Figma: line-height:24px (100%) */
+  letter-spacing: -0.25px; /* Exact Figma: letter-spacing:-0.25px */
+  font-weight: 400; /* Exact Figma font-weight from spans */
 }
 
 /* ===== SIZING ADJUSTMENTS ===== */
@@ -301,10 +323,47 @@
   }
 }
 
+/* ===== POSITION VARIANTS - EXACT FIGMA BORDER RADIUS ===== */
+
+/* Top position with rounded top corners */
+.accordion--position-top {
+  border-radius: 12px 12px 0 0; /* Default for small size */
+}
+
+.accordion--position-top.accordion--size-default {
+  border-radius: 16px 16px 0 0;
+}
+
+.accordion--position-top.accordion--size-large {
+  border-radius: 20px 20px 0 0;
+}
+
+.accordion--position-top.accordion--size-default .accordion__header {
+  padding: 32px 32px 24px 32px; /* Exact Figma padding for top position */
+}
+
+.accordion--position-top.accordion--size-large .accordion__header {
+  padding: 20px 32px 16px 32px; /* Exact Figma padding for large top position */
+}
+
+/* Middle position - no border radius */
+.accordion--position-middle {
+  border-radius: 0;
+}
+
+/* Bottom position with rounded bottom corners */
+.accordion--position-bottom {
+  border-radius: 0 0 12px 12px;
+}
+
+.accordion--position-bottom .accordion__header {
+  padding: 16px 32px 20px 32px; /* Exact Figma padding for bottom position */
+}
+
 /* ===== CONTAINED VARIANT - WITH PROPER STROKES ===== */
 
 .accordion--contained {
-  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200); /* Proper stroke */
+  border: 1px solid var(--neutral-gray-gray-300); /* Match Figma border */
   border-radius: var(--spacing-radius-8px);
   overflow: hidden;
 }
@@ -314,7 +373,7 @@
 }
 
 .accordion--contained.accordion--open .accordion__header {
-  border-bottom: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200); /* Proper stroke */
+  border-bottom: 1px solid var(--neutral-gray-gray-300);
 }
 
 .accordion--contained .accordion__content {
