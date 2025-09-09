@@ -130,18 +130,16 @@ export const ImmediateSuppressionTest: Story = {
       console.log('✅ Manual test completed - check console');
     };
 
-    const checkSuppressionStatus = () => {
+    const checkSuppressionStatus = async () => {
       console.log('🔍 CHECKING SUPPRESSION STATUS...');
-      
-      // Test if global functions are available
-      const hasEmergencyFunc = typeof (window as any).__EMERGENCY_SUPPRESS_RESIZE_OBSERVER === 'function';
-      const hasConfigFunc = typeof (window as any).__EMERGENCY_CONFIG_SUPPRESS === 'function';
-      
-      console.log(`Emergency function available: ${hasEmergencyFunc}`);
-      console.log(`Config function available: ${hasConfigFunc}`);
-      
-      // Trigger test error
-      console.error('STATUS TEST: ResizeObserver loop completed with undelivered notifications.');
+
+      const status = getSuppressionStatus();
+      console.log('Suppression status:', status);
+
+      // Test if suppression is working
+      const isWorking = await testErrorSuppression();
+      console.log(`Suppression working: ${isWorking}`);
+
       console.log('✅ Status check completed');
     };
 
