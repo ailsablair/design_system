@@ -100,6 +100,10 @@ import { AccordionHeader } from './AccordionHeader';
       options: ['default', 'hover', 'selected'],
       description: 'Visual state of the header - matches Figma "state" property',
     },
+    grouped: {
+      control: 'boolean',
+      description: 'Whether this header is part of a grouped accordion (removes individual borders)',
+    },
     title: {
       control: 'text',
       description: 'Title text content',
@@ -116,6 +120,7 @@ import { AccordionHeader } from './AccordionHeader';
     contentType: 'N/A',
     open: false,
     state: 'default',
+    grouped: false,
     title: 'This is an accordion section title',
   },
 };
