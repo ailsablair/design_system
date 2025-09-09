@@ -341,7 +341,7 @@
   .accordion-header__title {
     font-size: 16px !important; /* Mobile size */
     line-height: 20px !important;
-    font-weight: 600 !important; /* Semibold for mobile readability */
+    font-weight: 400 !important; /* Maintain consistent weight on mobile */
   }
 
   .accordion-header__content {
@@ -389,7 +389,7 @@
   }
   
   .accordion-header__title {
-    font-weight: var(--type-weight-bold); /* Bolder in high contrast */
+    font-weight: var(--type-weight-semibold); /* 600 - slightly bolder for high contrast readability */
   }
   
   .accordion-header__bell {
@@ -428,7 +428,7 @@
   
   .accordion-header__title {
     color: black !important;
-    font-weight: var(--type-weight-bold) !important;
+    font-weight: var(--type-weight-semibold) !important; /* 600 - slightly bolder for print readability */
   }
   
   .accordion-header__bell {
