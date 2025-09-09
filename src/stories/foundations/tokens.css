@@ -494,6 +494,8 @@
   /* === AVATAR COMPONENT TOKENS === */
   --components-avatar-avatar: 46px;
   --components-avatar-avatar-xs: 26px;
+  --components-avatar-avatar-small: 38px;
+  --components-avatar-avatar-large: 62px;
   --components-avatar-border-radius: 8px;
   --spacing-radius-99999px: 99999px;
 
