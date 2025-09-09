@@ -549,4 +549,7 @@
 
   /* === COMPONENT SHADOWS === */
   --shadow-dropdown: 0 5px 10px 0 rgba(39, 39, 39, 0.10);
+
+  /* === GRADIENT TOKENS === */
+  --gradient-placeholder: linear-gradient(135deg, var(--neutral-gray-gray-100) 0%, var(--neutral-gray-gray-200) 100%);
 }
