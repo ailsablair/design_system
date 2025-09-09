@@ -123,7 +123,7 @@
   opacity: 1;
 }
 
-/* ===== SIZE VARIANTS - FIGMA TYPOGRAPHY TOKENS ===== */
+/* ===== SIZE VARIANTS - EXACT FIGMA TYPOGRAPHY ===== */
 
 /* Small size - Exact Figma typography specifications */
 .accordion--size-small .accordion__title {
@@ -147,6 +147,48 @@
   line-height: 24px; /* Exact Figma: line-height:24px (100%) */
   letter-spacing: -0.25px; /* Exact Figma: letter-spacing:-0.25px */
   font-weight: 400; /* Exact Figma font-weight from spans */
+}
+
+/* ===== HEIGHT VARIANTS - EXACT FIGMA HEIGHTS ===== */
+
+/* Small size height - exact Figma specs */
+.accordion--size-small .accordion__header {
+  height: 52px; /* Exact Figma height for small */
+}
+
+/* Default size height - exact Figma specs */
+.accordion--size-default .accordion__header {
+  height: 60px; /* Exact Figma height for default */
+}
+
+/* Large size height - exact Figma specs */
+.accordion--size-large .accordion__header {
+  height: 64px; /* Exact Figma height for large */
+}
+
+/* Position-specific height adjustments */
+.accordion--position-top.accordion--size-default .accordion__header {
+  height: 64px; /* Exact Figma height for top position default */
+}
+
+.accordion--position-top.accordion--size-large .accordion__header {
+  height: 68px; /* Exact Figma height for top position large */
+}
+
+.accordion--position-top.accordion--size-small .accordion__header {
+  height: 56px; /* Exact Figma height for top position small */
+}
+
+.accordion--position-bottom.accordion--size-default .accordion__header {
+  height: 64px; /* Exact Figma height for bottom position default */
+}
+
+.accordion--position-bottom.accordion--size-large .accordion__header {
+  height: 68px; /* Exact Figma height for bottom position large */
+}
+
+.accordion--position-bottom.accordion--size-small .accordion__header {
+  height: 56px; /* Exact Figma height for bottom position small */
 }
 
 /* ===== SIZING ADJUSTMENTS ===== */
@@ -325,39 +367,75 @@
 
 /* ===== POSITION VARIANTS - EXACT FIGMA BORDER RADIUS ===== */
 
-/* Top position with rounded top corners */
+/* ===== POSITION VARIANTS - EXACT FIGMA SPECIFICATIONS ===== */
+
+/* Top position with rounded top corners - exact Figma border-radius and padding */
 .accordion--position-top {
-  border-radius: 12px 12px 0 0; /* Default for small size */
+  border-radius: 12px 12px 0 0; /* Small size default */
 }
 
 .accordion--position-top.accordion--size-default {
-  border-radius: 16px 16px 0 0;
+  border-radius: 16px 16px 0 0; /* Default size */
 }
 
 .accordion--position-top.accordion--size-large {
-  border-radius: 20px 20px 0 0;
+  border-radius: 20px 20px 0 0; /* Large size */
+}
+
+/* Top position padding - exact Figma specs */
+.accordion--position-top .accordion__header {
+  padding: 20px 32px 16px 32px; /* Exact Figma: padding:20px 32px 16px 32px */
 }
 
 .accordion--position-top.accordion--size-default .accordion__header {
-  padding: 32px 32px 24px 32px; /* Exact Figma padding for top position */
+  padding: 20px 32px 16px 32px; /* Exact Figma for default size top */
 }
 
 .accordion--position-top.accordion--size-large .accordion__header {
-  padding: 20px 32px 16px 32px; /* Exact Figma padding for large top position */
+  padding: 20px 32px 16px 32px; /* Exact Figma for large size top */
 }
 
-/* Middle position - no border radius */
+.accordion--position-top.accordion--size-small .accordion__header {
+  padding: 20px 32px 16px 32px; /* Exact Figma for small size top */
+}
+
+/* Middle position - default padding and no border radius */
 .accordion--position-middle {
   border-radius: 0;
 }
 
-/* Bottom position with rounded bottom corners */
-.accordion--position-bottom {
-  border-radius: 0 0 12px 12px;
+.accordion--position-default {
+  border-radius: 0; /* Default position is same as middle */
 }
 
+/* Bottom position with rounded bottom corners - exact Figma specs */
+.accordion--position-bottom {
+  border-radius: 0 0 12px 12px; /* Exact Figma border-radius */
+}
+
+.accordion--position-bottom.accordion--size-default {
+  border-radius: 0 0 12px 12px; /* Same for all sizes per Figma */
+}
+
+.accordion--position-bottom.accordion--size-large {
+  border-radius: 0 0 12px 12px; /* Same for all sizes per Figma */
+}
+
+/* Bottom position padding - exact Figma specs */
 .accordion--position-bottom .accordion__header {
-  padding: 16px 32px 20px 32px; /* Exact Figma padding for bottom position */
+  padding: 16px 32px 20px 32px; /* Exact Figma: padding:16px 32px 20px 32px */
+}
+
+.accordion--position-bottom.accordion--size-default .accordion__header {
+  padding: 16px 32px 20px 32px; /* Exact Figma for default size bottom */
+}
+
+.accordion--position-bottom.accordion--size-large .accordion__header {
+  padding: 16px 32px 20px 32px; /* Exact Figma for large size bottom */
+}
+
+.accordion--position-bottom.accordion--size-small .accordion__header {
+  padding: 16px 32px 20px 32px; /* Exact Figma for small size bottom */
 }
 
 /* ===== CONTAINED VARIANT - WITH PROPER STROKES ===== */
@@ -424,7 +502,13 @@
   transition: var(--transition-normal); /* Add transition for smooth color changes */
 }
 
-/* ===== HOVER STATES - ENHANCED ===== */
+/* ===== HOVER STATES - EXACT FIGMA MATCH ===== */
+
+/* Hover state background - exact Figma #F9F9FE */
+.accordion__trigger:hover .accordion__header {
+  background: #F9F9FE; /* Exact Figma hover background */
+  border-color: var(--neutral-gray-gray-300); /* Maintain border color */
+}
 
 .accordion__trigger:hover .accordion__title {
   color: var(--base-black); /* Keep title black at all times */
@@ -453,6 +537,28 @@
 .accordion--type-simple .accordion__trigger:hover .accordion__heading-icon svg {
   color: var(--primary-blue-blue) !important;
   opacity: var(--icon-opacity-strong); /* 0.8 */
+}
+
+/* Interaction state hover - exact Figma match */
+.accordion--state-hover .accordion__header {
+  background: #F9F9FE; /* Exact Figma hover background */
+  border-color: var(--neutral-gray-gray-300);
+}
+
+.accordion--state-hover .accordion__title {
+  color: var(--base-black); /* Keep title black at all times */
+}
+
+.accordion--state-hover .accordion__icon-frame {
+  color: var(--primary-blue-blue);
+}
+
+.accordion--state-hover .accordion__toggle-icon {
+  color: var(--primary-blue-blue) !important;
+}
+
+.accordion--state-hover .accordion__heading-icon svg {
+  color: var(--primary-blue-blue) !important;
 }
 
 /* ===== FOCUS STATES ===== */
