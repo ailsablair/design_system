@@ -357,6 +357,11 @@
   --type-size-5xl: 48px;
   --type-size-6xl: 60px;
 
+  /* Display typography for large statistical values */
+  --type-size-display-sm: 48px;
+  --type-size-display-md: 64px;
+  --type-size-display-lg: 82px;
+
   /* Figma Specific Typography Tokens */
   --type-archivo-label-sm: 14px;
   --type-archivo-label: 16px;
