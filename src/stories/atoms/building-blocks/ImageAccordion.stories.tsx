@@ -392,7 +392,8 @@ export const ControlledExample: Story = {
           {...defaultProps}
           isOpen={isOpen}
           onToggle={setIsOpen}
-          content="text"
+          type="image"
+          content="text-img"
           title="Controlled Image Accordion"
           body="This accordion is controlled by external state and can be toggled using the button above or by clicking the accordion itself."
         />
