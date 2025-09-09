@@ -57,14 +57,14 @@
 .accordion__title {
   flex: 1;
   font-family: var(--type-typeface-archivo);
-  font-weight: var(--type-weight-semibold); /* 600 - proper Figma weight */
+  font-weight: var(--type-weight-regular); /* 400 - exact Figma weight from spans */
   color: var(--primary-blue-dark-blue);
   transition: var(--transition-normal);
 }
 
 .accordion--open .accordion__title {
   color: var(--primary-blue-blue);
-  font-weight: var(--type-weight-bold); /* 700 when open */
+  font-weight: var(--type-weight-regular); /* 400 - maintain consistent weight when open */
 }
 
 /* ===== SIZE VARIANTS - FIGMA TYPOGRAPHY TOKENS ===== */
@@ -74,7 +74,7 @@
   font-size: var(--type-archivo-label-lg); /* 18px */
   line-height: var(--type-line-height-label-lg); /* 24px */
   letter-spacing: var(--type-letter-spacing-archivo-label-lg); /* 0.15px */
-  font-weight: var(--type-weight-semibold); /* 600 */
+  font-weight: var(--type-weight-regular); /* 400 - exact Figma weight */
 }
 
 /* Default size - Using Figma heading 5 typography */
@@ -82,7 +82,7 @@
   font-size: var(--type-archivo-heading-5); /* 19px */
   line-height: var(--type-line-height-heading-5); /* 24px */
   letter-spacing: var(--type-letter-spacing-archivo-heading-5); /* -0.15px */
-  font-weight: var(--type-weight-semibold); /* 600 */
+  font-weight: var(--type-weight-regular); /* 400 - exact Figma weight */
 }
 
 /* Large size - Using Figma heading 4 typography */
@@ -90,7 +90,7 @@
   font-size: var(--type-archivo-heading-4); /* 24px */
   line-height: var(--type-line-height-heading-4); /* 24px */
   letter-spacing: var(--type-letter-spacing-archivo-heading-4); /* -0.25px */
-  font-weight: var(--type-weight-semibold); /* 600 */
+  font-weight: var(--type-weight-regular); /* 400 - exact Figma weight */
 }
 
 /* ===== SIZING ADJUSTMENTS ===== */
