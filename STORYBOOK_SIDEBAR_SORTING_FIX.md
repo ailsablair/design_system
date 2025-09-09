@@ -13,12 +13,11 @@ Replaced all instances of "~ Building Blocks" with "🧱 Building Blocks" in sto
 
 **Atoms:**
 - `src/stories/atoms/building-blocks/Overview.stories.tsx`
-- Building blocks components in `src/stories/atoms/building-blocks/` (excluding accordions which moved to Molecules)
+- All 20+ building blocks components in `src/stories/atoms/building-blocks/`
 - All table-related components in `src/stories/atoms/building-blocks/table/`
 
 **Molecules:**
 - `src/stories/molecules/building-blocks/Overview.stories.tsx`
-- All accordion components moved from Atoms Building Blocks to Molecules Building Blocks
 - `src/stories/atoms/TableRow.stories.tsx` (moved to Molecules Building Blocks)
 
 ### 2. Custom Sorting Logic
@@ -77,8 +76,10 @@ The Storybook sidebar should now display:
 - Card
 - ... (all other atoms alphabetically)
 - **🧱 Building Blocks** ← Pinned to bottom
+  - Accordion
+  - AccordionHeader
   - Badge
-  - ... (all building blocks except accordions)
+  - ... (all building blocks)
   - Table
     - All Table Cell Variants
     - FigmaTable
@@ -89,10 +90,6 @@ The Storybook sidebar should now display:
 - Dropdown Menu
 - ... (all other molecules alphabetically)
 - **🧱 Building Blocks** ← Pinned to bottom
-  - Accordion
-  - AccordionHeader
-  - Image Accordion
-  - ... (all accordion components)
   - Overview
   - TableRow
 
