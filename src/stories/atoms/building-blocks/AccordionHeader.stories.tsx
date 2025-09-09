@@ -169,6 +169,124 @@ export const SelectedState: Story = {
   },
 };
 
+export const GroupedExample: Story = {
+  args: {
+    ...Default.args,
+    grouped: true,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Grouped variant removes individual borders - use when headers are part of a group container.',
+      },
+    },
+  },
+};
+
+// ===== GROUPED VS STANDALONE COMPARISON ===== //
+
+export const GroupedVsStandalone: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+      <div>
+        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>
+          Standalone Accordion Headers (Default)
+        </h4>
+        <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: '#6B7280' }}>
+          Each header maintains its own border and styling. Use for individual accordions.
+        </p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          <AccordionHeader
+            size="default"
+            iconStyle="plus"
+            position="top"
+            open={false}
+            title="Standalone top position"
+          />
+          <AccordionHeader
+            size="default"
+            iconStyle="plus"
+            position="middle"
+            open={true}
+            title="Standalone middle position"
+          />
+          <AccordionHeader
+            size="default"
+            iconStyle="plus"
+            position="bottom"
+            open={false}
+            title="Standalone bottom position"
+          />
+        </div>
+      </div>
+
+      <div>
+        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: 500 }}>
+          Grouped Accordion Headers
+        </h4>
+        <p style={{ margin: '0 0 16px 0', fontSize: '14px', color: '#6B7280' }}>
+          Individual borders removed, separators between items. Use with a container border.
+        </p>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          border: '1px solid #E5E7EB',
+          borderRadius: '8px',
+          overflow: 'hidden',
+          backgroundColor: '#FFFFFF'
+        }}>
+          <AccordionHeader
+            grouped
+            size="default"
+            iconStyle="plus"
+            position="top"
+            open={false}
+            title="Grouped top position"
+          />
+          <AccordionHeader
+            grouped
+            size="default"
+            iconStyle="plus"
+            position="middle"
+            open={true}
+            title="Grouped middle position"
+          />
+          <AccordionHeader
+            grouped
+            size="default"
+            iconStyle="plus"
+            position="bottom"
+            open={false}
+            title="Grouped bottom position"
+          />
+        </div>
+      </div>
+
+      <div style={{
+        padding: '16px',
+        backgroundColor: '#F3F4F6',
+        borderRadius: '8px',
+        fontSize: '14px',
+        color: '#374151'
+      }}>
+        <strong>Key Differences:</strong>
+        <ul style={{ margin: '8px 0 0 0', paddingLeft: '20px' }}>
+          <li><strong>Standalone:</strong> Individual borders, can be used anywhere</li>
+          <li><strong>Grouped:</strong> No individual borders, requires container with border</li>
+          <li><strong>Usage:</strong> Use `grouped={true}` only when headers are inside a bordered container</li>
+        </ul>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Comparison between standalone accordion headers (with individual borders) and grouped headers (without individual borders). The grouped variant is designed for use within a container that provides the outer border.',
+      },
+    },
+  },
+};
+
 // ===== SIZE VARIANTS ===== //
 
 export const SizeVariants: Story = {
