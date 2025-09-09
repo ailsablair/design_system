@@ -480,6 +480,10 @@
   --sizing-auto: auto;
   --sizing-flex-1: 1;
 
+  /* === COMPONENT SPECIFIC SIZING TOKENS === */
+  --sizing-width-100: 100px;
+  --sizing-width-140: 140px;
+
   /* === AVATAR COMPONENT TOKENS === */
   --components-avatar-avatar: 46px;
   --components-avatar-avatar-xs: 26px;
