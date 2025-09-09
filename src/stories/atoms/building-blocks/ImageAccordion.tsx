@@ -32,12 +32,13 @@ export interface ImageAccordionProps {
 
 /**
  * ImageAccordion component matching Figma design specifications
- * 
+ *
  * A specialized accordion designed for image overlays with floating toggle icons.
- * 
+ *
  * Features:
  * - Floating plus/minus circle toggle icon with drop shadow
- * - Optional gradient text overlay when open
+ * - Optional gradient text overlay when open (text-img content type)
+ * - Image type specification matching Figma design
  * - Responsive design with customizable dimensions
  * - Smooth animations and transitions
  * - Accessibility support
