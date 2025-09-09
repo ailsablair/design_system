@@ -5,7 +5,7 @@
   gap: var(--space-3);
   padding: var(--space-3);
   border: 1px solid var(--color-gray-200);
-  border-radius: var(--border-radius-default);
+  border-radius: var(--spacing-radius-8px);
   background-color: var(--color-white);
   transition: all var(--transition-duration-default);
   width: 100%;

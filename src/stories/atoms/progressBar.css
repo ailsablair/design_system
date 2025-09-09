@@ -10,7 +10,7 @@
 .progress-bar__container {
   flex: 1;
   background-color: var(--color-gray-200);
-  border-radius: var(--border-radius-full);
+  border-radius: var(--spacing-radius-full);
   overflow: hidden;
   position: relative;
 }
@@ -19,7 +19,7 @@
 .progress-bar__fill {
   height: 100%;
   background-color: var(--color-primary-blue);
-  border-radius: var(--border-radius-full);
+  border-radius: var(--spacing-radius-full);
   transition: width var(--transition-duration-default) ease-in-out;
   display: flex;
   align-items: center;
