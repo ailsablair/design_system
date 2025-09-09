@@ -22,11 +22,11 @@
 .card.card-size-default {
   padding: var(--spacing-sizing-24px);
   gap: var(--spacing-sizing-16px);
-  width: 334px;
+  width: var(--sizing-width-334);
 }
 
 .card.card-size-default.card-align-horizontal {
-  width: 668px;
+  width: var(--sizing-width-668);
 }
 
 .card.card-size-large {
@@ -37,7 +37,7 @@
 /* === SHADOW VARIANTS === */
 
 .card.card-shadow {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-sm);
 }
 
 .card.card-no-shadow {
@@ -354,15 +354,15 @@
 }
 
 .card.card-size-small .card-stat-value {
-  font-size: 48px;
+  font-size: var(--type-size-display-sm);
 }
 
 .card.card-size-default .card-stat-value {
-  font-size: 64px;
+  font-size: var(--type-size-display-md);
 }
 
 .card.card-size-large .card-stat-value {
-  font-size: 82px;
+  font-size: var(--type-size-display-lg);
 }
 
 .card.card-font-archivo .card-stat-value {
