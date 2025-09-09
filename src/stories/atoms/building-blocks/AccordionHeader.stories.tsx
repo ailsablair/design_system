@@ -260,9 +260,21 @@ export const PositionVariants: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       <div>
-        <h4 style={{ margin: '0 0 12px 0', fontSize: '14px', fontWeight: 500 }}>Grouped Accordion with Plus Icons</h4>
+        <h4 style={{ margin: '0 0 12px 0', fontSize: '14px', fontWeight: 500 }}>Individual Position Variants (Standalone)</h4>
         <p style={{ margin: '0 0 12px 0', fontSize: '12px', color: '#6B7280' }}>
-          Position variants are designed for grouped accordions with a single border around the entire group and separators between items.
+          Position variants as standalone elements maintain their individual borders and styling.
+        </p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          <AccordionHeader position="top" iconStyle="plus" open={false} title="Top position (standalone)" />
+          <AccordionHeader position="middle" iconStyle="plus" open={true} title="Middle position (standalone)" />
+          <AccordionHeader position="bottom" iconStyle="plus" open={false} title="Bottom position (standalone)" />
+        </div>
+      </div>
+
+      <div>
+        <h4 style={{ margin: '0 0 12px 0', fontSize: '14px', fontWeight: 500 }}>Grouped Position Variants</h4>
+        <p style={{ margin: '0 0 12px 0', fontSize: '12px', color: '#6B7280' }}>
+          When used with the `grouped` prop, individual borders are removed and separators are used between items.
         </p>
         <div style={{
           display: 'flex',
@@ -272,14 +284,14 @@ export const PositionVariants: Story = {
           overflow: 'hidden',
           backgroundColor: '#FFFFFF'
         }}>
-          <AccordionHeader position="top" iconStyle="plus" open={false} title="First accordion section" />
-          <AccordionHeader position="middle" iconStyle="plus" open={true} title="Second accordion section (expanded)" />
-          <AccordionHeader position="bottom" iconStyle="plus" open={false} title="Third accordion section" />
+          <AccordionHeader grouped position="top" iconStyle="plus" open={false} title="First accordion section" />
+          <AccordionHeader grouped position="middle" iconStyle="plus" open={true} title="Second accordion section (expanded)" />
+          <AccordionHeader grouped position="bottom" iconStyle="plus" open={false} title="Third accordion section" />
         </div>
       </div>
 
       <div>
-        <h4 style={{ margin: '0 0 12px 0', fontSize: '14px', fontWeight: 500 }}>Grouped Accordion with Chevron Icons</h4>
+        <h4 style={{ margin: '0 0 12px 0', fontSize: '14px', fontWeight: 500 }}>Grouped with Chevron Icons</h4>
         <p style={{ margin: '0 0 12px 0', fontSize: '12px', color: '#6B7280' }}>
           Same grouping pattern with chevron icons instead of plus/minus icons.
         </p>
@@ -291,9 +303,9 @@ export const PositionVariants: Story = {
           overflow: 'hidden',
           backgroundColor: '#FFFFFF'
         }}>
-          <AccordionHeader position="top" iconStyle="chevron" open={false} title="FAQ: How do I reset my password?" />
-          <AccordionHeader position="middle" iconStyle="chevron" open={true} title="FAQ: What payment methods are accepted?" />
-          <AccordionHeader position="bottom" iconStyle="chevron" open={false} title="FAQ: How do I contact support?" />
+          <AccordionHeader grouped position="top" iconStyle="chevron" open={false} title="FAQ: How do I reset my password?" />
+          <AccordionHeader grouped position="middle" iconStyle="chevron" open={true} title="FAQ: What payment methods are accepted?" />
+          <AccordionHeader grouped position="bottom" iconStyle="chevron" open={false} title="FAQ: How do I contact support?" />
         </div>
       </div>
 
@@ -307,10 +319,10 @@ export const PositionVariants: Story = {
       }}>
         <strong>📝 Implementation Note:</strong>
         <ul style={{ margin: '8px 0 0 0', paddingLeft: '20px' }}>
-          <li>Position variants (top, middle, bottom) remove individual borders</li>
-          <li>Only separators between items and one border around the entire group</li>
-          <li>Container should have border and border-radius</li>
-          <li>Use overflow: hidden to ensure clean edges</li>
+          <li><strong>Standalone:</strong> Position variants maintain individual borders and styling</li>
+          <li><strong>Grouped:</strong> Use `grouped={true}` prop to remove individual borders</li>
+          <li><strong>Container:</strong> Grouped accordions need a container with border and border-radius</li>
+          <li><strong>Separators:</strong> Only separators between items, no double borders</li>
         </ul>
       </div>
     </div>
@@ -318,7 +330,7 @@ export const PositionVariants: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Position variants demonstrate grouped accordion headers with a single border around the entire group and separators between individual items. This prevents double borders and creates a cleaner visual hierarchy.',
+        story: 'Position variants show both standalone usage (with individual borders) and grouped usage (with single border around group). Use the `grouped` prop to control border behavior.',
       },
     },
   },
