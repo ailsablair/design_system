@@ -30,9 +30,12 @@ I've successfully implemented the image accordion variants from your Figma desig
 - ✅ **Closed**: Default state with floating plus icon
 - ✅ **Open**: Expanded state with floating minus icon
 
+### **Type Variants**
+- ✅ **Image**: Image accordion type specification
+
 ### **Content Variants**
 - ✅ **None**: No text overlay when open
-- ✅ **Text**: Gradient text overlay with title and body
+- ✅ **Text-img**: Gradient text overlay with title and body
 
 ### **Features Implemented**
 - ✅ **Floating Toggle Icon**: Plus/minus circle with exact Figma drop shadow
