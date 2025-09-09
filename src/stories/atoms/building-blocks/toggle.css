@@ -24,58 +24,58 @@
 
 /* Small size slide area */
 .toggle-slide-area.small {
-  height: 18px;
-  width: 32px;
+  height: var(--sizing-toggle-small-height);
+  width: var(--sizing-toggle-small-width);
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-dark-sky-blue);
 }
 
 .toggle-slide-area.small.enabled {
-  padding-left: 13px;
+  padding-left: calc(var(--sizing-toggle-small-width) / 2 - var(--spacing-sizing-2px));
   justify-content: flex-end;
   background: var(--primary-sky-blue-sky-blue);
 }
 
 .toggle-slide-area.small.disabled-toggle {
-  padding-right: 13px;
+  padding-right: calc(var(--sizing-toggle-small-width) / 2 - var(--spacing-sizing-2px));
   background: var(--base-white);
 }
 
 /* Default size slide area */
 .toggle-slide-area.default {
-  height: 24px;
-  width: 44px;
+  height: var(--sizing-toggle-default-height);
+  width: var(--sizing-toggle-default-width);
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-dark-sky-blue);
 }
 
 .toggle-slide-area.default.enabled {
-  padding-left: 18px;
+  padding-left: calc(var(--sizing-toggle-default-width) / 2 - var(--spacing-sizing-4px));
   justify-content: flex-end;
   background: var(--primary-sky-blue-sky-blue);
 }
 
 .toggle-slide-area.default.disabled-toggle {
-  padding-right: 16px;
+  padding-right: calc(var(--sizing-toggle-default-width) / 2 - var(--spacing-sizing-4px));
   background: var(--base-white);
 }
 
 /* Large size slide area */
 .toggle-slide-area.large {
-  height: 28px;
-  width: 56px;
+  height: var(--sizing-toggle-large-height);
+  width: var(--sizing-toggle-large-width);
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-dark-sky-blue);
 }
 
 .toggle-slide-area.large.enabled {
-  padding-left: 22px;
+  padding-left: calc(var(--sizing-toggle-large-width) / 2 - var(--spacing-sizing-6px));
   justify-content: flex-end;
   background: var(--primary-sky-blue-sky-blue);
 }
 
 .toggle-slide-area.large.disabled-toggle {
-  padding-right: 22px;
+  padding-right: calc(var(--sizing-toggle-large-width) / 2 - var(--spacing-sizing-6px));
   background: var(--base-white);
 }
 
