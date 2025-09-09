@@ -9,11 +9,11 @@
   position: relative;
   
   /* Default size gap */
-  gap: 19px;
-  
+  gap: var(--spacing-sizing-20px);
+
   /* Large size gap */
   &.stepper-size-large {
-    gap: 39px;
+    gap: var(--spacing-sizing-40px);
   }
   
   /* Make it interactive if click handler is provided */
@@ -56,16 +56,16 @@
   
   /* Default size */
   .stepper-size-default & {
-    width: 100px;
-    height: 100px;
-    padding-top: 9px;
+    width: var(--sizing-width-100);
+    height: var(--sizing-width-100);
+    padding-top: var(--spacing-sizing-8px);
   }
-  
+
   /* Large size */
   .stepper-size-large & {
-    width: 140px;
-    height: 140px;
-    padding-top: 29px;
+    width: var(--sizing-width-140);
+    height: var(--sizing-width-140);
+    padding-top: var(--spacing-sizing-32px);
   }
 }
 
@@ -84,20 +84,20 @@
     font-size: var(--type-archivo-heading-1, 36px);
     line-height: 38px;
     letter-spacing: var(--type-letter-spacing-archivo-heading-1, -1px);
-    width: 86px;
-    height: 82px;
-    left: 7px;
-    top: 9px;
+    width: calc(var(--sizing-width-100) - var(--spacing-sizing-16px));
+    height: calc(var(--sizing-width-100) - var(--spacing-sizing-16px));
+    left: var(--spacing-sizing-8px);
+    top: var(--spacing-sizing-8px);
   }
   
   /* Large size typography */
   .stepper-size-large & {
-    font-size: 60px;
-    line-height: 38px;
+    font-size: var(--type-size-5xl);
+    line-height: var(--type-line-height-heading-1);
     letter-spacing: var(--type-letter-spacing-archivo-heading-1, -1px);
-    width: 86px;
-    height: 82px;
-    left: 27px;
+    width: calc(var(--sizing-width-140) - var(--spacing-sizing-56px));
+    height: calc(var(--sizing-width-140) - var(--spacing-sizing-56px));
+    left: var(--spacing-sizing-32px);
     top: 29px;
   }
 }
