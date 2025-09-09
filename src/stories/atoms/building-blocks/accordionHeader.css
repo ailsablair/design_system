@@ -206,10 +206,10 @@
   color: var(--primary-blue-blue); /* Use design token */
 }
 
-/* Hover state - enhanced with better visual feedback */
+/* Hover state - title stays black, only icons change color */
 .accordion-header--state-hover .accordion-header__title,
 .accordion-header--interactive:hover .accordion-header__title {
-  color: var(--primary-blue-blue) !important; /* Change to blue on hover for better feedback */
+  color: var(--base-black); /* Keep title black at all times */
   font-weight: 400; /* Same as default in Figma hover state */
 }
 
@@ -240,9 +240,9 @@
   color: #2F42BD; /* Same blue color */
 }
 
-/* Open state - enhanced for better visual feedback */
+/* Open state - title stays black, only icons change color */
 .accordion-header--open .accordion-header__title {
-  color: var(--primary-blue-blue) !important; /* Blue color when open */
+  color: var(--base-black); /* Keep title black at all times */
   font-weight: 400; /* Regular weight */
 }
 
@@ -258,7 +258,7 @@
 
 /* Combined states - Open + Selected (when both true and selected) */
 .accordion-header--open.accordion-header--state-selected .accordion-header__title {
-  color: var(--primary-blue-blue); /* Blue color for open+selected state */
+  color: var(--base-black); /* Keep title black at all times */
   font-weight: 400; /* Regular weight as per Figma */
 }
 
@@ -274,7 +274,7 @@
 
 /* Enhanced Open + Hover state */
 .accordion-header--open.accordion-header--interactive:hover .accordion-header__title {
-  color: var(--primary-blue-blue-600); /* Darker blue for open+hover */
+  color: var(--base-black); /* Keep title black at all times */
 }
 
 .accordion-header--open.accordion-header--interactive:hover .accordion-header__bell-icon {
@@ -339,7 +339,7 @@
 }
 
 .accordion-header--interactive:active .accordion-header__title {
-  color: var(--primary-blue-blue-600) !important; /* Darker blue for active state */
+  color: var(--base-black); /* Keep title black at all times */
 }
 
 .accordion-header--interactive:active .accordion-header__bell-icon {
@@ -353,7 +353,7 @@
 }
 
 .accordion-header--interactive:focus-visible .accordion-header__title {
-  color: var(--primary-blue-blue) !important; /* Blue color on focus */
+  color: var(--base-black); /* Keep title black at all times */
 }
 
 .accordion-header--interactive:focus-visible .accordion-header__bell-icon {
