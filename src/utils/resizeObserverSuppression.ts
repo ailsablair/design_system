@@ -19,6 +19,11 @@ declare global {
       warn: typeof console.warn;
       onError: typeof window.onerror;
     };
+    // Emergency functions for browser console use
+    __EMERGENCY_SUPPRESS_RESIZE_OBSERVER?: () => void;
+    __EMERGENCY_CONFIG_SUPPRESS?: () => void;
+    __EMERGENCY_TEST_SUPPRESSION?: () => Promise<boolean>;
+    __EMERGENCY_RESTORE_CONSOLE?: () => void;
   }
 }
 
