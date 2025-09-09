@@ -1,0 +1,414 @@
+/* ===== IMAGE ACCORDION COMPONENT - FIGMA DESIGN MATCH ===== */
+
+.image-accordion {
+  /* Container setup */
+  position: relative;
+  display: inline-block;
+  border-radius: var(--spacing-radius-48px); /* 48px - exact Figma radius */
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-sizing: border-box;
+  
+  /* Background image setup */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Ensure minimum size for usability */
+  min-width: 300px;
+  min-height: 200px;
+  
+  /* Focus styles for accessibility */
+  outline: none;
+}
+
+.image-accordion:focus-visible {
+  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
+  outline-offset: var(--spacing-sizing-2px);
+}
+
+/* ===== PLACEHOLDER STYLES ===== */
+
+.image-accordion__placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+  color: var(--neutral-gray-gray-600);
+  font-family: var(--type-typeface-archivo);
+  font-size: 18px;
+  font-weight: var(--type-weight-medium);
+  border-radius: var(--spacing-radius-48px);
+}
+
+/* ===== FLOATING TOGGLE ICON STYLES ===== */
+
+.image-accordion__toggle {
+  position: absolute;
+  left: 20px; /* Exact Figma positioning */
+  bottom: 20px; /* Exact Figma positioning */
+  z-index: 10;
+  transition: all var(--transition-normal);
+  
+  /* Ensure touch target is large enough */
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-accordion__icon {
+  width: 40px; /* Exact Figma size */
+  height: 40px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  
+  /* Drop shadow from Figma filter */
+  filter: drop-shadow(0 12px 20px rgba(39, 39, 39, 0.15));
+}
+
+.image-accordion__icon--open {
+  /* Additional styles for open state */
+}
+
+/* Hover effects for toggle icon */
+.image-accordion:hover .image-accordion__icon {
+  transform: scale(1.05);
+  filter: drop-shadow(0 16px 24px rgba(39, 39, 39, 0.2));
+}
+
+.image-accordion:active .image-accordion__icon {
+  transform: scale(0.95);
+  filter: drop-shadow(0 8px 16px rgba(39, 39, 39, 0.1));
+}
+
+/* ===== CONTENT OVERLAY STYLES ===== */
+
+.image-accordion__content-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  
+  /* Exact Figma gradient background */
+  background: linear-gradient(
+    0deg, 
+    #FFF 0%, 
+    rgba(255, 255, 255, 0.89) 53.07%, 
+    rgba(255, 255, 255, 0.80) 64.73%, 
+    rgba(255, 255, 255, 0.62) 74.87%, 
+    rgba(255, 255, 255, 0.00) 93.75%
+  );
+  
+  /* Figma positioning and sizing */
+  padding: 40px 30px 33px 40px; /* Responsive version of Figma padding */
+  border-radius: 0 0 var(--spacing-radius-48px) var(--spacing-radius-48px);
+  opacity: 0.7; /* Exact Figma opacity */
+  
+  /* Animation for smooth appearance */
+  animation: overlay-fade-in var(--transition-fast) ease-out;
+  
+  /* Responsive adjustments */
+  min-height: 120px;
+  display: flex;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+
+@keyframes overlay-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+}
+
+/* ===== TEXT CONTENT STYLES ===== */
+
+.image-accordion__text-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-4px); /* 4px - exact Figma gap */
+  position: relative;
+  /* Ensure text doesn't get too close to toggle icon */
+  margin-right: 60px;
+}
+
+.image-accordion__title {
+  /* Exact Figma typography */
+  font-family: var(--type-typeface-archivo);
+  font-size: var(--type-archivo-heading-2); /* 32px */
+  font-weight: var(--type-weight-medium); /* 500 */
+  line-height: var(--type-line-height-heading-2); /* 34px */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-2); /* -1px */
+  color: var(--base-black); /* #1C1C1C */
+  
+  /* Figma styling */
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  
+  /* Text overflow handling */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.image-accordion__body {
+  /* Exact Figma typography */
+  font-family: var(--type-typeface-roboto-flex);
+  font-size: var(--type-archivo-heading-5); /* 19px */
+  font-weight: var(--type-weight-default); /* 400 */
+  line-height: var(--type-line-height-heading-5); /* 24px */
+  letter-spacing: var(--type-letter-spacing-roboto-flex-heading-5); /* 0.5px */
+  color: var(--base-black); /* #1C1C1C */
+  
+  /* Figma styling */
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  
+  /* Text overflow handling */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  
+  /* Limit height to prevent overwhelming overlay */
+  max-height: 96px; /* Approximate Figma height */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== SCREEN READER ONLY IMAGE ===== */
+
+.image-accordion__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+  .image-accordion {
+    min-width: 250px;
+    min-height: 180px;
+  }
+  
+  .image-accordion__content-overlay {
+    padding: 32px 24px 24px 32px;
+    min-height: 100px;
+  }
+  
+  .image-accordion__title {
+    font-size: 24px; /* Scale down from 32px */
+    line-height: 28px;
+    letter-spacing: -0.5px;
+  }
+  
+  .image-accordion__body {
+    font-size: 16px; /* Scale down from 19px */
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    max-height: 80px;
+  }
+  
+  .image-accordion__text-content {
+    margin-right: 50px; /* Adjust for smaller screens */
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .image-accordion {
+    min-width: 200px;
+    min-height: 150px;
+    border-radius: 24px; /* Smaller radius for mobile */
+  }
+  
+  .image-accordion__placeholder {
+    border-radius: 24px;
+    font-size: 16px;
+  }
+  
+  .image-accordion__content-overlay {
+    padding: 24px 20px 20px 24px;
+    min-height: 80px;
+    border-radius: 0 0 24px 24px;
+  }
+  
+  .image-accordion__toggle {
+    left: 16px;
+    bottom: 16px;
+  }
+  
+  .image-accordion__icon {
+    width: 32px; /* Smaller icon for mobile */
+    height: 32px;
+    filter: drop-shadow(0 8px 16px rgba(39, 39, 39, 0.15));
+  }
+  
+  .image-accordion__title {
+    font-size: 20px; /* Further scale down */
+    line-height: 24px;
+    letter-spacing: -0.25px;
+  }
+  
+  .image-accordion__body {
+    font-size: 14px; /* Scale down for mobile */
+    line-height: 18px;
+    letter-spacing: 0.1px;
+    max-height: 60px;
+  }
+  
+  .image-accordion__text-content {
+    margin-right: 40px; /* Adjust for mobile */
+    gap: 2px; /* Tighter spacing on mobile */
+  }
+}
+
+/* ===== HOVER AND INTERACTION STATES ===== */
+
+.image-accordion:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.image-accordion:hover .image-accordion__content-overlay {
+  opacity: 0.8; /* Slightly more opaque on hover */
+}
+
+.image-accordion:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .image-accordion__content-overlay {
+    background: linear-gradient(
+      0deg, 
+      #FFF 0%, 
+      rgba(255, 255, 255, 0.95) 50%, 
+      rgba(255, 255, 255, 0.85) 70%, 
+      rgba(255, 255, 255, 0.00) 95%
+    );
+    opacity: 0.9;
+  }
+  
+  .image-accordion__title,
+  .image-accordion__body {
+    color: #000;
+    font-weight: var(--type-weight-medium);
+  }
+  
+  .image-accordion__placeholder {
+    background: #FFF;
+    color: #000;
+    border: 2px solid #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .image-accordion,
+  .image-accordion__icon,
+  .image-accordion__content-overlay {
+    transition: none;
+    animation: none;
+  }
+  
+  .image-accordion:hover {
+    transform: none;
+  }
+  
+  .image-accordion:active {
+    transform: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .image-accordion {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  .image-accordion__content-overlay {
+    background: rgba(255, 255, 255, 0.9);
+    opacity: 1;
+  }
+  
+  .image-accordion__title,
+  .image-accordion__body {
+    color: #000 !important;
+  }
+  
+  .image-accordion__toggle {
+    display: none; /* Hide interactive elements in print */
+  }
+}
+
+/* ===== STATE VARIANTS ===== */
+
+/* Closed state (default) */
+.image-accordion--status-closed {
+  /* Default styles applied above */
+}
+
+/* Open state */
+.image-accordion--status-open {
+  /* Content overlay will be visible when content is 'text' */
+}
+
+/* Content variants */
+.image-accordion--content-none {
+  /* No content overlay */
+}
+
+.image-accordion--content-text.image-accordion--content-visible {
+  /* Text content overlay is visible */
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+.image-accordion--small {
+  min-width: 200px;
+  min-height: 150px;
+}
+
+.image-accordion--medium {
+  min-width: 400px;
+  min-height: 300px;
+}
+
+.image-accordion--large {
+  min-width: 600px;
+  min-height: 400px;
+}
+
+.image-accordion--full-width {
+  width: 100%;
+  max-width: none;
+}
