@@ -500,7 +500,7 @@ export const ExactFigmaGrid: Story = {
                 contentType={variant.contentType}
                 open={variant.open}
                 state={variant.state}
-                title="This is a section title or a long question taking up a lot of space..."
+                title="This is an accordion section title"
               />
             </div>
           ))}
@@ -622,7 +622,7 @@ export const Complete72VariantMatrix: Story = {
                 contentType={variant.contentType}
                 open={variant.open}
                 state={variant.state}
-                title="This is a section title or a long question taking up a lot of space..."
+                title="This is an accordion section title"
               />
             </div>
           ))}
