@@ -4,7 +4,7 @@ import { Accordion } from './Accordion';
 import React from 'react';
 
 const meta: Meta<typeof AccordionHeader> = {
-  title: 'Design System/Molecules/Building Blocks/Accordion Figma Defaults',
+  title: 'Atoms/🧱 Building Blocks/Accordion Figma Defaults',
   component: AccordionHeader,
   parameters: {
     layout: 'padded',
