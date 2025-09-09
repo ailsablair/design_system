@@ -25,7 +25,8 @@ A specialized accordion component designed for image overlays with floating togg
 ## Variants
 
 - **Status**: Controls open/closed state (\`open\` | \`closed\`)
-- **Content**: Controls text overlay visibility (\`none\` | \`text\`)  
+- **Type**: Component type specification (\`image\`)
+- **Content**: Controls text overlay visibility (\`none\` | \`text-img\`)
 - **Icon**: Toggle icon visibility (boolean)
 
 All implementations match the Figma specifications pixel-perfectly with proper responsive behavior.
@@ -39,9 +40,14 @@ All implementations match the Figma specifications pixel-perfectly with proper r
       options: ['open', 'closed'],
       description: 'Controls the open/closed state of the accordion',
     },
+    type: {
+      control: { type: 'select' },
+      options: ['image'],
+      description: 'Type variant - matches Figma type property',
+    },
     content: {
       control: { type: 'select' },
-      options: ['none', 'text'],
+      options: ['none', 'text-img'],
       description: 'Controls whether text overlay is shown when open',
     },
     icon: {
