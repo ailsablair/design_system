@@ -649,7 +649,7 @@
 }
 
 .accordion--type-contained.accordion--size-large {
-  border-radius: 20px; /* Large size */
+  border-radius: var(--spacing-radius-20px); /* Large size */
 }
 
 .accordion--type-contained .accordion__header {
@@ -662,7 +662,7 @@
 }
 
 .accordion--type-contained.accordion--size-large .accordion__header {
-  border-radius: 20px 20px 0 0;
+  border-radius: var(--spacing-radius-20px) var(--spacing-radius-20px) 0 0;
 }
 
 .accordion--type-contained .accordion__content {
@@ -677,7 +677,7 @@
 }
 
 .accordion--type-contained.accordion--size-large .accordion__content {
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 var(--spacing-radius-20px) var(--spacing-radius-20px);
 }
 
 /* Top type - rounded top corners only */
@@ -691,7 +691,7 @@
 }
 
 .accordion--type-top.accordion--size-large {
-  border-radius: 20px 20px 0 0;
+  border-radius: var(--spacing-radius-20px) var(--spacing-radius-20px) 0 0;
 }
 
 .accordion--type-top .accordion__header {
@@ -704,7 +704,7 @@
 }
 
 .accordion--type-top.accordion--size-large .accordion__header {
-  border-radius: 20px 20px 0 0;
+  border-radius: var(--spacing-radius-20px) var(--spacing-radius-20px) 0 0;
 }
 
 .accordion--type-top .accordion__content {
@@ -743,7 +743,7 @@
 }
 
 .accordion--type-bottom.accordion--size-large {
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 var(--spacing-radius-20px) var(--spacing-radius-20px);
 }
 
 .accordion--type-bottom .accordion__header {
@@ -763,7 +763,7 @@
 }
 
 .accordion--type-bottom.accordion--size-large .accordion__content {
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 var(--spacing-radius-20px) var(--spacing-radius-20px);
 }
 
 /* ===== POSITION VARIANTS (Legacy support) ===== */
@@ -778,7 +778,7 @@
 }
 
 .accordion--position-top.accordion--size-large {
-  border-radius: 20px 20px 0 0; /* Large size */
+  border-radius: var(--spacing-radius-20px) var(--spacing-radius-20px) 0 0; /* Large size */
 }
 
 /* Top position padding - exact Figma specs */

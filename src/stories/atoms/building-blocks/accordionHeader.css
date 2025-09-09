@@ -349,7 +349,7 @@
 }
 
 .accordion-header--position-top.accordion-header--size-large {
-  border-radius: 20px 20px 0 0; /* Large size */
+  border-radius: var(--spacing-radius-20px) var(--spacing-radius-20px) 0 0; /* Large size */
   padding: 20px 32px 16px 32px; /* Exact Figma padding */
   height: 68px; /* Exact Figma height */
 }
