@@ -483,6 +483,8 @@
   /* === COMPONENT SPECIFIC SIZING TOKENS === */
   --sizing-width-100: 100px;
   --sizing-width-140: 140px;
+  --sizing-width-334: 334px;
+  --sizing-width-668: 668px;
 
   /* === AVATAR COMPONENT TOKENS === */
   --components-avatar-avatar: 46px;
