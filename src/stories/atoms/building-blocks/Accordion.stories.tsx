@@ -509,11 +509,11 @@ export const CustomContent: Story = {
           <li>Images and media</li>
           <li>Other components</li>
         </ul>
-        <button style={{ 
-          padding: '8px 16px', 
-          background: '#0BA7EA', 
-          color: 'white', 
-          border: 'none', 
+        <button style={{
+          padding: '8px 16px',
+          background: '#0BA7EA',
+          color: 'white',
+          border: 'none',
           borderRadius: '4px',
           cursor: 'pointer'
         }}>
@@ -526,6 +526,75 @@ export const CustomContent: Story = {
     docs: {
       description: {
         story: 'Accordion with custom JSX content including interactive elements.',
+      },
+    },
+  },
+};
+
+export const ContentTypes: Story = {
+  name: 'Content Types',
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '800px' }}>
+      <h2>Accordion Content Types</h2>
+      <p>Accordions support different content types with exact Figma typography and spacing:</p>
+
+      <div>
+        <h3>Text Content</h3>
+        <Accordion
+          size="default"
+          contentType="text"
+          state="open"
+          title="Text Content Example"
+          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rutrum ac tortor et lacinia. Suspendisse hendrerit mi vitae mauris dictum interdum vitae eget dui. Vivamus urna eros, facilisis et laoreet accumsan, feugiat sed sapien."
+        />
+      </div>
+
+      <div>
+        <h3>List Content</h3>
+        <Accordion
+          size="default"
+          contentType="list"
+          state="open"
+          title="List Content Example"
+          listItems={[
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rutrum ac tortor et lacinia.",
+            "Suspendisse hendrerit mi vitae mauris dictum interdum vitae eget dui. Vivamus urna eros.",
+            "Facilisis et laoreet accumsan, feugiat sed sapien. Vestibulum euismod massa enim."
+          ]}
+        />
+      </div>
+
+      <div>
+        <h3>Text with Image Content</h3>
+        <Accordion
+          size="default"
+          contentType="text-img"
+          state="open"
+          title="Text-Image Content Example"
+          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rutrum ac tortor et lacinia. Suspendisse hendrerit mi vitae mauris dictum interdum vitae eget dui. Vivamus urna eros, facilisis et laoreet accumsan, feugiat sed sapien."
+        />
+      </div>
+
+      <div>
+        <h3>Metrics Content</h3>
+        <Accordion
+          size="default"
+          contentType="metrics"
+          state="open"
+          title="Metrics Content Example"
+          metrics={{
+            projectsCompleted: '235,000',
+            status: 'On time',
+            users: '3,500'
+          }}
+        />
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Showcase of all accordion content types: text, list, text-image, and metrics with exact Figma specifications.',
       },
     },
   },
