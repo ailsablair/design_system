@@ -3,7 +3,7 @@ import { Accordion } from './Accordion';
 import { AccordionHeader } from './AccordionHeader';
 
 const meta: Meta<typeof Accordion> = {
-  title: 'Atoms/Building Blocks/Accordion/Remaining States',
+  title: 'Atoms/Accordion/Remaining States',
   component: Accordion,
   parameters: {
     layout: 'padded',

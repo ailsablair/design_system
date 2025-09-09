@@ -3,7 +3,7 @@ import { AccordionHeader } from './AccordionHeader';
 import React, { useState } from 'react';
 
 const meta: Meta<typeof AccordionHeader> = {
-  title: 'Atoms/🧱 Building Blocks/AccordionHeader',
+  title: 'Atoms/Accordion/AccordionHeader',
   component: AccordionHeader,
   parameters: {
     layout: 'padded',

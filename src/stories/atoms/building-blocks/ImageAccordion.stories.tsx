@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ImageAccordion } from './ImageAccordion';
 
 const meta: Meta<typeof ImageAccordion> = {
-  title: 'Design System/Atoms/Building Blocks/Image Accordion',
+  title: 'Atoms/Image Accordion',
   component: ImageAccordion,
   parameters: {
     layout: 'padded',
