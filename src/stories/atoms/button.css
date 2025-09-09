@@ -70,12 +70,12 @@
 
 /* Size variants */
 .button.extra-small {
-  min-width: 50px;
+  min-width: var(--sizing-button-min-width-xs);
   padding: var(--spacing-sizing-2px) var(--spacing-sizing-4px);
   gap: var(--spacing-sizing-6px);
-  height: 27px;
-  min-height: 27px;
-  max-height: 27px;
+  height: var(--sizing-button-height-xs);
+  min-height: var(--sizing-button-height-xs);
+  max-height: var(--sizing-button-height-xs);
 }
 
 .button.extra-small.icon-only {
@@ -102,10 +102,10 @@
 }
 
 .button.small {
-  min-width: 80px;
-  height: 30px;
-  min-height: 30px;
-  max-height: 30px;
+  min-width: var(--sizing-button-min-width-sm);
+  height: var(--sizing-button-height-sm);
+  min-height: var(--sizing-button-height-sm);
+  max-height: var(--sizing-button-height-sm);
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-12px);
   gap: var(--spacing-sizing-12px);
 }
@@ -137,10 +137,10 @@
 }
 
 .button.default {
-  min-width: 80px;
-  height: 42px;
-  min-height: 42px;
-  max-height: 42px;
+  min-width: var(--sizing-button-min-width-default);
+  height: var(--sizing-button-height-default);
+  min-height: var(--sizing-button-height-default);
+  max-height: var(--sizing-button-height-default);
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px);
   gap: var(--spacing-sizing-12px);
 }
@@ -172,10 +172,10 @@
 }
 
 .button.large {
-  min-width: 80px;
-  height: 52px;
-  min-height: 52px;
-  max-height: 52px;
+  min-width: var(--sizing-button-min-width-lg);
+  height: var(--sizing-button-height-lg);
+  min-height: var(--sizing-button-height-lg);
+  max-height: var(--sizing-button-height-lg);
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px);
   gap: var(--spacing-sizing-12px);
 }
