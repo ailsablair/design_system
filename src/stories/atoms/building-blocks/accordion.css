@@ -74,7 +74,7 @@
 }
 
 .accordion--open .accordion__title {
-  color: var(--primary-blue-blue);
+  color: var(--primary-blue-blue) !important;
   font-weight: var(--type-weight-regular); /* 400 - maintain consistent weight when open */
 }
 
@@ -92,12 +92,12 @@
 }
 
 .accordion--open .accordion__number {
-  color: var(--primary-blue-blue); /* Number color change when open */
+  color: var(--primary-blue-blue) !important; /* Number color change when open */
 }
 
 /* Open state for simple type icons */
 .accordion--type-simple.accordion--open .accordion__heading-icon svg {
-  color: var(--primary-blue-blue);
+  color: var(--primary-blue-blue) !important;
   opacity: 1;
 }
 
@@ -368,7 +368,7 @@
 /* ===== HOVER STATES - ENHANCED ===== */
 
 .accordion__trigger:hover .accordion__title {
-  color: var(--primary-blue-blue);
+  color: var(--primary-blue-blue) !important;
   font-weight: var(--type-weight-regular); /* 400 - maintain consistent weight on hover */
 }
 
@@ -383,16 +383,16 @@
   opacity: var(--icon-opacity-strong); /* 0.8 - more visible on hover */
   border-color: var(--primary-blue-blue-300);
   background: var(--primary-blue-blue-50);
-  color: var(--primary-blue-blue); /* Toggle icon color change on hover */
+  color: var(--primary-blue-blue) !important; /* Toggle icon color change on hover */
 }
 
 .accordion__trigger:hover .accordion__number {
-  color: var(--primary-blue-blue); /* Number color change on hover */
+  color: var(--primary-blue-blue) !important; /* Number color change on hover */
 }
 
 /* Hover state for simple type icons */
 .accordion--type-simple .accordion__trigger:hover .accordion__heading-icon svg {
-  color: var(--primary-blue-blue);
+  color: var(--primary-blue-blue) !important;
   opacity: var(--icon-opacity-strong); /* 0.8 */
 }
 
@@ -405,7 +405,7 @@
 }
 
 .accordion__trigger:focus-visible .accordion__title {
-  color: var(--primary-blue-blue);
+  color: var(--primary-blue-blue) !important;
 }
 
 .accordion__trigger:focus-visible .accordion__icon-frame {
@@ -422,7 +422,7 @@
 }
 
 .accordion__trigger:focus-visible .accordion__number {
-  color: var(--primary-blue-blue);
+  color: var(--primary-blue-blue) !important;
 }
 
 /* ===== ACTIVE STATES ===== */
@@ -435,7 +435,7 @@
 }
 
 .accordion__trigger:active .accordion__title {
-  color: var(--primary-blue-blue-600); /* Darker blue for active press */
+  color: var(--primary-blue-blue-600) !important; /* Darker blue for active press */
 }
 
 .accordion__trigger:active .accordion__icon-frame {
@@ -446,7 +446,7 @@
 }
 
 .accordion__trigger:active .accordion__number {
-  color: var(--primary-blue-blue-600);
+  color: var(--primary-blue-blue-600) !important;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
