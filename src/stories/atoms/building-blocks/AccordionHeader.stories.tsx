@@ -735,6 +735,7 @@ export const InteractiveExample: Story = {
           backgroundColor: '#FFFFFF'
         }}>
           <AccordionHeader
+            grouped
             size="default"
             iconStyle="plus"
             position="top"
@@ -744,6 +745,7 @@ export const InteractiveExample: Story = {
           />
 
           <AccordionHeader
+            grouped
             size="default"
             iconStyle="plus"
             position="middle"
@@ -753,6 +755,7 @@ export const InteractiveExample: Story = {
           />
 
           <AccordionHeader
+            grouped
             size="default"
             iconStyle="plus"
             position="bottom"
@@ -763,7 +766,7 @@ export const InteractiveExample: Story = {
         </div>
 
         <div style={{ marginTop: '16px', padding: '12px', background: '#F3F4F6', borderRadius: '6px', fontSize: '14px', color: '#6B7280' }}>
-          <strong>Click any header to toggle its state.</strong> This demonstrates the interactive functionality with proper state management and the single-border group pattern.
+          <strong>Click any header to toggle its state.</strong> This demonstrates the interactive functionality with proper state management. The `grouped` prop removes individual borders for a clean group appearance.
         </div>
       </div>
     );
@@ -771,7 +774,7 @@ export const InteractiveExample: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Interactive example showing click handling and state management for accordion headers with the proper single-border group styling.',
+        story: 'Interactive example showing click handling and state management for accordion headers. Uses the `grouped` prop to create a single-border group styling.',
       },
     },
   },
