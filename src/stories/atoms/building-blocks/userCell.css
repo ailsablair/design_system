@@ -189,7 +189,7 @@
 .user-cell-container:focus-within {
   outline: 2px solid var(--primary-sky-blue-sky-blue, #0BA7EA);
   outline-offset: -2px;
-  border-radius: var(--spacing-border-radius-4px, 4px);
+  border-radius: var(--spacing-radius-4px);
 }
 
 /* Responsive Design */
