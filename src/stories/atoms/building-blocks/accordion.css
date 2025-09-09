@@ -380,23 +380,43 @@
   color: var(--neutral-gray-gray-700);
   animation: accordion-expand var(--transition-fast) ease-out;
   box-sizing: border-box;
-  padding: 0 32px 32px 32px; /* Default padding - will be overridden by size variants */
-
+  padding: 24px 32px; /* Exact Figma padding */
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--base-white);
   /* HUG: Height determined by content */
   /* min-height is not set, allowing content to determine height */
 }
 
+.accordion__content-spacer {
+  width: 22px; /* Default icon space */
+  height: 22px;
+  flex-shrink: 0;
+  /* Invisible spacer to align with bell icon */
+}
+
+.accordion--size-small .accordion__content-spacer {
+  width: 18px;
+  height: 18px;
+}
+
+.accordion--size-large .accordion__content-spacer {
+  width: 26px;
+  height: 26px;
+}
+
 /* Size-specific content padding and typography */
 .accordion--size-small .accordion__content {
-  padding: 0 32px 24px 32px; /* Smaller bottom padding for small size */
+  padding: 24px 32px; /* Exact Figma padding for small size */
 }
 
 .accordion--size-default .accordion__content {
-  padding: 0 32px 32px 32px; /* Default padding */
+  padding: 24px 32px; /* Exact Figma padding for default size */
 }
 
 .accordion--size-large .accordion__content {
-  padding: 0 32px 40px 32px; /* Larger bottom padding for large size */
+  padding: 24px 32px; /* Exact Figma padding for large size */
 }
 
 /* ===== TEXT CONTENT STYLES ===== */
@@ -407,6 +427,9 @@
   color: var(--neutral-gray-gray-700);
   font-style: normal;
   flex: 1;
+  /* Remove default margin and padding */
+  margin: 0;
+  padding: 0;
 }
 
 /* Small size text - exact Figma typography */
@@ -613,9 +636,137 @@
   }
 }
 
-/* ===== POSITION VARIANTS - EXACT FIGMA BORDER RADIUS ===== */
+/* ===== TYPE VARIANTS - EXACT FIGMA SPECIFICATIONS ===== */
 
-/* ===== POSITION VARIANTS - EXACT FIGMA SPECIFICATIONS ===== */
+/* Contained type - full border radius and complete border */
+.accordion--type-contained {
+  border-radius: 16px; /* Default size */
+  border: 1px solid var(--neutral-gray-gray-300); /* Full border */
+}
+
+.accordion--type-contained.accordion--size-small {
+  border-radius: 12px; /* Small size */
+}
+
+.accordion--type-contained.accordion--size-large {
+  border-radius: 20px; /* Large size */
+}
+
+.accordion--type-contained .accordion__header {
+  padding: 20px 32px 16px 32px; /* Exact Figma padding for contained */
+  border-radius: 16px 16px 0 0; /* Top rounded when open */
+}
+
+.accordion--type-contained.accordion--size-small .accordion__header {
+  border-radius: 12px 12px 0 0;
+}
+
+.accordion--type-contained.accordion--size-large .accordion__header {
+  border-radius: 20px 20px 0 0;
+}
+
+.accordion--type-contained .accordion__content {
+  border-radius: 0 0 16px 16px; /* Bottom rounded */
+  border-right: 1px solid var(--neutral-gray-gray-300);
+  border-bottom: 1px solid var(--neutral-gray-gray-300);
+  border-left: 1px solid var(--neutral-gray-gray-300);
+}
+
+.accordion--type-contained.accordion--size-small .accordion__content {
+  border-radius: 0 0 12px 12px;
+}
+
+.accordion--type-contained.accordion--size-large .accordion__content {
+  border-radius: 0 0 20px 20px;
+}
+
+/* Top type - rounded top corners only */
+.accordion--type-top {
+  border-radius: 16px 16px 0 0; /* Default size */
+  border: 1px solid var(--neutral-gray-gray-300);
+}
+
+.accordion--type-top.accordion--size-small {
+  border-radius: 12px 12px 0 0;
+}
+
+.accordion--type-top.accordion--size-large {
+  border-radius: 20px 20px 0 0;
+}
+
+.accordion--type-top .accordion__header {
+  padding: 20px 32px 16px 32px; /* Exact Figma padding */
+  border-radius: 16px 16px 0 0;
+}
+
+.accordion--type-top.accordion--size-small .accordion__header {
+  border-radius: 12px 12px 0 0;
+}
+
+.accordion--type-top.accordion--size-large .accordion__header {
+  border-radius: 20px 20px 0 0;
+}
+
+.accordion--type-top .accordion__content {
+  border-radius: 0; /* No border radius for content */
+  border-right: 1px solid var(--neutral-gray-gray-300);
+  border-left: 1px solid var(--neutral-gray-gray-300);
+  /* No bottom border for middle positioning */
+}
+
+/* Middle type - no border radius */
+.accordion--type-middle {
+  border-radius: 0;
+  border: 1px solid var(--neutral-gray-gray-300);
+}
+
+.accordion--type-middle .accordion__header {
+  padding: 16px 32px; /* Default middle padding */
+  border-radius: 0;
+}
+
+.accordion--type-middle .accordion__content {
+  border-radius: 0;
+  border-right: 1px solid var(--neutral-gray-gray-300);
+  border-left: 1px solid var(--neutral-gray-gray-300);
+  /* No bottom border for middle positioning */
+}
+
+/* Bottom type - rounded bottom corners only */
+.accordion--type-bottom {
+  border-radius: 0 0 16px 16px; /* Default size */
+  border: 1px solid var(--neutral-gray-gray-300);
+}
+
+.accordion--type-bottom.accordion--size-small {
+  border-radius: 0 0 12px 12px;
+}
+
+.accordion--type-bottom.accordion--size-large {
+  border-radius: 0 0 20px 20px;
+}
+
+.accordion--type-bottom .accordion__header {
+  padding: 16px 32px; /* Default middle padding */
+  border-radius: 0;
+}
+
+.accordion--type-bottom .accordion__content {
+  border-radius: 0 0 16px 16px; /* Bottom rounded */
+  border-right: 1px solid var(--neutral-gray-gray-300);
+  border-bottom: 1px solid var(--neutral-gray-gray-300);
+  border-left: 1px solid var(--neutral-gray-gray-300);
+}
+
+.accordion--type-bottom.accordion--size-small .accordion__content {
+  border-radius: 0 0 12px 12px;
+}
+
+.accordion--type-bottom.accordion--size-large .accordion__content {
+  border-radius: 0 0 20px 20px;
+}
+
+/* ===== POSITION VARIANTS (Legacy support) ===== */
 
 /* Top position with rounded top corners - exact Figma border-radius and padding */
 .accordion--position-top {
@@ -699,11 +850,12 @@
 }
 
 .accordion--contained.accordion--open .accordion__header {
-  border-bottom: 1px solid var(--neutral-gray-gray-300);
+  border-bottom: none; /* Remove border between header and content */
 }
 
 .accordion--contained .accordion__content {
   background: var(--base-white);
+  border: none; /* Remove extra borders for contained variant */
 }
 
 /* ===== UNCONTAINED VARIANT ===== */
