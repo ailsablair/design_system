@@ -140,7 +140,7 @@ export const InteractiveDefault: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Interactive example - click to toggle between closed and open states with text overlay.',
+        story: 'Interactive example - click to toggle between closed and open states with text-img overlay.',
       },
     },
   },
