@@ -378,7 +378,7 @@ export const FigmaDesignShowcase: Story = {
                                 contentType={contentType}
                                 open={open}
                                 state={state}
-                                title={`${size} ${iconStyle} ${position} ${contentType} ${open ? 'open' : 'closed'} ${state}`}
+                                title="This is an accordion section title"
                               />
                             </div>
                           ))
