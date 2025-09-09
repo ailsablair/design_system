@@ -10,8 +10,12 @@ export interface AccordionProps {
   contained?: boolean;
   /** Size variant */
   size?: 'small' | 'default' | 'large';
-  /** Icon type for open/close */
+  /** Icon type for open/close - matches Figma icon-style */
   openIcon?: 'chevron' | 'plus';
+  /** Position variant affecting visual alignment - matches Figma position */
+  position?: 'default' | 'top' | 'bottom';
+  /** Visual interaction state - matches Figma state */
+  interactionState?: 'default' | 'hover' | 'selected';
   /** Title text */
   title?: string;
   /** Content text */
@@ -56,10 +60,12 @@ export interface AccordionProps {
 export const Accordion: React.FC<AccordionProps> = ({
   type = 'simple',
   state = 'default',
-  contained = true,
+  contained = false,
   size = 'default',
   openIcon = 'chevron',
-  title = 'This is a section title or a long question taking up a lot of space...',
+  position = 'default',
+  interactionState = 'default',
+  title = 'This is an accordion section title',
   content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rutrum ac tortor et lacinia. Suspendisse hendrerit mi vitae mauris dictum interdum vitae eget dui. Vivamus urna eros, facilisis et laoreet accumsan, feugiat sed sapien. Vestibulum euismod massa enim, nec malesuada tellus scelerisque in. Donec sodales posuere convallis. Donec vel urna finibus augue accumsan posuere in et nunc.',
   icon,
   number = '01',
@@ -82,14 +88,17 @@ export const Accordion: React.FC<AccordionProps> = ({
     onToggle?.(newIsOpen);
   };
 
-  // Generate CSS classes
+  // Generate CSS classes - matching Figma layer names and structure
   const accordionClasses = [
     'accordion',
     `accordion--type-${type}`,
     `accordion--size-${size}`,
+    `accordion--position-${position}`,
+    `accordion--icon-${openIcon}`,
     contained ? 'accordion--contained' : 'accordion--uncontained',
     isOpen ? 'accordion--open' : 'accordion--closed',
-    `accordion--icon-${openIcon}`,
+    interactionState !== 'default' && `accordion--state-${interactionState}`,
+    interactionState === 'selected' && 'accordion--selected',
     className
   ].filter(Boolean).join(' ');
 
