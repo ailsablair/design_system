@@ -39,10 +39,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+  background: var(--gradient-placeholder);
   color: var(--neutral-gray-gray-600);
   font-family: var(--type-typeface-archivo);
-  font-size: 18px;
+  font-size: var(--type-size-lg);
   font-weight: var(--type-weight-medium);
   border-radius: var(--spacing-radius-48px);
 }
@@ -51,22 +51,22 @@
 
 .image-accordion__toggle {
   position: absolute;
-  left: 20px; /* Exact Figma positioning */
-  bottom: 20px; /* Exact Figma positioning */
+  left: var(--spacing-sizing-20px);
+  bottom: var(--spacing-sizing-20px);
   z-index: 10;
   transition: all var(--transition-normal);
   
   /* Ensure touch target is large enough */
-  min-width: 44px;
-  min-height: 44px;
+  min-width: var(--sizing-button-height-default);
+  min-height: var(--sizing-button-height-default);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .image-accordion__icon {
-  width: 40px; /* Exact Figma size */
-  height: 40px;
+  width: var(--spacing-sizing-40px);
+  height: var(--spacing-sizing-40px);
   flex-shrink: 0;
   cursor: pointer;
   transition: all var(--transition-normal);
