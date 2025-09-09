@@ -260,28 +260,65 @@ export const PositionVariants: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       <div>
-        <h4 style={{ margin: '0 0 12px 0', fontSize: '14px', fontWeight: 500 }}>Top Position</h4>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
-          <AccordionHeader position="top" iconStyle="plus" open={false} />
-          <AccordionHeader position="middle" iconStyle="plus" open={true} />
-          <AccordionHeader position="bottom" iconStyle="plus" open={false} />
+        <h4 style={{ margin: '0 0 12px 0', fontSize: '14px', fontWeight: 500 }}>Grouped Accordion with Plus Icons</h4>
+        <p style={{ margin: '0 0 12px 0', fontSize: '12px', color: '#6B7280' }}>
+          Position variants are designed for grouped accordions with a single border around the entire group and separators between items.
+        </p>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          border: '1px solid #E5E7EB',
+          borderRadius: '8px',
+          overflow: 'hidden',
+          backgroundColor: '#FFFFFF'
+        }}>
+          <AccordionHeader position="top" iconStyle="plus" open={false} title="First accordion section" />
+          <AccordionHeader position="middle" iconStyle="plus" open={true} title="Second accordion section (expanded)" />
+          <AccordionHeader position="bottom" iconStyle="plus" open={false} title="Third accordion section" />
         </div>
       </div>
-      
+
       <div>
-        <h4 style={{ margin: '0 0 12px 0', fontSize: '14px', fontWeight: 500 }}>Middle Position</h4>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', border: '1px solid #E5E7EB', borderRadius: '8px', overflow: 'hidden' }}>
-          <AccordionHeader position="top" iconStyle="chevron" open={false} />
-          <AccordionHeader position="middle" iconStyle="chevron" open={true} />
-          <AccordionHeader position="bottom" iconStyle="chevron" open={false} />
+        <h4 style={{ margin: '0 0 12px 0', fontSize: '14px', fontWeight: 500 }}>Grouped Accordion with Chevron Icons</h4>
+        <p style={{ margin: '0 0 12px 0', fontSize: '12px', color: '#6B7280' }}>
+          Same grouping pattern with chevron icons instead of plus/minus icons.
+        </p>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          border: '1px solid #E5E7EB',
+          borderRadius: '8px',
+          overflow: 'hidden',
+          backgroundColor: '#FFFFFF'
+        }}>
+          <AccordionHeader position="top" iconStyle="chevron" open={false} title="FAQ: How do I reset my password?" />
+          <AccordionHeader position="middle" iconStyle="chevron" open={true} title="FAQ: What payment methods are accepted?" />
+          <AccordionHeader position="bottom" iconStyle="chevron" open={false} title="FAQ: How do I contact support?" />
         </div>
+      </div>
+
+      <div style={{
+        marginTop: '16px',
+        padding: '16px',
+        backgroundColor: '#F3F4F6',
+        borderRadius: '8px',
+        fontSize: '14px',
+        color: '#374151'
+      }}>
+        <strong>📝 Implementation Note:</strong>
+        <ul style={{ margin: '8px 0 0 0', paddingLeft: '20px' }}>
+          <li>Position variants (top, middle, bottom) remove individual borders</li>
+          <li>Only separators between items and one border around the entire group</li>
+          <li>Container should have border and border-radius</li>
+          <li>Use overflow: hidden to ensure clean edges</li>
+        </ul>
       </div>
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Position variants showing how headers work in grouped contexts.',
+        story: 'Position variants demonstrate grouped accordion headers with a single border around the entire group and separators between individual items. This prevents double borders and creates a cleaner visual hierarchy.',
       },
     },
   },
