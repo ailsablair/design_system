@@ -49,7 +49,8 @@ I've successfully implemented the image accordion variants from your Figma desig
 ```typescript
 interface ImageAccordionProps {
   status?: 'open' | 'closed';           // Controls open/closed state
-  content?: 'none' | 'text';            // Controls text overlay
+  type?: 'image';                       // Type variant - matches Figma
+  content?: 'none' | 'text-img';        // Controls text overlay
   icon?: boolean;                       // Show/hide toggle icon
   title?: string;                       // Overlay title text
   body?: string;                        // Overlay body text
