@@ -78,6 +78,29 @@
   font-weight: var(--type-weight-regular); /* 400 - maintain consistent weight when open */
 }
 
+.accordion--open .accordion__icon-frame {
+  background: var(--base-white);
+  border-color: var(--primary-blue-blue-200);
+  color: var(--primary-blue-blue); /* Icon color change when open */
+}
+
+.accordion--open .accordion__toggle-icon {
+  opacity: 1; /* Full opacity when open */
+  border-color: var(--primary-blue-blue-200);
+  background: var(--primary-blue-blue-50);
+  color: var(--primary-blue-blue); /* Toggle icon color change when open */
+}
+
+.accordion--open .accordion__number {
+  color: var(--primary-blue-blue); /* Number color change when open */
+}
+
+/* Open state for simple type icons */
+.accordion--type-simple.accordion--open .accordion__heading-icon svg {
+  color: var(--primary-blue-blue);
+  opacity: 1;
+}
+
 /* ===== SIZE VARIANTS - FIGMA TYPOGRAPHY TOKENS ===== */
 
 /* Small size - Using Figma label typography */
@@ -339,6 +362,7 @@
   height: 22px;
   opacity: var(--icon-opacity-medium); /* 0.6 */
   color: var(--base-black);
+  transition: var(--transition-normal); /* Add transition for smooth color changes */
 }
 
 /* ===== HOVER STATES - ENHANCED ===== */
@@ -352,6 +376,24 @@
   background: var(--base-white);
   border-color: var(--primary-blue-blue-200);
   box-shadow: var(--shadow-sm); /* Add subtle shadow */
+  color: var(--primary-blue-blue); /* Icon color change on hover */
+}
+
+.accordion__trigger:hover .accordion__toggle-icon {
+  opacity: var(--icon-opacity-strong); /* 0.8 - more visible on hover */
+  border-color: var(--primary-blue-blue-300);
+  background: var(--primary-blue-blue-50);
+  color: var(--primary-blue-blue); /* Toggle icon color change on hover */
+}
+
+.accordion__trigger:hover .accordion__number {
+  color: var(--primary-blue-blue); /* Number color change on hover */
+}
+
+/* Hover state for simple type icons */
+.accordion--type-simple .accordion__trigger:hover .accordion__heading-icon svg {
+  color: var(--primary-blue-blue);
+  opacity: var(--icon-opacity-strong); /* 0.8 */
 }
 
 /* ===== FOCUS STATES ===== */
@@ -362,11 +404,49 @@
   border-radius: var(--spacing-radius-4px);
 }
 
+.accordion__trigger:focus-visible .accordion__title {
+  color: var(--primary-blue-blue);
+}
+
+.accordion__trigger:focus-visible .accordion__icon-frame {
+  border-color: var(--primary-blue-blue);
+  background: var(--primary-blue-blue-50);
+  color: var(--primary-blue-blue);
+}
+
+.accordion__trigger:focus-visible .accordion__toggle-icon {
+  border-color: var(--primary-blue-blue);
+  background: var(--primary-blue-blue-50);
+  color: var(--primary-blue-blue);
+  opacity: 1;
+}
+
+.accordion__trigger:focus-visible .accordion__number {
+  color: var(--primary-blue-blue);
+}
+
 /* ===== ACTIVE STATES ===== */
 
 .accordion__trigger:active .accordion__toggle-icon {
   transform: scale(0.95);
   border-color: var(--primary-blue-blue);
+  background: var(--primary-blue-blue-100);
+  color: var(--primary-blue-blue);
+}
+
+.accordion__trigger:active .accordion__title {
+  color: var(--primary-blue-blue-600); /* Darker blue for active press */
+}
+
+.accordion__trigger:active .accordion__icon-frame {
+  transform: scale(0.95);
+  border-color: var(--primary-blue-blue);
+  background: var(--primary-blue-blue-100);
+  color: var(--primary-blue-blue);
+}
+
+.accordion__trigger:active .accordion__number {
+  color: var(--primary-blue-blue-600);
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
