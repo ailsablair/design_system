@@ -292,7 +292,8 @@ export const AccessibilityExample: Story = {
   args: {
     ...defaultProps,
     status: 'closed',
-    content: 'text',
+    type: 'image',
+    content: 'text-img',
     imageAlt: 'Mountain forest landscape with morning mist and sunlight filtering through trees',
     title: 'Accessible Image Card Example',
     body: 'This example demonstrates proper accessibility features including alt text, keyboard navigation, and screen reader support.',
@@ -322,7 +323,8 @@ export const ResponsiveShowcase: Story = {
         height={200}
         backgroundImage={sampleImageUrl}
         status="open"
-        content="text"
+        type="image"
+        content="text-img"
         title="Mobile Size"
         body="Optimized for mobile screens with responsive text."
       />
