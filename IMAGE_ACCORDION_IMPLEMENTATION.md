@@ -69,7 +69,7 @@ interface ImageAccordionProps {
 ### **Exact Figma Variants**
 - `ClosedNoContent` - Matches Figma closed state
 - `OpenNoContent` - Matches Figma open state without text
-- `OpenWithText` - Matches Figma open state with text overlay
+- `OpenWithTextImg` - Matches Figma open state with text-img overlay
 
 ### **Interactive Examples**
 - `InteractiveDefault` - Click to toggle with text
@@ -118,7 +118,8 @@ import { ImageAccordion } from '@/components/building-blocks';
 <ImageAccordion
   backgroundImage="/path/to/image.jpg"
   status="closed"
-  content="text"
+  type="image"
+  content="text-img"
   title="Beautiful Landscape"
   body="Discover amazing natural scenery and wildlife."
 />
@@ -132,7 +133,8 @@ const [isOpen, setIsOpen] = useState(false);
   backgroundImage="/path/to/image.jpg"
   isOpen={isOpen}
   onToggle={setIsOpen}
-  content="text"
+  type="image"
+  content="text-img"
   title="Interactive Card"
   body="Click to toggle this accordion."
 />
@@ -145,7 +147,8 @@ const [isOpen, setIsOpen] = useState(false);
   width={800}
   height={600}
   status="open"
-  content="text"
+  type="image"
+  content="text-img"
   title="Large Display"
   body="Perfect for hero sections and feature showcases."
 />
