@@ -4,19 +4,22 @@
   /* Use exact design tokens from tokens.css */
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100%; /* FILL: Take full width of parent container */
+  max-width: 100%; /* Prevent overflow */
   border-radius: 0;
   transition: var(--transition-normal);
+  box-sizing: border-box;
 }
 
 .accordion__trigger {
   all: unset;
-  width: 100%;
+  width: 100%; /* FILL: Full width for clickable area */
   cursor: pointer;
   border: none;
   background: none;
   text-align: left;
   display: block;
+  box-sizing: border-box;
 }
 
 .accordion__trigger:focus-visible {
@@ -31,10 +34,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  min-height: 56px;
+  width: 100%; /* FILL: Full width of trigger */
+  min-height: 56px; /* FIXED: Minimum height for touch targets */
   padding: var(--spacing-sizing-16px);
   transition: var(--transition-normal);
+  box-sizing: border-box;
 }
 
 .accordion__header-wrapper {
@@ -49,17 +53,24 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-sizing-12px);
-  flex: 1;
+  flex: 1; /* FILL: Take available space, push toggle icon to right */
+  min-width: 0; /* Allow flex children to shrink below content size */
 }
 
 /* ===== TITLE STYLES - EXACT FIGMA MATCH ===== */
 
 .accordion__title {
-  flex: 1;
+  flex: 1; /* FILL: Take remaining space after icons */
+  min-width: 0; /* Allow text truncation when needed */
   font-family: var(--type-typeface-archivo);
   font-weight: var(--type-weight-regular); /* 400 - exact Figma weight from spans */
   color: var(--primary-blue-dark-blue);
   transition: var(--transition-normal);
+
+  /* Ensure text behaves properly */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .accordion--open .accordion__title {
@@ -140,6 +151,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0; /* FIXED: Prevent shrinking below content size */
   border-radius: var(--spacing-radius-full);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-200); /* Proper stroke */
   background: var(--primary-sky-blue-50);
@@ -205,13 +217,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0; /* FIXED: Maintain consistent size */
   border-radius: var(--spacing-radius-full);
   border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200); /* Proper stroke */
   background: var(--neutral-gray-gray-50);
   color: var(--base-black);
   opacity: var(--icon-opacity-medium); /* 0.6 */
   transition: var(--transition-normal);
-  flex-shrink: 0;
 }
 
 .accordion__trigger:hover .accordion__toggle-icon {
@@ -244,10 +256,15 @@
 /* ===== CONTENT STYLES ===== */
 
 .accordion__content {
+  width: 100%; /* FILL: Full width of container */
   font-family: var(--type-typeface-roboto-flex);
   font-weight: var(--type-weight-light); /* 300 */
   color: var(--neutral-gray-gray-700);
   animation: accordion-expand var(--transition-fast) ease-out;
+  box-sizing: border-box;
+
+  /* HUG: Height determined by content */
+  /* min-height is not set, allowing content to determine height */
 }
 
 @keyframes accordion-expand {
@@ -374,28 +391,29 @@
 
 @media (max-width: 480px) {
   .accordion__title {
-    font-size: var(--type-size-base) !important; /* 16px */
+    font-size: var(--type-size-base); /* 16px - remove !important for cleaner CSS */
     line-height: var(--type-line-height-body); /* 20px */
-    font-weight: var(--type-weight-regular) !important; /* 400 - consistent on mobile */
+    font-weight: var(--type-weight-regular); /* 400 - consistent on mobile */
   }
-  
+
   .accordion__header {
     padding: var(--spacing-sizing-8px);
-    min-height: auto;
+    min-height: 44px; /* FIXED: Maintain minimum touch target size */
   }
-  
+
   .accordion__content {
     padding: 0 var(--spacing-sizing-8px) var(--spacing-sizing-8px) var(--spacing-sizing-8px);
     font-size: var(--type-size-sm); /* 14px */
     line-height: var(--type-line-height-body-sm); /* 16px */
   }
-  
+
   .accordion__icon-frame,
   .accordion__toggle-icon {
-    width: 20px !important;
-    height: 20px !important;
-    padding: var(--spacing-sizing-2px) !important;
-    border-width: var(--spacing-stroke-1px) !important;
+    width: 20px; /* FIXED: Consistent mobile icon size */
+    height: 20px;
+    padding: var(--spacing-sizing-2px);
+    border-width: var(--spacing-stroke-1px);
+    flex-shrink: 0; /* Ensure icons don't compress */
   }
 }
 
