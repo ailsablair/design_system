@@ -4,8 +4,10 @@ import './imageAccordion.css';
 export interface ImageAccordionProps {
   /** Status variant - controls open/closed state */
   status?: 'open' | 'closed';
+  /** Type variant - matches Figma type property */
+  type?: 'image';
   /** Content variant - controls if text overlay is shown */
-  content?: 'none' | 'text';
+  content?: 'none' | 'text-img';
   /** Whether to show the toggle icon */
   icon?: boolean;
   /** Title for the text content overlay */
@@ -42,6 +44,7 @@ export interface ImageAccordionProps {
  */
 export const ImageAccordion: React.FC<ImageAccordionProps> = ({
   status = 'closed',
+  type = 'image',
   content = 'none',
   icon = true,
   title = 'This is a title for an image card',
@@ -69,8 +72,9 @@ export const ImageAccordion: React.FC<ImageAccordionProps> = ({
   const accordionClasses = [
     'image-accordion',
     `image-accordion--status-${isOpen ? 'open' : 'closed'}`,
+    `image-accordion--type-${type}`,
     `image-accordion--content-${content}`,
-    isOpen && content === 'text' ? 'image-accordion--content-visible' : '',
+    isOpen && content === 'text-img' ? 'image-accordion--content-visible' : '',
     className
   ].filter(Boolean).join(' ');
 
@@ -172,8 +176,8 @@ export const ImageAccordion: React.FC<ImageAccordionProps> = ({
         </div>
       )}
 
-      {/* Content overlay - only shown when open and content is 'text' */}
-      {isOpen && content === 'text' && (
+      {/* Content overlay - only shown when open and content is 'text-img' */}
+      {isOpen && content === 'text-img' && (
         <div className="image-accordion__content-overlay">
           <div className="image-accordion__text-content">
             <div className="image-accordion__title">
