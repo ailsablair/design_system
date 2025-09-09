@@ -119,6 +119,10 @@
 /* ===== SIZE VARIANTS - EXACT FIGMA TYPOGRAPHY ===== */
 
 /* Small size - 18px exact Figma specs */
+.accordion-header--size-small {
+  height: 52px; /* Exact Figma height for small default */
+}
+
 .accordion-header--size-small .accordion-header__title {
   font-size: 18px; /* Exact Figma size */
   line-height: 24px; /* 133.333% - exact Figma line height */
@@ -127,6 +131,10 @@
 }
 
 /* Default size - 19px exact Figma specs */
+.accordion-header--size-default {
+  height: 60px; /* Exact Figma height for default */
+}
+
 .accordion-header--size-default .accordion-header__title {
   font-size: 19px; /* Exact Figma size */
   line-height: 24px; /* 126.316% - exact Figma line height */
@@ -135,6 +143,10 @@
 }
 
 /* Large size - 24px exact Figma specs */
+.accordion-header--size-large {
+  height: 64px; /* Exact Figma height for large default */
+}
+
 .accordion-header--size-large .accordion-header__title {
   font-size: 24px; /* Exact Figma size */
   line-height: 24px; /* 100% - exact Figma line height */
@@ -201,15 +213,21 @@
 }
 
 .accordion-header--state-default .accordion-header__bell-icon {
-  color: var(--primary-blue-blue); /* Use design token */
+  color: #2F42BD; /* Exact Figma color */
   opacity: 0.5; /* Exact Figma opacity */
 }
 
 .accordion-header--state-default .accordion-header__toggle-icon {
-  color: var(--primary-blue-blue); /* Use design token */
+  color: #2F42BD; /* Exact Figma color */
 }
 
-/* Hover state - title stays black, only icons change color */
+/* Hover state - exact Figma background and colors */
+.accordion-header--state-hover,
+.accordion-header--interactive:hover {
+  background: #F9F9FE; /* Exact Figma hover background */
+  border-color: var(--neutral-gray-gray-300); /* Maintain border */
+}
+
 .accordion-header--state-hover .accordion-header__title,
 .accordion-header--interactive:hover .accordion-header__title {
   color: var(--base-black); /* Keep title black at all times */
@@ -218,13 +236,13 @@
 
 .accordion-header--state-hover .accordion-header__bell-icon,
 .accordion-header--interactive:hover .accordion-header__bell-icon {
-  color: var(--primary-blue-blue); /* Brighter blue on hover */
-  opacity: 0.8; /* Slightly more visible on hover */
+  color: #2F42BD; /* Exact Figma blue from the design */
+  opacity: 0.5; /* Maintain Figma opacity */
 }
 
 .accordion-header--state-hover .accordion-header__toggle-icon,
 .accordion-header--interactive:hover .accordion-header__toggle-icon {
-  color: var(--primary-blue-blue); /* Brighter blue on hover */
+  color: #2F42BD; /* Exact Figma blue from the design */
   opacity: 1; /* Full opacity on hover */
 }
 
@@ -243,20 +261,44 @@
   color: #2F42BD; /* Same blue color */
 }
 
-/* Open state - title stays black, only icons change color */
+/* Open state - exact Figma colors and behavior */
 .accordion-header--open .accordion-header__title {
-  color: var(--base-black); /* Keep title black at all times */
+  color: var(--base-black); /* Keep title black at all times per Figma */
   font-weight: 400; /* Regular weight */
 }
 
 .accordion-header--open .accordion-header__bell-icon {
-  color: var(--primary-blue-blue); /* Brighter blue when open */
-  opacity: 1; /* Full opacity when open */
+  color: #2F42BD; /* Exact Figma blue */
+  opacity: 0.5; /* Maintain Figma opacity even when open */
 }
 
 .accordion-header--open .accordion-header__toggle-icon {
-  color: var(--primary-blue-blue); /* Brighter blue when open */
+  color: #2F42BD; /* Exact Figma blue */
   opacity: 1; /* Full opacity when open */
+}
+
+/* Open + Hover state combinations */
+.accordion-header--open.accordion-header--state-hover .accordion-header__title,
+.accordion-header--open.accordion-header--interactive:hover .accordion-header__title {
+  color: var(--base-black); /* Keep title black at all times */
+}
+
+.accordion-header--open.accordion-header--state-hover .accordion-header__bell-icon,
+.accordion-header--open.accordion-header--interactive:hover .accordion-header__bell-icon {
+  color: #2F42BD; /* Exact Figma blue */
+  opacity: 0.5; /* Maintain opacity */
+}
+
+.accordion-header--open.accordion-header--state-hover .accordion-header__toggle-icon,
+.accordion-header--open.accordion-header--interactive:hover .accordion-header__toggle-icon {
+  color: #2F42BD; /* Exact Figma blue */
+  opacity: 1;
+}
+
+/* Open + Hover background */
+.accordion-header--open.accordion-header--state-hover,
+.accordion-header--open.accordion-header--interactive:hover {
+  background: #F9F9FE; /* Exact Figma hover background */
 }
 
 /* Combined states - Open + Selected (when both true and selected) */
@@ -292,38 +334,60 @@
 
 /* ===== POSITION VARIANTS ===== */
 
-/* Top position with rounded top corners */
+/* ===== POSITION VARIANTS - EXACT FIGMA SPECIFICATIONS ===== */
+
+/* Top position with rounded top corners - exact Figma specs */
 .accordion-header--position-top {
-  border-radius: 12px 12px 0 0; /* Default for small size */
+  border-radius: 12px 12px 0 0; /* Small size */
+  padding: 20px 32px 16px 32px; /* Exact Figma padding */
 }
 
 .accordion-header--position-top.accordion-header--size-default {
-  border-radius: 16px 16px 0 0;
-  padding: 32px 32px 24px 32px;
+  border-radius: 16px 16px 0 0; /* Default size */
+  padding: 20px 32px 16px 32px; /* Exact Figma padding */
+  height: 64px; /* Exact Figma height */
 }
 
 .accordion-header--position-top.accordion-header--size-large {
-  border-radius: 20px 20px 0 0;
-  padding: 20px 32px 16px 32px;
+  border-radius: 20px 20px 0 0; /* Large size */
+  padding: 20px 32px 16px 32px; /* Exact Figma padding */
+  height: 68px; /* Exact Figma height */
 }
 
+.accordion-header--position-top.accordion-header--size-small {
+  border-radius: 12px 12px 0 0; /* Small size */
+  padding: 20px 32px 16px 32px; /* Exact Figma padding */
+  height: 56px; /* Exact Figma height */
+}
+
+/* Middle position - default with no border radius */
 .accordion-header--position-middle {
-  /* Middle is default - no border radius */
   border-radius: 0;
+  padding: 16px 32px; /* Default padding */
 }
 
-/* Bottom position with rounded bottom corners */
+/* Bottom position with rounded bottom corners - exact Figma specs */
 .accordion-header--position-bottom {
-  border-radius: 0 0 12px 12px;
-  padding: 16px 32px 20px 32px;
+  border-radius: 0 0 12px 12px; /* Same for all sizes per Figma */
+  padding: 16px 32px 20px 32px; /* Exact Figma padding */
 }
 
 .accordion-header--position-bottom.accordion-header--size-default {
   border-radius: 0 0 12px 12px;
+  padding: 16px 32px 20px 32px;
+  height: 64px; /* Exact Figma height */
 }
 
 .accordion-header--position-bottom.accordion-header--size-large {
   border-radius: 0 0 12px 12px;
+  padding: 16px 32px 20px 32px;
+  height: 68px; /* Exact Figma height */
+}
+
+.accordion-header--position-bottom.accordion-header--size-small {
+  border-radius: 0 0 12px 12px;
+  padding: 16px 32px 20px 32px;
+  height: 56px; /* Exact Figma height */
 }
 
 /* ===== CONTENT TYPE VARIANTS ===== */
