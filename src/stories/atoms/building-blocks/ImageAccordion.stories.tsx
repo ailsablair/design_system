@@ -255,7 +255,8 @@ export const DifferentImage: Story = {
     ...defaultProps,
     backgroundImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
     status: 'open',
-    content: 'text',
+    type: 'image',
+    content: 'text-img',
     title: 'Mountain Landscape',
     body: 'Beautiful mountain scenery with dramatic lighting and atmospheric conditions.',
   },
@@ -274,7 +275,8 @@ export const WithoutIcon: Story = {
   args: {
     ...defaultProps,
     status: 'open',
-    content: 'text',
+    type: 'image',
+    content: 'text-img',
     icon: false,
   },
   parameters: {
