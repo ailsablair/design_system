@@ -133,7 +133,8 @@ export const InteractiveDefault: Story = {
   args: {
     ...defaultProps,
     status: 'closed',
-    content: 'text',
+    type: 'image',
+    content: 'text-img',
     icon: true,
   },
   parameters: {
@@ -149,6 +150,7 @@ export const InteractiveNoText: Story = {
   args: {
     ...defaultProps,
     status: 'closed',
+    type: 'image',
     content: 'none',
     icon: true,
   },
