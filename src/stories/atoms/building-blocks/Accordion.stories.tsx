@@ -17,6 +17,10 @@ A comprehensive accordion component implementing the exact Figma design specific
 ## Features
 
 ### Types
+- **Contained**: Complete accordion with full border radius (standalone use)
+- **Top**: Top section of accordion group with top rounded corners only
+- **Middle**: Middle section of accordion group with no border radius
+- **Bottom**: Bottom section of accordion group with bottom rounded corners only
 - **Simple**: Basic accordion with optional icon
 - **Decorative**: Icon with decorative frame and rounded background
 - **Decorative Plus**: Same as decorative but uses plus/minus icons instead of chevrons
