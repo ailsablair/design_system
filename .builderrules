@@ -6,12 +6,14 @@
 - Always check existing patterns before adding new stories
 - Test all new stories in Chromatic to ensure visual consistency
 - Use existing approved stories as templates for new ones
+- All stories should use design tokens for typography, spacing, padding, line height, letter spacing, radius, stroke, positioning, etc.
 
 ## Design Token Usage
 
 - Always use CSS custom properties from tokens.css
 - Never hardcode colors, spacing, or typography values
 - Maintain consistency with existing design patterns
+- All stories should use design tokens for typography, spacing, padding, line height, letter spacing, radius, stroke, positioning, etc.
 
 ## Code Quality
 
@@ -25,3 +27,4 @@
 - All stories should demonstrate comprehensive component usage
 - Stories should showcase different states, variants, and configurations
 - Focus on creating stories that provide value for design system documentation
+- Write basic most tests for visual consistency outside of Chromatic. These should ensure design tokens are used properly, that the components and stories are rendering correctly visually, and that they match the designs in Figma to as accurate a pixel as possible.
