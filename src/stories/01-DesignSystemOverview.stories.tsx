@@ -10,20 +10,23 @@ const meta: Meta = {
         component: `
 # Echo Design System Overview
 
-The Echo Design System is a comprehensive, scalable design foundation built with React, TypeScript, and modern CSS practices.
+The Echo Design System is a comprehensive, scalable design foundation built with React, TypeScript, and modern CSS practices. Recently enhanced with improved design token implementation and component consistency.
 
 ## 🧩 Components
 
-### AccordionHeader
-- **72 Complete Variants**: All Figma design variations implemented
-- **Size Options**: Small (18px), Default (19px), Large (24px) typography
-- **Icon Styles**: Plus/minus and chevron expand/collapse icons
-- **Interactive States**: Default, hover, selected with proper color changes
+### Recently Enhanced Components
+- **Stepper**: Fully migrated to design tokens, improved spacing consistency
+- **Toggle**: Complete tokenization with proper track and thumb sizing
+- **Card**: Enhanced with tokenized dimensions and display typography
+- **Avatar**: Consistent sizing tokens across all variants
+- **Button**: Standardized heights and spacing for better accessibility
+- **DataTable**: Improved shadow system and visual consistency
 
 ### Performance Optimizations
 - **Memory Management**: 8GB heap allocation for large builds
 - **Bundle Splitting**: Optimized chunk sizes
 - **ResizeObserver**: Error suppression implemented
+- **CSS Containment**: Enhanced rendering performance
         `,
       },
     },
@@ -37,126 +40,277 @@ export const Overview: Story = {
   render: () => (
     <div style={{ 
       padding: '40px', 
-      fontFamily: 'Inter, sans-serif',
+      fontFamily: 'var(--font-family-base)',
       maxWidth: '1200px',
       margin: '0 auto',
       lineHeight: '1.6'
     }}>
       <h1 style={{ 
-        fontSize: '32px', 
-        fontWeight: '700', 
-        marginBottom: '24px',
-        color: '#1a1a1a'
+        fontSize: 'var(--type-size-4xl)', 
+        fontWeight: 'var(--type-weight-bold)', 
+        marginBottom: 'var(--spacing-sizing-24px)',
+        color: 'var(--base-black)',
+        fontFamily: 'var(--font-family-heading)'
       }}>
         Echo Design System
       </h1>
       
       <p style={{ 
-        fontSize: '18px', 
-        color: '#666',
-        marginBottom: '32px'
+        fontSize: 'var(--type-size-lg)', 
+        color: 'var(--neutral-gray-gray-600)',
+        marginBottom: 'var(--spacing-sizing-32px)'
       }}>
-        A comprehensive, scalable design foundation built with React, TypeScript, and modern CSS practices.
+        A comprehensive, scalable design foundation built with React, TypeScript, and modern CSS practices. 
+        Recently enhanced with improved design token implementation and component consistency.
       </p>
 
       <div style={{ 
         display: 'grid', 
         gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-        gap: '24px',
-        marginBottom: '40px'
+        gap: 'var(--spacing-sizing-24px)',
+        marginBottom: 'var(--spacing-sizing-40px)'
       }}>
         <div style={{ 
-          padding: '24px', 
-          border: '1px solid #e5e7eb',
-          borderRadius: '8px',
-          background: '#f9fafb'
+          padding: 'var(--spacing-sizing-24px)', 
+          border: '1px solid var(--neutral-gray-gray-200)',
+          borderRadius: 'var(--spacing-radius-8px)',
+          background: 'var(--neutral-gray-gray-50)'
         }}>
-          <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px' }}>
+          <h3 style={{ 
+            fontSize: 'var(--type-size-xl)', 
+            fontWeight: 'var(--type-weight-semibold)', 
+            marginBottom: 'var(--spacing-sizing-16px)',
+            fontFamily: 'var(--font-family-heading)'
+          }}>
             🧩 Components
           </h3>
-          <ul style={{ margin: 0, paddingLeft: '20px' }}>
-            <li><strong>AccordionHeader</strong>: 72 Figma variants implemented</li>
-            <li><strong>Input & Textarea</strong>: Comprehensive form components</li>
-            <li><strong>Tag</strong>: Interactive tag components</li>
-            <li><strong>Avatar</strong>: User profile components</li>
+          <ul style={{ margin: 0, paddingLeft: 'var(--spacing-sizing-20px)' }}>
+            <li><strong>Stepper</strong>: ✅ Fully tokenized sizing and spacing</li>
+            <li><strong>Toggle</strong>: ✅ Complete design token migration</li>
+            <li><strong>Card</strong>: ✅ Enhanced with display typography tokens</li>
+            <li><strong>Avatar</strong>: ✅ Consistent sizing across all variants</li>
+            <li><strong>Button</strong>: ✅ Standardized heights and accessibility</li>
+            <li><strong>DataTable</strong>: ✅ Improved shadows and consistency</li>
           </ul>
         </div>
 
         <div style={{ 
-          padding: '24px', 
-          border: '1px solid #e5e7eb',
-          borderRadius: '8px',
-          background: '#f9fafb'
+          padding: 'var(--spacing-sizing-24px)', 
+          border: '1px solid var(--neutral-gray-gray-200)',
+          borderRadius: 'var(--spacing-radius-8px)',
+          background: 'var(--neutral-gray-gray-50)'
         }}>
-          <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px' }}>
+          <h3 style={{ 
+            fontSize: 'var(--type-size-xl)', 
+            fontWeight: 'var(--type-weight-semibold)', 
+            marginBottom: 'var(--spacing-sizing-16px)',
+            fontFamily: 'var(--font-family-heading)'
+          }}>
             🎨 Design Tokens
           </h3>
-          <ul style={{ margin: 0, paddingLeft: '20px' }}>
-            <li><strong>67 Color Tokens</strong>: Professional color scales</li>
-            <li><strong>Typography</strong>: Archivo and Roboto Flex fonts</li>
-            <li><strong>Spacing</strong>: 8px grid-based system</li>
-            <li><strong>Shadows</strong>: Standardized elevation</li>
+          <ul style={{ margin: 0, paddingLeft: 'var(--spacing-sizing-20px)' }}>
+            <li><strong>295+ Design Tokens</strong>: Comprehensive token system</li>
+            <li><strong>Component Sizing</strong>: Button, avatar, toggle dimensions</li>
+            <li><strong>Display Typography</strong>: Large statistical values (48px-82px)</li>
+            <li><strong>Font Aliases</strong>: Consistent typography references</li>
+            <li><strong>Gradient System</strong>: Tokenized placeholder backgrounds</li>
+            <li><strong>Shadow Scale</strong>: Standardized elevation system</li>
           </ul>
         </div>
 
         <div style={{ 
-          padding: '24px', 
-          border: '1px solid #e5e7eb',
-          borderRadius: '8px',
-          background: '#f9fafb'
+          padding: 'var(--spacing-sizing-24px)', 
+          border: '1px solid var(--neutral-gray-gray-200)',
+          borderRadius: 'var(--spacing-radius-8px)',
+          background: 'var(--neutral-gray-gray-50)'
         }}>
-          <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px' }}>
+          <h3 style={{ 
+            fontSize: 'var(--type-size-xl)', 
+            fontWeight: 'var(--type-weight-semibold)', 
+            marginBottom: 'var(--spacing-sizing-16px)',
+            fontFamily: 'var(--font-family-heading)'
+          }}>
             ⚡ Performance
           </h3>
-          <ul style={{ margin: 0, paddingLeft: '20px' }}>
+          <ul style={{ margin: 0, paddingLeft: 'var(--spacing-sizing-20px)' }}>
             <li><strong>Memory Optimized</strong>: 8GB heap builds</li>
-            <li><strong>Bundle Splitting</strong>: Efficient loading</li>
+            <li><strong>CSS Containment</strong>: Enhanced rendering performance</li>
+            <li><strong>Hardware Acceleration</strong>: Optimized transforms</li>
             <li><strong>Error Handling</strong>: ResizeObserver fixes</li>
-            <li><strong>Build Optimization</strong>: Fast CI/CD</li>
+            <li><strong>Bundle Splitting</strong>: Efficient loading</li>
+            <li><strong>Build Optimization</strong>: Fast CI/CD pipeline</li>
           </ul>
         </div>
 
         <div style={{ 
-          padding: '24px', 
-          border: '1px solid #e5e7eb',
-          borderRadius: '8px',
-          background: '#f9fafb'
+          padding: 'var(--spacing-sizing-24px)', 
+          border: '1px solid var(--neutral-gray-gray-200)',
+          borderRadius: 'var(--spacing-radius-8px)',
+          background: 'var(--neutral-gray-gray-50)'
         }}>
-          <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px' }}>
+          <h3 style={{ 
+            fontSize: 'var(--type-size-xl)', 
+            fontWeight: 'var(--type-weight-semibold)', 
+            marginBottom: 'var(--spacing-sizing-16px)',
+            fontFamily: 'var(--font-family-heading)'
+          }}>
             ♿ Accessibility
           </h3>
-          <ul style={{ margin: 0, paddingLeft: '20px' }}>
-            <li><strong>WCAG Compliance</strong>: AA-level contrast</li>
-            <li><strong>Keyboard Navigation</strong>: Full support</li>
-            <li><strong>Screen Readers</strong>: Semantic HTML</li>
-            <li><strong>Focus Management</strong>: Clear indicators</li>
+          <ul style={{ margin: 0, paddingLeft: 'var(--spacing-sizing-20px)' }}>
+            <li><strong>WCAG Compliance</strong>: AA-level contrast ratios</li>
+            <li><strong>Keyboard Navigation</strong>: Full support across components</li>
+            <li><strong>Screen Readers</strong>: Semantic HTML structure</li>
+            <li><strong>Focus Management</strong>: Clear visual indicators</li>
+            <li><strong>Touch Targets</strong>: Minimum 44px sizing</li>
+            <li><strong>Reduced Motion</strong>: Respects user preferences</li>
           </ul>
         </div>
       </div>
 
       <div style={{ 
-        padding: '24px', 
-        background: '#eff6ff',
-        border: '1px solid #bfdbfe',
-        borderRadius: '8px'
+        padding: 'var(--spacing-sizing-24px)', 
+        background: 'var(--primary-blue-blue-50)',
+        border: '1px solid var(--primary-blue-blue-200)',
+        borderRadius: 'var(--spacing-radius-8px)',
+        marginBottom: 'var(--spacing-sizing-40px)'
       }}>
-        <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px' }}>
+        <h3 style={{ 
+          fontSize: 'var(--type-size-xl)', 
+          fontWeight: 'var(--type-weight-semibold)', 
+          marginBottom: 'var(--spacing-sizing-16px)',
+          fontFamily: 'var(--font-family-heading)'
+        }}>
+          🆕 Recent Improvements
+        </h3>
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+          gap: 'var(--spacing-sizing-16px)'
+        }}>
+          <div>
+            <h4 style={{ 
+              fontSize: 'var(--type-size-base)', 
+              fontWeight: 'var(--type-weight-semibold)', 
+              marginBottom: 'var(--spacing-sizing-8px)' 
+            }}>
+              Component Token Migration
+            </h4>
+            <div style={{ fontSize: 'var(--type-size-sm)', color: 'var(--neutral-gray-gray-700)' }}>
+              Stepper, Toggle, Card, Avatar, and Button components now use design tokens exclusively, 
+              eliminating hardcoded values and improving maintainability.
+            </div>
+          </div>
+          <div>
+            <h4 style={{ 
+              fontSize: 'var(--type-size-base)', 
+              fontWeight: 'var(--type-weight-semibold)', 
+              marginBottom: 'var(--spacing-sizing-8px)' 
+            }}>
+              Enhanced Typography System
+            </h4>
+            <div style={{ fontSize: 'var(--type-size-sm)', color: 'var(--neutral-gray-gray-700)' }}>
+              Added display typography tokens for large statistical values and font family aliases 
+              for consistent typography usage across components.
+            </div>
+          </div>
+          <div>
+            <h4 style={{ 
+              fontSize: 'var(--type-size-base)', 
+              fontWeight: 'var(--type-weight-semibold)', 
+              marginBottom: 'var(--spacing-sizing-8px)' 
+            }}>
+              Component Sizing Standards
+            </h4>
+            <div style={{ fontSize: 'var(--type-size-sm)', color: 'var(--neutral-gray-gray-700)' }}>
+              Standardized button heights, avatar sizes, and toggle dimensions with 
+              dedicated component tokens for consistent UI scaling.
+            </div>
+          </div>
+          <div>
+            <h4 style={{ 
+              fontSize: 'var(--type-size-base)', 
+              fontWeight: 'var(--type-weight-semibold)', 
+              marginBottom: 'var(--spacing-sizing-8px)' 
+            }}>
+              Visual Consistency Improvements
+            </h4>
+            <div style={{ fontSize: 'var(--type-size-sm)', color: 'var(--neutral-gray-gray-700)' }}>
+              Replaced hardcoded shadows, gradients, and spacing values with tokenized 
+              alternatives for better Figma design alignment.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ 
+        padding: 'var(--spacing-sizing-24px)', 
+        background: 'var(--primary-seafoam-50)',
+        border: '1px solid var(--primary-seafoam-200)',
+        borderRadius: 'var(--spacing-radius-8px)'
+      }}>
+        <h3 style={{ 
+          fontSize: 'var(--type-size-xl)', 
+          fontWeight: 'var(--type-weight-semibold)', 
+          marginBottom: 'var(--spacing-sizing-16px)',
+          fontFamily: 'var(--font-family-heading)'
+        }}>
           🚀 Getting Started
         </h3>
         <div style={{ 
-          background: '#1f2937',
-          color: '#f9fafb',
-          padding: '16px',
-          borderRadius: '4px',
+          background: 'var(--neutral-gray-gray-800)',
+          color: 'var(--base-white)',
+          padding: 'var(--spacing-sizing-16px)',
+          borderRadius: 'var(--spacing-radius-4px)',
           fontFamily: 'Monaco, Consolas, monospace',
-          fontSize: '14px',
+          fontSize: 'var(--type-size-sm)',
           overflow: 'auto'
         }}>
           <div>npm install</div>
           <div>npm run storybook</div>
-          <div style={{ marginTop: '8px', color: '#9ca3af' }}># Optimized builds:</div>
+          <div style={{ marginTop: 'var(--spacing-sizing-8px)', color: 'var(--neutral-gray-gray-400)' }}>
+            # Import design tokens in your CSS:
+          </div>
+          <div>@import './stories/foundations/tokens.css';</div>
+          <div style={{ marginTop: 'var(--spacing-sizing-8px)', color: 'var(--neutral-gray-gray-400)' }}>
+            # Optimized builds:
+          </div>
           <div>npm run build-storybook:fast</div>
           <div>npm run build-storybook:memory</div>
+        </div>
+
+        <div style={{ 
+          marginTop: 'var(--spacing-sizing-16px)', 
+          padding: 'var(--spacing-sizing-16px)',
+          background: 'var(--base-white)',
+          borderRadius: 'var(--spacing-radius-4px)',
+          border: '1px solid var(--primary-seafoam-200)'
+        }}>
+          <h4 style={{ 
+            fontSize: 'var(--type-size-base)', 
+            fontWeight: 'var(--type-weight-semibold)', 
+            marginBottom: 'var(--spacing-sizing-8px)',
+            fontFamily: 'var(--font-family-heading)'
+          }}>
+            Design Token Usage
+          </h4>
+          <div style={{ 
+            background: 'var(--neutral-gray-gray-800)',
+            color: 'var(--base-white)',
+            padding: 'var(--spacing-sizing-12px)',
+            borderRadius: 'var(--spacing-radius-4px)',
+            fontFamily: 'Monaco, Consolas, monospace',
+            fontSize: 'var(--type-size-sm)'
+          }}>
+            <div style={{ color: 'var(--neutral-gray-gray-400)' }}>/* Use semantic tokens */</div>
+            <div>.my-component &#123;</div>
+            <div>&nbsp;&nbsp;font-family: var(--font-family-base);</div>
+            <div>&nbsp;&nbsp;font-size: var(--type-size-base);</div>
+            <div>&nbsp;&nbsp;padding: var(--spacing-sizing-16px);</div>
+            <div>&nbsp;&nbsp;background: var(--primary-sky-blue-sky-blue);</div>
+            <div>&nbsp;&nbsp;border-radius: var(--spacing-radius-8px);</div>
+            <div>&nbsp;&nbsp;box-shadow: var(--shadow-sm);</div>
+            <div>&#125;</div>
+          </div>
         </div>
       </div>
     </div>
@@ -164,7 +318,7 @@ export const Overview: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Complete overview of the Echo Design System with all features and optimizations.',
+        story: 'Complete overview of the Echo Design System with recent enhancements, improved design token implementation, and component consistency improvements.',
       },
     },
   },
