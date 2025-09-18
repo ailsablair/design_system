@@ -1,8 +1,8 @@
 import type { Preview } from '@storybook/react';
-import { suppressResizeObserverErrors } from '../src/utils/resizeObserverSuppression';
+import { immediateResizeObserverFix } from '../src/utils/immediateResizeObserverFix';
 
-// Apply ResizeObserver error suppression immediately when preview loads
-suppressResizeObserverErrors();
+// Apply immediate ResizeObserver fix when preview loads
+immediateResizeObserverFix();
 
 const preview: Preview = {
   parameters: {
