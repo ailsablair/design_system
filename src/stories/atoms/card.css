@@ -933,30 +933,37 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-sizing-6px);
+  margin-bottom: 0; /* Override general margin since we're using specific bottom padding */
 }
 
 .card.card-size-small.card-type-image .card-button-group {
   padding-right: var(--spacing-sizing-16px);
+  padding-bottom: var(--spacing-sizing-16px);
 }
 
 .card.card-size-default.card-type-image .card-button-group {
   padding-right: 0;
+  padding-bottom: var(--spacing-sizing-16px);
 }
 
 .card.card-size-large.card-type-image .card-button-group {
   padding-right: 0;
+  padding-bottom: var(--spacing-sizing-16px);
 }
 
 .card.card-size-small.card-type-contained-image .card-button-group {
   padding-right: 8px;
+  padding-bottom: var(--spacing-sizing-16px);
 }
 
 .card.card-size-default.card-type-contained-image .card-button-group {
   padding-right: 16px;
+  padding-bottom: var(--spacing-sizing-16px);
 }
 
 .card.card-size-large.card-type-contained-image .card-button-group {
   padding-right: 16px;
+  padding-bottom: var(--spacing-sizing-16px);
 }
 
 /* === BUTTON GROUP POSITIONING FOR SEMANTIC CARDS === */
