@@ -966,8 +966,10 @@
 .card.card-type-info .card-button-group,
 .card.card-type-success .card-button-group {
   padding-right: var(--spacing-sizing-8px);
+  padding-bottom: var(--spacing-sizing-16px);
   justify-content: flex-end;
   align-self: stretch;
+  margin-bottom: 0; /* Override general margin since we're using padding */
 }
 
 /* === RESPONSIVE DESIGN === */
