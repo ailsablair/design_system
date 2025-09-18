@@ -1066,6 +1066,11 @@
 
   .card.card-type-image .card-button-group {
     padding-right: var(--spacing-sizing-12px);
+    padding-bottom: var(--spacing-sizing-16px);
+  }
+
+  .card.card-type-contained-image .card-button-group {
+    padding-bottom: var(--spacing-sizing-16px);
   }
 }
 
