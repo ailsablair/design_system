@@ -1,8 +1,18 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
 // ===== RESIZE OBSERVER ERROR SUPPRESSION - CONFIG LEVEL =====
-// Early suppression during Storybook configuration and build phase
+// Prevent duplicate listener registration with global tracking
+declare global {
+  var __storybookResizeObserverSuppressed: boolean;
+}
+
 const suppressResizeObserverErrors = (): void => {
+  // Prevent duplicate initialization
+  if (globalThis.__storybookResizeObserverSuppressed) {
+    return;
+  }
+  globalThis.__storybookResizeObserverSuppressed = true;
+
   if (typeof globalThis !== 'undefined' && globalThis.console) {
     const originalError = globalThis.console.error;
 
@@ -20,27 +30,50 @@ const suppressResizeObserverErrors = (): void => {
     console.log('🔧 ResizeObserver error suppression activated at config level');
   }
 
-  // Suppress Node.js process-level errors if available
+  // Suppress Node.js process-level errors if available (only add listeners once)
   if (typeof process !== 'undefined' && process.on) {
-    process.on('uncaughtException', (error) => {
-      const message = error.message?.toLowerCase() || '';
-      if (message.includes('resizeobserver') ||
-          message.includes('undelivered notifications')) {
-        return; // Silently handle ResizeObserver errors
-      }
-      // Re-throw non-ResizeObserver errors
-      throw error;
-    });
+    // Increase max listeners to prevent warnings
+    process.setMaxListeners(20);
 
-    process.on('unhandledRejection', (reason) => {
-      const message = String(reason).toLowerCase();
-      if (message.includes('resizeobserver') ||
-          message.includes('undelivered notifications')) {
-        return; // Silently handle ResizeObserver promise rejections
-      }
-      // Re-throw non-ResizeObserver rejections
-      throw reason;
-    });
+    // Check if our listeners are already registered
+    const existingUncaughtListeners = process.listeners('uncaughtException');
+    const existingRejectionListeners = process.listeners('unhandledRejection');
+
+    const hasResizeObserverUncaughtListener = existingUncaughtListeners.some(
+      listener => listener.name === 'resizeObserverUncaughtHandler' ||
+                  listener.toString().includes('resizeobserver')
+    );
+
+    const hasResizeObserverRejectionListener = existingRejectionListeners.some(
+      listener => listener.name === 'resizeObserverRejectionHandler' ||
+                  listener.toString().includes('resizeobserver')
+    );
+
+    if (!hasResizeObserverUncaughtListener) {
+      const resizeObserverUncaughtHandler = function resizeObserverUncaughtHandler(error: Error) {
+        const message = error.message?.toLowerCase() || '';
+        if (message.includes('resizeobserver') ||
+            message.includes('undelivered notifications')) {
+          return; // Silently handle ResizeObserver errors
+        }
+        // Let other errors bubble up by not preventing default behavior
+      };
+
+      process.on('uncaughtException', resizeObserverUncaughtHandler);
+    }
+
+    if (!hasResizeObserverRejectionListener) {
+      const resizeObserverRejectionHandler = function resizeObserverRejectionHandler(reason: any) {
+        const message = String(reason).toLowerCase();
+        if (message.includes('resizeobserver') ||
+            message.includes('undelivered notifications')) {
+          return; // Silently handle ResizeObserver promise rejections
+        }
+        // Let other rejections bubble up
+      };
+
+      process.on('unhandledRejection', resizeObserverRejectionHandler);
+    }
   }
 };
 
