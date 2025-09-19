@@ -38,13 +38,46 @@ type Story = StoryObj;
 
 export const Overview: Story = {
   render: () => (
-    <div style={{ 
-      padding: '40px', 
-      fontFamily: 'var(--font-family-base)',
-      maxWidth: '1200px',
-      margin: '0 auto',
-      lineHeight: '1.6'
-    }}>
+    <>
+      <a
+        href="#main-content"
+        style={{
+          position: 'absolute',
+          left: '-10000px',
+          top: 'auto',
+          width: '1px',
+          height: '1px',
+          overflow: 'hidden'
+        }}
+        onFocus={(e) => {
+          e.target.style.left = '0';
+          e.target.style.width = 'auto';
+          e.target.style.height = 'auto';
+          e.target.style.padding = '8px';
+          e.target.style.background = 'var(--primary-blue-blue)';
+          e.target.style.color = 'white';
+          e.target.style.textDecoration = 'none';
+          e.target.style.borderRadius = '4px';
+        }}
+        onBlur={(e) => {
+          e.target.style.left = '-10000px';
+          e.target.style.width = '1px';
+          e.target.style.height = '1px';
+          e.target.style.padding = '0';
+        }}
+      >
+        Skip to main content
+      </a>
+      <main
+        id="main-content"
+        style={{
+          padding: '40px',
+          fontFamily: 'var(--font-family-base)',
+          maxWidth: '1200px',
+          margin: '0 auto',
+          lineHeight: '1.6'
+        }}
+      >
       <h1 style={{ 
         fontSize: 'var(--type-size-4xl)', 
         fontWeight: 'var(--type-weight-bold)', 
@@ -309,7 +342,8 @@ export const Overview: Story = {
           </div>
         </div>
       </div>
-    </div>
+      </main>
+    </>
   ),
   parameters: {
     docs: {
