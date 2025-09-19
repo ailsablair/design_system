@@ -1,8 +1,4 @@
 import type { Preview } from '@storybook/react';
-import { immediateResizeObserverFix } from '../src/utils/immediateResizeObserverFix';
-
-// Apply immediate ResizeObserver fix when preview loads
-immediateResizeObserverFix();
 
 const preview: Preview = {
   parameters: {
