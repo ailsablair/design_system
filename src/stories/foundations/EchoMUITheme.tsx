@@ -222,21 +222,21 @@ const createEchoMUITheme = () => {
             },
           },
           containedPrimary: {
-            backgroundColor: 'var(--primary-blue-blue)',
-            color: 'var(--base-white)',
+            backgroundColor: '#2F42BD', // --primary-blue-blue
+            color: '#FFFFFF', // --base-white
             '&:hover': {
-              backgroundColor: 'var(--primary-blue-blue-600)',
+              backgroundColor: '#253699', // --primary-blue-blue-600
             },
             '&:active': {
-              backgroundColor: 'var(--primary-blue-blue-700)',
+              backgroundColor: '#1B2B75', // --primary-blue-blue-700
             },
           },
           outlinedPrimary: {
-            borderColor: 'var(--primary-blue-blue)',
-            color: 'var(--primary-blue-blue)',
+            borderColor: '#2F42BD', // --primary-blue-blue
+            color: '#2F42BD', // --primary-blue-blue
             '&:hover': {
-              borderColor: 'var(--primary-blue-blue-600)',
-              backgroundColor: 'var(--primary-blue-blue-50)',
+              borderColor: '#253699', // --primary-blue-blue-600
+              backgroundColor: '#F9F9FE', // --primary-blue-blue-50
             },
           },
         },
