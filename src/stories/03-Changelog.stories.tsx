@@ -22,8 +22,8 @@ type Story = StoryObj;
 
 export const Changelog: Story = {
   render: () => (
-    <div style={{ 
-      padding: '40px', 
+    <main style={{
+      padding: '40px',
       fontFamily: 'var(--font-family-base)',
       maxWidth: '1200px',
       margin: '0 auto',
@@ -594,7 +594,7 @@ export const Changelog: Story = {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   ),
   parameters: {
     docs: {
