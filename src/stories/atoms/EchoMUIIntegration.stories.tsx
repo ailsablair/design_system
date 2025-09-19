@@ -92,7 +92,7 @@ This demonstrates how to use MUI components as the foundation while maintaining 
     },
   },
   tags: ['autodocs'],
-} satisfying Meta;
+} satisfies Meta;
 
 export default meta;
 type Story = StoryObj;
