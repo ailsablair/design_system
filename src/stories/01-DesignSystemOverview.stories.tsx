@@ -289,27 +289,28 @@ export const Overview: Story = {
         }}>
           🚀 Getting Started
         </h3>
-        <div style={{ 
-          background: 'var(--neutral-gray-gray-800)',
-          color: 'var(--base-white)',
-          padding: 'var(--spacing-sizing-16px)',
-          borderRadius: 'var(--spacing-radius-4px)',
-          fontFamily: 'Monaco, Consolas, monospace',
-          fontSize: 'var(--type-size-sm)',
-          overflow: 'auto'
-        }}>
-          <div>npm install</div>
-          <div>npm run storybook</div>
-          <div style={{ marginTop: 'var(--spacing-sizing-8px)', color: 'var(--neutral-gray-gray-400)' }}>
-            # Import design tokens and MUI theme:
-          </div>
-          <div>@import './stories/foundations/tokens.css';</div>
-          <div style={{ marginTop: 'var(--spacing-sizing-8px)', color: 'var(--neutral-gray-gray-400)' }}>
-            # Optimized builds:
-          </div>
-          <div>npm run build-storybook:fast</div>
-          <div>npm run build-storybook:memory</div>
-        </div>
+        <pre
+          style={{
+            background: 'var(--neutral-gray-gray-800)',
+            color: 'var(--base-white)',
+            padding: 'var(--spacing-sizing-16px)',
+            borderRadius: 'var(--spacing-radius-4px)',
+            fontFamily: 'Monaco, Consolas, monospace',
+            fontSize: 'var(--type-size-sm)',
+            overflow: 'auto',
+            margin: 0
+          }}
+          role="region"
+          aria-label="Installation and setup commands"
+        ><code>npm install
+npm run storybook
+
+<span style={{ color: 'var(--neutral-gray-gray-400)' }}># Import design tokens and MUI theme:</span>
+@import './stories/foundations/tokens.css';
+
+<span style={{ color: 'var(--neutral-gray-gray-400)' }}># Optimized builds:</span>
+npm run build-storybook:fast
+npm run build-storybook:memory</code></pre>
 
         <div style={{ 
           marginTop: 'var(--spacing-sizing-16px)', 
