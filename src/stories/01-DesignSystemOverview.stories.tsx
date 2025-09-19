@@ -268,9 +268,10 @@ export const Overview: Story = {
           <div>npm install</div>
           <div>npm run storybook</div>
           <div style={{ marginTop: 'var(--spacing-sizing-8px)', color: 'var(--neutral-gray-gray-400)' }}>
-            # Import design tokens in your CSS:
+            # Import design tokens and MUI theme:
           </div>
           <div>@import './stories/foundations/tokens.css';</div>
+          <div>import { EchoMUIThemeProvider } from './foundations/MUIThemeProvider';</div>
           <div style={{ marginTop: 'var(--spacing-sizing-8px)', color: 'var(--neutral-gray-gray-400)' }}>
             # Optimized builds:
           </div>
@@ -301,14 +302,16 @@ export const Overview: Story = {
             fontFamily: 'Monaco, Consolas, monospace',
             fontSize: 'var(--type-size-sm)'
           }}>
-            <div style={{ color: 'var(--neutral-gray-gray-400)' }}>/* Use semantic tokens */</div>
+            <div style={{ color: 'var(--neutral-gray-gray-400)' }}>/* Enhanced components with MUI + Echo */</div>
+            <div>&lt;EchoMUIThemeProvider&gt;</div>
+            <div>&nbsp;&nbsp;&lt;EnhancedButton type="primary" enhancedInteractions&gt;</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;Enhanced with MUI + Echo design</div>
+            <div>&nbsp;&nbsp;&lt;/EnhancedButton&gt;</div>
+            <div>&lt;/EchoMUIThemeProvider&gt;</div>
+            <div style={{ marginTop: 'var(--spacing-sizing-8px)', color: 'var(--neutral-gray-gray-400)' }}>/* Traditional token usage */</div>
             <div>.my-component &#123;</div>
-            <div>&nbsp;&nbsp;font-family: var(--font-family-base);</div>
-            <div>&nbsp;&nbsp;font-size: var(--type-size-base);</div>
+            <div>&nbsp;&nbsp;color: var(--primary-blue-blue);</div>
             <div>&nbsp;&nbsp;padding: var(--spacing-sizing-16px);</div>
-            <div>&nbsp;&nbsp;background: var(--primary-sky-blue-sky-blue);</div>
-            <div>&nbsp;&nbsp;border-radius: var(--spacing-radius-8px);</div>
-            <div>&nbsp;&nbsp;box-shadow: var(--shadow-sm);</div>
             <div>&#125;</div>
           </div>
         </div>
