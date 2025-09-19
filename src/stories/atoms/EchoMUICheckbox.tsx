@@ -55,17 +55,17 @@ const StyledCheckbox = styled(Checkbox, {
 
   // Variant colors using Echo tokens
   const variantColors = {
-    default: 'var(--neutral-gray-gray-600)',
-    primary: 'var(--primary-blue-blue)',
-    success: 'var(--status-green)',
-    warning: 'var(--status-orange)',
-    error: 'var(--status-red)',
+    default: '#4B5563', // --neutral-gray-gray-600
+    primary: '#2F42BD', // --primary-blue-blue
+    success: '#70CC67', // --status-green
+    warning: '#F4A403', // --status-orange-alt
+    error: '#CE2031', // --status-red
   };
 
   const activeColor = variantColors[echoVariant as keyof typeof variantColors];
 
   return {
-    color: 'var(--neutral-gray-gray-300)',
+    color: '#D2D5DA', // --neutral-gray-gray-300
     padding: 'var(--spacing-sizing-4px)',
     borderRadius: echoShape === 'round' ? '50%' : 'var(--spacing-radius-2px)',
     transition: 'all var(--transition-fast)',
@@ -91,7 +91,7 @@ const StyledCheckbox = styled(Checkbox, {
     },
     
     '&.Mui-disabled': {
-      color: 'var(--neutral-gray-gray-200)',
+      color: '#E5E7EB', // --neutral-gray-gray-200
       opacity: 'var(--opacity-disabled)',
     },
     
@@ -117,12 +117,12 @@ const StyledFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
   '& .MuiFormControlLabel-label': {
     fontFamily: 'var(--type-typeface-roboto-flex)',
     fontSize: 'var(--type-size-base)',
-    color: 'var(--base-black)',
+    color: '#1C1C1C', // --base-black
     marginLeft: 'var(--spacing-sizing-8px)',
     lineHeight: 'var(--type-leading-relaxed)',
     
     '&.Mui-disabled': {
-      color: 'var(--neutral-gray-gray-400)',
+      color: '#9CA3AF', // --neutral-gray-gray-400
     },
   },
 }));
@@ -133,7 +133,7 @@ const StyledFormHelperText = styled(FormHelperText)(({ theme }) => ({
   margin: 'var(--spacing-sizing-4px) 0 0 var(--spacing-sizing-28px)', // Align with label
   
   '&.Mui-error': {
-    color: 'var(--status-red)',
+    color: '#CE2031', // --status-red
   },
 }));
 
@@ -195,7 +195,7 @@ export const EchoMUICheckbox: React.FC<EchoMUICheckboxProps> = ({
           <>
             {label}
             {required && (
-              <span style={{ color: 'var(--status-red)', marginLeft: 'var(--spacing-sizing-2px)' }}>
+              <span style={{ color: '#CE2031', marginLeft: 'var(--spacing-sizing-2px)' }}> {/* --status-red */}
                 *
               </span>
             )}
