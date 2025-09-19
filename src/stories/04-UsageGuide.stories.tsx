@@ -43,7 +43,7 @@ export const UsageGuide: Story = {
         color: '#666',
         marginBottom: '32px'
       }}>
-        This comprehensive guide helps developers implement the Echo Design System effectively in their projects. Follow these patterns and examples for consistent, accessible, and performant implementations.
+        This comprehensive guide helps developers implement the Echo Design System effectively in their projects, including the new MUI 6/7 integration for enhanced interactions. Follow these patterns and examples for consistent, accessible, and performant implementations.
       </p>
 
       <div style={{ marginBottom: '40px' }}>
@@ -107,10 +107,11 @@ export const UsageGuide: Story = {
               fontSize: '13px',
               marginBottom: '12px'
             }}>
-              <div>// Import individual components</div>
+              <div>// Import original components</div>
               <div>import &#123; Input, Textarea, Tag &#125; from './components';</div>
-              <div style={{ marginTop: '8px' }}>// Import types</div>
-              <div>import type &#123; InputProps, TextareaProps, TagProps &#125; from './components';</div>
+              <div style={{ marginTop: '8px' }}>// Import enhanced MUI components</div>
+              <div>import &#123; EnhancedButton, EnhancedInput &#125; from './components';</div>
+              <div>import &#123; EchoMUIThemeProvider &#125; from './foundations/MUIThemeProvider';</div>
             </div>
           </div>
 
@@ -134,11 +135,14 @@ export const UsageGuide: Story = {
             }}>
               <div>/* Import design tokens in your CSS */</div>
               <div>@import './stories/foundations/tokens.css';</div>
+              <div style={{ marginTop: '8px' }}>/* Wrap your app with MUI theme provider */</div>
+              <div>&lt;EchoMUIThemeProvider&gt;</div>
+              <div>&nbsp;&nbsp;&#123;/* Your app content */&#125;</div>
+              <div>&lt;/EchoMUIThemeProvider&gt;</div>
               <div style={{ marginTop: '8px' }}>/* Use tokens in your styles */</div>
               <div>.my-component &#123;</div>
-              <div>&nbsp;&nbsp;color: var(--primary-sky-blue-500);</div>
+              <div>&nbsp;&nbsp;color: var(--primary-blue-blue);</div>
               <div>&nbsp;&nbsp;padding: var(--spacing-sizing-16px);</div>
-              <div>&nbsp;&nbsp;border-radius: var(--spacing-radius-8px);</div>
               <div>&#125;</div>
             </div>
           </div>
