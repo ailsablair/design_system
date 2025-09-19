@@ -19,6 +19,12 @@ interface EchoMUIButtonProps extends Omit<MUIButtonProps, 'size' | 'color'> {
   trailingIcon?: React.ReactNode;
   /** Full width */
   fullWidth?: boolean;
+  /** Icon for icon-only variant */
+  icon?: React.ReactNode;
+  /** Icon-only variant (removes text content) */
+  iconOnly?: boolean;
+  /** Tooltip text for accessibility (required for icon-only buttons) */
+  tooltip?: string;
 }
 
 const StyledEchoButton = styled(MUIButton, {
