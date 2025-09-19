@@ -1,0 +1,282 @@
+/* UserCard Molecule Styles */
+.user-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.user-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-16px);
+  padding: var(--spacing-sizing-16px);
+}
+
+/* Layout variations */
+.user-card--horizontal .user-card-content {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--spacing-sizing-12px);
+}
+
+.user-card--compact .user-card-content {
+  gap: var(--spacing-sizing-8px);
+  padding: var(--spacing-sizing-12px);
+}
+
+/* Avatar section */
+.user-card-avatar {
+  display: flex;
+  justify-content: center;
+}
+
+.user-card--horizontal .user-card-avatar {
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+
+.user-card-avatar-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Status indicator */
+.user-status-indicator {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--base-white);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.user-card--compact .user-status-indicator {
+  width: 8px;
+  height: 8px;
+  border-width: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
+/* Info section */
+.user-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-8px);
+  text-align: center;
+  flex: 1;
+}
+
+.user-card--horizontal .user-card-info {
+  text-align: left;
+}
+
+.user-card--compact .user-card-info {
+  gap: var(--spacing-sizing-4px);
+}
+
+/* Basic info */
+.user-card-basic-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-2px);
+}
+
+.user-card-name {
+  font-family: var(--type-typeface-archivo);
+  font-size: var(--type-size-lg);
+  font-weight: var(--type-weight-semibold);
+  color: var(--base-black);
+  margin: 0;
+  line-height: var(--type-line-height-body);
+}
+
+.user-card--compact .user-card-name {
+  font-size: var(--type-size-base);
+}
+
+.user-card-role {
+  font-family: var(--type-typeface-roboto-flex);
+  font-size: var(--type-size-base);
+  font-weight: var(--type-weight-medium);
+  color: var(--neutral-gray-gray-700);
+  margin: 0;
+  line-height: var(--type-line-height-body);
+}
+
+.user-card--compact .user-card-role {
+  font-size: var(--type-size-sm);
+}
+
+.user-card-company {
+  font-family: var(--type-typeface-roboto-flex);
+  font-size: var(--type-size-sm);
+  color: var(--neutral-gray-gray-600);
+  margin: 0;
+  line-height: var(--type-line-height-body-sm);
+}
+
+.user-card--compact .user-card-company {
+  font-size: var(--type-size-xs);
+}
+
+/* Contact info */
+.user-card-contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-2px);
+}
+
+.user-card-email {
+  font-family: var(--type-typeface-roboto-flex);
+  font-size: var(--type-size-sm);
+  color: var(--primary-blue-blue);
+  margin: 0;
+  text-decoration: none;
+  line-height: var(--type-line-height-body-sm);
+}
+
+.user-card-email:hover {
+  text-decoration: underline;
+}
+
+.user-card-location {
+  font-family: var(--type-typeface-roboto-flex);
+  font-size: var(--type-size-sm);
+  color: var(--neutral-gray-gray-600);
+  margin: 0;
+  line-height: var(--type-line-height-body-sm);
+}
+
+.user-card--compact .user-card-email,
+.user-card--compact .user-card-location {
+  font-size: var(--type-size-xs);
+}
+
+/* Skills section */
+.user-card-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sizing-4px);
+  justify-content: center;
+}
+
+.user-card--horizontal .user-card-skills {
+  justify-content: flex-start;
+}
+
+.user-card--compact .user-card-skills {
+  gap: var(--spacing-sizing-2px);
+}
+
+/* Meta info */
+.user-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-2px);
+}
+
+.user-card-last-seen {
+  font-family: var(--type-typeface-roboto-flex);
+  font-size: var(--type-size-xs);
+  color: var(--neutral-gray-gray-500);
+  margin: 0;
+  font-style: italic;
+  line-height: var(--type-line-height-body-sm);
+}
+
+/* Actions section */
+.user-card-actions {
+  display: flex;
+  gap: var(--spacing-sizing-8px);
+  justify-content: center;
+}
+
+.user-card--horizontal .user-card-actions {
+  justify-content: flex-start;
+  margin-top: auto;
+}
+
+.user-card--compact .user-card-actions {
+  gap: var(--spacing-sizing-4px);
+}
+
+/* Responsive behavior */
+@media (max-width: 480px) {
+  .user-card--horizontal .user-card-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .user-card--horizontal .user-card-info {
+    text-align: center;
+  }
+  
+  .user-card--horizontal .user-card-skills {
+    justify-content: center;
+  }
+  
+  .user-card--horizontal .user-card-actions {
+    justify-content: center;
+  }
+  
+  .user-card {
+    max-width: none;
+  }
+}
+
+/* Interactive states */
+.user-card.card-clickable:hover .user-card-name {
+  color: var(--primary-blue-blue);
+}
+
+.user-card.card-clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Status color variations */
+.user-status-indicator--online {
+  background-color: var(--status-green);
+}
+
+.user-status-indicator--offline {
+  background-color: var(--neutral-gray-gray-400);
+}
+
+.user-status-indicator--away {
+  background-color: var(--status-orange-alt);
+}
+
+.user-status-indicator--busy {
+  background-color: var(--status-red);
+}
+
+/* List layout when multiple user cards are used */
+.user-card + .user-card {
+  margin-top: var(--spacing-sizing-12px);
+}
+
+.user-card--compact + .user-card--compact {
+  margin-top: var(--spacing-sizing-8px);
+}
+
+/* Grid layout helpers */
+.user-cards-grid {
+  display: grid;
+  gap: var(--spacing-sizing-16px);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.user-cards-grid--compact {
+  gap: var(--spacing-sizing-12px);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .user-cards-grid,
+  .user-cards-grid--compact {
+    grid-template-columns: 1fr;
+  }
+}
