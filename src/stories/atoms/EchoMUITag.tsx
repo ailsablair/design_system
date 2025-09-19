@@ -1,5 +1,6 @@
 import React from 'react';
-import { Chip, ChipProps } from '@mui/material';
+import { Chip } from '@mui/material';
+import type { ChipProps } from '@mui/material/Chip';
 import { styled } from '@mui/material/styles';
 import { Close as CloseIcon } from '@mui/icons-material';
 

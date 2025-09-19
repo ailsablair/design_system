@@ -1,5 +1,6 @@
 import React from 'react';
-import { FormControl, InputLabel, Select, MenuItem, FormHelperText, SelectProps } from '@mui/material';
+import { FormControl, InputLabel, Select, MenuItem, FormHelperText } from '@mui/material';
+import type { SelectProps } from '@mui/material/Select';
 import { styled } from '@mui/material/styles';
 
 /**

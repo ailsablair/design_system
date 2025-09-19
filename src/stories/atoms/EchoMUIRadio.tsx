@@ -1,5 +1,6 @@
 import React from 'react';
-import { Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, FormHelperText, RadioProps } from '@mui/material';
+import { Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, FormHelperText } from '@mui/material';
+import type { RadioProps } from '@mui/material/Radio';
 import { styled } from '@mui/material/styles';
 
 /**

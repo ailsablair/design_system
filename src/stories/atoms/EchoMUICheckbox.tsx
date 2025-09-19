@@ -1,5 +1,6 @@
 import React from 'react';
-import { Checkbox, FormControlLabel, FormHelperText, CheckboxProps } from '@mui/material';
+import { Checkbox, FormControlLabel, FormHelperText } from '@mui/material';
+import type { CheckboxProps } from '@mui/material/Checkbox';
 import { styled } from '@mui/material/styles';
 
 /**

@@ -1,5 +1,6 @@
 import React from 'react';
-import { TextField, TextFieldProps, InputAdornment, IconButton } from '@mui/material';
+import { TextField, InputAdornment, IconButton } from '@mui/material';
+import type { TextFieldProps } from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
 import { Clear as ClearIcon } from '@mui/icons-material';
 
