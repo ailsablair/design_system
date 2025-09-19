@@ -135,10 +135,6 @@ export const UsageGuide: Story = {
             }}>
               <div>/* Import design tokens in your CSS */</div>
               <div>@import './stories/foundations/tokens.css';</div>
-              <div style={{ marginTop: '8px' }}>/* Wrap your app with MUI theme provider */</div>
-              <div>&lt;EchoMUIThemeProvider&gt;</div>
-              <div>&nbsp;&nbsp;&#123;/* Your app content */&#125;</div>
-              <div>&lt;/EchoMUIThemeProvider&gt;</div>
               <div style={{ marginTop: '8px' }}>/* Use tokens in your styles */</div>
               <div>.my-component &#123;</div>
               <div>&nbsp;&nbsp;color: var(--primary-blue-blue);</div>
