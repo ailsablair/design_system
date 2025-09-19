@@ -193,20 +193,46 @@ export const EchoMUIButton: React.FC<EchoMUIButtonProps> = ({
   leadingIcon,
   trailingIcon,
   fullWidth = false,
+  icon,
+  iconOnly = false,
+  tooltip,
   ...props
 }) => {
-  return (
+  // For icon-only buttons, require tooltip for accessibility
+  if (iconOnly && !tooltip && !props['aria-label']) {
+    console.warn('EchoMUIButton: Icon-only buttons should have a tooltip or aria-label for accessibility');
+  }
+
+  const buttonContent = (
     <StyledEchoButton
       variant={variant}
       size={size}
       fullWidth={fullWidth}
+      aria-label={iconOnly ? (tooltip || props['aria-label']) : props['aria-label']}
       {...props}
     >
-      {leadingIcon && <span style={{ display: 'flex', alignItems: 'center' }}>{leadingIcon}</span>}
-      {children}
-      {trailingIcon && <span style={{ display: 'flex', alignItems: 'center' }}>{trailingIcon}</span>}
+      {iconOnly ? (
+        icon && <span style={{ display: 'flex', alignItems: 'center' }}>{icon}</span>
+      ) : (
+        <>
+          {leadingIcon && <span style={{ display: 'flex', alignItems: 'center' }}>{leadingIcon}</span>}
+          {children}
+          {trailingIcon && <span style={{ display: 'flex', alignItems: 'center' }}>{trailingIcon}</span>}
+        </>
+      )}
     </StyledEchoButton>
   );
+
+  // Wrap with tooltip if provided
+  if (tooltip) {
+    return (
+      <Tooltip title={tooltip} arrow>
+        {buttonContent}
+      </Tooltip>
+    );
+  }
+
+  return buttonContent;
 };
 
 export default EchoMUIButton;
