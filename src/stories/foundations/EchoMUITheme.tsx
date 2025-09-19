@@ -276,7 +276,7 @@ const createEchoMUITheme = () => {
           root: {
             borderRadius: 'var(--spacing-radius-8px)',
             boxShadow: 'var(--shadow-sm)',
-            border: '1px solid var(--neutral-gray-gray-200)',
+            border: '1px solid #E5E7EB', // --neutral-gray-gray-200
           },
         },
       },
