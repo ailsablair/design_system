@@ -226,11 +226,119 @@ export const UsageGuide: Story = {
       </div>
 
       <div style={{ marginBottom: '40px' }}>
-        <h2 style={{ 
-          fontSize: '24px', 
-          fontWeight: '600', 
+        <h2 style={{
+          fontSize: '24px',
+          fontWeight: '600',
           marginBottom: '24px',
-          color: '#1a1a1a' 
+          color: '#1a1a1a'
+        }}>
+          🎯 MUI Integration (v4.0.0+)
+        </h2>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+          gap: '24px',
+          marginBottom: '40px'
+        }}>
+          <div style={{
+            padding: '24px',
+            border: '1px solid #3b82f6',
+            borderRadius: '8px',
+            background: '#eff6ff'
+          }}>
+            <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px' }}>
+              Enhanced Components
+            </h3>
+            <div style={{
+              background: '#1f2937',
+              color: '#f9fafb',
+              padding: '16px',
+              borderRadius: '6px',
+              fontFamily: 'Monaco, Consolas, monospace',
+              fontSize: '13px'
+            }}>
+              <div>import &#123; EchoMUIThemeProvider &#125; from './foundations/MUIThemeProvider';</div>
+              <div>import &#123; EnhancedButton &#125; from './atoms/EnhancedButton';</div>
+              <div style={{ marginTop: '8px' }}>&lt;EchoMUIThemeProvider&gt;</div>
+              <div>&nbsp;&nbsp;&lt;EnhancedButton</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;type="primary"</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;enhancedInteractions</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;leadingIcon=&#123;&lt;SaveIcon /&gt;&#125;</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;tooltip="Save your changes"</div>
+              <div>&nbsp;&nbsp;&gt;</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;Save Document</div>
+              <div>&nbsp;&nbsp;&lt;/EnhancedButton&gt;</div>
+              <div>&lt;/EchoMUIThemeProvider&gt;</div>
+            </div>
+          </div>
+
+          <div style={{
+            padding: '24px',
+            border: '1px solid #10b981',
+            borderRadius: '8px',
+            background: '#ecfdf5'
+          }}>
+            <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px' }}>
+              Direct MUI Usage
+            </h3>
+            <div style={{
+              background: '#1f2937',
+              color: '#f9fafb',
+              padding: '16px',
+              borderRadius: '6px',
+              fontFamily: 'Monaco, Consolas, monospace',
+              fontSize: '13px'
+            }}>
+              <div>import &#123; Card, CardContent, Button &#125; from '@mui/material';</div>
+              <div style={{ marginTop: '8px' }}>// Automatically uses Echo styling via theme</div>
+              <div>&lt;Card&gt;</div>
+              <div>&nbsp;&nbsp;&lt;CardContent&gt;</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Button color="primary"&gt;</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MUI Button with Echo styling</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Button&gt;</div>
+              <div>&nbsp;&nbsp;&lt;/CardContent&gt;</div>
+              <div>&lt;/Card&gt;</div>
+            </div>
+          </div>
+
+          <div style={{
+            padding: '24px',
+            border: '1px solid #f59e0b',
+            borderRadius: '8px',
+            background: '#fffbeb'
+          }}>
+            <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px' }}>
+              Progressive Enhancement
+            </h3>
+            <div style={{ marginBottom: '12px', fontSize: '14px', color: '#666' }}>
+              Adopt MUI features gradually while keeping existing components:
+            </div>
+            <div style={{
+              background: '#1f2937',
+              color: '#f9fafb',
+              padding: '16px',
+              borderRadius: '6px',
+              fontFamily: 'Monaco, Consolas, monospace',
+              fontSize: '13px'
+            }}>
+              <div>// Existing components work unchanged</div>
+              <div>&lt;Button type="primary"&gt;Original&lt;/Button&gt;</div>
+              <div style={{ marginTop: '8px' }}>// Enhanced versions available</div>
+              <div>&lt;EnhancedButton type="primary" enhancedInteractions&gt;</div>
+              <div>&nbsp;&nbsp;Enhanced</div>
+              <div>&lt;/EnhancedButton&gt;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ marginBottom: '40px' }}>
+        <h2 style={{
+          fontSize: '24px',
+          fontWeight: '600',
+          marginBottom: '24px',
+          color: '#1a1a1a'
         }}>
           🧩 Component Usage Patterns
         </h2>
