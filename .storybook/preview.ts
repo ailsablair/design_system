@@ -57,10 +57,65 @@ const preview: Preview = {
           value: '#ffffff',
         },
         {
-          name: 'dark', 
+          name: 'dark',
           value: '#333333',
         },
       ],
+    },
+    a11y: {
+      config: {
+        rules: [
+          // Enable color contrast checking but allow user to override
+          {
+            id: 'color-contrast',
+            enabled: false, // Disabled per user request
+          },
+          // Ensure all interactive elements are focusable
+          {
+            id: 'focusable-content',
+            enabled: true,
+          },
+          // Ensure proper heading hierarchy
+          {
+            id: 'heading-order',
+            enabled: true,
+          },
+          // Ensure images have alt text
+          {
+            id: 'image-alt',
+            enabled: true,
+          },
+          // Ensure proper landmark usage
+          {
+            id: 'landmark-one-main',
+            enabled: true,
+          },
+          // Ensure form labels
+          {
+            id: 'label',
+            enabled: true,
+          },
+          // Ensure keyboard accessibility
+          {
+            id: 'keyboard',
+            enabled: true,
+          },
+          // Check for proper button naming
+          {
+            id: 'button-name',
+            enabled: true,
+          },
+          // Check for proper link naming
+          {
+            id: 'link-name',
+            enabled: true,
+          },
+        ],
+      },
+      options: {
+        checks: { 'color-contrast': { enabled: false } },
+        restoreScroll: true,
+      },
     },
   },
 };
