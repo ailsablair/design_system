@@ -109,9 +109,6 @@ export const UsageGuide: Story = {
             }}>
               <div>// Import original components</div>
               <div>import &#123; Input, Textarea, Tag &#125; from './components';</div>
-              <div style={{ marginTop: '8px' }}>// Import enhanced MUI components</div>
-              <div>import &#123; EnhancedButton, EnhancedInput &#125; from './components';</div>
-              <div>import &#123; EchoMUIThemeProvider &#125; from './foundations/MUIThemeProvider';</div>
             </div>
           </div>
 
