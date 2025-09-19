@@ -250,21 +250,21 @@ const createEchoMUITheme = () => {
               fontFamily: 'var(--type-typeface-roboto-flex)',
               
               '& fieldset': {
-                borderColor: 'var(--neutral-gray-gray-300)',
+                borderColor: '#D2D5DA', // --neutral-gray-gray-300
               },
               '&:hover fieldset': {
-                borderColor: 'var(--neutral-gray-gray-400)',
+                borderColor: '#9CA3AF', // --neutral-gray-gray-400
               },
               '&.Mui-focused fieldset': {
-                borderColor: 'var(--primary-blue-blue)',
+                borderColor: '#2F42BD', // --primary-blue-blue
                 borderWidth: 'var(--spacing-stroke-2px)',
               },
             },
             '& .MuiInputLabel-root': {
               fontFamily: 'var(--type-typeface-archivo)',
-              color: 'var(--neutral-gray-gray-600)',
+              color: '#4B5563', // --neutral-gray-gray-600
               '&.Mui-focused': {
-                color: 'var(--primary-blue-blue)',
+                color: '#2F42BD', // --primary-blue-blue
               },
             },
           },
