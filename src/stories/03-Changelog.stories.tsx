@@ -63,7 +63,7 @@ export const Changelog: Story = {
             color: 'var(--status-dark-green)',
             fontFamily: 'var(--font-family-heading)'
           }}>
-            [3.0.0] - 2024 Design Token Comprehensive Audit & Migration
+            [3.0.0] - 2025 Design Token Comprehensive Audit & Migration
           </h2>
           
           <div style={{ marginBottom: 'var(--spacing-sizing-20px)' }}>
@@ -222,7 +222,7 @@ export const Changelog: Story = {
             color: 'var(--primary-blue-blue)',
             fontFamily: 'var(--font-family-heading)'
           }}>
-            [2.4.0] - 2024 ResizeObserver Error Handling & Performance
+            [2.4.0] - 2025 ResizeObserver Error Handling & Performance
           </h2>
           
           <div style={{ marginBottom: 'var(--spacing-sizing-20px)' }}>
@@ -307,7 +307,7 @@ export const Changelog: Story = {
             color: 'var(--primary-sky-blue-sky-blue)',
             fontFamily: 'var(--font-family-heading)'
           }}>
-            [2.3.0] - 2024 Story Restoration & Enhancement
+            [2.3.0] - 2025 Story Restoration & Enhancement
           </h2>
           
           <div style={{ marginBottom: 'var(--spacing-sizing-20px)' }}>
@@ -367,7 +367,7 @@ export const Changelog: Story = {
             color: 'var(--primary-yellow-dark-yellow)',
             fontFamily: 'var(--font-family-heading)'
           }}>
-            [2.2.0] - 2024 Icon Library Streamlining
+            [2.2.0] - 2025 Icon Library Streamlining
           </h2>
           
           <div style={{ marginBottom: 'var(--spacing-sizing-20px)' }}>
@@ -413,7 +413,7 @@ export const Changelog: Story = {
             color: 'var(--primary-seafoam-dark-seafoam)',
             fontFamily: 'var(--font-family-heading)'
           }}>
-            [2.1.0] - 2024 Icon Library Expansion
+            [2.1.0] - 2025 Icon Library Expansion
           </h2>
           
           <div style={{ marginBottom: 'var(--spacing-sizing-20px)' }}>
