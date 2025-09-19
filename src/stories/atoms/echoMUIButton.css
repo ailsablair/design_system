@@ -1,0 +1,300 @@
+@import '../foundations/tokens.css';
+
+/* Reset MUI Button styles and apply Echo styling */
+.echo-mui-button {
+  /* Remove MUI default styles */
+  margin: 0;
+  padding: 0;
+  
+  /* Apply Echo foundation styles */
+  font-family: var(--type-typeface-archivo) !important;
+  font-weight: var(--type-weight-medium) !important;
+  border-radius: var(--spacing-radius-4px) !important;
+  text-transform: none !important;
+  transition: all var(--transition-fast) !important;
+  cursor: pointer !important;
+  border: var(--spacing-stroke-1px) solid transparent !important;
+  line-height: 1 !important;
+  
+  /* Remove MUI box-shadow */
+  box-shadow: none !important;
+  
+  /* Ensure proper display */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Content Layout */
+.echo-mui-button__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.echo-mui-button__loading-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sizing-8px);
+  opacity: 0.7;
+}
+
+.echo-mui-button__icon-only-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.echo-mui-button__text {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.echo-mui-button__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.echo-mui-button__icon--leading {
+  margin-right: var(--spacing-sizing-8px);
+}
+
+.echo-mui-button__icon--trailing {
+  margin-left: var(--spacing-sizing-8px);
+}
+
+/* Loading Spinner */
+.echo-mui-button__spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: echo-button-spin 1s linear infinite;
+}
+
+@keyframes echo-button-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* === SIZE VARIANTS === */
+
+.echo-mui-button--extra-small {
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px) !important;
+  font-size: var(--type-size-xs) !important;
+  min-height: var(--sizing-button-height-extra-small) !important;
+}
+
+.echo-mui-button--extra-small .echo-mui-button__content {
+  gap: var(--spacing-sizing-4px);
+}
+
+.echo-mui-button--extra-small .echo-mui-button__spinner {
+  width: 12px;
+  height: 12px;
+}
+
+.echo-mui-button--small {
+  padding: var(--spacing-sizing-6px) var(--spacing-sizing-12px) !important;
+  font-size: var(--type-size-sm) !important;
+  min-height: var(--sizing-button-height-small) !important;
+}
+
+.echo-mui-button--small .echo-mui-button__content {
+  gap: var(--spacing-sizing-6px);
+}
+
+.echo-mui-button--small .echo-mui-button__spinner {
+  width: 14px;
+  height: 14px;
+}
+
+.echo-mui-button--default {
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-16px) !important;
+  font-size: var(--type-size-sm) !important;
+  min-height: var(--sizing-button-height-default) !important;
+}
+
+.echo-mui-button--default .echo-mui-button__content {
+  gap: var(--spacing-sizing-8px);
+}
+
+.echo-mui-button--large {
+  padding: var(--spacing-sizing-12px) var(--spacing-sizing-20px) !important;
+  font-size: var(--type-size-base) !important;
+  min-height: var(--sizing-button-height-large) !important;
+}
+
+.echo-mui-button--large .echo-mui-button__content {
+  gap: var(--spacing-sizing-8px);
+}
+
+.echo-mui-button--large .echo-mui-button__spinner {
+  width: 18px;
+  height: 18px;
+}
+
+/* Icon-only variants have equal width and height */
+.echo-mui-button--icon-only {
+  aspect-ratio: 1;
+  padding: 0 !important;
+}
+
+.echo-mui-button--icon-only.echo-mui-button--extra-small {
+  width: var(--sizing-button-height-extra-small);
+  height: var(--sizing-button-height-extra-small);
+}
+
+.echo-mui-button--icon-only.echo-mui-button--small {
+  width: var(--sizing-button-height-small);
+  height: var(--sizing-button-height-small);
+}
+
+.echo-mui-button--icon-only.echo-mui-button--default {
+  width: var(--sizing-button-height-default);
+  height: var(--sizing-button-height-default);
+}
+
+.echo-mui-button--icon-only.echo-mui-button--large {
+  width: var(--sizing-button-height-large);
+  height: var(--sizing-button-height-large);
+}
+
+/* === VARIANT STYLES === */
+
+/* Primary */
+.echo-mui-button--primary {
+  background-color: var(--primary-blue-blue) !important;
+  color: var(--base-white) !important;
+  border-color: var(--primary-blue-blue) !important;
+}
+
+.echo-mui-button--primary:hover:not(:disabled) {
+  background-color: var(--primary-blue-blue-600) !important;
+  border-color: var(--primary-blue-blue-600) !important;
+}
+
+.echo-mui-button--primary:active:not(:disabled) {
+  background-color: var(--primary-blue-blue-700) !important;
+  border-color: var(--primary-blue-blue-700) !important;
+}
+
+.echo-mui-button--primary:focus-visible {
+  outline: 2px solid var(--primary-blue-blue) !important;
+  outline-offset: 2px !important;
+}
+
+/* Secondary */
+.echo-mui-button--secondary {
+  background-color: var(--base-white) !important;
+  color: var(--primary-blue-blue) !important;
+  border-color: var(--primary-blue-blue) !important;
+}
+
+.echo-mui-button--secondary:hover:not(:disabled) {
+  background-color: var(--primary-blue-blue-50) !important;
+  border-color: var(--primary-blue-blue-600) !important;
+}
+
+.echo-mui-button--secondary:active:not(:disabled) {
+  background-color: var(--primary-blue-blue-100) !important;
+  border-color: var(--primary-blue-blue-700) !important;
+}
+
+/* Tertiary */
+.echo-mui-button--tertiary {
+  background-color: transparent !important;
+  color: var(--primary-blue-blue) !important;
+  border-color: transparent !important;
+}
+
+.echo-mui-button--tertiary:hover:not(:disabled) {
+  background-color: var(--primary-blue-blue-50) !important;
+}
+
+.echo-mui-button--tertiary:active:not(:disabled) {
+  background-color: var(--primary-blue-blue-100) !important;
+}
+
+/* Ghost */
+.echo-mui-button--ghost {
+  background-color: transparent !important;
+  color: var(--neutral-gray-gray-700) !important;
+  border-color: var(--neutral-gray-gray-300) !important;
+}
+
+.echo-mui-button--ghost:hover:not(:disabled) {
+  background-color: var(--neutral-gray-gray-50) !important;
+  border-color: var(--neutral-gray-gray-400) !important;
+}
+
+/* Error */
+.echo-mui-button--error {
+  background-color: var(--status-red) !important;
+  color: var(--base-white) !important;
+  border-color: var(--status-red) !important;
+}
+
+.echo-mui-button--error:hover:not(:disabled) {
+  background-color: var(--status-dark-red) !important;
+  border-color: var(--status-dark-red) !important;
+}
+
+/* Warning */
+.echo-mui-button--warning {
+  background-color: var(--status-orange) !important;
+  color: var(--base-white) !important;
+  border-color: var(--status-orange) !important;
+}
+
+.echo-mui-button--warning:hover:not(:disabled) {
+  background-color: var(--status-dark-orange) !important;
+  border-color: var(--status-dark-orange) !important;
+}
+
+/* Success */
+.echo-mui-button--success {
+  background-color: var(--status-green) !important;
+  color: var(--base-white) !important;
+  border-color: var(--status-green) !important;
+}
+
+.echo-mui-button--success:hover:not(:disabled) {
+  background-color: var(--status-dark-green) !important;
+  border-color: var(--status-dark-green) !important;
+}
+
+/* === STATE STYLES === */
+
+/* Loading state */
+.echo-mui-button--loading {
+  cursor: not-allowed !important;
+}
+
+/* Disabled state */
+.echo-mui-button--disabled,
+.echo-mui-button:disabled {
+  opacity: var(--opacity-disabled) !important;
+  cursor: not-allowed !important;
+  background-color: var(--neutral-gray-gray-100) !important;
+  color: var(--neutral-gray-gray-400) !important;
+  border-color: var(--neutral-gray-gray-200) !important;
+}
+
+/* Override MUI's ripple color to match Echo theme */
+.echo-mui-button .MuiTouchRipple-root {
+  color: currentColor;
+  opacity: 0.3;
+}
+
+/* Full width variant */
+.echo-mui-button--full-width {
+  width: 100% !important;
+}
