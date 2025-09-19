@@ -22,65 +22,65 @@ const getCSSVar = (varName: string): string => {
 const createEchoMUITheme = () => {
   return createTheme({
     palette: {
-      // Primary colors from Echo tokens
+      // Primary colors from Echo tokens (using actual color values for MUI compatibility)
       primary: {
-        main: 'var(--primary-blue-blue)',
-        light: 'var(--primary-blue-blue-300)',
-        dark: 'var(--primary-blue-dark-blue)',
-        contrastText: 'var(--base-white)',
+        main: '#2F42BD', // --primary-blue-blue
+        light: '#95A0E5', // --primary-blue-blue-300
+        dark: '#191E3C', // --primary-blue-dark-blue
+        contrastText: '#FFFFFF', // --base-white
       },
       secondary: {
-        main: 'var(--primary-seafoam-seafoam)',
-        light: 'var(--primary-seafoam-100)',
-        dark: 'var(--primary-seafoam-dark-seafoam)',
-        contrastText: 'var(--base-white)',
+        main: '#8BBF9F', // --primary-seafoam-seafoam
+        light: '#DCECE2', // --primary-seafoam-seafoam-100
+        dark: '#4B6D58', // --primary-seafoam-dark-seafoam
+        contrastText: '#FFFFFF', // --base-white
       },
       error: {
-        main: 'var(--status-red)',
-        light: 'var(--status-red-light)',
-        dark: 'var(--status-dark-red)',
-        contrastText: 'var(--base-white)',
+        main: '#CE2031', // --status-red
+        light: '#FBEBEB', // --status-red-light
+        dark: '#B91C1C', // --status-red-600
+        contrastText: '#FFFFFF', // --base-white
       },
       warning: {
-        main: 'var(--status-orange)',
-        light: 'var(--status-orange-light)',
-        dark: 'var(--status-dark-orange)',
-        contrastText: 'var(--base-white)',
+        main: '#F4A403', // --status-orange-alt
+        light: '#FEF4DA', // --status-orange-light
+        dark: '#D07C06', // --status-dark-orange
+        contrastText: '#FFFFFF', // --base-white
       },
       success: {
-        main: 'var(--status-green)',
-        light: 'var(--status-green-light)',
-        dark: 'var(--status-dark-green)',
-        contrastText: 'var(--base-white)',
+        main: '#70CC67', // --status-green
+        light: '#F2FFF1', // --status-green-light
+        dark: '#227F1A', // --status-dark-green
+        contrastText: '#FFFFFF', // --base-white
       },
       info: {
-        main: 'var(--primary-sky-blue-sky-blue)',
-        light: 'var(--primary-sky-blue-100)',
-        dark: 'var(--primary-sky-blue-dark-sky-blue)',
-        contrastText: 'var(--base-white)',
+        main: '#0BA7EA', // --primary-sky-blue-sky-blue
+        light: '#E0F6FE', // --primary-sky-blue-100
+        dark: '#04435E', // --primary-sky-blue-dark-sky-blue
+        contrastText: '#FFFFFF', // --base-white
       },
-      // Neutral colors
+      // Neutral colors (using actual values for better MUI compatibility)
       grey: {
-        50: 'var(--neutral-gray-gray-50)',
-        100: 'var(--neutral-gray-gray-100)',
-        200: 'var(--neutral-gray-gray-200)',
-        300: 'var(--neutral-gray-gray-300)',
-        400: 'var(--neutral-gray-gray-400)',
-        500: 'var(--neutral-gray-gray-500)',
-        600: 'var(--neutral-gray-gray-600)',
-        700: 'var(--neutral-gray-gray-700)',
-        800: 'var(--neutral-gray-gray-800)',
-        900: 'var(--neutral-gray-gray-900)',
+        50: '#F9FAFB', // --neutral-gray-gray-50
+        100: '#F3F4F6', // --neutral-gray-gray-100
+        200: '#E5E7EB', // --neutral-gray-gray-200
+        300: '#D2D5DA', // --neutral-gray-gray-300
+        400: '#9CA3AF', // --neutral-gray-gray-400
+        500: '#6D7280', // --neutral-gray-gray-500
+        600: '#4B5563', // --neutral-gray-gray-600
+        700: '#374151', // --neutral-gray-gray-700
+        800: '#1F2937', // --neutral-gray-gray-800
+        900: '#111827', // --neutral-gray-gray-900
       },
       // Background colors
       background: {
-        default: 'var(--base-white)',
-        paper: 'var(--base-white)',
+        default: '#FFFFFF', // --base-white
+        paper: '#FFFFFF', // --base-white
       },
       text: {
-        primary: 'var(--base-black)',
-        secondary: 'var(--neutral-gray-gray-600)',
-        disabled: 'var(--neutral-gray-gray-400)',
+        primary: '#1C1C1C', // --base-black
+        secondary: '#4B5563', // --neutral-gray-gray-600
+        disabled: '#9CA3AF', // --neutral-gray-gray-400
       },
     },
     
