@@ -1,0 +1,95 @@
+/* FormField Molecule Styles */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-4px);
+  width: 100%;
+}
+
+.form-field--horizontal {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--spacing-sizing-16px);
+}
+
+/* Label section */
+.form-field-label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-4px);
+}
+
+.form-field--horizontal .form-field-label {
+  flex-shrink: 0;
+  padding-top: var(--spacing-sizing-2px); /* Align with input */
+}
+
+.form-field-description {
+  font-family: var(--type-typeface-roboto-flex);
+  font-size: var(--type-size-sm);
+  color: var(--neutral-gray-gray-600);
+  line-height: var(--type-line-height-body-sm);
+  margin-top: var(--spacing-sizing-2px);
+}
+
+/* Input section */
+.form-field-input {
+  flex: 1;
+  min-width: 0; /* Prevent overflow in horizontal layout */
+}
+
+/* State variations */
+.form-field--error .form-field-description {
+  color: var(--status-red);
+}
+
+.form-field--warning .form-field-description {
+  color: var(--status-orange-alt);
+}
+
+.form-field--success .form-field-description {
+  color: var(--status-green);
+}
+
+/* Size variations */
+.form-field--small {
+  gap: var(--spacing-sizing-2px);
+}
+
+.form-field--small .form-field-description {
+  font-size: var(--type-size-xs);
+}
+
+.form-field--large {
+  gap: var(--spacing-sizing-6px);
+}
+
+.form-field--large .form-field-description {
+  font-size: var(--type-size-base);
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .form-field--horizontal {
+    flex-direction: column;
+    gap: var(--spacing-sizing-8px);
+  }
+  
+  .form-field--horizontal .form-field-label {
+    width: 100% !important;
+    padding-top: 0;
+  }
+}
+
+/* Group styling for multiple form fields */
+.form-field + .form-field {
+  margin-top: var(--spacing-sizing-16px);
+}
+
+.form-field--small + .form-field--small {
+  margin-top: var(--spacing-sizing-12px);
+}
+
+.form-field--large + .form-field--large {
+  margin-top: var(--spacing-sizing-20px);
+}
