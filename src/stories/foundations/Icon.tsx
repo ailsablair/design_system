@@ -77,32 +77,87 @@ const allMaterialIconComponents = {
 
 /**
  * Universal Icon component supporting comprehensive icon libraries.
- * 
- * ## Icon Libraries Available (295+ total icons):
- * - **Material UI Filled** (100+): Standard solid Material Design icons
- * - **Material UI Outlined** (100+): Outlined variant Material Design icons
- * - **Material UI TwoTone** (100+): Two-color variant Material Design icons
+ *
+ * ## Icon Libraries Available (400+ total icons):
+ * - **Material UI Filled** (130+): Standard solid Material Design icons including navigation, actions, communication, content, user management, system status, analytics, commerce, connectivity, media controls, and design tools
+ * - **Material UI Outlined** (130+): Outlined variant of all Material Design icons
+ * - **Material UI TwoTone** (130+): Two-color variant of all Material Design icons
  * - **Material Design Icons** (18+): Additional outline icons from Figma collection
- * 
+ *
+ * ## Complete Icon Categories:
+ *
+ * ### Navigation & Layout
+ * - **Navigation**: home, menu, dashboard, arrow-back, arrow-forward, arrow-upward, arrow-downward
+ * - **Layout**: expand-more, expand-less, directions, map, place, location-on
+ *
+ * ### Actions & Controls
+ * - **Basic Actions**: search, edit, delete, add, remove, close, refresh, save
+ * - **File Operations**: download, upload, share, print, build
+ * - **Interface**: settings, check, more-vert, more-horiz, filter-list, sort, get-app, clear
+ *
+ * ### Communication
+ * - **Messaging**: email, phone, notifications, chat, comment, forum, send
+ * - **Mail Management**: inbox, drafts, mark-email-read, unsubscribe
+ *
+ * ### Social & Feedback
+ * - **Engagement**: thumb-up, thumb-down, star, favorite, bookmark, trending-up
+ *
+ * ### Content & Media
+ * - **Content**: history, assignment, description, list, view-list, view-module, grid-view, table-chart
+ * - **Files**: folder, insert-drive-file, image, photo, photo-library, collections
+ * - **Media**: video-library, music-note, attach-file, cloud-upload, cloud-download
+ *
+ * ### User & Account
+ * - **User Management**: person, account-circle, account-box, group, work, exit-to-app
+ * - **Security**: lock, lock-open, visibility, visibility-off, security, shield, verified
+ *
+ * ### System & Status
+ * - **Feedback**: info, warning, error, check-circle, help
+ * - **Development**: bug-report, code
+ *
+ * ### Time & Calendar
+ * - **Time**: calendar-today, schedule, alarm
+ *
+ * ### Analytics & Charts
+ * - **Charts**: bar-chart, pie-chart, timeline
+ *
+ * ### Commerce
+ * - **Shopping**: shopping-cart, payment
+ *
+ * ### Network & Connectivity
+ * - **Network**: language, public, wifi, bluetooth, battery-full, signal-cellular-alt
+ *
+ * ### Media Controls
+ * - **Playback**: play-arrow, pause, stop, skip-next, skip-previous
+ * - **Audio/Video**: volume-up, volume-off, mic, mic-off, videocam, videocam-off, camera-alt
+ *
+ * ### Design & Creative
+ * - **Design Tools**: color-lens, palette, brush, format-paint, content-copy
+ *
  * ## Icon Variants:
  * - **Filled**: `home`, `search`, `settings`, etc.
  * - **Outlined**: `home-outlined`, `search-outlined`, `settings-outlined`, etc.
  * - **TwoTone**: `home-two-tone`, `search-two-tone`, `settings-two-tone`, etc.
- * 
- * The component automatically detects the icon type and applies consistent sizing, 
+ *
+ * The component automatically detects the icon type and applies consistent sizing,
  * color, and opacity using design tokens.
- * 
+ *
  * @example
  * ```tsx
  * // Material UI Icons - Different Variants
  * <Icon name="home" />                    // Filled (default)
  * <Icon name="home-outlined" />           // Outlined variant
  * <Icon name="home-two-tone" />           // TwoTone variant
- * 
+ *
+ * // Common Interface Icons
+ * <Icon name="search" />                  // Search functionality
+ * <Icon name="filter-list" />            // Data filtering
+ * <Icon name="visibility" />             // Show/hide toggles
+ * <Icon name="get-app" />                // Download actions
+ *
  * // With styling
  * <Icon name="search-outlined" size="lg" color="var(--primary-blue-blue-500)" />
- * 
- * 
+ *
  * // Material Design Icons
  * <Icon name="rocket-outline" />
  * <Icon name="chat-plus-outline" size="xl" color="var(--semantic-success-500)" />
