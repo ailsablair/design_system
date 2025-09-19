@@ -327,20 +327,23 @@ npm run build-storybook:memory</code></pre>
           }}>
             Design Token Usage
           </h4>
-          <div style={{ 
-            background: 'var(--neutral-gray-gray-800)',
-            color: 'var(--base-white)',
-            padding: 'var(--spacing-sizing-12px)',
-            borderRadius: 'var(--spacing-radius-4px)',
-            fontFamily: 'Monaco, Consolas, monospace',
-            fontSize: 'var(--type-size-sm)'
-          }}>
-            <div style={{ color: 'var(--neutral-gray-gray-400)' }}>/* Traditional token usage */</div>
-            <div>.my-component &#123;</div>
-            <div>&nbsp;&nbsp;color: var(--primary-blue-blue);</div>
-            <div>&nbsp;&nbsp;padding: var(--spacing-sizing-16px);</div>
-            <div>&#125;</div>
-          </div>
+          <pre
+            style={{
+              background: 'var(--neutral-gray-gray-800)',
+              color: 'var(--base-white)',
+              padding: 'var(--spacing-sizing-12px)',
+              borderRadius: 'var(--spacing-radius-4px)',
+              fontFamily: 'Monaco, Consolas, monospace',
+              fontSize: 'var(--type-size-sm)',
+              margin: 0
+            }}
+            role="region"
+            aria-label="CSS design token usage example"
+          ><code><span style={{ color: 'var(--neutral-gray-gray-400)' }}>/* Traditional token usage */</span>
+.my-component {'{'}
+  color: var(--primary-blue-blue);
+  padding: var(--spacing-sizing-16px);
+{'}'}</code></pre>
         </div>
       </div>
       </main>
