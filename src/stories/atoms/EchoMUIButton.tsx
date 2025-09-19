@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button as MUIButton, ButtonProps as MUIButtonProps, Tooltip } from '@mui/material';
+import { Button as MUIButton, Tooltip } from '@mui/material';
+import type { ButtonProps as MUIButtonProps } from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 
 /**

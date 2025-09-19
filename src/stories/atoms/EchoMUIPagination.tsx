@@ -1,5 +1,6 @@
 import React from 'react';
-import { Pagination, PaginationItem, PaginationProps } from '@mui/material';
+import { Pagination, PaginationItem } from '@mui/material';
+import type { PaginationProps } from '@mui/material/Pagination';
 import { styled } from '@mui/material/styles';
 import { 
   FirstPage,
