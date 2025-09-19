@@ -63,91 +63,91 @@ const StyledEchoButton = styled(MUIButton, {
   // Variant mappings using Echo tokens
   const variantStyles = {
     primary: {
-      backgroundColor: 'var(--primary-blue-blue)',
-      color: 'var(--base-white)',
-      border: '1px solid var(--primary-blue-blue)',
-      
+      backgroundColor: '#2F42BD', // --primary-blue-blue
+      color: '#FFFFFF', // --base-white
+      border: '1px solid #2F42BD', // --primary-blue-blue
+
       '&:hover': {
-        backgroundColor: 'var(--primary-blue-blue-600)',
-        borderColor: 'var(--primary-blue-blue-600)',
+        backgroundColor: '#253699', // --primary-blue-blue-600
+        borderColor: '#253699', // --primary-blue-blue-600
       },
-      
+
       '&:active': {
-        backgroundColor: 'var(--primary-blue-blue-700)',
-        borderColor: 'var(--primary-blue-blue-700)',
+        backgroundColor: '#1B2B75', // --primary-blue-blue-700
+        borderColor: '#1B2B75', // --primary-blue-blue-700
       },
-      
+
       '&:focus-visible': {
-        outline: '2px solid var(--primary-blue-blue)',
+        outline: '2px solid #2F42BD', // --primary-blue-blue
         outlineOffset: '2px',
       },
     },
     secondary: {
-      backgroundColor: 'var(--base-white)',
-      color: 'var(--primary-blue-blue)',
-      border: '1px solid var(--primary-blue-blue)',
-      
+      backgroundColor: '#FFFFFF', // --base-white
+      color: '#2F42BD', // --primary-blue-blue
+      border: '1px solid #2F42BD', // --primary-blue-blue
+
       '&:hover': {
-        backgroundColor: 'var(--primary-blue-blue-50)',
-        borderColor: 'var(--primary-blue-blue-600)',
+        backgroundColor: '#F9F9FE', // --primary-blue-blue-50
+        borderColor: '#253699', // --primary-blue-blue-600
       },
-      
+
       '&:active': {
-        backgroundColor: 'var(--primary-blue-blue-100)',
-        borderColor: 'var(--primary-blue-blue-700)',
+        backgroundColor: '#E8EBFA', // --primary-blue-blue-100
+        borderColor: '#1B2B75', // --primary-blue-blue-700
       },
     },
     tertiary: {
       backgroundColor: 'transparent',
-      color: 'var(--primary-blue-blue)',
+      color: '#2F42BD', // --primary-blue-blue
       border: '1px solid transparent',
-      
+
       '&:hover': {
-        backgroundColor: 'var(--primary-blue-blue-50)',
+        backgroundColor: '#F9F9FE', // --primary-blue-blue-50
       },
-      
+
       '&:active': {
-        backgroundColor: 'var(--primary-blue-blue-100)',
+        backgroundColor: '#E8EBFA', // --primary-blue-blue-100
       },
     },
     ghost: {
       backgroundColor: 'transparent',
-      color: 'var(--neutral-gray-gray-700)',
-      border: '1px solid var(--neutral-gray-gray-300)',
-      
+      color: '#374151', // --neutral-gray-gray-700
+      border: '1px solid #D2D5DA', // --neutral-gray-gray-300
+
       '&:hover': {
-        backgroundColor: 'var(--neutral-gray-gray-50)',
-        borderColor: 'var(--neutral-gray-gray-400)',
+        backgroundColor: '#F9FAFB', // --neutral-gray-gray-50
+        borderColor: '#9CA3AF', // --neutral-gray-gray-400
       },
     },
     error: {
-      backgroundColor: 'var(--status-red)',
-      color: 'var(--base-white)',
-      border: '1px solid var(--status-red)',
-      
+      backgroundColor: '#CE2031', // --status-red
+      color: '#FFFFFF', // --base-white
+      border: '1px solid #CE2031', // --status-red
+
       '&:hover': {
-        backgroundColor: 'var(--status-dark-red)',
-        borderColor: 'var(--status-dark-red)',
+        backgroundColor: '#B91C1C', // --status-red-600
+        borderColor: '#B91C1C', // --status-red-600
       },
     },
     warning: {
-      backgroundColor: 'var(--status-orange)',
-      color: 'var(--base-white)',
-      border: '1px solid var(--status-orange)',
-      
+      backgroundColor: '#F4A403', // --status-orange-alt
+      color: '#FFFFFF', // --base-white
+      border: '1px solid #F4A403', // --status-orange-alt
+
       '&:hover': {
-        backgroundColor: 'var(--status-dark-orange)',
-        borderColor: 'var(--status-dark-orange)',
+        backgroundColor: '#D07C06', // --status-dark-orange
+        borderColor: '#D07C06', // --status-dark-orange
       },
     },
     success: {
-      backgroundColor: 'var(--status-green)',
-      color: 'var(--base-white)',
-      border: '1px solid var(--status-green)',
-      
+      backgroundColor: '#70CC67', // --status-green
+      color: '#FFFFFF', // --base-white
+      border: '1px solid #70CC67', // --status-green
+
       '&:hover': {
-        backgroundColor: 'var(--status-dark-green)',
-        borderColor: 'var(--status-dark-green)',
+        backgroundColor: '#227F1A', // --status-dark-green
+        borderColor: '#227F1A', // --status-dark-green
       },
     },
   };
@@ -175,9 +175,9 @@ const StyledEchoButton = styled(MUIButton, {
     '&:disabled': {
       opacity: 'var(--opacity-disabled)',
       cursor: 'not-allowed',
-      backgroundColor: 'var(--neutral-gray-gray-100)',
-      color: 'var(--neutral-gray-gray-400)',
-      borderColor: 'var(--neutral-gray-gray-200)',
+      backgroundColor: '#F3F4F6', // --neutral-gray-gray-100
+      color: '#9CA3AF', // --neutral-gray-gray-400
+      borderColor: '#E5E7EB', // --neutral-gray-gray-200
     },
     
     // Remove MUI's default ripple effect styling if you want custom
