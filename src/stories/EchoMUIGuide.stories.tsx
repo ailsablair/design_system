@@ -28,7 +28,6 @@ import {
   AccordionDetails,
   Tabs,
   Tab,
-  TabPanel,
 } from '@mui/material';
 
 import {
