@@ -1,0 +1,58 @@
+/* SearchBar Molecule Styles */
+.search-bar {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--spacing-sizing-8px);
+  width: 100%;
+}
+
+.search-bar.small {
+  gap: var(--spacing-sizing-6px);
+}
+
+.search-bar.large {
+  gap: var(--spacing-sizing-12px);
+}
+
+.search-bar-input {
+  flex: 1;
+  min-width: 0; /* Prevent flex item from overflowing */
+}
+
+.search-bar-button {
+  flex-shrink: 0;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .search-bar {
+    flex-direction: column;
+    gap: var(--spacing-sizing-8px);
+  }
+  
+  .search-bar-button {
+    width: 100%;
+  }
+  
+  .search-bar-button .button {
+    width: 100%;
+  }
+}
+
+/* Compact mode for tight layouts */
+.search-bar--compact {
+  gap: var(--spacing-sizing-4px);
+}
+
+.search-bar--compact .search-bar-button .button {
+  padding: var(--spacing-sizing-6px) var(--spacing-sizing-12px);
+}
+
+/* Full width mode */
+.search-bar--full-width {
+  width: 100%;
+}
+
+.search-bar--full-width .search-bar-input {
+  width: 100%;
+}
