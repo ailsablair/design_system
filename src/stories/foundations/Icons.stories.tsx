@@ -346,7 +346,7 @@ export const MaterialUIIcons: Story = {
           marginBottom: '24px', 
           color: 'var(--neutral-gray-gray-900)'
         }}>
-          Material UI Icons (36 shown)
+          Material UI Icons (65 shown from 400+ available)
         </h3>
         
         {categories.map(category => (
