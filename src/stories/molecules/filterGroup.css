@@ -1,0 +1,151 @@
+/* FilterGroup Molecule Styles */
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-12px);
+}
+
+.filter-group--small {
+  gap: var(--spacing-sizing-8px);
+}
+
+.filter-group--large {
+  gap: var(--spacing-sizing-16px);
+}
+
+.filter-group--disabled {
+  opacity: var(--opacity-disabled);
+  pointer-events: none;
+}
+
+/* Header */
+.filter-group-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-8px);
+}
+
+.filter-group-title {
+  font-weight: var(--type-weight-medium);
+  color: var(--base-black);
+}
+
+/* Options container */
+.filter-group-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-8px);
+}
+
+.filter-group-options--horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--spacing-sizing-12px);
+}
+
+.filter-group-options--grid {
+  display: grid;
+  gap: var(--spacing-sizing-8px);
+}
+
+.filter-group-options--grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.filter-group-options--grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.filter-group-options--grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Individual option */
+.filter-group-option {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-8px);
+}
+
+.filter-group-option-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--neutral-gray-gray-500);
+}
+
+/* Select all option */
+.filter-group-select-all {
+  padding-bottom: var(--spacing-sizing-4px);
+  border-bottom: 1px solid var(--neutral-gray-gray-200);
+  margin-bottom: var(--spacing-sizing-4px);
+}
+
+.filter-group-select-all .checkbox-label {
+  font-weight: var(--type-weight-medium);
+}
+
+/* Size variations */
+.filter-group--small .filter-group-options {
+  gap: var(--spacing-sizing-6px);
+}
+
+.filter-group--small .filter-group-options--horizontal {
+  gap: var(--spacing-sizing-8px);
+}
+
+.filter-group--large .filter-group-options {
+  gap: var(--spacing-sizing-12px);
+}
+
+.filter-group--large .filter-group-options--horizontal {
+  gap: var(--spacing-sizing-16px);
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .filter-group-options--horizontal {
+    flex-direction: column;
+    gap: var(--spacing-sizing-8px);
+  }
+  
+  .filter-group-options--grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sizing-8px);
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-group-options--grid-2,
+  .filter-group-options--grid-3,
+  .filter-group-options--grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Compact mode for sidebars */
+.filter-group--compact {
+  gap: var(--spacing-sizing-8px);
+}
+
+.filter-group--compact .filter-group-options {
+  gap: var(--spacing-sizing-4px);
+}
+
+.filter-group--compact .filter-group-select-all {
+  margin-bottom: var(--spacing-sizing-2px);
+  padding-bottom: var(--spacing-sizing-2px);
+}
+
+/* Group styling when multiple filter groups are used together */
+.filter-group + .filter-group {
+  margin-top: var(--spacing-sizing-20px);
+  border-top: 1px solid var(--neutral-gray-gray-200);
+  padding-top: var(--spacing-sizing-20px);
+}
+
+.filter-group--compact + .filter-group--compact {
+  margin-top: var(--spacing-sizing-16px);
+  padding-top: var(--spacing-sizing-16px);
+}
