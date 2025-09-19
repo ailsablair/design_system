@@ -147,19 +147,19 @@ const StyledFormLabel = styled(FormLabel)(({ theme }) => ({
   fontFamily: 'var(--type-typeface-archivo)',
   fontSize: 'var(--type-size-base)',
   fontWeight: 'var(--type-weight-medium)',
-  color: 'var(--base-black)',
+  color: '#1C1C1C', // --base-black
   marginBottom: 'var(--spacing-sizing-8px)',
-  
+
   '&.Mui-focused': {
-    color: 'var(--primary-blue-blue)',
+    color: '#2F42BD', // --primary-blue-blue
   },
-  
+
   '&.Mui-error': {
-    color: 'var(--status-red)',
+    color: '#CE2031', // --status-red
   },
-  
+
   '&.Mui-disabled': {
-    color: 'var(--neutral-gray-gray-400)',
+    color: '#9CA3AF', // --neutral-gray-gray-400
   },
 }));
 
@@ -170,7 +170,7 @@ const StyledFormHelperText = styled(FormHelperText)(({ theme }) => ({
   marginLeft: 0,
   
   '&.Mui-error': {
-    color: 'var(--status-red)',
+    color: '#CE2031', // --status-red
   },
 }));
 
