@@ -250,8 +250,8 @@
   gap: var(--spacing-sizing-8px);
   flex: 1;
   min-width: 0;
-  /* Ensure consistent baseline alignment with status icon */
-  align-self: flex-start;
+  /* Use baseline alignment to match status icon */
+  align-self: baseline;
 }
 
 /* Single title layout for no-stroke type */
