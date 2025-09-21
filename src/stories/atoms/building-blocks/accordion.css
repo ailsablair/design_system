@@ -3,6 +3,8 @@
 :root {
   /* Design tokens from Figma - exact values */
   --secondary-blue-gray: #61607C;
+  --spacing-sizing-1px: 1px;
+  --spacing-sizing-2px: 2px;
   --spacing-sizing-12px: 12px;
   --spacing-sizing-8px: 8px;
   --primary-blue-dark-blue: #191E3C;
@@ -48,6 +50,7 @@
   --type-archivo-label-sm: 14px;
   --type-line-height-label-sm: 17px;
   --type-letter-spacing-archivo-label-sm: 0.15px;
+  --spacing-sizing-4px: 4px;
   --spacing-sizing-6px: 6px;
   --type-archivo-label: 16px;
   --type-line-height-label: 22px;
