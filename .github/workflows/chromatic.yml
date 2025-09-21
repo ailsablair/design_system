@@ -36,24 +36,54 @@ jobs:
           echo "GitHub ref: ${{ github.ref }}"
           echo "GitHub commit: ${{ github.sha }}"
 
+      - name: Check Chromatic Credits Status
+        id: credit_check
+        run: |
+          echo "🔍 Checking Chromatic credit status..."
+          
+          # Check if we should skip Chromatic based on environment variable
+          if [[ "${{ vars.SKIP_CHROMATIC_CREDITS_EXHAUSTED }}" == "true" ]]; then
+            echo "⚠️ Chromatic deployment skipped: Monthly free credits exhausted"
+            echo "To re-enable Chromatic deployment:"
+            echo "1. Go to your repository Settings > Secrets and variables > Actions"
+            echo "2. In the Variables tab, set SKIP_CHROMATIC_CREDITS_EXHAUSTED to 'false'"
+            echo "3. Or wait until next month for credit reset"
+            echo "skip_chromatic=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Check if we're in a PR and have exceeded some threshold
+          if [[ "${{ github.event_name }}" == "pull_request" && "${{ vars.SKIP_CHROMATIC_ON_PR }}" == "true" ]]; then
+            echo "⚠️ Chromatic deployment skipped: PR deployments disabled to conserve credits"
+            echo "skip_chromatic=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          echo "✅ Chromatic deployment will proceed"
+          echo "skip_chromatic=false" >> $GITHUB_OUTPUT
+
       - name: Install dependencies
+        if: steps.credit_check.outputs.skip_chromatic != 'true'
         run: |
           echo "Installing dependencies..."
           npm ci --no-audit --no-fund
           echo "Dependencies installed successfully!"
 
       - name: Validate TypeScript
+        if: steps.credit_check.outputs.skip_chromatic != 'true'
         run: |
           echo "Running TypeScript check..."
           npx tsc --noEmit --skipLibCheck
           echo "TypeScript validation passed!"
 
       - name: Lint code (non-blocking)
+        if: steps.credit_check.outputs.skip_chromatic != 'true'
         run: |
           echo "Running ESLint (warnings only)..."
           npm run lint || echo "⚠️ Linting issues found but not blocking Chromatic"
 
       - name: Build Storybook (test)
+        if: steps.credit_check.outputs.skip_chromatic != 'true'
         run: |
           echo "Testing Storybook build before Chromatic..."
           npm run build-storybook:memory
@@ -64,6 +94,7 @@ jobs:
 
       - name: Publish to Chromatic
         id: chromatic
+        if: steps.credit_check.outputs.skip_chromatic != 'true'
         uses: chromaui/action@latest
         with:
           # Chromatic project token
@@ -82,12 +113,27 @@ jobs:
       - name: Chromatic Summary
         if: always()
         run: |
+          if [[ "${{ steps.credit_check.outputs.skip_chromatic }}" == "true" ]]; then
+            echo "⚠️ Chromatic deployment was skipped due to credit limits"
+            echo "Current configuration:"
+            echo "- SKIP_CHROMATIC_CREDITS_EXHAUSTED: ${{ vars.SKIP_CHROMATIC_CREDITS_EXHAUSTED }}"
+            echo "- SKIP_CHROMATIC_ON_PR: ${{ vars.SKIP_CHROMATIC_ON_PR }}"
+            echo ""
+            echo "💡 To manage Chromatic credits:"
+            echo "1. Monitor usage at: https://www.chromatic.com/"
+            echo "2. Set repository variables to control deployment:"
+            echo "   - SKIP_CHROMATIC_CREDITS_EXHAUSTED=true (skip all Chromatic)"
+            echo "   - SKIP_CHROMATIC_ON_PR=true (skip only PR Chromatic)"
+            echo "3. Consider upgrading to paid plan for unlimited credits"
+            exit 0
+          fi
+          
           echo "🎨 Chromatic deployment completed!"
           echo "Build URL: ${{ steps.chromatic.outputs.url }}"
           echo "Storybook URL: ${{ steps.chromatic.outputs.storybookUrl }}"
           echo "Exit code: ${{ steps.chromatic.outputs.code }}"
           if [[ "${{ steps.chromatic.outputs.code }}" != "0" ]]; then
-            echo "⚠️ Chromatic found issues - check the build URL above for details"
+            echo "⚠�� Chromatic found issues - check the build URL above for details"
             echo "Common causes:"
             echo "- Component rendering errors"
             echo "- Missing dependencies"
@@ -101,7 +147,7 @@ jobs:
           fi
 
       - name: Create Issue Comment (if PR and errors)
-        if: github.event_name == 'pull_request' && steps.chromatic.outputs.code != '0'
+        if: github.event_name == 'pull_request' && steps.chromatic.outputs.code != '0' && steps.credit_check.outputs.skip_chromatic != 'true'
         uses: actions/github-script@v7
         with:
           script: |
@@ -125,8 +171,39 @@ jobs:
               - Check for console errors in the Storybook preview`
             })
 
+      - name: Create Issue Comment (if PR and skipped)
+        if: github.event_name == 'pull_request' && steps.credit_check.outputs.skip_chromatic == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## ⚠️ Chromatic Deployment Skipped
+              
+              Chromatic visual testing was skipped for this PR to conserve monthly free credits.
+              
+              **Current Settings:**
+              - Skip when credits exhausted: \`${{ vars.SKIP_CHROMATIC_CREDITS_EXHAUSTED }}\`
+              - Skip on PRs: \`${{ vars.SKIP_CHROMATIC_ON_PR }}\`
+              
+              **To manage Chromatic usage:**
+              1. 📊 Check credit usage at [Chromatic Dashboard](https://www.chromatic.com/)
+              2. ⚙️ Update repository variables in Settings > Secrets and Variables > Actions
+              3. 💳 Consider upgrading to a paid plan for unlimited credits
+              
+              **Manual Testing:**
+              Please test visual changes locally by running:
+              \`\`\`bash
+              npm run storybook
+              \`\`\`
+              
+              Visual regression testing will resume when credits are available or settings are updated.`
+            })
+
       - name: Set exit code based on Chromatic result
-        if: steps.chromatic.outputs.code != '0'
+        if: steps.chromatic.outputs.code != '0' && steps.credit_check.outputs.skip_chromatic != 'true'
         run: |
           echo "Chromatic detected issues (exit code: ${{ steps.chromatic.outputs.code }})"
           echo "This is being treated as a warning for now to allow debugging"
