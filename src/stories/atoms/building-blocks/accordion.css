@@ -176,12 +176,12 @@
 
 .accordion__status-icon {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-shrink: 0;
   position: relative;
-  /* Align with text baseline using design tokens */
-  margin-top: var(--spacing-sizing-2px);
+  /* Align with text baseline - no top margin, use align-self */
+  align-self: baseline;
 }
 
 .accordion__status-empty {
