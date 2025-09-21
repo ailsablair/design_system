@@ -163,10 +163,12 @@
 
 .accordion__status-icon {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-shrink: 0;
   position: relative;
+  /* Align with text baseline using design tokens */
+  margin-top: var(--spacing-sizing-2px);
 }
 
 .accordion__status-empty {
@@ -174,6 +176,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Ensure proper positioning relative to text */
 }
 
 .accordion__status-circle {
@@ -185,25 +188,35 @@
 .accordion__status-check {
   position: absolute;
   opacity: 0.5;
+  /* Center the check icon within the circle */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* Status icon sizes - exact Figma dimensions */
+/* Status icon sizes - exact Figma dimensions with proper alignment */
 .accordion--size-small .accordion__status-icon {
   width: 26px;
   height: 26px;
-  padding: 2px;
+  padding: var(--spacing-sizing-2px);
+  /* Align with small text baseline */
+  margin-top: var(--spacing-sizing-1px);
 }
 
 .accordion--size-default .accordion__status-icon {
   width: 50px;
   height: 50px;
-  padding: 1px;
+  padding: var(--spacing-sizing-1px);
+  /* Align with default text baseline */
+  margin-top: var(--spacing-sizing-2px);
 }
 
 .accordion--size-large .accordion__status-icon {
   width: 64px;
   height: 64px;
-  padding: 1px;
+  padding: var(--spacing-sizing-1px);
+  /* Align with large text baseline */
+  margin-top: var(--spacing-sizing-2px);
 }
 
 /* ===== BELL ICON STYLES ===== */
