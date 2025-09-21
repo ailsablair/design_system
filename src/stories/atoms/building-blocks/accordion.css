@@ -126,10 +126,7 @@
   align-items: flex-start;
 }
 
-/* Ensure status icon aligns properly with text in simple type */
-.accordion--type-simple .accordion__status-icon {
-  align-self: flex-start;
-}
+/* Status icon uses baseline alignment globally */
 
 /* Decorative content width control for Figma 432px specification */
 .accordion--type-decorative {
@@ -143,10 +140,7 @@
   gap: var(--spacing-sizing-12px);
 }
 
-/* Ensure proper alignment for decorative type */
-.accordion--type-decorative .accordion__status-icon {
-  align-self: flex-start;
-}
+/* Status icon uses baseline alignment globally */
 
 /* Number type */
 .accordion--type-number {
