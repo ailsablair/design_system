@@ -239,6 +239,9 @@
   opacity: 0.5;
   color: var(--base-black);
   transition: all 0.2s ease;
+  /* Align bell icon with text baseline */
+  align-self: flex-start;
+  margin-top: var(--spacing-sizing-2px);
 }
 
 /* ===== HEADING CONTENT AREA ===== */
