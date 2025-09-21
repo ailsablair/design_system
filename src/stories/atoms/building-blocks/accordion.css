@@ -253,6 +253,8 @@
   gap: var(--spacing-sizing-8px);
   flex: 1;
   min-width: 0;
+  /* Ensure consistent baseline alignment with status icon */
+  align-self: flex-start;
 }
 
 /* Single title layout for no-stroke type */
