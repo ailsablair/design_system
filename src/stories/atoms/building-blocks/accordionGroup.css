@@ -1,0 +1,95 @@
+/* ===== ACCORDION GROUP COMPONENT ===== */
+
+.accordion-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===== ACCORDION GROUP ITEM ===== */
+
+.accordion-group__item {
+  position: relative;
+  width: 100%;
+}
+
+/* ===== SPACING VARIANTS ===== */
+
+.accordion-group--spacing-none .accordion-group__item:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.accordion-group--spacing-small .accordion-group__item:not(:last-child) {
+  margin-bottom: var(--spacing-sizing-4px, 4px);
+}
+
+.accordion-group--spacing-medium .accordion-group__item:not(:last-child) {
+  margin-bottom: var(--spacing-sizing-8px, 8px);
+}
+
+.accordion-group--spacing-large .accordion-group__item:not(:last-child) {
+  margin-bottom: var(--spacing-sizing-16px, 16px);
+}
+
+/* ===== BORDERED VARIANT ===== */
+
+.accordion-group--bordered {
+  border: 1px solid var(--neutral-gray-gray-200, #E5E7EB);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion-group--bordered .accordion-group__item {
+  border-bottom: 1px solid var(--neutral-gray-gray-200, #E5E7EB);
+}
+
+.accordion-group--bordered .accordion-group__item:last-child {
+  border-bottom: none;
+}
+
+.accordion-group--bordered .accordion-group__item .accordion {
+  padding: var(--spacing-sizing-16px, 16px);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 480px) {
+  .accordion-group--spacing-medium .accordion-group__item:not(:last-child) {
+    margin-bottom: var(--spacing-sizing-6px, 6px);
+  }
+  
+  .accordion-group--spacing-large .accordion-group__item:not(:last-child) {
+    margin-bottom: var(--spacing-sizing-12px, 12px);
+  }
+  
+  .accordion-group--bordered .accordion-group__item .accordion {
+    padding: var(--spacing-sizing-12px, 12px);
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion-group,
+  .accordion-group__item {
+    transition: none;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+
+@media print {
+  .accordion-group {
+    break-inside: avoid;
+  }
+  
+  .accordion-group--bordered {
+    border: 1px solid black;
+  }
+  
+  .accordion-group--bordered .accordion-group__item {
+    border-bottom: 1px solid black;
+  }
+}

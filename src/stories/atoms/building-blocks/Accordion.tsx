@@ -10,6 +10,12 @@ export interface AccordionProps {
   size?: 'small' | 'default' | 'large';
   /** Icon type for open/close - matches Figma open-icon */
   openIcon?: 'default (chevron)' | 'plus';
+  /** Position variant - matches Figma position property */
+  position?: 'default (middle)' | 'top' | 'bottom';
+  /** Content type variant - matches Figma content-type property */
+  contentType?: 'N/A' | 'header';
+  /** Interactive state - matches Figma state property */
+  interactiveState?: 'default' | 'hover' | 'selected';
   /** Title text */
   title?: string;
   /** Description/supporting text */
@@ -59,7 +65,10 @@ export const Accordion: React.FC<AccordionProps> = ({
   state = 'default',
   size = 'default',
   openIcon = 'default (chevron)',
-  title = 'This is a section title taking up a lot of space...',
+  position = 'default (middle)',
+  contentType = 'N/A',
+  interactiveState = 'default',
+  title = 'This is an accordion section title',
   description = 'This is supporting text to help describe the content within the accordion',
   content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rutrum ac tortor et lacinia. Suspendisse hendrerit mi vitae mauris dictum interdum vitae eget dui. Vivamus urna eros, facilisis et laoreet accumsan, feugiat sed sapien. Vestibulum euismod massa enim, nec malesuada tellus scelerisque in. Donec sodales posuere convallis. Donec vel urna finibus augue accumsan posuere in et nunc.',
   icon,
@@ -91,6 +100,9 @@ export const Accordion: React.FC<AccordionProps> = ({
     `accordion--state-${isOpen ? 'open' : 'default'}`,
     `accordion--size-${size}`,
     `accordion--open-icon-${openIcon === 'default (chevron)' ? 'chevron' : openIcon}`,
+    `accordion--position-${position?.replace('default (middle)', 'middle').replace(/[()\s]/g, '-')}`,
+    `accordion--content-type-${contentType?.replace('N/A', 'na')}`,
+    `accordion--interactive-${interactiveState}`,
     className
   ].filter(Boolean).join(' ');
 
