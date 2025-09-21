@@ -1,634 +1,624 @@
-/* ===== ACCORDION COMPONENT - FIGMA DESIGN MATCH ===== */
+/* ===== ACCORDION COMPONENT - EXACT FIGMA DESIGN MATCH ===== */
+
+:root {
+  /* Design tokens from Figma - exact values */
+  --secondary-blue-gray: #61607C;
+  --spacing-sizing-12px: 12px;
+  --spacing-sizing-8px: 8px;
+  --primary-blue-dark-blue: #191E3C;
+  --type-typeface-archivo: Archivo;
+  --type-archivo-heading-4: 24px;
+  --type-weight-medium: 500;
+  --type-line-height-heading-4: 24px;
+  --type-letter-spacing-archivo-heading-4: -0.25px;
+  --neutral-gray-gray-500: #6D7280;
+  --type-typeface-roboto-flex: "Roboto Flex";
+  --type-roboto-flex-body: 16px;
+  --type-line-height-body: 20px;
+  --type-letter-spacing-roboto-flex-body: 0.05px;
+  --type-archivo-heading-5: 19px;
+  --type-line-height-heading-5: 24px;
+  --type-letter-spacing-archivo-heading-5: -0.15px;
+  --spacing-sizing-16px: 16px;
+  --neutral-gray-gray-900: #111827;
+  --base-black: #1C1C1C;
+  --neutral-gray-gray-700: #374151;
+  --type-archivo-heading-3: 28px;
+  --type-line-height-heading-3: 28px;
+  --type-letter-spacing-archivo-heading-3: -0.5px;
+  --type-roboto-flex-body-lg: 18px;
+  --type-line-height-body-lg: 22px;
+  --type-letter-spacing-roboto-flex-body-lg: -0.15px;
+  --type-archivo-label-lg: 18px;
+  --type-line-height-label-lg: 24px;
+  --type-letter-spacing-archivo-label-lg: 0.15px;
+  --type-roboto-flex-body-sm: 14px;
+  --type-line-height-body-sm: 16px;
+  --type-letter-spacing-roboto-flex-body-sm: -0.15px;
+  --spacing-radius-99999px: 99999px;
+  --primary-sky-blue-sky-blue-200: #B6E5F9;
+  --primary-sky-blue-sky-blue-50: #F4FCFF;
+  --neutral-gray-gray-200: #E5E7EB;
+  --neutral-gray-gray-50: #F9FAFB;
+  --primary-sky-blue-sky-blue-300: #85D3F5;
+  --type-weight-bold: 700;
+  --primary-sky-blue-sky-blue-400: #54C1F0;
+  --primary-sky-blue-sky-blue: #0BA7EA;
+  --base-white: #FFF;
+  --type-archivo-label-sm: 14px;
+  --type-line-height-label-sm: 17px;
+  --type-letter-spacing-archivo-label-sm: 0.15px;
+  --spacing-sizing-6px: 6px;
+  --type-archivo-label: 16px;
+  --type-line-height-label: 22px;
+  --type-letter-spacing-archivo-label: 0.15px;
+  --type-archivo-heading-2: 32px;
+  --type-line-height-heading-2: 34px;
+  --type-letter-spacing-archivo-heading-2: -1px;
+}
 
 .accordion {
-  /* Use exact design tokens from tokens.css */
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  min-width: 200px;
-  max-width: 1280px;
-  border: 1px solid var(--neutral-gray-gray-300);
-  background: var(--base-white);
-  border-radius: 0; /* Default - will be overridden by position variants */
-  transition: var(--transition-normal);
+  align-items: flex-start;
+  position: relative;
   box-sizing: border-box;
+  
+  /* Default dimensions - responsive */
+  min-width: 200px;
+  max-width: 100%;
+  width: 100%;
+  
+  /* Remove default borders and backgrounds - types will control styling */
+  border: none;
+  background: transparent;
+  border-radius: 0;
 }
+
+/* ===== ACCORDION TRIGGER - FULL WIDTH CLICKABLE AREA ===== */
 
 .accordion__trigger {
   all: unset;
-  width: 100%; /* FILL: Full width for clickable area */
+  width: 100%;
   cursor: pointer;
   border: none;
   background: none;
   text-align: left;
   display: block;
   box-sizing: border-box;
+  position: relative;
+  font-family: inherit;
 }
 
 .accordion__trigger:focus-visible {
-  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
-  outline-offset: var(--spacing-sizing-2px);
-  border-radius: var(--spacing-radius-4px);
+  outline: 2px solid var(--primary-blue-dark-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
-/* ===== HEADER LAYOUTS ===== */
+/* ===== HEADER LAYOUTS - EXACT FIGMA SPECIFICATIONS ===== */
 
 .accordion__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%; /* FILL: Full width of trigger */
-  gap: 12px; /* Exact Figma gap */
-  padding: 16px 32px; /* Exact Figma padding */
-  transition: var(--transition-normal);
+  width: 100%;
+  gap: var(--spacing-sizing-12px);
+  padding: 0;
+  transition: all 0.2s ease;
   box-sizing: border-box;
-  /* Min heights based on size */
+  position: relative;
+  
+  /* Base styling - will be overridden by types */
+  background: transparent;
+  border: none;
+  border-radius: 0;
 }
 
-.accordion--size-small .accordion__header {
-  height: 52px; /* Exact Figma height */
+/* ===== TYPE VARIANTS - EXACT FIGMA LAYOUTS ===== */
+
+/* Simple type - with optional status icon and bell icon */
+.accordion--type-simple .accordion__header {
+  gap: var(--spacing-sizing-12px);
+  align-items: flex-start;
 }
 
-.accordion--size-default .accordion__header {
-  height: 60px; /* Exact Figma height */
+/* Decorative content width control for Figma 432px specification */
+.accordion--type-decorative {
+  width: 432px;
+  max-width: 100%;
 }
 
-.accordion--size-large .accordion__header {
-  height: 64px; /* Exact Figma height */
-}
-
-.accordion__header-wrapper {
-  display: flex;
-  flex-direction: column;
+.accordion--type-decorative .accordion__header {
+  justify-content: space-between;
+  align-items: flex-start;
   gap: var(--spacing-sizing-12px);
 }
 
-.accordion__icon-title,
-.accordion__number-title,
-.accordion__heading-icon {
-  display: flex;
+/* Number type */
+.accordion--type-number {
+  width: 432px;
+  max-width: 100%;
+}
+
+.accordion--type-number .accordion__header {
+  justify-content: space-between;
   align-items: center;
   gap: var(--spacing-sizing-12px);
-  flex: 1; /* FILL: Take available space, push toggle icon to right */
-  min-width: 0; /* Allow flex children to shrink below content size */
 }
 
-/* ===== TITLE STYLES - EXACT FIGMA MATCH ===== */
+/* Label type */
+.accordion--type-label .accordion__header {
+  align-items: center;
+  gap: var(--spacing-sizing-12px);
+}
+
+/* No-stroke type - no visual borders */
+.accordion--type-no-stroke .accordion__header {
+  gap: var(--spacing-sizing-12px);
+  align-items: center;
+}
+
+/* ===== STATUS ICON STYLES - EXACT FIGMA DASHED CIRCLES ===== */
+
+.accordion__status-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.accordion__status-empty {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion__status-circle {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.accordion__status-check {
+  position: absolute;
+  opacity: 0.5;
+}
+
+/* Status icon sizes - exact Figma dimensions */
+.accordion--size-small .accordion__status-icon {
+  width: 26px;
+  height: 26px;
+  padding: 2px;
+}
+
+.accordion--size-default .accordion__status-icon {
+  width: 50px;
+  height: 50px;
+  padding: 1px;
+}
+
+.accordion--size-large .accordion__status-icon {
+  width: 64px;
+  height: 64px;
+  padding: 1px;
+}
+
+/* ===== BELL ICON STYLES ===== */
+
+.accordion__bell-icon {
+  flex-shrink: 0;
+  opacity: 0.5;
+  color: var(--base-black);
+  transition: all 0.2s ease;
+}
+
+/* ===== HEADING CONTENT AREA ===== */
+
+.accordion__heading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-sizing-8px);
+  flex: 1;
+  min-width: 0;
+}
+
+/* Single title layout for no-stroke type */
+.accordion--type-no-stroke .accordion__heading-content {
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+}
+
+/* ===== TITLE STYLES - EXACT FIGMA TYPOGRAPHY ===== */
 
 .accordion__title {
-  flex: 1; /* FILL: Take remaining space after icons */
-  min-width: 0; /* Allow text truncation when needed */
+  color: var(--primary-blue-dark-blue);
   font-family: var(--type-typeface-archivo);
-  font-weight: 400; /* Exact Figma weight from spans - using direct value */
-  color: var(--primary-blue-dark-blue); /* Default color: rgba(25,30,60,1) from Figma */
-  transition: var(--transition-normal);
   font-style: normal;
+  font-weight: 400;
   position: relative;
+  flex: 1;
+  min-width: 0;
+  
+  /* Text overflow handling */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
+  /* Default size - will be overridden by size variants */
+  font-size: var(--type-archivo-heading-4);
+  line-height: var(--type-line-height-heading-4);
+  letter-spacing: var(--type-letter-spacing-archivo-heading-4);
+}
 
-  /* Ensure text behaves properly */
+/* Small size title typography - exact Figma specs */
+.accordion--size-small .accordion__title {
+  font-size: var(--type-archivo-label-lg); /* 18px */
+  line-height: var(--type-line-height-label-lg); /* 24px - 133.333% */
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg); /* 0.15px */
+}
+
+/* Default size title typography - exact Figma specs */
+.accordion--size-default .accordion__title {
+  font-size: var(--type-archivo-heading-5); /* 19px */
+  line-height: var(--type-line-height-heading-5); /* 24px - 126.316% */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-5); /* -0.15px */
+}
+
+/* Large size title typography - exact Figma specs */
+.accordion--size-large .accordion__title {
+  font-size: var(--type-archivo-heading-4); /* 24px */
+  line-height: var(--type-line-height-heading-4); /* 24px - 100% */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-4); /* -0.25px */
+}
+
+/* Number type has specific large typography */
+.accordion--type-number.accordion--size-large .accordion__title {
+  font-size: var(--type-archivo-heading-4); /* 24px */
+  line-height: var(--type-line-height-heading-4); /* 24px */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-4); /* -0.25px */
+}
+
+/* Open state title color - exact Figma */
+.accordion--state-open .accordion__title {
+  color: var(--base-black);
+}
+
+/* Selected state title color - exact Figma */
+.accordion--state-selected .accordion__title {
+  color: var(--base-black);
+}
+
+/* ===== DESCRIPTION STYLES - EXACT FIGMA TYPOGRAPHY ===== */
+
+.accordion__description {
+  color: var(--neutral-gray-gray-500);
+  font-family: var(--type-typeface-roboto-flex);
+  font-style: normal;
+  font-weight: 400;
+  
+  /* Default size description */
+  font-size: var(--type-roboto-flex-body);
+  line-height: var(--type-line-height-body);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body);
+  
+  flex: 1;
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-/* Selected state gets black color as shown in Figma */
-.accordion--selected .accordion__title {
-  color: var(--base-black); /* rgba(28,28,28,1) for selected state */
+/* Small size description typography */
+.accordion--size-small .accordion__description {
+  font-size: var(--type-roboto-flex-body-sm); /* 14px */
+  line-height: var(--type-line-height-body-sm); /* 16px - 114.286% */
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm); /* -0.15px */
 }
 
-.accordion--open .accordion__title {
-  color: var(--base-black); /* Keep title black at all times */
-  font-weight: var(--type-weight-regular); /* 400 - maintain consistent weight when open */
+/* Large size description typography */
+.accordion--size-large .accordion__description {
+  font-size: var(--type-roboto-flex-body-lg); /* 18px */
+  line-height: var(--type-line-height-body-lg); /* 22px - 122.222% */
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg); /* -0.15px */
 }
 
-.accordion--open .accordion__icon-frame {
-  background: var(--base-white);
-  border-color: var(--primary-blue-blue-200);
-  color: var(--primary-blue-blue); /* Icon color change when open */
-}
-
-.accordion--open .accordion__toggle-icon {
-  opacity: 1; /* Full opacity when open */
-  border-color: var(--primary-blue-blue-200);
-  background: var(--primary-blue-blue-50);
-  color: var(--primary-blue-blue); /* Toggle icon color change when open */
-}
-
-.accordion--open .accordion__number {
-  color: var(--primary-blue-blue) !important; /* Number color change when open */
-}
-
-/* Open state for simple type icons */
-.accordion--type-simple.accordion--open .accordion__heading-icon svg {
-  color: var(--primary-blue-blue) !important;
-  opacity: 1;
-}
-
-/* ===== SIZE VARIANTS - EXACT FIGMA TYPOGRAPHY ===== */
-
-/* Small size - Exact Figma typography specifications */
-.accordion--size-small .accordion__title {
-  font-size: 18px; /* Exact Figma: font-size:18px */
-  line-height: 24px; /* Exact Figma: line-height:24px (133.333%) */
-  letter-spacing: 0.15px; /* Exact Figma: letter-spacing:0.15px */
-  font-weight: 400; /* Exact Figma font-weight from spans */
-}
-
-/* Default size - Exact Figma typography specifications */
-.accordion--size-default .accordion__title {
-  font-size: 19px; /* Exact Figma: font-size:19px */
-  line-height: 24px; /* Exact Figma: line-height:24px (126.316%) */
-  letter-spacing: -0.15px; /* Exact Figma: letter-spacing:-0.15px */
-  font-weight: 400; /* Exact Figma font-weight from spans */
-}
-
-/* Large size - Exact Figma typography specifications */
-.accordion--size-large .accordion__title {
-  font-size: 24px; /* Exact Figma: font-size:24px */
-  line-height: 24px; /* Exact Figma: line-height:24px (100%) */
-  letter-spacing: -0.25px; /* Exact Figma: letter-spacing:-0.25px */
-  font-weight: 400; /* Exact Figma font-weight from spans */
-}
-
-/* ===== HEIGHT VARIANTS - EXACT FIGMA HEIGHTS ===== */
-
-/* Small size height - exact Figma specs */
-.accordion--size-small .accordion__header {
-  height: 52px; /* Exact Figma height for small */
-}
-
-/* Default size height - exact Figma specs */
-.accordion--size-default .accordion__header {
-  height: 60px; /* Exact Figma height for default */
-}
-
-/* Large size height - exact Figma specs */
-.accordion--size-large .accordion__header {
-  height: 64px; /* Exact Figma height for large */
-}
-
-/* Position-specific height adjustments */
-.accordion--position-top.accordion--size-default .accordion__header {
-  height: 64px; /* Exact Figma height for top position default */
-}
-
-.accordion--position-top.accordion--size-large .accordion__header {
-  height: 68px; /* Exact Figma height for top position large */
-}
-
-.accordion--position-top.accordion--size-small .accordion__header {
-  height: 56px; /* Exact Figma height for top position small */
-}
-
-.accordion--position-bottom.accordion--size-default .accordion__header {
-  height: 64px; /* Exact Figma height for bottom position default */
-}
-
-.accordion--position-bottom.accordion--size-large .accordion__header {
-  height: 68px; /* Exact Figma height for bottom position large */
-}
-
-.accordion--position-bottom.accordion--size-small .accordion__header {
-  height: 56px; /* Exact Figma height for bottom position small */
-}
-
-/* ===== CONTENT TYPE RESPONSIVE ADJUSTMENTS ===== */
-
-/* Responsive metrics layout */
-@media (max-width: 768px) {
-  .accordion__metrics-content {
-    flex-direction: column;
-    gap: 24px;
-    align-items: center;
-  }
-
-  .accordion__stat {
-    min-width: 150px;
-  }
-
-  /* Scale down metrics text on mobile */
-  .accordion--size-default .accordion__stat-number {
-    font-size: 48px;
-    line-height: 48px;
-  }
-
-  .accordion--size-large .accordion__stat-number {
-    font-size: 56px;
-    line-height: 52px;
-  }
-}
-
-/* Responsive image sizing */
-@media (max-width: 768px) {
-  .accordion__image,
-  .accordion__image-placeholder {
-    width: 100%;
-    max-width: 280px;
-  }
-
-  .accordion--size-large .accordion__image,
-  .accordion--size-large .accordion__image-placeholder {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-
-@media (max-width: 480px) {
-  .accordion__content {
-    padding: 0 16px 16px 16px;
-  }
-
-  .accordion__image,
-  .accordion__image-placeholder {
-    width: 100%;
-    max-width: 240px;
-  }
-
-  .accordion__list-content {
-    gap: 12px;
-  }
-
-  .accordion__list-item {
-    gap: 8px;
-  }
-
-  /* Mobile metrics adjustments */
-  .accordion__stat-number {
-    font-size: 36px !important;
-    line-height: 36px !important;
-  }
-
-  .accordion__stat-label {
-    font-size: 16px !important;
-    line-height: 20px !important;
-  }
-}
-
-/* ===== ICON FRAME STYLES - WITH PROPER STROKES ===== */
+/* ===== ICON FRAME STYLES - DECORATIVE TYPE ===== */
 
 .accordion__icon-frame {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0; /* FIXED: Prevent shrinking below content size */
-  border-radius: var(--spacing-radius-full);
-  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-200); /* Proper stroke */
-  background: var(--primary-sky-blue-50);
-  color: var(--primary-sky-blue-500);
-  transition: var(--transition-normal);
+  flex-shrink: 0;
+  border-radius: var(--spacing-radius-99999px);
+  border: 1px solid var(--primary-sky-blue-sky-blue-200);
+  background: var(--primary-sky-blue-sky-blue-50);
+  color: var(--primary-sky-blue-sky-blue);
+  transition: all 0.2s ease;
+  
+  /* Default size */
+  width: 28px;
+  height: 28px;
+  padding: 5px;
 }
 
-.accordion--open .accordion__icon-frame {
-  border: var(--spacing-stroke-1px) solid var(--primary-blue-blue-200); /* Stroke when open */
-  background: var(--base-white);
-  color: var(--primary-blue-blue);
-}
-
-/* Icon frame sizes with proper stroke visibility */
+/* Small size icon frame */
 .accordion--size-small .accordion__icon-frame {
   width: 22px;
   height: 22px;
-  padding: var(--spacing-sizing-4px);
-  border-width: var(--spacing-stroke-1px);
+  padding: 4px;
 }
 
-.accordion--size-default .accordion__icon-frame {
+/* Large size icon frame - no size override in Figma, using default */
+.accordion--size-large .accordion__icon-frame {
   width: 28px;
   height: 28px;
-  padding: var(--spacing-sizing-6px);
-  border-width: var(--spacing-stroke-1px);
+  padding: 5px;
 }
 
-.accordion--size-large .accordion__icon-frame {
-  width: 32px;
-  height: 32px;
-  padding: var(--spacing-sizing-6px);
-  border-width: var(--spacing-stroke-2px); /* Thicker stroke for large size */
+/* Open state icon frame */
+.accordion--state-open .accordion__icon-frame {
+  background: var(--base-white);
+  border-color: var(--primary-sky-blue-sky-blue-200);
+  color: var(--primary-sky-blue-sky-blue);
 }
 
-/* ===== NUMBER STYLES ===== */
+/* ===== NUMBER STYLES - EXACT FIGMA TYPOGRAPHY ===== */
 
 .accordion__number {
+  color: var(--primary-sky-blue-sky-blue-300);
   font-family: var(--type-typeface-archivo);
-  font-weight: var(--type-weight-bold); /* 700 - proper Figma weight */
-  color: var(--primary-sky-blue-300);
+  font-style: normal;
+  font-weight: var(--type-weight-bold);
   line-height: 1;
+  flex-shrink: 0;
+  
+  /* Default size number */
+  font-size: var(--type-archivo-heading-3);
+  letter-spacing: var(--type-letter-spacing-archivo-heading-3);
 }
 
+/* Small size number typography */
 .accordion--size-small .accordion__number {
-  font-size: var(--type-size-2xl); /* 24px */
+  font-size: var(--type-archivo-heading-4); /* 24px */
+  line-height: var(--type-line-height-heading-4); /* 24px */
   letter-spacing: var(--type-letter-spacing-archivo-heading-4); /* -0.25px */
 }
 
-.accordion--size-default .accordion__number {
-  font-size: var(--type-archivo-heading-3); /* 28px */
-  letter-spacing: var(--type-letter-spacing-archivo-heading-3); /* -0.5px */
-}
-
+/* Large size number typography */
 .accordion--size-large .accordion__number {
   font-size: var(--type-archivo-heading-2); /* 32px */
+  line-height: var(--type-line-height-heading-2); /* 34px */
   letter-spacing: var(--type-letter-spacing-archivo-heading-2); /* -1px */
 }
 
-/* ===== TOGGLE ICON STYLES - WITH PROPER STROKES ===== */
+/* ===== TOGGLE ICON STYLES - EXACT FIGMA CIRCULAR BACKGROUNDS ===== */
 
 .accordion__toggle-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0; /* FIXED: Maintain consistent size */
-  border-radius: var(--spacing-radius-full);
-  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200); /* Proper stroke */
+  flex-shrink: 0;
+  border-radius: var(--spacing-radius-99999px);
+  border: 1px solid var(--neutral-gray-gray-200);
   background: var(--neutral-gray-gray-50);
   color: var(--base-black);
-  opacity: var(--icon-opacity-medium); /* 0.6 */
-  transition: var(--transition-normal);
+  opacity: 0.5;
+  transition: all 0.2s ease;
+  
+  /* Default size */
+  width: 24px;
+  height: 24px;
 }
 
-.accordion__trigger:hover .accordion__toggle-icon {
-  opacity: var(--icon-opacity-strong); /* 0.7 */
-  border-color: var(--neutral-gray-gray-300); /* Darker border on hover */
-}
-
-/* Toggle icon sizes with visible strokes */
+/* Small size toggle icon */
 .accordion--size-small .accordion__toggle-icon {
   width: 22px;
   height: 22px;
-  padding: var(--spacing-sizing-2px);
-  border-width: var(--spacing-stroke-1px);
+  padding: 4px 3px 2px 3px;
 }
 
-.accordion--size-default .accordion__toggle-icon {
-  width: 24px;
-  height: 24px;
-  padding: var(--spacing-sizing-2px);
-  border-width: var(--spacing-stroke-1px);
-}
-
+/* Large size toggle icon */
 .accordion--size-large .accordion__toggle-icon {
   width: 28px;
   height: 28px;
-  padding: var(--spacing-sizing-2px);
-  border-width: var(--spacing-stroke-2px); /* Thicker stroke for large size */
 }
 
-/* ===== CONTENT STYLES ===== */
+/* Open state toggle icon */
+.accordion--state-open .accordion__toggle-icon {
+  opacity: 1;
+  border-color: var(--primary-sky-blue-sky-blue-200);
+  background: var(--primary-sky-blue-sky-blue-50);
+  color: var(--primary-sky-blue-sky-blue);
+}
+
+/* ===== LABEL CONTAINER ===== */
+
+.accordion__label-container {
+  flex-shrink: 0;
+}
+
+/* ===== CONTENT STYLES - EXACT FIGMA SPECIFICATIONS ===== */
 
 .accordion__content {
-  width: 100%; /* FILL: Full width of container */
-  font-family: var(--type-typeface-roboto-flex);
-  font-weight: 400; /* Exact Figma weight from spans */
-  color: var(--neutral-gray-gray-700);
-  animation: accordion-expand var(--transition-fast) ease-out;
+  width: 100%;
+  animation: accordion-expand 0.3s ease-out;
   box-sizing: border-box;
-  padding: 24px 32px; /* Exact Figma padding */
+  position: relative;
+}
+
+.accordion__content-inner {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
-  background: var(--base-white);
-  /* HUG: Height determined by content */
-  /* min-height is not set, allowing content to determine height */
-}
-
-.accordion__content-spacer {
-  width: 22px; /* Default icon space */
-  height: 22px;
-  flex-shrink: 0;
-  /* Invisible spacer to align with bell icon */
-}
-
-.accordion--size-small .accordion__content-spacer {
-  width: 18px;
-  height: 18px;
-}
-
-.accordion--size-large .accordion__content-spacer {
-  width: 26px;
-  height: 26px;
-}
-
-/* Size-specific content padding and typography */
-.accordion--size-small .accordion__content {
-  padding: 24px 32px; /* Exact Figma padding for small size */
-}
-
-.accordion--size-default .accordion__content {
-  padding: 24px 32px; /* Exact Figma padding for default size */
-}
-
-.accordion--size-large .accordion__content {
-  padding: 24px 32px; /* Exact Figma padding for large size */
-}
-
-/* ===== TEXT CONTENT STYLES ===== */
-
-.accordion__text-content {
-  font-family: var(--type-typeface-roboto-flex);
-  font-weight: 400; /* Exact Figma weight from spans */
-  color: var(--neutral-gray-gray-700);
-  font-style: normal;
-  flex: 1;
-  /* Remove default margin and padding */
-  margin: 0;
+  gap: var(--spacing-sizing-16px);
   padding: 0;
-}
-
-/* Small size text - exact Figma typography */
-.accordion--size-small .accordion__text-content {
-  font-size: 14px; /* Exact Figma: font-size:14px */
-  line-height: 16px; /* Exact Figma: line-height:16px (114.286%) */
-  letter-spacing: -0.15px; /* Exact Figma: letter-spacing:-0.15px */
-}
-
-/* Default size text - exact Figma typography */
-.accordion--size-default .accordion__text-content {
-  font-size: 16px; /* Exact Figma: font-size:16px */
-  line-height: 20px; /* Exact Figma: line-height:20px (125%) */
-  letter-spacing: 0.05px; /* Exact Figma: letter-spacing:0.05px */
-}
-
-/* Large size text - exact Figma typography */
-.accordion--size-large .accordion__text-content {
-  font-size: 18px; /* Exact Figma: font-size:18px */
-  line-height: 22px; /* Exact Figma: line-height:22px (122.222%) */
-  letter-spacing: -0.15px; /* Exact Figma: letter-spacing:-0.15px */
-}
-
-/* ===== LIST CONTENT STYLES ===== */
-
-.accordion__list-content {
-  display: flex;
-  flex-direction: column;
-  gap: 16px; /* Exact Figma gap between items */
-  width: 100%;
-}
-
-.accordion__list-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px; /* Exact Figma gap between icon and text */
-  width: 100%;
-}
-
-.accordion__list-text {
-  flex: 1;
-  font-family: var(--type-typeface-roboto-flex);
-  font-weight: 400; /* Exact Figma weight from spans */
+  
+  /* Content typography - exact Figma specs */
   color: var(--neutral-gray-gray-700);
+  font-family: var(--type-typeface-roboto-flex);
   font-style: normal;
+  font-weight: 400;
+  
+  /* Default content typography */
+  font-size: var(--type-roboto-flex-body);
+  line-height: var(--type-line-height-body);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body);
 }
 
-/* Small size list text - exact Figma typography */
-.accordion--size-small .accordion__list-text {
-  font-size: 14px; /* Exact Figma: font-size:14px */
-  line-height: 16px; /* Exact Figma: line-height:16px (114.286%) */
-  letter-spacing: -0.15px; /* Exact Figma: letter-spacing:-0.15px */
+/* Small size content typography */
+.accordion--size-small .accordion__content-inner {
+  font-size: var(--type-roboto-flex-body-sm); /* 14px */
+  line-height: var(--type-line-height-body-sm); /* 16px - 114.286% */
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm); /* -0.15px */
 }
 
-/* Default size list text - exact Figma typography */
-.accordion--size-default .accordion__list-text {
-  font-size: 16px; /* Exact Figma: font-size:16px */
-  line-height: 20px; /* Exact Figma: line-height:20px (125%) */
-  letter-spacing: 0.05px; /* Exact Figma: letter-spacing:0.05px */
+/* Large size content typography */
+.accordion--size-large .accordion__content-inner {
+  font-size: var(--type-roboto-flex-body-lg); /* 18px */
+  line-height: var(--type-line-height-body-lg); /* 22px - 122.222% */
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg); /* -0.15px */
 }
 
-/* Large size list text - exact Figma typography */
-.accordion--size-large .accordion__list-text {
-  font-size: 18px; /* Exact Figma: font-size:18px */
-  line-height: 22px; /* Exact Figma: line-height:22px (122.222%) */
-  letter-spacing: -0.15px; /* Exact Figma: letter-spacing:-0.15px */
+/* Decorative and Number types have specific content layout */
+.accordion--type-decorative .accordion__content,
+.accordion--type-number .accordion__content {
+  width: 432px;
+  max-width: 100%;
 }
 
-/* Large size list content has larger gap */
-.accordion--size-large .accordion__list-content {
-  gap: 20px; /* Exact Figma gap for large size */
+/* ===== HOVER STATES - EXACT FIGMA MATCH ===== */
+
+/* Simple type hover state */
+.accordion--type-simple .accordion__trigger:hover .accordion__header {
+  /* No background change for simple type in Figma */
 }
 
-/* ===== TEXT-IMG CONTENT STYLES ===== */
-
-.accordion__text-img-content {
-  display: flex;
-  flex-direction: column;
-  gap: 24px; /* Gap between text and image */
-  width: 100%;
+.accordion--type-simple .accordion__trigger:hover .accordion__title {
+  color: var(--base-black);
 }
 
-.accordion__image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+.accordion--type-simple .accordion__trigger:hover .accordion__bell-icon {
+  color: var(--primary-sky-blue-sky-blue);
+  opacity: 1;
 }
 
-.accordion__image {
-  width: 280px; /* Exact Figma width for small/default */
-  border-radius: 6px; /* Exact Figma border-radius */
-  border: 1px solid var(--neutral-gray-gray-300); /* Exact Figma border */
-  object-fit: cover;
-  flex-shrink: 0;
+.accordion--type-simple .accordion__trigger:hover .accordion__toggle-icon {
+  opacity: 1;
+  border-color: var(--primary-sky-blue-sky-blue-300);
+  background: var(--primary-sky-blue-sky-blue-50);
+  color: var(--primary-sky-blue-sky-blue);
 }
 
-.accordion__image-placeholder {
-  width: 280px; /* Exact Figma width for small/default */
-  height: 240px; /* Default height for default size */
-  border-radius: 6px; /* Exact Figma border-radius */
-  border: 1px solid var(--neutral-gray-gray-300); /* Exact Figma border */
-  background: lightgray;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+/* Decorative type hover state */
+.accordion--type-decorative .accordion__trigger:hover .accordion__title {
+  color: var(--base-black);
 }
 
-/* Small size image placeholder */
-.accordion--size-small .accordion__image-placeholder {
-  height: 200px; /* Smaller height for small size */
+.accordion--type-decorative .accordion__trigger:hover .accordion__icon-frame {
+  background: var(--base-white);
+  border-color: var(--primary-sky-blue-sky-blue-200);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
-/* Large size image */
-.accordion--size-large .accordion__image,
-.accordion--size-large .accordion__image-placeholder {
-  width: 308px; /* Exact Figma width for large size */
-  aspect-ratio: 1/1; /* Exact Figma square aspect ratio for large */
+.accordion--type-decorative .accordion__trigger:hover .accordion__toggle-icon {
+  opacity: 1;
+  border-color: var(--primary-sky-blue-sky-blue-300);
+  background: var(--primary-sky-blue-sky-blue-50);
+  color: var(--primary-sky-blue-sky-blue);
 }
 
-/* ===== METRICS CONTENT STYLES ===== */
-
-.accordion__metrics-content {
-  display: flex;
-  width: 100%;
-  max-width: 818px; /* Exact Figma width */
-  justify-content: space-between;
-  align-items: center;
-  gap: 32px; /* Gap between stats */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+/* Number type hover state */
+.accordion--type-number .accordion__trigger:hover .accordion__title {
+  color: var(--base-black);
 }
 
-.accordion__stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px; /* Exact Figma gap between number and label */
-  min-width: 200px; /* Minimum width for proper layout */
-  flex: 1;
+.accordion--type-number .accordion__trigger:hover .accordion__number {
+  color: var(--primary-sky-blue-sky-blue);
 }
 
-.accordion__stat-number {
-  color: var(--primary-seafoam-seafoam); /* Exact Figma color: #8BBF9F */
-  text-align: center;
-  font-family: var(--type-typeface-archivo);
-  font-weight: 700; /* Exact Figma weight */
-  font-style: normal;
-  letter-spacing: -2.25px; /* Exact Figma letter-spacing */
+.accordion--type-number .accordion__trigger:hover .accordion__toggle-icon {
+  opacity: 1;
+  border-color: var(--primary-sky-blue-sky-blue-300);
+  background: var(--primary-sky-blue-sky-blue-50);
+  color: var(--primary-sky-blue-sky-blue);
 }
 
-.accordion__stat-label {
-  color: var(--neutral-gray-gray-600); /* Exact Figma color: #4B5563 */
-  text-align: center;
-  font-family: var(--type-typeface-archivo);
-  font-weight: 400; /* Exact Figma weight from spans */
-  font-style: normal;
+/* Label type hover state */
+.accordion--type-label .accordion__trigger:hover .accordion__title {
+  color: var(--base-black);
 }
 
-/* Small size metrics - exact Figma typography */
-.accordion--size-small .accordion__stat-number {
-  font-size: 48px; /* Exact Figma: font-size:48px */
-  line-height: 54px; /* Exact Figma: line-height:54px (112.5%) */
+.accordion--type-label .accordion__trigger:hover .accordion__toggle-icon {
+  opacity: 1;
+  border-color: var(--primary-sky-blue-sky-blue-300);
+  background: var(--primary-sky-blue-sky-blue-50);
+  color: var(--primary-sky-blue-sky-blue);
 }
 
-.accordion--size-small .accordion__stat-label {
-  font-size: 18px; /* Exact Figma: font-size:18px */
-  line-height: 24px; /* Exact Figma: line-height:24px (133.333%) */
-  letter-spacing: 0.15px; /* Exact Figma: letter-spacing:0.15px */
+/* No-stroke type hover state */
+.accordion--type-no-stroke .accordion__trigger:hover .accordion__title {
+  color: var(--base-black);
 }
 
-/* Default size metrics - exact Figma typography */
-.accordion--size-default .accordion__stat-number {
-  font-size: 60px; /* Exact Figma: font-size:60px */
-  line-height: 54px; /* Exact Figma: line-height:54px (90%) */
+.accordion--type-no-stroke .accordion__trigger:hover .accordion__bell-icon {
+  color: var(--primary-sky-blue-sky-blue);
+  opacity: 1;
 }
 
-.accordion--size-default .accordion__stat-label {
-  font-size: 19px; /* Exact Figma: font-size:19px */
-  line-height: 24px; /* Exact Figma: line-height:24px (126.316%) */
-  letter-spacing: -0.15px; /* Exact Figma: letter-spacing:-0.15px */
+.accordion--type-no-stroke .accordion__trigger:hover .accordion__toggle-icon {
+  opacity: 1;
+  border-color: var(--primary-sky-blue-sky-blue-300);
+  background: var(--primary-sky-blue-sky-blue-50);
+  color: var(--primary-sky-blue-sky-blue);
 }
 
-/* Large size metrics - exact Figma typography */
-.accordion--size-large .accordion__stat-number {
-  font-size: 68px; /* Exact Figma: font-size:68px */
-  line-height: 58px; /* Exact Figma: line-height:58px (85.294%) */
+/* ===== FOCUS STATES ===== */
+
+.accordion__trigger:focus-visible .accordion__title {
+  color: var(--base-black);
 }
 
-.accordion--size-large .accordion__stat-label {
-  font-size: 24px; /* Exact Figma: font-size:24px */
-  line-height: 24px; /* Exact Figma: line-height:24px (100%) */
-  letter-spacing: -0.25px; /* Exact Figma: letter-spacing:-0.25px */
+.accordion__trigger:focus-visible .accordion__icon-frame {
+  border-color: var(--primary-sky-blue-sky-blue);
+  background: var(--primary-sky-blue-sky-blue-50);
 }
+
+.accordion__trigger:focus-visible .accordion__toggle-icon {
+  border-color: var(--primary-sky-blue-sky-blue);
+  background: var(--primary-sky-blue-sky-blue-50);
+  color: var(--primary-sky-blue-sky-blue);
+  opacity: 1;
+}
+
+.accordion__trigger:focus-visible .accordion__number {
+  color: var(--primary-sky-blue-sky-blue);
+}
+
+/* ===== ACTIVE STATES ===== */
+
+.accordion__trigger:active .accordion__toggle-icon {
+  transform: scale(0.95);
+  border-color: var(--primary-sky-blue-sky-blue);
+  background: var(--primary-sky-blue-sky-blue-100);
+}
+
+.accordion__trigger:active .accordion__icon-frame {
+  transform: scale(0.95);
+  border-color: var(--primary-sky-blue-sky-blue);
+  background: var(--primary-sky-blue-sky-blue-100);
+}
+
+/* ===== ANIMATIONS ===== */
 
 @keyframes accordion-expand {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
   to {
     opacity: 1;
@@ -636,423 +626,96 @@
   }
 }
 
-/* ===== TYPE VARIANTS - EXACT FIGMA SPECIFICATIONS ===== */
+/* ===== RESPONSIVE DESIGN - MOBILE-FIRST APPROACH ===== */
 
-/* Contained type - full border radius and complete border */
-.accordion--type-contained {
-  border-radius: var(--spacing-radius-16px); /* Default size */
-  border: 1px solid var(--neutral-gray-gray-300); /* Full border */
-}
-
-.accordion--type-contained.accordion--size-small {
-  border-radius: var(--spacing-radius-12px); /* Small size */
-}
-
-.accordion--type-contained.accordion--size-large {
-  border-radius: var(--spacing-radius-20px); /* Large size */
-}
-
-.accordion--type-contained .accordion__header {
-  padding: 20px 32px 16px 32px; /* Exact Figma padding for contained */
-  border-radius: 16px 16px 0 0; /* Top rounded when open */
-}
-
-.accordion--type-contained.accordion--size-small .accordion__header {
-  border-radius: 12px 12px 0 0;
-}
-
-.accordion--type-contained.accordion--size-large .accordion__header {
-  border-radius: var(--spacing-radius-20px) var(--spacing-radius-20px) 0 0;
-}
-
-.accordion--type-contained .accordion__content {
-  border-radius: 0 0 16px 16px; /* Bottom rounded */
-  border-right: 1px solid var(--neutral-gray-gray-300);
-  border-bottom: 1px solid var(--neutral-gray-gray-300);
-  border-left: 1px solid var(--neutral-gray-gray-300);
-}
-
-.accordion--type-contained.accordion--size-small .accordion__content {
-  border-radius: 0 0 12px 12px;
-}
-
-.accordion--type-contained.accordion--size-large .accordion__content {
-  border-radius: 0 0 var(--spacing-radius-20px) var(--spacing-radius-20px);
-}
-
-/* Top type - rounded top corners only */
-.accordion--type-top {
-  border-radius: 16px 16px 0 0; /* Default size */
-  border: 1px solid var(--neutral-gray-gray-300);
-}
-
-.accordion--type-top.accordion--size-small {
-  border-radius: 12px 12px 0 0;
-}
-
-.accordion--type-top.accordion--size-large {
-  border-radius: var(--spacing-radius-20px) var(--spacing-radius-20px) 0 0;
-}
-
-.accordion--type-top .accordion__header {
-  padding: 20px 32px 16px 32px; /* Exact Figma padding */
-  border-radius: 16px 16px 0 0;
-}
-
-.accordion--type-top.accordion--size-small .accordion__header {
-  border-radius: 12px 12px 0 0;
-}
-
-.accordion--type-top.accordion--size-large .accordion__header {
-  border-radius: var(--spacing-radius-20px) var(--spacing-radius-20px) 0 0;
-}
-
-.accordion--type-top .accordion__content {
-  border-radius: 0; /* No border radius for content */
-  border-right: 1px solid var(--neutral-gray-gray-300);
-  border-left: 1px solid var(--neutral-gray-gray-300);
-  /* No bottom border for middle positioning */
-}
-
-/* Middle type - no border radius */
-.accordion--type-middle {
-  border-radius: 0;
-  border: 1px solid var(--neutral-gray-gray-300);
-}
-
-.accordion--type-middle .accordion__header {
-  padding: 16px 32px; /* Default middle padding */
-  border-radius: 0;
-}
-
-.accordion--type-middle .accordion__content {
-  border-radius: 0;
-  border-right: 1px solid var(--neutral-gray-gray-300);
-  border-left: 1px solid var(--neutral-gray-gray-300);
-  /* No bottom border for middle positioning */
-}
-
-/* Bottom type - rounded bottom corners only */
-.accordion--type-bottom {
-  border-radius: 0 0 16px 16px; /* Default size */
-  border: 1px solid var(--neutral-gray-gray-300);
-}
-
-.accordion--type-bottom.accordion--size-small {
-  border-radius: 0 0 12px 12px;
-}
-
-.accordion--type-bottom.accordion--size-large {
-  border-radius: 0 0 var(--spacing-radius-20px) var(--spacing-radius-20px);
-}
-
-.accordion--type-bottom .accordion__header {
-  padding: 16px 32px; /* Default middle padding */
-  border-radius: 0;
-}
-
-.accordion--type-bottom .accordion__content {
-  border-radius: 0 0 16px 16px; /* Bottom rounded */
-  border-right: 1px solid var(--neutral-gray-gray-300);
-  border-bottom: 1px solid var(--neutral-gray-gray-300);
-  border-left: 1px solid var(--neutral-gray-gray-300);
-}
-
-.accordion--type-bottom.accordion--size-small .accordion__content {
-  border-radius: 0 0 12px 12px;
-}
-
-.accordion--type-bottom.accordion--size-large .accordion__content {
-  border-radius: 0 0 var(--spacing-radius-20px) var(--spacing-radius-20px);
-}
-
-/* ===== POSITION VARIANTS (Legacy support) ===== */
-
-/* Top position with rounded top corners - exact Figma border-radius and padding */
-.accordion--position-top {
-  border-radius: 12px 12px 0 0; /* Small size default */
-}
-
-.accordion--position-top.accordion--size-default {
-  border-radius: 16px 16px 0 0; /* Default size */
-}
-
-.accordion--position-top.accordion--size-large {
-  border-radius: var(--spacing-radius-20px) var(--spacing-radius-20px) 0 0; /* Large size */
-}
-
-/* Top position padding - exact Figma specs */
-.accordion--position-top .accordion__header {
-  padding: 20px 32px 16px 32px; /* Exact Figma: padding:20px 32px 16px 32px */
-}
-
-.accordion--position-top.accordion--size-default .accordion__header {
-  padding: 20px 32px 16px 32px; /* Exact Figma for default size top */
-}
-
-.accordion--position-top.accordion--size-large .accordion__header {
-  padding: 20px 32px 16px 32px; /* Exact Figma for large size top */
-}
-
-.accordion--position-top.accordion--size-small .accordion__header {
-  padding: 20px 32px 16px 32px; /* Exact Figma for small size top */
-}
-
-/* Middle position - default padding and no border radius */
-.accordion--position-middle {
-  border-radius: 0;
-}
-
-.accordion--position-default {
-  border-radius: 0; /* Default position is same as middle */
-}
-
-/* Bottom position with rounded bottom corners - exact Figma specs */
-.accordion--position-bottom {
-  border-radius: 0 0 12px 12px; /* Exact Figma border-radius */
-}
-
-.accordion--position-bottom.accordion--size-default {
-  border-radius: 0 0 12px 12px; /* Same for all sizes per Figma */
-}
-
-.accordion--position-bottom.accordion--size-large {
-  border-radius: 0 0 12px 12px; /* Same for all sizes per Figma */
-}
-
-/* Bottom position padding - exact Figma specs */
-.accordion--position-bottom .accordion__header {
-  padding: 16px 32px 20px 32px; /* Exact Figma: padding:16px 32px 20px 32px */
-}
-
-.accordion--position-bottom.accordion--size-default .accordion__header {
-  padding: 16px 32px 20px 32px; /* Exact Figma for default size bottom */
-}
-
-.accordion--position-bottom.accordion--size-large .accordion__header {
-  padding: 16px 32px 20px 32px; /* Exact Figma for large size bottom */
-}
-
-.accordion--position-bottom.accordion--size-small .accordion__header {
-  padding: 16px 32px 20px 32px; /* Exact Figma for small size bottom */
-}
-
-/* ===== CONTAINED VARIANT - WITH PROPER STROKES ===== */
-
-.accordion--contained {
-  border: 1px solid var(--neutral-gray-gray-300); /* Match Figma border */
-  border-radius: var(--spacing-radius-8px);
-  overflow: hidden;
-}
-
-.accordion--contained .accordion__header {
-  background: var(--base-white);
-}
-
-.accordion--contained.accordion--open .accordion__header {
-  border-bottom: none; /* Remove border between header and content */
-}
-
-.accordion--contained .accordion__content {
-  background: var(--base-white);
-  border: none; /* Remove extra borders for contained variant */
-}
-
-/* ===== UNCONTAINED VARIANT ===== */
-
-.accordion--uncontained {
-  border: none;
-  border-bottom: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200); /* Proper stroke */
-  border-radius: 0;
-}
-
-.accordion--uncontained:last-child {
-  border-bottom: none;
-}
-
-.accordion--uncontained .accordion__header {
-  background: transparent;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.accordion--uncontained .accordion__content {
-  background: transparent;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* ===== LABEL STYLES ===== */
-
-.accordion__label {
-  align-self: flex-start;
-}
-
-.accordion--type-label .accordion__header {
-  padding-top: 0;
-}
-
-/* ===== SIMPLE TYPE ICON STYLES ===== */
-
-.accordion--type-simple .accordion__heading-icon svg {
-  width: 22px;
-  height: 22px;
-  opacity: var(--icon-opacity-medium); /* 0.6 */
-  color: var(--base-black);
-  transition: var(--transition-normal); /* Add transition for smooth color changes */
-}
-
-/* ===== HOVER STATES - EXACT FIGMA MATCH ===== */
-
-/* Hover state background - exact Figma #F9F9FE */
-.accordion__trigger:hover .accordion__header {
-  background: #F9F9FE; /* Exact Figma hover background */
-  border-color: var(--neutral-gray-gray-300); /* Maintain border color */
-}
-
-.accordion__trigger:hover .accordion__title {
-  color: var(--base-black); /* Keep title black at all times */
-  font-weight: var(--type-weight-regular); /* 400 - maintain consistent weight on hover */
-}
-
-.accordion__trigger:hover .accordion__icon-frame {
-  background: var(--base-white);
-  border-color: var(--primary-blue-blue-200);
-  box-shadow: var(--shadow-sm); /* Add subtle shadow */
-  color: var(--primary-blue-blue); /* Icon color change on hover */
-}
-
-.accordion__trigger:hover .accordion__toggle-icon {
-  opacity: var(--icon-opacity-strong); /* 0.8 - more visible on hover */
-  border-color: var(--primary-blue-blue-300);
-  background: var(--primary-blue-blue-50);
-  color: var(--primary-blue-blue) !important; /* Toggle icon color change on hover */
-}
-
-.accordion__trigger:hover .accordion__number {
-  color: var(--primary-blue-blue) !important; /* Number color change on hover */
-}
-
-/* Hover state for simple type icons */
-.accordion--type-simple .accordion__trigger:hover .accordion__heading-icon svg {
-  color: var(--primary-blue-blue) !important;
-  opacity: var(--icon-opacity-strong); /* 0.8 */
-}
-
-/* Interaction state hover - exact Figma match */
-.accordion--state-hover .accordion__header {
-  background: #F9F9FE; /* Exact Figma hover background */
-  border-color: var(--neutral-gray-gray-300);
-}
-
-.accordion--state-hover .accordion__title {
-  color: var(--base-black); /* Keep title black at all times */
-}
-
-.accordion--state-hover .accordion__icon-frame {
-  color: var(--primary-blue-blue);
-}
-
-.accordion--state-hover .accordion__toggle-icon {
-  color: var(--primary-blue-blue) !important;
-}
-
-.accordion--state-hover .accordion__heading-icon svg {
-  color: var(--primary-blue-blue) !important;
-}
-
-/* ===== FOCUS STATES ===== */
-
-.accordion__trigger:focus-visible {
-  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
-  outline-offset: var(--spacing-sizing-2px);
-  border-radius: var(--spacing-radius-4px);
-}
-
-.accordion__trigger:focus-visible .accordion__title {
-  color: var(--base-black); /* Keep title black at all times */
-}
-
-.accordion__trigger:focus-visible .accordion__icon-frame {
-  border-color: var(--primary-blue-blue);
-  background: var(--primary-blue-blue-50);
-  color: var(--primary-blue-blue);
-}
-
-.accordion__trigger:focus-visible .accordion__toggle-icon {
-  border-color: var(--primary-blue-blue);
-  background: var(--primary-blue-blue-50);
-  color: var(--primary-blue-blue);
-  opacity: 1;
-}
-
-.accordion__trigger:focus-visible .accordion__number {
-  color: var(--primary-blue-blue) !important;
-}
-
-/* ===== ACTIVE STATES ===== */
-
-.accordion__trigger:active .accordion__toggle-icon {
-  transform: scale(0.95);
-  border-color: var(--primary-blue-blue);
-  background: var(--primary-blue-blue-100);
-  color: var(--primary-blue-blue);
-}
-
-.accordion__trigger:active .accordion__title {
-  color: var(--base-black); /* Keep title black at all times */
-}
-
-.accordion__trigger:active .accordion__icon-frame {
-  transform: scale(0.95);
-  border-color: var(--primary-blue-blue);
-  background: var(--primary-blue-blue-100);
-  color: var(--primary-blue-blue);
-}
-
-.accordion__trigger:active .accordion__number {
-  color: var(--primary-blue-blue-600) !important;
-}
-
-/* ===== RESPONSIVE DESIGN ===== */
-
-@media (max-width: 768px) {
-  .accordion--size-default .accordion__title {
-    font-size: var(--type-archivo-label-lg); /* 18px */
-  }
-  
-  .accordion--size-large .accordion__title {
-    font-size: var(--type-size-xl); /* 20px */
-  }
-  
-  .accordion__header {
-    padding: var(--spacing-sizing-12px);
-  }
-  
-  .accordion__content {
-    padding: 0 var(--spacing-sizing-12px) var(--spacing-sizing-12px) var(--spacing-sizing-12px);
-  }
-}
-
+/* Base mobile styles */
 @media (max-width: 480px) {
-  .accordion__title {
-    font-size: var(--type-size-base); /* 16px - remove !important for cleaner CSS */
-    line-height: var(--type-line-height-body); /* 20px */
-    font-weight: var(--type-weight-regular); /* 400 - consistent on mobile */
+  .accordion {
+    min-width: 280px;
   }
-
+  
   .accordion__header {
-    padding: var(--spacing-sizing-8px);
-    min-height: 44px; /* FIXED: Maintain minimum touch target size */
+    gap: 8px;
   }
-
-  .accordion__icon-frame,
+  
+  .accordion__heading-content {
+    gap: 4px;
+  }
+  
+  .accordion__title {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0px;
+  }
+  
+  .accordion__description {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  
+  .accordion__content-inner {
+    gap: 12px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  
+  /* Adjust icon sizes for mobile */
+  .accordion__status-icon {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  
   .accordion__toggle-icon {
-    width: 20px; /* FIXED: Consistent mobile icon size */
-    height: 20px;
-    padding: var(--spacing-sizing-2px);
-    border-width: var(--spacing-stroke-1px);
-    flex-shrink: 0; /* Ensure icons don't compress */
+    width: 20px !important;
+    height: 20px !important;
+    padding: 2px !important;
+  }
+  
+  .accordion__icon-frame {
+    width: 20px !important;
+    height: 20px !important;
+    padding: 3px !important;
+  }
+  
+  /* Scale down decorative and number widths */
+  .accordion--type-decorative,
+  .accordion--type-number {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .accordion--type-decorative .accordion__content,
+  .accordion--type-number .accordion__content {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 481px) and (max-width: 768px) {
+  .accordion--type-decorative,
+  .accordion--type-number {
+    width: 100%;
+    max-width: 432px;
+  }
+  
+  .accordion--type-decorative .accordion__content,
+  .accordion--type-number .accordion__content {
+    width: 100%;
+    max-width: 432px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  .accordion--type-decorative,
+  .accordion--type-number {
+    width: 432px;
+  }
+  
+  .accordion--type-decorative .accordion__content,
+  .accordion--type-number .accordion__content {
+    width: 432px;
   }
 }
 
@@ -1062,7 +725,8 @@
   .accordion,
   .accordion__content,
   .accordion__toggle-icon,
-  .accordion__icon-frame {
+  .accordion__icon-frame,
+  .accordion__bell-icon {
     transition: none;
     animation: none;
   }
@@ -1070,20 +734,16 @@
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-  .accordion--contained {
-    border-width: var(--spacing-stroke-2px);
-  }
-  
   .accordion__toggle-icon {
-    border-width: var(--spacing-stroke-2px);
+    border-width: 2px;
   }
   
   .accordion__icon-frame {
-    border-width: var(--spacing-stroke-2px);
+    border-width: 2px;
   }
   
   .accordion__title {
-    font-weight: var(--type-weight-semibold); /* 600 - slightly bolder for high contrast readability */
+    font-weight: 600;
   }
 }
 
@@ -1097,17 +757,6 @@
   .accordion__content {
     display: block !important;
   }
-
-  .accordion__metrics-content {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .accordion__image,
-  .accordion__image-placeholder {
-    width: 200px;
-    height: auto;
-  }
   
   .accordion__toggle-icon {
     display: none;
@@ -1115,6 +764,34 @@
   
   .accordion__title {
     color: black !important;
-    font-weight: var(--type-weight-semibold) !important; /* 600 - slightly bolder for print readability */
+    font-weight: 600 !important;
   }
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+.accordion--full-width {
+  width: 100%;
+  max-width: none;
+}
+
+.accordion--contained {
+  border: 1px solid var(--neutral-gray-gray-200);
+  border-radius: 8px;
+  padding: 16px;
+  background: var(--base-white);
+}
+
+/* ===== RTL SUPPORT ===== */
+
+[dir="rtl"] .accordion__header {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .accordion__title {
+  text-align: right;
+}
+
+[dir="rtl"] .accordion__description {
+  text-align: right;
 }
