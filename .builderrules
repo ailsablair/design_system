@@ -1,30 +1,4 @@
-# Builder.io AI Development Rules
+This is a design system for the nuclear power industry. It is being built with React, Typescript and Javascript. We want to use the MUI 6 library as a basis for all of our custom components. The only design tokens that should be used are the custom ones pushed via Figma. Do not use any of the MUI library tokens for colour, sizing and spacing, effects and typography.
 
-## Story Development Rules
+We are attempting to make Echo as simple as possible, given the very complex subject matter in nuclear power. 
 
-- Create comprehensive stories that showcase all component variants and states
-- Always check existing patterns before adding new stories
-- Test all new stories in Chromatic to ensure visual consistency
-- Use existing approved stories as templates for new ones
-- All stories should use design tokens for typography, spacing, padding, line height, letter spacing, radius, stroke, positioning, etc.
-
-## Design Token Usage
-
-- Always use CSS custom properties from tokens.css
-- Never hardcode colors, spacing, or typography values
-- Maintain consistency with existing design patterns
-- All stories should use design tokens for typography, spacing, padding, line height, letter spacing, radius, stroke, positioning, etc.
-
-## Code Quality
-
-- Follow TypeScript best practices
-- Write comprehensive JSDoc comments
-- Use semantic HTML and proper accessibility attributes
-- Ensure responsive design across all screen sizes
-
-## Visual Testing
-
-- All stories should demonstrate comprehensive component usage
-- Stories should showcase different states, variants, and configurations
-- Focus on creating stories that provide value for design system documentation
-- Write basic most tests for visual consistency outside of Chromatic. These should ensure design tokens are used properly, that the components and stories are rendering correctly visually, and that they match the designs in Figma to as accurate a pixel as possible.
