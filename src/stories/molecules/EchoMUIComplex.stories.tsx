@@ -76,39 +76,57 @@ const generateSampleUsers = (count: number) => {
   const departments = ['Engineering', 'Design', 'Marketing', 'Sales', 'Operations'];
   const statuses = ['Active', 'Inactive', 'Pending'];
   const roles = ['Admin', 'User', 'Manager', 'Viewer'];
-  
-  return Array.from({ length: count }, (_, i) => ({
-    id: `user-${i + 1}`,
-    name: `User ${i + 1}`,
-    email: `user${i + 1}@company.com`,
-    department: departments[i % departments.length],
-    role: roles[i % roles.length],
-    status: statuses[i % statuses.length],
-    lastActive: new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000).toLocaleDateString(),
-    projects: Math.floor(Math.random() * 10) + 1,
-    completion: Math.floor(Math.random() * 100),
-    rating: Math.random() * 5,
-    avatar: `https://api.dicebear.com/7.x/initials/svg?seed=User${i + 1}`,
-  }));
+
+  return Array.from({ length: count }, (_, index) => {
+    const completion = (index * 13) % 101;
+    const rating = ((index % 5) + 1) - 0.5;
+    const projects = (index % 10) + 1;
+    const month = (index % 12) + 1;
+    const day = ((index * 3) % 27) + 1;
+    const lastActive = `2024-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+
+    return {
+      id: `user-${index + 1}`,
+      name: `User ${index + 1}`,
+      email: `user${index + 1}@company.com`,
+      department: departments[index % departments.length],
+      role: roles[index % roles.length],
+      status: statuses[index % statuses.length],
+      lastActive,
+      projects,
+      completion,
+      rating,
+      avatar: `https://api.dicebear.com/7.x/initials/svg?seed=User${index + 1}`,
+    };
+  });
 };
 
 const generateSampleProjects = (count: number) => {
   const statuses = ['Planning', 'In Progress', 'Review', 'Completed', 'On Hold'];
   const priorities = ['Low', 'Medium', 'High', 'Critical'];
   const types = ['Web App', 'Mobile App', 'API', 'Design System', 'Marketing'];
-  
-  return Array.from({ length: count }, (_, i) => ({
-    id: `project-${i + 1}`,
-    name: `Project ${i + 1}`,
-    description: `Description for project ${i + 1}`,
-    status: statuses[i % statuses.length],
-    priority: priorities[i % priorities.length],
-    type: types[i % types.length],
-    progress: Math.floor(Math.random() * 100),
-    dueDate: new Date(Date.now() + Math.random() * 90 * 24 * 60 * 60 * 1000).toLocaleDateString(),
-    teamSize: Math.floor(Math.random() * 8) + 2,
-    budget: Math.floor(Math.random() * 100000) + 10000,
-  }));
+
+  return Array.from({ length: count }, (_, index) => {
+    const progress = (index * 7) % 101;
+    const teamSize = (index % 9) + 2;
+    const month = ((index * 2) % 12) + 1;
+    const day = ((index * 5) % 28) + 1;
+    const dueDate = `2024-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    const budget = 15000 + index * 2500;
+
+    return {
+      id: `project-${index + 1}`,
+      name: `Project ${index + 1}`,
+      description: `Description for project ${index + 1}`,
+      status: statuses[index % statuses.length],
+      priority: priorities[index % priorities.length],
+      type: types[index % types.length],
+      progress,
+      dueDate,
+      teamSize,
+      budget,
+    };
+  });
 };
 
 // Complex Components Showcase
