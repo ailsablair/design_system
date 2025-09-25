@@ -302,24 +302,19 @@ export const ErrorState: Story = {
 export const LoadingState: Story = {
   render: () => {
     const [showImage, setShowImage] = React.useState(false);
-    
-    React.useEffect(() => {
-      const timer = setTimeout(() => setShowImage(true), 2000);
-      return () => clearTimeout(timer);
-    }, []);
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-        <Image 
-          size="default" 
+        <Image
+          size="default"
           src={showImage ? sampleImages.landscape : undefined}
           alt="Loading simulation"
         />
-        <button 
+        <button
           onClick={() => setShowImage(!showImage)}
-          style={{ 
-            padding: '8px 16px', 
-            border: '1px solid #ccc', 
+          style={{
+            padding: '8px 16px',
+            border: '1px solid #ccc',
             borderRadius: '4px',
             background: 'white',
             cursor: 'pointer'
