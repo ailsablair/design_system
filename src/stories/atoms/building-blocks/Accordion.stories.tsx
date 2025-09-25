@@ -354,7 +354,6 @@ export const AllVariants: Story = {
 // ===== FIGMA EXACT DESIGN =====
 
 export const FigmaExactDesign: Story = {
-  name: 'Figma Exact Design',
   render: () => (
     <div style={{ 
       display: 'grid', 
@@ -445,7 +444,6 @@ export const FigmaExactDesign: Story = {
 // ===== INTERACTIVE EXAMPLES =====
 
 export const InteractiveDemo: Story = {
-  name: 'Interactive Demo',
   render: () => {
     const [openStates, setOpenStates] = React.useState<Record<string, boolean>>({});
     
@@ -541,7 +539,6 @@ export const CustomContent: Story = {
 };
 
 export const ContentTypes: Story = {
-  name: 'Content Types',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '800px' }}>
       <h2>Accordion Content Types</h2>
