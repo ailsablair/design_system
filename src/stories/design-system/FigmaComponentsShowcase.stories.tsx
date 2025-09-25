@@ -801,6 +801,32 @@ export const ComponentOverview: Story = {
               <Button type="ghost">Ghost</Button>
             </ButtonGroup>
           </div>
+
+          {/* StepIndicator Card */}
+          <div style={{
+            padding: '24px',
+            background: 'white',
+            borderRadius: '12px',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+          }}>
+            <h3 style={{ margin: 0, fontSize: '18px', fontWeight: '600', marginBottom: '12px' }}>
+              Step Indicators
+            </h3>
+            <p style={{ margin: 0, fontSize: '14px', color: '#666', marginBottom: '16px' }}>
+              Workflow status indicators with different types and states for nuclear safety processes.
+            </p>
+            <div style={{
+              display: 'flex',
+              gap: '16px',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <StepIndicator type="complete" size="default" complete={true} />
+              <StepIndicator type="notifications" size="default" current={true} />
+              <StepIndicator type="warning" size="default" />
+              <StepIndicator type="locked" size="default" disabled={true} />
+            </div>
+          </div>
         </div>
       </div>
     </div>
