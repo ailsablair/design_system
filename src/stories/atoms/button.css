@@ -661,15 +661,15 @@
 
 /* State variants for tertiary outline buttons */
 .button.tertiary.outline.default {
-  background: var(--primary-yellow-50);
-  border: var(--spacing-stroke-1px) solid var(--primary-yellow-dark-yellow);
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
 }
 
 .button.tertiary.outline.hover,
 .button.tertiary.outline:hover:not(.disabled):not(.loading) {
-  background: var(--primary-yellow-100-alt);
-  border: var(--spacing-stroke-2px) solid var(--primary-yellow-500);
-  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
+  box-shadow: var(--spacing-stroke-1px) var(--spacing-stroke-1px) 0 0 var(--primary-seafoam-extra-dark-seafoam);
 }
 
 .button.tertiary.outline.hover .button-text,
@@ -679,9 +679,9 @@
 
 .button.tertiary.outline.clicked,
 .button.tertiary.outline:active:not(.disabled):not(.loading) {
-  background: var(--primary-yellow-100-alt);
-  border: var(--spacing-stroke-2px) solid var(--primary-yellow-300);
-  box-shadow: 0 var(--spacing-sizing-2px) var(--spacing-sizing-8px) 0 rgba(0, 0, 0, 0.15);
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
+  box-shadow: var(--spacing-stroke-1px) var(--spacing-stroke-1px) 0 0 var(--primary-seafoam-extra-dark-seafoam);
 }
 
 .button.tertiary.outline.clicked .button-text,
@@ -691,28 +691,28 @@
 
 .button.tertiary.outline.focused,
 .button.tertiary.outline:focus-visible:not(.disabled):not(.loading) {
-  background: var(--primary-yellow-50);
-  border: var(--spacing-stroke-3px) solid var(--primary-yellow-500);
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
 }
 
 .button.tertiary.outline.loading {
-  background: var(--primary-yellow-50);
-  border: var(--spacing-stroke-1px) solid var(--primary-yellow-dark-yellow);
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
   cursor: wait;
   pointer-events: none;
 }
 
 .button.tertiary.outline.disabled {
-  background: var(--neutral-gray-gray-100);
-  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-300);
-  color: var(--neutral-gray-gray-500);
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-200);
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .button.tertiary.outline.disabled .button-icon {
-  color: var(--neutral-gray-gray-500);
-  opacity: 0.8;
+  color: var(--neutral-gray-gray-200);
+  opacity: 0.6;
 }
 
 /* Force state classes for tertiary buttons */
