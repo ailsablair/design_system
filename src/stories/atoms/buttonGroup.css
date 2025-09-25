@@ -1,0 +1,230 @@
+@import '../foundations/tokens.css';
+
+/* ButtonGroup Component Base */
+.button-group {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--type-typeface-archivo);
+  position: relative;
+}
+
+/* Orientation variants */
+.button-group.horizontal {
+  flex-direction: row;
+}
+
+.button-group.vertical {
+  flex-direction: column;
+}
+
+/* Gap variants */
+.button-group.gap-none {
+  gap: 0;
+}
+
+.button-group.gap-small {
+  gap: var(--spacing-sizing-4px);
+}
+
+.button-group.gap-default {
+  gap: var(--spacing-sizing-8px);
+}
+
+.button-group.gap-large {
+  gap: var(--spacing-sizing-16px);
+}
+
+/* Full width styling */
+.button-group.full-width {
+  width: 100%;
+}
+
+.button-group.full-width > * {
+  flex: 1;
+}
+
+/* Size-specific styling */
+.button-group.extra-small {
+  min-height: 27px;
+}
+
+.button-group.small {
+  min-height: 30px;
+}
+
+.button-group.default {
+  min-height: 42px;
+}
+
+.button-group.large {
+  min-height: 52px;
+}
+
+/* Type-specific styling for different button group layouts */
+.button-group.default {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.button-group.split {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button-group.icon-only {
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure child buttons inherit the group's styling context */
+.button-group > .button,
+.button-group > .split-button-container,
+.button-group > .autosave {
+  flex-shrink: 0;
+}
+
+/* Spacing adjustments for different group types */
+.button-group.default.horizontal > * + * {
+  margin-left: var(--spacing-sizing-8px);
+}
+
+.button-group.split.horizontal > * + * {
+  margin-left: var(--spacing-sizing-12px);
+}
+
+.button-group.icon-only.horizontal > * + * {
+  margin-left: var(--spacing-sizing-6px);
+}
+
+.button-group.default.vertical > * + * {
+  margin-top: var(--spacing-sizing-8px);
+}
+
+.button-group.split.vertical > * + * {
+  margin-top: var(--spacing-sizing-12px);
+}
+
+.button-group.icon-only.vertical > * + * {
+  margin-top: var(--spacing-sizing-6px);
+}
+
+/* Override margins when using gap */
+.button-group.gap-none > * + *,
+.button-group.gap-small > * + *,
+.button-group.gap-default > * + *,
+.button-group.gap-large > * + * {
+  margin: 0;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .button-group.horizontal {
+    flex-wrap: wrap;
+  }
+  
+  .button-group.gap-default {
+    gap: var(--spacing-sizing-6px);
+  }
+  
+  .button-group.gap-large {
+    gap: var(--spacing-sizing-12px);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .button-group {
+    outline: 1px solid transparent;
+  }
+  
+  .button-group:focus-within {
+    outline: 2px solid var(--primary-blue-blue);
+    outline-offset: 2px;
+  }
+}
+
+/* Focus management for keyboard navigation */
+.button-group:focus-within {
+  outline: none;
+}
+
+/* Ensure proper alignment for different content types */
+.button-group.horizontal.default {
+  align-items: flex-start;
+}
+
+.button-group.horizontal.split {
+  align-items: center;
+}
+
+.button-group.horizontal.icon-only {
+  align-items: center;
+}
+
+/* Figma-specific button group layouts */
+.button-group.figma-layout {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-16px);
+  padding: var(--spacing-sizing-16px);
+  background: var(--base-white);
+  border-radius: var(--spacing-radius-8px);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Special styling for button groups in showcases */
+.button-group-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-24px);
+  padding: var(--spacing-sizing-24px);
+  background: #f8f9fa;
+  border-radius: var(--spacing-radius-12px);
+}
+
+.button-group-showcase-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-16px);
+}
+
+.button-group-showcase-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.button-group-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-sizing-16px);
+}
+
+/* Ensure buttons within groups maintain proper sizing */
+.button-group .button {
+  white-space: nowrap;
+}
+
+.button-group .split-button {
+  white-space: nowrap;
+}
+
+/* Prevent button overflow in groups */
+.button-group.horizontal {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.button-group.horizontal::-webkit-scrollbar {
+  display: none;
+}
+
+.button-group.vertical {
+  overflow-y: auto;
+  max-height: 400px;
+  scrollbar-width: thin;
+}
