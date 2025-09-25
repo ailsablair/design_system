@@ -3,11 +3,13 @@
 
 /* === STEP INDICATOR COMPONENT === */
 .step-indicator {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  
+  width: fit-content;
+  height: fit-content;
+
   /* Make it interactive if click handler is provided */
   &.step-indicator-interactive {
     cursor: pointer;
