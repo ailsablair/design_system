@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useId, useState } from 'react';
 import { StepIndicator } from './StepIndicator';
 import './accordionFigma.css';
 
