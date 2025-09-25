@@ -2,30 +2,40 @@ import type { Preview } from '@storybook/react';
 import React, { type PropsWithChildren, useEffect } from 'react';
 import type { Decorator, Preview } from '@storybook/react-vite';
 
-// Safe ResizeObserver error suppression decorator
-const withResizeObserverErrorSuppression: Decorator = (Story) => {
+const ResizeObserverErrorBoundary: React.FC<PropsWithChildren> = ({ children }) => {
   useEffect(() => {
-    // Only suppress specific ResizeObserver error messages
     const originalConsoleError = console.error;
-    console.error = (...args: any[]) => {
-      const message = args.join(' ');
-      if (message.includes('ResizeObserver loop completed with undelivered notifications') ||
-          message.includes('ResizeObserver loop limit exceeded')) {
-        // Silently ignore ResizeObserver errors
+
+    console.error = (...args: Parameters<typeof originalConsoleError>) => {
+      const message = args
+        .filter((arg): arg is string => typeof arg === 'string')
+        .join(' ');
+
+      if (
+        message.includes('ResizeObserver loop completed with undelivered notifications') ||
+        message.includes('ResizeObserver loop limit exceeded')
+      ) {
         return;
       }
-      // Let all other errors through normally
-      originalConsoleError.apply(console, args);
+
+      originalConsoleError(...args);
     };
 
     return () => {
-      // Restore original console.error when component unmounts
       console.error = originalConsoleError;
     };
   }, []);
 
-  return React.createElement(StoryFn);
+  return React.createElement(React.Fragment, null, children);
 };
+
+// Safe ResizeObserver error suppression decorator
+const withResizeObserverErrorSuppression: Decorator = (Story, context) =>
+  React.createElement(
+    ResizeObserverErrorBoundary,
+    null,
+    Story(context)
+  );
 
 const preview: Preview = {
   decorators: [withResizeObserverErrorSuppression],
