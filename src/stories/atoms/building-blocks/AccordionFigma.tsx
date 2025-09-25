@@ -52,6 +52,9 @@ export const AccordionFigma: React.FC<AccordionFigmaProps> = ({
 }) => {
   const [internalOpen, setInternalOpen] = useState(defaultOpen);
   const isOpen = controlledOpen !== undefined ? controlledOpen : internalOpen;
+  const baseId = useId();
+  const headerId = `accordion-figma-header-${baseId}`;
+  const contentId = `accordion-figma-panel-${baseId}`;
 
   const handleToggle = () => {
     const newOpen = !isOpen;
@@ -259,22 +262,29 @@ export const AccordionFigma: React.FC<AccordionFigmaProps> = ({
 
   return (
     <div className={accordionClasses}>
-      <button 
+      <button
+        id={headerId}
         className="accordion-figma__trigger"
         onClick={handleToggle}
         aria-expanded={isOpen}
+        aria-controls={contentId}
         type="button"
       >
         {renderHeader()}
       </button>
-      
-      {isOpen && (
-        <div className="accordion-figma__body">
-          <div className="accordion-figma__body-content">
-            {content}
-          </div>
+
+      <div
+        id={contentId}
+        className="accordion-figma__body"
+        role="region"
+        aria-labelledby={headerId}
+        aria-hidden={!isOpen}
+        hidden={!isOpen}
+      >
+        <div className="accordion-figma__body-content">
+          {content}
         </div>
-      )}
+      </div>
     </div>
   );
 };
