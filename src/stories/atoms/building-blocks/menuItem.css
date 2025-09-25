@@ -2,33 +2,52 @@
 
 .menu-item {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  min-width: 140px;
+  max-width: 200px;
+  align-items: center;
+  gap: var(--spacing-sizing-4px);
+  align-self: stretch;
+  background: var(--base-white);
   cursor: pointer;
   transition: all var(--transition-fast);
-  padding: var(--spacing-sizing-8px) var(--spacing-sizing-12px);
-  border-radius: var(--spacing-radius-4px);
   user-select: none;
   outline: none;
+  border-left: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+  border-right: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
 }
 
 .menu-item:focus-visible {
   outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue-500);
   outline-offset: var(--spacing-sizing-2px);
+  z-index: 1;
 }
 
 .menu-item-text {
+  display: flex;
+  height: 19px;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 0 0;
   font-family: var(--type-typeface-roboto-flex);
   font-style: normal;
+  font-weight: 400;
   white-space: nowrap;
   transition: all var(--transition-fast);
 }
 
-/* Size variants */
+/* Size variants with Figma-accurate padding */
+.menu-item.small {
+  padding: var(--spacing-sizing-6px) var(--spacing-sizing-12px);
+}
+
 .menu-item.small .menu-item-text {
   font-size: var(--type-roboto-flex-body-sm);
   line-height: var(--type-line-height-body-sm);
   letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
+}
+
+.menu-item.default {
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-12px);
 }
 
 .menu-item.default .menu-item-text {
@@ -37,26 +56,30 @@
   letter-spacing: var(--type-letter-spacing-roboto-flex-body);
 }
 
+.menu-item.large {
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-16px);
+}
+
 .menu-item.large .menu-item-text {
   font-size: var(--type-roboto-flex-body-lg);
   line-height: var(--type-line-height-body-lg);
   letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg);
 }
 
-/* State variants */
+/* State variants matching Figma designs */
 .menu-item.default .menu-item-text {
   color: var(--base-black);
-  font-weight: var(--type-weight-regular);
+  font-weight: 400;
 }
 
 .menu-item.hover .menu-item-text {
   color: var(--primary-sky-blue-dark-sky-blue);
-  font-weight: var(--type-weight-regular);
+  font-weight: 400;
 }
 
 .menu-item.clicked .menu-item-text {
   color: var(--base-black);
-  font-weight: var(--type-weight-semibold);
+  font-weight: 600;
 }
 
 .menu-item.disabled {
@@ -66,55 +89,117 @@
 
 .menu-item.disabled .menu-item-text {
   color: var(--neutral-gray-gray-500);
-  font-weight: var(--type-weight-regular);
+  font-weight: 400;
 }
 
 /* Interactive states */
+.menu-item:not(.disabled):hover {
+  background: var(--neutral-gray-gray-50);
+}
+
 .menu-item:not(.disabled):hover .menu-item-text {
   color: var(--primary-sky-blue-dark-sky-blue);
 }
 
 .menu-item:not(.disabled):active .menu-item-text {
   color: var(--base-black);
-  font-weight: var(--type-weight-semibold);
+  font-weight: 600;
 }
 
-/* Type variants for visual grouping */
+/* Type variants for menu positioning with Figma-accurate borders */
 .menu-item.top {
-  border-radius: var(--spacing-radius-8px) var(--spacing-radius-8px) var(--spacing-radius-4px) var(--spacing-radius-4px);
+  border-radius: var(--spacing-radius-6px) var(--spacing-radius-6px) 0 0;
+  border-top: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+}
+
+.menu-item.top.small {
+  padding-top: var(--spacing-sizing-12px);
+}
+
+.menu-item.top.default {
+  padding-top: var(--spacing-sizing-12px);
+}
+
+.menu-item.top.large {
+  padding-top: var(--spacing-sizing-16px);
 }
 
 .menu-item.bottom {
-  border-radius: var(--spacing-radius-4px) var(--spacing-radius-4px) var(--spacing-radius-8px) var(--spacing-radius-8px);
+  border-radius: 0 0 var(--spacing-radius-6px) var(--spacing-radius-6px);
+  border-bottom: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
 }
 
-.menu-item.default {
-  border-radius: var(--spacing-radius-4px);
+.menu-item.bottom.small {
+  padding-bottom: var(--spacing-sizing-12px);
 }
 
-/* Hover background for better UX */
-.menu-item:not(.disabled):hover {
-  background-color: var(--neutral-gray-gray-50);
+.menu-item.bottom.default {
+  padding-bottom: var(--spacing-sizing-12px);
 }
 
+.menu-item.bottom.large {
+  padding-bottom: var(--spacing-sizing-16px);
+}
+
+/* Active state background */
 .menu-item:not(.disabled):active {
   background-color: var(--neutral-gray-gray-100);
 }
 
 /* Forced state classes for Storybook and controlled state */
-.menu-item.force-hover .menu-item-text {
-  color: var(--primary-sky-blue-dark-sky-blue);
-}
-
 .menu-item.force-hover {
   background-color: var(--neutral-gray-gray-50);
 }
 
-.menu-item.force-clicked .menu-item-text {
-  color: var(--base-black);
-  font-weight: var(--type-weight-semibold);
+.menu-item.force-hover .menu-item-text {
+  color: var(--primary-sky-blue-dark-sky-blue);
 }
 
 .menu-item.force-clicked {
   background-color: var(--neutral-gray-gray-100);
+}
+
+.menu-item.force-clicked .menu-item-text {
+  color: var(--base-black);
+  font-weight: 600;
+}
+
+/* Menu container styling for proper integration */
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 140px;
+  max-width: 200px;
+  background: var(--base-white);
+  border-radius: var(--spacing-radius-6px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .menu-item {
+    min-width: 120px;
+    max-width: 180px;
+  }
+
+  .menu-container {
+    min-width: 120px;
+    max-width: 180px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .menu-item {
+    border-width: 1px;
+  }
+
+  .menu-item.top {
+    border-top-width: 1px;
+  }
+
+  .menu-item.bottom {
+    border-bottom-width: 1px;
+  }
 }
