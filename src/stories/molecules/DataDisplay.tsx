@@ -133,11 +133,11 @@ export const DataDisplay: React.FC<DataDisplayProps> = ({
   };
 
   // Handle export
-  const handleExport = () => {
+  const handleExport = useCallback(() => {
     if (onExport) {
       onExport(filteredData);
     }
-  };
+  }, [onExport, filteredData]);
 
   // Create export action if needed
   const allActions = useMemo(() => {
