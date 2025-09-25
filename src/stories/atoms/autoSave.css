@@ -1,0 +1,156 @@
+@import '../foundations/tokens.css';
+
+/* AutoSave Component Base */
+.autosave {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--type-typeface-archivo);
+  font-style: normal;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.autosave.clickable {
+  cursor: pointer;
+}
+
+.autosave.clickable:focus-visible {
+  outline: 2px solid var(--primary-blue-blue);
+  outline-offset: 2px;
+}
+
+/* AutoSave Content Layout */
+.autosave-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-6px);
+  padding: var(--spacing-sizing-4px);
+}
+
+/* AutoSave Text */
+.autosave-text {
+  font-size: var(--type-archivo-label);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-label);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
+}
+
+/* AutoSave Icons */
+.autosave-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.autosave-icon.loading {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Status-specific styling */
+.autosave.default .autosave-icon {
+  color: var(--primary-sky-blue-dark-sky-blue);
+}
+
+.autosave.default .autosave-text {
+  color: var(--primary-sky-blue-dark-sky-blue);
+}
+
+.autosave.disabled .autosave-icon {
+  color: var(--neutral-gray-gray-300);
+}
+
+.autosave.disabled .autosave-text {
+  color: var(--neutral-gray-gray-300);
+}
+
+.autosave.hover .autosave-icon {
+  color: var(--primary-sky-blue-dark-sky-blue);
+}
+
+.autosave.hover .autosave-text {
+  color: var(--primary-sky-blue-dark-sky-blue);
+}
+
+.autosave.saving .autosave-icon {
+  color: var(--primary-sky-blue-dark-sky-blue);
+}
+
+.autosave.saving .autosave-text {
+  color: var(--primary-sky-blue-dark-sky-blue);
+}
+
+.autosave.auto-saving .autosave-icon {
+  color: var(--primary-sky-blue-dark-sky-blue);
+}
+
+.autosave.auto-saving .autosave-text {
+  color: var(--primary-sky-blue-dark-sky-blue);
+}
+
+.autosave.saved .autosave-icon {
+  color: var(--status-dark-green);
+}
+
+.autosave.saved .autosave-text {
+  color: var(--status-dark-green);
+}
+
+.autosave.error-saving .autosave-icon {
+  color: var(--status-red);
+}
+
+.autosave.error-saving .autosave-text {
+  color: var(--status-red);
+}
+
+/* Interactive states for clickable variants */
+.autosave.clickable.default:hover .autosave-icon,
+.autosave.clickable.default:hover .autosave-text {
+  color: var(--primary-sky-blue-dark-sky-blue);
+}
+
+.autosave.clickable:active:not(.disabled) .autosave-text {
+  font-weight: var(--type-weight-medium);
+}
+
+/* Size variants */
+.autosave.default {
+  min-height: 28px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .autosave {
+    transition: none;
+  }
+  
+  .autosave-icon.loading {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .autosave.default .autosave-icon,
+  .autosave.default .autosave-text {
+    opacity: 1;
+  }
+  
+  .autosave.disabled .autosave-icon,
+  .autosave.disabled .autosave-text {
+    opacity: 0.7;
+  }
+}
