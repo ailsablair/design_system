@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { Table, TableColumn, TableData, TableProps } from '../atoms/Table';
 import { SearchBar } from './SearchBar';
 import { FilterGroup, FilterOption } from './FilterGroup';
