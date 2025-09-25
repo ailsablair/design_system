@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const meta: Meta = {
   title: 'Chromatic/Debug/Chromatic Debug',
@@ -37,16 +37,25 @@ type Story = StoryObj;
 export const BasicRenderTest: Story = {
   render: () => {
     const [timestamp, setTimestamp] = useState(new Date().toISOString());
-    
+    const [cssVarStatus, setCssVarStatus] = useState<'unknown' | 'available' | 'missing'>('unknown');
+
     useEffect(() => {
-      // Test if useEffect works in Chromatic
-      const timer = setTimeout(() => {
+      if (typeof window === 'undefined') {
+        return;
+      }
+
+      const timer = window.setTimeout(() => {
         setTimestamp(new Date().toISOString());
       }, 100);
-      
-      return () => clearTimeout(timer);
+
+      const computed = window.getComputedStyle(document.documentElement).getPropertyValue('--status-green').trim();
+      setCssVarStatus(computed ? 'available' : 'missing');
+
+      return () => window.clearTimeout(timer);
     }, []);
-    
+
+    const cssVariablesIndicator = cssVarStatus === 'available' ? '✅' : cssVarStatus === 'missing' ? '❌' : '…';
+
     return (
       <div style={{ 
         padding: '24px', 
@@ -67,7 +76,7 @@ export const BasicRenderTest: Story = {
           <strong>Environment Check:</strong>
           <ul style={{ marginTop: '8px', paddingLeft: '20px' }}>
             <li>React rendering: ✅ Working</li>
-            <li>CSS variables: {getComputedStyle(document.documentElement).getPropertyValue('--status-green') ? '✅' : '❌'} Status</li>
+            <li>CSS variables: {cssVariablesIndicator} Status</li>
             <li>UseEffect: ✅ Working</li>
             <li>Timestamp: {timestamp}</li>
           </ul>
