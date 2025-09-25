@@ -6,6 +6,7 @@ import { MenuItem } from '../atoms/building-blocks/MenuItem';
 import { ButtonGroup } from '../atoms/ButtonGroup';
 import { Button } from '../atoms/Button';
 import { SplitButton } from '../atoms/button/SplitButton';
+import { StepIndicator } from '../atoms/building-blocks/StepIndicator';
 
 // Mock component to serve as the container for the showcase
 const FigmaComponentsShowcase: React.FC = () => <div />;
