@@ -8,7 +8,7 @@ const meta: Meta<typeof Button> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Figma-accurate button showcase matching the exact design specifications. Features updated warning, info, success, and tertiary outline buttons with proper colors, shadows, and states.',
+        component: 'Figma-accurate button showcase matching the exact design specifications from the latest Figma designs. Features updated secondary, tertiary, warning, info, and success buttons with precise colors, backgrounds, borders, shadows, and interactive states.',
       },
     },
   },
@@ -20,7 +20,7 @@ const meta: Meta<typeof Button> = {
     },
     type: {
       control: 'select',
-      options: ['primary', 'warning', 'info', 'success', 'tertiary'],
+      options: ['primary', 'secondary', 'tertiary', 'warning', 'info', 'success'],
       description: 'Button type/variant',
     },
     state: {
@@ -130,6 +130,37 @@ export const PrimaryOutlineDisabled: Story = {
     disabled: true,
     leadingIcon: <AlarmIcon size={18} />,
     trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+// Secondary buttons (updated Figma styling)
+export const SecondaryButtonSmall: Story = {
+  args: {
+    children: 'Label',
+    size: 'small',
+    type: 'secondary',
+    leadingIcon: <AlarmIcon size={14} />,
+    trailingIcon: <ArrowDownIcon size={14} />,
+  },
+};
+
+export const SecondaryButtonDefault: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'secondary',
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const SecondaryButtonLarge: Story = {
+  args: {
+    children: 'Label',
+    size: 'large',
+    type: 'secondary',
+    leadingIcon: <AlarmIcon size={20} />,
+    trailingIcon: <ArrowDownIcon size={20} />,
   },
 };
 
