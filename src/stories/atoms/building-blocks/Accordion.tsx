@@ -85,6 +85,9 @@ export const Accordion: React.FC<AccordionProps> = ({
 }) => {
   const [internalIsOpen, setInternalIsOpen] = useState(state === 'open');
   const isOpen = controlledIsOpen !== undefined ? controlledIsOpen : internalIsOpen;
+  const baseId = useId();
+  const headerId = `accordion-header-${baseId}`;
+  const contentId = `accordion-panel-${baseId}`;
 
   const handleToggle = () => {
     const newIsOpen = !isOpen;
@@ -410,22 +413,29 @@ export const Accordion: React.FC<AccordionProps> = ({
 
   return (
     <div className={accordionClasses}>
-      <button 
+      <button
+        id={headerId}
         className="accordion__trigger"
         onClick={handleToggle}
         aria-expanded={isOpen}
-        aria-controls={`accordion-content-${Math.random().toString(36).substr(2, 9)}`}
+        aria-controls={contentId}
+        type="button"
       >
         {renderHeader()}
       </button>
-      
-      {isOpen && (
-        <div className="accordion__content">
-          <div className="accordion__content-inner">
-            {children || content}
-          </div>
+
+      <div
+        id={contentId}
+        className="accordion__content"
+        role="region"
+        aria-labelledby={headerId}
+        aria-hidden={!isOpen}
+        hidden={!isOpen}
+      >
+        <div className="accordion__content-inner">
+          {children || content}
         </div>
-      )}
+      </div>
     </div>
   );
 };
