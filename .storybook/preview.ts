@@ -1,9 +1,10 @@
 import type { Preview } from '@storybook/react';
-import React from 'react';
+import React, { type PropsWithChildren, useEffect } from 'react';
+import type { Decorator, Preview } from '@storybook/react-vite';
 
 // Safe ResizeObserver error suppression decorator
-const withResizeObserverErrorSuppression = (StoryFn: any) => {
-  React.useEffect(() => {
+const withResizeObserverErrorSuppression: Decorator = (Story) => {
+  useEffect(() => {
     // Only suppress specific ResizeObserver error messages
     const originalConsoleError = console.error;
     console.error = (...args: any[]) => {
