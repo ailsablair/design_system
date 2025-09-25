@@ -311,7 +311,7 @@
   font-weight: var(--type-weight-light);
 }
 
-/* State variants for primary buttons */
+/* State variants for primary buttons - Updated for Figma design */
 .button.primary.default {
   background: var(--primary-blue-blue);
   border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue);
@@ -319,8 +319,8 @@
 
 .button.primary.hover,
 .button.primary:hover:not(.disabled):not(.loading) {
-  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-400);
-  box-shadow: 3px 3px 0 0 var(--primary-blue-blue-400);
+  border: var(--spacing-stroke-1px) solid var(--primary-blue-blue-200);
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.primary.hover .button-text,
@@ -330,18 +330,18 @@
 
 .button.primary.clicked,
 .button.primary:active:not(.disabled):not(.loading) {
-  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-200);
-  box-shadow: 3px 3px 0 0 var(--primary-blue-blue-200);
+  border: var(--spacing-stroke-1px) solid var(--primary-blue-blue-200);
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.primary.clicked .button-text,
 .button.primary:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.primary.focused,
 .button.primary:focus-visible:not(.disabled):not(.loading) {
-  border: var(--spacing-stroke-3px) solid var(--primary-blue-blue-300);
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-300);
 }
 
 .button.primary.loading {
@@ -352,16 +352,16 @@
 }
 
 .button.primary.disabled {
-  background: var(--neutral-gray-gray-100);
-  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
-  color: var(--neutral-gray-gray-500);
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-300);
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .button.primary.disabled .button-icon {
-  color: var(--neutral-gray-gray-500);
-  opacity: 0.8;
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
 }
 
 /* State variants for primary outline buttons */
@@ -532,59 +532,69 @@
   opacity: 0.6;
 }
 
-/* Special hover effects for extra-small buttons */
+/* Special hover effects for extra-small buttons - Updated for Figma design */
 .button.extra-small.primary.hover,
 .button.extra-small.primary:hover:not(.disabled):not(.loading) {
-  box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05);
+  background: var(--primary-blue-blue);
   border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue);
+  box-shadow: 0 1px 3px 0 rgba(39, 39, 39, 0.05);
 }
 
 .button.extra-small.primary.clicked,
 .button.extra-small.primary:active:not(.disabled):not(.loading) {
+  background: var(--primary-blue-blue);
   border: var(--spacing-stroke-0-5px) solid var(--base-white);
-  box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05);
+  box-shadow: 0 1px 3px 0 rgba(39, 39, 39, 0.05);
+}
+
+.button.extra-small.primary.focused,
+.button.extra-small.primary:focus-visible:not(.disabled):not(.loading) {
+  background: var(--primary-blue-blue);
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-300);
 }
 
 /* Disabled extra-small special styling */
 .button.extra-small.primary.disabled {
-  background: var(--neutral-gray-gray-100);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
-  color: var(--neutral-gray-gray-500);
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-300);
 }
 
 .button.extra-small.primary.disabled .button-icon {
-  color: var(--neutral-gray-gray-500);
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
 }
 
-/* Special hover effects for extra-small secondary buttons */
+/* Special hover effects for extra-small secondary buttons - Updated for Figma design */
 .button.extra-small.secondary.hover,
 .button.extra-small.secondary:hover:not(.disabled):not(.loading) {
-  background: var(--primary-sky-blue-50);
-  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
-  box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05);
+  background: #D6F0FB;
+  border: var(--spacing-stroke-1px) solid #0BA7EA;
+  box-shadow: 0 1px 3px 0 rgba(39, 39, 39, 0.05);
 }
 
 .button.extra-small.secondary.clicked,
 .button.extra-small.secondary:active:not(.disabled):not(.loading) {
-  background: var(--primary-sky-blue-50);
-  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
-  box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05);
+  background: #D6F0FB;
+  border: var(--spacing-stroke-1px) solid #0BA7EA;
+  box-shadow: 0 1px 3px 0 rgba(39, 39, 39, 0.05);
 }
 
 .button.extra-small.secondary.focused,
 .button.extra-small.secondary:focus-visible:not(.disabled):not(.loading) {
-  background: var(--primary-sky-blue-50);
-  border: var(--spacing-stroke-3px) solid var(--primary-sky-blue-sky-blue);
+  background: #D6F0FB;
+  border: var(--spacing-stroke-1px) solid #0BA7EA;
 }
 
 .button.extra-small.secondary.disabled {
-  background: var(--neutral-gray-gray-100);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
-  color: var(--neutral-gray-gray-500);
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-300);
 }
 
 .button.extra-small.secondary.disabled .button-icon {
-  color: var(--neutral-gray-gray-500);
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
 }
 
 /* Width variants */
@@ -841,15 +851,15 @@
   outline-offset: var(--spacing-sizing-2px);
 }
 
-/* Ghost button variant */
+/* Ghost button variant - Updated for Figma design */
 .button.ghost {
   background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
-  color: var(--base-black);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500);
+  color: var(--neutral-gray-gray-600);
 }
 
 .button.ghost .button-icon {
-  color: var(--neutral-gray-gray-700);
+  color: var(--neutral-gray-gray-600);
   opacity: 0.6;
 }
 
@@ -885,17 +895,17 @@
   font-weight: var(--type-weight-bold);
 }
 
-/* State variants for ghost buttons */
+/* State variants for ghost buttons - Updated for Figma design */
 .button.ghost.default {
   background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-400);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500);
 }
 
 .button.ghost.hover,
 .button.ghost:hover:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-400);
-  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-200);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500);
+  box-shadow: 1px 1px 0 0 var(--neutral-gray-gray-300);
 }
 
 .button.ghost.hover .button-text,
@@ -906,8 +916,8 @@
 .button.ghost.clicked,
 .button.ghost:active:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-400);
-  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-200);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-500);
+  box-shadow: 0 1px 3px 0 rgba(39, 39, 39, 0.05);
 }
 
 .button.ghost.clicked .button-text,
@@ -918,92 +928,87 @@
 .button.ghost.focused,
 .button.ghost:focus-visible:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-3px) solid var(--neutral-gray-gray-400);
-  color: var(--neutral-gray-gray-800);
-}
-
-.button.ghost.focused .button-icon,
-.button.ghost:focus-visible:not(.disabled):not(.loading) .button-icon {
-  color: var(--neutral-gray-gray-800);
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-500);
 }
 
 .button.ghost.loading {
   background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500);
   cursor: wait;
   pointer-events: none;
 }
 
+.button.ghost.loading .button-loading-content {
+  opacity: 0.7;
+}
+
 .button.ghost.disabled {
-  background: var(--neutral-gray-gray-100);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
-  color: var(--neutral-gray-gray-500);
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-300);
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .button.ghost.disabled .button-icon {
-  color: var(--neutral-gray-gray-500);
-  opacity: 0.8;
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
 }
 
-/* State variants for error buttons */
+/* State variants for error buttons - Updated for Figma design */
 .button.error.default {
-  background: var(--status-red, #CE2031);
-  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--status-red-light, #FFF3F3);
+  background: #CE2031;
+  border: var(--spacing-stroke-0-5px) solid #FFF3F3;
 }
 
 .button.error.hover,
 .button.error:hover:not(.disabled):not(.loading) {
-  background: var(--status-red, #CE2031);
-  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--status-red-light, #FFF3F3);
+  background: #CE2031;
+  border: var(--spacing-stroke-2px) solid #CE2031;
+  box-shadow: 1px 1px 0 0 #FFF3F3;
 }
 
 .button.error.hover .button-text,
 .button.error:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium, 500);
+  font-weight: var(--type-weight-bold);
 }
 
 .button.error.clicked,
 .button.error:active:not(.disabled):not(.loading) {
-  background: var(--status-red, #CE2031);
-  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--status-red-light, #FFF3F3);
+  background: #CE2031;
+  border: var(--spacing-stroke-2px) solid #CE2031;
+  box-shadow: 1px 1px 0 0 #FFF3F3;
 }
 
 .button.error.clicked .button-text,
 .button.error:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium, 500);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.error.focused,
 .button.error:focus-visible:not(.disabled):not(.loading) {
-  border: var(--spacing-stroke-2px, 2px) solid var(--status-red-light, #FFF3F3);
-  outline: var(--spacing-stroke-2px, 2px) solid var(--status-red, #CE2031);
-  outline-offset: var(--spacing-sizing-2px, 2px);
+  background: #CE2031;
+  border: var(--spacing-stroke-2px) solid #FFF3F3;
 }
 
 .button.error.loading {
-  background: var(--status-red, #CE2031);
-  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--status-red-light, #FFF3F3);
+  background: #CE2031;
+  border: var(--spacing-stroke-0-5px) solid #FFF3F3;
   cursor: wait;
   pointer-events: none;
 }
 
 .button.error.disabled {
-  background: var(--neutral-gray-gray-100);
-  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--neutral-gray-gray-300);
-  color: var(--neutral-gray-gray-500);
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-300);
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .button.error.disabled .button-icon {
-  color: var(--neutral-gray-gray-500);
-  opacity: 0.8;
-}
-
-.button.error.disabled .button-text {
-  font-weight: var(--type-weight-medium, 500);
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
 }
 
 /* State variants for warning buttons - Updated for Figma design */
@@ -1144,34 +1149,36 @@
   border: var(--spacing-stroke-2px) solid #D07C06 !important;
 }
 
-/* Special hover effects for extra-small ghost buttons */
+/* Special hover effects for extra-small ghost buttons - Updated for Figma design */
 .button.extra-small.ghost.hover,
 .button.extra-small.ghost:hover:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-400);
-  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-200);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500);
+  box-shadow: 1px 1px 0 0 var(--neutral-gray-gray-300);
 }
 
 .button.extra-small.ghost.clicked,
 .button.extra-small.ghost:active:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-900);
-  box-shadow: 0 var(--spacing-sizing-1px) var(--spacing-sizing-3px) 0 rgba(39, 39, 39, 0.05);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-500);
+  box-shadow: 0 1px 3px 0 rgba(39, 39, 39, 0.05);
 }
 
 .button.extra-small.ghost.focused,
 .button.extra-small.ghost:focus-visible:not(.disabled):not(.loading) {
-  border: var(--spacing-stroke-3px) solid var(--neutral-gray-gray-300);
+  background: var(--base-white);
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-500);
 }
 
 .button.extra-small.ghost.disabled {
-  background: var(--neutral-gray-gray-100);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
-  color: var(--neutral-gray-gray-500);
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-300);
 }
 
 .button.extra-small.ghost.disabled .button-icon {
-  color: var(--neutral-gray-gray-500);
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
 }
 
 .button.ghost.force-hover.extra-small {
