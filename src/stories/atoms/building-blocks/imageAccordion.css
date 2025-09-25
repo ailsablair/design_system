@@ -9,16 +9,18 @@
   cursor: pointer;
   transition: all var(--transition-normal);
   box-sizing: border-box;
-  
+
   /* Background image setup */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
-  /* Ensure minimum size for usability */
+
+  /* Responsive sizing */
+  width: min(100%, var(--image-accordion-width, 600px));
+  height: var(--image-accordion-height, 500px);
   min-width: 300px;
   min-height: 200px;
-  
+
   /* Focus styles for accessibility */
   outline: none;
 }
@@ -290,6 +292,14 @@
 .image-accordion:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.image-accordion::before {
+  content: '';
+  display: block;
+  padding-bottom: calc(var(--image-accordion-height, 500px) / var(--image-accordion-width, 600px) * 100%);
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .image-accordion:hover .image-accordion__content-overlay {
