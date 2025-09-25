@@ -400,7 +400,6 @@ export const LabelSmall: Story = {
 };
 
 export const LabelLarge: Story = {
-  name: 'Label - Large Size',
   args: {
     type: 'label',
     state: 'default',
@@ -412,7 +411,6 @@ export const LabelLarge: Story = {
 };
 
 export const LabelPlus: Story = {
-  name: 'Label - Plus Icon',
   args: {
     type: 'label',
     state: 'default',
@@ -424,7 +422,6 @@ export const LabelPlus: Story = {
 };
 
 export const LabelPlusOpen: Story = {
-  name: 'Label - Plus Icon (Open)',
   args: {
     ...LabelPlus.args,
     state: 'open',
@@ -435,7 +432,6 @@ export const LabelPlusOpen: Story = {
 // ===== COMPREHENSIVE SHOWCASE =====
 
 export const AllVariantsComparison: Story = {
-  name: 'All Variants Comparison',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '800px' }}>
       <h2 style={{ margin: 0, fontSize: '24px', fontFamily: 'Archivo' }}>Accordion Variants Showcase</h2>
