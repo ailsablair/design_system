@@ -452,6 +452,229 @@ export const CompleteFigmaShowcase: Story = {
           </div>
         </div>
 
+        {/* StepIndicator Components Section */}
+        <div style={{
+          marginBottom: '48px',
+          padding: '32px',
+          background: 'white',
+          borderRadius: '16px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)'
+        }}>
+          <h2 style={{
+            margin: 0,
+            fontSize: '24px',
+            fontWeight: '600',
+            marginBottom: '8px',
+            color: '#2F42BD'
+          }}>
+            Step Indicators
+          </h2>
+          <p style={{
+            margin: 0,
+            fontSize: '16px',
+            color: '#666',
+            marginBottom: '32px'
+          }}>
+            building-blocks/accordion component indicators for workflow statuses
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
+            {/* All types showcase */}
+            <div>
+              <h3 style={{
+                margin: 0,
+                fontSize: '18px',
+                fontWeight: '600',
+                marginBottom: '16px',
+                color: '#333'
+              }}>
+                All Types - Default Size
+              </h3>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(80px, 1fr))',
+                gap: '16px',
+                alignItems: 'center',
+                justifyItems: 'center'
+              }}>
+                {['warning', 'locked', 'comments', 'complete', 'notifications', 'error', 'note'].map((type) => (
+                  <div key={type} style={{ textAlign: 'center' }}>
+                    <StepIndicator type={type as any} size="default" />
+                    <div style={{
+                      marginTop: '8px',
+                      fontSize: '12px',
+                      fontWeight: '500',
+                      color: '#666',
+                      textTransform: 'capitalize'
+                    }}>
+                      {type}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Size variations */}
+            <div>
+              <h3 style={{
+                margin: 0,
+                fontSize: '18px',
+                fontWeight: '600',
+                marginBottom: '16px',
+                color: '#333'
+              }}>
+                Size Variations
+              </h3>
+              <div style={{
+                display: 'flex',
+                gap: '32px',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                {['small', 'default', 'large'].map((size) => (
+                  <div key={size} style={{ textAlign: 'center' }}>
+                    <StepIndicator type="warning" size={size as any} />
+                    <div style={{
+                      marginTop: '12px',
+                      fontSize: '12px',
+                      fontWeight: '500',
+                      color: '#666',
+                      textTransform: 'capitalize'
+                    }}>
+                      {size}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* State variations */}
+            <div>
+              <h3 style={{
+                margin: 0,
+                fontSize: '18px',
+                fontWeight: '600',
+                marginBottom: '16px',
+                color: '#333'
+              }}>
+                State Variations
+              </h3>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gap: '16px',
+                alignItems: 'center',
+                justifyItems: 'center'
+              }}>
+                <div style={{ textAlign: 'center' }}>
+                  <StepIndicator type="warning" size="default" />
+                  <div style={{
+                    marginTop: '8px',
+                    fontSize: '12px',
+                    fontWeight: '500',
+                    color: '#666'
+                  }}>
+                    Default
+                  </div>
+                </div>
+                <div style={{ textAlign: 'center' }}>
+                  <StepIndicator type="warning" size="default" current={true} />
+                  <div style={{
+                    marginTop: '8px',
+                    fontSize: '12px',
+                    fontWeight: '500',
+                    color: '#2F42BD'
+                  }}>
+                    Current
+                  </div>
+                </div>
+                <div style={{ textAlign: 'center' }}>
+                  <StepIndicator type="warning" size="default" complete={true} />
+                  <div style={{
+                    marginTop: '8px',
+                    fontSize: '12px',
+                    fontWeight: '500',
+                    color: '#22C55E'
+                  }}>
+                    Complete
+                  </div>
+                </div>
+                <div style={{ textAlign: 'center' }}>
+                  <StepIndicator type="warning" size="default" disabled={true} />
+                  <div style={{
+                    marginTop: '8px',
+                    fontSize: '12px',
+                    fontWeight: '500',
+                    color: '#9CA3AF'
+                  }}>
+                    Disabled
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Nuclear workflow example */}
+          <div style={{
+            marginTop: '32px',
+            padding: '24px',
+            background: '#f8f9fa',
+            borderRadius: '12px',
+            border: '1px solid #e9ecef'
+          }}>
+            <h4 style={{
+              margin: 0,
+              fontSize: '16px',
+              fontWeight: '600',
+              marginBottom: '16px',
+              color: '#333'
+            }}>
+              Nuclear Safety Workflow Example
+            </h4>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '24px',
+              flexWrap: 'wrap',
+              justifyContent: 'center'
+            }}>
+              <div style={{ textAlign: 'center' }}>
+                <StepIndicator type="complete" size="default" complete={true} />
+                <div style={{ marginTop: '8px', fontSize: '12px', fontWeight: '500', color: '#22C55E' }}>
+                  Safety Check
+                </div>
+              </div>
+
+              <div style={{ width: '24px', height: '2px', background: '#e9ecef', flexShrink: 0 }}></div>
+
+              <div style={{ textAlign: 'center' }}>
+                <StepIndicator type="notifications" size="default" current={true} />
+                <div style={{ marginTop: '8px', fontSize: '12px', fontWeight: '500', color: '#2F42BD' }}>
+                  Review
+                </div>
+              </div>
+
+              <div style={{ width: '24px', height: '2px', background: '#e9ecef', flexShrink: 0 }}></div>
+
+              <div style={{ textAlign: 'center' }}>
+                <StepIndicator type="locked" size="default" disabled={true} />
+                <div style={{ marginTop: '8px', fontSize: '12px', fontWeight: '500', color: '#9CA3AF' }}>
+                  Approval
+                </div>
+              </div>
+
+              <div style={{ width: '24px', height: '2px', background: '#e9ecef', flexShrink: 0 }}></div>
+
+              <div style={{ textAlign: 'center' }}>
+                <StepIndicator type="warning" size="default" disabled={true} />
+                <div style={{ marginTop: '8px', fontSize: '12px', fontWeight: '500', color: '#9CA3AF' }}>
+                  Deploy
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Footer */}
         <div style={{ 
           textAlign: 'center',
