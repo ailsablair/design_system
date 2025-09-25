@@ -41,6 +41,7 @@
   flex-shrink: 0;
   aspect-ratio: 1/1;
   position: relative;
+  box-sizing: border-box;
 }
 
 /* === SIZE VARIANTS === */
