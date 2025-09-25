@@ -1,7 +1,72 @@
-/* Import design tokens */
-@import '../../foundations/tokens.css';
+/* ===== FIGMA ACCORDION COMPONENT - EXACT DESIGN TOKENS ===== */
 
-/* ===== FIGMA ACCORDION COMPONENT ===== */
+:root {
+  /* Design tokens from Figma - exact values */
+  --spacing-sizing-24px: 24px;
+  --spacing-sizing-32px: 32px;
+  --spacing-sizing-12px: 12px;
+  --spacing-radius-6px: 6px;
+  --neutral-gray-gray-300: #D2D5DA;
+  --base-white: #FFF;
+  --secondary-blue-gray: #61607C;
+  --spacing-sizing-16px: 16px;
+  --spacing-sizing-8px: 8px;
+  --primary-blue-dark-blue: #191E3C;
+  --type-typeface-archivo: Archivo;
+  --type-archivo-heading-4: 24px;
+  --type-weight-medium: 500;
+  --type-line-height-heading-4: 24px;
+  --type-letter-spacing-archivo-heading-4: -0.25px;
+  --neutral-gray-gray-500: #6D7280;
+  --type-typeface-roboto-flex: "Roboto Flex";
+  --type-roboto-flex-body: 16px;
+  --type-line-height-body: 20px;
+  --type-letter-spacing-roboto-flex-body: 0.05px;
+  --neutral-gray-gray-900: #111827;
+  --spacing-sizing-28px: 28px;
+  --type-archivo-heading-3: 28px;
+  --type-line-height-heading-3: 28px;
+  --type-letter-spacing-archivo-heading-3: -0.5px;
+  --type-roboto-flex-body-lg: 18px;
+  --type-line-height-body-lg: 22px;
+  --type-letter-spacing-roboto-flex-body-lg: -0.15px;
+  --type-archivo-label-lg: 18px;
+  --type-line-height-label-lg: 24px;
+  --type-letter-spacing-archivo-label-lg: 0.15px;
+  --type-roboto-flex-body-sm: 14px;
+  --type-line-height-body-sm: 16px;
+  --type-letter-spacing-roboto-flex-body-sm: -0.15px;
+  --neutral-gray-gray-700: #374151;
+  --base-black: #1C1C1C;
+  --type-archivo-heading-5: 19px;
+  --type-line-height-heading-5: 24px;
+  --type-letter-spacing-archivo-heading-5: -0.15px;
+  --spacing-stroke-2px: 2px;
+  --primary-sky-blue-sky-blue: #0BA7EA;
+  --sky-blue-gradient: linear-gradient(294deg, #FFF 7.88%, rgba(255, 255, 255, 0.60) 21.71%, #D6F0FB 98.17%);
+  --spacing-sizing-6px: 6px;
+  --spacing-radius-99999px: 99999px;
+  --neutral-gray-gray-200: #E5E7EB;
+  --neutral-gray-gray-50: #F9FAFB;
+  --type-archivo-label: 16px;
+  --type-line-height-label: 22px;
+  --type-letter-spacing-archivo-label: 0.15px;
+  --primary-sky-blue-sky-blue-300: #85D3F5;
+  --type-weight-bold: 700;
+  --type-archivo-heading-2: 32px;
+  --type-line-height-heading-2: 34px;
+  --type-letter-spacing-arquivo-heading-2: -1px;
+  --spacing-stroke-1px: 1px;
+  --primary-sky-blue-sky-blue-400: #54C1F0;
+  --type-archivo-label-sm: 14px;
+  --type-line-height-label-sm: 17px;
+  --type-letter-spacing-archivo-label-sm: 0.15px;
+  --spacing-sizing-20px: 20px;
+  --spacing-sizing-22px: 22px;
+}
+
+/* ===== BASE ACCORDION STRUCTURE ===== */
+
 .accordion-figma {
   display: flex;
   flex-direction: column;
@@ -14,7 +79,7 @@
   min-width: 200px;
   max-width: 1280px;
   
-  /* Default background and border radius */
+  /* Default styling for simple type */
   background: var(--base-white);
   border-radius: var(--spacing-radius-6px);
   border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
@@ -23,13 +88,37 @@
   transition: all 0.2s ease;
 }
 
+/* ===== TYPE-SPECIFIC STYLING ===== */
+
 /* No-stroke type removes borders */
 .accordion-figma--type-no-stroke {
   border: none;
   background: transparent;
 }
 
+/* Decorative type with sky blue border and gradient background */
+.accordion-figma--type-decorative {
+  max-width: 464px;
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
+  background: var(--sky-blue-gradient);
+}
+
+/* Number type with sky blue border */
+.accordion-figma--type-number {
+  max-width: 464px;
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
+  background: var(--base-white);
+}
+
+/* Label type with basic border */
+.accordion-figma--type-label {
+  max-width: 464px;
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
+  background: var(--base-white);
+}
+
 /* ===== ACCORDION TRIGGER - FULL CLICKABLE AREA ===== */
+
 .accordion-figma__trigger {
   all: unset;
   width: 100%;
@@ -41,12 +130,13 @@
 }
 
 .accordion-figma__trigger:focus-visible {
-  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
-  outline-offset: var(--spacing-sizing-2px);
+  outline: var(--spacing-stroke-2px) solid var(--primary-blue-dark-blue);
+  outline-offset: var(--spacing-stroke-2px);
   border-radius: var(--spacing-radius-6px);
 }
 
 /* ===== HEADER LAYOUTS - EXACT FIGMA SPECIFICATIONS ===== */
+
 .accordion-figma__header {
   display: flex;
   align-items: flex-start;
@@ -63,7 +153,7 @@
 
 /* Small size padding */
 .accordion-figma--size-small .accordion-figma__header {
-  padding: var(--spacing-sizing-20px) var(--spacing-sizing-32px) var(--spacing-sizing-20px) var(--spacing-sizing-24px);
+  padding: var(--spacing-sizing-16px) var(--spacing-sizing-32px) var(--spacing-sizing-16px) var(--spacing-sizing-24px);
 }
 
 /* Large size padding */
@@ -71,45 +161,52 @@
   padding: var(--spacing-sizing-28px) var(--spacing-sizing-32px) var(--spacing-sizing-28px) var(--spacing-sizing-24px);
 }
 
-/* ===== TYPE-SPECIFIC ADJUSTMENTS ===== */
-
-/* Decorative and Number types - specific width constraint */
-.accordion-figma--type-decorative,
-.accordion-figma--type-number {
-  max-width: 464px;
-}
+/* ===== TYPE-SPECIFIC HEADER ADJUSTMENTS ===== */
 
 /* Decorative type padding adjustment */
 .accordion-figma--type-decorative .accordion-figma__header {
-  padding: var(--spacing-sizing-16px) var(--spacing-sizing-12px);
+  padding: var(--spacing-sizing-16px);
+  gap: 10px;
+}
+
+.accordion-figma--type-decorative.accordion-figma--size-large .accordion-figma__header {
+  padding: var(--spacing-sizing-16px);
   gap: var(--spacing-sizing-12px);
+}
+
+.accordion-figma--type-decorative.accordion-figma--size-small .accordion-figma__header {
+  padding: var(--spacing-sizing-16px) var(--spacing-sizing-12px);
+  gap: 10px;
 }
 
 /* Number type padding adjustment */
 .accordion-figma--type-number .accordion-figma__header {
-  padding: var(--spacing-sizing-12px);
+  padding: var(--spacing-sizing-16px);
   gap: var(--spacing-sizing-12px);
+  align-items: center;
 }
 
-/* Large size number type */
 .accordion-figma--type-number.accordion-figma--size-large .accordion-figma__header {
-  padding: var(--spacing-sizing-16px) var(--spacing-sizing-12px);
+  padding: var(--spacing-sizing-16px);
 }
 
-/* Small size number type */
 .accordion-figma--type-number.accordion-figma--size-small .accordion-figma__header {
-  padding: var(--spacing-sizing-16px) var(--spacing-sizing-12px);
+  padding: var(--spacing-sizing-16px);
 }
 
 /* Label type padding adjustment */
 .accordion-figma--type-label .accordion-figma__header {
   padding: var(--spacing-sizing-16px) var(--spacing-sizing-12px);
   gap: var(--spacing-sizing-12px);
+  align-items: center;
 }
 
-/* Large size label type */
 .accordion-figma--type-label.accordion-figma--size-large .accordion-figma__header {
-  padding: var(--spacing-sizing-20px) var(--spacing-sizing-12px);
+  padding: var(--spacing-sizing-16px) var(--spacing-sizing-12px) var(--spacing-sizing-20px) var(--spacing-sizing-12px);
+}
+
+.accordion-figma--type-label.accordion-figma--size-small .accordion-figma__header {
+  padding: var(--spacing-sizing-12px) var(--spacing-sizing-12px) var(--spacing-sizing-16px) var(--spacing-sizing-12px);
 }
 
 /* No-stroke type - no background borders, simple padding */
@@ -127,7 +224,17 @@
 }
 
 /* ===== CONTENT AREA - TITLE AND DESCRIPTION ===== */
+
 .accordion-figma__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-sizing-16px);
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.accordion-figma__content-inner {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -136,17 +243,17 @@
   min-width: 0;
 }
 
-/* No-stroke and decorative types align content to center */
+/* No-stroke and decorative types align content differently */
 .accordion-figma--type-no-stroke .accordion-figma__content,
 .accordion-figma--type-decorative .accordion-figma__content {
-  align-items: center;
   flex-direction: row;
+  align-items: center;
   gap: 0;
 }
 
 /* ===== TITLE TYPOGRAPHY - EXACT FIGMA SPECS ===== */
+
 .accordion-figma__title {
-  align-self: stretch;
   color: var(--primary-blue-dark-blue);
   font-family: var(--type-typeface-archivo);
   font-style: normal;
@@ -270,7 +377,7 @@
   font-weight: var(--type-weight-medium); /* 500 */
 }
 
-/* Title color changes */
+/* Title color changes for special types */
 .accordion-figma--type-decorative .accordion-figma__title,
 .accordion-figma--type-number .accordion-figma__title,
 .accordion-figma--type-label .accordion-figma__title {
@@ -278,8 +385,8 @@
 }
 
 /* ===== DESCRIPTION TYPOGRAPHY - EXACT FIGMA SPECS ===== */
+
 .accordion-figma__description {
-  align-self: stretch;
   color: var(--neutral-gray-gray-500);
   font-family: var(--type-typeface-roboto-flex);
   font-style: normal;
@@ -289,6 +396,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  flex: 1 0 0;
+  min-width: 0;
 }
 
 /* Small size description typography */
@@ -313,49 +422,63 @@
 }
 
 /* ===== BELL ICON STYLING ===== */
+
 .accordion-figma__bell-icon {
   flex-shrink: 0;
   opacity: 0.5;
-  color: var(--base-black);
   transition: all 0.2s ease;
 }
 
 /* ===== ICON FRAME STYLING - DECORATIVE TYPE ===== */
+
+.accordion-figma__icon-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-6px);
+  flex: 1 0 0;
+  min-width: 0;
+}
+
 .accordion-figma__icon-frame {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   border-radius: var(--spacing-radius-99999px);
-  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue-200);
-  background: var(--primary-sky-blue-sky-blue-50);
   transition: all 0.2s ease;
-  
-  /* Default size */
-  width: var(--spacing-sizing-28px);
-  height: var(--spacing-sizing-28px);
-  padding: 5px;
+}
+
+/* Default size icon frame */
+.accordion-figma--size-default .accordion-figma__icon-frame {
+  width: var(--spacing-sizing-24px);
+  height: var(--spacing-sizing-24px);
+  padding: 4px;
 }
 
 /* Small size icon frame */
 .accordion-figma--size-small .accordion-figma__icon-frame {
   width: var(--spacing-sizing-22px);
   height: var(--spacing-sizing-22px);
-  padding: var(--spacing-sizing-4px);
+  padding: 4px;
 }
 
-/* Large size icon frame uses default size in Figma */
+/* Large size icon frame */
 .accordion-figma--size-large .accordion-figma__icon-frame {
   width: var(--spacing-sizing-28px);
   height: var(--spacing-sizing-28px);
   padding: 5px;
 }
 
-.accordion-figma__icon-frame .accordion-figma__bell-icon {
-  color: var(--primary-sky-blue-sky-blue);
+/* ===== NUMBER STYLING - EXACT FIGMA TYPOGRAPHY ===== */
+
+.accordion-figma__number-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-12px);
+  flex: 1 0 0;
+  min-width: 0;
 }
 
-/* ===== NUMBER STYLING - EXACT FIGMA TYPOGRAPHY ===== */
 .accordion-figma__number {
   color: var(--primary-sky-blue-sky-blue-300);
   font-family: var(--type-typeface-archivo);
@@ -382,15 +505,17 @@
 .accordion-figma--size-large .accordion-figma__number {
   font-size: var(--type-archivo-heading-2); /* 32px */
   line-height: var(--type-line-height-heading-2); /* 34px - 106.25% */
-  letter-spacing: var(--type-letter-spacing-archivo-heading-2); /* -1px */
+  letter-spacing: var(--type-letter-spacing-arquivo-heading-2); /* -1px */
 }
 
 /* ===== LABEL STYLING ===== */
+
 .accordion-figma__label {
   flex-shrink: 0;
 }
 
 /* ===== TOGGLE ICON STYLING - EXACT FIGMA CIRCULAR BACKGROUNDS ===== */
+
 .accordion-figma__toggle {
   display: flex;
   align-items: center;
@@ -422,60 +547,17 @@
   height: var(--spacing-sizing-28px);
 }
 
-/* Decorative type toggle adjustments */
-.accordion-figma--type-decorative.accordion-figma--size-default .accordion-figma__toggle {
-  width: var(--spacing-sizing-24px);
-  height: var(--spacing-sizing-24px);
-}
-
-.accordion-figma--type-decorative.accordion-figma--size-small .accordion-figma__toggle {
-  width: var(--spacing-sizing-22px);
-  height: var(--spacing-sizing-22px);
-  padding: 4px 3px 2px 3px;
-}
-
-.accordion-figma--type-decorative.accordion-figma--size-large .accordion-figma__toggle {
-  width: var(--spacing-sizing-28px);
-  height: var(--spacing-sizing-28px);
-}
-
 /* Number type toggle adjustments */
 .accordion-figma--type-number.accordion-figma--size-default .accordion-figma__toggle {
-  width: var(--spacing-sizing-24px);
-  height: var(--spacing-sizing-24px);
-  padding: var(--spacing-sizing-1px);
-}
-
-.accordion-figma--type-number.accordion-figma--size-small .accordion-figma__toggle {
-  width: var(--spacing-sizing-22px);
-  height: var(--spacing-sizing-22px);
-  padding: 4px 3px 2px 3px;
+  padding: 1px;
 }
 
 .accordion-figma--type-number.accordion-figma--size-large .accordion-figma__toggle {
-  width: var(--spacing-sizing-28px);
-  height: var(--spacing-sizing-28px);
-  padding: var(--spacing-sizing-2px);
-}
-
-/* Label type toggle adjustments */
-.accordion-figma--type-label.accordion-figma--size-default .accordion-figma__toggle {
-  width: var(--spacing-sizing-24px);
-  height: var(--spacing-sizing-24px);
-}
-
-.accordion-figma--type-label.accordion-figma--size-small .accordion-figma__toggle {
-  width: var(--spacing-sizing-22px);
-  height: var(--spacing-sizing-22px);
-  padding: 4px 3px 2px 3px;
-}
-
-.accordion-figma--type-label.accordion-figma--size-large .accordion-figma__toggle {
-  width: var(--spacing-sizing-28px);
-  height: var(--spacing-sizing-28px);
+  padding: var(--spacing-stroke-2px);
 }
 
 /* ===== CONTENT BODY STYLING ===== */
+
 .accordion-figma__body {
   width: 100%;
   overflow: hidden;
@@ -483,7 +565,6 @@
 }
 
 .accordion-figma__body-content {
-  padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-24px) var(--spacing-sizing-24px);
   color: var(--neutral-gray-gray-700);
   font-family: var(--type-typeface-roboto-flex);
   font-style: normal;
@@ -493,6 +574,9 @@
   font-size: var(--type-roboto-flex-body);
   line-height: var(--type-line-height-body);
   letter-spacing: var(--type-letter-spacing-roboto-flex-body);
+  
+  /* Default padding */
+  padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-24px) var(--spacing-sizing-24px);
 }
 
 /* Small size content typography */
@@ -500,7 +584,7 @@
   font-size: var(--type-roboto-flex-body-sm);
   line-height: var(--type-line-height-body-sm);
   letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
-  padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-20px) var(--spacing-sizing-24px);
+  padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-16px) var(--spacing-sizing-24px);
 }
 
 /* Large size content typography */
@@ -515,7 +599,7 @@
 .accordion-figma--type-decorative .accordion-figma__body-content,
 .accordion-figma--type-number .accordion-figma__body-content,
 .accordion-figma--type-label .accordion-figma__body-content {
-  padding: var(--spacing-sizing-16px) var(--spacing-sizing-12px) var(--spacing-sizing-16px) var(--spacing-sizing-12px);
+  padding: 0 var(--spacing-sizing-12px) var(--spacing-sizing-16px) var(--spacing-sizing-12px);
 }
 
 /* No-stroke type content adjustments */
@@ -531,20 +615,13 @@
 
 .accordion-figma__trigger:hover .accordion-figma__bell-icon {
   opacity: 1;
-  color: var(--primary-sky-blue-sky-blue);
+  fill: var(--primary-sky-blue-sky-blue);
 }
 
 .accordion-figma__trigger:hover .accordion-figma__toggle {
   opacity: 1;
   border-color: var(--primary-sky-blue-sky-blue-300);
-  background: var(--primary-sky-blue-sky-blue-50);
-  color: var(--primary-sky-blue-sky-blue);
-}
-
-.accordion-figma__trigger:hover .accordion-figma__icon-frame {
-  background: var(--base-white);
-  border-color: var(--primary-sky-blue-sky-blue-200);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  background: var(--neutral-gray-gray-50);
 }
 
 .accordion-figma__trigger:hover .accordion-figma__number {
@@ -560,13 +637,7 @@
 .accordion-figma__trigger:focus-visible .accordion-figma__toggle {
   opacity: 1;
   border-color: var(--primary-sky-blue-sky-blue);
-  background: var(--primary-sky-blue-sky-blue-50);
-  color: var(--primary-sky-blue-sky-blue);
-}
-
-.accordion-figma__trigger:focus-visible .accordion-figma__icon-frame {
-  border-color: var(--primary-sky-blue-sky-blue);
-  background: var(--primary-sky-blue-sky-blue-50);
+  background: var(--neutral-gray-gray-50);
 }
 
 .accordion-figma__trigger:focus-visible .accordion-figma__number {
@@ -578,27 +649,18 @@
 .accordion-figma__trigger:active .accordion-figma__toggle {
   transform: scale(0.95);
   border-color: var(--primary-sky-blue-sky-blue);
-  background: var(--primary-sky-blue-sky-blue-100);
 }
 
 .accordion-figma__trigger:active .accordion-figma__icon-frame {
   transform: scale(0.95);
-  border-color: var(--primary-sky-blue-sky-blue);
-  background: var(--primary-sky-blue-sky-blue-100);
 }
 
 /* ===== OPEN STATE STYLING ===== */
 
 .accordion-figma--open .accordion-figma__toggle {
   opacity: 1;
-  border-color: var(--primary-sky-blue-sky-blue-200);
-  background: var(--primary-sky-blue-sky-blue-50);
-  color: var(--primary-sky-blue-sky-blue);
-}
-
-.accordion-figma--open .accordion-figma__icon-frame {
-  background: var(--base-white);
-  border-color: var(--primary-sky-blue-sky-blue-200);
+  border-color: var(--neutral-gray-gray-200);
+  background: var(--neutral-gray-gray-50);
 }
 
 /* ===== ANIMATIONS ===== */
@@ -626,8 +688,8 @@
     gap: var(--spacing-sizing-8px);
   }
   
-  .accordion-figma__content {
-    gap: var(--spacing-sizing-4px);
+  .accordion-figma__content-inner {
+    gap: 4px;
   }
   
   .accordion-figma__title {
@@ -642,7 +704,8 @@
   
   /* Scale down decorative and number type widths */
   .accordion-figma--type-decorative,
-  .accordion-figma--type-number {
+  .accordion-figma--type-number,
+  .accordion-figma--type-label {
     max-width: 100%;
   }
 }
@@ -650,7 +713,8 @@
 /* Tablet adjustments */
 @media (min-width: 481px) and (max-width: 768px) {
   .accordion-figma--type-decorative,
-  .accordion-figma--type-number {
+  .accordion-figma--type-number,
+  .accordion-figma--type-label {
     max-width: 100%;
   }
 }
