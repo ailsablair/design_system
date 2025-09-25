@@ -1,5 +1,28 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import React, { useEffect, useMemo, useState } from 'react';
 import './tokens.css';
+
+const useCssVarValues = (tokens: string[]) => {
+  const [values, setValues] = useState<Record<string, string>>({});
+  const tokensKey = useMemo(() => tokens.join('|'), [tokens]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const computed = window.getComputedStyle(document.documentElement);
+    const resolved: Record<string, string> = {};
+
+    tokens.forEach((token) => {
+      resolved[token] = computed.getPropertyValue(token).trim();
+    });
+
+    setValues(resolved);
+  }, [tokensKey, tokens]);
+
+  return values;
+};
 
 const meta: Meta = {
   title: 'Foundations/Design Tokens',
@@ -17,68 +40,73 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const TokenGrid = ({ title, tokens, type = 'color' }: { title: string, tokens: string[], type?: string }) => (
-  <div style={{ marginBottom: '2rem' }}>
-    <h3 style={{ marginBottom: '1rem', fontSize: '1.25rem', fontWeight: '600' }}>{title}</h3>
-    <div style={{ 
-      display: 'grid', 
-      gridTemplateColumns: type === 'spacing' ? 'repeat(auto-fit, minmax(120px, 1fr))' : 'repeat(auto-fit, minmax(200px, 1fr))', 
-      gap: '1rem' 
-    }}>
-      {tokens.map((token) => {
-        const cssVar = `var(${token})`;
-        const value = getComputedStyle(document.documentElement).getPropertyValue(token).trim();
-        
-        return (
-          <div key={token} style={{ 
-            border: '1px solid #e5e7eb', 
-            borderRadius: '8px', 
-            padding: '1rem',
-            backgroundColor: '#fff'
-          }}>
-            {type === 'color' && (
-              <div style={{ 
-                width: '100%', 
-                height: '60px', 
-                backgroundColor: cssVar, 
-                borderRadius: '4px',
-                marginBottom: '0.5rem',
-                border: '1px solid #e5e7eb'
-              }} />
-            )}
-            {type === 'spacing' && (
-              <div style={{ 
-                width: cssVar, 
-                height: cssVar, 
-                backgroundColor: '#3B82F6', 
-                borderRadius: '2px',
-                marginBottom: '0.5rem',
-                minWidth: '8px',
-                minHeight: '8px'
-              }} />
-            )}
-            {type === 'shadow' && (
-              <div style={{ 
-                width: '100%', 
-                height: '40px', 
-                backgroundColor: '#f8fafc', 
-                borderRadius: '4px',
-                marginBottom: '0.5rem',
-                boxShadow: cssVar
-              }} />
-            )}
-            <div style={{ fontSize: '0.875rem', fontWeight: '500', marginBottom: '0.25rem' }}>
-              {token.replace('--', '')}
+const TokenGrid = ({ title, tokens, type = 'color' }: { title: string, tokens: string[], type?: string }) => {
+  const tokenValues = useCssVarValues(tokens);
+
+  return (
+    <div style={{ marginBottom: '2rem' }}>
+      <h3 style={{ marginBottom: '1rem', fontSize: '1.25rem', fontWeight: '600' }}>{title}</h3>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: type === 'spacing' ? 'repeat(auto-fit, minmax(120px, 1fr))' : 'repeat(auto-fit, minmax(200px, 1fr))',
+        gap: '1rem'
+      }}>
+        {tokens.map((token) => {
+          const cssVar = `var(${token})`;
+          const value = tokenValues[token];
+          const displayValue = value || cssVar;
+
+          return (
+            <div key={token} style={{
+              border: '1px solid #e5e7eb',
+              borderRadius: '8px',
+              padding: '1rem',
+              backgroundColor: '#fff'
+            }}>
+              {type === 'color' && (
+                <div style={{
+                  width: '100%',
+                  height: '60px',
+                  backgroundColor: cssVar,
+                  borderRadius: '4px',
+                  marginBottom: '0.5rem',
+                  border: '1px solid #e5e7eb'
+                }} />
+              )}
+              {type === 'spacing' && (
+                <div style={{
+                  width: cssVar,
+                  height: cssVar,
+                  backgroundColor: '#3B82F6',
+                  borderRadius: '2px',
+                  marginBottom: '0.5rem',
+                  minWidth: '8px',
+                  minHeight: '8px'
+                }} />
+              )}
+              {type === 'shadow' && (
+                <div style={{
+                  width: '100%',
+                  height: '40px',
+                  backgroundColor: '#f8fafc',
+                  borderRadius: '4px',
+                  marginBottom: '0.5rem',
+                  boxShadow: cssVar
+                }} />
+              )}
+              <div style={{ fontSize: '0.875rem', fontWeight: '500', marginBottom: '0.25rem' }}>
+                {token.replace('--', '')}
+              </div>
+              <div style={{ fontSize: '0.75rem', color: '#6b7280', fontFamily: 'monospace' }}>
+                {displayValue}
+              </div>
             </div>
-            <div style={{ fontSize: '0.75rem', color: '#6b7280', fontFamily: 'monospace' }}>
-              {value || cssVar}
-            </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export const Colors: Story = {
   render: () => (
