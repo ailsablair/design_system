@@ -44,6 +44,14 @@
   box-sizing: border-box;
 }
 
+.step-indicator-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  box-sizing: border-box;
+}
+
 /* === SIZE VARIANTS === */
 
 /* Small size */
