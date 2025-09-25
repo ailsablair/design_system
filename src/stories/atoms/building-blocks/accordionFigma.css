@@ -322,6 +322,9 @@
   line-height: var(--type-line-height-label-lg); /* 24px - 133.333% */
   letter-spacing: var(--type-letter-spacing-archivo-label-lg); /* 0.15px */
   font-weight: var(--type-weight-medium); /* 500 */
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
 }
 
 .accordion-figma--type-decorative.accordion-figma--size-large .accordion-figma__title {
