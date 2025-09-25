@@ -4,8 +4,7 @@ import './tokens.css';
 
 const useCssVarValues = (tokens: string[]) => {
   const [values, setValues] = useState<Record<string, string>>({});
-  const tokensKey = useMemo(() => tokens.join('|'), [tokens]);
-  const stableTokens = useMemo(() => [...tokens], [tokensKey]);
+  const stableTokens = useMemo(() => [...tokens], [tokens]);
 
   useEffect(() => {
     if (typeof window === 'undefined') {
@@ -20,7 +19,7 @@ const useCssVarValues = (tokens: string[]) => {
     });
 
     setValues(resolved);
-  }, [stableTokens, tokensKey]);
+  }, [stableTokens]);
 
   return values;
 };
