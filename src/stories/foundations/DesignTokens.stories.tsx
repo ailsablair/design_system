@@ -5,6 +5,7 @@ import './tokens.css';
 const useCssVarValues = (tokens: string[]) => {
   const [values, setValues] = useState<Record<string, string>>({});
   const tokensKey = useMemo(() => tokens.join('|'), [tokens]);
+  const stableTokens = useMemo(() => [...tokens], [tokensKey]);
 
   useEffect(() => {
     if (typeof window === 'undefined') {
@@ -14,12 +15,12 @@ const useCssVarValues = (tokens: string[]) => {
     const computed = window.getComputedStyle(document.documentElement);
     const resolved: Record<string, string> = {};
 
-    tokens.forEach((token) => {
+    stableTokens.forEach((token) => {
       resolved[token] = computed.getPropertyValue(token).trim();
     });
 
     setValues(resolved);
-  }, [tokensKey, tokens]);
+  }, [stableTokens, tokensKey]);
 
   return values;
 };
