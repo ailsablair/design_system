@@ -1,0 +1,705 @@
+/* Import design tokens */
+@import '../../foundations/tokens.css';
+
+/* ===== FIGMA ACCORDION COMPONENT ===== */
+.accordion-figma {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  box-sizing: border-box;
+  
+  /* Responsive width - exact Figma specs */
+  width: 100%;
+  min-width: 200px;
+  max-width: 1280px;
+  
+  /* Default background and border radius */
+  background: var(--base-white);
+  border-radius: var(--spacing-radius-6px);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
+  
+  /* Transition for smooth interactions */
+  transition: all 0.2s ease;
+}
+
+/* No-stroke type removes borders */
+.accordion-figma--type-no-stroke {
+  border: none;
+  background: transparent;
+}
+
+/* ===== ACCORDION TRIGGER - FULL CLICKABLE AREA ===== */
+.accordion-figma__trigger {
+  all: unset;
+  width: 100%;
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  font-family: inherit;
+  text-align: left;
+}
+
+.accordion-figma__trigger:focus-visible {
+  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
+  outline-offset: var(--spacing-sizing-2px);
+  border-radius: var(--spacing-radius-6px);
+}
+
+/* ===== HEADER LAYOUTS - EXACT FIGMA SPECIFICATIONS ===== */
+.accordion-figma__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  gap: var(--spacing-sizing-12px);
+  box-sizing: border-box;
+  
+  /* Default padding for simple type */
+  padding: var(--spacing-sizing-24px) var(--spacing-sizing-32px) var(--spacing-sizing-24px) var(--spacing-sizing-24px);
+}
+
+/* ===== SIZE-SPECIFIC PADDING - EXACT FIGMA SPECS ===== */
+
+/* Small size padding */
+.accordion-figma--size-small .accordion-figma__header {
+  padding: var(--spacing-sizing-20px) var(--spacing-sizing-32px) var(--spacing-sizing-20px) var(--spacing-sizing-24px);
+}
+
+/* Large size padding */
+.accordion-figma--size-large .accordion-figma__header {
+  padding: var(--spacing-sizing-28px) var(--spacing-sizing-32px) var(--spacing-sizing-28px) var(--spacing-sizing-24px);
+}
+
+/* ===== TYPE-SPECIFIC ADJUSTMENTS ===== */
+
+/* Decorative and Number types - specific width constraint */
+.accordion-figma--type-decorative,
+.accordion-figma--type-number {
+  max-width: 464px;
+}
+
+/* Decorative type padding adjustment */
+.accordion-figma--type-decorative .accordion-figma__header {
+  padding: var(--spacing-sizing-16px) var(--spacing-sizing-12px);
+  gap: var(--spacing-sizing-12px);
+}
+
+/* Number type padding adjustment */
+.accordion-figma--type-number .accordion-figma__header {
+  padding: var(--spacing-sizing-12px);
+  gap: var(--spacing-sizing-12px);
+}
+
+/* Large size number type */
+.accordion-figma--type-number.accordion-figma--size-large .accordion-figma__header {
+  padding: var(--spacing-sizing-16px) var(--spacing-sizing-12px);
+}
+
+/* Small size number type */
+.accordion-figma--type-number.accordion-figma--size-small .accordion-figma__header {
+  padding: var(--spacing-sizing-16px) var(--spacing-sizing-12px);
+}
+
+/* Label type padding adjustment */
+.accordion-figma--type-label .accordion-figma__header {
+  padding: var(--spacing-sizing-16px) var(--spacing-sizing-12px);
+  gap: var(--spacing-sizing-12px);
+}
+
+/* Large size label type */
+.accordion-figma--type-label.accordion-figma--size-large .accordion-figma__header {
+  padding: var(--spacing-sizing-20px) var(--spacing-sizing-12px);
+}
+
+/* No-stroke type - no background borders, simple padding */
+.accordion-figma--type-no-stroke .accordion-figma__header {
+  padding: var(--spacing-sizing-24px) var(--spacing-sizing-32px);
+  align-items: center;
+}
+
+.accordion-figma--type-no-stroke.accordion-figma--size-small .accordion-figma__header {
+  padding: var(--spacing-sizing-16px) var(--spacing-sizing-32px);
+}
+
+.accordion-figma--type-no-stroke.accordion-figma--size-large .accordion-figma__header {
+  padding: var(--spacing-sizing-28px) var(--spacing-sizing-32px);
+}
+
+/* ===== CONTENT AREA - TITLE AND DESCRIPTION ===== */
+.accordion-figma__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-sizing-8px);
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+/* No-stroke and decorative types align content to center */
+.accordion-figma--type-no-stroke .accordion-figma__content,
+.accordion-figma--type-decorative .accordion-figma__content {
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+}
+
+/* ===== TITLE TYPOGRAPHY - EXACT FIGMA SPECS ===== */
+.accordion-figma__title {
+  align-self: stretch;
+  color: var(--primary-blue-dark-blue);
+  font-family: var(--type-typeface-archivo);
+  font-style: normal;
+  font-weight: 400;
+  position: relative;
+  
+  /* Overflow handling */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+/* Small size title typography */
+.accordion-figma--size-small .accordion-figma__title {
+  font-size: var(--type-archivo-label-lg); /* 18px */
+  line-height: var(--type-line-height-label-lg); /* 24px - 133.333% */
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg); /* 0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+/* Default size title typography */
+.accordion-figma--size-default .accordion-figma__title {
+  font-size: var(--type-archivo-heading-4); /* 24px */
+  line-height: var(--type-line-height-heading-4); /* 24px - 100% */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-4); /* -0.25px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+/* Large size title typography */
+.accordion-figma--size-large .accordion-figma__title {
+  font-size: var(--type-archivo-heading-3); /* 28px */
+  line-height: var(--type-line-height-heading-3); /* 28px - 100% */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-3); /* -0.5px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+/* No-stroke type has specific title typography */
+.accordion-figma--type-no-stroke.accordion-figma--size-default .accordion-figma__title {
+  font-size: var(--type-archivo-heading-5); /* 19px */
+  line-height: var(--type-line-height-heading-5); /* 24px - 126.316% */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-5); /* -0.15px */
+}
+
+.accordion-figma--type-no-stroke.accordion-figma--size-large .accordion-figma__title {
+  font-size: var(--type-archivo-heading-4); /* 24px */
+  line-height: var(--type-line-height-heading-4); /* 24px - 100% */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-4); /* -0.25px */
+}
+
+.accordion-figma--type-no-stroke.accordion-figma--size-small .accordion-figma__title {
+  font-size: var(--type-archivo-label-lg); /* 18px */
+  line-height: var(--type-line-height-label-lg); /* 24px - 133.333% */
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg); /* 0.15px */
+}
+
+/* Decorative type title typography - specific Figma values */
+.accordion-figma--type-decorative.accordion-figma--size-default .accordion-figma__title {
+  font-size: var(--type-archivo-label-lg); /* 18px */
+  line-height: var(--type-line-height-label-lg); /* 24px - 133.333% */
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg); /* 0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+.accordion-figma--type-decorative.accordion-figma--size-large .accordion-figma__title {
+  font-size: var(--type-archivo-heading-5); /* 19px */
+  line-height: var(--type-line-height-heading-5); /* 24px - 126.316% */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-5); /* -0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+.accordion-figma--type-decorative.accordion-figma--size-small .accordion-figma__title {
+  font-size: var(--type-archivo-label); /* 16px */
+  line-height: var(--type-line-height-label); /* 22px - 137.5% */
+  letter-spacing: var(--type-letter-spacing-archivo-label); /* 0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+/* Number type title typography */
+.accordion-figma--type-number.accordion-figma--size-default .accordion-figma__title {
+  font-size: var(--type-archivo-label-lg); /* 18px */
+  line-height: var(--type-line-height-label-lg); /* 24px - 133.333% */
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg); /* 0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+.accordion-figma--type-number.accordion-figma--size-large .accordion-figma__title {
+  font-size: var(--type-archivo-heading-5); /* 19px */
+  line-height: var(--type-line-height-heading-5); /* 24px - 126.316% */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-5); /* -0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+.accordion-figma--type-number.accordion-figma--size-small .accordion-figma__title {
+  font-size: var(--type-archivo-label); /* 16px */
+  line-height: var(--type-line-height-label); /* 22px - 137.5% */
+  letter-spacing: var(--type-letter-spacing-archivo-label); /* 0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+/* Label type title typography */
+.accordion-figma--type-label.accordion-figma--size-default .accordion-figma__title {
+  font-size: var(--type-archivo-label-lg); /* 18px */
+  line-height: var(--type-line-height-label-lg); /* 24px - 133.333% */
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg); /* 0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+.accordion-figma--type-label.accordion-figma--size-large .accordion-figma__title {
+  font-size: var(--type-archivo-heading-5); /* 19px */
+  line-height: var(--type-line-height-heading-5); /* 24px - 126.316% */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-5); /* -0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+.accordion-figma--type-label.accordion-figma--size-small .accordion-figma__title {
+  font-size: var(--type-archivo-label); /* 16px */
+  line-height: var(--type-line-height-label); /* 22px - 137.5% */
+  letter-spacing: var(--type-letter-spacing-archivo-label); /* 0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+/* Title color changes */
+.accordion-figma--type-decorative .accordion-figma__title,
+.accordion-figma--type-number .accordion-figma__title,
+.accordion-figma--type-label .accordion-figma__title {
+  color: var(--base-black);
+}
+
+/* ===== DESCRIPTION TYPOGRAPHY - EXACT FIGMA SPECS ===== */
+.accordion-figma__description {
+  align-self: stretch;
+  color: var(--neutral-gray-gray-500);
+  font-family: var(--type-typeface-roboto-flex);
+  font-style: normal;
+  font-weight: 400;
+  
+  /* Overflow handling */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Small size description typography */
+.accordion-figma--size-small .accordion-figma__description {
+  font-size: var(--type-roboto-flex-body-sm); /* 14px */
+  line-height: var(--type-line-height-body-sm); /* 16px - 114.286% */
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm); /* -0.15px */
+}
+
+/* Default size description typography */
+.accordion-figma--size-default .accordion-figma__description {
+  font-size: var(--type-roboto-flex-body); /* 16px */
+  line-height: var(--type-line-height-body); /* 20px - 125% */
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body); /* 0.05px */
+}
+
+/* Large size description typography */
+.accordion-figma--size-large .accordion-figma__description {
+  font-size: var(--type-roboto-flex-body-lg); /* 18px */
+  line-height: var(--type-line-height-body-lg); /* 22px - 122.222% */
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg); /* -0.15px */
+}
+
+/* ===== BELL ICON STYLING ===== */
+.accordion-figma__bell-icon {
+  flex-shrink: 0;
+  opacity: 0.5;
+  color: var(--base-black);
+  transition: all 0.2s ease;
+}
+
+/* ===== ICON FRAME STYLING - DECORATIVE TYPE ===== */
+.accordion-figma__icon-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: var(--spacing-radius-99999px);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue-200);
+  background: var(--primary-sky-blue-sky-blue-50);
+  transition: all 0.2s ease;
+  
+  /* Default size */
+  width: var(--spacing-sizing-28px);
+  height: var(--spacing-sizing-28px);
+  padding: 5px;
+}
+
+/* Small size icon frame */
+.accordion-figma--size-small .accordion-figma__icon-frame {
+  width: var(--spacing-sizing-22px);
+  height: var(--spacing-sizing-22px);
+  padding: var(--spacing-sizing-4px);
+}
+
+/* Large size icon frame uses default size in Figma */
+.accordion-figma--size-large .accordion-figma__icon-frame {
+  width: var(--spacing-sizing-28px);
+  height: var(--spacing-sizing-28px);
+  padding: 5px;
+}
+
+.accordion-figma__icon-frame .accordion-figma__bell-icon {
+  color: var(--primary-sky-blue-sky-blue);
+}
+
+/* ===== NUMBER STYLING - EXACT FIGMA TYPOGRAPHY ===== */
+.accordion-figma__number {
+  color: var(--primary-sky-blue-sky-blue-300);
+  font-family: var(--type-typeface-archivo);
+  font-style: normal;
+  font-weight: var(--type-weight-bold);
+  flex-shrink: 0;
+}
+
+/* Small size number typography */
+.accordion-figma--size-small .accordion-figma__number {
+  font-size: var(--type-archivo-heading-4); /* 24px */
+  line-height: var(--type-line-height-heading-4); /* 24px - 100% */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-4); /* -0.25px */
+}
+
+/* Default size number typography */
+.accordion-figma--size-default .accordion-figma__number {
+  font-size: var(--type-archivo-heading-3); /* 28px */
+  line-height: var(--type-line-height-heading-3); /* 28px - 100% */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-3); /* -0.5px */
+}
+
+/* Large size number typography */
+.accordion-figma--size-large .accordion-figma__number {
+  font-size: var(--type-archivo-heading-2); /* 32px */
+  line-height: var(--type-line-height-heading-2); /* 34px - 106.25% */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-2); /* -1px */
+}
+
+/* ===== LABEL STYLING ===== */
+.accordion-figma__label {
+  flex-shrink: 0;
+}
+
+/* ===== TOGGLE ICON STYLING - EXACT FIGMA CIRCULAR BACKGROUNDS ===== */
+.accordion-figma__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: var(--spacing-radius-99999px);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
+  background: var(--neutral-gray-gray-50);
+  transition: all 0.2s ease;
+  opacity: 0.5;
+}
+
+/* Default size toggle */
+.accordion-figma--size-default .accordion-figma__toggle {
+  width: var(--spacing-sizing-24px);
+  height: var(--spacing-sizing-24px);
+}
+
+/* Small size toggle */
+.accordion-figma--size-small .accordion-figma__toggle {
+  width: var(--spacing-sizing-22px);
+  height: var(--spacing-sizing-22px);
+  padding: 4px 3px 2px 3px;
+}
+
+/* Large size toggle */
+.accordion-figma--size-large .accordion-figma__toggle {
+  width: var(--spacing-sizing-28px);
+  height: var(--spacing-sizing-28px);
+}
+
+/* Decorative type toggle adjustments */
+.accordion-figma--type-decorative.accordion-figma--size-default .accordion-figma__toggle {
+  width: var(--spacing-sizing-24px);
+  height: var(--spacing-sizing-24px);
+}
+
+.accordion-figma--type-decorative.accordion-figma--size-small .accordion-figma__toggle {
+  width: var(--spacing-sizing-22px);
+  height: var(--spacing-sizing-22px);
+  padding: 4px 3px 2px 3px;
+}
+
+.accordion-figma--type-decorative.accordion-figma--size-large .accordion-figma__toggle {
+  width: var(--spacing-sizing-28px);
+  height: var(--spacing-sizing-28px);
+}
+
+/* Number type toggle adjustments */
+.accordion-figma--type-number.accordion-figma--size-default .accordion-figma__toggle {
+  width: var(--spacing-sizing-24px);
+  height: var(--spacing-sizing-24px);
+  padding: var(--spacing-sizing-1px);
+}
+
+.accordion-figma--type-number.accordion-figma--size-small .accordion-figma__toggle {
+  width: var(--spacing-sizing-22px);
+  height: var(--spacing-sizing-22px);
+  padding: 4px 3px 2px 3px;
+}
+
+.accordion-figma--type-number.accordion-figma--size-large .accordion-figma__toggle {
+  width: var(--spacing-sizing-28px);
+  height: var(--spacing-sizing-28px);
+  padding: var(--spacing-sizing-2px);
+}
+
+/* Label type toggle adjustments */
+.accordion-figma--type-label.accordion-figma--size-default .accordion-figma__toggle {
+  width: var(--spacing-sizing-24px);
+  height: var(--spacing-sizing-24px);
+}
+
+.accordion-figma--type-label.accordion-figma--size-small .accordion-figma__toggle {
+  width: var(--spacing-sizing-22px);
+  height: var(--spacing-sizing-22px);
+  padding: 4px 3px 2px 3px;
+}
+
+.accordion-figma--type-label.accordion-figma--size-large .accordion-figma__toggle {
+  width: var(--spacing-sizing-28px);
+  height: var(--spacing-sizing-28px);
+}
+
+/* ===== CONTENT BODY STYLING ===== */
+.accordion-figma__body {
+  width: 100%;
+  overflow: hidden;
+  animation: accordion-figma-expand 0.3s ease-out;
+}
+
+.accordion-figma__body-content {
+  padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-24px) var(--spacing-sizing-24px);
+  color: var(--neutral-gray-gray-700);
+  font-family: var(--type-typeface-roboto-flex);
+  font-style: normal;
+  font-weight: 400;
+  
+  /* Default content typography */
+  font-size: var(--type-roboto-flex-body);
+  line-height: var(--type-line-height-body);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body);
+}
+
+/* Small size content typography */
+.accordion-figma--size-small .accordion-figma__body-content {
+  font-size: var(--type-roboto-flex-body-sm);
+  line-height: var(--type-line-height-body-sm);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
+  padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-20px) var(--spacing-sizing-24px);
+}
+
+/* Large size content typography */
+.accordion-figma--size-large .accordion-figma__body-content {
+  font-size: var(--type-roboto-flex-body-lg);
+  line-height: var(--type-line-height-body-lg);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg);
+  padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-28px) var(--spacing-sizing-24px);
+}
+
+/* Decorative and Number types content adjustments */
+.accordion-figma--type-decorative .accordion-figma__body-content,
+.accordion-figma--type-number .accordion-figma__body-content,
+.accordion-figma--type-label .accordion-figma__body-content {
+  padding: var(--spacing-sizing-16px) var(--spacing-sizing-12px) var(--spacing-sizing-16px) var(--spacing-sizing-12px);
+}
+
+/* No-stroke type content adjustments */
+.accordion-figma--type-no-stroke .accordion-figma__body-content {
+  padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-24px) 0;
+}
+
+/* ===== HOVER STATES - EXACT FIGMA SPECIFICATIONS ===== */
+
+.accordion-figma__trigger:hover .accordion-figma__title {
+  color: var(--base-black);
+}
+
+.accordion-figma__trigger:hover .accordion-figma__bell-icon {
+  opacity: 1;
+  color: var(--primary-sky-blue-sky-blue);
+}
+
+.accordion-figma__trigger:hover .accordion-figma__toggle {
+  opacity: 1;
+  border-color: var(--primary-sky-blue-sky-blue-300);
+  background: var(--primary-sky-blue-sky-blue-50);
+  color: var(--primary-sky-blue-sky-blue);
+}
+
+.accordion-figma__trigger:hover .accordion-figma__icon-frame {
+  background: var(--base-white);
+  border-color: var(--primary-sky-blue-sky-blue-200);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.accordion-figma__trigger:hover .accordion-figma__number {
+  color: var(--primary-sky-blue-sky-blue);
+}
+
+/* ===== FOCUS STATES ===== */
+
+.accordion-figma__trigger:focus-visible .accordion-figma__title {
+  color: var(--base-black);
+}
+
+.accordion-figma__trigger:focus-visible .accordion-figma__toggle {
+  opacity: 1;
+  border-color: var(--primary-sky-blue-sky-blue);
+  background: var(--primary-sky-blue-sky-blue-50);
+  color: var(--primary-sky-blue-sky-blue);
+}
+
+.accordion-figma__trigger:focus-visible .accordion-figma__icon-frame {
+  border-color: var(--primary-sky-blue-sky-blue);
+  background: var(--primary-sky-blue-sky-blue-50);
+}
+
+.accordion-figma__trigger:focus-visible .accordion-figma__number {
+  color: var(--primary-sky-blue-sky-blue);
+}
+
+/* ===== ACTIVE STATES ===== */
+
+.accordion-figma__trigger:active .accordion-figma__toggle {
+  transform: scale(0.95);
+  border-color: var(--primary-sky-blue-sky-blue);
+  background: var(--primary-sky-blue-sky-blue-100);
+}
+
+.accordion-figma__trigger:active .accordion-figma__icon-frame {
+  transform: scale(0.95);
+  border-color: var(--primary-sky-blue-sky-blue);
+  background: var(--primary-sky-blue-sky-blue-100);
+}
+
+/* ===== OPEN STATE STYLING ===== */
+
+.accordion-figma--open .accordion-figma__toggle {
+  opacity: 1;
+  border-color: var(--primary-sky-blue-sky-blue-200);
+  background: var(--primary-sky-blue-sky-blue-50);
+  color: var(--primary-sky-blue-sky-blue);
+}
+
+.accordion-figma--open .accordion-figma__icon-frame {
+  background: var(--base-white);
+  border-color: var(--primary-sky-blue-sky-blue-200);
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes accordion-figma-expand {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .accordion-figma {
+    min-width: 280px;
+  }
+  
+  .accordion-figma__header {
+    gap: var(--spacing-sizing-8px);
+  }
+  
+  .accordion-figma__content {
+    gap: var(--spacing-sizing-4px);
+  }
+  
+  .accordion-figma__title {
+    font-size: 16px !important;
+    line-height: 20px !important;
+  }
+  
+  .accordion-figma__description {
+    font-size: 14px !important;
+    line-height: 16px !important;
+  }
+  
+  /* Scale down decorative and number type widths */
+  .accordion-figma--type-decorative,
+  .accordion-figma--type-number {
+    max-width: 100%;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 481px) and (max-width: 768px) {
+  .accordion-figma--type-decorative,
+  .accordion-figma--type-number {
+    max-width: 100%;
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion-figma,
+  .accordion-figma__toggle,
+  .accordion-figma__icon-frame,
+  .accordion-figma__bell-icon,
+  .accordion-figma__body {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .accordion-figma__toggle {
+    border-width: var(--spacing-stroke-2px);
+  }
+  
+  .accordion-figma__icon-frame {
+    border-width: var(--spacing-stroke-2px);
+  }
+  
+  .accordion-figma__title {
+    font-weight: 600;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+
+@media print {
+  .accordion-figma {
+    break-inside: avoid;
+  }
+  
+  .accordion-figma__body {
+    display: block !important;
+  }
+  
+  .accordion-figma__toggle {
+    display: none;
+  }
+  
+  .accordion-figma__title {
+    color: black !important;
+    font-weight: 600 !important;
+  }
+}
