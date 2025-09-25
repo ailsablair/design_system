@@ -583,7 +583,6 @@ export const AccordionHeaderStates: Story = {
 
 // Interactive Playground
 export const InteractivePlayground: Story = {
-  name: 'Interactive Playground',
   render: (args) => (
     <div style={{ padding: '20px' }}>
       <h3>Interactive Accordion with All States</h3>
@@ -604,7 +603,6 @@ export const InteractivePlayground: Story = {
 
 // Complete State Matrix
 export const CompleteStateMatrix: Story = {
-  name: 'Complete State Matrix',
   render: () => (
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '24px', padding: '20px' }}>
       <div>
