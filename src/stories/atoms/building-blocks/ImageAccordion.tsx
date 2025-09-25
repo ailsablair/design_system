@@ -1,4 +1,6 @@
 import React, { useState, useId } from 'react';
+import { useId, useMemo, useState } from 'react';
+import type { CSSProperties } from 'react';
 import './imageAccordion.css';
 
 export interface ImageAccordionProps {
@@ -61,6 +63,15 @@ export const ImageAccordion: React.FC<ImageAccordionProps> = ({
   const [internalIsOpen, setInternalIsOpen] = useState(status === 'open');
   const isOpen = controlledIsOpen !== undefined ? controlledIsOpen : internalIsOpen;
   const uniqueId = useId();
+
+  const resolvedWidth = typeof width === 'number' ? `${width}px` : width || '600px';
+  const resolvedHeight = typeof height === 'number' ? `${height}px` : height || '500px';
+
+  const accordionStyle = useMemo(() => ({
+    '--image-accordion-width': resolvedWidth,
+    '--image-accordion-height': resolvedHeight,
+    backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
+  }) as CSSProperties, [backgroundImage, resolvedHeight, resolvedWidth]);
 
   const handleToggle = () => {
     const newIsOpen = !isOpen;
@@ -151,13 +162,9 @@ export const ImageAccordion: React.FC<ImageAccordionProps> = ({
   };
 
   return (
-    <div 
+    <div
       className={accordionClasses}
-      style={{
-        width: `${width}px`,
-        height: `${height}px`,
-        backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
-      }}
+      style={accordionStyle}
       role="button"
       tabIndex={0}
       onClick={handleToggle}
