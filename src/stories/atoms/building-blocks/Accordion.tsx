@@ -301,7 +301,6 @@ export const Accordion: React.FC<AccordionProps> = ({
             {showStatusIcon && <StatusIcon />}
             {showIcon && (icon || <BellRingIcon />)}
             <div className="accordion__content">
-              <div className="accordion__heading-icon" />
               <div className="accordion__content-inner">
                 <div className="accordion__title">{title}</div>
                 {description && <div className="accordion__description">{description}</div>}
