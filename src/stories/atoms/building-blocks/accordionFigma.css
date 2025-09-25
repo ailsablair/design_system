@@ -537,12 +537,28 @@
 .accordion-figma--size-default .accordion-figma__toggle {
   width: var(--spacing-sizing-24px);
   height: var(--spacing-sizing-24px);
+  padding: 0;
+}
+
+/* Decorative type default toggle adjustment */
+.accordion-figma--type-decorative.accordion-figma--size-default .accordion-figma__toggle {
+  padding: 2px;
+}
+
+/* Label type default toggle adjustment */
+.accordion-figma--type-label.accordion-figma--size-default .accordion-figma__toggle {
+  padding: 0;
 }
 
 /* Small size toggle */
 .accordion-figma--size-small .accordion-figma__toggle {
   width: var(--spacing-sizing-22px);
   height: var(--spacing-sizing-22px);
+  padding: 3px;
+}
+
+/* Label type small toggle specific adjustment */
+.accordion-figma--type-label.accordion-figma--size-small .accordion-figma__toggle {
   padding: 4px 3px 2px 3px;
 }
 
@@ -550,15 +566,36 @@
 .accordion-figma--size-large .accordion-figma__toggle {
   width: var(--spacing-sizing-28px);
   height: var(--spacing-sizing-28px);
+  padding: 0;
 }
 
-/* Number type toggle adjustments */
+/* Decorative type large toggle adjustment */
+.accordion-figma--type-decorative.accordion-figma--size-large .accordion-figma__toggle {
+  padding: 2px;
+}
+
+/* Label type large toggle adjustment */
+.accordion-figma--type-label.accordion-figma--size-large .accordion-figma__toggle {
+  padding: 0;
+}
+
+/* Number type toggle adjustments - exact Figma specifications */
 .accordion-figma--type-number.accordion-figma--size-default .accordion-figma__toggle {
-  padding: 1px;
+  width: var(--spacing-sizing-24px);
+  height: var(--spacing-sizing-24px);
+  padding: 0;
 }
 
 .accordion-figma--type-number.accordion-figma--size-large .accordion-figma__toggle {
-  padding: var(--spacing-stroke-2px);
+  width: var(--spacing-sizing-28px);
+  height: var(--spacing-sizing-28px);
+  padding: 0;
+}
+
+.accordion-figma--type-number.accordion-figma--size-small .accordion-figma__toggle {
+  width: var(--spacing-sizing-22px);
+  height: var(--spacing-sizing-22px);
+  padding: 3px;
 }
 
 /* ===== CONTENT BODY STYLING ===== */
@@ -604,12 +641,25 @@
 .accordion-figma--type-decorative .accordion-figma__body-content,
 .accordion-figma--type-number .accordion-figma__body-content,
 .accordion-figma--type-label .accordion-figma__body-content {
+  padding: 0 var(--spacing-sizing-16px) var(--spacing-sizing-16px) var(--spacing-sizing-16px);
+}
+
+/* Small decorative content padding adjustment */
+.accordion-figma--type-decorative.accordion-figma--size-small .accordion-figma__body-content {
   padding: 0 var(--spacing-sizing-12px) var(--spacing-sizing-16px) var(--spacing-sizing-12px);
 }
 
 /* No-stroke type content adjustments */
 .accordion-figma--type-no-stroke .accordion-figma__body-content {
-  padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-24px) 0;
+  padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-16px) 0;
+}
+
+.accordion-figma--type-no-stroke.accordion-figma--size-large .accordion-figma__body-content {
+  padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-16px) 0;
+}
+
+.accordion-figma--type-no-stroke.accordion-figma--size-small .accordion-figma__body-content {
+  padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-12px) 0;
 }
 
 /* ===== HOVER STATES - EXACT FIGMA SPECIFICATIONS ===== */
