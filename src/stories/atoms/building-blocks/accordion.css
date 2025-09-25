@@ -1,11 +1,15 @@
-/* ===== ACCORDION COMPONENT - EXACT FIGMA DESIGN MATCH ===== */
+/* ===== FIGMA ACCORDION COMPONENT - EXACT DESIGN TOKENS ===== */
 
 :root {
   /* Design tokens from Figma - exact values */
-  --secondary-blue-gray: #61607C;
-  --spacing-sizing-1px: 1px;
-  --spacing-sizing-2px: 2px;
+  --spacing-sizing-24px: 24px;
+  --spacing-sizing-32px: 32px;
   --spacing-sizing-12px: 12px;
+  --spacing-radius-6px: 6px;
+  --neutral-gray-gray-300: #D2D5DA;
+  --base-white: #FFF;
+  --secondary-blue-gray: #61607C;
+  --spacing-sizing-16px: 16px;
   --spacing-sizing-8px: 8px;
   --primary-blue-dark-blue: #191E3C;
   --type-typeface-archivo: Archivo;
@@ -18,13 +22,8 @@
   --type-roboto-flex-body: 16px;
   --type-line-height-body: 20px;
   --type-letter-spacing-roboto-flex-body: 0.05px;
-  --type-archivo-heading-5: 19px;
-  --type-line-height-heading-5: 24px;
-  --type-letter-spacing-archivo-heading-5: -0.15px;
-  --spacing-sizing-16px: 16px;
   --neutral-gray-gray-900: #111827;
-  --base-black: #1C1C1C;
-  --neutral-gray-gray-700: #374151;
+  --spacing-sizing-28px: 28px;
   --type-archivo-heading-3: 28px;
   --type-line-height-heading-3: 28px;
   --type-letter-spacing-archivo-heading-3: -0.5px;
@@ -37,28 +36,35 @@
   --type-roboto-flex-body-sm: 14px;
   --type-line-height-body-sm: 16px;
   --type-letter-spacing-roboto-flex-body-sm: -0.15px;
+  --neutral-gray-gray-700: #374151;
+  --base-black: #1C1C1C;
+  --type-archivo-heading-5: 19px;
+  --type-line-height-heading-5: 24px;
+  --type-letter-spacing-archivo-heading-5: -0.15px;
+  --spacing-stroke-2px: 2px;
+  --primary-sky-blue-sky-blue: #0BA7EA;
+  --sky-blue-gradient: linear-gradient(294deg, #FFF 7.88%, rgba(255, 255, 255, 0.60) 21.71%, #D6F0FB 98.17%);
+  --spacing-sizing-6px: 6px;
   --spacing-radius-99999px: 99999px;
-  --primary-sky-blue-sky-blue-200: #B6E5F9;
-  --primary-sky-blue-sky-blue-50: #F4FCFF;
   --neutral-gray-gray-200: #E5E7EB;
   --neutral-gray-gray-50: #F9FAFB;
-  --primary-sky-blue-sky-blue-300: #85D3F5;
-  --type-weight-bold: 700;
-  --primary-sky-blue-sky-blue-400: #54C1F0;
-  --primary-sky-blue-sky-blue: #0BA7EA;
-  --base-white: #FFF;
-  --type-archivo-label-sm: 14px;
-  --type-line-height-label-sm: 17px;
-  --type-letter-spacing-archivo-label-sm: 0.15px;
-  --spacing-sizing-4px: 4px;
-  --spacing-sizing-6px: 6px;
   --type-archivo-label: 16px;
   --type-line-height-label: 22px;
   --type-letter-spacing-archivo-label: 0.15px;
+  --primary-sky-blue-sky-blue-300: #85D3F5;
+  --type-weight-bold: 700;
   --type-archivo-heading-2: 32px;
   --type-line-height-heading-2: 34px;
   --type-letter-spacing-archivo-heading-2: -1px;
+  --spacing-stroke-1px: 1px;
+  --primary-sky-blue-sky-blue-400: #54C1F0;
+  --type-archivo-label-sm: 14px;
+  --type-line-height-label-sm: 17px;
+  --type-letter-spacing-archivo-label-sm: 0.15px;
+  --spacing-sizing-20px: 20px;
 }
+
+/* ===== BASE ACCORDION STRUCTURE ===== */
 
 .accordion {
   display: flex;
@@ -67,172 +73,131 @@
   position: relative;
   box-sizing: border-box;
   
-  /* Default dimensions - responsive */
-  min-width: 200px;
-  max-width: 100%;
+  /* Responsive width */
   width: 100%;
+  min-width: 200px;
+  max-width: 1280px;
   
-  /* Remove default borders and backgrounds - types will control styling */
-  border: none;
-  background: transparent;
-  border-radius: 0;
+  /* Default styling for simple type */
+  border-radius: var(--spacing-radius-6px);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
+  background: var(--base-white);
 }
 
-/* ===== ACCORDION TRIGGER - FULL WIDTH CLICKABLE AREA ===== */
+/* ===== TYPE SPECIFIC STYLING ===== */
+
+/* No-stroke type removes borders and background */
+.accordion--type-no-stroke {
+  border: none;
+  background: transparent;
+}
+
+/* Decorative type with sky blue border and gradient background */
+.accordion--type-decorative {
+  max-width: 464px;
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
+  background: var(--sky-blue-gradient);
+}
+
+/* Number type with sky blue border */
+.accordion--type-number {
+  max-width: 464px;
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
+  background: var(--base-white);
+}
+
+/* Label type with basic border */
+.accordion--type-label {
+  max-width: 464px;
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
+  background: var(--base-white);
+}
+
+/* ===== ACCORDION TRIGGER ===== */
 
 .accordion__trigger {
   all: unset;
   width: 100%;
   cursor: pointer;
-  border: none;
-  background: none;
-  text-align: left;
-  display: block;
-  box-sizing: border-box;
-  position: relative;
-  font-family: inherit;
-}
-
-.accordion__trigger:focus-visible {
-  outline: 2px solid var(--primary-blue-dark-blue);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-/* ===== HEADER LAYOUTS - EXACT FIGMA SPECIFICATIONS ===== */
-
-.accordion__header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  width: 100%;
   gap: var(--spacing-sizing-12px);
-  padding: 0;
-  transition: all 0.2s ease;
   box-sizing: border-box;
-  position: relative;
+  font-family: inherit;
+  text-align: left;
   
-  /* Base styling - will be overridden by types */
-  background: transparent;
-  border: none;
-  border-radius: 0;
+  /* Default padding for simple type */
+  padding: var(--spacing-sizing-24px) var(--spacing-sizing-32px) var(--spacing-sizing-24px) var(--spacing-sizing-24px);
 }
 
-/* ===== TYPE VARIANTS - EXACT FIGMA LAYOUTS ===== */
+/* Size-specific padding */
+.accordion--size-small .accordion__trigger {
+  padding: var(--spacing-sizing-16px) var(--spacing-sizing-32px) var(--spacing-sizing-16px) var(--spacing-sizing-24px);
+}
 
-/* Simple type - with optional status icon and bell icon */
-.accordion--type-simple .accordion__header {
-  gap: var(--spacing-sizing-12px);
+.accordion--size-large .accordion__trigger {
+  padding: var(--spacing-sizing-28px) var(--spacing-sizing-32px) var(--spacing-sizing-28px) var(--spacing-sizing-24px);
+}
+
+/* Type-specific padding adjustments */
+.accordion--type-decorative .accordion__trigger {
+  padding: var(--spacing-sizing-16px);
+  gap: 10px;
   align-items: flex-start;
 }
 
-/* ===== POSITION VARIANTS - EXACT FIGMA POSITIONING ===== */
-
-/* Default (middle) position - standard alignment */
-.accordion--position-middle .accordion__header {
-  align-items: center;
-}
-
-/* Top position - align to top */
-.accordion--position-top .accordion__header {
-  align-items: flex-start;
-}
-
-/* Bottom position - align to bottom */
-.accordion--position-bottom .accordion__header {
-  align-items: flex-end;
-}
-
-/* ===== CONTENT TYPE VARIANTS ===== */
-
-/* N/A content type - standard behavior */
-.accordion--content-type-na {
-  /* Default behavior */
-}
-
-/* Header content type - enhanced header styling */
-.accordion--content-type-header .accordion__title {
-  font-weight: var(--type-weight-medium);
-}
-
-/* ===== INTERACTIVE STATE VARIANTS ===== */
-
-/* Default state - base styling */
-.accordion--interactive-default {
-  /* Base styling applied */
-}
-
-/* Hover state - applied regardless of actual hover */
-.accordion--interactive-hover .accordion__title {
-  color: var(--base-black);
-}
-
-.accordion--interactive-hover .accordion__bell-icon {
-  color: var(--primary-sky-blue-sky-blue);
-  opacity: 1;
-}
-
-.accordion--interactive-hover .accordion__toggle-icon {
-  opacity: 1;
-  border-color: var(--primary-sky-blue-sky-blue-300);
-  background: var(--primary-sky-blue-sky-blue-50);
-  color: var(--primary-sky-blue-sky-blue);
-}
-
-/* Selected state - active appearance */
-.accordion--interactive-selected .accordion__title {
-  color: var(--base-black);
-  font-weight: var(--type-weight-medium);
-}
-
-.accordion--interactive-selected .accordion__toggle-icon {
-  opacity: 1;
-  border-color: var(--primary-sky-blue-sky-blue);
-  background: var(--primary-sky-blue-sky-blue-50);
-  color: var(--primary-sky-blue-sky-blue);
-}
-
-/* Status icon uses baseline alignment globally */
-
-/* Decorative content width control for Figma 432px specification */
-.accordion--type-decorative {
-  width: 432px;
-  max-width: 100%;
-}
-
-.accordion--type-decorative .accordion__header {
-  justify-content: space-between;
-  align-items: flex-start;
+.accordion--type-decorative.accordion--size-large .accordion__trigger {
+  padding: var(--spacing-sizing-16px);
   gap: var(--spacing-sizing-12px);
 }
 
-/* Status icon uses baseline alignment globally */
-
-/* Number type */
-.accordion--type-number {
-  width: 432px;
-  max-width: 100%;
+.accordion--type-decorative.accordion--size-small .accordion__trigger {
+  padding: var(--spacing-sizing-16px) var(--spacing-sizing-12px);
+  gap: 10px;
 }
 
-.accordion--type-number .accordion__header {
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--spacing-sizing-12px);
-}
-
-/* Label type */
-.accordion--type-label .accordion__header {
-  align-items: center;
-  gap: var(--spacing-sizing-12px);
-}
-
-/* No-stroke type - no visual borders */
-.accordion--type-no-stroke .accordion__header {
+.accordion--type-number .accordion__trigger {
+  padding: var(--spacing-sizing-16px);
   gap: var(--spacing-sizing-12px);
   align-items: center;
 }
 
-/* ===== STATUS ICON STYLES - EXACT FIGMA DASHED CIRCLES ===== */
+.accordion--type-label .accordion__trigger {
+  padding: var(--spacing-sizing-16px) var(--spacing-sizing-12px);
+  gap: var(--spacing-sizing-12px);
+  align-items: center;
+}
+
+.accordion--type-label.accordion--size-large .accordion__trigger {
+  padding: var(--spacing-sizing-16px) var(--spacing-sizing-12px) var(--spacing-sizing-20px) var(--spacing-sizing-12px);
+}
+
+.accordion--type-label.accordion--size-small .accordion__trigger {
+  padding: var(--spacing-sizing-12px) var(--spacing-sizing-12px) var(--spacing-sizing-16px) var(--spacing-sizing-12px);
+}
+
+.accordion--type-no-stroke .accordion__trigger {
+  padding: var(--spacing-sizing-24px) var(--spacing-sizing-32px);
+  align-items: center;
+}
+
+.accordion--type-no-stroke.accordion--size-small .accordion__trigger {
+  padding: var(--spacing-sizing-16px) var(--spacing-sizing-32px);
+}
+
+.accordion--type-no-stroke.accordion--size-large .accordion__trigger {
+  padding: var(--spacing-sizing-28px) var(--spacing-sizing-32px);
+}
+
+/* Focus states */
+.accordion__trigger:focus-visible {
+  outline: var(--spacing-stroke-2px) solid var(--primary-blue-dark-blue);
+  outline-offset: var(--spacing-stroke-2px);
+  border-radius: var(--spacing-radius-6px);
+}
+
+/* ===== STATUS ICON STYLING ===== */
 
 .accordion__status-icon {
   display: flex;
@@ -240,8 +205,6 @@
   justify-content: center;
   flex-shrink: 0;
   position: relative;
-  /* Align with text baseline - no top margin, use align-self */
-  align-self: baseline;
 }
 
 .accordion__status-empty {
@@ -249,7 +212,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Ensure proper positioning relative to text */
 }
 
 .accordion__status-circle {
@@ -260,130 +222,174 @@
 
 .accordion__status-check {
   position: absolute;
-  opacity: 0.5;
-  /* Center the check icon within the circle */
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-/* Status icon sizes - exact Figma dimensions with proper alignment */
-.accordion--size-small .accordion__status-icon {
-  width: 26px;
-  height: 26px;
-  padding: var(--spacing-sizing-2px);
-  /* Use baseline alignment - no margin needed */
-}
-
-.accordion--size-default .accordion__status-icon {
-  width: 50px;
-  height: 50px;
-  padding: var(--spacing-sizing-1px);
-  /* Use baseline alignment - no margin needed */
-}
-
-.accordion--size-large .accordion__status-icon {
-  width: 64px;
-  height: 64px;
-  padding: var(--spacing-sizing-1px);
-  /* Use baseline alignment - no margin needed */
-}
-
-/* ===== BELL ICON STYLES ===== */
+/* ===== BELL ICON STYLING ===== */
 
 .accordion__bell-icon {
   flex-shrink: 0;
   opacity: 0.5;
-  color: var(--base-black);
   transition: all 0.2s ease;
-  /* Align bell icon with text baseline */
-  align-self: baseline;
 }
 
-/* ===== HEADING CONTENT AREA ===== */
+/* ===== CONTENT AREA STYLING ===== */
 
-.accordion__heading-content {
+.accordion__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-sizing-16px);
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.accordion__content-inner {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--spacing-sizing-8px);
-  flex: 1;
+  flex: 1 0 0;
   min-width: 0;
-  /* Use baseline alignment to match status icon */
-  align-self: baseline;
 }
 
-/* Single title layout for no-stroke type */
-.accordion--type-no-stroke .accordion__heading-content {
+/* No-stroke and decorative adjust content layout */
+.accordion--type-no-stroke .accordion__content,
+.accordion--type-decorative .accordion__content {
   flex-direction: row;
   align-items: center;
   gap: 0;
 }
 
-/* ===== TITLE STYLES - EXACT FIGMA TYPOGRAPHY ===== */
+/* ===== TITLE TYPOGRAPHY - EXACT FIGMA SPECS ===== */
 
 .accordion__title {
   color: var(--primary-blue-dark-blue);
   font-family: var(--type-typeface-archivo);
   font-style: normal;
   font-weight: 400;
-  position: relative;
-  flex: 1;
+  flex: 1 0 0;
   min-width: 0;
   
   /* Text overflow handling */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  
-  /* Default size - will be overridden by size variants */
-  font-size: var(--type-archivo-heading-4);
-  line-height: var(--type-line-height-heading-4);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-4);
 }
 
-/* Small size title typography - exact Figma specs */
+/* Small size title typography */
 .accordion--size-small .accordion__title {
   font-size: var(--type-archivo-label-lg); /* 18px */
-  line-height: var(--type-line-height-label-lg); /* 24px - 133.333% */
+  line-height: var(--type-line-height-label-lg); /* 24px */
   letter-spacing: var(--type-letter-spacing-archivo-label-lg); /* 0.15px */
-  font-weight: var(--type-weight-medium); /* 500 - exact from Figma */
+  font-weight: var(--type-weight-medium); /* 500 */
 }
 
-/* Default size title typography - exact Figma specs */
+/* Default size title typography */
 .accordion--size-default .accordion__title {
-  font-size: var(--type-archivo-heading-5); /* 19px */
-  line-height: var(--type-line-height-heading-5); /* 24px - 126.316% */
-  letter-spacing: var(--type-letter-spacing-archivo-heading-5); /* -0.15px */
-  font-weight: var(--type-weight-medium); /* 500 - exact from Figma */
-}
-
-/* Large size title typography - exact Figma specs */
-.accordion--size-large .accordion__title {
   font-size: var(--type-archivo-heading-4); /* 24px */
-  line-height: var(--type-line-height-heading-4); /* 24px - 100% */
+  line-height: var(--type-line-height-heading-4); /* 24px */
   letter-spacing: var(--type-letter-spacing-archivo-heading-4); /* -0.25px */
-  font-weight: var(--type-weight-medium); /* 500 - exact from Figma */
+  font-weight: var(--type-weight-medium); /* 500 */
 }
 
-/* Number type has specific large typography */
-.accordion--type-number.accordion--size-large .accordion__title {
+/* Large size title typography */
+.accordion--size-large .accordion__title {
+  font-size: var(--type-archivo-heading-3); /* 28px */
+  line-height: var(--type-line-height-heading-3); /* 28px */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-3); /* -0.5px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+/* No-stroke type specific typography */
+.accordion--type-no-stroke.accordion--size-default .accordion__title {
+  font-size: var(--type-archivo-heading-5); /* 19px */
+  line-height: var(--type-line-height-heading-5); /* 24px */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-5); /* -0.15px */
+}
+
+.accordion--type-no-stroke.accordion--size-large .accordion__title {
   font-size: var(--type-archivo-heading-4); /* 24px */
   line-height: var(--type-line-height-heading-4); /* 24px */
   letter-spacing: var(--type-letter-spacing-archivo-heading-4); /* -0.25px */
 }
 
-/* Open state title color - exact Figma */
-.accordion--state-open .accordion__title {
+/* Decorative, Number, and Label types use black color */
+.accordion--type-decorative .accordion__title,
+.accordion--type-number .accordion__title,
+.accordion--type-label .accordion__title {
   color: var(--base-black);
 }
 
-/* Selected state title color - exact Figma */
-.accordion--state-selected .accordion__title {
-  color: var(--base-black);
+/* Decorative type specific typography */
+.accordion--type-decorative.accordion--size-default .accordion__title {
+  font-size: var(--type-archivo-label-lg); /* 18px */
+  line-height: var(--type-line-height-label-lg); /* 24px */
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg); /* 0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
 }
 
-/* ===== DESCRIPTION STYLES - EXACT FIGMA TYPOGRAPHY ===== */
+.accordion--type-decorative.accordion--size-large .accordion__title {
+  font-size: var(--type-archivo-heading-5); /* 19px */
+  line-height: var(--type-line-height-heading-5); /* 24px */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-5); /* -0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+.accordion--type-decorative.accordion--size-small .accordion__title {
+  font-size: var(--type-archivo-label); /* 16px */
+  line-height: var(--type-line-height-label); /* 22px */
+  letter-spacing: var(--type-letter-spacing-archivo-label); /* 0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+/* Number type specific typography */
+.accordion--type-number.accordion--size-default .accordion__title {
+  font-size: var(--type-archivo-label-lg); /* 18px */
+  line-height: var(--type-line-height-label-lg); /* 24px */
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg); /* 0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+.accordion--type-number.accordion--size-large .accordion__title {
+  font-size: var(--type-archivo-heading-5); /* 19px */
+  line-height: var(--type-line-height-heading-5); /* 24px */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-5); /* -0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+.accordion--type-number.accordion--size-small .accordion__title {
+  font-size: var(--type-archivo-label); /* 16px */
+  line-height: var(--type-line-height-label); /* 22px */
+  letter-spacing: var(--type-letter-spacing-archivo-label); /* 0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+/* Label type specific typography */
+.accordion--type-label.accordion--size-default .accordion__title {
+  font-size: var(--type-archivo-label-lg); /* 18px */
+  line-height: var(--type-line-height-label-lg); /* 24px */
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg); /* 0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+.accordion--type-label.accordion--size-large .accordion__title {
+  font-size: var(--type-archivo-heading-5); /* 19px */
+  line-height: var(--type-line-height-heading-5); /* 24px */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-5); /* -0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+.accordion--type-label.accordion--size-small .accordion__title {
+  font-size: var(--type-archivo-label); /* 16px */
+  line-height: var(--type-line-height-label); /* 22px */
+  letter-spacing: var(--type-letter-spacing-archivo-label); /* 0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+/* ===== DESCRIPTION TYPOGRAPHY ===== */
 
 .accordion__description {
   color: var(--neutral-gray-gray-500);
@@ -391,33 +397,44 @@
   font-style: normal;
   font-weight: 400;
   
-  /* Default size description */
-  font-size: var(--type-roboto-flex-body);
-  line-height: var(--type-line-height-body);
-  letter-spacing: var(--type-letter-spacing-roboto-flex-body);
-  
-  flex: 1;
-  min-width: 0;
+  /* Text overflow handling */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  flex: 1 0 0;
+  min-width: 0;
 }
 
 /* Small size description typography */
 .accordion--size-small .accordion__description {
   font-size: var(--type-roboto-flex-body-sm); /* 14px */
-  line-height: var(--type-line-height-body-sm); /* 16px - 114.286% */
+  line-height: var(--type-line-height-body-sm); /* 16px */
   letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm); /* -0.15px */
+}
+
+/* Default size description typography */
+.accordion--size-default .accordion__description {
+  font-size: var(--type-roboto-flex-body); /* 16px */
+  line-height: var(--type-line-height-body); /* 20px */
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body); /* 0.05px */
 }
 
 /* Large size description typography */
 .accordion--size-large .accordion__description {
   font-size: var(--type-roboto-flex-body-lg); /* 18px */
-  line-height: var(--type-line-height-body-lg); /* 22px - 122.222% */
+  line-height: var(--type-line-height-body-lg); /* 22px */
   letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg); /* -0.15px */
 }
 
-/* ===== ICON FRAME STYLES - DECORATIVE TYPE ===== */
+/* ===== ICON FRAME STYLING - DECORATIVE TYPE ===== */
+
+.accordion__icon-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-6px);
+  flex: 1 0 0;
+  min-width: 0;
+}
 
 .accordion__icon-frame {
   display: flex;
@@ -425,51 +442,46 @@
   justify-content: center;
   flex-shrink: 0;
   border-radius: var(--spacing-radius-99999px);
-  border: 1px solid var(--primary-sky-blue-sky-blue-200);
-  background: var(--primary-sky-blue-sky-blue-50);
-  color: var(--primary-sky-blue-sky-blue);
   transition: all 0.2s ease;
-  
-  /* Default size */
-  width: 28px;
-  height: 28px;
-  padding: 5px;
+}
+
+/* Default size icon frame */
+.accordion--size-default .accordion__icon-frame {
+  width: var(--spacing-sizing-24px);
+  height: var(--spacing-sizing-24px);
+  padding: 4px;
 }
 
 /* Small size icon frame */
 .accordion--size-small .accordion__icon-frame {
-  width: 22px;
-  height: 22px;
+  width: var(--spacing-sizing-22px);
+  height: var(--spacing-sizing-22px);
   padding: 4px;
 }
 
-/* Large size icon frame - no size override in Figma, using default */
+/* Large size icon frame */
 .accordion--size-large .accordion__icon-frame {
-  width: 28px;
-  height: 28px;
+  width: var(--spacing-sizing-28px);
+  height: var(--spacing-sizing-28px);
   padding: 5px;
 }
 
-/* Open state icon frame */
-.accordion--state-open .accordion__icon-frame {
-  background: var(--base-white);
-  border-color: var(--primary-sky-blue-sky-blue-200);
-  color: var(--primary-sky-blue-sky-blue);
-}
+/* ===== NUMBER STYLING ===== */
 
-/* ===== NUMBER STYLES - EXACT FIGMA TYPOGRAPHY ===== */
+.accordion__number-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-12px);
+  flex: 1 0 0;
+  min-width: 0;
+}
 
 .accordion__number {
   color: var(--primary-sky-blue-sky-blue-300);
   font-family: var(--type-typeface-archivo);
   font-style: normal;
   font-weight: var(--type-weight-bold);
-  line-height: 1;
   flex-shrink: 0;
-  
-  /* Default size number */
-  font-size: var(--type-archivo-heading-3);
-  letter-spacing: var(--type-letter-spacing-archivo-heading-3);
 }
 
 /* Small size number typography */
@@ -479,6 +491,13 @@
   letter-spacing: var(--type-letter-spacing-archivo-heading-4); /* -0.25px */
 }
 
+/* Default size number typography */
+.accordion--size-default .accordion__number {
+  font-size: var(--type-archivo-heading-3); /* 28px */
+  line-height: var(--type-line-height-heading-3); /* 28px */
+  letter-spacing: var(--type-letter-spacing-archivo-heading-3); /* -0.5px */
+}
+
 /* Large size number typography */
 .accordion--size-large .accordion__number {
   font-size: var(--type-archivo-heading-2); /* 32px */
@@ -486,71 +505,64 @@
   letter-spacing: var(--type-letter-spacing-archivo-heading-2); /* -1px */
 }
 
-/* ===== TOGGLE ICON STYLES - EXACT FIGMA CIRCULAR BACKGROUNDS ===== */
+/* ===== LABEL STYLING ===== */
 
-.accordion__toggle-icon {
+.accordion__label {
+  flex-shrink: 0;
+}
+
+/* ===== TOGGLE STYLING ===== */
+
+.accordion__toggle {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   border-radius: var(--spacing-radius-99999px);
-  border: 1px solid var(--neutral-gray-gray-200);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
   background: var(--neutral-gray-gray-50);
-  color: var(--base-black);
-  opacity: 0.5;
   transition: all 0.2s ease;
-  
-  /* Default size */
-  width: 24px;
-  height: 24px;
+  opacity: 0.5;
 }
 
-/* Small size toggle icon */
-.accordion--size-small .accordion__toggle-icon {
-  width: 22px;
-  height: 22px;
+/* Default size toggle */
+.accordion--size-default .accordion__toggle {
+  width: var(--spacing-sizing-24px);
+  height: var(--spacing-sizing-24px);
+}
+
+/* Small size toggle */
+.accordion--size-small .accordion__toggle {
+  width: var(--spacing-sizing-22px);
+  height: var(--spacing-sizing-22px);
+  padding: 3px;
+}
+
+/* Large size toggle */
+.accordion--size-large .accordion__toggle {
+  width: var(--spacing-sizing-28px);
+  height: var(--spacing-sizing-28px);
+}
+
+/* Number type toggle adjustments */
+.accordion--type-number.accordion--size-default .accordion__toggle {
   padding: 1px;
 }
 
-/* Large size toggle icon */
-.accordion--size-large .accordion__toggle-icon {
-  width: 28px;
-  height: 28px;
-  padding: 2px;
+.accordion--type-number.accordion--size-large .accordion__toggle {
+  padding: var(--spacing-stroke-2px);
 }
 
-/* Open state toggle icon */
-.accordion--state-open .accordion__toggle-icon {
-  opacity: 1;
-  border-color: var(--primary-sky-blue-sky-blue-200);
-  background: var(--primary-sky-blue-sky-blue-50);
-  color: var(--primary-sky-blue-sky-blue);
-}
+/* ===== CONTENT BODY STYLING ===== */
 
-/* ===== LABEL CONTAINER ===== */
-
-.accordion__label-container {
-  flex-shrink: 0;
-}
-
-/* ===== CONTENT STYLES - EXACT FIGMA SPECIFICATIONS ===== */
-
-.accordion__content {
+.accordion__content-body {
   width: 100%;
+  overflow: hidden;
   animation: accordion-expand 0.3s ease-out;
-  box-sizing: border-box;
-  position: relative;
 }
 
-.accordion__content-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--spacing-sizing-16px);
-  padding: 0;
-  
-  /* Content typography - exact Figma specs */
-  color: var(--neutral-gray-gray-700);
+.accordion__content-text {
+  color: var(--neutral-gray-gray-900);
   font-family: var(--type-typeface-roboto-flex);
   font-style: normal;
   font-weight: 400;
@@ -559,112 +571,64 @@
   font-size: var(--type-roboto-flex-body);
   line-height: var(--type-line-height-body);
   letter-spacing: var(--type-letter-spacing-roboto-flex-body);
+  
+  /* Default padding */
+  padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-24px) var(--spacing-sizing-24px);
 }
 
-/* Small size content typography */
-.accordion--size-small .accordion__content-inner {
-  font-size: var(--type-roboto-flex-body-sm); /* 14px */
-  line-height: var(--type-line-height-body-sm); /* 16px - 114.286% */
-  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm); /* -0.15px */
+/* Small size content */
+.accordion--size-small .accordion__content-text {
+  font-size: var(--type-roboto-flex-body-sm);
+  line-height: var(--type-line-height-body-sm);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
+  padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-16px) var(--spacing-sizing-24px);
 }
 
-/* Large size content typography */
-.accordion--size-large .accordion__content-inner {
-  font-size: var(--type-roboto-flex-body-lg); /* 18px */
-  line-height: var(--type-line-height-body-lg); /* 22px - 122.222% */
-  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg); /* -0.15px */
+/* Large size content */
+.accordion--size-large .accordion__content-text {
+  font-size: var(--type-roboto-flex-body-lg);
+  line-height: var(--type-line-height-body-lg);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg);
+  padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-28px) var(--spacing-sizing-24px);
 }
 
-/* Decorative and Number types have specific content layout */
-.accordion--type-decorative .accordion__content,
-.accordion--type-number .accordion__content {
-  width: 432px;
-  max-width: 100%;
+/* Type-specific content padding */
+.accordion--type-decorative .accordion__content-text,
+.accordion--type-number .accordion__content-text,
+.accordion--type-label .accordion__content-text {
+  padding: 0 var(--spacing-sizing-12px) var(--spacing-sizing-16px) var(--spacing-sizing-12px);
 }
 
-/* ===== HOVER STATES - EXACT FIGMA MATCH ===== */
-
-/* Simple type hover state */
-.accordion--type-simple .accordion__trigger:hover .accordion__header {
-  /* No background change for simple type in Figma */
+/* No-stroke type content */
+.accordion--type-no-stroke .accordion__content-text {
+  padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-24px) 0;
 }
 
-.accordion--type-simple .accordion__trigger:hover .accordion__title {
+/* Small size content for decorative/number/label */
+.accordion--type-decorative.accordion--size-small .accordion__content-text,
+.accordion--type-number.accordion--size-small .accordion__content-text,
+.accordion--type-label.accordion--size-small .accordion__content-text {
+  color: var(--neutral-gray-gray-700);
+}
+
+/* ===== HOVER STATES ===== */
+
+.accordion__trigger:hover .accordion__title {
   color: var(--base-black);
 }
 
-.accordion--type-simple .accordion__trigger:hover .accordion__bell-icon {
-  color: var(--primary-sky-blue-sky-blue);
+.accordion__trigger:hover .accordion__bell-icon {
   opacity: 1;
+  fill: var(--primary-sky-blue-sky-blue);
 }
 
-.accordion--type-simple .accordion__trigger:hover .accordion__toggle-icon {
-  opacity: 1;
-  border-color: var(--primary-sky-blue-sky-blue-300);
-  background: var(--primary-sky-blue-sky-blue-50);
-  color: var(--primary-sky-blue-sky-blue);
-}
-
-/* Decorative type hover state */
-.accordion--type-decorative .accordion__trigger:hover .accordion__title {
-  color: var(--base-black);
-}
-
-.accordion--type-decorative .accordion__trigger:hover .accordion__icon-frame {
-  background: var(--base-white);
-  border-color: var(--primary-sky-blue-sky-blue-200);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-}
-
-.accordion--type-decorative .accordion__trigger:hover .accordion__toggle-icon {
+.accordion__trigger:hover .accordion__toggle {
   opacity: 1;
   border-color: var(--primary-sky-blue-sky-blue-300);
-  background: var(--primary-sky-blue-sky-blue-50);
-  color: var(--primary-sky-blue-sky-blue);
+  background: var(--neutral-gray-gray-50);
 }
 
-/* Number type hover state */
-.accordion--type-number .accordion__trigger:hover .accordion__title {
-  color: var(--base-black);
-}
-
-.accordion--type-number .accordion__trigger:hover .accordion__number {
-  color: var(--primary-sky-blue-sky-blue);
-}
-
-.accordion--type-number .accordion__trigger:hover .accordion__toggle-icon {
-  opacity: 1;
-  border-color: var(--primary-sky-blue-sky-blue-300);
-  background: var(--primary-sky-blue-sky-blue-50);
-  color: var(--primary-sky-blue-sky-blue);
-}
-
-/* Label type hover state */
-.accordion--type-label .accordion__trigger:hover .accordion__title {
-  color: var(--base-black);
-}
-
-.accordion--type-label .accordion__trigger:hover .accordion__toggle-icon {
-  opacity: 1;
-  border-color: var(--primary-sky-blue-sky-blue-300);
-  background: var(--primary-sky-blue-sky-blue-50);
-  color: var(--primary-sky-blue-sky-blue);
-}
-
-/* No-stroke type hover state */
-.accordion--type-no-stroke .accordion__trigger:hover .accordion__title {
-  color: var(--base-black);
-}
-
-.accordion--type-no-stroke .accordion__trigger:hover .accordion__bell-icon {
-  color: var(--primary-sky-blue-sky-blue);
-  opacity: 1;
-}
-
-.accordion--type-no-stroke .accordion__trigger:hover .accordion__toggle-icon {
-  opacity: 1;
-  border-color: var(--primary-sky-blue-sky-blue-300);
-  background: var(--primary-sky-blue-sky-blue-50);
+.accordion__trigger:hover .accordion__number {
   color: var(--primary-sky-blue-sky-blue);
 }
 
@@ -674,16 +638,10 @@
   color: var(--base-black);
 }
 
-.accordion__trigger:focus-visible .accordion__icon-frame {
-  border-color: var(--primary-sky-blue-sky-blue);
-  background: var(--primary-sky-blue-sky-blue-50);
-}
-
-.accordion__trigger:focus-visible .accordion__toggle-icon {
-  border-color: var(--primary-sky-blue-sky-blue);
-  background: var(--primary-sky-blue-sky-blue-50);
-  color: var(--primary-sky-blue-sky-blue);
+.accordion__trigger:focus-visible .accordion__toggle {
   opacity: 1;
+  border-color: var(--primary-sky-blue-sky-blue);
+  background: var(--neutral-gray-gray-50);
 }
 
 .accordion__trigger:focus-visible .accordion__number {
@@ -692,16 +650,19 @@
 
 /* ===== ACTIVE STATES ===== */
 
-.accordion__trigger:active .accordion__toggle-icon {
+.accordion__trigger:active .accordion__toggle {
   transform: scale(0.95);
   border-color: var(--primary-sky-blue-sky-blue);
-  background: var(--primary-sky-blue-sky-blue-100);
 }
 
 .accordion__trigger:active .accordion__icon-frame {
   transform: scale(0.95);
-  border-color: var(--primary-sky-blue-sky-blue);
-  background: var(--primary-sky-blue-sky-blue-100);
+}
+
+/* ===== OPEN STATE STYLING ===== */
+
+.accordion--state-open .accordion__toggle {
+  opacity: 1;
 }
 
 /* ===== ANIMATIONS ===== */
@@ -717,96 +678,46 @@
   }
 }
 
-/* ===== RESPONSIVE DESIGN - MOBILE-FIRST APPROACH ===== */
+/* ===== RESPONSIVE DESIGN ===== */
 
-/* Base mobile styles */
+/* Mobile adjustments */
 @media (max-width: 480px) {
   .accordion {
     min-width: 280px;
   }
   
-  .accordion__header {
-    gap: 8px;
+  .accordion__trigger {
+    gap: var(--spacing-sizing-8px);
   }
   
-  .accordion__heading-content {
+  .accordion__content-inner {
     gap: 4px;
   }
   
   .accordion__title {
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0px;
+    font-size: 16px !important;
+    line-height: 20px !important;
   }
   
   .accordion__description {
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 14px !important;
+    line-height: 16px !important;
   }
   
-  .accordion__content-inner {
-    gap: 12px;
-    font-size: 14px;
-    line-height: 16px;
-  }
-  
-  /* Adjust icon sizes for mobile */
-  .accordion__status-icon {
-    width: 20px !important;
-    height: 20px !important;
-  }
-  
-  .accordion__toggle-icon {
-    width: 20px !important;
-    height: 20px !important;
-    padding: 2px !important;
-  }
-  
-  .accordion__icon-frame {
-    width: 20px !important;
-    height: 20px !important;
-    padding: 3px !important;
-  }
-  
-  /* Scale down decorative and number widths */
+  /* Scale down decorative and number type widths */
   .accordion--type-decorative,
-  .accordion--type-number {
-    width: 100%;
-    max-width: 100%;
-  }
-  
-  .accordion--type-decorative .accordion__content,
-  .accordion--type-number .accordion__content {
-    width: 100%;
+  .accordion--type-number,
+  .accordion--type-label {
     max-width: 100%;
   }
 }
 
-/* Tablet styles */
+/* Tablet adjustments */
 @media (min-width: 481px) and (max-width: 768px) {
   .accordion--type-decorative,
-  .accordion--type-number {
-    width: 100%;
-    max-width: 432px;
-  }
-  
-  .accordion--type-decorative .accordion__content,
-  .accordion--type-number .accordion__content {
-    width: 100%;
-    max-width: 432px;
-  }
-}
-
-/* Desktop styles */
-@media (min-width: 769px) {
-  .accordion--type-decorative,
-  .accordion--type-number {
-    width: 432px;
-  }
-  
-  .accordion--type-decorative .accordion__content,
-  .accordion--type-number .accordion__content {
-    width: 432px;
+  .accordion--type-number,
+  .accordion--type-label {
+    max-width: 100%;
   }
 }
 
@@ -814,10 +725,10 @@
 
 @media (prefers-reduced-motion: reduce) {
   .accordion,
-  .accordion__content,
-  .accordion__toggle-icon,
+  .accordion__toggle,
   .accordion__icon-frame,
-  .accordion__bell-icon {
+  .accordion__bell-icon,
+  .accordion__content-body {
     transition: none;
     animation: none;
   }
@@ -825,12 +736,12 @@
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-  .accordion__toggle-icon {
-    border-width: 2px;
+  .accordion__toggle {
+    border-width: var(--spacing-stroke-2px);
   }
   
   .accordion__icon-frame {
-    border-width: 2px;
+    border-width: var(--spacing-stroke-2px);
   }
   
   .accordion__title {
@@ -845,11 +756,11 @@
     break-inside: avoid;
   }
   
-  .accordion__content {
+  .accordion__content-body {
     display: block !important;
   }
   
-  .accordion__toggle-icon {
+  .accordion__toggle {
     display: none;
   }
   
@@ -857,32 +768,4 @@
     color: black !important;
     font-weight: 600 !important;
   }
-}
-
-/* ===== UTILITY CLASSES ===== */
-
-.accordion--full-width {
-  width: 100%;
-  max-width: none;
-}
-
-.accordion--contained {
-  border: 1px solid var(--neutral-gray-gray-200);
-  border-radius: 8px;
-  padding: 16px;
-  background: var(--base-white);
-}
-
-/* ===== RTL SUPPORT ===== */
-
-[dir="rtl"] .accordion__header {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .accordion__title {
-  text-align: right;
-}
-
-[dir="rtl"] .accordion__description {
-  text-align: right;
 }
