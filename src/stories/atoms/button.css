@@ -633,11 +633,11 @@
   border: var(--spacing-stroke-3px) solid var(--primary-blue-blue-300) !important;
 }
 
-/* Force state classes for secondary buttons */
+/* Force state classes for secondary buttons - Updated for Figma design */
 .button.secondary.force-hover {
-  background: var(--primary-sky-blue-50) !important;
-  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue) !important;
-  box-shadow: 3px 3px 0 0 var(--base-black) !important;
+  background: #D6F0FB !important;
+  border: var(--spacing-stroke-1px) solid #0BA7EA !important;
+  box-shadow: 1px 1px 0 0 #6171DF !important;
 }
 
 .button.secondary.force-hover .button-text {
@@ -645,9 +645,9 @@
 }
 
 .button.secondary.force-clicked {
-  background: var(--primary-sky-blue-50) !important;
-  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-300) !important;
-  box-shadow: 3px 3px 0 0 var(--base-black) !important;
+  background: #D6F0FB !important;
+  border: var(--spacing-stroke-1px) solid #0BA7EA !important;
+  box-shadow: 1px 1px 0 0 #6171DF !important;
 }
 
 .button.secondary.force-clicked .button-text {
@@ -655,8 +655,8 @@
 }
 
 .button.secondary.force-focused {
-  background: var(--primary-sky-blue-50) !important;
-  border: var(--spacing-stroke-3px) solid var(--primary-sky-blue-300) !important;
+  background: #D6F0FB !important;
+  border: var(--spacing-stroke-1px) solid #0BA7EA !important;
 }
 
 /* State variants for tertiary outline buttons - Updated for Figma design */
@@ -715,11 +715,11 @@
   opacity: 0.6;
 }
 
-/* Force state classes for tertiary buttons */
+/* Force state classes for tertiary buttons - Updated for Figma design */
 .button.tertiary.force-hover {
-  background: var(--primary-blue-dark-blue) !important;
-  border: var(--spacing-stroke-1px) solid var(--base-white) !important;
-  box-shadow: 3px 3px 0 0 var(--primary-teal-dark-teal) !important;
+  background: #8BBF9F !important;
+  border: var(--spacing-stroke-1px) solid #8BBF9F !important;
+  box-shadow: 1px 1px 0 0 #6171DF !important;
 }
 
 .button.tertiary.force-hover .button-text {
@@ -727,25 +727,25 @@
 }
 
 .button.tertiary.force-clicked {
-  background: var(--primary-blue-dark-blue) !important;
-  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-300) !important;
-  box-shadow: 3px 3px 0 0 var(--primary-teal-dark-teal) !important;
+  background: #8BBF9F !important;
+  border: var(--spacing-stroke-1px) solid #8BBF9F !important;
+  box-shadow: 1px 1px 0 0 #6171DF !important;
 }
 
 .button.tertiary.force-clicked .button-text {
-  font-weight: var(--type-weight-light) !important;
+  font-weight: var(--type-weight-medium) !important;
 }
 
 .button.tertiary.force-focused {
-  background: var(--primary-blue-dark-blue) !important;
-  border: var(--spacing-stroke-3px) solid var(--primary-blue-blue-400) !important;
+  background: #8BBF9F !important;
+  border: var(--spacing-stroke-2px) solid #8BBF9F !important;
 }
 
-/* Force state classes for tertiary outline buttons */
+/* Force state classes for tertiary outline buttons - Updated for Figma design */
 .button.tertiary.outline.force-hover {
   background: var(--base-white) !important;
-  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam) !important;
-  box-shadow: var(--spacing-stroke-1px) var(--spacing-stroke-1px) 0 0 var(--primary-seafoam-extra-dark-seafoam) !important;
+  border: var(--spacing-stroke-1px) solid #8BBF9F !important;
+  box-shadow: 1px 1px 0 0 #6171DF !important;
 }
 
 .button.tertiary.outline.force-hover .button-text {
@@ -754,8 +754,8 @@
 
 .button.tertiary.outline.force-clicked {
   background: var(--base-white) !important;
-  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam) !important;
-  box-shadow: var(--spacing-stroke-1px) var(--spacing-stroke-1px) 0 0 var(--primary-seafoam-extra-dark-seafoam) !important;
+  border: var(--spacing-stroke-1px) solid #8BBF9F !important;
+  box-shadow: 1px 1px 0 0 #6171DF !important;
 }
 
 .button.tertiary.outline.force-clicked .button-text {
@@ -764,7 +764,7 @@
 
 .button.tertiary.outline.force-focused {
   background: var(--base-white) !important;
-  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam) !important;
+  border: var(--spacing-stroke-2px) solid #8BBF9F !important;
 }
 
 .button.force-hover.extra-small {
@@ -1118,11 +1118,11 @@
   outline-offset: var(--spacing-sizing-2px, 2px) !important;
 }
 
-/* Force state classes for warning buttons */
+/* Force state classes for warning buttons - Updated for Figma design */
 .button.warning.force-hover {
-  background: var(--base-white) !important;
-  border: var(--spacing-stroke-1px) solid var(--status-orange) !important;
-  box-shadow: var(--spacing-stroke-1px) var(--spacing-stroke-1px) 0 0 rgba(54, 111, 151, 0.40) !important;
+  background: #F4A403 !important;
+  border: var(--spacing-stroke-1px) solid #D07C06 !important;
+  box-shadow: 1px 1px 0 0 #D2D5DA !important;
 }
 
 .button.warning.force-hover .button-text {
@@ -1130,9 +1130,9 @@
 }
 
 .button.warning.force-clicked {
-  background: var(--base-white) !important;
-  border: var(--spacing-stroke-2px) solid var(--status-orange) !important;
-  box-shadow: var(--spacing-stroke-1px) var(--spacing-stroke-1px) 0 0 var(--status-dark-orange) !important;
+  background: #F4A403 !important;
+  border: var(--spacing-stroke-1px) solid #D07C06 !important;
+  box-shadow: 1px 1px 0 0 #D2D5DA !important;
 }
 
 .button.warning.force-clicked .button-text {
@@ -1140,8 +1140,8 @@
 }
 
 .button.warning.force-focused {
-  background: var(--base-white) !important;
-  border: var(--spacing-stroke-3px) solid var(--status-orange) !important;
+  background: #F4A403 !important;
+  border: var(--spacing-stroke-2px) solid #D07C06 !important;
 }
 
 /* Special hover effects for extra-small ghost buttons */
@@ -1340,11 +1340,11 @@
   opacity: 0.6;
 }
 
-/* Force state classes for info buttons */
+/* Force state classes for info buttons - Updated for Figma design */
 .button.info.force-hover {
-  background: var(--base-white) !important;
-  border: var(--spacing-stroke-1px) solid var(--status-info-blue) !important;
-  box-shadow: var(--spacing-stroke-1px) var(--spacing-stroke-1px) 0 0 rgba(54, 111, 151, 0.40) !important;
+  background: #366F97 !important;
+  border: var(--spacing-stroke-1px) solid #366F97 !important;
+  box-shadow: 1px 1px 0 0 #D2D5DA !important;
 }
 
 .button.info.force-hover .button-text {
@@ -1352,9 +1352,9 @@
 }
 
 .button.info.force-clicked {
-  background: var(--base-white) !important;
-  border: var(--spacing-stroke-2px) solid var(--status-info-blue) !important;
-  box-shadow: var(--spacing-stroke-1px) var(--spacing-stroke-1px) 0 0 rgba(54, 111, 151, 0.40) !important;
+  background: #366F97 !important;
+  border: var(--spacing-stroke-1px) solid #366F97 !important;
+  box-shadow: 1px 1px 0 0 rgba(54, 111, 151, 0.40) !important;
 }
 
 .button.info.force-clicked .button-text {
@@ -1362,15 +1362,15 @@
 }
 
 .button.info.force-focused {
-  background: var(--base-white) !important;
-  border: var(--spacing-stroke-2px) solid var(--status-info-blue) !important;
+  background: #366F97 !important;
+  border: var(--spacing-stroke-1px) solid #366F97 !important;
 }
 
-/* Force state classes for success buttons */
+/* Force state classes for success buttons - Updated for Figma design */
 .button.success.force-hover {
-  background: var(--base-white) !important;
-  border: var(--spacing-stroke-1px) solid var(--status-dark-green) !important;
-  box-shadow: var(--spacing-stroke-1px) var(--spacing-stroke-1px) 0 0 var(--status-green) !important;
+  background: #96F78D !important;
+  border: var(--spacing-stroke-1px) solid #227F1A !important;
+  box-shadow: 1px 1px 0 0 #96F78D !important;
 }
 
 .button.success.force-hover .button-text {
@@ -1378,9 +1378,9 @@
 }
 
 .button.success.force-clicked {
-  background: var(--base-white) !important;
-  border: var(--spacing-stroke-2px) solid var(--status-dark-green) !important;
-  box-shadow: var(--spacing-stroke-1px) var(--spacing-stroke-1px) 0 0 var(--status-green) !important;
+  background: #96F78D !important;
+  border: var(--spacing-stroke-1px) solid #227F1A !important;
+  box-shadow: 1px 1px 0 0 #96F78D !important;
 }
 
 .button.success.force-clicked .button-text {
@@ -1388,8 +1388,8 @@
 }
 
 .button.success.force-focused {
-  background: var(--base-white) !important;
-  border: var(--spacing-stroke-3px) solid var(--status-dark-green) !important;
+  background: #96F78D !important;
+  border: var(--spacing-stroke-2px) solid #227F1A !important;
 }
 
 /* Open state for dropdown-style buttons */
