@@ -1,0 +1,389 @@
+/* Import design tokens */
+@import '../../foundations/tokens.css';
+
+/* === STEP INDICATOR COMPONENT === */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  /* Make it interactive if click handler is provided */
+  &.step-indicator-interactive {
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    
+    &:hover {
+      transform: scale(1.02);
+    }
+    
+    &:active {
+      transform: scale(0.98);
+    }
+    
+    &:focus {
+      outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
+      outline-offset: var(--spacing-sizing-2px);
+      border-radius: var(--spacing-radius-99999px);
+    }
+  }
+}
+
+/* === STEP INDICATOR CIRCLE === */
+.step-indicator-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--spacing-radius-99999px);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  position: relative;
+}
+
+/* === SIZE VARIANTS === */
+
+/* Small size */
+.step-indicator-size-small .step-indicator-circle {
+  width: var(--spacing-sizing-24px);
+  height: var(--spacing-sizing-24px);
+}
+
+.step-indicator-size-small .step-indicator-content {
+  display: flex;
+  width: var(--spacing-sizing-22px);
+  height: var(--spacing-sizing-22px);
+  padding: var(--spacing-sizing-2px) var(--spacing-sizing-4px) var(--spacing-sizing-4px) var(--spacing-sizing-2px);
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sizing-8px);
+  flex-shrink: 0;
+  border-radius: calc(var(--spacing-sizing-22px) / 2);
+  border: var(--spacing-stroke-1px) dashed var(--secondary-blue-gray);
+  position: absolute;
+  left: var(--spacing-sizing-2px);
+  top: var(--spacing-sizing-2px);
+}
+
+/* Default size */
+.step-indicator-size-default .step-indicator-circle {
+  width: var(--spacing-sizing-48px);
+  height: var(--spacing-sizing-48px);
+}
+
+.step-indicator-size-default .step-indicator-content {
+  display: flex;
+  width: var(--spacing-sizing-48px);
+  height: var(--spacing-sizing-48px);
+  padding: var(--spacing-sizing-2px) var(--spacing-sizing-4px) var(--spacing-sizing-4px) var(--spacing-sizing-2px);
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sizing-8px);
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  border-radius: var(--spacing-radius-99999px);
+  border: var(--spacing-stroke-1px) dashed var(--secondary-blue-gray);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Large size */
+.step-indicator-size-large .step-indicator-circle {
+  width: var(--spacing-sizing-62px);
+  height: var(--spacing-sizing-62px);
+}
+
+.step-indicator-size-large .step-indicator-content {
+  display: flex;
+  width: var(--spacing-sizing-62px);
+  height: var(--spacing-sizing-62px);
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sizing-8px);
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  border-radius: var(--spacing-radius-99999px);
+  border: var(--spacing-stroke-1px) dashed var(--secondary-blue-gray);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* === ICON STYLING === */
+.step-indicator-icon {
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  position: relative;
+}
+
+/* Small size icon adjustments */
+.step-indicator-size-small .step-indicator-icon {
+  width: var(--spacing-sizing-16px);
+  height: var(--spacing-sizing-16px);
+}
+
+/* Default and Large size icon adjustments */
+.step-indicator-size-default .step-indicator-icon,
+.step-indicator-size-large .step-indicator-icon {
+  width: var(--spacing-sizing-28px);
+  height: var(--spacing-sizing-28px);
+}
+
+/* === DISABLED STATE === */
+.step-indicator-disabled .step-indicator-content {
+  border-color: var(--neutral-gray-gray-300);
+}
+
+.step-indicator-disabled .step-indicator-icon path {
+  fill: var(--neutral-gray-gray-300);
+}
+
+/* === TYPE-SPECIFIC STYLING === */
+
+/* Warning type */
+.step-indicator-type-warning:not(.step-indicator-disabled) .step-indicator-content {
+  border-color: var(--secondary-blue-gray);
+}
+
+.step-indicator-type-warning:not(.step-indicator-disabled) .step-indicator-icon path {
+  fill: #FCE4A5;
+}
+
+/* Locked type */
+.step-indicator-type-locked:not(.step-indicator-disabled) .step-indicator-content {
+  border-color: var(--secondary-blue-gray);
+}
+
+.step-indicator-type-locked:not(.step-indicator-disabled) .step-indicator-icon path {
+  fill: #C8C7D1;
+}
+
+/* Comments type */
+.step-indicator-type-comments:not(.step-indicator-disabled) .step-indicator-content {
+  border-color: var(--secondary-blue-gray);
+}
+
+.step-indicator-type-comments:not(.step-indicator-disabled) .step-indicator-icon path {
+  fill: #B6E5F9;
+}
+
+/* Complete type */
+.step-indicator-type-complete:not(.step-indicator-disabled) .step-indicator-content,
+.step-indicator-complete:not(.step-indicator-disabled) .step-indicator-content {
+  border-color: var(--secondary-blue-gray);
+}
+
+.step-indicator-type-complete:not(.step-indicator-disabled) .step-indicator-icon path,
+.step-indicator-complete:not(.step-indicator-disabled) .step-indicator-icon path {
+  fill: #96F78D;
+}
+
+/* Notifications type */
+.step-indicator-type-notifications:not(.step-indicator-disabled) .step-indicator-content {
+  border-color: var(--secondary-blue-gray);
+}
+
+.step-indicator-type-notifications:not(.step-indicator-disabled) .step-indicator-icon path {
+  fill: #C5CAED;
+}
+
+/* Error type */
+.step-indicator-type-error:not(.step-indicator-disabled) .step-indicator-content {
+  border-color: var(--secondary-blue-gray);
+}
+
+.step-indicator-type-error:not(.step-indicator-disabled) .step-indicator-icon path {
+  fill: #CE2031;
+}
+
+/* Note type */
+.step-indicator-type-note:not(.step-indicator-disabled) .step-indicator-content {
+  border-color: var(--secondary-blue-gray);
+}
+
+.step-indicator-type-note:not(.step-indicator-disabled) .step-indicator-icon path {
+  fill: #5D2C82;
+}
+
+/* === OPACITY ADJUSTMENTS FOR ICON STATES === */
+
+/* Default opacity (enabled states) */
+.step-indicator-type-warning:not(.step-indicator-disabled) .step-indicator-size-default .step-indicator-icon,
+.step-indicator-type-locked:not(.step-indicator-disabled) .step-indicator-size-default .step-indicator-icon,
+.step-indicator-type-comments:not(.step-indicator-disabled) .step-indicator-size-default .step-indicator-icon,
+.step-indicator-type-notifications:not(.step-indicator-disabled) .step-indicator-size-default .step-indicator-icon {
+  opacity: 0.35;
+}
+
+.step-indicator-type-complete:not(.step-indicator-disabled) .step-indicator-size-default .step-indicator-icon,
+.step-indicator-complete:not(.step-indicator-disabled) .step-indicator-size-default .step-indicator-icon {
+  opacity: 0.3;
+}
+
+.step-indicator-type-error:not(.step-indicator-disabled) .step-indicator-size-default .step-indicator-icon,
+.step-indicator-type-note:not(.step-indicator-disabled) .step-indicator-size-default .step-indicator-icon {
+  opacity: 0.15;
+}
+
+/* Small size opacity adjustments */
+.step-indicator-type-complete:not(.step-indicator-disabled) .step-indicator-size-small .step-indicator-icon,
+.step-indicator-complete:not(.step-indicator-disabled) .step-indicator-size-small .step-indicator-icon {
+  opacity: 0.5;
+}
+
+.step-indicator-type-error:not(.step-indicator-disabled) .step-indicator-size-small .step-indicator-icon,
+.step-indicator-type-note:not(.step-indicator-disabled) .step-indicator-size-small .step-indicator-icon {
+  opacity: 0.25;
+}
+
+/* Large size opacity adjustments */
+.step-indicator-type-complete:not(.step-indicator-disabled) .step-indicator-size-large .step-indicator-icon,
+.step-indicator-complete:not(.step-indicator-disabled) .step-indicator-size-large .step-indicator-icon {
+  opacity: 0.5;
+}
+
+.step-indicator-type-error:not(.step-indicator-disabled) .step-indicator-size-large .step-indicator-icon,
+.step-indicator-type-note:not(.step-indicator-disabled) .step-indicator-size-large .step-indicator-icon {
+  opacity: 0.25;
+}
+
+/* Disabled state opacity */
+.step-indicator-disabled .step-indicator-size-default .step-indicator-icon {
+  opacity: 0.4;
+}
+
+/* === SPECIAL CASES FOR COMPLETE TYPE === */
+
+/* Complete type with dashed circle for non-completed states */
+.step-indicator-type-complete:not(.step-indicator-complete) .step-indicator-size-small .step-indicator-content::before {
+  content: '';
+  position: absolute;
+  width: var(--spacing-sizing-22px);
+  height: var(--spacing-sizing-22px);
+  border-radius: 50%;
+  border: var(--spacing-stroke-1px) dashed var(--secondary-blue-gray);
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.step-indicator-type-complete:not(.step-indicator-complete) .step-indicator-size-default .step-indicator-content::before,
+.step-indicator-type-complete:not(.step-indicator-complete) .step-indicator-size-large .step-indicator-content::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: var(--spacing-stroke-1px) dashed var(--secondary-blue-gray);
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+/* For disabled complete type */
+.step-indicator-type-complete.step-indicator-disabled .step-indicator-content::before {
+  border-color: var(--neutral-gray-gray-300);
+}
+
+/* === CURRENT STATE HIGHLIGHT === */
+.step-indicator-current .step-indicator-content {
+  border-width: var(--spacing-stroke-2px);
+  border-color: var(--primary-blue-blue);
+}
+
+.step-indicator-current.step-indicator-disabled .step-indicator-content {
+  border-color: var(--neutral-gray-gray-300);
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .step-indicator-size-large .step-indicator-circle {
+    width: var(--spacing-sizing-52px);
+    height: var(--spacing-sizing-52px);
+  }
+  
+  .step-indicator-size-large .step-indicator-content {
+    width: var(--spacing-sizing-52px);
+    height: var(--spacing-sizing-52px);
+  }
+  
+  .step-indicator-size-default .step-indicator-circle {
+    width: var(--spacing-sizing-40px);
+    height: var(--spacing-sizing-40px);
+  }
+  
+  .step-indicator-size-default .step-indicator-content {
+    width: var(--spacing-sizing-40px);
+    height: var(--spacing-sizing-40px);
+  }
+  
+  .step-indicator-size-default .step-indicator-icon,
+  .step-indicator-size-large .step-indicator-icon {
+    width: var(--spacing-sizing-24px);
+    height: var(--spacing-sizing-24px);
+  }
+}
+
+@media (max-width: 480px) {
+  .step-indicator-size-large .step-indicator-circle {
+    width: var(--spacing-sizing-44px);
+    height: var(--spacing-sizing-44px);
+  }
+  
+  .step-indicator-size-large .step-indicator-content {
+    width: var(--spacing-sizing-44px);
+    height: var(--spacing-sizing-44px);
+  }
+  
+  .step-indicator-size-default .step-indicator-circle {
+    width: var(--spacing-sizing-36px);
+    height: var(--spacing-sizing-36px);
+  }
+  
+  .step-indicator-size-default .step-indicator-content {
+    width: var(--spacing-sizing-36px);
+    height: var(--spacing-sizing-36px);
+  }
+  
+  .step-indicator-size-default .step-indicator-icon,
+  .step-indicator-size-large .step-indicator-icon {
+    width: var(--spacing-sizing-20px);
+    height: var(--spacing-sizing-20px);
+  }
+}
+
+/* === ACCESSIBILITY === */
+.step-indicator:focus-visible {
+  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
+  outline-offset: var(--spacing-sizing-4px);
+  border-radius: var(--spacing-radius-99999px);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .step-indicator-content {
+    border-width: var(--spacing-stroke-2px);
+  }
+  
+  .step-indicator:not(.step-indicator-disabled) .step-indicator-content {
+    border-color: var(--base-black);
+  }
+  
+  .step-indicator-disabled .step-indicator-content {
+    border-color: var(--neutral-gray-gray-400);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .step-indicator,
+  .step-indicator-circle,
+  .step-indicator-content {
+    transition: none;
+  }
+  
+  .step-indicator-interactive:hover {
+    transform: none;
+  }
+}
