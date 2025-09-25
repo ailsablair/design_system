@@ -358,7 +358,6 @@ export const ContentTypeMatrix: Story = {
 
 // Interactive Content Types
 export const InteractiveContentTypes: Story = {
-  name: 'Interactive Content Types',
   render: (args) => (
     <div style={{ padding: '20px' }}>
       <h3>Interactive Accordion with Content Types</h3>
@@ -384,7 +383,6 @@ export const InteractiveContentTypes: Story = {
 
 // Closed State Examples
 export const ClosedStateExamples: Story = {
-  name: 'Closed State - All Content Types',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', padding: '20px' }}>
       <h3>Closed State - All Content Types</h3>
@@ -431,7 +429,6 @@ export const ClosedStateExamples: Story = {
 
 // Custom Metrics Examples
 export const CustomMetricsExamples: Story = {
-  name: 'Custom Metrics Examples',
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', padding: '20px' }}>
       <h3>Custom Metrics Examples</h3>
