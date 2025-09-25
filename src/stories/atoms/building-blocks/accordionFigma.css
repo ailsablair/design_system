@@ -147,6 +147,9 @@
   
   /* Default padding for simple type */
   padding: var(--spacing-sizing-24px) var(--spacing-sizing-32px) var(--spacing-sizing-24px) var(--spacing-sizing-24px);
+
+  /* Default alignment */
+  align-items: flex-start;
 }
 
 /* ===== SIZE-SPECIFIC PADDING - EXACT FIGMA SPECS ===== */
@@ -154,11 +157,13 @@
 /* Small size padding */
 .accordion-figma--size-small .accordion-figma__header {
   padding: var(--spacing-sizing-16px) var(--spacing-sizing-32px) var(--spacing-sizing-16px) var(--spacing-sizing-24px);
+  align-items: center;
 }
 
 /* Large size padding */
 .accordion-figma--size-large .accordion-figma__header {
   padding: var(--spacing-sizing-28px) var(--spacing-sizing-32px) var(--spacing-sizing-28px) var(--spacing-sizing-24px);
+  align-items: center;
 }
 
 /* ===== TYPE-SPECIFIC HEADER ADJUSTMENTS ===== */
