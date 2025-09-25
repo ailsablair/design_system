@@ -1,0 +1,143 @@
+@import '../foundations/tokens.css';
+
+/* AutoSaveWithTag Component Base */
+.autosave-with-tag {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--spacing-sizing-16px);
+  font-family: var(--type-typeface-archivo);
+}
+
+/* AutoSave Button Container with styled background */
+.autosave-button-container {
+  display: flex;
+  width: 160px;
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-24px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--spacing-radius-99999px);
+  border: 1px solid;
+}
+
+/* Button container styling by status */
+.autosave-button-container.default {
+  border-color: var(--primary-sky-blue-sky-blue);
+  background: var(--primary-sky-blue-sky-blue-100);
+}
+
+.autosave-button-container.saving {
+  border: 2px solid var(--primary-sky-blue-sky-blue);
+  background: var(--primary-sky-blue-sky-blue-100);
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
+}
+
+.autosave-button-container.saved {
+  border-color: var(--status-dark-green);
+  background: var(--status-green-light);
+}
+
+.autosave-button-container.error {
+  border-color: var(--status-red);
+  background: var(--status-red-light);
+}
+
+.autosave-button-container.disabled {
+  border-color: var(--neutral-gray-gray-200);
+  background: var(--neutral-gray-gray-50);
+}
+
+/* Remove default styling from the inner AutoSave component */
+.autosave-button-container .autosave-button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.autosave-button-container .autosave-button .autosave-content {
+  padding: var(--spacing-sizing-4px);
+}
+
+/* Timestamp Tag */
+.autosave-tag {
+  display: flex;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-12px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sizing-4px);
+  align-self: stretch;
+  border-radius: var(--spacing-radius-99999px);
+  border: 1px solid var(--neutral-gray-gray-300);
+  background: var(--neutral-gray-gray-100);
+}
+
+.autosave-tag-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-4px);
+  border-radius: var(--spacing-radius-99999px);
+}
+
+.autosave-tag-label {
+  color: var(--neutral-gray-gray-800);
+  font-family: var(--type-typeface-archivo);
+  font-size: var(--type-archivo-label-sm);
+  font-style: normal;
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line-height-label-sm);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
+  padding: var(--spacing-sizing-2px);
+}
+
+.autosave-tag-timestamp {
+  color: var(--neutral-gray-gray-800);
+  font-family: var(--type-typeface-archivo);
+  font-size: var(--type-archivo-label-sm);
+  font-style: normal;
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-label-sm);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .autosave-button-container {
+    width: 140px;
+    padding: var(--spacing-sizing-6px) var(--spacing-sizing-16px);
+  }
+  
+  .autosave-tag {
+    padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
+  }
+  
+  .autosave-tag-label,
+  .autosave-tag-timestamp {
+    font-size: var(--type-archivo-footnote);
+    line-height: var(--type-line-height-footnote);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .autosave-button-container {
+    border-width: 2px;
+  }
+  
+  .autosave-tag {
+    border-width: 2px;
+  }
+  
+  .autosave-tag-label,
+  .autosave-tag-timestamp {
+    opacity: 1;
+  }
+}
+
+/* Focus management */
+.autosave-with-tag:focus-within .autosave-button-container {
+  outline: 2px solid var(--primary-blue-blue);
+  outline-offset: 2px;
+}
