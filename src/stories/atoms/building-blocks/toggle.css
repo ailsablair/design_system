@@ -18,7 +18,7 @@
   flex: 1 0 0;
   align-self: stretch;
   position: relative;
-  border-radius: var(--spacing-radius-full);
+  border-radius: var(--spacing-radius-99999px);
   transition: var(--transition-normal);
 }
 
@@ -31,14 +31,14 @@
 }
 
 .toggle-slide-area.small.enabled {
-  padding-left: calc(var(--sizing-toggle-small-width) / 2 - var(--spacing-sizing-2px));
+  padding-left: 13px;
   justify-content: flex-end;
   background: var(--primary-sky-blue-sky-blue);
 }
 
 .toggle-slide-area.small.disabled-toggle {
-  padding-right: calc(var(--sizing-toggle-small-width) / 2 - var(--spacing-sizing-2px));
-  background: var(--base-white);
+  padding-right: 13px;
+  background: var(--primary-sky-blue-dark-sky-blue);
 }
 
 /* Default size slide area */
@@ -50,14 +50,14 @@
 }
 
 .toggle-slide-area.default.enabled {
-  padding-left: calc(var(--sizing-toggle-default-width) / 2 - var(--spacing-sizing-4px));
+  padding-left: 18px;
   justify-content: flex-end;
   background: var(--primary-sky-blue-sky-blue);
 }
 
 .toggle-slide-area.default.disabled-toggle {
-  padding-right: calc(var(--sizing-toggle-default-width) / 2 - var(--spacing-sizing-4px));
-  background: var(--base-white);
+  padding-right: 16px;
+  background: var(--primary-sky-blue-dark-sky-blue);
 }
 
 /* Large size slide area */
@@ -69,14 +69,14 @@
 }
 
 .toggle-slide-area.large.enabled {
-  padding-left: calc(var(--sizing-toggle-large-width) / 2 - var(--spacing-sizing-6px));
+  padding-left: 22px;
   justify-content: flex-end;
   background: var(--primary-sky-blue-sky-blue);
 }
 
 .toggle-slide-area.large.disabled-toggle {
-  padding-right: calc(var(--sizing-toggle-large-width) / 2 - var(--spacing-sizing-6px));
-  background: var(--base-white);
+  padding-right: 22px;
+  background: var(--primary-sky-blue-dark-sky-blue);
 }
 
 /* === TARGET AREA === */
