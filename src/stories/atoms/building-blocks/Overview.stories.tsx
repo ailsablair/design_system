@@ -135,6 +135,28 @@ export const Overview: Story = {
             Interactive range input controls
           </p>
         </div>
+
+        <div style={{
+          padding: '16px',
+          backgroundColor: 'var(--neutral-gray-gray-50)',
+          borderRadius: 'var(--spacing-radius-4px)',
+          border: '1px solid var(--neutral-gray-gray-200)'
+        }}>
+          <h4 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: '500' }}>Alerts</h4>
+          <p style={{ margin: '0 0 12px 0', fontSize: '14px', color: '#666' }}>
+            Notification banners with multiple sizes, colors, and configurations
+          </p>
+          <div style={{
+            padding: '8px 12px',
+            backgroundColor: 'var(--base-white)',
+            border: '1px solid var(--primary-blue-blue)',
+            borderRadius: 'var(--spacing-radius-4px)',
+            fontSize: '12px',
+            color: 'var(--primary-blue-blue)'
+          }}>
+            ℹ️ Alert message example
+          </div>
+        </div>
       </div>
 
       <div style={{
