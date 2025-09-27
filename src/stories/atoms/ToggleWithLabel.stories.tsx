@@ -1,5 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Toggle } from './building-blocks/Toggle';
+import './toggleWithLabel.css';
+
+type ToggleSize = 'small' | 'default' | 'large';
+
+type ToggleWithLabelProps = {
+  size: ToggleSize;
+  enabled?: boolean;
+};
 
 const meta: Meta<typeof Toggle> = {
   title: 'Atoms/Toggle with Label',
@@ -17,41 +25,18 @@ const meta: Meta<typeof Toggle> = {
 export default meta;
 type Story = StoryObj<typeof Toggle>;
 
-// Individual toggle with label component
-const ToggleWithLabel = ({ 
-  size, 
-  enabled = true 
-}: { 
-  size: 'small' | 'default' | 'large'; 
-  enabled?: boolean;
-}) => {
-  const getFontSize = (size: string) => {
-    switch (size) {
-      case 'small': return '14px';
-      case 'large': return '18px';
-      default: return '16px';
-    }
-  };
+const sizeClassMap: Record<ToggleSize, string> = {
+  small: 'toggle-with-label-row--small',
+  default: 'toggle-with-label-row--default',
+  large: 'toggle-with-label-row--large',
+};
 
+const ToggleWithLabel = ({ size, enabled = true }: ToggleWithLabelProps) => {
+  const labelText = 'This is the toggle label';
   return (
-    <div style={{ 
-      display: 'flex', 
-      alignItems: 'center', 
-      gap: '12px',
-      fontFamily: 'var(--type-typeface-archivo)',
-      fontSize: getFontSize(size),
-      fontWeight: '300',
-      lineHeight: size === 'small' ? '17px' : size === 'large' ? '24px' : '22px',
-      letterSpacing: '0.15px',
-      color: 'var(--base-black)'
-    }}>
-      <Toggle 
-        size={size} 
-        enabled={enabled} 
-        icon={true} 
-        state="default"
-      />
-      <span>This is the toggle label</span>
+    <div className={`toggle-with-label-row ${sizeClassMap[size]}`}>
+      <Toggle size={size} enabled={enabled} icon state="default" aria-label={labelText} />
+      <span className="toggle-with-label-text">{labelText}</span>
     </div>
   );
 };
@@ -91,26 +76,8 @@ export const LargeToggleWithLabel: Story = {
 
 export const FigmaDesignShowcase: Story = {
   render: () => (
-    <div style={{ 
-      display: 'flex', 
-      flexDirection: 'column', 
-      gap: '32px',
-      padding: '40px',
-      border: '2px dashed #8B5CF6',
-      borderRadius: '8px',
-      backgroundColor: '#F8FAFC',
-      minWidth: '400px'
-    }}>
-      <div style={{
-        fontSize: '18px',
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginBottom: '8px',
-        color: '#1E293B'
-      }}>
-        Figma Design - Toggle with Labels
-      </div>
-      
+    <div className="toggle-with-label-showcase">
+      <h2 className="toggle-with-label-heading">Figma Design - Toggle with Labels</h2>
       <ToggleWithLabel size="default" enabled={true} />
       <ToggleWithLabel size="large" enabled={true} />
       <ToggleWithLabel size="small" enabled={true} />
@@ -120,6 +87,102 @@ export const FigmaDesignShowcase: Story = {
     docs: {
       description: {
         story: 'Complete showcase matching the Figma design with all toggle sizes and their labels.',
+      },
+    },
+  },
+};
+
+export const AllSizes: Story = {
+  render: () => (
+    <div className="toggle-with-label-size-showcase">
+      <div className="toggle-with-label-size-row">
+        <span className="toggle-with-label-size-title">Small:</span>
+        <Toggle size="small" enabled={false} icon />
+        <Toggle size="small" enabled={true} icon />
+        <Toggle size="small" enabled={false} icon disabled={true} />
+        <Toggle size="small" enabled={true} icon disabled={true} />
+      </div>
+      <div className="toggle-with-label-size-row">
+        <span className="toggle-with-label-size-title">Default:</span>
+        <Toggle size="default" enabled={false} icon />
+        <Toggle size="default" enabled={true} icon />
+        <Toggle size="default" enabled={false} icon disabled={true} />
+        <Toggle size="default" enabled={true} icon disabled={true} />
+      </div>
+      <div className="toggle-with-label-size-row">
+        <span className="toggle-with-label-size-title">Large:</span>
+        <Toggle size="large" enabled={false} icon />
+        <Toggle size="large" enabled={true} icon />
+        <Toggle size="large" enabled={false} icon disabled={true} />
+        <Toggle size="large" enabled={true} icon disabled={true} />
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Overview of all toggle sizes showing disabled/enabled and normal/disabled states.',
+      },
+    },
+  },
+};
+
+export const AllStates: Story = {
+  render: () => (
+    <div className="toggle-state-showcase">
+      <h3 className="toggle-state-heading">Enabled True States</h3>
+      <div className="toggle-state-section">
+        <div className="toggle-state-row">
+          <span className="toggle-state-label">Default:</span>
+          <Toggle enabled={true} state="default" icon />
+        </div>
+        <div className="toggle-state-row">
+          <span className="toggle-state-label">Hover:</span>
+          <Toggle enabled={true} state="hover" icon />
+        </div>
+        <div className="toggle-state-row">
+          <span className="toggle-state-label">Focused:</span>
+          <Toggle enabled={true} state="focused" icon />
+        </div>
+        <div className="toggle-state-row">
+          <span className="toggle-state-label">Clicked:</span>
+          <Toggle enabled={true} state="clicked" icon />
+        </div>
+        <div className="toggle-state-row">
+          <span className="toggle-state-label">Disabled:</span>
+          <Toggle enabled={true} state="disabled" icon disabled={true} />
+        </div>
+      </div>
+
+      <h3 className="toggle-state-heading toggle-state-heading--spaced">Enabled False States</h3>
+      <div className="toggle-state-section">
+        <div className="toggle-state-row">
+          <span className="toggle-state-label">Default:</span>
+          <Toggle enabled={false} state="default" icon />
+        </div>
+        <div className="toggle-state-row">
+          <span className="toggle-state-label">Hover:</span>
+          <Toggle enabled={false} state="hover" icon />
+        </div>
+        <div className="toggle-state-row">
+          <span className="toggle-state-label">Focused:</span>
+          <Toggle enabled={false} state="focused" icon />
+        </div>
+        <div className="toggle-state-row">
+          <span className="toggle-state-label">Clicked:</span>
+          <Toggle enabled={false} state="clicked" icon />
+        </div>
+        <div className="toggle-state-row">
+          <span className="toggle-state-label">Disabled:</span>
+          <Toggle enabled={false} state="disabled" icon disabled={true} />
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Complete overview of all toggle states for both enabled and disabled variations.',
       },
     },
   },
