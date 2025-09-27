@@ -145,7 +145,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: var(--spacing-radius-full);
+  border-radius: var(--spacing-radius-99999px);
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-dark-sky-blue);
   position: relative;
