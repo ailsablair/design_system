@@ -1,4 +1,3 @@
-import type { Preview } from '@storybook/react';
 import React, { type PropsWithChildren, useEffect } from 'react';
 import type { Decorator, Preview as StorybookPreview } from '@storybook/react-vite';
 
