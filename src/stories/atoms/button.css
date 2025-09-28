@@ -1863,7 +1863,7 @@
 }
 
 .button.info.outline.loading .button-icon {
-  color: #95A0E5;
+  color: var(--primary-blue-blue-300);
   opacity: 0.6;
 }
 
