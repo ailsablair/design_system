@@ -1034,29 +1034,49 @@
 /* Ghost button variant - Updated for Figma design */
 .button.ghost {
   background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500);
-  color: var(--neutral-gray-gray-600);
+  border: var(--spacing-stroke-0-5px) solid #6D7280;
+  color: #1C1C1C;
 }
 
 .button.ghost .button-icon {
-  color: var(--neutral-gray-gray-600);
+  color: #4B5563;
   opacity: 0.6;
 }
 
-/* Error button variant */
+.button.ghost .button-text {
+  font-weight: var(--type-weight-light);
+}
+
+/* Error button variant - Updated for Figma design */
 .button.error {
-  background: var(--status-red, #CE2031);
-  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--status-red-light, #FFF3F3);
-  color: var(--base-white, #FFFFFF);
+  background: #CE2031;
+  border: var(--spacing-stroke-0-5px) solid #FFF3F3;
+  color: var(--base-white);
 }
 
 .button.error .button-icon {
-  color: var(--base-white, #FFFFFF);
+  color: var(--base-white);
   opacity: 0.6;
 }
 
 .button.error .button-text {
-  font-weight: var(--type-weight-medium, 500);
+  font-weight: var(--type-weight-medium);
+}
+
+/* Error outline button variant - Updated for Figma design */
+.button.error.outline {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid #CE2031;
+  color: #CE2031;
+}
+
+.button.error.outline .button-icon {
+  color: #CE2031;
+  opacity: 0.6;
+}
+
+.button.error.outline .button-text {
+  font-weight: var(--type-weight-medium);
 }
 
 /* Warning button variant - Updated for Figma design */
@@ -1072,20 +1092,36 @@
 }
 
 .button.warning .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-medium);
+}
+
+/* Warning outline button variant - Updated for Figma design */
+.button.warning.outline {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid #F4A403;
+  color: #D07C06;
+}
+
+.button.warning.outline .button-icon {
+  color: #D07C06;
+  opacity: 0.6;
+}
+
+.button.warning.outline .button-text {
+  font-weight: var(--type-weight-medium);
 }
 
 /* State variants for ghost buttons - Updated for Figma design */
 .button.ghost.default {
   background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500);
+  border: var(--spacing-stroke-0-5px) solid #6D7280;
 }
 
 .button.ghost.hover,
 .button.ghost:hover:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500);
-  box-shadow: 1px 1px 0 0 var(--neutral-gray-gray-300);
+  border: var(--spacing-stroke-0-5px) solid #6D7280;
+  box-shadow: 1px 1px 0 0 #D2D5DA;
 }
 
 .button.ghost.hover .button-text,
@@ -1096,8 +1132,8 @@
 .button.ghost.clicked,
 .button.ghost:active:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-500);
-  box-shadow: 0 1px 3px 0 rgba(39, 39, 39, 0.05);
+  border: var(--spacing-stroke-1px) solid #6D7280;
+  box-shadow: 1px 1px 0 0 #E5E7EB;
 }
 
 .button.ghost.clicked .button-text,
@@ -1108,30 +1144,35 @@
 .button.ghost.focused,
 .button.ghost:focus-visible:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-500);
+  border: var(--spacing-stroke-2px) solid #6D7280;
+  color: #4B5563;
+}
+
+.button.ghost.focused .button-text {
+  color: #4B5563;
 }
 
 .button.ghost.loading {
   background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500);
+  border: var(--spacing-stroke-0-5px) solid #6D7280;
   cursor: wait;
   pointer-events: none;
 }
 
 .button.ghost.loading .button-loading-content {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .button.ghost.disabled {
-  background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
-  color: var(--neutral-gray-gray-300);
+  background: #F9FAFB;
+  border: var(--spacing-stroke-0-5px) solid #E5E7EB;
+  color: #D2D5DA;
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .button.ghost.disabled .button-icon {
-  color: var(--neutral-gray-gray-300);
+  color: #D2D5DA;
   opacity: 0.6;
 }
 
@@ -1179,15 +1220,71 @@
 }
 
 .button.error.disabled {
-  background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
-  color: var(--neutral-gray-gray-300);
+  background: #F9FAFB;
+  border: var(--spacing-stroke-0-5px) solid #E5E7EB;
+  color: #D2D5DA;
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .button.error.disabled .button-icon {
-  color: var(--neutral-gray-gray-300);
+  color: #D2D5DA;
+  opacity: 0.6;
+}
+
+/* State variants for error outline buttons - Updated for Figma design */
+.button.error.outline.default {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid #CE2031;
+}
+
+.button.error.outline.hover,
+.button.error.outline:hover:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-2px) solid #CE2031;
+  box-shadow: 1px 1px 0 0 #FFF3F3;
+}
+
+.button.error.outline.hover .button-text,
+.button.error.outline:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.error.outline.clicked,
+.button.error.outline:active:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-2px) solid #CE2031;
+  box-shadow: 1px 1px 0 0 #FFF3F3;
+}
+
+.button.error.outline.clicked .button-text,
+.button.error.outline:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+.button.error.outline.focused,
+.button.error.outline:focus-visible:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-2px) solid #CE2031;
+}
+
+.button.error.outline.loading {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid #CE2031;
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.error.outline.disabled {
+  background: #F9FAFB;
+  border: var(--spacing-stroke-0-5px) solid #E5E7EB;
+  color: #D2D5DA;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.error.outline.disabled .button-icon {
+  color: #D2D5DA;
   opacity: 0.6;
 }
 
@@ -1200,8 +1297,8 @@
 .button.warning.hover,
 .button.warning:hover:not(.disabled):not(.loading) {
   background: #F4A403;
-  border: var(--spacing-stroke-1px) solid #D07C06;
-  box-shadow: 1px 1px 0 0 #D2D5DA;
+  border: var(--spacing-stroke-2px) solid #F4A403;
+  box-shadow: 1px 1px 0 0 #D07C06;
 }
 
 .button.warning.hover .button-text,
@@ -1212,8 +1309,8 @@
 .button.warning.clicked,
 .button.warning:active:not(.disabled):not(.loading) {
   background: #F4A403;
-  border: var(--spacing-stroke-1px) solid #D07C06;
-  box-shadow: 1px 1px 0 0 #D2D5DA;
+  border: var(--spacing-stroke-2px) solid #F4A403;
+  box-shadow: 1px 1px 0 0 #D07C06;
 }
 
 .button.warning.clicked .button-text,
@@ -1224,7 +1321,7 @@
 .button.warning.focused,
 .button.warning:focus-visible:not(.disabled):not(.loading) {
   background: #F4A403;
-  border: var(--spacing-stroke-2px) solid #D07C06;
+  border: var(--spacing-stroke-3px) solid #F4A403;
 }
 
 .button.warning.loading {
@@ -1235,23 +1332,79 @@
 }
 
 .button.warning.disabled {
-  background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
-  color: var(--neutral-gray-gray-300);
+  background: #F9FAFB;
+  border: var(--spacing-stroke-0-5px) solid #E5E7EB;
+  color: #D2D5DA;
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .button.warning.disabled .button-icon {
-  color: var(--neutral-gray-gray-300);
+  color: #D2D5DA;
   opacity: 0.6;
 }
 
-/* Force state classes for ghost buttons */
+/* State variants for warning outline buttons - Updated for Figma design */
+.button.warning.outline.default {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid #F4A403;
+}
+
+.button.warning.outline.hover,
+.button.warning.outline:hover:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-2px) solid #F4A403;
+  box-shadow: 1px 1px 0 0 #D07C06;
+}
+
+.button.warning.outline.hover .button-text,
+.button.warning.outline:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.warning.outline.clicked,
+.button.warning.outline:active:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-2px) solid #F4A403;
+  box-shadow: 1px 1px 0 0 #D07C06;
+}
+
+.button.warning.outline.clicked .button-text,
+.button.warning.outline:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.warning.outline.focused,
+.button.warning.outline:focus-visible:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-3px) solid #F4A403;
+}
+
+.button.warning.outline.loading {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid #F4A403;
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.warning.outline.disabled {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid #E5E7EB;
+  color: #D2D5DA;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.warning.outline.disabled .button-icon {
+  color: #D2D5DA;
+  opacity: 0.6;
+}
+
+/* Force state classes for ghost buttons - Updated for Figma design */
 .button.ghost.force-hover {
   background: var(--base-white) !important;
-  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-400) !important;
-  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-200) !important;
+  border: var(--spacing-stroke-0-5px) solid #6D7280 !important;
+  box-shadow: 1px 1px 0 0 #D2D5DA !important;
 }
 
 .button.ghost.force-hover .button-text {
@@ -1260,8 +1413,8 @@
 
 .button.ghost.force-clicked {
   background: var(--base-white) !important;
-  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-400) !important;
-  box-shadow: 3px 3px 0 0 var(--neutral-gray-gray-200) !important;
+  border: var(--spacing-stroke-1px) solid #6D7280 !important;
+  box-shadow: 1px 1px 0 0 #E5E7EB !important;
 }
 
 .button.ghost.force-clicked .button-text {
@@ -1270,44 +1423,75 @@
 
 .button.ghost.force-focused {
   background: var(--base-white) !important;
-  border: var(--spacing-stroke-3px) solid var(--neutral-gray-gray-400) !important;
-  color: var(--neutral-gray-gray-800) !important;
+  border: var(--spacing-stroke-2px) solid #6D7280 !important;
+  color: #4B5563 !important;
+}
+
+.button.ghost.force-focused .button-text {
+  color: #4B5563 !important;
 }
 
 .button.ghost.force-focused .button-icon {
-  color: var(--neutral-gray-gray-800) !important;
+  color: #4B5563 !important;
 }
 
-/* Force state classes for error buttons */
+/* Force state classes for error buttons - Updated for Figma design */
 .button.error.force-hover {
-  background: var(--status-red, #CE2031) !important;
-  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--status-red-light, #FFF3F3) !important;
+  background: #CE2031 !important;
+  border: var(--spacing-stroke-2px) solid #CE2031 !important;
+  box-shadow: 1px 1px 0 0 #FFF3F3 !important;
 }
 
 .button.error.force-hover .button-text {
-  font-weight: var(--type-weight-medium, 500) !important;
+  font-weight: var(--type-weight-bold) !important;
 }
 
 .button.error.force-clicked {
-  background: var(--status-red, #CE2031) !important;
-  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--status-red-light, #FFF3F3) !important;
+  background: #CE2031 !important;
+  border: var(--spacing-stroke-2px) solid #CE2031 !important;
+  box-shadow: 1px 1px 0 0 #FFF3F3 !important;
 }
 
 .button.error.force-clicked .button-text {
-  font-weight: var(--type-weight-medium, 500) !important;
+  font-weight: var(--type-weight-medium) !important;
 }
 
 .button.error.force-focused {
-  border: var(--spacing-stroke-2px, 2px) solid var(--status-red-light, #FFF3F3) !important;
-  outline: var(--spacing-stroke-2px, 2px) solid var(--status-red, #CE2031) !important;
-  outline-offset: var(--spacing-sizing-2px, 2px) !important;
+  background: #CE2031 !important;
+  border: var(--spacing-stroke-2px) solid #FFF3F3 !important;
+}
+
+/* Force state classes for error outline buttons - Updated for Figma design */
+.button.error.outline.force-hover {
+  background: var(--base-white) !important;
+  border: var(--spacing-stroke-2px) solid #CE2031 !important;
+  box-shadow: 1px 1px 0 0 #FFF3F3 !important;
+}
+
+.button.error.outline.force-hover .button-text {
+  font-weight: var(--type-weight-bold) !important;
+}
+
+.button.error.outline.force-clicked {
+  background: var(--base-white) !important;
+  border: var(--spacing-stroke-2px) solid #CE2031 !important;
+  box-shadow: 1px 1px 0 0 #FFF3F3 !important;
+}
+
+.button.error.outline.force-clicked .button-text {
+  font-weight: var(--type-weight-medium) !important;
+}
+
+.button.error.outline.force-focused {
+  background: var(--base-white) !important;
+  border: var(--spacing-stroke-2px) solid #CE2031 !important;
 }
 
 /* Force state classes for warning buttons - Updated for Figma design */
 .button.warning.force-hover {
   background: #F4A403 !important;
-  border: var(--spacing-stroke-1px) solid #D07C06 !important;
-  box-shadow: 1px 1px 0 0 #D2D5DA !important;
+  border: var(--spacing-stroke-2px) solid #F4A403 !important;
+  box-shadow: 1px 1px 0 0 #D07C06 !important;
 }
 
 .button.warning.force-hover .button-text {
@@ -1316,8 +1500,8 @@
 
 .button.warning.force-clicked {
   background: #F4A403 !important;
-  border: var(--spacing-stroke-1px) solid #D07C06 !important;
-  box-shadow: 1px 1px 0 0 #D2D5DA !important;
+  border: var(--spacing-stroke-2px) solid #F4A403 !important;
+  box-shadow: 1px 1px 0 0 #D07C06 !important;
 }
 
 .button.warning.force-clicked .button-text {
@@ -1326,7 +1510,33 @@
 
 .button.warning.force-focused {
   background: #F4A403 !important;
-  border: var(--spacing-stroke-2px) solid #D07C06 !important;
+  border: var(--spacing-stroke-3px) solid #F4A403 !important;
+}
+
+/* Force state classes for warning outline buttons - Updated for Figma design */
+.button.warning.outline.force-hover {
+  background: var(--base-white) !important;
+  border: var(--spacing-stroke-2px) solid #F4A403 !important;
+  box-shadow: 1px 1px 0 0 #D07C06 !important;
+}
+
+.button.warning.outline.force-hover .button-text {
+  font-weight: var(--type-weight-bold) !important;
+}
+
+.button.warning.outline.force-clicked {
+  background: var(--base-white) !important;
+  border: var(--spacing-stroke-2px) solid #F4A403 !important;
+  box-shadow: 1px 1px 0 0 #D07C06 !important;
+}
+
+.button.warning.outline.force-clicked .button-text {
+  font-weight: var(--type-weight-bold) !important;
+}
+
+.button.warning.outline.force-focused {
+  background: var(--base-white) !important;
+  border: var(--spacing-stroke-3px) solid #F4A403 !important;
 }
 
 /* Special hover effects for extra-small ghost buttons - Updated for Figma design */
