@@ -369,8 +369,8 @@
 
 /* Icon-only tertiary buttons use different background */
 .button.tertiary.icon-only {
-  background: #8BBF9F;
-  border: var(--spacing-stroke-0-5px) solid #8BBF9F;
+  background: var(--primary-seafoam-seafoam);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-seafoam-seafoam);
 }
 
 /* Tertiary outline button variant - Updated for Figma design */
@@ -612,33 +612,33 @@
 
 /* Icon-only tertiary button states */
 .button.tertiary.icon-only.default {
-  background: #8BBF9F;
-  border: var(--spacing-stroke-0-5px) solid #8BBF9F;
+  background: var(--primary-seafoam-seafoam);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-seafoam-seafoam);
 }
 
 .button.tertiary.icon-only.hover,
 .button.tertiary.icon-only:hover:not(.disabled):not(.loading) {
-  background: #8BBF9F;
-  border: var(--spacing-stroke-1px) solid #8BBF9F;
+  background: var(--primary-seafoam-seafoam);
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-seafoam);
   box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.tertiary.icon-only.clicked,
 .button.tertiary.icon-only:active:not(.disabled):not(.loading) {
-  background: #8BBF9F;
-  border: var(--spacing-stroke-1px) solid #8BBF9F;
+  background: var(--primary-seafoam-seafoam);
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-seafoam);
   box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.tertiary.icon-only.focused,
 .button.tertiary.icon-only:focus-visible:not(.disabled):not(.loading) {
-  background: #8BBF9F;
-  border: var(--spacing-stroke-2px) solid #8BBF9F;
+  background: var(--primary-seafoam-seafoam);
+  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-seafoam);
 }
 
 .button.tertiary.icon-only.loading {
-  background: #8BBF9F;
-  border: var(--spacing-stroke-0-5px) solid #8BBF9F;
+  background: var(--primary-seafoam-seafoam);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-seafoam-seafoam);
   cursor: wait;
   pointer-events: none;
 }
@@ -900,20 +900,20 @@
 
 /* Force state classes for tertiary icon-only buttons */
 .button.tertiary.icon-only.force-hover {
-  background: #8BBF9F !important;
-  border: var(--spacing-stroke-1px) solid #8BBF9F !important;
+  background: var(--primary-seafoam-seafoam) !important;
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-seafoam) !important;
   box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
 }
 
 .button.tertiary.icon-only.force-clicked {
-  background: #8BBF9F !important;
-  border: var(--spacing-stroke-1px) solid #8BBF9F !important;
+  background: var(--primary-seafoam-seafoam) !important;
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-seafoam) !important;
   box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
 }
 
 .button.tertiary.icon-only.force-focused {
-  background: #8BBF9F !important;
-  border: var(--spacing-stroke-2px) solid #8BBF9F !important;
+  background: var(--primary-seafoam-seafoam) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-seafoam) !important;
 }
 
 /* Force state classes for tertiary outline buttons - Updated for Figma design */
@@ -1963,7 +1963,7 @@
 }
 
 .button.success.outline.loading .button-icon {
-  color: #8BBF9F;
+  color: var(--primary-seafoam-seafoam);
   opacity: 0.6;
 }
 
