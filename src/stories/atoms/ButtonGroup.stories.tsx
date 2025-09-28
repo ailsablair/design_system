@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ButtonGroup, AlignRightIcon, AlignCenterIcon, AlignDistributeIcon, AlignLeftIcon, FilterIcon, SortIcon, MoreActionsIcon } from './ButtonGroup';
 import { Button } from './Button';
 import { SplitButton } from './button/SplitButton';
