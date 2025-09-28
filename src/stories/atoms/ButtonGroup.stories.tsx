@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ButtonGroup } from './ButtonGroup';
+import { ButtonGroup, AlignRightIcon, AlignCenterIcon, AlignDistributeIcon, AlignLeftIcon, FilterIcon, SortIcon, MoreActionsIcon } from './ButtonGroup';
 import { Button } from './Button';
 import { SplitButton } from './button/SplitButton';
 
@@ -13,6 +13,22 @@ const AlarmIcon: React.FC<{ size?: number }> = ({ size = 18 }) => (
   </svg>
 );
 
+const ArrowDownIcon: React.FC<{ size?: number }> = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.6">
+      <path d="M8.25 4.5V10.5L5.625 7.875L4.56 8.94L9 13.38L13.44 8.94L12.375 7.875L9.75 10.5V4.5H8.25ZM9 16.5C8.01509 16.5 7.03982 16.306 6.12987 15.9291C5.21993 15.5522 4.39314 14.9997 3.6967 14.3033C2.29018 12.8968 1.5 10.9891 1.5 9C1.5 7.01088 2.29018 5.10322 3.6967 3.6967C5.10322 2.29018 7.01088 1.5 9 1.5C9.98491 1.5 10.9602 1.69399 11.8701 2.0709C12.7801 2.44781 13.6069 3.00026 14.3033 3.6967C14.9997 4.39314 15.5522 5.21993 15.9291 6.12987C16.306 7.03982 16.5 8.01509 16.5 9C16.5 10.9891 15.7098 12.8968 14.3033 14.3033C12.8968 15.7098 10.9891 16.5 9 16.5Z" fill="currentColor"/>
+    </g>
+  </svg>
+);
+
+const ChevronDownIcon: React.FC<{ size?: number }> = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.6">
+      <path d="M5.5575 6.43506L9 9.87756L12.4425 6.43506L13.5 7.50006L9 12.0001L4.5 7.50006L5.5575 6.43506Z" fill="currentColor"/>
+    </g>
+  </svg>
+);
+
 const meta: Meta<typeof ButtonGroup> = {
   title: 'Atoms/ButtonGroup',
   component: ButtonGroup,
@@ -20,7 +36,7 @@ const meta: Meta<typeof ButtonGroup> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'ButtonGroup component for organizing multiple buttons in cohesive layouts. Supports different sizes, orientations, and gap configurations. Matches the Figma design specifications for button/group layouts.',
+        component: 'ButtonGroup component for organizing multiple buttons in cohesive layouts. Supports different sizes, types, states, orientations, and gap configurations. Matches the comprehensive Figma design specifications for button/group layouts.',
       },
     },
   },
@@ -32,8 +48,13 @@ const meta: Meta<typeof ButtonGroup> = {
     },
     type: {
       control: 'select',
-      options: ['default', 'split', 'icon-only'],
+      options: ['default', 'split', 'icon-only', 'many-icons', 'table-actions'],
       description: 'Group layout type',
+    },
+    state: {
+      control: 'select',
+      options: ['default', 'secondary', 'tertiary', 'ghost', 'multi'],
+      description: 'Button group state/variant',
     },
     orientation: {
       control: 'select',
@@ -44,6 +65,10 @@ const meta: Meta<typeof ButtonGroup> = {
       control: 'select',
       options: ['none', 'small', 'default', 'large'],
       description: 'Gap between buttons',
+    },
+    connected: {
+      control: 'boolean',
+      description: 'Whether buttons should be connected with shared borders',
     },
     fullWidth: {
       control: 'boolean',
@@ -66,10 +91,10 @@ const menuItems = [
 export const Default: Story = {
   render: () => (
     <ButtonGroup size="default" type="default">
-      <Button type="primary" leadingIcon={<AlarmIcon />} trailingIcon={<AlarmIcon />}>
+      <Button variant="primary" leadingIcon={<AlarmIcon />} trailingIcon={<ArrowDownIcon />}>
         Label
       </Button>
-      <Button type="ghost" leadingIcon={<AlarmIcon />} trailingIcon={<AlarmIcon />}>
+      <Button variant="ghost" leadingIcon={<AlarmIcon />} trailingIcon={<ArrowDownIcon />}>
         Label
       </Button>
     </ButtonGroup>
@@ -82,7 +107,7 @@ export const SplitButtonGroup: Story = {
       <SplitButton type="primary" menuItems={menuItems}>
         Label
       </SplitButton>
-      <Button type="ghost">
+      <Button variant="ghost">
         Label
       </Button>
     </ButtonGroup>
@@ -92,319 +117,507 @@ export const SplitButtonGroup: Story = {
 export const IconOnlyGroup: Story = {
   render: () => (
     <ButtonGroup size="default" type="icon-only">
-      <Button type="primary" iconOnly icon={<AlarmIcon />} />
-      <Button type="ghost" iconOnly icon={<AlarmIcon />} />
+      <Button variant="primary" iconOnly icon={<AlarmIcon />} />
+      <Button variant="ghost" iconOnly icon={<AlarmIcon />} />
     </ButtonGroup>
   ),
 };
 
-// Size variants showcase
-export const AllSizes: Story = {
+export const ManyIconsGroup: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'center' }}>
-      <div style={{ textAlign: 'center' }}>
-        <h4 style={{ margin: 0, fontSize: '16px', fontWeight: '600', marginBottom: '8px' }}>
-          Button Group Sizes
-        </h4>
-        <p style={{ margin: 0, fontSize: '14px', color: '#666', marginBottom: '24px' }}>
-          All available size variants for button groups
-        </p>
-      </div>
-      
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'center' }}>
-        {/* Extra Small */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-          <h6 style={{ margin: 0, fontSize: '12px', fontWeight: '600', color: '#888' }}>Extra Small</h6>
-          <ButtonGroup size="extra-small" type="default">
-            <Button type="primary" leadingIcon={<AlarmIcon size={14} />}>
-              Button w/ leading icon
-            </Button>
-            <Button type="ghost" leadingIcon={<AlarmIcon size={14} />}>
-              Button w/ leading icon
-            </Button>
-          </ButtonGroup>
-        </div>
-        
-        {/* Small */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-          <h6 style={{ margin: 0, fontSize: '12px', fontWeight: '600', color: '#888' }}>Small</h6>
-          <ButtonGroup size="small" type="default">
-            <Button type="primary" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<AlarmIcon size={14} />}>
-              Label
-            </Button>
-            <Button type="ghost" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<AlarmIcon size={14} />}>
-              Label
-            </Button>
-          </ButtonGroup>
-        </div>
-        
-        {/* Default */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-          <h6 style={{ margin: 0, fontSize: '12px', fontWeight: '600', color: '#888' }}>Default</h6>
-          <ButtonGroup size="default" type="default">
-            <Button type="primary" leadingIcon={<AlarmIcon />} trailingIcon={<AlarmIcon />}>
-              Label
-            </Button>
-            <Button type="ghost" leadingIcon={<AlarmIcon />} trailingIcon={<AlarmIcon />}>
-              Label
-            </Button>
-          </ButtonGroup>
-        </div>
-        
-        {/* Large */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-          <h6 style={{ margin: 0, fontSize: '12px', fontWeight: '600', color: '#888' }}>Large</h6>
-          <ButtonGroup size="large" type="default">
-            <Button type="primary" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<AlarmIcon size={20} />}>
-              Label
-            </Button>
-            <Button type="ghost" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<AlarmIcon size={20} />}>
-              Label
-            </Button>
-          </ButtonGroup>
-        </div>
-      </div>
-    </div>
+    <ButtonGroup size="small" type="many-icons" state="default" connected>
+      <Button variant="primary" iconOnly icon={<AlignRightIcon />} />
+      <Button variant="primary" iconOnly icon={<AlignCenterIcon />} />
+      <Button variant="primary" iconOnly icon={<AlignDistributeIcon />} />
+      <Button variant="primary" iconOnly icon={<AlignLeftIcon />} />
+    </ButtonGroup>
   ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Showcase of all available button group sizes with consistent button styling.',
-      },
-    },
-  },
 };
 
-// Type variants showcase
-export const AllTypes: Story = {
+export const TableActionsGroup: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', alignItems: 'center' }}>
-      <div style={{ textAlign: 'center' }}>
-        <h4 style={{ margin: 0, fontSize: '16px', fontWeight: '600', marginBottom: '8px' }}>
-          Button Group Types
-        </h4>
-        <p style={{ margin: 0, fontSize: '14px', color: '#666', marginBottom: '24px' }}>
-          Different layout types for button groups
-        </p>
-      </div>
-      
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
-        {/* Default Type */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
-          <h6 style={{ margin: 0, fontSize: '12px', fontWeight: '600', color: '#888' }}>Default</h6>
-          <ButtonGroup size="default" type="default">
-            <Button type="primary" leadingIcon={<AlarmIcon />} trailingIcon={<AlarmIcon />}>
-              Label
-            </Button>
-            <Button type="ghost" leadingIcon={<AlarmIcon />} trailingIcon={<AlarmIcon />}>
-              Label
-            </Button>
-          </ButtonGroup>
-        </div>
-        
-        {/* Split Type */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
-          <h6 style={{ margin: 0, fontSize: '12px', fontWeight: '600', color: '#888' }}>Split</h6>
-          <ButtonGroup size="default" type="split">
-            <SplitButton type="primary" menuItems={menuItems}>
-              Label
-            </SplitButton>
-            <Button type="ghost">
-              Label
-            </Button>
-          </ButtonGroup>
-        </div>
-        
-        {/* Icon Only Type */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
-          <h6 style={{ margin: 0, fontSize: '12px', fontWeight: '600', color: '#888' }}>Icon Only</h6>
-          <ButtonGroup size="default" type="icon-only">
-            <Button type="primary" iconOnly icon={<AlarmIcon />} />
-            <Button type="ghost" iconOnly icon={<AlarmIcon />} />
-          </ButtonGroup>
-        </div>
-      </div>
-    </div>
+    <ButtonGroup size="small" type="table-actions" state="default">
+      <Button variant="primary" leadingIcon={<FilterIcon />}>
+        Filter
+      </Button>
+      <Button variant="primary" leadingIcon={<SortIcon />}>
+        Sort
+      </Button>
+      <Button variant="primary" leadingIcon={<MoreActionsIcon />}>
+        More actions
+      </Button>
+    </ButtonGroup>
   ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Showcase of all available button group types with their specific layouts.',
-      },
-    },
-  },
 };
 
-// Figma Design Showcase
-export const FigmaShowcase: Story = {
+// Complete Figma Design Implementation
+export const FigmaCompleteShowcase: Story = {
   render: () => (
-    <div className="button-group-showcase">
-      <div>
-        <h4 style={{ margin: 0, fontSize: '18px', fontWeight: '600', marginBottom: '8px' }}>
-          Button Groups - Figma Implementation
-        </h4>
-        <p style={{ margin: 0, fontSize: '14px', color: '#666', marginBottom: '32px' }}>
-          Complete implementation of button/group component from Figma designs
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '48px', padding: '24px', background: '#f8f9fa' }}>
+      <div style={{ textAlign: 'center' }}>
+        <h2 style={{ margin: 0, fontSize: '24px', fontWeight: '600', marginBottom: '8px' }}>
+          Button Groups - Complete Figma Implementation
+        </h2>
+        <p style={{ margin: 0, fontSize: '16px', color: '#666', marginBottom: '32px' }}>
+          Comprehensive implementation of all button/group variants from Figma designs
         </p>
       </div>
-      
-      {/* Small Size Groups */}
-      <div className="button-group-showcase-section">
-        <h5 className="button-group-showcase-title">Small Size Groups</h5>
-        <div className="button-group-showcase-grid">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', color: '#666' }}>Default</span>
-            <ButtonGroup size="small" type="default" className="figma-layout">
-              <Button type="primary" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<AlarmIcon size={14} />}>
-                Label
-              </Button>
-              <Button type="ghost" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<AlarmIcon size={14} />}>
-                Label
-              </Button>
-            </ButtonGroup>
-          </div>
+
+      {/* Default & Split & Icon-Only Groups - All Sizes */}
+      <section>
+        <h3 style={{ margin: 0, fontSize: '18px', fontWeight: '600', marginBottom: '24px' }}>
+          Standard Button Groups
+        </h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
           
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', color: '#666' }}>Split</span>
-            <ButtonGroup size="small" type="split" className="figma-layout">
-              <SplitButton type="primary" size="small" menuItems={menuItems}>
-                Label
-              </SplitButton>
-              <Button type="ghost" size="small">
-                Label
-              </Button>
-            </ButtonGroup>
+          {/* Small Size */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <h4 style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: '#555' }}>Small Size</h4>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Default</span>
+                <ButtonGroup size="small" type="default">
+                  <Button variant="primary" size="small" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
+                    Label
+                  </Button>
+                  <Button variant="ghost" size="small" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
+                    Label
+                  </Button>
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Split</span>
+                <ButtonGroup size="small" type="split">
+                  <SplitButton type="primary" size="small" menuItems={menuItems}>
+                    Label
+                  </SplitButton>
+                  <Button variant="ghost" size="small">
+                    Label
+                  </Button>
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Icon Only</span>
+                <ButtonGroup size="small" type="icon-only">
+                  <Button variant="primary" size="small" iconOnly icon={<AlarmIcon size={14} />} />
+                  <Button variant="ghost" size="small" iconOnly icon={<AlarmIcon size={14} />} />
+                </ButtonGroup>
+              </div>
+            </div>
           </div>
-          
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', color: '#666' }}>Icon Only</span>
-            <ButtonGroup size="small" type="icon-only" className="figma-layout">
-              <Button type="primary" size="small" iconOnly icon={<AlarmIcon size={14} />} />
-              <Button type="ghost" size="small" iconOnly icon={<AlarmIcon size={14} />} />
-            </ButtonGroup>
+
+          {/* Default Size */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <h4 style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: '#555' }}>Default Size</h4>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Default</span>
+                <ButtonGroup size="default" type="default">
+                  <Button variant="primary" leadingIcon={<AlarmIcon />} trailingIcon={<ArrowDownIcon />}>
+                    Label
+                  </Button>
+                  <Button variant="ghost" leadingIcon={<AlarmIcon />} trailingIcon={<ArrowDownIcon />}>
+                    Label
+                  </Button>
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Split</span>
+                <ButtonGroup size="default" type="split">
+                  <SplitButton type="primary" menuItems={menuItems}>
+                    Label
+                  </SplitButton>
+                  <Button variant="ghost">
+                    Label
+                  </Button>
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Icon Only</span>
+                <ButtonGroup size="default" type="icon-only">
+                  <Button variant="primary" iconOnly icon={<AlarmIcon />} />
+                  <Button variant="ghost" iconOnly icon={<AlarmIcon />} />
+                </ButtonGroup>
+              </div>
+            </div>
+          </div>
+
+          {/* Large Size */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <h4 style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: '#555' }}>Large Size</h4>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Default</span>
+                <ButtonGroup size="large" type="default">
+                  <Button variant="primary" size="large" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>
+                    Label
+                  </Button>
+                  <Button variant="ghost" size="large" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>
+                    Label
+                  </Button>
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Split</span>
+                <ButtonGroup size="large" type="split">
+                  <SplitButton type="primary" size="large" menuItems={menuItems}>
+                    Label
+                  </SplitButton>
+                  <Button variant="ghost" size="large">
+                    Label
+                  </Button>
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Icon Only</span>
+                <ButtonGroup size="large" type="icon-only">
+                  <Button variant="primary" size="large" iconOnly icon={<AlarmIcon size={20} />} />
+                  <Button variant="ghost" size="large" iconOnly icon={<AlarmIcon size={20} />} />
+                </ButtonGroup>
+              </div>
+            </div>
+          </div>
+
+          {/* Extra Small Size */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <h4 style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: '#555' }}>Extra Small Size</h4>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Default</span>
+                <ButtonGroup size="extra-small" type="default">
+                  <Button variant="primary" size="extra-small" leadingIcon={<AlarmIcon size={14} />}>
+                    Button w/ leading icon
+                  </Button>
+                  <Button variant="ghost" size="extra-small" leadingIcon={<AlarmIcon size={14} />}>
+                    Button w/ leading icon
+                  </Button>
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Split</span>
+                <ButtonGroup size="extra-small" type="split">
+                  <SplitButton type="primary" size="extra-small" menuItems={menuItems}>
+                    Label
+                  </SplitButton>
+                  <Button variant="ghost" size="extra-small">
+                    Label
+                  </Button>
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Icon Only</span>
+                <ButtonGroup size="extra-small" type="icon-only">
+                  <Button variant="primary" size="extra-small" iconOnly icon={<AlarmIcon size={14} />} />
+                  <Button variant="ghost" size="extra-small" iconOnly icon={<AlarmIcon size={14} />} />
+                </ButtonGroup>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      
-      {/* Default Size Groups */}
-      <div className="button-group-showcase-section">
-        <h5 className="button-group-showcase-title">Default Size Groups</h5>
-        <div className="button-group-showcase-grid">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', color: '#666' }}>Default</span>
-            <ButtonGroup size="default" type="default" className="figma-layout">
-              <Button type="primary" leadingIcon={<AlarmIcon />} trailingIcon={<AlarmIcon />}>
-                Label
-              </Button>
-              <Button type="ghost" leadingIcon={<AlarmIcon />} trailingIcon={<AlarmIcon />}>
-                Label
-              </Button>
-            </ButtonGroup>
-          </div>
+      </section>
+
+      {/* Many-Icons Groups (Toolbar Style) */}
+      <section>
+        <h3 style={{ margin: 0, fontSize: '18px', fontWeight: '600', marginBottom: '24px' }}>
+          Many-Icons Groups (Toolbar Style)
+        </h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
           
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', color: '#666' }}>Split</span>
-            <ButtonGroup size="default" type="split" className="figma-layout">
-              <SplitButton type="primary" size="default" menuItems={menuItems}>
-                Label
-              </SplitButton>
-              <Button type="ghost" size="default">
-                Label
-              </Button>
-            </ButtonGroup>
+          {/* Small Many-Icons */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <h4 style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: '#555' }}>Small Size</h4>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Default</span>
+                <ButtonGroup size="small" type="many-icons" state="default" connected>
+                  <Button variant="primary" size="small" iconOnly icon={<AlignRightIcon />} />
+                  <Button variant="primary" size="small" iconOnly icon={<AlignCenterIcon />} />
+                  <Button variant="primary" size="small" iconOnly icon={<AlignDistributeIcon />} />
+                  <Button variant="primary" size="small" iconOnly icon={<AlignLeftIcon />} />
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Secondary</span>
+                <ButtonGroup size="small" type="many-icons" state="secondary" connected>
+                  <Button variant="secondary" size="small" iconOnly icon={<AlignRightIcon />} />
+                  <Button variant="secondary" size="small" iconOnly icon={<AlignCenterIcon />} />
+                  <Button variant="secondary" size="small" iconOnly icon={<AlignDistributeIcon />} />
+                  <Button variant="secondary" size="small" iconOnly icon={<AlignLeftIcon />} />
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Tertiary</span>
+                <ButtonGroup size="small" type="many-icons" state="tertiary" connected>
+                  <Button variant="tertiary" size="small" iconOnly icon={<AlignRightIcon />} />
+                  <Button variant="tertiary" size="small" iconOnly icon={<AlignCenterIcon />} />
+                  <Button variant="tertiary" size="small" iconOnly icon={<AlignDistributeIcon />} />
+                  <Button variant="tertiary" size="small" iconOnly icon={<AlignLeftIcon />} />
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Ghost</span>
+                <ButtonGroup size="small" type="many-icons" state="ghost" connected>
+                  <Button variant="ghost" size="small" iconOnly icon={<AlignRightIcon />} />
+                  <Button variant="ghost" size="small" iconOnly icon={<AlignCenterIcon />} />
+                  <Button variant="ghost" size="small" iconOnly icon={<AlignDistributeIcon />} />
+                  <Button variant="ghost" size="small" iconOnly icon={<AlignLeftIcon />} />
+                </ButtonGroup>
+              </div>
+            </div>
           </div>
-          
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', color: '#666' }}>Icon Only</span>
-            <ButtonGroup size="default" type="icon-only" className="figma-layout">
-              <Button type="primary" size="default" iconOnly icon={<AlarmIcon />} />
-              <Button type="ghost" size="default" iconOnly icon={<AlarmIcon />} />
-            </ButtonGroup>
+
+          {/* Extra Small Many-Icons */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <h4 style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: '#555' }}>Extra Small Size</h4>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Default</span>
+                <ButtonGroup size="extra-small" type="many-icons" state="default" connected>
+                  <Button variant="primary" size="extra-small" iconOnly icon={<AlignRightIcon size={14} />} />
+                  <Button variant="primary" size="extra-small" iconOnly icon={<AlignCenterIcon size={14} />} />
+                  <Button variant="primary" size="extra-small" iconOnly icon={<AlignDistributeIcon size={14} />} />
+                  <Button variant="primary" size="extra-small" iconOnly icon={<AlignLeftIcon size={14} />} />
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Secondary</span>
+                <ButtonGroup size="extra-small" type="many-icons" state="secondary" connected>
+                  <Button variant="secondary" size="extra-small" iconOnly icon={<AlignRightIcon size={14} />} />
+                  <Button variant="secondary" size="extra-small" iconOnly icon={<AlignCenterIcon size={14} />} />
+                  <Button variant="secondary" size="extra-small" iconOnly icon={<AlignDistributeIcon size={14} />} />
+                  <Button variant="secondary" size="extra-small" iconOnly icon={<AlignLeftIcon size={14} />} />
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Tertiary</span>
+                <ButtonGroup size="extra-small" type="many-icons" state="tertiary" connected>
+                  <Button variant="tertiary" size="extra-small" iconOnly icon={<AlignRightIcon size={14} />} />
+                  <Button variant="tertiary" size="extra-small" iconOnly icon={<AlignCenterIcon size={14} />} />
+                  <Button variant="tertiary" size="extra-small" iconOnly icon={<AlignDistributeIcon size={14} />} />
+                  <Button variant="tertiary" size="extra-small" iconOnly icon={<AlignLeftIcon size={14} />} />
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Ghost</span>
+                <ButtonGroup size="extra-small" type="many-icons" state="ghost" connected>
+                  <Button variant="ghost" size="extra-small" iconOnly icon={<AlignRightIcon size={14} />} />
+                  <Button variant="ghost" size="extra-small" iconOnly icon={<AlignCenterIcon size={14} />} />
+                  <Button variant="ghost" size="extra-small" iconOnly icon={<AlignDistributeIcon size={14} />} />
+                  <Button variant="ghost" size="extra-small" iconOnly icon={<AlignLeftIcon size={14} />} />
+                </ButtonGroup>
+              </div>
+            </div>
+          </div>
+
+          {/* Large Many-Icons */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <h4 style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: '#555' }}>Large Size</h4>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Default</span>
+                <ButtonGroup size="large" type="many-icons" state="default" connected>
+                  <Button variant="primary" size="large" iconOnly icon={<AlignRightIcon size={20} />} />
+                  <Button variant="primary" size="large" iconOnly icon={<AlignCenterIcon size={20} />} />
+                  <Button variant="primary" size="large" iconOnly icon={<AlignDistributeIcon size={20} />} />
+                  <Button variant="primary" size="large" iconOnly icon={<AlignLeftIcon size={20} />} />
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Tertiary</span>
+                <ButtonGroup size="large" type="many-icons" state="tertiary" connected>
+                  <Button variant="tertiary" size="large" iconOnly icon={<AlignRightIcon size={20} />} />
+                  <Button variant="tertiary" size="large" iconOnly icon={<AlignCenterIcon size={20} />} />
+                  <Button variant="tertiary" size="large" iconOnly icon={<AlignDistributeIcon size={20} />} />
+                  <Button variant="tertiary" size="large" iconOnly icon={<AlignLeftIcon size={20} />} />
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Ghost</span>
+                <ButtonGroup size="large" type="many-icons" state="ghost" connected>
+                  <Button variant="ghost" size="large" iconOnly icon={<AlignRightIcon size={20} />} />
+                  <Button variant="ghost" size="large" iconOnly icon={<AlignCenterIcon size={20} />} />
+                  <Button variant="ghost" size="large" iconOnly icon={<AlignDistributeIcon size={20} />} />
+                  <Button variant="ghost" size="large" iconOnly icon={<AlignLeftIcon size={20} />} />
+                </ButtonGroup>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      
-      {/* Large Size Groups */}
-      <div className="button-group-showcase-section">
-        <h5 className="button-group-showcase-title">Large Size Groups</h5>
-        <div className="button-group-showcase-grid">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', color: '#666' }}>Default</span>
-            <ButtonGroup size="large" type="default" className="figma-layout">
-              <Button type="primary" size="large" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<AlarmIcon size={20} />}>
-                Label
-              </Button>
-              <Button type="ghost" size="large" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<AlarmIcon size={20} />}>
-                Label
-              </Button>
-            </ButtonGroup>
-          </div>
+      </section>
+
+      {/* Table Actions Groups */}
+      <section>
+        <h3 style={{ margin: 0, fontSize: '18px', fontWeight: '600', marginBottom: '24px' }}>
+          Table Actions Groups
+        </h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
           
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', color: '#666' }}>Split</span>
-            <ButtonGroup size="large" type="split" className="figma-layout">
-              <SplitButton type="primary" size="large" menuItems={menuItems}>
-                Label
-              </SplitButton>
-              <Button type="ghost" size="large">
-                Label
-              </Button>
-            </ButtonGroup>
+          {/* Small Table Actions */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <h4 style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: '#555' }}>Small Size</h4>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Default</span>
+                <ButtonGroup size="small" type="table-actions" state="default">
+                  <Button variant="primary" size="small" leadingIcon={<FilterIcon />}>Filter</Button>
+                  <Button variant="primary" size="small" leadingIcon={<SortIcon />}>Sort</Button>
+                  <Button variant="primary" size="small" leadingIcon={<MoreActionsIcon />}>More actions</Button>
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Ghost</span>
+                <ButtonGroup size="small" type="table-actions" state="ghost">
+                  <Button variant="ghost" size="small" leadingIcon={<FilterIcon />}>Filter</Button>
+                  <Button variant="ghost" size="small" leadingIcon={<SortIcon />}>Sort</Button>
+                  <Button variant="ghost" size="small" leadingIcon={<MoreActionsIcon />}>More actions</Button>
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Multi</span>
+                <ButtonGroup size="small" type="table-actions" state="multi">
+                  <Button variant="ghost" size="small" leadingIcon={<FilterIcon />}>Filter</Button>
+                  <Button variant="ghost" size="small" leadingIcon={<SortIcon />}>Sort</Button>
+                  <Button variant="primary" size="small" leadingIcon={<MoreActionsIcon />}>More actions</Button>
+                </ButtonGroup>
+              </div>
+            </div>
           </div>
-          
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', color: '#666' }}>Icon Only</span>
-            <ButtonGroup size="large" type="icon-only" className="figma-layout">
-              <Button type="primary" size="large" iconOnly icon={<AlarmIcon size={20} />} />
-              <Button type="ghost" size="large" iconOnly icon={<AlarmIcon size={20} />} />
-            </ButtonGroup>
+
+          {/* Default Table Actions */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <h4 style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: '#555' }}>Default Size</h4>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Default</span>
+                <ButtonGroup size="default" type="table-actions" state="default">
+                  <Button variant="primary" leadingIcon={<FilterIcon size={18} />}>Filter</Button>
+                  <Button variant="primary" leadingIcon={<SortIcon size={18} />}>Sort</Button>
+                  <Button variant="primary" leadingIcon={<MoreActionsIcon size={18} />}>More actions</Button>
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Ghost</span>
+                <ButtonGroup size="default" type="table-actions" state="ghost">
+                  <Button variant="ghost" leadingIcon={<FilterIcon size={18} />}>Filter</Button>
+                  <Button variant="ghost" leadingIcon={<SortIcon size={18} />}>Sort</Button>
+                  <Button variant="ghost" leadingIcon={<MoreActionsIcon size={18} />}>More actions</Button>
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Multi</span>
+                <ButtonGroup size="default" type="table-actions" state="multi">
+                  <Button variant="ghost" leadingIcon={<FilterIcon size={18} />}>Filter</Button>
+                  <Button variant="ghost" leadingIcon={<SortIcon size={18} />}>Sort</Button>
+                  <Button variant="primary" leadingIcon={<MoreActionsIcon size={18} />}>More actions</Button>
+                </ButtonGroup>
+              </div>
+            </div>
+          </div>
+
+          {/* Large Table Actions */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <h4 style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: '#555' }}>Large Size</h4>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Default</span>
+                <ButtonGroup size="large" type="table-actions" state="default">
+                  <Button variant="primary" size="large" leadingIcon={<FilterIcon size={20} />}>Filter</Button>
+                  <Button variant="primary" size="large" leadingIcon={<SortIcon size={20} />}>Sort</Button>
+                  <Button variant="primary" size="large" leadingIcon={<MoreActionsIcon size={20} />}>More actions</Button>
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Ghost</span>
+                <ButtonGroup size="large" type="table-actions" state="ghost">
+                  <Button variant="ghost" size="large" leadingIcon={<FilterIcon size={20} />}>Filter</Button>
+                  <Button variant="ghost" size="large" leadingIcon={<SortIcon size={20} />}>Sort</Button>
+                  <Button variant="ghost" size="large" leadingIcon={<MoreActionsIcon size={20} />}>More actions</Button>
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Multi</span>
+                <ButtonGroup size="large" type="table-actions" state="multi">
+                  <Button variant="ghost" size="large" leadingIcon={<FilterIcon size={20} />}>Filter</Button>
+                  <Button variant="ghost" size="large" leadingIcon={<SortIcon size={20} />}>Sort</Button>
+                  <Button variant="primary" size="large" leadingIcon={<MoreActionsIcon size={20} />}>More actions</Button>
+                </ButtonGroup>
+              </div>
+            </div>
+          </div>
+
+          {/* Extra Small Table Actions */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <h4 style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: '#555' }}>Extra Small Size</h4>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Default</span>
+                <ButtonGroup size="extra-small" type="table-actions" state="default">
+                  <Button variant="primary" size="extra-small" leadingIcon={<FilterIcon size={14} />}>Filter</Button>
+                  <Button variant="primary" size="extra-small" leadingIcon={<SortIcon size={14} />}>Sort</Button>
+                  <Button variant="primary" size="extra-small" leadingIcon={<MoreActionsIcon size={14} />}>More actions</Button>
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Ghost</span>
+                <ButtonGroup size="extra-small" type="table-actions" state="ghost">
+                  <Button variant="ghost" size="extra-small" leadingIcon={<FilterIcon size={14} />}>Filter</Button>
+                  <Button variant="ghost" size="extra-small" leadingIcon={<SortIcon size={14} />}>Sort</Button>
+                  <Button variant="ghost" size="extra-small" leadingIcon={<MoreActionsIcon size={14} />}>More actions</Button>
+                </ButtonGroup>
+              </div>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                <span style={{ fontSize: '12px', color: '#888' }}>Multi</span>
+                <ButtonGroup size="extra-small" type="table-actions" state="multi">
+                  <Button variant="ghost" size="extra-small" leadingIcon={<FilterIcon size={14} />}>Filter</Button>
+                  <Button variant="ghost" size="extra-small" leadingIcon={<SortIcon size={14} />}>Sort</Button>
+                  <Button variant="primary" size="extra-small" leadingIcon={<MoreActionsIcon size={14} />}>More actions</Button>
+                </ButtonGroup>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      
-      {/* Extra Small Size Groups */}
-      <div className="button-group-showcase-section">
-        <h5 className="button-group-showcase-title">Extra Small Size Groups</h5>
-        <div className="button-group-showcase-grid">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', color: '#666' }}>Default</span>
-            <ButtonGroup size="extra-small" type="default" className="figma-layout">
-              <Button type="primary" size="extra-small" leadingIcon={<AlarmIcon size={14} />}>
-                Button w/ leading icon
-              </Button>
-              <Button type="ghost" size="extra-small" leadingIcon={<AlarmIcon size={14} />}>
-                Button w/ leading icon
-              </Button>
-            </ButtonGroup>
-          </div>
-          
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', color: '#666' }}>Split</span>
-            <ButtonGroup size="extra-small" type="split" className="figma-layout">
-              <SplitButton type="primary" size="extra-small" menuItems={menuItems}>
-                Label
-              </SplitButton>
-              <Button type="ghost" size="extra-small">
-                Label
-              </Button>
-            </ButtonGroup>
-          </div>
-          
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', color: '#666' }}>Icon Only</span>
-            <ButtonGroup size="extra-small" type="icon-only" className="figma-layout">
-              <Button type="primary" size="extra-small" iconOnly icon={<AlarmIcon size={14} />} />
-              <Button type="ghost" size="extra-small" iconOnly icon={<AlarmIcon size={14} />} />
-            </ButtonGroup>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: 'Complete showcase of all button group configurations matching the Figma button/group designs with accurate sizing, spacing, and layout.',
+        story: 'Complete implementation of all button group variations from the Figma design, including standard groups, many-icons toolbar groups, and table actions groups across all sizes and states.',
       },
     },
   },
@@ -447,32 +660,28 @@ export const Interactive: Story = {
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'center' }}>
           <ButtonGroup size="default" type="default">
-            <Button type="primary" onClick={() => handleAction('Primary Action')}>
+            <Button variant="primary" onClick={() => handleAction('Primary Action')}>
               Primary
             </Button>
-            <Button type="secondary" onClick={() => handleAction('Secondary Action')}>
+            <Button variant="secondary" onClick={() => handleAction('Secondary Action')}>
               Secondary
             </Button>
-            <Button type="ghost" onClick={() => handleAction('Ghost Action')}>
+            <Button variant="ghost" onClick={() => handleAction('Ghost Action')}>
               Ghost
             </Button>
           </ButtonGroup>
           
-          <ButtonGroup size="default" type="split">
-            <SplitButton 
-              type="primary" 
-              menuItems={[
-                { id: 'save', label: 'Save', onClick: () => handleAction('Save from menu') },
-                { id: 'save-as', label: 'Save As', onClick: () => handleAction('Save As from menu') },
-                { id: 'export', label: 'Export', onClick: () => handleAction('Export from menu') },
-              ]}
-              onClick={() => handleAction('Split Button Main')}
-            >
-              Actions
-            </SplitButton>
-            <Button type="ghost" onClick={() => handleAction('Cancel')}>
-              Cancel
-            </Button>
+          <ButtonGroup size="small" type="many-icons" state="default" connected>
+            <Button variant="primary" size="small" iconOnly icon={<AlignRightIcon />} onClick={() => handleAction('Align Right')} />
+            <Button variant="primary" size="small" iconOnly icon={<AlignCenterIcon />} onClick={() => handleAction('Align Center')} />
+            <Button variant="primary" size="small" iconOnly icon={<AlignDistributeIcon />} onClick={() => handleAction('Distribute')} />
+            <Button variant="primary" size="small" iconOnly icon={<AlignLeftIcon />} onClick={() => handleAction('Align Left')} />
+          </ButtonGroup>
+
+          <ButtonGroup size="small" type="table-actions" state="multi">
+            <Button variant="ghost" size="small" leadingIcon={<FilterIcon />} onClick={() => handleAction('Filter')}>Filter</Button>
+            <Button variant="ghost" size="small" leadingIcon={<SortIcon />} onClick={() => handleAction('Sort')}>Sort</Button>
+            <Button variant="primary" size="small" leadingIcon={<MoreActionsIcon />} onClick={() => handleAction('More Actions')}>More actions</Button>
           </ButtonGroup>
         </div>
       </div>
