@@ -361,7 +361,6 @@ export const DataTable: React.FC<DataTableProps> = ({
   showPagination = true,
   currentPage = 1,
   totalPages = 1,
-  pageSize = 10,
   selectedRowIds: selectedRowIdsProp,
   allRowsSelected = false,
   className = '',
