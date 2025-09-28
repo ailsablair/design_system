@@ -48,13 +48,18 @@ export const AvatarContent: React.FC<AvatarContentProps> = ({
   onClick
 }) => {
   // Determine avatar size based on content size
-  const getAvatarSize = () => {
+  const getAvatarSize = (): AvatarProps['size'] => {
     switch (size) {
-      case 'x-small': return 'x-small';
-      case 'small': return 'small';
-      case 'default': return 'default';
-      case 'large': return 'large';
-      default: return 'default';
+      case 'x-small':
+        return 'x-small';
+      case 'small':
+        return 'small';
+      case 'default':
+        return 'default';
+      case 'large':
+        return 'large';
+      default:
+        return 'default';
     }
   };
 
@@ -98,10 +103,10 @@ export const AvatarContent: React.FC<AvatarContentProps> = ({
       tabIndex={onClick ? 0 : undefined}
     >
       <Avatar
-        size={getAvatarSize() as any}
-        type={avatar.type || 'profile-photo'}
-        shape={avatar.shape || 'default'}
-        border={avatar.border || false}
+        size={getAvatarSize()}
+        type={avatar.type ?? 'profile-photo'}
+        shape={avatar.shape ?? 'default'}
+        border={avatar.border ?? false}
         src={avatar.src}
         alt={name}
         initial={avatar.initial || (name ? name.charAt(0).toUpperCase() : 'U')}
