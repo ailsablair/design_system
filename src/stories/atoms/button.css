@@ -283,10 +283,26 @@
   opacity: 0.6;
 }
 
+/* Secondary outline button variant - Updated for Figma design */
+.button.secondary.outline {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid #0BA7EA;
+  color: var(--base-black);
+}
+
+.button.secondary.outline .button-icon {
+  color: var(--base-black);
+  opacity: 0.6;
+}
+
+.button.secondary.outline .button-text {
+  font-weight: var(--type-weight-light);
+}
+
 /* Tertiary button variant - Updated for Figma design */
 .button.tertiary {
-  background: #8BBF9F;
-  border: var(--spacing-stroke-0-5px) solid #8BBF9F;
+  background: #AED2BC;
+  border: var(--spacing-stroke-1px) solid #4B6D58;
   color: var(--base-black);
 }
 
@@ -295,16 +311,22 @@
   opacity: 0.4;
 }
 
+/* Icon-only tertiary buttons use different background */
+.button.tertiary.icon-only {
+  background: #8BBF9F;
+  border: var(--spacing-stroke-0-5px) solid #8BBF9F;
+}
+
 /* Tertiary outline button variant - Updated for Figma design */
 .button.tertiary.outline {
   background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid #8BBF9F;
+  border: var(--spacing-stroke-1px) solid #0BA7EA;
   color: var(--base-black);
 }
 
 .button.tertiary.outline .button-icon {
   color: var(--base-black);
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 .button.tertiary.outline .button-text {
@@ -464,28 +486,28 @@
 }
 
 .button.secondary.disabled {
-  background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
-  color: var(--neutral-gray-gray-300);
+  background: #F9FAFB;
+  border: var(--spacing-stroke-1px) solid #E5E7EB;
+  color: #D2D5DA;
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .button.secondary.disabled .button-icon {
-  color: var(--neutral-gray-gray-300);
+  color: #D2D5DA;
   opacity: 0.6;
 }
 
 /* State variants for tertiary buttons - Updated for Figma design */
 .button.tertiary.default {
-  background: #8BBF9F;
-  border: var(--spacing-stroke-0-5px) solid #8BBF9F;
+  background: #AED2BC;
+  border: var(--spacing-stroke-1px) solid #4B6D58;
 }
 
 .button.tertiary.hover,
 .button.tertiary:hover:not(.disabled):not(.loading) {
-  background: #8BBF9F;
-  border: var(--spacing-stroke-1px) solid #8BBF9F;
+  background: #AED2BC;
+  border: var(--spacing-stroke-2px) solid #4B6D58;
   box-shadow: 1px 1px 0 0 #6171DF;
 }
 
@@ -496,8 +518,8 @@
 
 .button.tertiary.clicked,
 .button.tertiary:active:not(.disabled):not(.loading) {
-  background: #8BBF9F;
-  border: var(--spacing-stroke-1px) solid #8BBF9F;
+  background: #AED2BC;
+  border: var(--spacing-stroke-2px) solid #4B6D58;
   box-shadow: 1px 1px 0 0 #6171DF;
 }
 
@@ -508,27 +530,70 @@
 
 .button.tertiary.focused,
 .button.tertiary:focus-visible:not(.disabled):not(.loading) {
+  background: #AED2BC;
+  border: var(--spacing-stroke-3px) solid #4B6D58;
+}
+
+.button.tertiary.loading {
+  background: #AED2BC;
+  border: var(--spacing-stroke-1px) solid #4B6D58;
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.tertiary.disabled {
+  background: #F9FAFB;
+  border: var(--spacing-stroke-1px) solid #E5E7EB;
+  color: #D2D5DA;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.tertiary.disabled .button-icon {
+  color: #D2D5DA;
+  opacity: 0.6;
+}
+
+/* Icon-only tertiary button states */
+.button.tertiary.icon-only.default {
+  background: #8BBF9F;
+  border: var(--spacing-stroke-0-5px) solid #8BBF9F;
+}
+
+.button.tertiary.icon-only.hover,
+.button.tertiary.icon-only:hover:not(.disabled):not(.loading) {
+  background: #8BBF9F;
+  border: var(--spacing-stroke-1px) solid #8BBF9F;
+  box-shadow: 1px 1px 0 0 #6171DF;
+}
+
+.button.tertiary.icon-only.clicked,
+.button.tertiary.icon-only:active:not(.disabled):not(.loading) {
+  background: #8BBF9F;
+  border: var(--spacing-stroke-1px) solid #8BBF9F;
+  box-shadow: 1px 1px 0 0 #6171DF;
+}
+
+.button.tertiary.icon-only.focused,
+.button.tertiary.icon-only:focus-visible:not(.disabled):not(.loading) {
   background: #8BBF9F;
   border: var(--spacing-stroke-2px) solid #8BBF9F;
 }
 
-.button.tertiary.loading {
+.button.tertiary.icon-only.loading {
   background: #8BBF9F;
   border: var(--spacing-stroke-0-5px) solid #8BBF9F;
   cursor: wait;
   pointer-events: none;
 }
 
-.button.tertiary.disabled {
-  background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
-  color: var(--neutral-gray-gray-300);
-  cursor: not-allowed;
-  pointer-events: none;
+.button.tertiary.icon-only.disabled {
+  background: #F9FAFB;
+  border: var(--spacing-stroke-1px) solid #E5E7EB;
 }
 
-.button.tertiary.disabled .button-icon {
-  color: var(--neutral-gray-gray-300);
+.button.tertiary.icon-only.disabled .button-icon {
+  color: #D2D5DA;
   opacity: 0.6;
 }
 
@@ -587,13 +652,13 @@
 }
 
 .button.extra-small.secondary.disabled {
-  background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
-  color: var(--neutral-gray-gray-300);
+  background: #F9FAFB;
+  border: var(--spacing-stroke-0-5px) solid #E5E7EB;
+  color: #D2D5DA;
 }
 
 .button.extra-small.secondary.disabled .button-icon {
-  color: var(--neutral-gray-gray-300);
+  color: #D2D5DA;
   opacity: 0.6;
 }
 
@@ -669,16 +734,42 @@
   border: var(--spacing-stroke-1px) solid #0BA7EA !important;
 }
 
+/* Force state classes for secondary outline buttons - Updated for Figma design */
+.button.secondary.outline.force-hover {
+  background: var(--base-white) !important;
+  border: var(--spacing-stroke-1px) solid #0BA7EA !important;
+  box-shadow: 1px 1px 0 0 #6171DF !important;
+}
+
+.button.secondary.outline.force-hover .button-text {
+  font-weight: var(--type-weight-medium) !important;
+}
+
+.button.secondary.outline.force-clicked {
+  background: var(--base-white) !important;
+  border: var(--spacing-stroke-1px) solid #0BA7EA !important;
+  box-shadow: 1px 1px 0 0 #6171DF !important;
+}
+
+.button.secondary.outline.force-clicked .button-text {
+  font-weight: var(--type-weight-medium) !important;
+}
+
+.button.secondary.outline.force-focused {
+  background: var(--base-white) !important;
+  border: var(--spacing-stroke-2px) solid #0BA7EA !important;
+}
+
 /* State variants for tertiary outline buttons - Updated for Figma design */
 .button.tertiary.outline.default {
   background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid #8BBF9F;
+  border: var(--spacing-stroke-1px) solid #0BA7EA;
 }
 
 .button.tertiary.outline.hover,
 .button.tertiary.outline:hover:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid #8BBF9F;
+  border: var(--spacing-stroke-1px) solid #0BA7EA;
   box-shadow: 1px 1px 0 0 #6171DF;
 }
 
@@ -690,7 +781,7 @@
 .button.tertiary.outline.clicked,
 .button.tertiary.outline:active:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid #8BBF9F;
+  border: var(--spacing-stroke-1px) solid #0BA7EA;
   box-shadow: 1px 1px 0 0 #6171DF;
 }
 
@@ -702,33 +793,33 @@
 .button.tertiary.outline.focused,
 .button.tertiary.outline:focus-visible:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-2px) solid #8BBF9F;
+  border: var(--spacing-stroke-2px) solid #0BA7EA;
 }
 
 .button.tertiary.outline.loading {
   background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid #8BBF9F;
+  border: var(--spacing-stroke-1px) solid #0BA7EA;
   cursor: wait;
   pointer-events: none;
 }
 
 .button.tertiary.outline.disabled {
-  background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
-  color: var(--neutral-gray-gray-300);
+  background: #F9FAFB;
+  border: var(--spacing-stroke-2px) solid #E5E7EB;
+  color: #D2D5DA;
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .button.tertiary.outline.disabled .button-icon {
-  color: var(--neutral-gray-gray-300);
+  color: #D2D5DA;
   opacity: 0.6;
 }
 
 /* Force state classes for tertiary buttons - Updated for Figma design */
 .button.tertiary.force-hover {
-  background: #8BBF9F !important;
-  border: var(--spacing-stroke-1px) solid #8BBF9F !important;
+  background: #AED2BC !important;
+  border: var(--spacing-stroke-2px) solid #4B6D58 !important;
   box-shadow: 1px 1px 0 0 #6171DF !important;
 }
 
@@ -737,8 +828,8 @@
 }
 
 .button.tertiary.force-clicked {
-  background: #8BBF9F !important;
-  border: var(--spacing-stroke-1px) solid #8BBF9F !important;
+  background: #AED2BC !important;
+  border: var(--spacing-stroke-2px) solid #4B6D58 !important;
   box-shadow: 1px 1px 0 0 #6171DF !important;
 }
 
@@ -747,6 +838,24 @@
 }
 
 .button.tertiary.force-focused {
+  background: #AED2BC !important;
+  border: var(--spacing-stroke-3px) solid #4B6D58 !important;
+}
+
+/* Force state classes for tertiary icon-only buttons */
+.button.tertiary.icon-only.force-hover {
+  background: #8BBF9F !important;
+  border: var(--spacing-stroke-1px) solid #8BBF9F !important;
+  box-shadow: 1px 1px 0 0 #6171DF !important;
+}
+
+.button.tertiary.icon-only.force-clicked {
+  background: #8BBF9F !important;
+  border: var(--spacing-stroke-1px) solid #8BBF9F !important;
+  box-shadow: 1px 1px 0 0 #6171DF !important;
+}
+
+.button.tertiary.icon-only.force-focused {
   background: #8BBF9F !important;
   border: var(--spacing-stroke-2px) solid #8BBF9F !important;
 }
@@ -754,7 +863,7 @@
 /* Force state classes for tertiary outline buttons - Updated for Figma design */
 .button.tertiary.outline.force-hover {
   background: var(--base-white) !important;
-  border: var(--spacing-stroke-1px) solid #8BBF9F !important;
+  border: var(--spacing-stroke-1px) solid #0BA7EA !important;
   box-shadow: 1px 1px 0 0 #6171DF !important;
 }
 
@@ -764,7 +873,7 @@
 
 .button.tertiary.outline.force-clicked {
   background: var(--base-white) !important;
-  border: var(--spacing-stroke-1px) solid #8BBF9F !important;
+  border: var(--spacing-stroke-1px) solid #0BA7EA !important;
   box-shadow: 1px 1px 0 0 #6171DF !important;
 }
 
@@ -774,7 +883,7 @@
 
 .button.tertiary.outline.force-focused {
   background: var(--base-white) !important;
-  border: var(--spacing-stroke-2px) solid #8BBF9F !important;
+  border: var(--spacing-stroke-2px) solid #0BA7EA !important;
 }
 
 .button.force-hover.extra-small {
