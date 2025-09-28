@@ -1298,7 +1298,7 @@
 .button.warning:hover:not(.disabled):not(.loading) {
   background: var(--status-orange-alt);
   border: var(--spacing-stroke-2px) solid var(--status-orange-alt);
-  box-shadow: 1px 1px 0 0 #D07C06;
+  box-shadow: 1px 1px 0 0 var(--status-dark-orange);
 }
 
 .button.warning.hover .button-text,
@@ -1310,7 +1310,7 @@
 .button.warning:active:not(.disabled):not(.loading) {
   background: var(--status-orange-alt);
   border: var(--spacing-stroke-2px) solid var(--status-orange-alt);
-  box-shadow: 1px 1px 0 0 #D07C06;
+  box-shadow: 1px 1px 0 0 var(--status-dark-orange);
 }
 
 .button.warning.clicked .button-text,
@@ -1354,7 +1354,7 @@
 .button.warning.outline:hover:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-2px) solid var(--status-orange-alt);
-  box-shadow: 1px 1px 0 0 #D07C06;
+  box-shadow: 1px 1px 0 0 var(--status-dark-orange);
 }
 
 .button.warning.outline.hover .button-text,
@@ -1366,7 +1366,7 @@
 .button.warning.outline:active:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-2px) solid var(--status-orange-alt);
-  box-shadow: 1px 1px 0 0 #D07C06;
+  box-shadow: 1px 1px 0 0 var(--status-dark-orange);
 }
 
 .button.warning.outline.clicked .button-text,
@@ -1491,7 +1491,7 @@
 .button.warning.force-hover {
   background: var(--status-orange-alt) !important;
   border: var(--spacing-stroke-2px) solid var(--status-orange-alt) !important;
-  box-shadow: 1px 1px 0 0 #D07C06 !important;
+  box-shadow: 1px 1px 0 0 var(--status-dark-orange) !important;
 }
 
 .button.warning.force-hover .button-text {
@@ -1501,7 +1501,7 @@
 .button.warning.force-clicked {
   background: var(--status-orange-alt) !important;
   border: var(--spacing-stroke-2px) solid var(--status-orange-alt) !important;
-  box-shadow: 1px 1px 0 0 #D07C06 !important;
+  box-shadow: 1px 1px 0 0 var(--status-dark-orange) !important;
 }
 
 .button.warning.force-clicked .button-text {
@@ -1517,7 +1517,7 @@
 .button.warning.outline.force-hover {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-2px) solid var(--status-orange-alt) !important;
-  box-shadow: 1px 1px 0 0 #D07C06 !important;
+  box-shadow: 1px 1px 0 0 var(--status-dark-orange) !important;
 }
 
 .button.warning.outline.force-hover .button-text {
@@ -1527,7 +1527,7 @@
 .button.warning.outline.force-clicked {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-2px) solid var(--status-orange-alt) !important;
-  box-shadow: 1px 1px 0 0 #D07C06 !important;
+  box-shadow: 1px 1px 0 0 var(--status-dark-orange) !important;
 }
 
 .button.warning.outline.force-clicked .button-text {
