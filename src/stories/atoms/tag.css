@@ -42,6 +42,14 @@
   line-height: var(--type-line-height-label-lg);
 }
 
+.tag.tag-shape-pill {
+  border-radius: var(--spacing-radius-full);
+}
+
+.tag.tag-shape-rounded {
+  border-radius: var(--spacing-radius-8px);
+}
+
 /* Primary color variants - Filled styles (matching Figma) */
 .tag.blue {
   background: var(--primary-blue-blue-500);
@@ -284,6 +292,18 @@
   overflow: visible;
   text-overflow: clip;
   min-width: 0;
+}
+
+.tag-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tag-leading-icon,
+.tag-trailing-icon {
+  color: inherit;
 }
 
 /* Close button styling */
