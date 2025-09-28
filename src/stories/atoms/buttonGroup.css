@@ -9,71 +9,228 @@
 }
 
 /* Orientation variants */
-.button-group.horizontal {
+.button-group--orientation-horizontal {
   flex-direction: row;
 }
 
-.button-group.vertical {
+.button-group--orientation-vertical {
   flex-direction: column;
 }
 
 /* Gap variants */
-.button-group.gap-none {
+.button-group--gap-none {
   gap: 0;
 }
 
-.button-group.gap-small {
+.button-group--gap-small {
   gap: var(--spacing-sizing-4px);
 }
 
-.button-group.gap-default {
+.button-group--gap-default {
   gap: var(--spacing-sizing-8px);
 }
 
-.button-group.gap-large {
+.button-group--gap-large {
   gap: var(--spacing-sizing-16px);
 }
 
 /* Full width styling */
-.button-group.full-width {
+.button-group--full-width {
   width: 100%;
 }
 
-.button-group.full-width > * {
+.button-group--full-width > * {
   flex: 1;
 }
 
 /* Size-specific styling */
-.button-group.extra-small {
+.button-group--size-extra-small {
   min-height: 27px;
 }
 
-.button-group.small {
+.button-group--size-small {
   min-height: 30px;
 }
 
-.button-group.default {
+.button-group--size-default {
   min-height: 42px;
 }
 
-.button-group.large {
+.button-group--size-large {
   min-height: 52px;
 }
 
 /* Type-specific styling for different button group layouts */
-.button-group.default {
+.button-group--type-default {
   align-items: center;
   justify-content: flex-start;
+  gap: var(--spacing-sizing-8px);
 }
 
-.button-group.split {
+.button-group--type-split {
   align-items: center;
   justify-content: space-between;
+  gap: var(--spacing-sizing-8px);
 }
 
-.button-group.icon-only {
+.button-group--type-icon-only {
   align-items: center;
   justify-content: center;
+  gap: var(--spacing-sizing-6px);
+}
+
+.button-group--type-many-icons {
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+}
+
+.button-group--type-table-actions {
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--spacing-sizing-8px);
+}
+
+/* Connected button groups (no gaps, shared borders) */
+.button-group--connected {
+  gap: 0;
+}
+
+.button-group--connected > .button:not(:first-child) {
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.button-group--connected > .button:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.button-group--connected > .button:first-child {
+  border-radius: var(--spacing-radius-4px) 0 0 var(--spacing-radius-4px);
+}
+
+.button-group--connected > .button:last-child {
+  border-radius: 0 var(--spacing-radius-4px) var(--spacing-radius-4px) 0;
+}
+
+.button-group--connected > .button:only-child {
+  border-radius: var(--spacing-radius-4px);
+}
+
+/* Many-icons button group styling (toolbar style) */
+.button-group--type-many-icons.button-group--connected .button {
+  min-width: 30px;
+  max-width: 30px;
+  min-height: 30px;
+  max-height: 30px;
+  padding: var(--spacing-sizing-4px);
+  aspect-ratio: 1/1;
+}
+
+.button-group--type-many-icons.button-group--size-extra-small .button {
+  min-width: 27px;
+  max-width: 27px;
+  min-height: 27px;
+  max-height: 27px;
+}
+
+.button-group--type-many-icons.button-group--size-default .button {
+  min-width: 30px;
+  max-width: 30px;
+  min-height: 30px;
+  max-height: 30px;
+}
+
+.button-group--type-many-icons.button-group--size-large .button {
+  min-width: 52px;
+  max-width: 52px;
+  min-height: 52px;
+  max-height: 52px;
+}
+
+/* State variants for many-icons groups */
+.button-group--type-many-icons.button-group--state-default .button {
+  background: var(--primary-blue-blue);
+  border: 1px solid var(--primary-blue-blue-300);
+  color: var(--base-white);
+}
+
+.button-group--type-many-icons.button-group--state-secondary .button {
+  background: var(--primary-sky-blue-sky-blue-100);
+  border: 1px solid var(--primary-sky-blue-sky-blue);
+  color: var(--primary-blue-blue);
+}
+
+.button-group--type-many-icons.button-group--state-tertiary .button {
+  background: var(--primary-seafoam-seafoam);
+  border: 1px solid var(--primary-seafoam-dark-seafoam);
+  color: var(--base-black);
+}
+
+.button-group--type-many-icons.button-group--state-ghost .button {
+  background: var(--base-white);
+  border: 1px solid var(--neutral-gray-gray-500);
+  color: var(--base-black);
+}
+
+/* Table actions button group styling */
+.button-group--type-table-actions .button {
+  min-width: 80px;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px) var(--spacing-sizing-4px) var(--spacing-sizing-12px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sizing-12px);
+  border-radius: var(--spacing-radius-4px);
+  border: var(--spacing-stroke-0-5px) solid;
+}
+
+.button-group--type-table-actions.button-group--size-extra-small .button {
+  min-width: 50px;
+  padding: var(--spacing-sizing-2px) var(--spacing-sizing-12px) var(--spacing-sizing-2px) var(--spacing-sizing-8px);
+  gap: var(--spacing-sizing-6px);
+}
+
+.button-group--type-table-actions.button-group--size-default .button {
+  min-width: 80px;
+  min-height: 42px;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px);
+  gap: var(--spacing-sizing-12px);
+}
+
+.button-group--type-table-actions.button-group--size-large .button {
+  min-width: 80px;
+  min-height: 52px;
+  padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px);
+  gap: var(--spacing-sizing-12px);
+}
+
+/* Table actions state variants */
+.button-group--type-table-actions.button-group--state-default .button {
+  background: var(--primary-blue-blue);
+  border-color: var(--primary-blue-dark-blue);
+  color: var(--base-white);
+}
+
+.button-group--type-table-actions.button-group--state-ghost .button {
+  background: var(--base-white);
+  border-color: var(--neutral-gray-gray-500);
+  color: var(--base-black);
+}
+
+.button-group--type-table-actions.button-group--state-multi .button:last-child {
+  background: var(--primary-blue-blue);
+  border-color: var(--primary-blue-dark-blue);
+  color: var(--base-white);
+}
+
+.button-group--type-table-actions.button-group--state-multi .button:not(:last-child) {
+  background: var(--base-white);
+  border-color: var(--neutral-gray-gray-500);
+  color: var(--base-black);
 }
 
 /* Ensure child buttons inherit the group's styling context */
@@ -83,51 +240,96 @@
   flex-shrink: 0;
 }
 
-/* Spacing adjustments for different group types */
-.button-group.default.horizontal > * + * {
-  margin-left: var(--spacing-sizing-8px);
+/* Button content styling within groups */
+.button-group .button .button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sizing-8px);
 }
 
-.button-group.split.horizontal > * + * {
-  margin-left: var(--spacing-sizing-12px);
+.button-group--type-table-actions .button .button-content {
+  padding: var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-8px);
 }
 
-.button-group.icon-only.horizontal > * + * {
-  margin-left: var(--spacing-sizing-6px);
+.button-group--type-table-actions.button-group--size-extra-small .button .button-content {
+  padding: var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-6px);
 }
 
-.button-group.default.vertical > * + * {
-  margin-top: var(--spacing-sizing-8px);
+.button-group--type-table-actions.button-group--size-default .button .button-content {
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-8px);
 }
 
-.button-group.split.vertical > * + * {
-  margin-top: var(--spacing-sizing-12px);
+.button-group--type-table-actions.button-group--size-large .button .button-content {
+  padding: var(--spacing-sizing-12px) var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-8px);
 }
 
-.button-group.icon-only.vertical > * + * {
-  margin-top: var(--spacing-sizing-6px);
+/* Typography for button group labels */
+.button-group--size-extra-small .button .button-text {
+  font-size: var(--type-archivo-footnote);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-footnote);
+  letter-spacing: var(--type-letter-spacing-archivo-footnote);
 }
 
-/* Override margins when using gap */
-.button-group.gap-none > * + *,
-.button-group.gap-small > * + *,
-.button-group.gap-default > * + *,
-.button-group.gap-large > * + * {
-  margin: 0;
+.button-group--size-small .button .button-text {
+  font-size: var(--type-archivo-label-sm);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-label-sm);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
+}
+
+.button-group--size-default .button .button-text {
+  font-size: var(--type-archivo-label);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-label);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
+}
+
+.button-group--size-large .button .button-text {
+  font-size: var(--type-archivo-label-lg);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-label-lg);
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg);
+}
+
+/* Icon opacity in button groups */
+.button-group .button .button-icon {
+  opacity: 0.6;
+}
+
+.button-group--type-many-icons .button .button-icon {
+  opacity: 0.7;
+}
+
+.button-group--type-many-icons.button-group--state-tertiary .button .button-icon {
+  opacity: 0.7;
+}
+
+.button-group--type-many-icons.button-group--state-ghost .button .button-icon {
+  opacity: 0.6;
 }
 
 /* Responsive behavior */
 @media (max-width: 768px) {
-  .button-group.horizontal {
+  .button-group--orientation-horizontal {
     flex-wrap: wrap;
   }
   
-  .button-group.gap-default {
+  .button-group--gap-default {
     gap: var(--spacing-sizing-6px);
   }
   
-  .button-group.gap-large {
+  .button-group--gap-large {
     gap: var(--spacing-sizing-12px);
+  }
+  
+  .button-group--type-table-actions {
+    gap: var(--spacing-sizing-6px);
   }
 }
 
@@ -149,15 +351,23 @@
 }
 
 /* Ensure proper alignment for different content types */
-.button-group.horizontal.default {
+.button-group--orientation-horizontal.button-group--type-default {
   align-items: flex-start;
 }
 
-.button-group.horizontal.split {
+.button-group--orientation-horizontal.button-group--type-split {
   align-items: center;
 }
 
-.button-group.horizontal.icon-only {
+.button-group--orientation-horizontal.button-group--type-icon-only {
+  align-items: center;
+}
+
+.button-group--orientation-horizontal.button-group--type-many-icons {
+  align-items: center;
+}
+
+.button-group--orientation-horizontal.button-group--type-table-actions {
   align-items: center;
 }
 
@@ -213,18 +423,67 @@
 }
 
 /* Prevent button overflow in groups */
-.button-group.horizontal {
+.button-group--orientation-horizontal {
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
-.button-group.horizontal::-webkit-scrollbar {
+.button-group--orientation-horizontal::-webkit-scrollbar {
   display: none;
 }
 
-.button-group.vertical {
+.button-group--orientation-vertical {
   overflow-y: auto;
   max-height: 400px;
   scrollbar-width: thin;
+}
+
+/* Legacy class support for backwards compatibility */
+.button-group.horizontal {
+  flex-direction: row;
+}
+
+.button-group.vertical {
+  flex-direction: column;
+}
+
+.button-group.gap-none {
+  gap: 0;
+}
+
+.button-group.gap-small {
+  gap: var(--spacing-sizing-4px);
+}
+
+.button-group.gap-default {
+  gap: var(--spacing-sizing-8px);
+}
+
+.button-group.gap-large {
+  gap: var(--spacing-sizing-16px);
+}
+
+.button-group.full-width {
+  width: 100%;
+}
+
+.button-group.full-width > * {
+  flex: 1;
+}
+
+.button-group.extra-small {
+  min-height: 27px;
+}
+
+.button-group.small {
+  min-height: 30px;
+}
+
+.button-group.default {
+  min-height: 42px;
+}
+
+.button-group.large {
+  min-height: 52px;
 }
