@@ -32,7 +32,7 @@ export interface DataTableColumn {
   sortDirection?: SortDirection | null;
   isLead?: boolean;
   showHelpIcon?: boolean;
-  render?: (value: unknown, record: DataTableRow, index: number) => React.ReactNode;
+  render?: (value: unknown, record: DataTableRow, index: number) => ReactNode;
 }
 
 export interface DataTableRow {
