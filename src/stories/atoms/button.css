@@ -1035,7 +1035,7 @@
 .button.ghost {
   background: var(--base-white);
   border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500);
-  color: #1C1C1C;
+  color: var(--base-black);
 }
 
 .button.ghost .button-icon {
