@@ -344,7 +344,7 @@
 
 .button.secondary.outline.disabled {
   background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-2px) solid #E5E7EB;
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-200);
   color: #D2D5DA;
   cursor: not-allowed;
   pointer-events: none;
@@ -543,7 +543,7 @@
 
 .button.secondary.disabled {
   background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-1px) solid #E5E7EB;
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
   color: #D2D5DA;
   cursor: not-allowed;
   pointer-events: none;
@@ -599,7 +599,7 @@
 
 .button.tertiary.disabled {
   background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-1px) solid #E5E7EB;
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
   color: #D2D5DA;
   cursor: not-allowed;
   pointer-events: none;
@@ -645,7 +645,7 @@
 
 .button.tertiary.icon-only.disabled {
   background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-1px) solid #E5E7EB;
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
 }
 
 .button.tertiary.icon-only.disabled .button-icon {
@@ -709,7 +709,7 @@
 
 .button.extra-small.secondary.disabled {
   background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-0-5px) solid #E5E7EB;
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
   color: #D2D5DA;
 }
 
@@ -861,7 +861,7 @@
 
 .button.tertiary.outline.disabled {
   background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-2px) solid #E5E7EB;
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-200);
   color: #D2D5DA;
   cursor: not-allowed;
   pointer-events: none;
@@ -1133,7 +1133,7 @@
 .button.ghost:active:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid #6D7280;
-  box-shadow: 1px 1px 0 0 #E5E7EB;
+  box-shadow: 1px 1px 0 0 var(--neutral-gray-gray-200);
 }
 
 .button.ghost.clicked .button-text,
@@ -1165,7 +1165,7 @@
 
 .button.ghost.disabled {
   background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-0-5px) solid #E5E7EB;
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
   color: #D2D5DA;
   cursor: not-allowed;
   pointer-events: none;
@@ -1221,7 +1221,7 @@
 
 .button.error.disabled {
   background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-0-5px) solid #E5E7EB;
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
   color: #D2D5DA;
   cursor: not-allowed;
   pointer-events: none;
@@ -1277,7 +1277,7 @@
 
 .button.error.outline.disabled {
   background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-0-5px) solid #E5E7EB;
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
   color: #D2D5DA;
   cursor: not-allowed;
   pointer-events: none;
@@ -1333,7 +1333,7 @@
 
 .button.warning.disabled {
   background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-0-5px) solid #E5E7EB;
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
   color: #D2D5DA;
   cursor: not-allowed;
   pointer-events: none;
@@ -1389,7 +1389,7 @@
 
 .button.warning.outline.disabled {
   background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid #E5E7EB;
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
   color: #D2D5DA;
   cursor: not-allowed;
   pointer-events: none;
@@ -1414,7 +1414,7 @@
 .button.ghost.force-clicked {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-1px) solid #6D7280 !important;
-  box-shadow: 1px 1px 0 0 #E5E7EB !important;
+  box-shadow: 1px 1px 0 0 var(--neutral-gray-gray-200) !important;
 }
 
 .button.ghost.force-clicked .button-text {
@@ -1869,7 +1869,7 @@
 
 .button.info.outline.disabled {
   background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid #E5E7EB;
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
   color: #D2D5DA;
   cursor: not-allowed;
   pointer-events: none;
@@ -1969,7 +1969,7 @@
 
 .button.success.outline.disabled {
   background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid #E5E7EB;
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
   color: #D2D5DA;
   cursor: not-allowed;
   pointer-events: none;
