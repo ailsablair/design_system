@@ -1034,7 +1034,7 @@
 /* Ghost button variant - Updated for Figma design */
 .button.ghost {
   background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid #6D7280;
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500);
   color: #1C1C1C;
 }
 
@@ -1114,13 +1114,13 @@
 /* State variants for ghost buttons - Updated for Figma design */
 .button.ghost.default {
   background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid #6D7280;
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500);
 }
 
 .button.ghost.hover,
 .button.ghost:hover:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid #6D7280;
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500);
   box-shadow: 1px 1px 0 0 var(--neutral-gray-gray-300);
 }
 
@@ -1132,7 +1132,7 @@
 .button.ghost.clicked,
 .button.ghost:active:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid #6D7280;
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-500);
   box-shadow: 1px 1px 0 0 var(--neutral-gray-gray-200);
 }
 
@@ -1144,7 +1144,7 @@
 .button.ghost.focused,
 .button.ghost:focus-visible:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-2px) solid #6D7280;
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-500);
   color: #4B5563;
 }
 
@@ -1154,7 +1154,7 @@
 
 .button.ghost.loading {
   background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid #6D7280;
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500);
   cursor: wait;
   pointer-events: none;
 }
@@ -1403,7 +1403,7 @@
 /* Force state classes for ghost buttons - Updated for Figma design */
 .button.ghost.force-hover {
   background: var(--base-white) !important;
-  border: var(--spacing-stroke-0-5px) solid #6D7280 !important;
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500) !important;
   box-shadow: 1px 1px 0 0 var(--neutral-gray-gray-300) !important;
 }
 
@@ -1413,7 +1413,7 @@
 
 .button.ghost.force-clicked {
   background: var(--base-white) !important;
-  border: var(--spacing-stroke-1px) solid #6D7280 !important;
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-500) !important;
   box-shadow: 1px 1px 0 0 var(--neutral-gray-gray-200) !important;
 }
 
@@ -1423,7 +1423,7 @@
 
 .button.ghost.force-focused {
   background: var(--base-white) !important;
-  border: var(--spacing-stroke-2px) solid #6D7280 !important;
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-500) !important;
   color: #4B5563 !important;
 }
 
