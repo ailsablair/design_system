@@ -97,6 +97,17 @@ export const Tag = ({
     }
   };
 
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (!onClick || disabled) {
+      return;
+    }
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClick();
+    }
+  };
+
   const content = children ?? label;
   const closeLabelText = typeof content === 'string'
     ? content
