@@ -357,7 +357,7 @@
 
 /* Tertiary button variant - Updated for Figma design */
 .button.tertiary {
-  background: #AED2BC;
+  background: var(--primary-seafoam-400);
   border: var(--spacing-stroke-1px) solid #4B6D58;
   color: var(--base-black);
 }
@@ -556,13 +556,13 @@
 
 /* State variants for tertiary buttons - Updated for Figma design */
 .button.tertiary.default {
-  background: #AED2BC;
+  background: var(--primary-seafoam-400);
   border: var(--spacing-stroke-1px) solid #4B6D58;
 }
 
 .button.tertiary.hover,
 .button.tertiary:hover:not(.disabled):not(.loading) {
-  background: #AED2BC;
+  background: var(--primary-seafoam-400);
   border: var(--spacing-stroke-2px) solid #4B6D58;
   box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
@@ -574,7 +574,7 @@
 
 .button.tertiary.clicked,
 .button.tertiary:active:not(.disabled):not(.loading) {
-  background: #AED2BC;
+  background: var(--primary-seafoam-400);
   border: var(--spacing-stroke-2px) solid #4B6D58;
   box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
@@ -586,12 +586,12 @@
 
 .button.tertiary.focused,
 .button.tertiary:focus-visible:not(.disabled):not(.loading) {
-  background: #AED2BC;
+  background: var(--primary-seafoam-400);
   border: var(--spacing-stroke-3px) solid #4B6D58;
 }
 
 .button.tertiary.loading {
-  background: #AED2BC;
+  background: var(--primary-seafoam-400);
   border: var(--spacing-stroke-1px) solid #4B6D58;
   cursor: wait;
   pointer-events: none;
@@ -874,7 +874,7 @@
 
 /* Force state classes for tertiary buttons - Updated for Figma design */
 .button.tertiary.force-hover {
-  background: #AED2BC !important;
+  background: var(--primary-seafoam-400) !important;
   border: var(--spacing-stroke-2px) solid #4B6D58 !important;
   box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
 }
@@ -884,7 +884,7 @@
 }
 
 .button.tertiary.force-clicked {
-  background: #AED2BC !important;
+  background: var(--primary-seafoam-400) !important;
   border: var(--spacing-stroke-2px) solid #4B6D58 !important;
   box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
 }
@@ -894,7 +894,7 @@
 }
 
 .button.tertiary.force-focused {
-  background: #AED2BC !important;
+  background: var(--primary-seafoam-400) !important;
   border: var(--spacing-stroke-3px) solid #4B6D58 !important;
 }
 
