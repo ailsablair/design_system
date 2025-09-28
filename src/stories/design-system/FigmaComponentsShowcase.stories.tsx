@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { AutoSave } from '../atoms/AutoSave';
 import { AutoSaveWithTag } from '../atoms/AutoSaveWithTag';
 import { MenuItem } from '../atoms/building-blocks/MenuItem';
