@@ -358,7 +358,7 @@
 /* Tertiary button variant - Updated for Figma design */
 .button.tertiary {
   background: var(--primary-seafoam-400);
-  border: var(--spacing-stroke-1px) solid #4B6D58;
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
   color: var(--base-black);
 }
 
@@ -557,13 +557,13 @@
 /* State variants for tertiary buttons - Updated for Figma design */
 .button.tertiary.default {
   background: var(--primary-seafoam-400);
-  border: var(--spacing-stroke-1px) solid #4B6D58;
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
 }
 
 .button.tertiary.hover,
 .button.tertiary:hover:not(.disabled):not(.loading) {
   background: var(--primary-seafoam-400);
-  border: var(--spacing-stroke-2px) solid #4B6D58;
+  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam);
   box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
 
@@ -575,7 +575,7 @@
 .button.tertiary.clicked,
 .button.tertiary:active:not(.disabled):not(.loading) {
   background: var(--primary-seafoam-400);
-  border: var(--spacing-stroke-2px) solid #4B6D58;
+  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam);
   box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
 
@@ -587,12 +587,12 @@
 .button.tertiary.focused,
 .button.tertiary:focus-visible:not(.disabled):not(.loading) {
   background: var(--primary-seafoam-400);
-  border: var(--spacing-stroke-3px) solid #4B6D58;
+  border: var(--spacing-stroke-3px) solid var(--primary-seafoam-dark-seafoam);
 }
 
 .button.tertiary.loading {
   background: var(--primary-seafoam-400);
-  border: var(--spacing-stroke-1px) solid #4B6D58;
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
   cursor: wait;
   pointer-events: none;
 }
@@ -875,7 +875,7 @@
 /* Force state classes for tertiary buttons - Updated for Figma design */
 .button.tertiary.force-hover {
   background: var(--primary-seafoam-400) !important;
-  border: var(--spacing-stroke-2px) solid #4B6D58 !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam) !important;
   box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
 }
 
@@ -885,7 +885,7 @@
 
 .button.tertiary.force-clicked {
   background: var(--primary-seafoam-400) !important;
-  border: var(--spacing-stroke-2px) solid #4B6D58 !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam) !important;
   box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
 }
 
@@ -895,7 +895,7 @@
 
 .button.tertiary.force-focused {
   background: var(--primary-seafoam-400) !important;
-  border: var(--spacing-stroke-3px) solid #4B6D58 !important;
+  border: var(--spacing-stroke-3px) solid var(--primary-seafoam-dark-seafoam) !important;
 }
 
 /* Force state classes for tertiary icon-only buttons */
