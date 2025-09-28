@@ -2,3 +2,6 @@ This is a design system for the nuclear power industry. It is being built with R
 
 We are attempting to make Echo as simple as possible, given the very complex subject matter in nuclear power. 
 
+Echo is a collection of reusable components and clear standards designed to help teams build beautiful, consistent, and accessible user experiences efficiently.
+
+Where possible, we should reassess the code that has already been written and see if there is a way to improve it alongside any new UI element additions.  
