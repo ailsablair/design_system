@@ -1,4 +1,4 @@
-import type { MouseEvent, ReactNode } from 'react';
+import type { KeyboardEvent, MouseEvent, ReactNode } from 'react';
 import './tag.css';
 
 export type TagSize = 'small' | 'default' | 'large';
