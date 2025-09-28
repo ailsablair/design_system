@@ -2004,7 +2004,7 @@ export const SuccessDisabledLarge: Story = {
 };
 
 // Tertiary outline button examples
-export const TertiaryOutlineDefault: Story = {
+export const TertiaryOutlineDefaultSmall: Story = {
   args: {
     children: 'Label',
     size: 'small',
@@ -2037,7 +2037,7 @@ export const TertiaryOutlineDefaultLarge: Story = {
   },
 };
 
-export const TertiaryOutlineHover: Story = {
+export const TertiaryOutlineHoverSmall: Story = {
   args: {
     children: 'Label',
     size: 'small',
@@ -2073,7 +2073,7 @@ export const TertiaryOutlineHoverLarge: Story = {
   },
 };
 
-export const TertiaryOutlineClicked: Story = {
+export const TertiaryOutlineClickedSmall: Story = {
   args: {
     children: 'Label',
     size: 'small',
@@ -2109,7 +2109,7 @@ export const TertiaryOutlineClickedLarge: Story = {
   },
 };
 
-export const TertiaryOutlineFocused: Story = {
+export const TertiaryOutlineFocusedSmall: Story = {
   args: {
     children: 'Label',
     size: 'small',
@@ -2145,7 +2145,7 @@ export const TertiaryOutlineFocusedLarge: Story = {
   },
 };
 
-export const TertiaryOutlineLoading: Story = {
+export const TertiaryOutlineLoadingSmall: Story = {
   args: {
     children: 'Label',
     size: 'small',
@@ -2695,7 +2695,7 @@ export const TertiaryOutlineLoadingLarge: Story = {
   },
 };
 
-export const TertiaryOutlineDisabled: Story = {
+export const TertiaryOutlineDisabledSmall: Story = {
   args: {
     children: 'Label',
     size: 'small',
