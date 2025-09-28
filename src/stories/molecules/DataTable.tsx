@@ -376,7 +376,7 @@ export const DataTable: React.FC<DataTableProps> = ({
   const [internalSelectedRows, setInternalSelectedRows] = useState<Set<string>>(new Set());
   const [internalSort, setInternalSort] = useState<SortState | null>(null);
 
-  const selectedRowIds = selectedRowIdsProp ?? [];
+  const selectedRowIds = useMemo(() => selectedRowIdsProp ?? [], [selectedRowIdsProp]);
   const isSelectionControlled = Array.isArray(selectedRowIdsProp);
 
   useEffect(() => {
