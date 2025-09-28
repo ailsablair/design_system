@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import React, { useState } from 'react';
+import React, { useState, type ComponentPropsWithoutRef, type ReactNode } from 'react';
 import { EchoMUIThemeProvider } from './foundations/EchoMUITheme';
 import { EchoMUIButton } from './atoms/EchoMUIButton';
 import { EchoMUIInput } from './atoms/EchoMUIInput';
@@ -34,13 +34,17 @@ import {
   CheckCircle as CheckIcon,
   Code as CodeIcon,
   Speed as SpeedIcon,
-  Security as SecurityIcon,
   Accessibility as AccessibilityIcon,
   ExpandMore as ExpandMoreIcon,
 } from '@mui/icons-material';
 
-function TabPanel(props: any) {
-  const { children, value, index, ...other } = props;
+interface TabPanelProps extends ComponentPropsWithoutRef<'div'> {
+  children?: ReactNode;
+  value: number;
+  index: number;
+}
+
+function TabPanel({ children, value, index, ...other }: TabPanelProps) {
   return (
     <div
       role="tabpanel"
