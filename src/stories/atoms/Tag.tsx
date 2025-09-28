@@ -132,6 +132,7 @@ export const Tag = ({
     <div
       className={tagClasses}
       onClick={handleClick}
+      onKeyDown={handleKeyDown}
       role={onClick ? 'button' : undefined}
       tabIndex={onClick && !disabled ? 0 : undefined}
       aria-disabled={disabled || undefined}
