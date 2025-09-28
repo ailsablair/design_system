@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button, AlarmIcon, ArrowDownIcon, AlertIcon, InformationIcon } from './Button';
 
 const meta: Meta<typeof Button> = {
