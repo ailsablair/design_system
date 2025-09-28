@@ -631,6 +631,144 @@ export const TertiaryOutlineDisabled: Story = {
   },
 };
 
+// Icon-only secondary button variants
+export const SecondaryIconOnlySmall: Story = {
+  args: {
+    size: 'small',
+    type: 'secondary',
+    iconOnly: true,
+    icon: <AlarmIcon size={14} />,
+  },
+};
+
+export const SecondaryIconOnlyDefault: Story = {
+  args: {
+    size: 'default',
+    type: 'secondary',
+    iconOnly: true,
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+export const SecondaryIconOnlyLarge: Story = {
+  args: {
+    size: 'large',
+    type: 'secondary',
+    iconOnly: true,
+    icon: <AlarmIcon size={20} />,
+  },
+};
+
+export const SecondaryIconOnlyHover: Story = {
+  args: {
+    size: 'default',
+    type: 'secondary',
+    iconOnly: true,
+    state: 'hover',
+    className: 'force-hover',
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+export const SecondaryIconOnlyLoading: Story = {
+  args: {
+    size: 'default',
+    type: 'secondary',
+    iconOnly: true,
+    loading: true,
+  },
+};
+
+export const SecondaryIconOnlyDisabled: Story = {
+  args: {
+    size: 'default',
+    type: 'secondary',
+    iconOnly: true,
+    disabled: true,
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+// Icon-only tertiary button variants
+export const TertiaryIconOnlySmall: Story = {
+  args: {
+    size: 'small',
+    type: 'tertiary',
+    iconOnly: true,
+    icon: <AlarmIcon size={14} />,
+  },
+};
+
+export const TertiaryIconOnlyDefault: Story = {
+  args: {
+    size: 'default',
+    type: 'tertiary',
+    iconOnly: true,
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+export const TertiaryIconOnlyLarge: Story = {
+  args: {
+    size: 'large',
+    type: 'tertiary',
+    iconOnly: true,
+    icon: <AlarmIcon size={20} />,
+  },
+};
+
+export const TertiaryIconOnlyHover: Story = {
+  args: {
+    size: 'default',
+    type: 'tertiary',
+    iconOnly: true,
+    state: 'hover',
+    className: 'force-hover',
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+export const TertiaryIconOnlyClicked: Story = {
+  args: {
+    size: 'default',
+    type: 'tertiary',
+    iconOnly: true,
+    state: 'clicked',
+    className: 'force-clicked',
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+export const TertiaryIconOnlyFocused: Story = {
+  args: {
+    size: 'default',
+    type: 'tertiary',
+    iconOnly: true,
+    state: 'focused',
+    className: 'force-focused',
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+export const TertiaryIconOnlyLoading: Story = {
+  args: {
+    size: 'default',
+    type: 'tertiary',
+    iconOnly: true,
+    loading: true,
+  },
+};
+
+export const TertiaryIconOnlyDisabled: Story = {
+  args: {
+    size: 'default',
+    type: 'tertiary',
+    iconOnly: true,
+    disabled: true,
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
 // Dropdown-style button with open state
 export const DropdownStyleButton: Story = {
   args: {
