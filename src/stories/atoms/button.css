@@ -1050,7 +1050,7 @@
 /* Error button variant - Updated for Figma design */
 .button.error {
   background: #CE2031;
-  border: var(--spacing-stroke-0-5px) solid #FFF3F3;
+  border: var(--spacing-stroke-0-5px) solid #CE2031;
   color: var(--base-white);
 }
 
@@ -1082,7 +1082,7 @@
 /* Warning button variant - Updated for Figma design */
 .button.warning {
   background: #F4A403;
-  border: var(--spacing-stroke-0-5px) solid #D07C06;
+  border: var(--spacing-stroke-0-5px) solid #F4A403;
   color: var(--base-white);
 }
 
@@ -1099,11 +1099,11 @@
 .button.warning.outline {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid #F4A403;
-  color: #D07C06;
+  color: #F4A403;
 }
 
 .button.warning.outline .button-icon {
-  color: #D07C06;
+  color: #F4A403;
   opacity: 0.6;
 }
 
@@ -1179,7 +1179,7 @@
 /* State variants for error buttons - Updated for Figma design */
 .button.error.default {
   background: #CE2031;
-  border: var(--spacing-stroke-0-5px) solid #FFF3F3;
+  border: var(--spacing-stroke-0-5px) solid #CE2031;
 }
 
 .button.error.hover,
@@ -1214,7 +1214,7 @@
 
 .button.error.loading {
   background: #CE2031;
-  border: var(--spacing-stroke-0-5px) solid #FFF3F3;
+  border: var(--spacing-stroke-0-5px) solid #CE2031;
   cursor: wait;
   pointer-events: none;
 }
@@ -1291,7 +1291,7 @@
 /* State variants for warning buttons - Updated for Figma design */
 .button.warning.default {
   background: #F4A403;
-  border: var(--spacing-stroke-0-5px) solid #D07C06;
+  border: var(--spacing-stroke-0-5px) solid #F4A403;
 }
 
 .button.warning.hover,
@@ -1326,7 +1326,7 @@
 
 .button.warning.loading {
   background: #F4A403;
-  border: var(--spacing-stroke-0-5px) solid #D07C06;
+  border: var(--spacing-stroke-0-5px) solid #F4A403;
   cursor: wait;
   pointer-events: none;
 }
