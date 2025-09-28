@@ -414,6 +414,67 @@ export const WarningDisabled: Story = {
 };
 
 // Secondary button variants
+export const SecondaryExtraSmall: Story = {
+  args: {
+    children: 'Button w/ leading icon',
+    size: 'extra-small',
+    type: 'secondary',
+    leadingIcon: <AlarmIcon size={14} />,
+  },
+};
+
+export const SecondaryExtraSmallHover: Story = {
+  args: {
+    children: 'Button w/ leading icon',
+    size: 'extra-small',
+    type: 'secondary',
+    state: 'hover',
+    className: 'force-hover',
+    leadingIcon: <AlarmIcon size={14} />,
+  },
+};
+
+export const SecondaryExtraSmallClicked: Story = {
+  args: {
+    children: 'Button w/ leading icon',
+    size: 'extra-small',
+    type: 'secondary',
+    state: 'clicked',
+    className: 'force-clicked',
+    leadingIcon: <AlarmIcon size={14} />,
+  },
+};
+
+export const SecondaryExtraSmallFocused: Story = {
+  args: {
+    children: 'Button w/ leading icon',
+    size: 'extra-small',
+    type: 'secondary',
+    state: 'focused',
+    className: 'force-focused',
+    leadingIcon: <AlarmIcon size={14} />,
+  },
+};
+
+export const SecondaryExtraSmallLoading: Story = {
+  args: {
+    children: 'Button w/ leading icon',
+    size: 'extra-small',
+    type: 'secondary',
+    loading: true,
+  },
+};
+
+export const SecondaryExtraSmallDisabled: Story = {
+  args: {
+    children: 'Button w/ leading icon',
+    size: 'extra-small',
+    type: 'secondary',
+    disabled: true,
+    leadingIcon: <AlarmIcon size={14} />,
+  },
+};
+
 export const SecondaryDefault: Story = {
   args: {
     children: 'Label',
