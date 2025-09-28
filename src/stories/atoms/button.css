@@ -309,7 +309,7 @@
 .button.secondary.outline:hover:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500);
-  box-shadow: 1px 1px 0 0 #6171DF;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.secondary.outline.hover .button-text,
@@ -321,7 +321,7 @@
 .button.secondary.outline:active:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500);
-  box-shadow: 1px 1px 0 0 #6171DF;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.secondary.outline.clicked .button-text,
@@ -508,7 +508,7 @@
 .button.secondary:hover:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-light-alt);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500);
-  box-shadow: 1px 1px 0 0 #6171DF;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.secondary.hover .button-text,
@@ -520,7 +520,7 @@
 .button.secondary:active:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-light-alt);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500);
-  box-shadow: 1px 1px 0 0 #6171DF;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.secondary.clicked .button-text,
@@ -564,7 +564,7 @@
 .button.tertiary:hover:not(.disabled):not(.loading) {
   background: #AED2BC;
   border: var(--spacing-stroke-2px) solid #4B6D58;
-  box-shadow: 1px 1px 0 0 #6171DF;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.tertiary.hover .button-text,
@@ -576,7 +576,7 @@
 .button.tertiary:active:not(.disabled):not(.loading) {
   background: #AED2BC;
   border: var(--spacing-stroke-2px) solid #4B6D58;
-  box-shadow: 1px 1px 0 0 #6171DF;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.tertiary.clicked .button-text,
@@ -620,14 +620,14 @@
 .button.tertiary.icon-only:hover:not(.disabled):not(.loading) {
   background: #8BBF9F;
   border: var(--spacing-stroke-1px) solid #8BBF9F;
-  box-shadow: 1px 1px 0 0 #6171DF;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.tertiary.icon-only.clicked,
 .button.tertiary.icon-only:active:not(.disabled):not(.loading) {
   background: #8BBF9F;
   border: var(--spacing-stroke-1px) solid #8BBF9F;
-  box-shadow: 1px 1px 0 0 #6171DF;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.tertiary.icon-only.focused,
@@ -768,7 +768,7 @@
 .button.secondary.force-hover {
   background: var(--primary-sky-blue-light-alt) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500) !important;
-  box-shadow: 1px 1px 0 0 #6171DF !important;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
 }
 
 .button.secondary.force-hover .button-text {
@@ -778,7 +778,7 @@
 .button.secondary.force-clicked {
   background: var(--primary-sky-blue-light-alt) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500) !important;
-  box-shadow: 1px 1px 0 0 #6171DF !important;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
 }
 
 .button.secondary.force-clicked .button-text {
@@ -794,7 +794,7 @@
 .button.secondary.outline.force-hover {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500) !important;
-  box-shadow: 1px 1px 0 0 #6171DF !important;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
 }
 
 .button.secondary.outline.force-hover .button-text {
@@ -804,7 +804,7 @@
 .button.secondary.outline.force-clicked {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500) !important;
-  box-shadow: 1px 1px 0 0 #6171DF !important;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
 }
 
 .button.secondary.outline.force-clicked .button-text {
@@ -826,7 +826,7 @@
 .button.tertiary.outline:hover:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500);
-  box-shadow: 1px 1px 0 0 #6171DF;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.tertiary.outline.hover .button-text,
@@ -838,7 +838,7 @@
 .button.tertiary.outline:active:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500);
-  box-shadow: 1px 1px 0 0 #6171DF;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.tertiary.outline.clicked .button-text,
@@ -876,7 +876,7 @@
 .button.tertiary.force-hover {
   background: #AED2BC !important;
   border: var(--spacing-stroke-2px) solid #4B6D58 !important;
-  box-shadow: 1px 1px 0 0 #6171DF !important;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
 }
 
 .button.tertiary.force-hover .button-text {
@@ -886,7 +886,7 @@
 .button.tertiary.force-clicked {
   background: #AED2BC !important;
   border: var(--spacing-stroke-2px) solid #4B6D58 !important;
-  box-shadow: 1px 1px 0 0 #6171DF !important;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
 }
 
 .button.tertiary.force-clicked .button-text {
@@ -902,13 +902,13 @@
 .button.tertiary.icon-only.force-hover {
   background: #8BBF9F !important;
   border: var(--spacing-stroke-1px) solid #8BBF9F !important;
-  box-shadow: 1px 1px 0 0 #6171DF !important;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
 }
 
 .button.tertiary.icon-only.force-clicked {
   background: #8BBF9F !important;
   border: var(--spacing-stroke-1px) solid #8BBF9F !important;
-  box-shadow: 1px 1px 0 0 #6171DF !important;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
 }
 
 .button.tertiary.icon-only.force-focused {
@@ -920,7 +920,7 @@
 .button.tertiary.outline.force-hover {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500) !important;
-  box-shadow: 1px 1px 0 0 #6171DF !important;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
 }
 
 .button.tertiary.outline.force-hover .button-text {
@@ -930,7 +930,7 @@
 .button.tertiary.outline.force-clicked {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500) !important;
-  box-shadow: 1px 1px 0 0 #6171DF !important;
+  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
 }
 
 .button.tertiary.outline.force-clicked .button-text {
