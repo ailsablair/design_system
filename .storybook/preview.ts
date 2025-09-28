@@ -37,7 +37,7 @@ const withResizeObserverErrorSuppression: Decorator = (Story, context) =>
     Story(context)
   );
 
-const preview: StorybookPreview = {
+const preview: Preview = {
   decorators: [withResizeObserverErrorSuppression],
   parameters: {
     options: {
