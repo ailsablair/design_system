@@ -197,7 +197,6 @@ export const Default: Story = {
 };
 
 export const FigmaExactDesign: Story = {
-  name: 'Figma Exact Design',
   args: {
     title: 'Team members',
     itemCount: 100,
