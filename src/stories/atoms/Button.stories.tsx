@@ -1441,6 +1441,15 @@ export const DesignSystemShowcase: Story = {
       </div>
 
       <div>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Icon-Only Tertiary Buttons - All Sizes</h3>
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+          <Button size="small" type="tertiary" iconOnly icon={<AlarmIcon size={14} />} />
+          <Button size="default" type="tertiary" iconOnly icon={<AlarmIcon size={18} />} />
+          <Button size="large" type="tertiary" iconOnly icon={<AlarmIcon size={20} />} />
+        </div>
+      </div>
+
+      <div>
         <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Icon-Only Button States Comparison</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
