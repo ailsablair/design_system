@@ -1784,6 +1784,206 @@
   border: var(--spacing-stroke-2px) solid #227F1A !important;
 }
 
+/* State variants for info outline buttons - Updated for Figma design */
+.button.info.outline.default {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid #366F97;
+  color: #366F97;
+}
+
+.button.info.outline.default .button-text {
+  color: #366F97;
+}
+
+.button.info.outline.default .button-icon {
+  color: #366F97;
+  opacity: 0.6;
+}
+
+.button.info.outline.hover,
+.button.info.outline:hover:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid #366F97;
+  box-shadow: 1px 1px 0 0 rgba(54, 111, 151, 0.40);
+}
+
+.button.info.outline.hover .button-text,
+.button.info.outline:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+  color: #366F97;
+}
+
+.button.info.outline.hover .button-icon,
+.button.info.outline:hover:not(.disabled):not(.loading) .button-icon {
+  color: #366F97;
+  opacity: 0.6;
+}
+
+.button.info.outline.clicked,
+.button.info.outline:active:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-2px) solid #366F97;
+  box-shadow: 1px 1px 0 0 rgba(54, 111, 151, 0.40);
+}
+
+.button.info.outline.clicked .button-text,
+.button.info.outline:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+  color: #366F97;
+}
+
+.button.info.outline.clicked .button-icon,
+.button.info.outline:active:not(.disabled):not(.loading) .button-icon {
+  color: #366F97;
+  opacity: 0.6;
+}
+
+.button.info.outline.focused,
+.button.info.outline:focus-visible:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-2px) solid #366F97;
+}
+
+.button.info.outline.focused .button-text,
+.button.info.outline:focus-visible:not(.disabled):not(.loading) .button-text {
+  color: #366F97;
+}
+
+.button.info.outline.focused .button-icon,
+.button.info.outline:focus-visible:not(.disabled):not(.loading) .button-icon {
+  color: #366F97;
+  opacity: 0.6;
+}
+
+.button.info.outline.loading {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid #366F97;
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.info.outline.loading .button-icon {
+  color: #95A0E5;
+  opacity: 0.6;
+}
+
+.button.info.outline.disabled {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid #E5E7EB;
+  color: #D2D5DA;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.info.outline.disabled .button-text {
+  color: #D2D5DA;
+}
+
+.button.info.outline.disabled .button-icon {
+  color: #D2D5DA;
+  opacity: 0.6;
+}
+
+/* State variants for success outline buttons - Updated for Figma design */
+.button.success.outline.default {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid #227F1A;
+  color: #227F1A;
+}
+
+.button.success.outline.default .button-text {
+  color: #227F1A;
+}
+
+.button.success.outline.default .button-icon {
+  color: #227F1A;
+  opacity: 0.6;
+}
+
+.button.success.outline.hover,
+.button.success.outline:hover:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid #227F1A;
+  box-shadow: 1px 1px 0 0 #96F78D;
+}
+
+.button.success.outline.hover .button-text,
+.button.success.outline:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+  color: #227F1A;
+}
+
+.button.success.outline.hover .button-icon,
+.button.success.outline:hover:not(.disabled):not(.loading) .button-icon {
+  color: #227F1A;
+  opacity: 0.6;
+}
+
+.button.success.outline.clicked,
+.button.success.outline:active:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-2px) solid #227F1A;
+  box-shadow: 1px 1px 0 0 #96F78D;
+}
+
+.button.success.outline.clicked .button-text,
+.button.success.outline:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+  color: #227F1A;
+}
+
+.button.success.outline.clicked .button-icon,
+.button.success.outline:active:not(.disabled):not(.loading) .button-icon {
+  color: #227F1A;
+  opacity: 0.6;
+}
+
+.button.success.outline.focused,
+.button.success.outline:focus-visible:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-3px) solid #227F1A;
+}
+
+.button.success.outline.focused .button-text,
+.button.success.outline:focus-visible:not(.disabled):not(.loading) .button-text {
+  color: #227F1A;
+}
+
+.button.success.outline.focused .button-icon,
+.button.success.outline:focus-visible:not(.disabled):not(.loading) .button-icon {
+  color: #227F1A;
+  opacity: 0.6;
+}
+
+.button.success.outline.loading {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid #227F1A;
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.success.outline.loading .button-icon {
+  color: #8BBF9F;
+  opacity: 0.6;
+}
+
+.button.success.outline.disabled {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid #E5E7EB;
+  color: #D2D5DA;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.success.outline.disabled .button-text {
+  color: #D2D5DA;
+}
+
+.button.success.outline.disabled .button-icon {
+  color: #D2D5DA;
+  opacity: 0.6;
+}
+
 /* Open state for dropdown-style buttons */
 .button.open {
   background: var(--base-white);
