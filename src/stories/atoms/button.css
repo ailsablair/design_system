@@ -279,7 +279,7 @@
 }
 
 .button.secondary .button-icon {
-  color: #2F42BD;
+  color: var(--primary-blue-blue-500);
   opacity: 0.6;
 }
 
