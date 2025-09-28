@@ -123,6 +123,7 @@ export const Overview: Story = {
             <li><strong>Card</strong>: ✅ Enhanced with display typography tokens</li>
             <li><strong>Avatar</strong>: ✅ Consistent sizing across all variants</li>
             <li><strong>Button</strong>: ✅ Standardized heights and accessibility</li>
+            <li><strong>OrganizationalButtons</strong>: ✅ Filter, Sort, and More Actions buttons</li>
             <li><strong>DataTable</strong>: ✅ Improved shadows and consistency</li>
           </ul>
         </div>
