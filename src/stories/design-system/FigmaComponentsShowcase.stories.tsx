@@ -453,6 +453,159 @@ export const CompleteFigmaShowcase: Story = {
           </div>
         </div>
 
+        {/* Organizational Buttons Section */}
+        <div style={{
+          marginBottom: '48px',
+          padding: '32px',
+          background: 'white',
+          borderRadius: '16px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)'
+        }}>
+          <h2 style={{
+            margin: 0,
+            fontSize: '24px',
+            fontWeight: '600',
+            marginBottom: '8px',
+            color: '#2F42BD'
+          }}>
+            Organizational Buttons
+          </h2>
+          <p style={{
+            margin: 0,
+            fontSize: '16px',
+            color: '#666',
+            marginBottom: '32px'
+          }}>
+            Filter, Sort, and More Actions buttons for data management interfaces
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '32px' }}>
+            {/* Primary Organizational Buttons */}
+            <div>
+              <h3 style={{
+                margin: 0,
+                fontSize: '18px',
+                fontWeight: '600',
+                marginBottom: '16px',
+                color: '#333'
+              }}>
+                Primary Variants
+              </h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div>
+                  <h5 style={{ margin: 0, fontSize: '12px', color: '#888', marginBottom: '8px' }}>Default Size</h5>
+                  <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                    <FilterButton size="default" variant="primary" />
+                    <SortButton size="default" variant="primary" />
+                    <MoreActionsButton size="default" variant="primary" />
+                  </div>
+                </div>
+
+                <div>
+                  <h5 style={{ margin: 0, fontSize: '12px', color: '#888', marginBottom: '8px' }}>Small Size</h5>
+                  <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                    <FilterButton size="small" variant="primary" />
+                    <SortButton size="small" variant="primary" />
+                    <MoreActionsButton size="small" variant="primary" />
+                  </div>
+                </div>
+
+                <div>
+                  <h5 style={{ margin: 0, fontSize: '12px', color: '#888', marginBottom: '8px' }}>Extra Small Size</h5>
+                  <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                    <FilterButton size="extra-small" variant="primary" />
+                    <SortButton size="extra-small" variant="primary" />
+                    <MoreActionsButton size="extra-small" variant="primary" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Secondary Organizational Buttons */}
+            <div>
+              <h3 style={{
+                margin: 0,
+                fontSize: '18px',
+                fontWeight: '600',
+                marginBottom: '16px',
+                color: '#333'
+              }}>
+                Secondary & Tertiary Variants
+              </h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div>
+                  <h5 style={{ margin: 0, fontSize: '12px', color: '#888', marginBottom: '8px' }}>Secondary</h5>
+                  <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                    <FilterButton size="default" variant="secondary" />
+                    <SortButton size="default" variant="secondary" />
+                    <MoreActionsButton size="default" variant="secondary" />
+                  </div>
+                </div>
+
+                <div>
+                  <h5 style={{ margin: 0, fontSize: '12px', color: '#888', marginBottom: '8px' }}>Tertiary</h5>
+                  <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                    <FilterButton size="default" variant="tertiary" />
+                    <SortButton size="default" variant="tertiary" />
+                    <MoreActionsButton size="default" variant="tertiary" />
+                  </div>
+                </div>
+
+                <div>
+                  <h5 style={{ margin: 0, fontSize: '12px', color: '#888', marginBottom: '8px' }}>Ghost</h5>
+                  <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                    <FilterButton size="default" variant="ghost" />
+                    <SortButton size="default" variant="ghost" />
+                    <MoreActionsButton size="default" variant="ghost" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Usage Example */}
+          <div style={{
+            marginTop: '32px',
+            padding: '24px',
+            background: '#f8f9fa',
+            borderRadius: '12px',
+            border: '1px solid #e9ecef'
+          }}>
+            <h4 style={{
+              margin: 0,
+              fontSize: '16px',
+              fontWeight: '600',
+              marginBottom: '16px',
+              color: '#333'
+            }}>
+              Data Table Header Example
+            </h4>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              padding: '16px',
+              background: 'white',
+              borderRadius: '8px',
+              border: '1px solid #e9ecef'
+            }}>
+              <div>
+                <h5 style={{ margin: 0, fontSize: '16px', fontWeight: '600', marginBottom: '4px' }}>
+                  Team Members
+                </h5>
+                <p style={{ margin: 0, fontSize: '14px', color: '#666' }}>
+                  100 items
+                </p>
+              </div>
+              <div style={{ display: 'flex', gap: '8px' }}>
+                <FilterButton size="small" variant="ghost" />
+                <SortButton size="small" variant="ghost" />
+                <MoreActionsButton size="small" variant="ghost" />
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* StepIndicator Components Section */}
         <div style={{
           marginBottom: '48px',
