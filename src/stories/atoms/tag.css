@@ -262,6 +262,12 @@
   color: var(--status-info-blue, #3E7CA7);
 }
 
+.tag.outline-black {
+  background: var(--base-white);
+  border-color: var(--base-black);
+  color: var(--base-black);
+}
+
 /* Outline variant hover states */
 .tag.outline-blue.clickable:hover {
   background: var(--primary-blue-blue-100, #E6ECFF);
@@ -271,6 +277,10 @@
 .tag.outline-info-blue.clickable:hover {
   background: var(--neutral-gray-gray-50, #F9FAFB);
   border-color: var(--status-info-blue, #3E7CA7);
+}
+
+.tag.outline-black.clickable:hover {
+  background: var(--neutral-gray-gray-50);
 }
 
 /* Tag label container styling */
