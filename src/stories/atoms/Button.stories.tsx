@@ -837,6 +837,199 @@ export const Interactive: Story = {
   },
 };
 
+// Secondary and Tertiary Button Figma Showcase
+export const SecondaryTertiaryFigmaShowcase: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', padding: '24px' }}>
+      <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Secondary & Tertiary Buttons - Figma Design</h3>
+        <p style={{ margin: '0 0 24px 0', fontSize: '14px', color: '#666' }}>
+          Complete showcase of secondary and tertiary button variants matching exact Figma specifications.
+          Features precise colors, borders, shadows, and state transitions.
+        </p>
+      </div>
+
+      {/* Secondary Buttons Solid */}
+      <div>
+        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Secondary Buttons - Solid</h4>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '16px', alignItems: 'center' }}>
+          {/* Header row */}
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Size</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Default</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Hover</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Clicked</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Focused</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Loading</div>
+
+          {/* Small row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Small</div>
+          <Button size="small" type="secondary" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
+          <Button size="small" type="secondary" state="hover" className="force-hover" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
+          <Button size="small" type="secondary" state="clicked" className="force-clicked" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
+          <Button size="small" type="secondary" state="focused" className="force-focused" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
+          <Button size="small" type="secondary" loading>Label</Button>
+
+          {/* Default row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Default</div>
+          <Button size="default" type="secondary" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
+          <Button size="default" type="secondary" state="hover" className="force-hover" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
+          <Button size="default" type="secondary" state="clicked" className="force-clicked" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
+          <Button size="default" type="secondary" state="focused" className="force-focused" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
+          <Button size="default" type="secondary" loading>Label</Button>
+
+          {/* Large row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Large</div>
+          <Button size="large" type="secondary" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
+          <Button size="large" type="secondary" state="hover" className="force-hover" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
+          <Button size="large" type="secondary" state="clicked" className="force-clicked" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
+          <Button size="large" type="secondary" state="focused" className="force-focused" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
+          <Button size="large" type="secondary" loading>Label</Button>
+        </div>
+      </div>
+
+      {/* Secondary Buttons Outline */}
+      <div>
+        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Secondary Buttons - Outline</h4>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '16px', alignItems: 'center' }}>
+          {/* Header row */}
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Size</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Default</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Hover</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Clicked</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Focused</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Loading</div>
+
+          {/* Small row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Small</div>
+          <Button size="small" type="secondary" outline leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
+          <Button size="small" type="secondary" outline state="hover" className="force-hover" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
+          <Button size="small" type="secondary" outline state="clicked" className="force-clicked" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
+          <Button size="small" type="secondary" outline state="focused" className="force-focused" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
+          <Button size="small" type="secondary" outline loading>Label</Button>
+
+          {/* Default row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Default</div>
+          <Button size="default" type="secondary" outline leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
+          <Button size="default" type="secondary" outline state="hover" className="force-hover" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
+          <Button size="default" type="secondary" outline state="clicked" className="force-clicked" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
+          <Button size="default" type="secondary" outline state="focused" className="force-focused" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
+          <Button size="default" type="secondary" outline loading>Label</Button>
+
+          {/* Large row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Large</div>
+          <Button size="large" type="secondary" outline leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
+          <Button size="large" type="secondary" outline state="hover" className="force-hover" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
+          <Button size="large" type="secondary" outline state="clicked" className="force-clicked" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
+          <Button size="large" type="secondary" outline state="focused" className="force-focused" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
+          <Button size="large" type="secondary" outline loading>Label</Button>
+        </div>
+      </div>
+
+      {/* Tertiary Buttons Solid */}
+      <div>
+        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Tertiary Buttons - Solid</h4>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '16px', alignItems: 'center' }}>
+          {/* Header row */}
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Size</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Default</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Hover</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Clicked</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Focused</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Loading</div>
+
+          {/* Small row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Small</div>
+          <Button size="small" type="tertiary" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
+          <Button size="small" type="tertiary" state="hover" className="force-hover" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
+          <Button size="small" type="tertiary" state="clicked" className="force-clicked" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
+          <Button size="small" type="tertiary" state="focused" className="force-focused" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
+          <Button size="small" type="tertiary" loading>Label</Button>
+
+          {/* Default row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Default</div>
+          <Button size="default" type="tertiary" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
+          <Button size="default" type="tertiary" state="hover" className="force-hover" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
+          <Button size="default" type="tertiary" state="clicked" className="force-clicked" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
+          <Button size="default" type="tertiary" state="focused" className="force-focused" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
+          <Button size="default" type="tertiary" loading>Label</Button>
+
+          {/* Large row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Large</div>
+          <Button size="large" type="tertiary" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
+          <Button size="large" type="tertiary" state="hover" className="force-hover" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
+          <Button size="large" type="tertiary" state="clicked" className="force-clicked" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
+          <Button size="large" type="tertiary" state="focused" className="force-focused" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
+          <Button size="large" type="tertiary" loading>Label</Button>
+        </div>
+      </div>
+
+      {/* Icon-only Tertiary Buttons */}
+      <div>
+        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Tertiary Icon-Only Buttons</h4>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '16px', alignItems: 'center' }}>
+          {/* Header row */}
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Size</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Default</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Hover</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Clicked</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Focused</div>
+          <div style={{ fontWeight: '600', fontSize: '14px' }}>Loading</div>
+
+          {/* Small row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Small</div>
+          <Button size="small" type="tertiary" iconOnly icon={<AlarmIcon size={14} />} />
+          <Button size="small" type="tertiary" iconOnly state="hover" className="force-hover" icon={<AlarmIcon size={14} />} />
+          <Button size="small" type="tertiary" iconOnly state="clicked" className="force-clicked" icon={<AlarmIcon size={14} />} />
+          <Button size="small" type="tertiary" iconOnly state="focused" className="force-focused" icon={<AlarmIcon size={14} />} />
+          <Button size="small" type="tertiary" iconOnly loading />
+
+          {/* Default row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Default</div>
+          <Button size="default" type="tertiary" iconOnly icon={<AlarmIcon size={18} />} />
+          <Button size="default" type="tertiary" iconOnly state="hover" className="force-hover" icon={<AlarmIcon size={18} />} />
+          <Button size="default" type="tertiary" iconOnly state="clicked" className="force-clicked" icon={<AlarmIcon size={18} />} />
+          <Button size="default" type="tertiary" iconOnly state="focused" className="force-focused" icon={<AlarmIcon size={18} />} />
+          <Button size="default" type="tertiary" iconOnly loading />
+
+          {/* Large row */}
+          <div style={{ fontSize: '14px', fontWeight: '500' }}>Large</div>
+          <Button size="large" type="tertiary" iconOnly icon={<AlarmIcon size={20} />} />
+          <Button size="large" type="tertiary" iconOnly state="hover" className="force-hover" icon={<AlarmIcon size={20} />} />
+          <Button size="large" type="tertiary" iconOnly state="clicked" className="force-clicked" icon={<AlarmIcon size={20} />} />
+          <Button size="large" type="tertiary" iconOnly state="focused" className="force-focused" icon={<AlarmIcon size={20} />} />
+          <Button size="large" type="tertiary" iconOnly loading />
+        </div>
+      </div>
+
+      <div>
+        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Design Specifications</h4>
+        <div style={{
+          background: '#f8f9fa',
+          padding: '16px',
+          borderRadius: '8px',
+          fontSize: '14px',
+          fontFamily: 'monospace'
+        }}>
+          <div style={{ marginBottom: '8px' }}><strong>Secondary Solid:</strong> Background #D6F0FB, Border #0BA7EA</div>
+          <div style={{ marginBottom: '8px' }}><strong>Secondary Outline:</strong> Background white, Border #0BA7EA</div>
+          <div style={{ marginBottom: '8px' }}><strong>Tertiary Solid:</strong> Background #AED2BC, Border #4B6D58</div>
+          <div style={{ marginBottom: '8px' }}><strong>Tertiary Icon-only:</strong> Background #8BBF9F, Border #8BBF9F</div>
+          <div style={{ marginBottom: '8px' }}><strong>Hover/Clicked:</strong> Box shadow 1px 1px 0 0 #6171DF</div>
+          <div style={{ marginBottom: '8px' }}><strong>Font Weight:</strong> Light (300) default, Medium (500) on hover/clicked</div>
+          <div><strong>Disabled:</strong> Background #F9FAFB, Border #E5E7EB, Text #D2D5DA</div>
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Comprehensive showcase of secondary and tertiary button variants matching exact Figma design specifications with precise colors, borders, shadows, and state transitions.',
+      },
+    },
+  },
+};
+
 // Complete design system showcase
 // Error Button Figma Showcase
 export const ErrorButtonsFigmaShowcase: Story = {
