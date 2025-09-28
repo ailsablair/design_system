@@ -2003,6 +2003,416 @@ export const SuccessDisabledLarge: Story = {
   },
 };
 
+// Info outline button examples
+export const InfoOutlineSmall: Story = {
+  args: {
+    children: 'Info button',
+    size: 'small',
+    type: 'info',
+    outline: true,
+    leadingIcon: <InformationIcon size={14} />,
+  },
+};
+
+export const InfoOutlineDefault: Story = {
+  args: {
+    children: 'Info button',
+    size: 'default',
+    type: 'info',
+    outline: true,
+    leadingIcon: <InformationIcon size={18} />,
+  },
+};
+
+export const InfoOutlineLarge: Story = {
+  args: {
+    children: 'Info button',
+    size: 'large',
+    type: 'info',
+    outline: true,
+    leadingIcon: <InformationIcon size={20} />,
+  },
+};
+
+export const InfoOutlineHover: Story = {
+  args: {
+    children: 'Info button',
+    size: 'small',
+    type: 'info',
+    outline: true,
+    state: 'hover',
+    className: 'force-hover',
+    leadingIcon: <InformationIcon size={14} />,
+  },
+};
+
+export const InfoOutlineHoverMedium: Story = {
+  args: {
+    children: 'Info button',
+    size: 'default',
+    type: 'info',
+    outline: true,
+    state: 'hover',
+    className: 'force-hover',
+    leadingIcon: <InformationIcon size={18} />,
+  },
+};
+
+export const InfoOutlineHoverLarge: Story = {
+  args: {
+    children: 'Info button',
+    size: 'large',
+    type: 'info',
+    outline: true,
+    state: 'hover',
+    className: 'force-hover',
+    leadingIcon: <InformationIcon size={20} />,
+  },
+};
+
+export const InfoOutlineClicked: Story = {
+  args: {
+    children: 'Info button',
+    size: 'small',
+    type: 'info',
+    outline: true,
+    state: 'clicked',
+    className: 'force-clicked',
+    leadingIcon: <InformationIcon size={14} />,
+  },
+};
+
+export const InfoOutlineClickedMedium: Story = {
+  args: {
+    children: 'Info button',
+    size: 'default',
+    type: 'info',
+    outline: true,
+    state: 'clicked',
+    className: 'force-clicked',
+    leadingIcon: <InformationIcon size={18} />,
+  },
+};
+
+export const InfoOutlineClickedLarge: Story = {
+  args: {
+    children: 'Info button',
+    size: 'large',
+    type: 'info',
+    outline: true,
+    state: 'clicked',
+    className: 'force-clicked',
+    leadingIcon: <InformationIcon size={20} />,
+  },
+};
+
+export const InfoOutlineFocused: Story = {
+  args: {
+    children: 'Info button',
+    size: 'small',
+    type: 'info',
+    outline: true,
+    state: 'focused',
+    className: 'force-focused',
+    leadingIcon: <InformationIcon size={14} />,
+  },
+};
+
+export const InfoOutlineFocusedMedium: Story = {
+  args: {
+    children: 'Info button',
+    size: 'default',
+    type: 'info',
+    outline: true,
+    state: 'focused',
+    className: 'force-focused',
+    leadingIcon: <InformationIcon size={18} />,
+  },
+};
+
+export const InfoOutlineFocusedLarge: Story = {
+  args: {
+    children: 'Info button',
+    size: 'large',
+    type: 'info',
+    outline: true,
+    state: 'focused',
+    className: 'force-focused',
+    leadingIcon: <InformationIcon size={20} />,
+  },
+};
+
+export const InfoOutlineLoading: Story = {
+  args: {
+    children: 'Info button',
+    size: 'small',
+    type: 'info',
+    outline: true,
+    loading: true,
+  },
+};
+
+export const InfoOutlineLoadingMedium: Story = {
+  args: {
+    children: 'Info button',
+    size: 'default',
+    type: 'info',
+    outline: true,
+    loading: true,
+  },
+};
+
+export const InfoOutlineLoadingLarge: Story = {
+  args: {
+    children: 'Info button',
+    size: 'large',
+    type: 'info',
+    outline: true,
+    loading: true,
+  },
+};
+
+export const InfoOutlineDisabled: Story = {
+  args: {
+    children: 'Label',
+    size: 'small',
+    type: 'info',
+    outline: true,
+    disabled: true,
+    leadingIcon: <AlarmIcon size={14} />,
+    trailingIcon: <ArrowDownIcon size={14} />,
+  },
+};
+
+export const InfoOutlineDisabledMedium: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'info',
+    outline: true,
+    disabled: true,
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const InfoOutlineDisabledLarge: Story = {
+  args: {
+    children: 'Label',
+    size: 'large',
+    type: 'info',
+    outline: true,
+    disabled: true,
+    leadingIcon: <AlarmIcon size={20} />,
+    trailingIcon: <ArrowDownIcon size={20} />,
+  },
+};
+
+// Success outline button examples
+export const SuccessOutlineSmall: Story = {
+  args: {
+    children: 'Success button',
+    size: 'small',
+    type: 'success',
+    outline: true,
+    leadingIcon: <InformationIcon size={14} />,
+  },
+};
+
+export const SuccessOutlineDefault: Story = {
+  args: {
+    children: 'Success button',
+    size: 'default',
+    type: 'success',
+    outline: true,
+    leadingIcon: <InformationIcon size={18} />,
+  },
+};
+
+export const SuccessOutlineLarge: Story = {
+  args: {
+    children: 'Success button',
+    size: 'large',
+    type: 'success',
+    outline: true,
+    leadingIcon: <InformationIcon size={20} />,
+  },
+};
+
+export const SuccessOutlineHover: Story = {
+  args: {
+    children: 'Success button',
+    size: 'small',
+    type: 'success',
+    outline: true,
+    state: 'hover',
+    className: 'force-hover',
+    leadingIcon: <InformationIcon size={14} />,
+  },
+};
+
+export const SuccessOutlineHoverMedium: Story = {
+  args: {
+    children: 'Success button',
+    size: 'default',
+    type: 'success',
+    outline: true,
+    state: 'hover',
+    className: 'force-hover',
+    leadingIcon: <InformationIcon size={18} />,
+  },
+};
+
+export const SuccessOutlineHoverLarge: Story = {
+  args: {
+    children: 'Success button',
+    size: 'large',
+    type: 'success',
+    outline: true,
+    state: 'hover',
+    className: 'force-hover',
+    leadingIcon: <InformationIcon size={20} />,
+  },
+};
+
+export const SuccessOutlineClicked: Story = {
+  args: {
+    children: 'Success button',
+    size: 'small',
+    type: 'success',
+    outline: true,
+    state: 'clicked',
+    className: 'force-clicked',
+    leadingIcon: <InformationIcon size={14} />,
+  },
+};
+
+export const SuccessOutlineClickedMedium: Story = {
+  args: {
+    children: 'Success button',
+    size: 'default',
+    type: 'success',
+    outline: true,
+    state: 'clicked',
+    className: 'force-clicked',
+    leadingIcon: <InformationIcon size={18} />,
+  },
+};
+
+export const SuccessOutlineClickedLarge: Story = {
+  args: {
+    children: 'Success button',
+    size: 'large',
+    type: 'success',
+    outline: true,
+    state: 'clicked',
+    className: 'force-clicked',
+    leadingIcon: <InformationIcon size={20} />,
+  },
+};
+
+export const SuccessOutlineFocused: Story = {
+  args: {
+    children: 'Success button',
+    size: 'small',
+    type: 'success',
+    outline: true,
+    state: 'focused',
+    className: 'force-focused',
+    leadingIcon: <InformationIcon size={14} />,
+  },
+};
+
+export const SuccessOutlineFocusedMedium: Story = {
+  args: {
+    children: 'Success button',
+    size: 'default',
+    type: 'success',
+    outline: true,
+    state: 'focused',
+    className: 'force-focused',
+    leadingIcon: <InformationIcon size={18} />,
+  },
+};
+
+export const SuccessOutlineFocusedLarge: Story = {
+  args: {
+    children: 'Success button',
+    size: 'large',
+    type: 'success',
+    outline: true,
+    state: 'focused',
+    className: 'force-focused',
+    leadingIcon: <InformationIcon size={20} />,
+  },
+};
+
+export const SuccessOutlineLoading: Story = {
+  args: {
+    children: 'Success button',
+    size: 'small',
+    type: 'success',
+    outline: true,
+    loading: true,
+  },
+};
+
+export const SuccessOutlineLoadingMedium: Story = {
+  args: {
+    children: 'Success button',
+    size: 'default',
+    type: 'success',
+    outline: true,
+    loading: true,
+  },
+};
+
+export const SuccessOutlineLoadingLarge: Story = {
+  args: {
+    children: 'Success button',
+    size: 'large',
+    type: 'success',
+    outline: true,
+    loading: true,
+  },
+};
+
+export const SuccessOutlineDisabled: Story = {
+  args: {
+    children: 'Label',
+    size: 'small',
+    type: 'success',
+    outline: true,
+    disabled: true,
+    leadingIcon: <AlarmIcon size={14} />,
+    trailingIcon: <ArrowDownIcon size={14} />,
+  },
+};
+
+export const SuccessOutlineDisabledMedium: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'success',
+    outline: true,
+    disabled: true,
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const SuccessOutlineDisabledLarge: Story = {
+  args: {
+    children: 'Label',
+    size: 'large',
+    type: 'success',
+    outline: true,
+    disabled: true,
+    leadingIcon: <AlarmIcon size={20} />,
+    trailingIcon: <ArrowDownIcon size={20} />,
+  },
+};
+
 // Tertiary outline button examples
 export const TertiaryOutlineDefaultSmall: Story = {
   args: {
