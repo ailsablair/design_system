@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react';
 import React, { type PropsWithChildren, useEffect } from 'react';
-import type { Decorator, Preview as StorybookPreview } from '@storybook/react-vite';
+import type { Decorator, Preview } from '@storybook/react-vite';
 
 const ResizeObserverErrorBoundary: React.FC<PropsWithChildren> = ({ children }) => {
   useEffect(() => {
