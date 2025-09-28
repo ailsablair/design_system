@@ -273,7 +273,7 @@
 
 /* Secondary button variant - Updated for Figma design */
 .button.secondary {
-  background: #D6F0FB;
+  background: var(--primary-sky-blue-light-alt);
   border: var(--spacing-stroke-0-5px) solid #0BA7EA;
   color: var(--base-black);
 }
@@ -500,13 +500,13 @@
 
 /* State variants for secondary buttons - Updated for Figma design */
 .button.secondary.default {
-  background: #D6F0FB;
+  background: var(--primary-sky-blue-light-alt);
   border: var(--spacing-stroke-0-5px) solid #0BA7EA;
 }
 
 .button.secondary.hover,
 .button.secondary:hover:not(.disabled):not(.loading) {
-  background: #D6F0FB;
+  background: var(--primary-sky-blue-light-alt);
   border: var(--spacing-stroke-1px) solid #0BA7EA;
   box-shadow: 1px 1px 0 0 #6171DF;
 }
@@ -518,7 +518,7 @@
 
 .button.secondary.clicked,
 .button.secondary:active:not(.disabled):not(.loading) {
-  background: #D6F0FB;
+  background: var(--primary-sky-blue-light-alt);
   border: var(--spacing-stroke-1px) solid #0BA7EA;
   box-shadow: 1px 1px 0 0 #6171DF;
 }
@@ -530,12 +530,12 @@
 
 .button.secondary.focused,
 .button.secondary:focus-visible:not(.disabled):not(.loading) {
-  background: #D6F0FB;
+  background: var(--primary-sky-blue-light-alt);
   border: var(--spacing-stroke-1px) solid #0BA7EA;
 }
 
 .button.secondary.loading {
-  background: #D6F0FB;
+  background: var(--primary-sky-blue-light-alt);
   border: var(--spacing-stroke-0-5px) solid #0BA7EA;
   cursor: wait;
   pointer-events: none;
@@ -689,21 +689,21 @@
 /* Special hover effects for extra-small secondary buttons - Updated for Figma design */
 .button.extra-small.secondary.hover,
 .button.extra-small.secondary:hover:not(.disabled):not(.loading) {
-  background: #D6F0FB;
+  background: var(--primary-sky-blue-light-alt);
   border: var(--spacing-stroke-1px) solid #0BA7EA;
   box-shadow: 0 1px 3px 0 rgba(39, 39, 39, 0.05);
 }
 
 .button.extra-small.secondary.clicked,
 .button.extra-small.secondary:active:not(.disabled):not(.loading) {
-  background: #D6F0FB;
+  background: var(--primary-sky-blue-light-alt);
   border: var(--spacing-stroke-1px) solid #0BA7EA;
   box-shadow: 0 1px 3px 0 rgba(39, 39, 39, 0.05);
 }
 
 .button.extra-small.secondary.focused,
 .button.extra-small.secondary:focus-visible:not(.disabled):not(.loading) {
-  background: #D6F0FB;
+  background: var(--primary-sky-blue-light-alt);
   border: var(--spacing-stroke-1px) solid #0BA7EA;
 }
 
@@ -766,7 +766,7 @@
 
 /* Force state classes for secondary buttons - Updated for Figma design */
 .button.secondary.force-hover {
-  background: #D6F0FB !important;
+  background: var(--primary-sky-blue-light-alt) !important;
   border: var(--spacing-stroke-1px) solid #0BA7EA !important;
   box-shadow: 1px 1px 0 0 #6171DF !important;
 }
@@ -776,7 +776,7 @@
 }
 
 .button.secondary.force-clicked {
-  background: #D6F0FB !important;
+  background: var(--primary-sky-blue-light-alt) !important;
   border: var(--spacing-stroke-1px) solid #0BA7EA !important;
   box-shadow: 1px 1px 0 0 #6171DF !important;
 }
@@ -786,7 +786,7 @@
 }
 
 .button.secondary.force-focused {
-  background: #D6F0FB !important;
+  background: var(--primary-sky-blue-light-alt) !important;
   border: var(--spacing-stroke-1px) solid #0BA7EA !important;
 }
 
@@ -972,7 +972,7 @@
 }
 
 .button.secondary.force-hover.extra-small {
-  background: #D6F0FB !important;
+  background: var(--primary-sky-blue-light-alt) !important;
   border: var(--spacing-stroke-1px) solid #0BA7EA !important;
   box-shadow: 0 1px 3px 0 rgba(39, 39, 39, 0.05) !important;
 }
@@ -982,7 +982,7 @@
 }
 
 .button.secondary.force-clicked.extra-small {
-  background: #D6F0FB !important;
+  background: var(--primary-sky-blue-light-alt) !important;
   border: var(--spacing-stroke-1px) solid #0BA7EA !important;
   box-shadow: 0 1px 3px 0 rgba(39, 39, 39, 0.05) !important;
 }
@@ -992,7 +992,7 @@
 }
 
 .button.secondary.force-focused.extra-small {
-  background: #D6F0FB !important;
+  background: var(--primary-sky-blue-light-alt) !important;
   border: var(--spacing-stroke-1px) solid #0BA7EA !important;
 }
 
