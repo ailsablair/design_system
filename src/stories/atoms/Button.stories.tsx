@@ -536,6 +536,101 @@ export const TertiaryLarge: Story = {
   },
 };
 
+// Tertiary outline button variants
+export const TertiaryOutlineSmall: Story = {
+  args: {
+    children: 'Label',
+    size: 'small',
+    type: 'tertiary',
+    outline: true,
+    leadingIcon: <AlarmIcon size={14} />,
+    trailingIcon: <ArrowDownIcon size={14} />,
+  },
+};
+
+export const TertiaryOutlineDefault: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'tertiary',
+    outline: true,
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const TertiaryOutlineLarge: Story = {
+  args: {
+    children: 'Label',
+    size: 'large',
+    type: 'tertiary',
+    outline: true,
+    leadingIcon: <AlarmIcon size={20} />,
+    trailingIcon: <ArrowDownIcon size={20} />,
+  },
+};
+
+export const TertiaryOutlineHover: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'tertiary',
+    outline: true,
+    state: 'hover',
+    className: 'force-hover',
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const TertiaryOutlineClicked: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'tertiary',
+    outline: true,
+    state: 'clicked',
+    className: 'force-clicked',
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const TertiaryOutlineFocused: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'tertiary',
+    outline: true,
+    state: 'focused',
+    className: 'force-focused',
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const TertiaryOutlineLoading: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'tertiary',
+    outline: true,
+    loading: true,
+  },
+};
+
+export const TertiaryOutlineDisabled: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'tertiary',
+    outline: true,
+    disabled: true,
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
 // Dropdown-style button with open state
 export const DropdownStyleButton: Story = {
   args: {
