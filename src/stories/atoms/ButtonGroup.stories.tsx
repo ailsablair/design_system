@@ -21,14 +21,6 @@ const ArrowDownIcon: React.FC<{ size?: number }> = ({ size = 18 }) => (
   </svg>
 );
 
-const ChevronDownIcon: React.FC<{ size?: number }> = ({ size = 18 }) => (
-  <svg width={size} height={size} viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g opacity="0.6">
-      <path d="M5.5575 6.43506L9 9.87756L12.4425 6.43506L13.5 7.50006L9 12.0001L4.5 7.50006L5.5575 6.43506Z" fill="currentColor"/>
-    </g>
-  </svg>
-);
-
 const meta: Meta<typeof ButtonGroup> = {
   title: 'Atoms/ButtonGroup',
   component: ButtonGroup,
