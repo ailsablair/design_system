@@ -343,7 +343,7 @@
 }
 
 .button.secondary.outline.disabled {
-  background: #F9FAFB;
+  background: var(--neutral-gray-gray-50);
   border: var(--spacing-stroke-2px) solid #E5E7EB;
   color: #D2D5DA;
   cursor: not-allowed;
@@ -542,7 +542,7 @@
 }
 
 .button.secondary.disabled {
-  background: #F9FAFB;
+  background: var(--neutral-gray-gray-50);
   border: var(--spacing-stroke-1px) solid #E5E7EB;
   color: #D2D5DA;
   cursor: not-allowed;
@@ -598,7 +598,7 @@
 }
 
 .button.tertiary.disabled {
-  background: #F9FAFB;
+  background: var(--neutral-gray-gray-50);
   border: var(--spacing-stroke-1px) solid #E5E7EB;
   color: #D2D5DA;
   cursor: not-allowed;
@@ -644,7 +644,7 @@
 }
 
 .button.tertiary.icon-only.disabled {
-  background: #F9FAFB;
+  background: var(--neutral-gray-gray-50);
   border: var(--spacing-stroke-1px) solid #E5E7EB;
 }
 
@@ -708,7 +708,7 @@
 }
 
 .button.extra-small.secondary.disabled {
-  background: #F9FAFB;
+  background: var(--neutral-gray-gray-50);
   border: var(--spacing-stroke-0-5px) solid #E5E7EB;
   color: #D2D5DA;
 }
@@ -860,7 +860,7 @@
 }
 
 .button.tertiary.outline.disabled {
-  background: #F9FAFB;
+  background: var(--neutral-gray-gray-50);
   border: var(--spacing-stroke-2px) solid #E5E7EB;
   color: #D2D5DA;
   cursor: not-allowed;
@@ -1164,7 +1164,7 @@
 }
 
 .button.ghost.disabled {
-  background: #F9FAFB;
+  background: var(--neutral-gray-gray-50);
   border: var(--spacing-stroke-0-5px) solid #E5E7EB;
   color: #D2D5DA;
   cursor: not-allowed;
@@ -1220,7 +1220,7 @@
 }
 
 .button.error.disabled {
-  background: #F9FAFB;
+  background: var(--neutral-gray-gray-50);
   border: var(--spacing-stroke-0-5px) solid #E5E7EB;
   color: #D2D5DA;
   cursor: not-allowed;
@@ -1276,7 +1276,7 @@
 }
 
 .button.error.outline.disabled {
-  background: #F9FAFB;
+  background: var(--neutral-gray-gray-50);
   border: var(--spacing-stroke-0-5px) solid #E5E7EB;
   color: #D2D5DA;
   cursor: not-allowed;
@@ -1332,7 +1332,7 @@
 }
 
 .button.warning.disabled {
-  background: #F9FAFB;
+  background: var(--neutral-gray-gray-50);
   border: var(--spacing-stroke-0-5px) solid #E5E7EB;
   color: #D2D5DA;
   cursor: not-allowed;
