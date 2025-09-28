@@ -1049,8 +1049,8 @@
 
 /* Error button variant - Updated for Figma design */
 .button.error {
-  background: #CE2031;
-  border: var(--spacing-stroke-0-5px) solid #CE2031;
+  background: var(--status-red);
+  border: var(--spacing-stroke-0-5px) solid var(--status-red);
   color: var(--base-white);
 }
 
@@ -1066,12 +1066,12 @@
 /* Error outline button variant - Updated for Figma design */
 .button.error.outline {
   background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid #CE2031;
-  color: #CE2031;
+  border: var(--spacing-stroke-1px) solid var(--status-red);
+  color: var(--status-red);
 }
 
 .button.error.outline .button-icon {
-  color: #CE2031;
+  color: var(--status-red);
   opacity: 0.6;
 }
 
@@ -1178,14 +1178,14 @@
 
 /* State variants for error buttons - Updated for Figma design */
 .button.error.default {
-  background: #CE2031;
-  border: var(--spacing-stroke-0-5px) solid #CE2031;
+  background: var(--status-red);
+  border: var(--spacing-stroke-0-5px) solid var(--status-red);
 }
 
 .button.error.hover,
 .button.error:hover:not(.disabled):not(.loading) {
-  background: #CE2031;
-  border: var(--spacing-stroke-2px) solid #CE2031;
+  background: var(--status-red);
+  border: var(--spacing-stroke-2px) solid var(--status-red);
   box-shadow: 1px 1px 0 0 #FFF3F3;
 }
 
@@ -1196,8 +1196,8 @@
 
 .button.error.clicked,
 .button.error:active:not(.disabled):not(.loading) {
-  background: #CE2031;
-  border: var(--spacing-stroke-2px) solid #CE2031;
+  background: var(--status-red);
+  border: var(--spacing-stroke-2px) solid var(--status-red);
   box-shadow: 1px 1px 0 0 #FFF3F3;
 }
 
@@ -1208,13 +1208,13 @@
 
 .button.error.focused,
 .button.error:focus-visible:not(.disabled):not(.loading) {
-  background: #CE2031;
+  background: var(--status-red);
   border: var(--spacing-stroke-2px) solid #FFF3F3;
 }
 
 .button.error.loading {
-  background: #CE2031;
-  border: var(--spacing-stroke-0-5px) solid #CE2031;
+  background: var(--status-red);
+  border: var(--spacing-stroke-0-5px) solid var(--status-red);
   cursor: wait;
   pointer-events: none;
 }
@@ -1235,13 +1235,13 @@
 /* State variants for error outline buttons - Updated for Figma design */
 .button.error.outline.default {
   background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid #CE2031;
+  border: var(--spacing-stroke-1px) solid var(--status-red);
 }
 
 .button.error.outline.hover,
 .button.error.outline:hover:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-2px) solid #CE2031;
+  border: var(--spacing-stroke-2px) solid var(--status-red);
   box-shadow: 1px 1px 0 0 #FFF3F3;
 }
 
@@ -1253,7 +1253,7 @@
 .button.error.outline.clicked,
 .button.error.outline:active:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-2px) solid #CE2031;
+  border: var(--spacing-stroke-2px) solid var(--status-red);
   box-shadow: 1px 1px 0 0 #FFF3F3;
 }
 
@@ -1265,12 +1265,12 @@
 .button.error.outline.focused,
 .button.error.outline:focus-visible:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-2px) solid #CE2031;
+  border: var(--spacing-stroke-2px) solid var(--status-red);
 }
 
 .button.error.outline.loading {
   background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid #CE2031;
+  border: var(--spacing-stroke-1px) solid var(--status-red);
   cursor: wait;
   pointer-events: none;
 }
@@ -1437,8 +1437,8 @@
 
 /* Force state classes for error buttons - Updated for Figma design */
 .button.error.force-hover {
-  background: #CE2031 !important;
-  border: var(--spacing-stroke-2px) solid #CE2031 !important;
+  background: var(--status-red) !important;
+  border: var(--spacing-stroke-2px) solid var(--status-red) !important;
   box-shadow: 1px 1px 0 0 #FFF3F3 !important;
 }
 
@@ -1447,8 +1447,8 @@
 }
 
 .button.error.force-clicked {
-  background: #CE2031 !important;
-  border: var(--spacing-stroke-2px) solid #CE2031 !important;
+  background: var(--status-red) !important;
+  border: var(--spacing-stroke-2px) solid var(--status-red) !important;
   box-shadow: 1px 1px 0 0 #FFF3F3 !important;
 }
 
@@ -1457,14 +1457,14 @@
 }
 
 .button.error.force-focused {
-  background: #CE2031 !important;
+  background: var(--status-red) !important;
   border: var(--spacing-stroke-2px) solid #FFF3F3 !important;
 }
 
 /* Force state classes for error outline buttons - Updated for Figma design */
 .button.error.outline.force-hover {
   background: var(--base-white) !important;
-  border: var(--spacing-stroke-2px) solid #CE2031 !important;
+  border: var(--spacing-stroke-2px) solid var(--status-red) !important;
   box-shadow: 1px 1px 0 0 #FFF3F3 !important;
 }
 
@@ -1474,7 +1474,7 @@
 
 .button.error.outline.force-clicked {
   background: var(--base-white) !important;
-  border: var(--spacing-stroke-2px) solid #CE2031 !important;
+  border: var(--spacing-stroke-2px) solid var(--status-red) !important;
   box-shadow: 1px 1px 0 0 #FFF3F3 !important;
 }
 
@@ -1484,7 +1484,7 @@
 
 .button.error.outline.force-focused {
   background: var(--base-white) !important;
-  border: var(--spacing-stroke-2px) solid #CE2031 !important;
+  border: var(--spacing-stroke-2px) solid var(--status-red) !important;
 }
 
 /* Force state classes for warning buttons - Updated for Figma design */
