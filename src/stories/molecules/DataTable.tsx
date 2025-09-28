@@ -637,7 +637,7 @@ export const DataTable: React.FC<DataTableProps> = ({
           );
 
         default:
-          return <span>{value as React.ReactNode}</span>;
+          return <span>{value as ReactNode}</span>;
       }
     },
     [onDelete, onEdit, tagSize]
