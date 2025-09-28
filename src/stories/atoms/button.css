@@ -1606,7 +1606,7 @@
 
 /* Success button variant - Updated for Figma design */
 .button.success {
-  background: #96F78D;
+  background: var(--status-green-300);
   border: var(--spacing-stroke-0-5px) solid #227F1A;
   color: var(--base-black);
 }
@@ -1678,15 +1678,15 @@
 
 /* State variants for success buttons - Updated for Figma design */
 .button.success.default {
-  background: #96F78D;
+  background: var(--status-green-300);
   border: var(--spacing-stroke-0-5px) solid #227F1A;
 }
 
 .button.success.hover,
 .button.success:hover:not(.disabled):not(.loading) {
-  background: #96F78D;
+  background: var(--status-green-300);
   border: var(--spacing-stroke-1px) solid #227F1A;
-  box-shadow: 1px 1px 0 0 #96F78D;
+  box-shadow: 1px 1px 0 0 var(--status-green-300);
 }
 
 .button.success.hover .button-text,
@@ -1696,9 +1696,9 @@
 
 .button.success.clicked,
 .button.success:active:not(.disabled):not(.loading) {
-  background: #96F78D;
+  background: var(--status-green-300);
   border: var(--spacing-stroke-1px) solid #227F1A;
-  box-shadow: 1px 1px 0 0 #96F78D;
+  box-shadow: 1px 1px 0 0 var(--status-green-300);
 }
 
 .button.success.clicked .button-text,
@@ -1708,12 +1708,12 @@
 
 .button.success.focused,
 .button.success:focus-visible:not(.disabled):not(.loading) {
-  background: #96F78D;
+  background: var(--status-green-300);
   border: var(--spacing-stroke-2px) solid #227F1A;
 }
 
 .button.success.loading {
-  background: #96F78D;
+  background: var(--status-green-300);
   border: var(--spacing-stroke-0-5px) solid #227F1A;
   cursor: wait;
   pointer-events: none;
@@ -1760,9 +1760,9 @@
 
 /* Force state classes for success buttons - Updated for Figma design */
 .button.success.force-hover {
-  background: #96F78D !important;
+  background: var(--status-green-300) !important;
   border: var(--spacing-stroke-1px) solid #227F1A !important;
-  box-shadow: 1px 1px 0 0 #96F78D !important;
+  box-shadow: 1px 1px 0 0 var(--status-green-300) !important;
 }
 
 .button.success.force-hover .button-text {
@@ -1770,9 +1770,9 @@
 }
 
 .button.success.force-clicked {
-  background: #96F78D !important;
+  background: var(--status-green-300) !important;
   border: var(--spacing-stroke-1px) solid #227F1A !important;
-  box-shadow: 1px 1px 0 0 #96F78D !important;
+  box-shadow: 1px 1px 0 0 var(--status-green-300) !important;
 }
 
 .button.success.force-clicked .button-text {
@@ -1780,7 +1780,7 @@
 }
 
 .button.success.force-focused {
-  background: #96F78D !important;
+  background: var(--status-green-300) !important;
   border: var(--spacing-stroke-2px) solid #227F1A !important;
 }
 
@@ -1904,7 +1904,7 @@
 .button.success.outline:hover:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid #227F1A;
-  box-shadow: 1px 1px 0 0 #96F78D;
+  box-shadow: 1px 1px 0 0 var(--status-green-300);
 }
 
 .button.success.outline.hover .button-text,
@@ -1923,7 +1923,7 @@
 .button.success.outline:active:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-2px) solid #227F1A;
-  box-shadow: 1px 1px 0 0 #96F78D;
+  box-shadow: 1px 1px 0 0 var(--status-green-300);
 }
 
 .button.success.outline.clicked .button-text,
