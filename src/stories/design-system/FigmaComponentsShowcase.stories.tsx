@@ -19,7 +19,7 @@ const meta: Meta<typeof FigmaComponentsShowcase> = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Comprehensive showcase of all components updated to match the latest Figma design specifications. This includes AutoSave buttons, AutoSaveWithTag, updated MenuItem components, ButtonGroup layouts, and enhanced SplitButton styling.',
+        component: 'Comprehensive showcase of all components updated to match the latest Figma design specifications. This includes AutoSave buttons, AutoSaveWithTag, updated MenuItem components, ButtonGroup layouts, OrganizationalButtons (Filter, Sort, More Actions), and enhanced SplitButton styling.',
       },
     },
   },
