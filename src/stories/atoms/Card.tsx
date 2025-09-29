@@ -475,7 +475,15 @@ export const Card: React.FC<CardProps> = ({
           <>
             <div className="card-contained-image-container">
               <div className="card-contained-image-wrapper">
-                {/* Placeholder image - replace with actual image if needed */}
+                {imageSrc ? (
+                  <img src={imageSrc} alt={imageAlt} className="card-contained-image" />
+                ) : (
+                  <CardImagePlaceholder
+                    className="card-contained-image card-contained-image--placeholder"
+                    width="100%"
+                    height="100%"
+                  />
+                )}
               </div>
             </div>
             <div className="card-content">
