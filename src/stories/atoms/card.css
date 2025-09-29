@@ -781,6 +781,11 @@
   border-radius: var(--spacing-radius-6px);
 }
 
+.card-contained-image--placeholder {
+  fill: var(--neutral-gray-gray-400);
+  display: block;
+}
+
 /* === IMAGE CARD CONTENT STYLES === */
 
 /* Content section for both image and contained-image cards */
