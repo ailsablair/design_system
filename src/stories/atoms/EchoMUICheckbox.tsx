@@ -32,7 +32,7 @@ const StyledCheckbox = styled(Checkbox, {
   echoSize?: string;
   echoVariant?: string;
   echoShape?: string;
-}>(({ theme, echoSize = 'default', echoVariant = 'primary', echoShape = 'square' }) => {
+}>(({ echoSize = 'default', echoVariant = 'primary', echoShape = 'square' }) => {
   
   // Size variants using Echo tokens
   const sizeStyles = {
@@ -110,7 +110,7 @@ const StyledCheckbox = styled(Checkbox, {
   };
 });
 
-const StyledFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
+const StyledFormControlLabel = styled(FormControlLabel)(() => ({
   margin: 0,
   alignItems: 'flex-start',
   
@@ -127,7 +127,7 @@ const StyledFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
   },
 }));
 
-const StyledFormHelperText = styled(FormHelperText)(({ theme }) => ({
+const StyledFormHelperText = styled(FormHelperText)(() => ({
   fontFamily: 'var(--type-typeface-roboto-flex)',
   fontSize: 'var(--type-size-sm)',
   margin: 'var(--spacing-sizing-4px) 0 0 var(--spacing-sizing-28px)', // Align with label
