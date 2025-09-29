@@ -20,8 +20,8 @@ export const ProgressCircle: React.FC<ProgressCircleProps> = ({
 }) => {
   const classes = [
     'progress-circle',
-    `progress-circle--${size}`,
-    `progress-circle--${state}`,
+    `progress-circle--size-${size}`,
+    `progress-circle--state-${state}`,
     className
   ].filter(Boolean).join(' ');
 
