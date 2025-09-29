@@ -1,0 +1,185 @@
+/* ProgressBar Component Styles */
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* === CIRCLES CONTAINER === */
+
+.progress-bar__circles {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+/* Size-specific gaps for circles */
+.progress-bar__circles--small {
+  gap: 3px;
+}
+
+.progress-bar__circles--default {
+  gap: 4px;
+}
+
+.progress-bar__circles--large {
+  gap: 5px;
+}
+
+/* === PERCENTAGE TEXT === */
+
+.progress-bar__percentage {
+  font-family: var(--type-typeface-roboto-flex);
+  font-weight: 700;
+  color: var(--base-black);
+  line-height: 1;
+  user-select: none;
+}
+
+/* Size variants for percentage text */
+.progress-bar__percentage--small {
+  font-size: var(--type-roboto-flex-body-sm);
+  line-height: var(--type-line-height-body-sm);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm);
+}
+
+.progress-bar__percentage--default {
+  font-size: var(--type-roboto-flex-body);
+  line-height: var(--type-line-height-body);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body);
+}
+
+.progress-bar__percentage--large {
+  font-size: var(--type-roboto-flex-body-lg);
+  line-height: var(--type-line-height-body-lg);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg);
+}
+
+/* Disabled state for percentage text */
+.progress-bar__percentage--disabled {
+  color: var(--neutral-gray-gray-400);
+}
+
+/* === DISABLED STATE === */
+
+.progress-bar--disabled {
+  opacity: 1; /* Let individual elements handle their disabled styling */
+}
+
+/* === RESPONSIVE DESIGN === */
+
+@media (max-width: 768px) {
+  .progress-bar {
+    max-width: 100%;
+  }
+  
+  .progress-bar__circles--small {
+    gap: 2px;
+  }
+  
+  .progress-bar__circles--default {
+    gap: 3px;
+  }
+  
+  .progress-bar__circles--large {
+    gap: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .progress-bar {
+    gap: 6px;
+  }
+  
+  .progress-bar__circles {
+    flex-wrap: wrap;
+  }
+  
+  .progress-bar__circles--small {
+    gap: 2px;
+  }
+  
+  .progress-bar__circles--default {
+    gap: 2px;
+  }
+  
+  .progress-bar__circles--large {
+    gap: 3px;
+  }
+  
+  /* Slightly smaller text on mobile */
+  .progress-bar__percentage--large {
+    font-size: var(--type-roboto-flex-body);
+    line-height: var(--type-line-height-body);
+  }
+}
+
+/* === ACCESSIBILITY === */
+
+.progress-bar:focus-visible {
+  outline: 2px solid var(--primary-sky-blue-sky-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* === HIGH CONTRAST MODE === */
+
+@media (prefers-contrast: high) {
+  .progress-bar__percentage {
+    color: #000000;
+    font-weight: 900;
+  }
+  
+  .progress-bar__percentage--disabled {
+    color: #666666;
+  }
+}
+
+/* === REDUCED MOTION === */
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar * {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* === PRINT STYLES === */
+
+@media print {
+  .progress-bar {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  
+  .progress-bar__percentage {
+    color: #000000 !important;
+  }
+  
+  .progress-bar__percentage--disabled {
+    color: #666666 !important;
+  }
+}
+
+/* === RTL SUPPORT === */
+
+[dir="rtl"] .progress-bar__circles {
+  direction: rtl;
+}
+
+/* === ANIMATION FOR PROGRESS CHANGES === */
+
+.progress-bar__circles .progress-circle {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar__circles .progress-circle {
+    transition: none;
+  }
+}
