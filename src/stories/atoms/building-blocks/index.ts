@@ -6,3 +6,7 @@ export { AccordionHeader } from './AccordionHeader';
 export type { AccordionHeaderProps } from './AccordionHeader';
 export { ImageAccordion } from './ImageAccordion';
 export type { ImageAccordionProps } from './ImageAccordion';
+export { ProgressCircle } from './ProgressCircle';
+export type { ProgressCircleProps } from './ProgressCircle';
+export { ProgressBar } from './ProgressBar';
+export type { ProgressBarProps } from './ProgressBar';
