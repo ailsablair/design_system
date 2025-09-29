@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { SplitButton } from '../../atoms/button/SplitButton';
 import type { SplitButtonMenuItem } from '../../atoms/button/SplitButton';
 import { AlarmIcon } from '../../atoms/Button';
