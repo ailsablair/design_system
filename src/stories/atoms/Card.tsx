@@ -164,6 +164,30 @@ const CloseIcon = () => (
   </svg>
 );
 
+const CardImagePlaceholder = ({
+  className,
+  width = '90',
+  height = '90',
+}: {
+  className?: string;
+  width?: string | number;
+  height?: string | number;
+}) => (
+  <svg
+    className={className}
+    width={width}
+    height={height}
+    viewBox="0 0 90 90"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    focusable="false"
+    preserveAspectRatio="xMidYMid slice"
+  >
+    <path d="M62.5 52.5L50 67.5L32.5 45L10 75H80M0 80V10C0 4.45 4.5 0 10 0H80C82.6522 0 85.1957 1.05357 87.0711 2.92893C88.9464 4.8043 90 7.34784 90 10V80C90 82.6522 88.9464 85.1957 87.0711 87.0711C85.1957 88.9464 82.6522 90 80 90H10C7.34784 90 4.8043 88.9464 2.92893 87.0711C1.05357 85.1957 0 82.6522 0 80Z" fill="#9CA3AF"/>
+  </svg>
+);
+
 export const Card: React.FC<CardProps> = ({
   size = 'default',
   type = 'simple',
