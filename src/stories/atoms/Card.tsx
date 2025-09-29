@@ -215,9 +215,10 @@ export const Card: React.FC<CardProps> = ({
   imageAlt = 'Card image',
 }) => {
   // Suppress unused variable warnings for props that are kept for API completeness
-  void placement;
   void showIcon;
-  
+
+  const placementAttribute = placement !== 'default' ? placement : undefined;
+
   const handleClick = () => {
     if (!disabled && onClick) {
       onClick();
