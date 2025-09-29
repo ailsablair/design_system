@@ -460,9 +460,11 @@ export const Card: React.FC<CardProps> = ({
             </div>
             <div className="card-image-container">
               <div className="card-image-wrapper">
-                <svg className="card-image" width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M62.5 52.5L50 67.5L32.5 45L10 75H80M0 80V10C0 4.45 4.5 0 10 0H80C82.6522 0 85.1957 1.05357 87.0711 2.92893C88.9464 4.8043 90 7.34784 90 10V80C90 82.6522 88.9464 85.1957 87.0711 87.0711C85.1957 88.9464 82.6522 90 80 90H10C7.34784 90 4.8043 88.9464 2.92893 87.0711C1.05357 85.1957 0 82.6522 0 80Z" fill="#9CA3AF"/>
-                </svg>
+                {imageSrc ? (
+                  <img src={imageSrc} alt={imageAlt} className="card-image card-image--media" />
+                ) : (
+                  <CardImagePlaceholder className="card-image card-image--placeholder" />
+                )}
               </div>
             </div>
           </>
