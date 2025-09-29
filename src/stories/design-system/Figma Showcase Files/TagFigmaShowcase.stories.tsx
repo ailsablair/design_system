@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Tag } from '../../atoms/Tag';
 
 const meta: Meta<typeof Tag> = {
