@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { TableHeader } from '../../atoms/building-blocks/TableHeader';
 
 const meta: Meta<typeof TableHeader> = {
