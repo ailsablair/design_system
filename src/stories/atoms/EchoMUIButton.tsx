@@ -30,7 +30,7 @@ interface EchoMUIButtonProps extends Omit<MUIButtonProps, 'size' | 'color'> {
 
 const StyledEchoButton = styled(MUIButton, {
   shouldForwardProp: (prop) => !['variant', 'size', 'leadingIcon', 'trailingIcon'].includes(prop as string),
-})<{ variant?: string; size?: string }>(({ theme, variant = 'primary', size = 'default' }) => {
+})<{ variant?: string; size?: string }>(({ variant = 'primary', size = 'default' }) => {
   
   // Size mappings using Echo tokens
   const sizeStyles = {
