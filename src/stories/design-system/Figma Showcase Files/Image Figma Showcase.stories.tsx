@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Image } from '../../atoms/Image';
 
 const meta: Meta<typeof Image> = {
