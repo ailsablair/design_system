@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Toggle } from '../../atoms/building-blocks/Toggle';
 import { Slider } from '../../atoms/building-blocks/Slider';
 import { DateTimeInput } from '../../atoms/DateTimeInput';
