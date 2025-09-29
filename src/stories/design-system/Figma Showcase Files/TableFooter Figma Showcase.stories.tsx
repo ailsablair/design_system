@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { TableFooter } from '../../atoms/building-blocks/TableFooter';
 
 const meta: Meta<typeof TableFooter> = {
