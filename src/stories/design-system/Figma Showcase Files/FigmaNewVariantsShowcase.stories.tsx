@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { UserProfile } from '../../atoms/UserProfile';
 import { ProgressBar } from '../../atoms/ProgressBar';
 import { PaymentMethod } from '../../atoms/building-blocks/PaymentMethod';
