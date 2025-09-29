@@ -587,6 +587,7 @@ export const Card: React.FC<CardProps> = ({
   return (
     <div
       className={cardClasses}
+      data-placement={placementAttribute}
       onClick={handleClick}
       role={onClick ? 'button' : undefined}
       tabIndex={onClick && !disabled ? 0 : undefined}
