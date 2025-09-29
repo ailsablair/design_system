@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { FigmaTable } from '../../atoms/building-blocks/table/FigmaTable';
 import type { FigmaTableColumn, FigmaTableData } from '../../atoms/building-blocks/table/FigmaTable';
 
