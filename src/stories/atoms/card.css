@@ -660,7 +660,17 @@
 .card-image {
   width: 90px;
   height: 90px;
+}
+
+.card-image--media {
+  object-fit: cover;
+  border-radius: var(--spacing-radius-4px);
+  display: block;
+}
+
+.card-image--placeholder {
   fill: var(--neutral-gray-gray-400);
+  display: block;
 }
 
 /* Left placement - Image on left side */
