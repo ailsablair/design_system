@@ -1,0 +1,112 @@
+/* ProgressCircle Component Styles */
+
+.progress-circle {
+  display: inline-block;
+  border-radius: var(--spacing-radius-99999px);
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* === SIZE VARIANTS === */
+
+.progress-circle--small {
+  width: 8px;
+  height: 8px;
+}
+
+.progress-circle--default {
+  width: 12px;
+  height: 12px;
+}
+
+.progress-circle--large {
+  width: 16px;
+  height: 16px;
+}
+
+/* === STATE VARIANTS === */
+
+/* Default State - Gray unfilled circle */
+.progress-circle--default {
+  background: var(--neutral-gray-gray-300);
+}
+
+/* Filled State - Sky blue filled circle */
+.progress-circle--filled {
+  background: var(--primary-sky-blue-sky-blue);
+}
+
+/* Error State - Would use error color if available */
+.progress-circle--error {
+  background: #EF4444; /* Using red as fallback since no error token is defined */
+  border: var(--spacing-stroke-1px) solid #DC2626;
+}
+
+/* Disabled State - Light gray with border */
+.progress-circle--disabled {
+  background: var(--neutral-gray-gray-100);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
+}
+
+/* === ACCESSIBILITY === */
+
+.progress-circle:focus-visible {
+  outline: 2px solid var(--primary-sky-blue-sky-blue);
+  outline-offset: 2px;
+}
+
+/* === ANIMATION SUPPORT === */
+
+.progress-circle {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* === HIGH CONTRAST MODE === */
+
+@media (prefers-contrast: high) {
+  .progress-circle--default {
+    background: #808080;
+    border: 1px solid #000000;
+  }
+  
+  .progress-circle--filled {
+    background: #0066CC;
+    border: 1px solid #000000;
+  }
+  
+  .progress-circle--error {
+    background: #CC0000;
+    border: 1px solid #000000;
+  }
+  
+  .progress-circle--disabled {
+    background: #E0E0E0;
+    border: 1px solid #808080;
+  }
+}
+
+/* === REDUCED MOTION === */
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-circle {
+    transition: none;
+  }
+}
+
+/* === PRINT STYLES === */
+
+@media print {
+  .progress-circle {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  
+  .progress-circle--filled {
+    background: #000000 !important;
+  }
+  
+  .progress-circle--default {
+    background: #FFFFFF !important;
+    border: 1px solid #000000 !important;
+  }
+}
