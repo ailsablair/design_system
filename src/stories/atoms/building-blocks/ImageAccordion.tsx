@@ -1,6 +1,6 @@
 import React, { useState, useId } from 'react';
 import { useId, useMemo, useState } from 'react';
-import type { CSSProperties } from 'react';
+import type { CSSProperties, FC } from 'react';
 import './imageAccordion.css';
 
 export interface ImageAccordionProps {
@@ -45,7 +45,7 @@ export interface ImageAccordionProps {
  * - Smooth animations and transitions
  * - Accessibility support
  */
-export const ImageAccordion: React.FC<ImageAccordionProps> = ({
+export const ImageAccordion: FC<ImageAccordionProps> = ({
   status = 'closed',
   type = 'image',
   content = 'none',
