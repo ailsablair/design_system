@@ -199,11 +199,11 @@
 
 /* Light Gray */
 .alert--light-gray {
-  background: var(--base-white);
+  background: var(--neutral-gray-gray-100);
 }
 
 .alert--light-gray.alert--border {
-  border-color: var(--neutral-gray-gray-700);
+  border-color: var(--neutral-gray-gray-300);
 }
 
 .alert--light-gray .alert__title {
@@ -211,11 +211,11 @@
 }
 
 .alert--light-gray .alert-icon {
-  color: var(--neutral-gray-gray-700);
+  color: var(--neutral-gray-gray-600);
 }
 
 .alert--light-gray .alert__close-button .alert-close-icon {
-  color: var(--base-black);
+  color: var(--neutral-gray-gray-700);
 }
 
 /* Navy */
