@@ -35,6 +35,38 @@ import {
   Clear as ClearIcon,
 } from '@mui/icons-material';
 
+interface FormDataState {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  company: string;
+  role: string;
+  experience: 'beginner' | 'intermediate' | 'advanced' | 'expert';
+  interests: string[];
+  newsletter: boolean;
+  terms: boolean;
+  comments: string;
+}
+
+type TextInputField = 'firstName' | 'lastName' | 'email' | 'phone' | 'company' | 'role' | 'comments';
+type CheckboxField = 'newsletter' | 'terms';
+type ErrorField = TextInputField | CheckboxField;
+
+const createInitialFormState = (): FormDataState => ({
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: '',
+  company: '',
+  role: '',
+  experience: 'beginner',
+  interests: [],
+  newsletter: false,
+  terms: false,
+  comments: '',
+});
+
 const meta = {
   title: 'Echo + MUI/Forms Collection',
   parameters: {
