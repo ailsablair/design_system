@@ -73,7 +73,7 @@ const StyledEchoInput = styled(TextField, {
   };
 
   // State-based styling using Echo tokens
-  const getStateStyles = () => {
+  const getStateStyles = (): Record<string, unknown> => {
     switch (echoState) {
       case 'error':
         return {
