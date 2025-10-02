@@ -32,14 +32,14 @@ type EchoInputState = NonNullable<EchoMUIInputProps['state']>;
 type EchoInputSize = NonNullable<EchoMUIInputProps['size']>;
 
 const StyledEchoInput = styled(TextField, {
-  shouldForwardProp: (prop) => !['echoState', 'echoSize'].includes(prop as string),
+  shouldForwardProp: (prop) => prop !== 'echoState' && prop !== 'echoSize',
 })<{
-  echoState?: string;
-  echoSize?: string;
-}>(({ theme, echoState = 'default', echoSize = 'default' }) => {
-  
+  echoState?: EchoInputState;
+  echoSize?: EchoInputSize;
+}>(({ echoState = 'default', echoSize = 'default' }) => {
+
   // Size variants using Echo tokens
-  const sizeStyles = {
+  const sizeStyles: Record<EchoInputSize, Record<string, unknown>> = {
     small: {
       '& .MuiInputBase-root': {
         fontSize: 'var(--type-size-sm)',
