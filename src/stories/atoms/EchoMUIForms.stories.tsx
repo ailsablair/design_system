@@ -118,51 +118,52 @@ type Story = StoryObj;
 // Form Components Showcase
 export const FormsShowcase: Story = {
   render: () => {
-    const [formData, setFormData] = useState({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      company: '',
-      role: '',
-      experience: 'beginner',
-      interests: [] as string[],
-      newsletter: false,
-      terms: false,
-      comments: '',
-    });
+    const [formData, setFormData] = useState<FormDataState>(() => createInitialFormState());
+    const [errors, setErrors] = useState<Partial<Record<ErrorField, string>>>({});
 
-    const [errors, setErrors] = useState<Record<string, string>>({});
-
-    const handleInputChange = (field: string) => (event: any) => {
-      const value = event.target.value;
-      setFormData(prev => ({ ...prev, [field]: value }));
-      
-      // Clear error when user starts typing
-      if (errors[field]) {
-        setErrors(prev => ({ ...prev, [field]: '' }));
-      }
+    const clearFieldError = (field: ErrorField) => {
+      setErrors((prev) => {
+        if (!prev[field]) {
+          return prev;
+        }
+        const next = { ...prev };
+        delete next[field];
+        return next;
+      });
     };
 
-    const handleCheckboxChange = (field: string) => (event: any) => {
-      setFormData(prev => ({ ...prev, [field]: event.target.checked }));
-    };
+    const handleInputChange =
+      (field: TextInputField) =>
+      (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent<string>) => {
+        const { value } = event.target;
+        setFormData((prev) => ({ ...prev, [field]: value }));
+        clearFieldError(field);
+      };
+
+    const handleCheckboxChange =
+      (field: CheckboxField) =>
+      (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { checked } = event.target;
+        setFormData((prev) => ({ ...prev, [field]: checked }));
+        clearFieldError(field);
+      };
 
     const handleInterestChange = (interest: string) => {
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
         interests: prev.interests.includes(interest)
-          ? prev.interests.filter(i => i !== interest)
+          ? prev.interests.filter((item) => item !== interest)
           : [...prev.interests, interest]
       }));
     };
 
-    const handleClear = (field: string) => () => {
-      setFormData(prev => ({ ...prev, [field]: '' }));
+    const handleClear = (field: TextInputField) => () => {
+      setFormData((prev) => ({ ...prev, [field]: '' }));
+      clearFieldError(field);
     };
 
     const validateForm = () => {
-      const newErrors: Record<string, string> = {};
+      const newErrors: Partial<Record<ErrorField, string>> = {};
       
       if (!formData.firstName.trim()) {
         newErrors.firstName = 'First name is required';
