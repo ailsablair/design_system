@@ -413,19 +413,7 @@ export const FormsShowcase: Story = {
                           size="large"
                           leadingIcon={<ClearIcon />}
                           onClick={() => {
-                            setFormData({
-                              firstName: '',
-                              lastName: '',
-                              email: '',
-                              phone: '',
-                              company: '',
-                              role: '',
-                              experience: 'beginner',
-                              interests: [],
-                              newsletter: false,
-                              terms: false,
-                              comments: '',
-                            });
+                            setFormData(createInitialFormState());
                             setErrors({});
                           }}
                         >
