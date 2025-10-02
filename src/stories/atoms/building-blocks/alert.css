@@ -178,11 +178,11 @@
 
 /* Warning (Orange) */
 .alert--warning {
-  background: var(--base-white);
+  background: var(--status-orange-light);
 }
 
 .alert--warning.alert--border {
-  border-color: var(--status-dark-orange);
+  border-color: var(--status-orange-alt);
 }
 
 .alert--warning .alert__title {
@@ -190,7 +190,7 @@
 }
 
 .alert--warning .alert-icon {
-  color: var(--status-orange-alt);
+  color: var(--status-orange);
 }
 
 .alert--warning .alert__close-button .alert-close-icon {
