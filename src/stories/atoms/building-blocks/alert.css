@@ -155,25 +155,25 @@
 
 /* === COLOR VARIANTS === */
 
-/* Default (Blue) */
+/* Default (Info Blue) */
 .alert--default {
-  background: var(--base-white);
+  background: var(--status-info-blue-light);
 }
 
 .alert--default.alert--border {
-  border-color: var(--primary-blue-blue);
+  border-color: var(--primary-blue-blue-300);
 }
 
 .alert--default .alert__title {
-  color: var(--primary-blue-blue);
+  color: var(--primary-blue-blue-500);
 }
 
 .alert--default .alert-icon {
-  color: var(--primary-blue-blue);
+  color: var(--primary-blue-blue-400);
 }
 
 .alert--default .alert__close-button .alert-close-icon {
-  color: var(--primary-blue-blue);
+  color: var(--primary-blue-blue-400);
 }
 
 /* Warning (Orange) */
