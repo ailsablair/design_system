@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { useState } from 'react';
 import { EchoMUIThemeProvider } from '../foundations/EchoMUITheme';
 import { EchoMUIInput } from './EchoMUIInput';
 import { EchoMUISelect } from './EchoMUISelect';
 import { EchoMUICheckbox } from './EchoMUICheckbox';
-import { EchoMUIRadio, EchoMUIRadioGroup } from './EchoMUIRadio';
+import { EchoMUIRadioGroup } from './EchoMUIRadio';
 import { EchoMUITextarea } from './EchoMUITextarea';
 import { EchoMUIButton } from './EchoMUIButton';
 
