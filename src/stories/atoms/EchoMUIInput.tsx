@@ -19,7 +19,7 @@ interface EchoMUIInputProps extends Omit<TextFieldProps, 'size' | 'color'> {
   /** Show leading icon */
   showLeadingIcon?: boolean;
   /** Custom leading icon */
-  leadingIcon?: React.ReactNode;
+  leadingIcon?: ReactNode;
   /** Show clear button */
   showClear?: boolean;
   /** Clear button callback */
@@ -216,7 +216,7 @@ const StyledEchoInput = styled(TextField, {
 });
 
 // Default search icon (from your existing Input component pattern)
-const SearchIcon: React.FC<{ size: number }> = ({ size }) => (
+const SearchIcon: FC<{ size: number }> = ({ size }) => (
   <svg width={size} height={size} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path 
       d="M6.5 11.5C9.26142 11.5 11.5 9.26142 11.5 6.5C11.5 3.73858 9.26142 1.5 6.5 1.5C3.73858 1.5 1.5 3.73858 1.5 6.5C1.5 9.26142 3.73858 11.5 6.5 11.5Z" 
@@ -235,7 +235,7 @@ const SearchIcon: React.FC<{ size: number }> = ({ size }) => (
   </svg>
 );
 
-const ClearIcon: React.FC<{ size: number }> = ({ size }) => (
+const ClearIcon: FC<{ size: number }> = ({ size }) => (
   <svg width={size} height={size} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path 
       d="M10.5 3.5L3.5 10.5M3.5 3.5L10.5 10.5" 
@@ -247,7 +247,7 @@ const ClearIcon: React.FC<{ size: number }> = ({ size }) => (
   </svg>
 );
 
-export const EchoMUIInput: React.FC<EchoMUIInputProps> = ({
+export const EchoMUIInput: FC<EchoMUIInputProps> = ({
   state = 'default',
   size = 'default',
   showLeadingIcon = false,
