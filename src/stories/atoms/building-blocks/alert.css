@@ -308,7 +308,7 @@
 }
 
 .alert--white.alert--border {
-  border-color: var(--base-black);
+  border-color: var(--neutral-gray-gray-500);
 }
 
 .alert--white .alert__title {
@@ -316,11 +316,11 @@
 }
 
 .alert--white .alert-icon {
-  color: var(--base-black);
+  color: var(--neutral-gray-gray-500);
 }
 
 .alert--white .alert__close-button .alert-close-icon {
-  color: var(--base-black);
+  color: var(--neutral-gray-gray-500);
 }
 
 /* === BORDER VARIANTS === */
