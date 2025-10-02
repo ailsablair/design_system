@@ -283,7 +283,7 @@
 
 /* Purple */
 .alert--purple {
-  background: var(--base-white);
+  background: var(--status-purple-light);
 }
 
 .alert--purple.alert--border {
