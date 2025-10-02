@@ -211,8 +211,8 @@ const StyledEchoInput = styled(TextField, {
     },
     
     // Apply size styles
-    ...sizeStyles[echoSize as keyof typeof sizeStyles],
-    
+    ...sizeStyles[echoSize],
+
     // Apply state styles
     ...getStateStyles(),
   };
