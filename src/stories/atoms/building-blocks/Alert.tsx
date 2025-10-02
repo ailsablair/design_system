@@ -190,12 +190,9 @@ export const Alert: React.FC<AlertProps> = ({
   onClose,
   'aria-label': ariaLabel,
 }) => {
-  const gap = size === 'small' ? 'var(--spacing-sizing-12px)' : 'var(--spacing-sizing-16px)';
-
   return (
     <div
       className={`alert alert--${size} alert--${colour} ${border ? 'alert--border' : 'alert--no-border'} ${className}`}
-      style={{ gap }}
       role="alert"
       aria-label={ariaLabel}
     >
