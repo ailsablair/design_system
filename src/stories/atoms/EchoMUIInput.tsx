@@ -28,6 +28,9 @@ interface EchoMUIInputProps extends Omit<TextFieldProps, 'size' | 'color'> {
   message?: string;
 }
 
+type EchoInputState = NonNullable<EchoMUIInputProps['state']>;
+type EchoInputSize = NonNullable<EchoMUIInputProps['size']>;
+
 const StyledEchoInput = styled(TextField, {
   shouldForwardProp: (prop) => !['echoState', 'echoSize'].includes(prop as string),
 })<{
