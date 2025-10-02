@@ -25,6 +25,7 @@ import {
   Divider,
   Paper,
 } from '@mui/material';
+import type { SelectChangeEvent } from '@mui/material/Select';
 
 import {
   Person as PersonIcon,
