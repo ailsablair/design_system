@@ -220,11 +220,11 @@
 
 /* Navy */
 .alert--navy {
-  background: var(--base-white);
+  background: var(--primary-blue-blue-50);
 }
 
 .alert--navy.alert--border {
-  border-color: var(--secondary-navy);
+  border-color: var(--primary-blue-blue-300);
 }
 
 .alert--navy .alert__title {
@@ -232,11 +232,11 @@
 }
 
 .alert--navy .alert-icon {
-  color: var(--secondary-navy);
+  color: var(--primary-blue-blue-400);
 }
 
 .alert--navy .alert__close-button .alert-close-icon {
-  color: var(--secondary-navy);
+  color: var(--primary-blue-blue-400);
 }
 
 /* Error (Red) */
