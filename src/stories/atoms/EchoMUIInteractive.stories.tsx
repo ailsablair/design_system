@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { useState } from 'react';
 import { EchoMUIThemeProvider } from '../foundations/EchoMUITheme';
 import { EchoMUIButton } from './EchoMUIButton';
@@ -16,7 +16,6 @@ import {
   CardContent,
   Typography,
   Stack,
-  Divider,
   Paper,
   Chip,
 } from '@mui/material';
@@ -541,7 +540,7 @@ This showcase demonstrates the enhanced interactive capabilities of Echo + MUI c
 2. **EchoMUIToggle**: Smooth switch animations, better accessibility
 3. **EchoMUITag**: Interactive hover effects, better touch targets
 
-### 🚀 Benefits:
+### ���� Benefits:
 - Same visual design as your existing components
 - Enhanced user experience and accessibility
 - Better mobile/touch interactions
