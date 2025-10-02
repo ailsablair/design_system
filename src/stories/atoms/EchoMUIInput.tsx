@@ -262,17 +262,16 @@ export const EchoMUIInput: FC<EchoMUIInputProps> = ({
   value,
   error,
   helperText,
-  ...props
+  InputProps: externalInputProps,
+  ...restProps
 }) => {
   const iconSize = size === 'small' ? 14 : size === 'large' ? 18 : 16;
 
-  // Handle state-based error prop
-  const isError = state === 'error' || error;
-  const finalHelperText = message || helperText;
+  const isError = state === 'error' || Boolean(error);
+  const finalHelperText = message ?? helperText;
 
-  // Build InputProps for icons
-  const inputProps: any = {};
-  
+  const inputProps: InputPropsConfig = externalInputProps ? { ...externalInputProps } : {};
+
   if (showLeadingIcon || leadingIcon) {
     inputProps.startAdornment = (
       <InputAdornment position="start">
@@ -280,7 +279,7 @@ export const EchoMUIInput: FC<EchoMUIInputProps> = ({
       </InputAdornment>
     );
   }
-  
+
   if (showClear && value && onClear) {
     inputProps.endAdornment = (
       <InputAdornment position="end">
@@ -299,11 +298,11 @@ export const EchoMUIInput: FC<EchoMUIInputProps> = ({
             color: '#6D7280', // --neutral-gray-gray-500
             transition: 'all var(--transition-fast)',
           }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#F3F4F6'; // --neutral-gray-gray-100
+          onMouseEnter={(event) => {
+            event.currentTarget.style.backgroundColor = '#F3F4F6'; // --neutral-gray-gray-100
           }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'transparent';
+          onMouseLeave={(event) => {
+            event.currentTarget.style.backgroundColor = 'transparent';
           }}
         >
           <ClearIcon size={iconSize} />
@@ -312,6 +311,8 @@ export const EchoMUIInput: FC<EchoMUIInputProps> = ({
     );
   }
 
+  const hasInputProps = Object.keys(inputProps).length > 0;
+
   return (
     <StyledEchoInput
       echoState={state}
@@ -319,8 +320,8 @@ export const EchoMUIInput: FC<EchoMUIInputProps> = ({
       value={value}
       error={isError}
       helperText={finalHelperText}
-      InputProps={inputProps}
-      {...props}
+      InputProps={hasInputProps ? inputProps : undefined}
+      {...restProps}
     />
   );
 };
