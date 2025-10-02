@@ -262,7 +262,7 @@
 
 /* Success (Green) */
 .alert--success {
-  background: var(--base-white);
+  background: var(--status-green-light);
 }
 
 .alert--success.alert--border {
