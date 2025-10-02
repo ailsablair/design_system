@@ -241,7 +241,7 @@
 
 /* Error (Red) */
 .alert--error {
-  background: var(--base-white);
+  background: var(--status-red-light);
 }
 
 .alert--error.alert--border {
