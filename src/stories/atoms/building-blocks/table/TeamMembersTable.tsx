@@ -161,7 +161,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
         direction: defaultSort.direction,
       };
     });
-  }, [defaultSort?.key, defaultSort?.direction]);
+  }, [defaultSort]);
 
   const resolvedHeaderDensity: TableDensity = headerDensity ?? (size === 'small' ? 'compact' : 'comfortable');
   const resolvedFooterDensity: TableDensity = footerDensity ?? (size === 'small' ? 'compact' : 'comfortable');
