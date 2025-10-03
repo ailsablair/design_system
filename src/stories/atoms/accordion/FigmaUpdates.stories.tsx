@@ -67,7 +67,7 @@ export const SimpleAccordions: Story = {
 export const PlusIconAccordions: Story = {
   render: () => (
     <div className={variantColumnClass}>
-      <h3 className={headingClass}>Simple Accordions with Plus Icons</h3>
+      <h3>Simple Accordions with Plus Icons</h3>
       <Accordion
         type="simple"
         size="default"
