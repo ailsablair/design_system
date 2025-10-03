@@ -90,7 +90,7 @@ const StyledDivider = styled(MUIDivider, {
 })<{
   echoVariant?: string;
   echoSpacing?: string;
-}>(({ theme, echoVariant = 'default', echoSpacing = 'medium' }) => {
+}>(({ echoVariant = 'default', echoSpacing = 'medium' }) => {
   const variantStyles = {
     default: {
       borderColor: 'var(--neutral-gray-gray-200)',
