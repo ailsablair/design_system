@@ -226,6 +226,11 @@ export const Default: Story = {
     size: 'small',
     currentPage: 1,
     totalPages: 10,
+    headerTone: 'base',
+    footerTone: 'base',
+    headerDensity: 'comfortable',
+    footerDensity: 'compact',
+    headerTagVariant: 'outline-blue',
   },
 };
 
