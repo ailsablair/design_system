@@ -601,7 +601,7 @@
     border-bottom: 1px solid var(--neutral-gray-gray-200, #E5E7EB);
   }
   
-  .team-members-table__header-cell {
+  .team-members-table__column-header {
     width: 30%;
     min-width: 120px;
     padding: 12px;
@@ -609,7 +609,7 @@
     border-bottom: none;
     border-right: 1px solid var(--neutral-gray-gray-200, #E5E7EB);
   }
-  
+
   .team-members-table__cell {
     width: 70%;
     padding: 12px;
