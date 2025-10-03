@@ -50,7 +50,7 @@ export const SimpleAccordions: Story = {
         content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rutrum ac tortor et lacinia. Suspendisse hendrerit mi vitae mauris dictum interdum vitae eget dui. Vivamus urna eros, facilisis et laoreet accumsan, feugiat sed sapien. Vestibulum euismod massa enim, nec malesuada tellus scelerisque in. Donec sodales posuere convallis. Donec vel urna finibus augue accumsan posuere in et nunc."
       />
 
-      <h3>Simple Accordions - Small Size</h3>
+      <h3 className={headingClass}>Simple Accordions - Small Size</h3>
       <Accordion
         type="simple"
         size="small"
