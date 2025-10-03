@@ -523,6 +523,36 @@ export const InteractiveActions: Story = {
 };
 
 /**
+ * Footer call-to-action replacing pagination controls
+ */
+export const FooterCta: Story = {
+  args: {
+    ...Default.args,
+    size: 'default',
+    headerDensity: 'comfortable',
+    footerDensity: 'comfortable',
+    footerTone: 'base',
+  },
+  render: (args) => (
+    <TeamMembersTable
+      {...args}
+      footerContentSlot={(
+        <div className="team-members-table__footer-content team-members-table__footer-content--button">
+          <Button
+            size="default"
+            variant="ghost"
+            state="default"
+            trailingIcon={<Icon name="triangle-small-down" size="sm" />}
+          >
+            View more
+          </Button>
+        </div>
+      )}
+    />
+  ),
+};
+
+/**
  * Story showcasing alternating row backgrounds
  */
 export const AlternatingRows: Story = {
