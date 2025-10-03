@@ -64,9 +64,9 @@
   width: var(--toggle-track-width);
   height: var(--toggle-track-height);
   padding: var(--toggle-track-vertical-padding) var(--toggle-track-horizontal-padding);
-  border-radius: var(--spacing-radius-99999px);
+  border-radius: var(--spacing-radius-full, 9999px);
   background: var(--toggle-track-background);
-  outline: 1px solid var(--toggle-track-outline-color);
+  outline: var(--spacing-stroke-1px, 1px) solid var(--toggle-track-outline-color);
   box-shadow: var(--toggle-track-box-shadow);
   transition: background-color var(--toggle-transition-duration) ease,
     outline-color var(--toggle-transition-duration) ease,
