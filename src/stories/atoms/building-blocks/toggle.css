@@ -110,6 +110,7 @@
   width: var(--toggle-thumb-wrapper-size);
   height: var(--toggle-thumb-wrapper-size);
   padding: var(--spacing-sizing-2px, 2px);
+  border-radius: var(--spacing-radius-full, 9999px);
   display: flex;
   align-items: center;
   justify-content: center;
