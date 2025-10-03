@@ -202,7 +202,7 @@ export const EchoMUIStack: React.FC<EchoMUIStackProps> = ({
 };
 
 // Enhanced Container Component
-const StyledContainer = styled(MUIContainer)(({ theme }) => ({
+const StyledContainer = styled(MUIContainer)(() => ({
   paddingLeft: 'var(--spacing-sizing-16px)',
   paddingRight: 'var(--spacing-sizing-16px)',
   
