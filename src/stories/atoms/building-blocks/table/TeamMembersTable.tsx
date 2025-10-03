@@ -639,7 +639,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
 
           {/* Empty Actions Column */}
           <div className="team-members-table__column team-members-table__column--button-group">
-            <div className="team-members-table__header-cell team-members-table__header-cell--empty" aria-hidden />
+            <div className="team-members-table__column-header team-members-table__column-header--empty" aria-hidden />
 
             {data.map((member, index) => {
               const isAlternate = index % 2 === 1;
