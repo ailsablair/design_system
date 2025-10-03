@@ -107,6 +107,7 @@
   left: var(--toggle-thumb-position-off);
   width: var(--toggle-thumb-wrapper-size);
   height: var(--toggle-thumb-wrapper-size);
+  padding: var(--spacing-sizing-2px, 2px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,10 +123,10 @@
   content: '';
   width: var(--toggle-thumb-inner-size);
   height: var(--toggle-thumb-inner-size);
-  border-radius: var(--spacing-radius-99999px);
+  border-radius: var(--spacing-radius-full, 9999px);
   background: var(--base-white, #FFFFFF);
-  outline: 1px solid var(--primary-sky-blue-dark-sky-blue, #04435E);
-  outline-offset: -0.5px;
+  outline: var(--spacing-stroke-1px, 1px) solid var(--primary-sky-blue-dark-sky-blue, #04435E);
+  outline-offset: calc(var(--spacing-stroke-0-5px, 0.5px) * -1);
   display: block;
 }
 
