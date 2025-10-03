@@ -59,15 +59,46 @@
   align-self: stretch;
 }
 
+.team-members-table__title-section--with-description {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.team-members-table__title-section--density-compact {
+  gap: 8px;
+}
+
+.team-members-table__title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .team-members-table__title {
   color: var(--base-black, #1C1C1C);
   font-family: Archivo;
   font-size: 19px;
   font-style: normal;
   font-weight: 500;
-  line-height: 24px; /* 126.316% */
+  line-height: 24px;
   letter-spacing: -0.15px;
   margin: 0;
+}
+
+.team-members-table__title--density-spacious {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.team-members-table__title--density-comfortable {
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.team-members-table__title--density-compact {
+  font-size: 19px;
+  line-height: 24px;
 }
 
 /* Column Container */
