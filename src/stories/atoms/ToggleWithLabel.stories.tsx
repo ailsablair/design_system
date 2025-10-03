@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import React, { useId, useState } from 'react';
 import { Toggle } from './building-blocks/Toggle';
 import './toggleWithLabel.css';
 
@@ -6,7 +7,8 @@ type ToggleSize = 'small' | 'default' | 'large';
 
 type ToggleWithLabelProps = {
   size: ToggleSize;
-  enabled?: boolean;
+  defaultEnabled?: boolean;
+  label?: string;
 };
 
 const meta: Meta<typeof Toggle> = {
@@ -31,18 +33,36 @@ const sizeClassMap: Record<ToggleSize, string> = {
   large: 'toggle-with-label-row--large',
 };
 
-const ToggleWithLabel = ({ size, enabled = true }: ToggleWithLabelProps) => {
-  const labelText = 'This is the toggle label';
+const ToggleWithLabel = ({ size, defaultEnabled = true, label = 'This is the toggle label' }: ToggleWithLabelProps) => {
+  const [isEnabled, setIsEnabled] = useState(defaultEnabled);
+  const toggleId = useId();
+  const labelId = useId();
+
   return (
     <div className={`toggle-with-label-row ${sizeClassMap[size]}`}>
-      <Toggle size={size} enabled={enabled} icon state="default" aria-label={labelText} />
-      <span className="toggle-with-label-text">{labelText}</span>
+      <Toggle
+        id={toggleId}
+        size={size}
+        enabled={isEnabled}
+        icon
+        state="default"
+        aria-labelledby={labelId}
+        onChange={(event) => setIsEnabled(event.target.checked)}
+      />
+      <span
+        id={labelId}
+        className="toggle-with-label-text"
+        role="presentation"
+        onClick={() => setIsEnabled((previous) => !previous)}
+      >
+        {label}
+      </span>
     </div>
   );
 };
 
 export const SmallToggleWithLabel: Story = {
-  render: () => <ToggleWithLabel size="small" enabled={true} />,
+  render: () => <ToggleWithLabel size="small" defaultEnabled />,
   parameters: {
     docs: {
       description: {
@@ -53,7 +73,7 @@ export const SmallToggleWithLabel: Story = {
 };
 
 export const DefaultToggleWithLabel: Story = {
-  render: () => <ToggleWithLabel size="default" enabled={true} />,
+  render: () => <ToggleWithLabel size="default" defaultEnabled />,
   parameters: {
     docs: {
       description: {
@@ -64,7 +84,7 @@ export const DefaultToggleWithLabel: Story = {
 };
 
 export const LargeToggleWithLabel: Story = {
-  render: () => <ToggleWithLabel size="large" enabled={true} />,
+  render: () => <ToggleWithLabel size="large" defaultEnabled />,
   parameters: {
     docs: {
       description: {
@@ -78,9 +98,9 @@ export const FigmaDesignShowcase: Story = {
   render: () => (
     <div className="toggle-with-label-showcase">
       <h2 className="toggle-with-label-heading">Figma Design - Toggle with Labels</h2>
-      <ToggleWithLabel size="default" enabled={true} />
-      <ToggleWithLabel size="large" enabled={true} />
-      <ToggleWithLabel size="small" enabled={true} />
+      <ToggleWithLabel size="default" defaultEnabled />
+      <ToggleWithLabel size="large" defaultEnabled />
+      <ToggleWithLabel size="small" defaultEnabled />
     </div>
   ),
   parameters: {
