@@ -405,30 +405,28 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
       <div className="team-members-table__body">
         <div className="team-members-table__columns">
           {/* Contact Name Column */}
-          <div className="team-members-table__column team-members-table__column--contact-name">
-            <div className="team-members-table__header-cell team-members-table__header-cell--lead">
-              <Checkbox
-                size="small"
-                checked={isAllSelected}
-                indeterminate={isIndeterminate}
-                onChange={(event) => handleSelectAll(event.target.checked)}
-                variant="default"
-                shape="square"
-              />
-              <button
-                className="team-members-table__header-label team-members-table__header-label--sortable"
-                type="button"
-                onClick={() => handleSort('contactName')}
-              >
-                <span className="team-members-table__header-text">Contact name</span>
-                <Icon
-                  name="arrow-down-thick"
-                  size="sm"
-                  className={`team-members-table__sort-icon ${sortConfig.key === 'contactName' ? `team-members-table__sort-icon--${sortConfig.direction ?? 'asc'}` : ''}`}
-                  aria-hidden
+          <div
+            className={[
+              'team-members-table__column',
+              'team-members-table__column--contact-name',
+              sortConfig.key === 'contactName' ? 'team-members-table__column--is-sorted' : '',
+            ].filter(Boolean).join(' ')}
+          >
+            {renderColumnHeader({
+              columnKey: 'contactName',
+              label: 'Contact name',
+              sortable: true,
+              leadingAccessory: (
+                <Checkbox
+                  size="small"
+                  checked={isAllSelected}
+                  indeterminate={isIndeterminate}
+                  onChange={(event) => handleSelectAll(event.target.checked)}
+                  variant="default"
+                  shape="square"
                 />
-              </button>
-            </div>
+              ),
+            })}
 
             {data.map((member, index) => {
               const isSelected = selectedRows.has(member.id);
