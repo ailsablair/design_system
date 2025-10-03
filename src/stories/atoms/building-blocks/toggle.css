@@ -44,6 +44,7 @@
 
 .toggle[data-disabled="true"] {
   cursor: not-allowed;
+  --toggle-track-outline-color: var(--neutral-gray-gray-300, #D2D5DA);
 }
 
 .toggle__input {
