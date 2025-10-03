@@ -549,11 +549,10 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
 
           {/* Rating Column */}
           <div className="team-members-table__column team-members-table__column--rating">
-            <div className="team-members-table__header-cell">
-              <div className="team-members-table__header-label">
-                <span className="team-members-table__header-text">Rating</span>
-              </div>
-            </div>
+            {renderColumnHeader({
+              columnKey: 'rating',
+              label: 'Rating',
+            })}
 
             {data.map((member, index) => {
               const isAlternate = index % 2 === 1;
