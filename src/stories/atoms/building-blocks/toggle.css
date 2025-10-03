@@ -107,6 +107,10 @@
   --toggle-track-outline-color: var(--neutral-gray-gray-300, #D2D5DA);
 }
 
+.toggle[data-disabled="true"][data-enabled="true"] .toggle__icon {
+  color: var(--primary-sky-blue-dark-sky-blue, #04435E);
+}
+
 .toggle[data-state="hover"][data-enabled="true"],
 .toggle[data-enabled="true"]:not([data-disabled="true"]):hover {
   --toggle-track-background: var(--primary-sky-blue-450, #1DB2F5);
