@@ -251,6 +251,63 @@ export const DefaultSize: Story = {
   args: {
     ...Default.args,
     size: 'default',
+    headerDensity: 'comfortable',
+    footerDensity: 'comfortable',
+  },
+};
+
+/**
+ * Neutral surface variant for header and footer
+ */
+export const NeutralSurface: Story = {
+  args: {
+    ...Default.args,
+    headerTone: 'neutral',
+    footerTone: 'neutral',
+    headerTagVariant: 'outline-info-blue',
+  },
+};
+
+/**
+ * Primary accent variant referencing the blue header designs
+ */
+export const PrimarySurface: Story = {
+  args: {
+    ...Default.args,
+    size: 'default',
+    headerTone: 'primary',
+    footerTone: 'primary',
+    headerDensity: 'comfortable',
+    footerDensity: 'comfortable',
+    headerTagVariant: 'outline-black',
+    headerDescription: 'These companies have purchased in the last 12 months',
+  },
+};
+
+/**
+ * Spacious layout featuring increased header padding and supporting copy
+ */
+export const SpaciousLayout: Story = {
+  args: {
+    ...Default.args,
+    size: 'default',
+    headerDensity: 'spacious',
+    footerDensity: 'spacious',
+    headerDescription: 'These companies have purchased in the last 12 months',
+  },
+};
+
+/**
+ * Compact layout for dense data tables and smaller surfaces
+ */
+export const CompactLayout: Story = {
+  args: {
+    ...Default.args,
+    size: 'small',
+    headerDensity: 'compact',
+    footerDensity: 'compact',
+    headerTagVariant: 'outline-info-blue',
+    footerTone: 'neutral',
   },
 };
 
