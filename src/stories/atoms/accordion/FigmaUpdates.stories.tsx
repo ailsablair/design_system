@@ -27,7 +27,7 @@ const decorativeColumnClass = 'accordion-decorative-showcase';
 export const SimpleAccordions: Story = {
   render: () => (
     <div className={variantColumnClass}>
-      <h3 className={headingClass}>Simple Accordions - Default Size</h3>
+      <h3>Simple Accordions - Default Size</h3>
       <Accordion
         type="simple"
         size="default"
