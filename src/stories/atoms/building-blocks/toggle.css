@@ -4,16 +4,16 @@
   display: inline-flex;
   align-items: center;
   cursor: pointer;
-  --toggle-track-width: calc(var(--spacing-sizing-40px, 40px) + var(--spacing-sizing-8px, 8px) + var(--spacing-sizing-2px, 2px));
-  --toggle-track-height: calc(var(--spacing-sizing-24px, 24px) + var(--spacing-sizing-4px, 4px));
+  --toggle-track-width: var(--component-toggle-default-track-width, 50px);
+  --toggle-track-height: var(--component-toggle-default-track-height, 28px);
   --toggle-track-horizontal-padding: var(--spacing-sizing-4px, 4px);
   --toggle-track-vertical-padding: var(--spacing-sizing-2px, 2px);
-  --toggle-thumb-wrapper-size: calc(var(--spacing-sizing-24px, 24px) + var(--spacing-sizing-4px, 4px));
-  --toggle-thumb-inner-size: calc(var(--spacing-sizing-16px, 16px) + var(--spacing-sizing-6px, 6px));
+  --toggle-thumb-wrapper-size: var(--component-toggle-default-thumb-wrapper, 28px);
+  --toggle-thumb-inner-size: var(--component-toggle-default-thumb, 22px);
   --toggle-thumb-offset-top: calc(var(--spacing-sizing-2px, 2px) * -1);
   --toggle-thumb-position-off: calc(var(--spacing-sizing-4px, 4px) * -1);
-  --toggle-thumb-position-on: calc(var(--spacing-sizing-16px, 16px) + var(--spacing-sizing-2px, 2px));
-  --toggle-icon-size: 18px;
+  --toggle-thumb-position-on: calc(var(--spacing-sizing-20px, 20px) - var(--spacing-sizing-2px, 2px));
+  --toggle-icon-size: var(--icon-size-md, 16px);
   --toggle-transition-duration: 0.2s;
   --toggle-track-background: var(--base-white, #FFFFFF);
   --toggle-track-outline-color: var(--primary-sky-blue-dark-sky-blue, #04435E);
@@ -21,25 +21,25 @@
 }
 
 .toggle[data-size="small"] {
-  --toggle-track-width: calc(var(--spacing-sizing-32px, 32px) + var(--spacing-sizing-8px, 8px));
-  --toggle-track-height: var(--spacing-sizing-22px, 22px);
-  --toggle-thumb-wrapper-size: calc(var(--spacing-sizing-16px, 16px) + var(--spacing-sizing-8px, 8px));
-  --toggle-thumb-inner-size: calc(var(--spacing-sizing-12px, 12px) + var(--spacing-sizing-6px, 6px));
+  --toggle-track-width: var(--component-toggle-small-track-width, 40px);
+  --toggle-track-height: var(--component-toggle-small-track-height, 22px);
+  --toggle-thumb-wrapper-size: var(--component-toggle-small-thumb-wrapper, 24px);
+  --toggle-thumb-inner-size: var(--component-toggle-small-thumb, 18px);
   --toggle-thumb-offset-top: calc(var(--spacing-sizing-4px, 4px) * -1);
   --toggle-thumb-position-off: calc(var(--spacing-sizing-4px, 4px) * -1);
-  --toggle-thumb-position-on: calc(var(--spacing-sizing-12px, 12px) + var(--spacing-sizing-1px, 1px));
-  --toggle-icon-size: var(--icon-size-xs, 12px);
+  --toggle-thumb-position-on: calc(var(--spacing-sizing-16px, 16px) - var(--spacing-sizing-4px, 4px));
+  --toggle-icon-size: var(--icon-size-sm, 14px);
 }
 
 .toggle[data-size="large"] {
-  --toggle-track-width: calc(var(--spacing-sizing-40px, 40px) + var(--spacing-sizing-16px, 16px) + var(--spacing-sizing-2px, 2px));
-  --toggle-track-height: var(--spacing-sizing-32px, 32px);
-  --toggle-thumb-wrapper-size: calc(var(--spacing-sizing-24px, 24px) + var(--spacing-sizing-8px, 8px));
-  --toggle-thumb-inner-size: calc(var(--spacing-sizing-16px, 16px) + var(--spacing-sizing-8px, 8px));
+  --toggle-track-width: var(--component-toggle-large-track-width, 58px);
+  --toggle-track-height: var(--component-toggle-large-track-height, 32px);
+  --toggle-thumb-wrapper-size: var(--component-toggle-large-thumb-wrapper, 32px);
+  --toggle-thumb-inner-size: var(--component-toggle-large-thumb, 24px);
   --toggle-thumb-offset-top: calc(var(--spacing-sizing-2px, 2px) * -1);
   --toggle-thumb-position-off: calc(var(--spacing-sizing-4px, 4px) * -1);
-  --toggle-thumb-position-on: calc(var(--spacing-sizing-16px, 16px) + var(--spacing-sizing-6px, 6px));
-  --toggle-icon-size: calc(var(--icon-size-lg, 20px) - var(--spacing-sizing-2px, 2px));
+  --toggle-thumb-position-on: calc(var(--spacing-sizing-24px, 24px) - var(--spacing-sizing-2px, 2px));
+  --toggle-icon-size: var(--icon-size-lg, 20px);
 }
 
 .toggle[data-disabled="true"] {
