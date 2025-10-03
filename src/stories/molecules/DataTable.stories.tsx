@@ -346,6 +346,347 @@ export const NoMoreActions: Story = {
   },
 };
 
+// Complex operations showcase inspired by Figma handoff
+interface UserProfileCellData {
+  name: string;
+  email: string;
+  initials: string;
+}
+
+interface PaymentMethodCellData {
+  card: string;
+  expiry: string;
+}
+
+interface FileInfoCellData {
+  type: string;
+  name: string;
+  size: string;
+}
+
+interface StatusTagCellData {
+  label: string;
+  variant: TagVariant;
+  light?: boolean;
+}
+
+interface ComplexDataTableRow extends DataTableRow {
+  user: UserProfileCellData;
+  payment: PaymentMethodCellData;
+  file: FileInfoCellData;
+  statuses: StatusTagCellData[];
+  amount: number;
+  percentage: number;
+  progress: number;
+  label: string;
+  count: number;
+  users: NonNullable<AvatarGroupProps['avatars']>;
+}
+
+const currencyFormatter = new Intl.NumberFormat('en-CA', {
+  style: 'currency',
+  currency: 'CAD',
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
+
+const formatCurrency = (value: number) => currencyFormatter.format(value);
+
+const UserProfileCell = ({ name, email, initials }: UserProfileCellData) => (
+  <div className="data-table__cell-user-profile">
+    <div className="data-table__user-avatar" aria-hidden="true">{initials}</div>
+    <div className="data-table__user-details">
+      <span className="data-table__user-name">{name}</span>
+      <span className="data-table__user-email">{email}</span>
+    </div>
+  </div>
+);
+
+const PaymentMethodCell = ({ card, expiry }: PaymentMethodCellData) => (
+  <div className="data-table__cell-payment-method">
+    <div className="data-table__payment-details">
+      <span className="data-table__payment-card">{card}</span>
+      <span className="data-table__payment-expiry">Expires {expiry}</span>
+    </div>
+  </div>
+);
+
+const FileInfoCell = ({ type, name, size }: FileInfoCellData) => (
+  <div className="data-table__cell-file-info">
+    <div className="data-table__file-details">
+      <span className="data-table__file-type">{type}</span>
+      <span className="data-table__file-name">{name}</span>
+      <span className="data-table__file-size">{size}</span>
+    </div>
+  </div>
+);
+
+const StatusTagsCell = ({ statuses }: { statuses: StatusTagCellData[] }) => (
+  <div className="data-table__status-tags">
+    {statuses.map((status) => (
+      <Tag
+        key={status.label}
+        size="small"
+        variant={status.variant}
+        light={status.light}
+        shape="rounded"
+        showClose={false}
+      >
+        {status.label}
+      </Tag>
+    ))}
+  </div>
+);
+
+const CollaboratorsCell = ({ avatars }: { avatars: NonNullable<AvatarGroupProps['avatars']> }) => (
+  <AvatarGroup
+    size="small"
+    type="initials-light"
+    stroke="bordered"
+    avatars={avatars}
+    maxCount={3}
+    showOverflow
+  />
+);
+
+const operationsColumns = [
+  {
+    key: 'user',
+    title: 'User profile',
+    type: 'title' as const,
+    isLead: true,
+    minWidth: '240px',
+    render: (value: unknown) => <UserProfileCell {...(value as UserProfileCellData)} />,
+  },
+  {
+    key: 'payment',
+    title: 'Payment method',
+    type: 'text' as const,
+    minWidth: '200px',
+    render: (value: unknown) => <PaymentMethodCell {...(value as PaymentMethodCellData)} />,
+  },
+  {
+    key: 'file',
+    title: 'Document',
+    type: 'text' as const,
+    minWidth: '220px',
+    render: (value: unknown) => <FileInfoCell {...(value as FileInfoCellData)} />,
+  },
+  {
+    key: 'statuses',
+    title: 'Status',
+    type: 'text' as const,
+    minWidth: '200px',
+    render: (value: unknown) => <StatusTagsCell statuses={(value as StatusTagCellData[]) ?? []} />,
+  },
+  {
+    key: 'amount',
+    title: 'Amount billed',
+    type: 'text' as const,
+    minWidth: '160px',
+    render: (value: unknown) => (
+      <span className="data-table__amount-value">{formatCurrency(value as number)}</span>
+    ),
+  },
+  {
+    key: 'percentage',
+    title: 'Completion',
+    type: 'text' as const,
+    minWidth: '140px',
+    render: (value: unknown) => (
+      <div className="data-table__multi-metric">
+        <span className="data-table__percentage-value">{`${value as number}%`}</span>
+        <span className="data-table__multi-metric-label">of annual target</span>
+      </div>
+    ),
+  },
+  {
+    key: 'progress',
+    title: 'Progress',
+    type: 'progress' as const,
+    minWidth: '220px',
+    render: (value: unknown) => (
+      <div className="data-table__progress-wrapper">
+        <ProgressBar value={value as number} showPercentage width={200} />
+      </div>
+    ),
+  },
+  {
+    key: 'label',
+    title: 'Label',
+    type: 'text' as const,
+    minWidth: '140px',
+    render: (value: unknown) => (
+      <Tag size="small" variant="cyan" shape="rounded" showClose={false}>
+        {value as string}
+      </Tag>
+    ),
+  },
+  {
+    key: 'count',
+    title: 'Tasks',
+    type: 'text' as const,
+    minWidth: '80px',
+    render: (value: unknown) => (
+      <span className="data-table__count-value">{value as number}</span>
+    ),
+  },
+  {
+    key: 'users',
+    title: 'Collaborators',
+    type: 'avatars' as const,
+    minWidth: '160px',
+    render: (value: unknown) => <CollaboratorsCell avatars={(value as NonNullable<AvatarGroupProps['avatars']>) ?? []} />,
+  },
+  {
+    key: 'actions',
+    title: '',
+    type: 'actions' as const,
+    width: '200px',
+    render: (_value: unknown, row: ComplexDataTableRow) => (
+      <div className="data-table__action-buttons">
+        <Button
+          size="small"
+          variant="ghost"
+          leadingIcon={<Icon name="pencil" size="sm" />}
+          onClick={() => undefined}
+        >
+          Edit
+        </Button>
+        <Button
+          size="small"
+          variant="ghost"
+          leadingIcon={<Icon name="trash-can" size="sm" />}
+          onClick={() => undefined}
+        >
+          Delete
+        </Button>
+      </div>
+    ),
+  },
+];
+
+const operationsRows: ComplexDataTableRow[] = [
+  {
+    id: 'ops-1',
+    user: {
+      name: 'Alex Johnson',
+      email: 'alex.johnson@npxinnovation.ca',
+      initials: 'AJ',
+    },
+    payment: {
+      card: 'Visa •••• 4242',
+      expiry: '02/27',
+    },
+    file: {
+      type: 'PDF',
+      name: 'Reactor maintenance overview.pdf',
+      size: '2.4 MB',
+    },
+    statuses: [
+      { label: 'Offline', variant: 'gray', light: true },
+      { label: 'Inactive', variant: 'yellow', light: true },
+    ],
+    amount: 128450.42,
+    percentage: 68,
+    progress: 68,
+    label: 'Maintenance',
+    count: 12,
+    users: [
+      { id: 'ops-1-1', name: 'Alex Johnson', initial: 'AJ', type: 'initial-light' },
+      { id: 'ops-1-2', name: 'Priya Singh', initial: 'PS', type: 'initial-light' },
+      { id: 'ops-1-3', name: 'Wei Chen', initial: 'WC', type: 'initial-light' },
+      { id: 'ops-1-4', name: 'Noah Smith', initial: 'NS', type: 'initial-light' },
+    ],
+  },
+  {
+    id: 'ops-2',
+    user: {
+      name: 'Priya Singh',
+      email: 'priya.singh@npxinnovation.ca',
+      initials: 'PS',
+    },
+    payment: {
+      card: 'Mastercard •••• 3011',
+      expiry: '11/26',
+    },
+    file: {
+      type: 'DOCX',
+      name: 'Emergency response protocol.docx',
+      size: '1.1 MB',
+    },
+    statuses: [
+      { label: 'Online', variant: 'green', light: true },
+      { label: 'Active', variant: 'blue', light: true },
+    ],
+    amount: 84560.0,
+    percentage: 82,
+    progress: 82,
+    label: 'Compliance',
+    count: 8,
+    users: [
+      { id: 'ops-2-1', name: 'Priya Singh', initial: 'PS', type: 'initial-light' },
+      { id: 'ops-2-2', name: 'Noah Smith', initial: 'NS', type: 'initial-light' },
+      { id: 'ops-2-3', name: 'Laura Gómez', initial: 'LG', type: 'initial-light' },
+      { id: 'ops-2-4', name: 'Kai Ito', initial: 'KI', type: 'initial-light' },
+    ],
+  },
+  {
+    id: 'ops-3',
+    user: {
+      name: 'Wei Chen',
+      email: 'wei.chen@npxinnovation.ca',
+      initials: 'WC',
+    },
+    payment: {
+      card: 'Amex •••• 8844',
+      expiry: '06/28',
+    },
+    file: {
+      type: 'XLSX',
+      name: 'Fuel cycle report.xlsx',
+      size: '3.7 MB',
+    },
+    statuses: [
+      { label: 'Review', variant: 'orange', light: true },
+      { label: 'Pending', variant: 'gray', light: true },
+    ],
+    amount: 98670.75,
+    percentage: 54,
+    progress: 54,
+    label: 'Fuel planning',
+    count: 15,
+    users: [
+      { id: 'ops-3-1', name: 'Wei Chen', initial: 'WC', type: 'initial-light' },
+      { id: 'ops-3-2', name: 'Elena Petrova', initial: 'EP', type: 'initial-light' },
+      { id: 'ops-3-3', name: 'Luis Martinez', initial: 'LM', type: 'initial-light' },
+      { id: 'ops-3-4', name: 'Sofia Ahmed', initial: 'SA', type: 'initial-light' },
+    ],
+  },
+];
+
+export const OperationsOverview: Story = {
+  args: {
+    title: 'Operations overview',
+    itemCount: operationsRows.length,
+    columns: operationsColumns,
+    data: operationsRows,
+    size: 'default',
+    variant: 'default',
+    showMoreActions: true,
+    showPagination: false,
+    currentPage: 1,
+    totalPages: 1,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Improved table layout combining user, payment, document, and operational metrics in a single row.',
+      },
+    },
+  },
+};
+
 // Different cell type showcases
 const textOnlyColumns = [
   {
