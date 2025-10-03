@@ -288,7 +288,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
           <div className="team-members-table__column-content">
             <span className="team-members-table__column-title">{label}</span>
             {trailingAccessory ? (
-              <span className="team-members-table__column-trailing-accessory">
+              <span className="team-members-table__column-trailing-accessory" aria-hidden>
                 {trailingAccessory}
               </span>
             ) : null}
