@@ -150,7 +150,7 @@ export const EchoMUIDivider: React.FC<EchoMUIDividerProps> = ({
 };
 
 // Enhanced Stack Component
-const StyledStack = styled(MUIStack)(({ theme }) => ({
+const StyledStack = styled(MUIStack)(() => ({
   '&.echo-stack': {
     gap: 'var(--spacing-sizing-16px)',
   },
