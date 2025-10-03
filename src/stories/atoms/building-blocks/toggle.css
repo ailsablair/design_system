@@ -228,6 +228,7 @@
   display: block;
   user-select: none;
   pointer-events: none;
+  fill: currentColor;
   shape-rendering: crispEdges;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: optimize-contrast;
