@@ -157,6 +157,9 @@
 
 .toggle__thumb::before {
   content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
   width: var(--toggle-thumb-inner-size);
   height: var(--toggle-thumb-inner-size);
   border-radius: var(--spacing-radius-full, 9999px);
@@ -164,6 +167,7 @@
   outline: var(--spacing-stroke-1px, 1px) solid var(--primary-sky-blue-dark-sky-blue, #04435E);
   outline-offset: calc(var(--spacing-stroke-0-5px, 0.5px) * -1);
   display: block;
+  z-index: 0;
 }
 
 .toggle[data-disabled="true"] .toggle__thumb::before {
@@ -199,11 +203,11 @@
 
 .toggle__icon {
   position: relative;
-  width: var(--toggle-icon-size);
-  height: var(--toggle-icon-size);
   display: flex;
   align-items: center;
   justify-content: center;
+  width: var(--toggle-icon-size);
+  height: var(--toggle-icon-size);
   overflow: hidden;
   z-index: 1;
   color: var(--status-dark-green, #227F1A);
