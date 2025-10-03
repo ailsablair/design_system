@@ -152,12 +152,13 @@
 }
 
 .toggle__icon {
-  position: absolute;
+  position: relative;
   width: var(--toggle-icon-size);
   height: var(--toggle-icon-size);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   z-index: 1;
 }
 
