@@ -400,7 +400,7 @@ export const CustomTitle: Story = {
 };
 
 /**
- * Table with extended team data showcasing all cell types
+ * Table with an initial sorted column to showcase column header styling
  */
 export const SortedByContact: Story = {
   args: {
@@ -412,6 +412,9 @@ export const SortedByContact: Story = {
   },
 };
 
+/**
+ * Table with extended team data showcasing all cell types
+ */
 export const ExtendedTeamData: Story = {
   args: {
     ...Default.args,
