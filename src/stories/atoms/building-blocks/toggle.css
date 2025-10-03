@@ -15,6 +15,9 @@
   --toggle-thumb-position-on: 18px;
   --toggle-icon-size: 18px;
   --toggle-transition-duration: 0.2s;
+  --toggle-track-background: var(--base-white, #FFFFFF);
+  --toggle-track-outline-color: var(--primary-sky-blue-dark-sky-blue, #04435E);
+  --toggle-track-box-shadow: inset 0 0 0 0 transparent;
 }
 
 .toggle[data-size="small"] {
