@@ -1,4 +1,3 @@
-import React, { useState, useId } from 'react';
 import { useId, useMemo, useState } from 'react';
 import type { CSSProperties, FC } from 'react';
 import './imageAccordion.css';
