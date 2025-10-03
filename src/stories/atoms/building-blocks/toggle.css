@@ -179,7 +179,7 @@
 }
 
 .toggle[data-state="clicked"][data-enabled="true"] .toggle__icon {
-  color: var(--primary-sky-blue-light-alt, #D6F0FB);
+  color: var(--base-white, #FFFFFF);
 }
 
 .toggle[data-state="clicked"][data-enabled="false"] .toggle__thumb::before {
@@ -205,7 +205,7 @@
   justify-content: center;
   overflow: hidden;
   z-index: 1;
-  color: var(--status-green, #70CC67);
+  color: var(--status-dark-green, #227F1A);
 }
 
 .toggle[data-state="inactive"] {
@@ -218,8 +218,8 @@
   background: var(--neutral-gray-gray-50, #F9FAFB);
 }
 
-.toggle[data-state="inactive"] .toggle__icon svg path {
-  fill: var(--neutral-gray-gray-400, #9CA3AF);
+.toggle[data-state="inactive"] .toggle__icon {
+  color: var(--neutral-gray-gray-400, #9CA3AF);
 }
 
 .toggle__icon svg {
