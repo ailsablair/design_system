@@ -1,5 +1,5 @@
 import { type FC, useId } from 'react';
-import { type FC, useId } from 'react';
+import { useId } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Toggle } from './building-blocks/Toggle';
 import './toggleWithLabel.css';
@@ -35,7 +35,7 @@ const sizeClassMap: Record<ToggleSize, string> = {
   large: 'toggle-with-label-row--large',
 };
 
-const ToggleWithLabelRow: FC<ToggleWithLabelRowProps> = ({ size, label, enabled, disabled = false }) => {
+const ToggleWithLabelRow = ({ size, label, enabled, disabled = false }: ToggleWithLabelRowProps) => {
   const toggleId = useId();
 
   return (
