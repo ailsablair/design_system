@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import type { ReactNode } from 'react';
 import { Button } from '../../Button';
-import { Tag } from '../../Tag';
+import { Tag, type TagVariant } from '../../Tag';
 import { Checkbox } from '../../Checkbox';
 import { AvatarGroup } from '../../AvatarGroup';
 import { Star } from '../Star';
@@ -34,11 +35,26 @@ export interface TeamMember {
   selected?: boolean;
 }
 
+export type TableSurfaceTone = 'base' | 'neutral' | 'primary';
+export type TableDensity = 'spacious' | 'comfortable' | 'compact';
+
 export interface TeamMembersTableProps {
   /** Table title */
   title?: string;
+  /** Optional supporting copy shown beneath the title */
+  headerDescription?: string;
   /** Item count for badge */
   itemCount?: number;
+  /** Custom label for the tag shown beside the title */
+  headerTagLabel?: string;
+  /** Controls the colour system applied to the header */
+  headerTone?: TableSurfaceTone;
+  /** Controls header padding and typography density */
+  headerDensity?: TableDensity;
+  /** Overrides the tag variant when supplied */
+  headerTagVariant?: TagVariant;
+  /** Slot for custom header actions */
+  headerActionsSlot?: ReactNode;
   /** Team member data */
   data: TeamMember[];
   /** Size variant */
@@ -61,22 +77,45 @@ export interface TeamMembersTableProps {
   onDelete?: (rowId: string) => void;
   /** More actions handler */
   onMoreActions?: () => void;
+  /** Controls the footer surface tone */
+  footerTone?: TableSurfaceTone;
+  /** Controls footer density */
+  footerDensity?: TableDensity;
+  /** Slot for custom footer content (replaces pagination when provided) */
+  footerContentSlot?: ReactNode;
 }
+
+const headerToneToTagVariant = (tone: TableSurfaceTone): TagVariant => {
+  switch (tone) {
+    case 'neutral':
+      return 'outline-info-blue';
+    case 'primary':
+      return 'outline-black';
+    default:
+      return 'outline-blue';
+  }
+};
 
 /**
  * TeamMembersTable component that exactly matches the Figma design specifications
- * 
+ *
  * Features:
- * - Header with title, count badge, and more actions button
+ * - Header with configurable tones, densities, description, and action slots
  * - Multiple cell types: contact name, company, multi-tag preferences, actions, rating, status avatars, progress
  * - Checkbox selection with indeterminate states
  * - Alternating row backgrounds (seafoam-25)
- * - Pagination footer
+ * - Pagination footer with tone + density controls and custom slot support
  * - Responsive design matching Figma specifications
  */
 export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
   title = 'Team members',
+  headerDescription,
   itemCount = 100,
+  headerTagLabel,
+  headerTone = 'base',
+  headerDensity,
+  headerTagVariant,
+  headerActionsSlot,
   data,
   size = 'small',
   currentPage = 1,
@@ -88,6 +127,9 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
   onEdit,
   onDelete,
   onMoreActions,
+  footerTone = 'base',
+  footerDensity,
+  footerContentSlot,
 }) => {
   const [selectedRows, setSelectedRows] = useState<Set<string>>(new Set());
   const [sortConfig, setSortConfig] = useState<{
@@ -95,11 +137,39 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
     direction: 'asc' | 'desc' | null;
   }>({ key: null, direction: null });
 
+  const resolvedHeaderDensity: TableDensity = headerDensity ?? (size === 'small' ? 'compact' : 'comfortable');
+  const resolvedFooterDensity: TableDensity = footerDensity ?? (size === 'small' ? 'compact' : 'comfortable');
+  const derivedTagVariant = headerTagVariant ?? headerToneToTagVariant(headerTone);
+  const tagLabel = headerTagLabel ?? `${itemCount} items`;
+
   const containerClasses = [
     'team-members-table',
     `team-members-table--${size}`,
-    className
+    className,
   ].filter(Boolean).join(' ');
+
+  const headerClasses = [
+    'team-members-table__header',
+    `team-members-table__header--tone-${headerTone}`,
+    `team-members-table__header--density-${resolvedHeaderDensity}`,
+  ].join(' ');
+
+  const titleSectionClasses = [
+    'team-members-table__title-section',
+    headerDescription ? 'team-members-table__title-section--with-description' : '',
+    `team-members-table__title-section--density-${resolvedHeaderDensity}`,
+  ].filter(Boolean).join(' ');
+
+  const titleClasses = [
+    'team-members-table__title',
+    `team-members-table__title--density-${resolvedHeaderDensity}`,
+  ].join(' ');
+
+  const footerClasses = [
+    'team-members-table__footer',
+    `team-members-table__footer--tone-${footerTone}`,
+    `team-members-table__footer--density-${resolvedFooterDensity}`,
+  ].join(' ');
 
   const selectedCount = selectedRows.size;
   const totalCount = data.length;
@@ -135,91 +205,102 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
     return Array.from({ length: 5 }, (_, index) => (
       <Star
         key={index}
-        fill={index < rating ? "100%" : "0%"}
+        fill={index < rating ? '100%' : '0%'}
         size="small"
       />
     ));
   };
 
   const renderPaginationNumbers = () => {
-    const pages = [];
-    
-    // Always show page 1
+    const pages: Array<number | '...'> = [];
     pages.push(1);
-    
-    // Show ellipsis if needed
+
     if (currentPage > 4) {
       pages.push('...');
     }
-    
-    // Show pages around current page
+
     const start = Math.max(2, currentPage - 1);
     const end = Math.min(totalPages - 1, currentPage + 1);
-    
-    for (let i = start; i <= end; i++) {
+
+    for (let i = start; i <= end; i += 1) {
       if (i !== 1 && i !== totalPages) {
         pages.push(i);
       }
     }
-    
-    // Show ellipsis if needed
+
     if (currentPage < totalPages - 3) {
       pages.push('...');
     }
-    
-    // Always show last page if more than 1 page
+
     if (totalPages > 1) {
       pages.push(totalPages);
     }
-    
+
     return pages.map((page, index) => {
       if (page === '...') {
         return (
-          <Icon 
+          <Icon
             key={`ellipsis-${index}`}
-            name="dots-horizontal" 
+            name="dots-horizontal"
             size="sm"
           />
         );
       }
-      
-      const isActive = page === currentPage;
+
+      const pageNumber = page as number;
+      const isActive = pageNumber === currentPage;
+
       return (
         <button
-          key={page}
+          key={pageNumber}
           className={`team-members-table__page-number ${isActive ? 'team-members-table__page-number--active' : ''}`}
-          onClick={() => onPageChange?.(page as number)}
+          onClick={() => onPageChange?.(pageNumber)}
+          type="button"
         >
-          {page}
+          {pageNumber}
         </button>
       );
     });
   };
 
+  const headerActions = headerActionsSlot ?? (
+    onMoreActions ? (
+      <Button
+        size={size === 'small' ? 'small' : 'default'}
+        type="ghost"
+        state="default"
+        special="icon-only"
+        onClick={onMoreActions}
+        aria-label="Show table actions"
+      >
+        <Icon name="dots-vertical" size={size === 'small' ? 'sm' : 'md'} />
+      </Button>
+    ) : null
+  );
+
   return (
     <div className={containerClasses}>
       {/* Header */}
-      <div className="team-members-table__header">
+      <div className={headerClasses}>
         <div className="team-members-table__header-content">
-          <div className="team-members-table__title-section">
-            <h2 className="team-members-table__title">{title}</h2>
-            <Tag
-              label={`${itemCount} items`}
-              size="small"
-              variant="white"
-              shape="rounded"
-            />
+          <div className={titleSectionClasses}>
+            <div className="team-members-table__title-row">
+              <h2 className={titleClasses}>{title}</h2>
+              <Tag
+                label={tagLabel}
+                size="small"
+                variant={derivedTagVariant}
+                shape="rounded"
+                showClose={false}
+              />
+            </div>
+            {headerDescription && (
+              <p className={`team-members-table__header-description team-members-table__header-description--density-${resolvedHeaderDensity}`}>
+                {headerDescription}
+              </p>
+            )}
           </div>
-          
-          <Button
-            size="small"
-            type="ghost"
-            state="default"
-            special="icon-only"
-            onClick={onMoreActions}
-          >
-            <Icon name="dots-vertical" size="sm" />
-          </Button>
+          {headerActions}
         </div>
       </div>
 
@@ -233,27 +314,29 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                 size="small"
                 checked={isAllSelected}
                 indeterminate={isIndeterminate}
-                onChange={(e) => handleSelectAll(e.target.checked)}
+                onChange={(event) => handleSelectAll(event.target.checked)}
                 variant="default"
                 shape="square"
               />
-              <div 
+              <button
                 className="team-members-table__header-label team-members-table__header-label--sortable"
+                type="button"
                 onClick={() => handleSort('contactName')}
               >
                 <span className="team-members-table__header-text">Contact name</span>
-                <Icon 
-                  name="arrow-down-thick" 
-                  size="sm" 
-                  className="team-members-table__sort-icon"
+                <Icon
+                  name="arrow-down-thick"
+                  size="sm"
+                  className={`team-members-table__sort-icon ${sortConfig.key === 'contactName' ? `team-members-table__sort-icon--${sortConfig.direction ?? 'asc'}` : ''}`}
+                  aria-hidden
                 />
-              </div>
+              </button>
             </div>
-            
+
             {data.map((member, index) => {
               const isSelected = selectedRows.has(member.id);
               const isAlternate = index % 2 === 1;
-              
+
               return (
                 <div
                   key={member.id}
@@ -262,7 +345,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                   <Checkbox
                     size="small"
                     checked={isSelected}
-                    onChange={(e) => handleRowSelect(member.id, e.target.checked)}
+                    onChange={(event) => handleRowSelect(member.id, event.target.checked)}
                     variant="default"
                     shape="square"
                   />
@@ -277,13 +360,13 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
             <div className="team-members-table__header-cell">
               <div className="team-members-table__header-label">
                 <span className="team-members-table__header-text">Company</span>
-                <Icon name="help-circle" size="sm" />
+                <Icon name="help-circle" size="sm" aria-hidden />
               </div>
             </div>
-            
+
             {data.map((member, index) => {
               const isAlternate = index % 2 === 1;
-              
+
               return (
                 <div
                   key={member.id}
@@ -302,10 +385,10 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                 <span className="team-members-table__header-text">Preferences</span>
               </div>
             </div>
-            
+
             {data.map((member, index) => {
               const isAlternate = index % 2 === 1;
-              
+
               return (
                 <div
                   key={member.id}
@@ -317,6 +400,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                       size="small"
                       variant="outline-black"
                       shape="rounded"
+                      showClose={false}
                       leadingIcon={<Icon name="alarm-light" size="sm" />}
                       trailingIcon={<Icon name="close" size="sm" />}
                     />
@@ -325,6 +409,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                       size="small"
                       variant="light-gray"
                       shape="rounded"
+                      showClose={false}
                       leadingIcon={<Icon name="plus" size="sm" />}
                     />
                   </div>
@@ -340,24 +425,26 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                 <span className="team-members-table__header-text">Actions</span>
               </div>
             </div>
-            
+
             {data.map((member, index) => {
               const isAlternate = index % 2 === 1;
-              
+
               return (
                 <div
                   key={member.id}
                   className={`team-members-table__cell ${isAlternate ? 'team-members-table__cell--alternate' : ''}`}
                 >
                   <div className="team-members-table__cell-links">
-                    <button 
+                    <button
                       className="team-members-table__link"
+                      type="button"
                       onClick={() => onEdit?.(member.id)}
                     >
                       Edit
                     </button>
-                    <button 
+                    <button
                       className="team-members-table__link"
+                      type="button"
                       onClick={() => onDelete?.(member.id)}
                     >
                       Delete
@@ -375,10 +462,10 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                 <span className="team-members-table__header-text">Rating</span>
               </div>
             </div>
-            
+
             {data.map((member, index) => {
               const isAlternate = index % 2 === 1;
-              
+
               return (
                 <div
                   key={member.id}
@@ -399,10 +486,10 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                 <span className="team-members-table__header-text">Status</span>
               </div>
             </div>
-            
+
             {data.map((member, index) => {
               const isAlternate = index % 2 === 1;
-              
+
               return (
                 <div
                   key={member.id}
@@ -415,13 +502,14 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                       size="small"
                       avatars={member.status.avatars}
                       maxCount={5}
-                      showOverflow={true}
+                      showOverflow
                     />
                     <Tag
                       label={`+${member.status.additionalCount}`}
                       size="small"
                       variant="light-gray"
                       shape="rounded"
+                      showClose={false}
                       leadingIcon={<Icon name="plus" size="sm" />}
                     />
                   </div>
@@ -437,10 +525,10 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                 <span className="team-members-table__header-text">Progress</span>
               </div>
             </div>
-            
+
             {data.map((member, index) => {
               const isAlternate = index % 2 === 1;
-              
+
               return (
                 <div
                   key={member.id}
@@ -451,7 +539,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                       value={member.progress}
                       size="small"
                       variant="default"
-                      showPercentage={true}
+                      showPercentage
                       labelPosition="outside"
                     />
                   </div>
@@ -462,11 +550,11 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
 
           {/* Empty Actions Column */}
           <div className="team-members-table__column team-members-table__column--button-group">
-            <div className="team-members-table__header-cell team-members-table__header-cell--empty"></div>
-            
+            <div className="team-members-table__header-cell team-members-table__header-cell--empty" aria-hidden />
+
             {data.map((member, index) => {
               const isAlternate = index % 2 === 1;
-              
+
               return (
                 <div
                   key={member.id}
@@ -500,38 +588,40 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
       </div>
 
       {/* Footer */}
-      <div className="team-members-table__footer">
-        <div className="team-members-table__footer-content">
-          <div className="team-members-table__footer-left">
-            <Button
-              size="small"
-              type="ghost"
-              state="default"
-              leadingIcon={<Icon name="arrow-left" size="sm" />}
-              onClick={() => currentPage > 1 && onPageChange?.(currentPage - 1)}
-              disabled={currentPage <= 1}
-            >
-              Previous
-            </Button>
+      <div className={footerClasses}>
+        {footerContentSlot ?? (
+          <div className="team-members-table__footer-content">
+            <div className="team-members-table__footer-left">
+              <Button
+                size={size === 'small' ? 'small' : 'default'}
+                type="ghost"
+                state="default"
+                leadingIcon={<Icon name="arrow-left" size="sm" />}
+                onClick={() => currentPage > 1 && onPageChange?.(currentPage - 1)}
+                disabled={currentPage <= 1}
+              >
+                Previous
+              </Button>
+            </div>
+
+            <div className="team-members-table__pagination">
+              {renderPaginationNumbers()}
+            </div>
+
+            <div className="team-members-table__footer-right">
+              <Button
+                size={size === 'small' ? 'small' : 'default'}
+                type="ghost"
+                state="default"
+                trailingIcon={<Icon name="arrow-right" size="sm" />}
+                onClick={() => currentPage < totalPages && onPageChange?.(currentPage + 1)}
+                disabled={currentPage >= totalPages}
+              >
+                Next
+              </Button>
+            </div>
           </div>
-          
-          <div className="team-members-table__pagination">
-            {renderPaginationNumbers()}
-          </div>
-          
-          <div className="team-members-table__footer-right">
-            <Button
-              size="small"
-              type="ghost"
-              state="default"
-              trailingIcon={<Icon name="arrow-right" size="sm" />}
-              onClick={() => currentPage < totalPages && onPageChange?.(currentPage + 1)}
-              disabled={currentPage >= totalPages}
-            >
-              Next
-            </Button>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );
