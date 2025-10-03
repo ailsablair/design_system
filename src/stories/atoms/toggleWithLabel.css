@@ -1,5 +1,5 @@
 .toggle-with-label-row {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: var(--spacing-sizing-12px);
   font-family: var(--type-typeface-archivo);
@@ -26,19 +26,14 @@
 }
 
 .toggle-with-label-text {
+  display: inline-flex;
+  align-items: center;
   margin: 0;
-  padding: 0;
-  border: none;
-  background: none;
+  padding: var(--spacing-sizing-4px) 0;
   color: inherit;
   font: inherit;
   cursor: pointer;
   text-align: left;
-}
-
-.toggle-with-label-text:focus-visible {
-  outline: var(--spacing-sizing-2px) solid var(--primary-sky-blue-500);
-  outline-offset: var(--spacing-sizing-2px);
 }
 
 .toggle-with-label-showcase {
