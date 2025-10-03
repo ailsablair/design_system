@@ -140,7 +140,7 @@ export const NoStrokeAccordions: Story = {
 export const DecorativeAccordions: Story = {
   render: () => (
     <div className={decorativeColumnClass}>
-      <h3 className={headingClass}>Decorative Accordions</h3>
+      <h3>Decorative Accordions</h3>
       <Accordion
         type="decorative"
         size="default"
