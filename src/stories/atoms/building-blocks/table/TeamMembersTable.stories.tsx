@@ -105,6 +105,10 @@ The component is designed to handle large datasets with pagination and provides 
       control: 'number',
       description: 'Total number of pages',
     },
+    defaultSort: {
+      control: 'object',
+      description: 'Initial sort configuration applied on mount',
+    },
     footerTone: {
       control: 'select',
       options: ['base', 'neutral', 'primary'],
