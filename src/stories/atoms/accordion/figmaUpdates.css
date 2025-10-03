@@ -1,0 +1,17 @@
+.accordion-variant-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
+}
+
+.accordion-decorative-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 500px;
+}
+
+.accordion-variant-heading {
+  margin: 0;
+}
