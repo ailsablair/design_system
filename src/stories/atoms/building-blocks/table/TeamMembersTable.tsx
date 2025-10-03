@@ -452,12 +452,11 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
 
           {/* Company Column */}
           <div className="team-members-table__column team-members-table__column--company">
-            <div className="team-members-table__header-cell">
-              <div className="team-members-table__header-label">
-                <span className="team-members-table__header-text">Company</span>
-                <Icon name="help-circle" size="sm" aria-hidden />
-              </div>
-            </div>
+            {renderColumnHeader({
+              columnKey: 'company',
+              label: 'Company',
+              trailingAccessory: <Icon name="help-circle" size="sm" aria-hidden />,
+            })}
 
             {data.map((member, index) => {
               const isAlternate = index % 2 === 1;
