@@ -39,7 +39,7 @@
   --toggle-thumb-offset-top: calc(var(--spacing-sizing-2px, 2px) * -1);
   --toggle-thumb-position-off: calc(var(--spacing-sizing-4px, 4px) * -1);
   --toggle-thumb-position-on: calc(var(--spacing-sizing-16px, 16px) + var(--spacing-sizing-6px, 6px));
-  --toggle-icon-size: var(--icon-size-lg, 20px);
+  --toggle-icon-size: calc(var(--icon-size-lg, 20px) - var(--spacing-sizing-2px, 2px));
 }
 
 .toggle[data-disabled="true"] {
@@ -84,7 +84,7 @@
 
 .toggle[data-enabled="true"] {
   --toggle-track-background: var(--primary-sky-blue-sky-blue, #0BA7EA);
-  --toggle-track-outline-color: var(--primary-sky-blue-sky-blue, #0BA7EA);
+  --toggle-track-outline-color: var(--primary-sky-blue-dark-sky-blue, #04435E);
 }
 
 .toggle[data-disabled="true"][data-enabled="true"] {
