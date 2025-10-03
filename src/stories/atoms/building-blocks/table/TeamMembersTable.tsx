@@ -227,6 +227,77 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
     setSortConfig({ key: columnKey, direction: newDirection });
   };
 
+  const renderColumnHeader = ({
+    columnKey,
+    label,
+    sortable = false,
+    leadingAccessory,
+    trailingAccessory,
+    align = 'left',
+  }: {
+    columnKey: string;
+    label: string;
+    sortable?: boolean;
+    leadingAccessory?: ReactNode;
+    trailingAccessory?: ReactNode;
+    align?: 'left' | 'center' | 'right';
+  }) => {
+    const isSorted = sortConfig.key === columnKey && sortConfig.direction !== null;
+    const direction = isSorted ? (sortConfig.direction ?? 'asc') : 'asc';
+    const ariaSort = sortable ? (isSorted ? (direction === 'asc' ? 'ascending' : 'descending') : 'none') : undefined;
+    const nextDirectionLabel = sortable
+      ? sortConfig.key === columnKey && sortConfig.direction === 'asc'
+        ? 'descending'
+        : 'ascending'
+      : undefined;
+
+    const headerClasses = [
+      'team-members-table__column-header',
+      sortable ? 'team-members-table__column-header--sortable' : '',
+      isSorted ? 'team-members-table__column-header--sorted' : '',
+      `team-members-table__column-header--align-${align}`,
+      leadingAccessory ? 'team-members-table__column-header--with-leading-control' : '',
+    ].filter(Boolean).join(' ');
+
+    return (
+      <div className={headerClasses} role="columnheader" aria-sort={ariaSort} data-column-key={columnKey}>
+        {leadingAccessory ? (
+          <div className="team-members-table__column-leading-control">
+            {leadingAccessory}
+          </div>
+        ) : null}
+
+        {sortable ? (
+          <button
+            type="button"
+            className="team-members-table__column-trigger"
+            onClick={() => handleSort(columnKey)}
+            aria-pressed={isSorted}
+            aria-label={nextDirectionLabel ? `${label}, sort ${nextDirectionLabel}` : undefined}
+            title={nextDirectionLabel ? `Sort ${nextDirectionLabel}` : undefined}
+          >
+            <span className="team-members-table__column-title">{label}</span>
+            <Icon
+              name="arrow-down-thick"
+              size="sm"
+              className={`team-members-table__column-sort-icon team-members-table__column-sort-icon--${isSorted ? direction : 'inactive'}`}
+              aria-hidden
+            />
+          </button>
+        ) : (
+          <div className="team-members-table__column-content">
+            <span className="team-members-table__column-title">{label}</span>
+            {trailingAccessory ? (
+              <span className="team-members-table__column-trailing-accessory">
+                {trailingAccessory}
+              </span>
+            ) : null}
+          </div>
+        )}
+      </div>
+    );
+  };
+
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, index) => (
       <Star
