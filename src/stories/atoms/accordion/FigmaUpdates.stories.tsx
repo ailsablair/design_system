@@ -22,7 +22,6 @@ type Story = StoryObj<typeof meta>;
 
 const variantColumnClass = 'accordion-variant-showcase';
 const decorativeColumnClass = 'accordion-decorative-showcase';
-const headingClass = 'accordion-variant-heading';
 
 // Simple accordions with exact Figma specifications
 export const SimpleAccordions: Story = {
