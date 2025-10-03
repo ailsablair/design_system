@@ -4,12 +4,24 @@
   display: inline-flex;
   align-items: center;
   cursor: pointer;
-  --toggle-track-width: var(--component-toggle-default-track-width, 50px);
-  --toggle-track-height: var(--component-toggle-default-track-height, 28px);
+  --component-toggle-default-track-width: 50px;
+  --component-toggle-default-track-height: 28px;
+  --component-toggle-default-thumb-wrapper: 28px;
+  --component-toggle-default-thumb: 22px;
+  --component-toggle-small-track-width: 40px;
+  --component-toggle-small-track-height: 22px;
+  --component-toggle-small-thumb-wrapper: 24px;
+  --component-toggle-small-thumb: 18px;
+  --component-toggle-large-track-width: 58px;
+  --component-toggle-large-track-height: 32px;
+  --component-toggle-large-thumb-wrapper: 32px;
+  --component-toggle-large-thumb: 24px;
+  --toggle-track-width: var(--component-toggle-default-track-width);
+  --toggle-track-height: var(--component-toggle-default-track-height);
   --toggle-track-horizontal-padding: var(--spacing-sizing-4px, 4px);
   --toggle-track-vertical-padding: var(--spacing-sizing-2px, 2px);
-  --toggle-thumb-wrapper-size: var(--component-toggle-default-thumb-wrapper, 28px);
-  --toggle-thumb-inner-size: var(--component-toggle-default-thumb, 22px);
+  --toggle-thumb-wrapper-size: var(--component-toggle-default-thumb-wrapper);
+  --toggle-thumb-inner-size: var(--component-toggle-default-thumb);
   --toggle-thumb-offset-top: calc(var(--spacing-sizing-2px, 2px) * -1);
   --toggle-thumb-position-off: calc(var(--spacing-sizing-4px, 4px) * -1);
   --toggle-thumb-position-on: calc(var(--spacing-sizing-20px, 20px) - var(--spacing-sizing-2px, 2px));
@@ -21,10 +33,10 @@
 }
 
 .toggle[data-size="small"] {
-  --toggle-track-width: var(--component-toggle-small-track-width, 40px);
-  --toggle-track-height: var(--component-toggle-small-track-height, 22px);
-  --toggle-thumb-wrapper-size: var(--component-toggle-small-thumb-wrapper, 24px);
-  --toggle-thumb-inner-size: var(--component-toggle-small-thumb, 18px);
+  --toggle-track-width: var(--component-toggle-small-track-width);
+  --toggle-track-height: var(--component-toggle-small-track-height);
+  --toggle-thumb-wrapper-size: var(--component-toggle-small-thumb-wrapper);
+  --toggle-thumb-inner-size: var(--component-toggle-small-thumb);
   --toggle-thumb-offset-top: calc(var(--spacing-sizing-4px, 4px) * -1);
   --toggle-thumb-position-off: calc(var(--spacing-sizing-4px, 4px) * -1);
   --toggle-thumb-position-on: calc(var(--spacing-sizing-16px, 16px) - var(--spacing-sizing-4px, 4px));
@@ -32,10 +44,10 @@
 }
 
 .toggle[data-size="large"] {
-  --toggle-track-width: var(--component-toggle-large-track-width, 58px);
-  --toggle-track-height: var(--component-toggle-large-track-height, 32px);
-  --toggle-thumb-wrapper-size: var(--component-toggle-large-thumb-wrapper, 32px);
-  --toggle-thumb-inner-size: var(--component-toggle-large-thumb, 24px);
+  --toggle-track-width: var(--component-toggle-large-track-width);
+  --toggle-track-height: var(--component-toggle-large-track-height);
+  --toggle-thumb-wrapper-size: var(--component-toggle-large-thumb-wrapper);
+  --toggle-thumb-inner-size: var(--component-toggle-large-thumb);
   --toggle-thumb-offset-top: calc(var(--spacing-sizing-2px, 2px) * -1);
   --toggle-thumb-position-off: calc(var(--spacing-sizing-4px, 4px) * -1);
   --toggle-thumb-position-on: calc(var(--spacing-sizing-24px, 24px) - var(--spacing-sizing-2px, 2px));
