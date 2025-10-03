@@ -228,8 +228,10 @@ export const Toggle: FC<ToggleProps> = ({
         aria-label={ariaLabel}
       />
       <span className="toggle__track">
-        <span className="toggle__thumb">
-          {iconMarkup ? <span className="toggle__icon">{iconMarkup}</span> : null}
+        <span className="toggle__track-inner">
+          <span className="toggle__thumb">
+            {iconMarkup ? <span className="toggle__icon">{iconMarkup}</span> : null}
+          </span>
         </span>
       </span>
     </label>
