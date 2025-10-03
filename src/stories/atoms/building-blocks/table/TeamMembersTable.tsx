@@ -135,12 +135,33 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
   footerTone = 'base',
   footerDensity,
   footerContentSlot,
+  defaultSort,
 }) => {
   const [selectedRows, setSelectedRows] = useState<Set<string>>(new Set());
   const [sortConfig, setSortConfig] = useState<{
     key: string | null;
     direction: 'asc' | 'desc' | null;
-  }>({ key: null, direction: null });
+  }>(() => ({
+    key: defaultSort?.key ?? null,
+    direction: defaultSort?.direction ?? null,
+  }));
+
+  useEffect(() => {
+    if (!defaultSort) {
+      return;
+    }
+
+    setSortConfig((current) => {
+      if (current.key === defaultSort.key && current.direction === defaultSort.direction) {
+        return current;
+      }
+
+      return {
+        key: defaultSort.key,
+        direction: defaultSort.direction,
+      };
+    });
+  }, [defaultSort?.key, defaultSort?.direction]);
 
   const resolvedHeaderDensity: TableDensity = headerDensity ?? (size === 'small' ? 'compact' : 'comfortable');
   const resolvedFooterDensity: TableDensity = footerDensity ?? (size === 'small' ? 'compact' : 'comfortable');
