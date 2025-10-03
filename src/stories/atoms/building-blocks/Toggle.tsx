@@ -1,5 +1,5 @@
 import React from 'react';
-import { type ChangeEvent, type FC, type MouseEvent, useId } from 'react';
+import { type ChangeEvent, type FC, type MouseEvent, type ReactNode, useId } from 'react';
 import './toggle.css';
 
 export interface ToggleProps {
@@ -147,7 +147,13 @@ const CheckIconDisabled = ({ size = 'default' }: { size?: 'small' | 'default' | 
   );
 };
 
-const renderIcon = (options: { size: 'small' | 'default' | 'large'; icon: boolean; disabled: boolean; enabled: boolean; state: string }) => {
+const renderIcon = (options: {
+  size: 'small' | 'default' | 'large';
+  icon: boolean;
+  disabled: boolean;
+  enabled: boolean;
+  state: string;
+}): ReactNode => {
   const { size, icon, disabled, enabled, state } = options;
 
   if (!icon) {
@@ -199,6 +205,8 @@ export const Toggle: FC<ToggleProps> = ({
     onClick?.();
   };
 
+  const iconMarkup = renderIcon({ size, icon, disabled, enabled, state: visualState });
+
   return (
     <label
       className={`toggle${className ? ` ${className}` : ''}`}
@@ -221,7 +229,7 @@ export const Toggle: FC<ToggleProps> = ({
       />
       <span className="toggle__track">
         <span className="toggle__thumb">
-          <span className="toggle__icon">{renderIcon({ size, icon, disabled, enabled, state: visualState })}</span>
+          {iconMarkup ? <span className="toggle__icon">{iconMarkup}</span> : null}
         </span>
       </span>
     </label>
