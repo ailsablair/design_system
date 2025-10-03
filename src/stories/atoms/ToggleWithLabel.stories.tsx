@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React, { useId, useState } from 'react';
+import React, { useState } from 'react';
 import { Toggle } from './building-blocks/Toggle';
 import './toggleWithLabel.css';
 
@@ -35,28 +35,28 @@ const sizeClassMap: Record<ToggleSize, string> = {
 
 const ToggleWithLabel = ({ size, defaultEnabled = true, label = 'This is the toggle label' }: ToggleWithLabelProps) => {
   const [isEnabled, setIsEnabled] = useState(defaultEnabled);
-  const toggleId = useId();
-  const labelId = useId();
+
+  const handleToggle = () => {
+    setIsEnabled((previous) => !previous);
+  };
 
   return (
     <div className={`toggle-with-label-row ${sizeClassMap[size]}`}>
       <Toggle
-        id={toggleId}
         size={size}
         enabled={isEnabled}
         icon
         state="default"
-        aria-labelledby={labelId}
+        aria-label={label}
         onChange={(event) => setIsEnabled(event.target.checked)}
       />
-      <span
-        id={labelId}
+      <button
+        type="button"
         className="toggle-with-label-text"
-        role="presentation"
-        onClick={() => setIsEnabled((previous) => !previous)}
+        onClick={handleToggle}
       >
         {label}
-      </span>
+      </button>
     </div>
   );
 };
