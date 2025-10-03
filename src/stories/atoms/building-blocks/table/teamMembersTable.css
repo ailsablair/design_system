@@ -636,10 +636,10 @@
     font-size: 16px;
   }
   
-  .team-members-table__header-cell {
+  .team-members-table__column-header {
     padding: 8px;
   }
-  
+
   .team-members-table__cell {
     padding: 8px;
   }
