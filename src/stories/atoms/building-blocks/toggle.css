@@ -58,15 +58,26 @@
 
 .toggle__track {
   position: relative;
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
   width: var(--toggle-track-width);
   height: var(--toggle-track-height);
   padding: var(--toggle-track-vertical-padding) var(--toggle-track-horizontal-padding);
   border-radius: var(--spacing-radius-99999px);
-  background: var(--base-white, #FFFFFF);
-  outline: 1px solid var(--primary-sky-blue-dark-sky-blue, #04435E);
-  transition: background-color var(--toggle-transition-duration) ease, outline-color var(--toggle-transition-duration) ease, box-shadow var(--toggle-transition-duration) ease;
-  box-shadow: inset 0 0 0 0 transparent;
+  background: var(--toggle-track-background);
+  outline: 1px solid var(--toggle-track-outline-color);
+  box-shadow: var(--toggle-track-box-shadow);
+  transition: background-color var(--toggle-transition-duration) ease,
+    outline-color var(--toggle-transition-duration) ease,
+    box-shadow var(--toggle-transition-duration) ease;
+  box-sizing: border-box;
+}
+
+.toggle__track-inner {
+  position: relative;
+  flex: 1 1 0;
+  align-self: stretch;
 }
 
 .toggle[data-enabled="true"] .toggle__track {
