@@ -76,6 +76,7 @@
 
 .toggle__track-inner {
   position: relative;
+  display: block;
   flex: 1 1 0;
   align-self: stretch;
   height: 100%;
