@@ -363,6 +363,26 @@
   background: var(--base-white, #FFF);
 }
 
+.team-members-table__footer--tone-neutral {
+  background: var(--neutral-gray-gray-50, #F9FAFB);
+}
+
+.team-members-table__footer--tone-primary {
+  background: var(--primary-blue-blue-50, #F9F9FE);
+}
+
+.team-members-table__footer--density-spacious {
+  padding: 20px 24px;
+}
+
+.team-members-table__footer--density-comfortable {
+  padding: 12px 24px;
+}
+
+.team-members-table__footer--density-compact {
+  padding: 8px 16px;
+}
+
 .team-members-table__footer-content {
   width: 100%;
   display: flex;
