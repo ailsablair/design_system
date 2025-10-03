@@ -78,6 +78,7 @@
   position: relative;
   flex: 1 1 0;
   align-self: stretch;
+  height: 100%;
 }
 
 .toggle[data-enabled="true"] {
