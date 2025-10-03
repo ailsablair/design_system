@@ -254,6 +254,7 @@
   font: inherit;
   color: inherit;
   text-align: left;
+  flex: 1 0 auto;
 }
 
 .team-members-table__column-trigger {
