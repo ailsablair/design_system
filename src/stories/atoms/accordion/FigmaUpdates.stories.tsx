@@ -105,8 +105,8 @@ export const PlusIconAccordions: Story = {
 // No-stroke accordions
 export const NoStrokeAccordions: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '900px' }}>
-      <h3>No-Stroke Accordions</h3>
+    <div className={variantColumnClass}>
+      <h3 className={headingClass}>No-Stroke Accordions</h3>
       <Accordion
         type="no-stroke"
         size="default"
