@@ -20,7 +20,7 @@ import { styled } from '@mui/material/styles';
  */
 
 // Enhanced Card Component
-const StyledCard = styled(MUICard)(({ theme }) => ({
+const StyledCard = styled(MUICard)(() => ({
   borderRadius: 'var(--spacing-radius-8px)',
   boxShadow: 'var(--shadow-sm)',
   border: '1px solid var(--neutral-gray-gray-200)',
