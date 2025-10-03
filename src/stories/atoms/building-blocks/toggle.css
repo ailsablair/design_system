@@ -43,6 +43,10 @@
   --toggle-icon-size: var(--icon-size-sm, 14px);
 }
 
+.toggle[data-size="small"][data-enabled="false"] {
+  --toggle-thumb-position-off: 0;
+}
+
 .toggle[data-size="large"] {
   --toggle-track-width: var(--component-toggle-large-track-width);
   --toggle-track-height: var(--component-toggle-large-track-height);
