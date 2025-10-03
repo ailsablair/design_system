@@ -603,7 +603,6 @@ export const Card: React.FC<CardProps> = ({
       tabIndex={onClick && !disabled ? 0 : undefined}
       aria-disabled={disabled}
       aria-label={ariaLabel}
-      data-placement={placement}
       onKeyDown={(e) => {
         if (onClick && !disabled && (e.key === 'Enter' || e.key === ' ')) {
           e.preventDefault();
