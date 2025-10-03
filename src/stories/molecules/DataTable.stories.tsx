@@ -1,5 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DataTable } from './DataTable';
+import { Button } from '../atoms/Button';
+import { ProgressBar } from '../atoms/ProgressBar';
+import { Tag, type TagVariant } from '../atoms/Tag';
+import { AvatarGroup, type AvatarGroupProps } from '../atoms/AvatarGroup';
+import { Icon } from '../foundations/Icon';
 // Mock functions for Storybook args
 
 const meta: Meta<typeof DataTable> = {
