@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Accordion } from '../building-blocks/Accordion';
+import './figmaUpdates.css';
 
 const meta: Meta<typeof Accordion> = {
-  title: 'Components/Building Blocks/Accordion/Figma Updates',
+  title: 'Atoms/Accordion/Figma Updates',
   component: Accordion,
   parameters: {
     layout: 'padded',
