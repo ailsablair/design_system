@@ -207,6 +207,12 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
 }
 
 .team-members-table__header-label--sortable {
@@ -215,6 +221,11 @@
 
 .team-members-table__header-label--sortable:hover {
   opacity: 0.8;
+}
+
+.team-members-table__header-label--sortable:focus-visible {
+  outline: 2px solid var(--primary-blue-blue, #2F42BD);
+  outline-offset: 2px;
 }
 
 .team-members-table__header-text {
