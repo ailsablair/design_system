@@ -1,4 +1,5 @@
 import { type FC, useId } from 'react';
+import { type FC, useId } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Toggle } from './building-blocks/Toggle';
 import './toggleWithLabel.css';
