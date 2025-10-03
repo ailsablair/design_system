@@ -402,6 +402,16 @@ export const CustomTitle: Story = {
 /**
  * Table with extended team data showcasing all cell types
  */
+export const SortedByContact: Story = {
+  args: {
+    ...Default.args,
+    defaultSort: {
+      key: 'contactName',
+      direction: 'asc',
+    },
+  },
+};
+
 export const ExtendedTeamData: Story = {
   args: {
     ...Default.args,
