@@ -1,4 +1,3 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { DataTable } from './DataTable';
 import type { DataTableRow } from './DataTable';
