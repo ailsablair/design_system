@@ -51,6 +51,12 @@
   align-self: stretch;
 }
 
+.team-members-table__header-action-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .team-members-table__title-section {
   display: flex;
   align-items: center;
