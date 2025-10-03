@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { DataTable } from './DataTable';
 import { Button } from '../atoms/Button';
 import { ProgressBar } from '../atoms/ProgressBar';
