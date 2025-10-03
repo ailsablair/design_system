@@ -67,8 +67,8 @@ export const SimpleAccordions: Story = {
 // Plus icon variants
 export const PlusIconAccordions: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '900px' }}>
-      <h3>Simple Accordions with Plus Icons</h3>
+    <div className={variantColumnClass}>
+      <h3 className={headingClass}>Simple Accordions with Plus Icons</h3>
       <Accordion
         type="simple"
         size="default"
