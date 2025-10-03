@@ -117,6 +117,10 @@
   --toggle-track-box-shadow: inset 0 0 0 calc(var(--spacing-stroke-1px, 1px)) var(--primary-sky-blue-dark-sky-blue, #04435E);
 }
 
+.toggle[data-disabled="true"]:hover {
+  --toggle-track-box-shadow: inset 0 0 0 0 transparent;
+}
+
 .toggle[data-state="focused"][data-enabled="true"] {
   --toggle-track-box-shadow: inset 0 0 0 var(--spacing-stroke-1px, 1px) var(--primary-sky-blue-dark-sky-blue, #04435E),
     0 0 0 calc(var(--spacing-sizing-4px, 4px)) rgba(13, 178, 245, 0.35);
