@@ -138,7 +138,7 @@
 
 .toggle__thumb {
   position: absolute;
-  top: var(--toggle-thumb-offset-top);
+  top: 50%;
   left: var(--toggle-thumb-position-off);
   width: var(--toggle-thumb-wrapper-size);
   height: var(--toggle-thumb-wrapper-size);
@@ -148,6 +148,7 @@
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  transform: translateY(-50%);
   transition: left var(--toggle-transition-duration) ease, transform var(--toggle-transition-duration) ease;
 }
 
