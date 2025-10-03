@@ -218,6 +218,7 @@
 .team-members-table__column-leading-control {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .team-members-table__column-header--align-left {
