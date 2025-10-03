@@ -23,7 +23,7 @@
   --toggle-thumb-wrapper-size: var(--component-toggle-default-thumb-wrapper);
   --toggle-thumb-inner-size: var(--component-toggle-default-thumb);
   --toggle-thumb-offset-top: 0;
-  --toggle-thumb-position-off: var(--spacing-sizing-4px, 4px);
+  --toggle-thumb-position-off: var(--spacing-sizing-2px, 2px);
   --toggle-thumb-position-on: calc(var(--spacing-sizing-20px, 20px) - var(--spacing-sizing-2px, 2px));
   --toggle-icon-size: var(--icon-size-md, 16px);
   --toggle-transition-duration: 0.2s;
@@ -38,7 +38,7 @@
   --toggle-thumb-wrapper-size: var(--component-toggle-small-thumb-wrapper);
   --toggle-thumb-inner-size: var(--component-toggle-small-thumb);
   --toggle-thumb-offset-top: 0;
-  --toggle-thumb-position-off: var(--spacing-sizing-4px, 4px);
+  --toggle-thumb-position-off: var(--spacing-sizing-2px, 2px);
   --toggle-thumb-position-on: calc(var(--spacing-sizing-16px, 16px) - var(--spacing-sizing-4px, 4px));
   --toggle-icon-size: var(--icon-size-sm, 14px);
 }
@@ -49,7 +49,7 @@
   --toggle-thumb-wrapper-size: var(--component-toggle-large-thumb-wrapper);
   --toggle-thumb-inner-size: var(--component-toggle-large-thumb);
   --toggle-thumb-offset-top: 0;
-  --toggle-thumb-position-off: var(--spacing-sizing-4px, 4px);
+  --toggle-thumb-position-off: var(--spacing-sizing-2px, 2px);
   --toggle-thumb-position-on: calc(var(--spacing-sizing-24px, 24px) - var(--spacing-sizing-2px, 2px));
   --toggle-icon-size: var(--icon-size-lg, 20px);
 }
