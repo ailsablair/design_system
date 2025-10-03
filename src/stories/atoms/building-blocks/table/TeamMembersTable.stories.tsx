@@ -312,6 +312,45 @@ export const CompactLayout: Story = {
 };
 
 /**
+ * Header configured with dual ghost buttons instead of the default icon trigger
+ */
+export const HeaderActionButtons: Story = {
+  args: {
+    ...Default.args,
+    size: 'default',
+    headerDensity: 'comfortable',
+    footerDensity: 'comfortable',
+  },
+  render: (args) => (
+    <TeamMembersTable
+      {...args}
+      headerActionsSlot={(
+        <div className="team-members-table__header-action-group">
+          <Button
+            size="small"
+            variant="ghost"
+            state="default"
+            leadingIcon={<Icon name="alarm-light" size="sm" />}
+            trailingIcon={<Icon name="arrow-down-circle" size="sm" />}
+          >
+            Label
+          </Button>
+          <Button
+            size="small"
+            variant="ghost"
+            state="default"
+            leadingIcon={<Icon name="alarm-light" size="sm" />}
+            trailingIcon={<Icon name="arrow-down-circle" size="sm" />}
+          >
+            Label
+          </Button>
+        </div>
+      )}
+    />
+  ),
+};
+
+/**
  * Table with many pages to showcase pagination
  */
 export const ManyPages: Story = {
