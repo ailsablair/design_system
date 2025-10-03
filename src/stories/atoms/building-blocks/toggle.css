@@ -4,8 +4,8 @@
   display: inline-flex;
   align-items: center;
   cursor: pointer;
-  --toggle-track-width: 50px;
-  --toggle-track-height: 28px;
+  --toggle-track-width: calc(var(--spacing-sizing-40px, 40px) + var(--spacing-sizing-8px, 8px) + var(--spacing-sizing-2px, 2px));
+  --toggle-track-height: calc(var(--spacing-sizing-24px, 24px) + var(--spacing-sizing-4px, 4px));
   --toggle-track-horizontal-padding: var(--spacing-sizing-4px, 4px);
   --toggle-track-vertical-padding: var(--spacing-sizing-2px, 2px);
   --toggle-thumb-wrapper-size: calc(var(--spacing-sizing-24px, 24px) + var(--spacing-sizing-4px, 4px));
