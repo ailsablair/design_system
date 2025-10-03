@@ -263,7 +263,7 @@ export const EchoMUIContainer: React.FC<EchoMUIContainerProps> = ({
 };
 
 // Enhanced Paper Component
-const StyledPaper = styled(MUIPaper)(({ theme }) => ({
+const StyledPaper = styled(MUIPaper)(() => ({
   backgroundColor: 'var(--base-white)',
   borderRadius: 'var(--spacing-radius-8px)',
   border: '1px solid var(--neutral-gray-gray-200)',
