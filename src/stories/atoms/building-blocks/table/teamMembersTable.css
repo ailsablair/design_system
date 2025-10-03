@@ -390,6 +390,10 @@
   align-items: center;
 }
 
+.team-members-table__footer-content--button {
+  justify-content: center;
+}
+
 .team-members-table__footer-left {
   display: flex;
   align-items: center;
