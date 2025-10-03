@@ -1,4 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+import { Button } from '../../Button';
+import { Icon } from '../../../foundations/Icon';
 import { TeamMembersTable } from './TeamMembersTable';
 
 const meta: Meta<typeof TeamMembersTable> = {
