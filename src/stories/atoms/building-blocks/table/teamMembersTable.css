@@ -188,6 +188,15 @@
   flex: 1 0 0;
 }
 
+.team-members-table__column--is-sorted .team-members-table__cell {
+  border-bottom-color: var(--primary-blue-blue-200, #C5CAED);
+}
+
+.team-members-table__column--is-sorted .team-members-table__cell-title,
+.team-members-table__column--is-sorted .team-members-table__cell-text {
+  font-weight: 500;
+}
+
 /* Column Header Styles */
 .team-members-table__column-header {
   display: flex;
