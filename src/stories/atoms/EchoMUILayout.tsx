@@ -365,7 +365,7 @@ export const EchoMUILayout: React.FC<EchoMUILayoutProps> = ({
 };
 
 // Re-export MUI Grid with Echo styling
-export const EchoMUIGrid = styled(MUIGrid)(({ theme }) => ({
+export const EchoMUIGrid = styled(MUIGrid)(() => ({
   '&.MuiGrid-container': {
     margin: 0,
     width: '100%',
