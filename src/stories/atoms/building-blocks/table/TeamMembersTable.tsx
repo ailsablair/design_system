@@ -83,6 +83,11 @@ export interface TeamMembersTableProps {
   footerDensity?: TableDensity;
   /** Slot for custom footer content (replaces pagination when provided) */
   footerContentSlot?: ReactNode;
+  /** Default sort configuration applied on mount */
+  defaultSort?: {
+    key: string;
+    direction: 'asc' | 'desc';
+  };
 }
 
 const headerToneToTagVariant = (tone: TableSurfaceTone): TagVariant => {
