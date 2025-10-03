@@ -3,7 +3,7 @@ import { Accordion } from './Accordion';
 import { AccordionFigma } from './AccordionFigma';
 
 const meta: Meta<typeof Accordion> = {
-  title: 'Components/Building Blocks/Accordion/Figma Updates',
+  title: 'Atoms/Accordion/Figma Updates',
   component: Accordion,
   parameters: {
     layout: 'padded',
