@@ -267,7 +267,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
     onMoreActions ? (
       <Button
         size={size === 'small' ? 'small' : 'default'}
-        type="ghost"
+        variant="ghost"
         state="default"
         special="icon-only"
         onClick={onMoreActions}
@@ -563,7 +563,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                   <div className="team-members-table__cell-button-group">
                     <Button
                       size="extra-small"
-                      type="ghost"
+                      variant="ghost"
                       state="default"
                       leadingIcon={<Icon name="pencil" size="sm" />}
                       onClick={() => onEdit?.(member.id)}
@@ -572,7 +572,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                     </Button>
                     <Button
                       size="extra-small"
-                      type="ghost"
+                      variant="ghost"
                       state="default"
                       leadingIcon={<Icon name="trash-can" size="sm" />}
                       onClick={() => onDelete?.(member.id)}
@@ -594,7 +594,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
             <div className="team-members-table__footer-left">
               <Button
                 size={size === 'small' ? 'small' : 'default'}
-                type="ghost"
+                variant="ghost"
                 state="default"
                 leadingIcon={<Icon name="arrow-left" size="sm" />}
                 onClick={() => currentPage > 1 && onPageChange?.(currentPage - 1)}
@@ -611,7 +611,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
             <div className="team-members-table__footer-right">
               <Button
                 size={size === 'small' ? 'small' : 'default'}
-                type="ghost"
+                variant="ghost"
                 state="default"
                 trailingIcon={<Icon name="arrow-right" size="sm" />}
                 onClick={() => currentPage < totalPages && onPageChange?.(currentPage + 1)}
