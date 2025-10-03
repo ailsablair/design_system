@@ -46,6 +46,45 @@ The component is designed to handle large datasets with pagination and provides 
       control: 'text',
       description: 'Table title',
     },
+    headerDescription: {
+      control: 'text',
+      description: 'Optional supporting copy beneath the title',
+    },
+    headerTagLabel: {
+      control: 'text',
+      description: 'Overrides the default "items" label beside the title',
+    },
+    headerTone: {
+      control: 'select',
+      options: ['base', 'neutral', 'primary'],
+      description: 'Header surface tone',
+    },
+    headerDensity: {
+      control: 'select',
+      options: ['spacious', 'comfortable', 'compact'],
+      description: 'Header spacing density',
+    },
+    headerTagVariant: {
+      control: 'select',
+      options: [
+        'outline-blue',
+        'outline-info-blue',
+        'outline-black',
+        'light-gray',
+        'primary',
+        'secondary',
+        'blue',
+        'cyan',
+        'orange',
+        'gray',
+        'purple',
+        'green',
+        'red',
+        'yellow',
+        'black',
+      ],
+      description: 'Overrides the tag variant beside the title',
+    },
     itemCount: {
       control: 'number',
       description: 'Item count for badge',
@@ -63,12 +102,32 @@ The component is designed to handle large datasets with pagination and provides 
       control: 'number',
       description: 'Total number of pages',
     },
+    footerTone: {
+      control: 'select',
+      options: ['base', 'neutral', 'primary'],
+      description: 'Footer surface tone',
+    },
+    footerDensity: {
+      control: 'select',
+      options: ['spacious', 'comfortable', 'compact'],
+      description: 'Footer spacing density',
+    },
     onRowSelect: { action: 'row-selected' },
     onSelectAll: { action: 'select-all' },
     onPageChange: { action: 'page-changed' },
     onEdit: { action: 'edit-clicked' },
     onDelete: { action: 'delete-clicked' },
     onMoreActions: { action: 'more-actions-clicked' },
+    headerActionsSlot: {
+      table: {
+        disable: true,
+      },
+    },
+    footerContentSlot: {
+      table: {
+        disable: true,
+      },
+    },
   },
 };
 
