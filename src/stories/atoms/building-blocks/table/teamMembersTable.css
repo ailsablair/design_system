@@ -517,9 +517,18 @@
   padding: 8px 16px;
 }
 
-.team-members-table--small .team-members-table__header-cell {
+.team-members-table--small .team-members-table__column-header {
   padding: 8px 16px;
-  height: 36px;
+  min-height: 36px;
+}
+
+.team-members-table--small .team-members-table__column-header--with-leading-control {
+  padding-left: 12px;
+}
+
+.team-members-table--small .team-members-table__column-title {
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .team-members-table--small .team-members-table__cell {
