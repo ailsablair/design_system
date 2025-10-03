@@ -115,6 +115,7 @@
 .toggle[data-enabled="true"]:not([data-disabled="true"]):hover {
   --toggle-track-background: var(--primary-sky-blue-450, #1DB2F5);
   --toggle-track-box-shadow: inset 0 0 0 calc(var(--spacing-stroke-1px, 1px)) var(--primary-sky-blue-dark-sky-blue, #04435E);
+  --toggle-icon-color: var(--base-white, #FFFFFF);
 }
 
 .toggle[data-state="hover"][data-enabled="true"] .toggle__icon,
