@@ -178,6 +178,20 @@
   z-index: 1;
 }
 
+.toggle[data-state="inactive"] {
+  --toggle-track-background: var(--neutral-gray-gray-100, #F3F4F6);
+  --toggle-track-outline-color: var(--neutral-gray-gray-300, #D2D5DA);
+}
+
+.toggle[data-state="inactive"] .toggle__thumb::before {
+  outline-color: var(--neutral-gray-gray-300, #D2D5DA);
+  background: var(--neutral-gray-gray-50, #F9FAFB);
+}
+
+.toggle[data-state="inactive"] .toggle__icon svg path {
+  fill: var(--neutral-gray-gray-400, #9CA3AF);
+}
+
 .toggle__icon svg {
   width: 100%;
   height: 100%;
