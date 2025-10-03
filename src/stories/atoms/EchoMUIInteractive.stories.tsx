@@ -17,7 +17,6 @@ import {
   Typography,
   Stack,
   Paper,
-  Chip,
 } from '@mui/material';
 
 import {
@@ -28,9 +27,6 @@ import {
   Edit as EditIcon,
   Favorite as FavoriteIcon,
   Add as AddIcon,
-  Settings as SettingsIcon,
-  Notifications as NotificationsIcon,
-  Security as SecurityIcon,
 } from '@mui/icons-material';
 
 const meta = {
