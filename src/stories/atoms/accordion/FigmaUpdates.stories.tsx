@@ -27,8 +27,8 @@ const headingClass = 'accordion-variant-heading';
 // Simple accordions with exact Figma specifications
 export const SimpleAccordions: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '900px' }}>
-      <h3>Simple Accordions - Default Size</h3>
+    <div className={variantColumnClass}>
+      <h3 className={headingClass}>Simple Accordions - Default Size</h3>
       <Accordion
         type="simple"
         size="default"
