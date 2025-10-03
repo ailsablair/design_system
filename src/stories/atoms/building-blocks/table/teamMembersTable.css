@@ -650,10 +650,10 @@
 }
 
 /* Accessibility */
-.team-members-table__header-label--sortable:focus {
+.team-members-table__column-trigger:focus {
   outline: 2px solid var(--primary-sky-blue-sky-blue, #0BA7EA);
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 .team-members-table__link:focus {
