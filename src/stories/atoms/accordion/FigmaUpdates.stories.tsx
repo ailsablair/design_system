@@ -140,8 +140,8 @@ export const NoStrokeAccordions: Story = {
 // Decorative accordions
 export const DecorativeAccordions: Story = {
   render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '500px' }}>
-      <h3>Decorative Accordions</h3>
+    <div className={decorativeColumnClass}>
+      <h3 className={headingClass}>Decorative Accordions</h3>
       <Accordion
         type="decorative"
         size="default"
