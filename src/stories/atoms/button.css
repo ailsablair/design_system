@@ -314,7 +314,7 @@
 
 .button.secondary.outline.hover .button-text,
 .button.secondary.outline:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.secondary.outline.clicked,
@@ -326,7 +326,7 @@
 
 .button.secondary.outline.clicked .button-text,
 .button.secondary.outline:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.secondary.outline.focused,
@@ -403,7 +403,7 @@
 
 .button.primary.hover .button-text,
 .button.primary:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.primary.clicked,
@@ -457,7 +457,7 @@
 
 .button.primary.outline.hover .button-text,
 .button.primary.outline:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.primary.outline.clicked,
@@ -469,7 +469,7 @@
 
 .button.primary.outline.clicked .button-text,
 .button.primary.outline:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.primary.outline.focused,
@@ -513,7 +513,7 @@
 
 .button.secondary.hover .button-text,
 .button.secondary:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.secondary.clicked,
@@ -525,7 +525,7 @@
 
 .button.secondary.clicked .button-text,
 .button.secondary:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.secondary.focused,
@@ -569,7 +569,7 @@
 
 .button.tertiary.hover .button-text,
 .button.tertiary:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.tertiary.clicked,
@@ -581,7 +581,7 @@
 
 .button.tertiary.clicked .button-text,
 .button.tertiary:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.tertiary.focused,
@@ -730,7 +730,7 @@
 }
 
 .button.force-hover .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.force-clicked {
@@ -772,7 +772,7 @@
 }
 
 .button.secondary.force-hover .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.secondary.force-clicked {
@@ -782,7 +782,7 @@
 }
 
 .button.secondary.force-clicked .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.secondary.force-focused {
@@ -798,7 +798,7 @@
 }
 
 .button.secondary.outline.force-hover .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.secondary.outline.force-clicked {
@@ -808,7 +808,7 @@
 }
 
 .button.secondary.outline.force-clicked .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.secondary.outline.force-focused {
@@ -831,7 +831,7 @@
 
 .button.tertiary.outline.hover .button-text,
 .button.tertiary.outline:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.tertiary.outline.clicked,
@@ -843,7 +843,7 @@
 
 .button.tertiary.outline.clicked .button-text,
 .button.tertiary.outline:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.tertiary.outline.focused,
@@ -880,7 +880,7 @@
 }
 
 .button.tertiary.force-hover .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.tertiary.force-clicked {
@@ -890,7 +890,7 @@
 }
 
 .button.tertiary.force-clicked .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.tertiary.force-focused {
@@ -924,7 +924,7 @@
 }
 
 .button.tertiary.outline.force-hover .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.tertiary.outline.force-clicked {
@@ -934,7 +934,7 @@
 }
 
 .button.tertiary.outline.force-clicked .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.tertiary.outline.force-focused {
@@ -978,7 +978,7 @@
 }
 
 .button.secondary.force-hover.extra-small .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.secondary.force-clicked.extra-small {
@@ -988,7 +988,7 @@
 }
 
 .button.secondary.force-clicked.extra-small .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.secondary.force-focused.extra-small {
@@ -1060,7 +1060,7 @@
 }
 
 .button.error .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 /* Error outline button variant - Updated for Figma design */
@@ -1076,7 +1076,7 @@
 }
 
 .button.error.outline .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 /* Warning button variant - Updated for Figma design */
@@ -1092,7 +1092,7 @@
 }
 
 .button.warning .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 /* Warning outline button variant - Updated for Figma design */
@@ -1108,7 +1108,7 @@
 }
 
 .button.warning.outline .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 /* State variants for ghost buttons - Updated for Figma design */
@@ -1126,7 +1126,7 @@
 
 .button.ghost.hover .button-text,
 .button.ghost:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.ghost.clicked,
@@ -1138,7 +1138,7 @@
 
 .button.ghost.clicked .button-text,
 .button.ghost:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.ghost.focused,
@@ -1203,7 +1203,7 @@
 
 .button.error.clicked .button-text,
 .button.error:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.error.focused,
@@ -1259,7 +1259,7 @@
 
 .button.error.outline.clicked .button-text,
 .button.error.outline:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.error.outline.focused,
@@ -1408,7 +1408,7 @@
 }
 
 .button.ghost.force-hover .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.ghost.force-clicked {
@@ -1418,7 +1418,7 @@
 }
 
 .button.ghost.force-clicked .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.ghost.force-focused {
@@ -1453,7 +1453,7 @@
 }
 
 .button.error.force-clicked .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.error.force-focused {
@@ -1479,7 +1479,7 @@
 }
 
 .button.error.outline.force-clicked .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.error.outline.force-focused {
@@ -1601,7 +1601,7 @@
 }
 
 .button.info .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 /* Success button variant - Updated for Figma design */
@@ -1617,7 +1617,7 @@
 }
 
 .button.success .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 /* State variants for info buttons - Updated for Figma design */
