@@ -356,32 +356,40 @@
 
 /* Tertiary button variant - Updated for Figma design */
 .button.tertiary {
-  background: var(--primary-seafoam-400);
+  background: var(--primary-seafoam-seafoam-300);
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
   color: var(--base-black);
 }
 
 .button.tertiary .button-icon {
   color: var(--base-black);
-  opacity: 0.4;
+  opacity: 0.7;
+}
+
+.button.tertiary .button-text {
+  font-weight: var(--type-weight-light);
 }
 
 /* Icon-only tertiary buttons use different background */
 .button.tertiary.icon-only {
   background: var(--primary-seafoam-seafoam);
-  border: var(--spacing-stroke-0-5px) solid var(--primary-seafoam-seafoam);
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
+}
+
+.button.tertiary.extra-small.icon-only {
+  border: var(--spacing-stroke-0-5px) solid var(--primary-seafoam-dark-seafoam);
 }
 
 /* Tertiary outline button variant - Updated for Figma design */
 .button.tertiary.outline {
-  background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500);
+  background: var(--primary-seafoam-seafoam-25);
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
   color: var(--base-black);
 }
 
 .button.tertiary.outline .button-icon {
   color: var(--base-black);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .button.tertiary.outline .button-text {
@@ -558,13 +566,13 @@
 
 /* State variants for tertiary buttons - Updated for Figma design */
 .button.tertiary.default {
-  background: var(--primary-seafoam-400);
+  background: var(--primary-seafoam-seafoam-300);
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
 }
 
 .button.tertiary.hover,
 .button.tertiary:hover:not(.disabled):not(.loading) {
-  background: var(--primary-seafoam-400);
+  background: var(--primary-seafoam-seafoam-300);
   border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam);
   box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam);
 }
@@ -576,27 +584,39 @@
 
 .button.tertiary.clicked,
 .button.tertiary:active:not(.disabled):not(.loading) {
-  background: var(--primary-seafoam-400);
+  background: var(--primary-seafoam-seafoam-300);
   border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam);
   box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam);
 }
 
 .button.tertiary.clicked .button-text,
 .button.tertiary:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
-.button.tertiary.focused,
-.button.tertiary:focus-visible:not(.disabled):not(.loading) {
-  background: var(--primary-seafoam-400);
+.button.tertiary.small.focused,
+.button.tertiary.small:focus-visible:not(.disabled):not(.loading) {
+  background: var(--primary-seafoam-seafoam-300);
   border: var(--spacing-stroke-3px) solid var(--primary-seafoam-dark-seafoam);
 }
 
+.button.tertiary.default.focused,
+.button.tertiary.default:focus-visible:not(.disabled):not(.loading),
+.button.tertiary.large.focused,
+.button.tertiary.large:focus-visible:not(.disabled):not(.loading) {
+  background: var(--primary-seafoam-seafoam-300);
+  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam);
+}
+
 .button.tertiary.loading {
-  background: var(--primary-seafoam-400);
+  background: var(--primary-seafoam-seafoam-300);
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
   cursor: wait;
   pointer-events: none;
+}
+
+.button.tertiary.loading .button-loading-content {
+  opacity: 0.6;
 }
 
 .button.tertiary.disabled {
@@ -609,40 +629,49 @@
 
 .button.tertiary.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 /* Icon-only tertiary button states */
 .button.tertiary.icon-only.default {
   background: var(--primary-seafoam-seafoam);
-  border: var(--spacing-stroke-0-5px) solid var(--primary-seafoam-seafoam);
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
+}
+
+.button.tertiary.extra-small.icon-only.default {
+  background: var(--primary-seafoam-seafoam);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-seafoam-dark-seafoam);
 }
 
 .button.tertiary.icon-only.hover,
 .button.tertiary.icon-only:hover:not(.disabled):not(.loading) {
   background: var(--primary-seafoam-seafoam);
-  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-seafoam);
-  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
+  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam);
+  box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam);
 }
 
 .button.tertiary.icon-only.clicked,
 .button.tertiary.icon-only:active:not(.disabled):not(.loading) {
   background: var(--primary-seafoam-seafoam);
-  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-seafoam);
-  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
+  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam);
+  box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam);
 }
 
 .button.tertiary.icon-only.focused,
 .button.tertiary.icon-only:focus-visible:not(.disabled):not(.loading) {
   background: var(--primary-seafoam-seafoam);
-  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-seafoam);
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
 }
 
 .button.tertiary.icon-only.loading {
   background: var(--primary-seafoam-seafoam);
-  border: var(--spacing-stroke-0-5px) solid var(--primary-seafoam-seafoam);
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
   cursor: wait;
   pointer-events: none;
+}
+
+.button.tertiary.icon-only.loading .button-loading-content {
+  opacity: 0.6;
 }
 
 .button.tertiary.icon-only.disabled {
@@ -652,7 +681,7 @@
 
 .button.tertiary.icon-only.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 /* Special hover effects for extra-small buttons - Updated for Figma design */
@@ -847,7 +876,7 @@
 
 .button.tertiary.outline.hover,
 .button.tertiary.outline:hover:not(.disabled):not(.loading) {
-  background: var(--primary-seafoam-seafoam-25);
+  background: var(--primary-seafoam-seafoam-50);
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
   box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam);
 }
@@ -859,14 +888,14 @@
 
 .button.tertiary.outline.clicked,
 .button.tertiary.outline:active:not(.disabled):not(.loading) {
-  background: var(--primary-seafoam-seafoam-25);
+  background: var(--primary-seafoam-seafoam-50);
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
   box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam);
 }
 
 .button.tertiary.outline.clicked .button-text,
 .button.tertiary.outline:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .button.tertiary.outline.focused,
@@ -876,10 +905,14 @@
 }
 
 .button.tertiary.outline.loading {
-  background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500);
+  background: var(--primary-seafoam-seafoam-25);
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
   cursor: wait;
   pointer-events: none;
+}
+
+.button.tertiary.outline.loading .button-loading-content {
+  opacity: 0.7;
 }
 
 .button.tertiary.outline.disabled {
@@ -892,12 +925,12 @@
 
 .button.tertiary.outline.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 /* Force state classes for tertiary buttons - Updated for Figma design */
 .button.tertiary.force-hover {
-  background: var(--primary-seafoam-400) !important;
+  background: var(--primary-seafoam-seafoam-300) !important;
   border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam) !important;
   box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam) !important;
 }
@@ -907,18 +940,24 @@
 }
 
 .button.tertiary.force-clicked {
-  background: var(--primary-seafoam-400) !important;
+  background: var(--primary-seafoam-seafoam-300) !important;
   border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam) !important;
   box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam) !important;
 }
 
 .button.tertiary.force-clicked .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
-.button.tertiary.force-focused {
-  background: var(--primary-seafoam-400) !important;
+.button.tertiary.small.force-focused {
+  background: var(--primary-seafoam-seafoam-300) !important;
   border: var(--spacing-stroke-3px) solid var(--primary-seafoam-dark-seafoam) !important;
+}
+
+.button.tertiary.default.force-focused,
+.button.tertiary.large.force-focused {
+  background: var(--primary-seafoam-seafoam-300) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam) !important;
 }
 
 /* Icon-only secondary button specific styling - Updated for Figma design */
@@ -1101,24 +1140,24 @@
 /* Force state classes for tertiary icon-only buttons */
 .button.tertiary.icon-only.force-hover {
   background: var(--primary-seafoam-seafoam) !important;
-  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-seafoam) !important;
-  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam) !important;
+  box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam) !important;
 }
 
 .button.tertiary.icon-only.force-clicked {
   background: var(--primary-seafoam-seafoam) !important;
-  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-seafoam) !important;
-  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam) !important;
+  box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam) !important;
 }
 
 .button.tertiary.icon-only.force-focused {
   background: var(--primary-seafoam-seafoam) !important;
-  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-seafoam) !important;
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam) !important;
 }
 
 /* Force state classes for tertiary outline buttons - Updated for Figma design */
 .button.tertiary.outline.force-hover {
-  background: var(--primary-seafoam-seafoam-25) !important;
+  background: var(--primary-seafoam-seafoam-50) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam) !important;
   box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam) !important;
 }
@@ -1128,13 +1167,13 @@
 }
 
 .button.tertiary.outline.force-clicked {
-  background: var(--primary-seafoam-seafoam-25) !important;
+  background: var(--primary-seafoam-seafoam-50) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam) !important;
   box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam) !important;
 }
 
 .button.tertiary.outline.force-clicked .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.tertiary.outline.force-focused {
