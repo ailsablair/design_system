@@ -496,10 +496,10 @@
   --sizing-width-668: 668px;
 
   /* === BUTTON COMPONENT TOKENS === */
-  --sizing-button-height-xs: 28px;
+  --sizing-button-height-xs: 27px;
   --sizing-button-height-sm: 32px;
   --sizing-button-height-default: 44px;
-  --sizing-button-height-lg: 52px;
+  --sizing-button-height-lg: 56px;
   --sizing-button-min-width-xs: var(--spacing-sizing-48px);
   --sizing-button-min-width-sm: var(--spacing-sizing-80px);
   --sizing-button-min-width-default: var(--spacing-sizing-80px);
