@@ -724,6 +724,11 @@
   opacity: 1;
 }
 
+/* Open state title color for no-stroke type - black per Figma */
+.accordion--type-no-stroke.accordion--state-open .accordion__title {
+  color: var(--base-black); /* #1C1C1C */
+}
+
 /* ===== ANIMATIONS ===== */
 
 @keyframes accordion-expand {
