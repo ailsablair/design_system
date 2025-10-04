@@ -1191,7 +1191,7 @@
 
 .button.error.hover .button-text,
 .button.error:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
 }
 
 .button.error.clicked,
@@ -1247,7 +1247,7 @@
 
 .button.error.outline.hover .button-text,
 .button.error.outline:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
 }
 
 .button.error.outline.clicked,
@@ -1303,7 +1303,7 @@
 
 .button.warning.hover .button-text,
 .button.warning:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
 }
 
 .button.warning.clicked,
@@ -1315,7 +1315,7 @@
 
 .button.warning.clicked .button-text,
 .button.warning:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
 }
 
 .button.warning.focused,
@@ -1359,7 +1359,7 @@
 
 .button.warning.outline.hover .button-text,
 .button.warning.outline:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
 }
 
 .button.warning.outline.clicked,
@@ -1371,7 +1371,7 @@
 
 .button.warning.outline.clicked .button-text,
 .button.warning.outline:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
 }
 
 .button.warning.outline.focused,
@@ -1443,7 +1443,7 @@
 }
 
 .button.error.force-hover .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.error.force-clicked {
@@ -1469,7 +1469,7 @@
 }
 
 .button.error.outline.force-hover .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.error.outline.force-clicked {
@@ -1495,7 +1495,7 @@
 }
 
 .button.warning.force-hover .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.warning.force-clicked {
@@ -1505,7 +1505,7 @@
 }
 
 .button.warning.force-clicked .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.warning.force-focused {
@@ -1521,7 +1521,7 @@
 }
 
 .button.warning.outline.force-hover .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.warning.outline.force-clicked {
@@ -1531,7 +1531,7 @@
 }
 
 .button.warning.outline.force-clicked .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.warning.outline.force-focused {
@@ -1635,7 +1635,7 @@
 
 .button.info.hover .button-text,
 .button.info:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
 }
 
 .button.info.clicked,
@@ -1647,7 +1647,7 @@
 
 .button.info.clicked .button-text,
 .button.info:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
 }
 
 .button.info.focused,
@@ -1691,7 +1691,7 @@
 
 .button.success.hover .button-text,
 .button.success:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
 }
 
 .button.success.clicked,
@@ -1703,7 +1703,7 @@
 
 .button.success.clicked .button-text,
 .button.success:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
 }
 
 .button.success.focused,
@@ -1740,7 +1740,7 @@
 }
 
 .button.info.force-hover .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.info.force-clicked {
@@ -1750,7 +1750,7 @@
 }
 
 .button.info.force-clicked .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.info.force-focused {
@@ -1766,7 +1766,7 @@
 }
 
 .button.success.force-hover .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.success.force-clicked {
@@ -1776,7 +1776,7 @@
 }
 
 .button.success.force-clicked .button-text {
-  font-weight: var(--type-weight-bold) !important;
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.success.force-focused {
@@ -1809,7 +1809,7 @@
 
 .button.info.outline.hover .button-text,
 .button.info.outline:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
   color: var(--status-info-blue);
 }
 
@@ -1828,7 +1828,7 @@
 
 .button.info.outline.clicked .button-text,
 .button.info.outline:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
   color: var(--status-info-blue);
 }
 
@@ -1909,7 +1909,7 @@
 
 .button.success.outline.hover .button-text,
 .button.success.outline:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
   color: var(--status-green-600);
 }
 
@@ -1928,7 +1928,7 @@
 
 .button.success.outline.clicked .button-text,
 .button.success.outline:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
   color: var(--status-green-600);
 }
 
