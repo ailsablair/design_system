@@ -1501,6 +1501,294 @@
   font-weight: var(--type-weight-light) !important;
 }
 
+/* Info button variant - Updated for Figma design */
+.button.info {
+  background: var(--status-info-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue);
+  color: var(--base-white);
+}
+
+.button.info .button-icon {
+  color: var(--base-white);
+  opacity: 0.6;
+}
+
+.button.info .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+/* Info outline button variant - Updated for Figma design */
+.button.info.outline {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--status-info-blue);
+  color: var(--status-info-blue);
+}
+
+.button.info.outline .button-icon {
+  color: var(--status-info-blue);
+  opacity: 0.6;
+}
+
+.button.info.outline .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+/* State variants for info buttons - Updated for Figma design */
+.button.info.default {
+  background: var(--status-info-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue);
+}
+
+.button.info.hover,
+.button.info:hover:not(.disabled):not(.loading) {
+  background: var(--status-info-blue);
+  border: var(--spacing-stroke-1px) solid var(--status-info-blue-light);
+  box-shadow: 2px 2px 0 0 var(--status-info-blue);
+}
+
+.button.info.hover .button-text,
+.button.info:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.info.clicked,
+.button.info:active:not(.disabled):not(.loading) {
+  background: var(--status-info-blue);
+  border: var(--spacing-stroke-1px) solid var(--status-info-blue-light);
+  box-shadow: 2px 2px 0 0 var(--status-info-blue);
+}
+
+.button.info.clicked .button-text,
+.button.info:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.info.focused,
+.button.info:focus-visible:not(.disabled):not(.loading) {
+  background: var(--status-info-blue);
+  border: var(--spacing-stroke-1px) solid var(--status-info-blue);
+}
+
+.button.info.loading {
+  background: var(--status-info-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-dark-blue);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.info.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.info.disabled .button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
+}
+
+/* State variants for info outline buttons - Updated for Figma design */
+.button.info.outline.default {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--status-info-blue);
+}
+
+.button.info.outline.hover,
+.button.info.outline:hover:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--status-info-blue);
+  box-shadow: 2px 2px 0 0 var(--status-info-blue);
+}
+
+.button.info.outline.hover .button-text,
+.button.info.outline:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.info.outline.clicked,
+.button.info.outline:active:not(.disabled):not(.loading) {
+  background: var(--primary-blue-blue-50);
+  border: var(--spacing-stroke-1px) solid var(--status-info-blue);
+  box-shadow: 2px 2px 0 0 var(--status-info-blue);
+}
+
+.button.info.outline.clicked .button-text,
+.button.info.outline:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.info.outline.focused,
+.button.info.outline:focus-visible:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-2px) solid var(--status-info-blue);
+}
+
+.button.info.outline.loading {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--status-info-blue);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.info.outline.disabled {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.info.outline.disabled .button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
+}
+
+/* Success button variant - Updated for Figma design */
+.button.success {
+  background: var(--status-green);
+  border: var(--spacing-stroke-0-5px) solid var(--status-dark-green);
+  color: var(--base-black);
+}
+
+.button.success .button-icon {
+  color: var(--base-black);
+  opacity: 0.6;
+}
+
+.button.success .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+/* Success outline button variant - Updated for Figma design */
+.button.success.outline {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--status-dark-green);
+  color: var(--status-dark-green);
+}
+
+.button.success.outline .button-icon {
+  color: var(--status-dark-green);
+  opacity: 0.6;
+}
+
+.button.success.outline .button-text {
+  font-weight: var(--type-weight-medium);
+}
+
+/* State variants for success buttons - Updated for Figma design */
+.button.success.default {
+  background: var(--status-green);
+  border: var(--spacing-stroke-0-5px) solid var(--status-dark-green);
+}
+
+.button.success.hover,
+.button.success:hover:not(.disabled):not(.loading) {
+  background: var(--status-green);
+  border: var(--spacing-stroke-1px) solid var(--status-dark-green);
+  box-shadow: 2px 2px 0 0 var(--status-dark-green);
+}
+
+.button.success.hover .button-text,
+.button.success:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.success.clicked,
+.button.success:active:not(.disabled):not(.loading) {
+  background: var(--status-green);
+  border: var(--spacing-stroke-1px) solid var(--status-dark-green);
+  box-shadow: 2px 2px 0 0 var(--status-dark-green);
+}
+
+.button.success.clicked .button-text,
+.button.success:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.success.focused,
+.button.success:focus-visible:not(.disabled):not(.loading) {
+  background: var(--status-green);
+  border: var(--spacing-stroke-2px) solid var(--status-dark-green);
+}
+
+.button.success.loading {
+  background: var(--status-green);
+  border: var(--spacing-stroke-0-5px) solid var(--status-dark-green);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.success.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.success.disabled .button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
+}
+
+/* State variants for success outline buttons - Updated for Figma design */
+.button.success.outline.default {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--status-dark-green);
+}
+
+.button.success.outline.hover,
+.button.success.outline:hover:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--status-dark-green);
+  box-shadow: 2px 2px 0 0 var(--status-dark-green);
+}
+
+.button.success.outline.hover .button-text,
+.button.success.outline:hover:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.success.outline.clicked,
+.button.success.outline:active:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--status-dark-green);
+  box-shadow: 2px 2px 0 0 var(--status-dark-green);
+}
+
+.button.success.outline.clicked .button-text,
+.button.success.outline:active:not(.disabled):not(.loading) .button-text {
+  font-weight: var(--type-weight-bold);
+}
+
+.button.success.outline.focused,
+.button.success.outline:focus-visible:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-3px) solid var(--status-dark-green);
+}
+
+.button.success.outline.loading {
+  background: var(--base-white);
+  border: var(--spacing-stroke-1px) solid var(--status-dark-green);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.success.outline.disabled {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.success.outline.disabled .button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.6;
+}
+
 .button.warning.force-clicked {
   background: var(--status-orange-alt) !important;
   border: var(--spacing-stroke-2px) solid var(--status-orange-alt) !important;
