@@ -921,6 +921,106 @@
   border: var(--spacing-stroke-3px) solid var(--primary-seafoam-dark-seafoam) !important;
 }
 
+/* Icon-only secondary button specific styling - Updated for Figma design */
+.button.secondary.icon-only.default {
+  background: var(--primary-sky-blue-sky-blue-100);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-sky-blue-sky-blue);
+}
+
+.button.secondary.icon-only.hover,
+.button.secondary.icon-only:hover:not(.disabled):not(.loading) {
+  background: var(--primary-sky-blue-sky-blue-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
+  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
+}
+
+.button.secondary.icon-only.clicked,
+.button.secondary.icon-only:active:not(.disabled):not(.loading) {
+  background: var(--primary-sky-blue-sky-blue-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
+  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
+}
+
+.button.secondary.icon-only.focused,
+.button.secondary.icon-only:focus-visible:not(.disabled):not(.loading) {
+  background: var(--primary-sky-blue-sky-blue-100);
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
+}
+
+.button.secondary.icon-only.loading {
+  background: var(--primary-sky-blue-sky-blue-100);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-sky-blue-sky-blue);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.secondary.icon-only.loading .button-loading-content {
+  opacity: 0.8;
+}
+
+.button.secondary.icon-only.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.secondary.icon-only.disabled .button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.7;
+}
+
+/* Icon-only secondary outline button specific styling - Updated for Figma design */
+.button.secondary.outline.icon-only.default {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-sky-blue-sky-blue);
+}
+
+.button.secondary.outline.icon-only.hover,
+.button.secondary.outline.icon-only:hover:not(.disabled):not(.loading) {
+  background: var(--primary-sky-blue-sky-blue-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
+  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
+}
+
+.button.secondary.outline.icon-only.clicked,
+.button.secondary.outline.icon-only:active:not(.disabled):not(.loading) {
+  background: var(--primary-sky-blue-sky-blue-50);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
+  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
+}
+
+.button.secondary.outline.icon-only.focused,
+.button.secondary.outline.icon-only:focus-visible:not(.disabled):not(.loading) {
+  background: var(--base-white);
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
+}
+
+.button.secondary.outline.icon-only.loading {
+  background: var(--base-white);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-sky-blue-sky-blue);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.secondary.outline.icon-only.loading .button-loading-content {
+  opacity: 0.6;
+}
+
+.button.secondary.outline.icon-only.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.secondary.outline.icon-only.disabled .button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.7;
+}
+
 /* Icon-only primary button specific styling */
 .button.primary.small.icon-only {
   border: var(--spacing-stroke-0-5px) solid var(--primary-blue-blue);
