@@ -1,0 +1,232 @@
+@import '../foundations/tokens.css';
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-4px, 4px);
+}
+
+.counter__label {
+  color: var(--base-black, #1C1C1C);
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-weight: var(--type-weight-medium, 500);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm, 0.15px);
+  padding: var(--spacing-sizing-2px, 2px);
+}
+
+/* Size variants for label */
+.counter--small .counter__label {
+  font-size: var(--type-archivo-label-sm, 14px);
+  line-height: var(--type-line-height-label-sm, 16px);
+}
+
+.counter--default .counter__label {
+  font-size: var(--type-archivo-label, 16px);
+  line-height: var(--type-line-height-label, 20px);
+  padding: var(--spacing-sizing-4px, 4px);
+  gap: var(--spacing-sizing-6px, 6px);
+}
+
+.counter--large .counter__label {
+  font-size: var(--type-archivo-label-lg, 18px);
+  line-height: var(--type-line-height-label-lg, 24px);
+  padding: var(--spacing-sizing-4px, 4px);
+  gap: var(--spacing-sizing-8px, 8px);
+}
+
+.counter__container {
+  display: flex;
+  align-items: center;
+  border-radius: var(--spacing-radius-2px, 2px);
+  border: var(--spacing-stroke-0-5px, 0.5px) solid var(--neutral-gray-gray-300, #D2D5DA);
+  background: var(--base-white, #FFF);
+}
+
+/* Simple type - compact */
+.counter--simple .counter__container {
+  padding: var(--spacing-sizing-4px, 4px) var(--spacing-sizing-12px, 12px);
+}
+
+/* Default type - with placeholder */
+.counter--default .counter__container {
+  padding: var(--spacing-sizing-4px, 4px) var(--spacing-sizing-8px, 8px);
+  justify-content: space-between;
+}
+
+/* Size variants for container */
+.counter--small .counter__container {
+  height: 32px;
+}
+
+.counter--default .counter__container {
+  height: 44px;
+}
+
+.counter--large .counter__container {
+  height: 54px;
+}
+
+/* Width variants */
+.counter--simple .counter__container {
+  width: auto;
+}
+
+.counter--default .counter__container {
+  width: 300px;
+}
+
+.counter__placeholder {
+  flex: 1;
+  color: var(--base-black, #1C1C1C);
+  font-family: var(--type-typeface-roboto-flex, 'Roboto Flex');
+  font-weight: 400;
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm, -0.15px);
+}
+
+/* Placeholder size variants */
+.counter--small .counter__placeholder {
+  font-size: var(--type-roboto-flex-body-sm, 14px);
+  line-height: var(--type-line-height-body-sm, 16px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm, -0.15px);
+}
+
+.counter--default .counter__placeholder {
+  font-size: var(--type-roboto-flex-body, 16px);
+  line-height: var(--type-line-height-body, 20px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body, 0.05px);
+}
+
+.counter--large .counter__placeholder {
+  font-size: var(--type-roboto-flex-body-lg, 18px);
+  line-height: var(--type-line-height-body-lg, 22px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg, -0.15px);
+}
+
+.counter__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-8px, 8px);
+}
+
+/* Simple type has tighter gap */
+.counter--simple .counter__controls {
+  gap: var(--spacing-sizing-8px, 8px);
+}
+
+/* Default type has different gap based on size */
+.counter--default.counter--small .counter__controls {
+  gap: var(--spacing-sizing-4px, 4px);
+}
+
+.counter--default.counter--default .counter__controls {
+  gap: var(--spacing-sizing-6px, 6px);
+}
+
+.counter--default.counter--large .counter__controls {
+  gap: var(--spacing-sizing-8px, 8px);
+}
+
+.counter__value {
+  display: flex;
+  width: 20px;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--base-black, #1C1C1C);
+  text-align: center;
+  font-family: var(--type-typeface-roboto-flex, 'Roboto Flex');
+  font-weight: 600;
+}
+
+/* Value size variants */
+.counter--small .counter__value {
+  font-size: var(--type-roboto-flex-body-sm, 14px);
+  line-height: var(--type-line-height-body-sm, 16px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-sm, -0.15px);
+  height: 23px;
+}
+
+.counter--default .counter__value {
+  font-size: var(--type-roboto-flex-body, 16px);
+  line-height: var(--type-line-height-body, 20px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body, 0.05px);
+  height: 23px;
+}
+
+.counter--large .counter__value {
+  font-size: var(--type-roboto-flex-body-lg, 18px);
+  line-height: var(--type-line-height-body-lg, 22px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg, -0.15px);
+  height: 23px;
+}
+
+.counter__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--primary-blue-blue, #2F42BD);
+  transition: opacity 0.2s ease;
+}
+
+.counter__button:hover:not(.counter__button--disabled) {
+  opacity: 0.8;
+}
+
+.counter__button:active:not(.counter__button--disabled) {
+  opacity: 1;
+}
+
+.counter__button--disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.counter__button svg {
+  display: block;
+}
+
+/* State: disabled */
+.counter--disabled .counter__label {
+  color: var(--neutral-gray-gray-500, #6D7280);
+}
+
+.counter--disabled .counter__container {
+  background: var(--neutral-gray-gray-50, #F9FAFB);
+}
+
+.counter--disabled .counter__placeholder {
+  color: var(--neutral-gray-gray-500, #6D7280);
+}
+
+.counter--disabled .counter__value {
+  color: var(--neutral-gray-gray-400, #9CA3AF);
+}
+
+.counter--disabled .counter__button {
+  color: var(--neutral-gray-gray-400, #9CA3AF);
+}
+
+/* State: focus */
+.counter--focus .counter__container {
+  border: var(--spacing-stroke-2px, 2px) solid var(--primary-sky-blue-sky-blue, #0BA7EA);
+  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+}
+
+.counter--focus .counter__button--plus {
+  stroke: var(--primary-sky-blue-sky-blue, #0BA7EA);
+  stroke-width: var(--spacing-stroke-3px, 3px);
+}
+
+/* State: clicked */
+.counter--clicked .counter__container {
+  border: var(--spacing-stroke-2px, 2px) solid var(--primary-sky-blue-dark-sky-blue, #04435E);
+  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+}
+
+.counter--clicked .counter__button--plus {
+  stroke: var(--primary-sky-blue-dark-sky-blue, #04435E);
+  stroke-width: var(--spacing-stroke-3px, 3px);
+}
