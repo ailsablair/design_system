@@ -455,7 +455,7 @@
 
 .button.primary.outline.hover .button-text,
 .button.primary.outline:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.primary.outline.clicked,
@@ -484,16 +484,16 @@
 }
 
 .button.primary.outline.disabled {
-  background: var(--neutral-gray-gray-100);
-  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-300);
-  color: var(--neutral-gray-gray-500);
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-300);
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .button.primary.outline.disabled .button-icon {
-  color: var(--neutral-gray-gray-500);
-  opacity: 0.8;
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.7;
 }
 
 /* State variants for secondary buttons - Updated for Figma design */
@@ -897,6 +897,37 @@
 .button.tertiary.force-focused {
   background: var(--primary-seafoam-400) !important;
   border: var(--spacing-stroke-3px) solid var(--primary-seafoam-dark-seafoam) !important;
+}
+
+/* Icon-only primary button specific styling */
+.button.primary.small.icon-only {
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-blue);
+}
+
+.button.primary.icon-only.focused,
+.button.primary.icon-only:focus-visible:not(.disabled):not(.loading) {
+  background: var(--primary-blue-blue);
+  border: var(--spacing-stroke-1px) solid var(--primary-blue-blue-300);
+}
+
+.button.primary.icon-only.loading {
+  background: var(--primary-blue-blue);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-blue-300);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.button.primary.icon-only.disabled {
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.primary.icon-only.disabled .button-icon {
+  color: var(--neutral-gray-gray-300);
+  opacity: 0.7;
 }
 
 /* Force state classes for tertiary icon-only buttons */
