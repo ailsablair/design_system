@@ -287,11 +287,11 @@
 .button.secondary.outline {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500);
-  color: var(--base-black);
+  color: var(--primary-blue-blue-500);
 }
 
 .button.secondary.outline .button-icon {
-  color: var(--base-black);
+  color: var(--primary-blue-blue-500);
   opacity: 0.6;
 }
 
