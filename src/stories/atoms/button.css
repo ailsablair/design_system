@@ -2397,58 +2397,6 @@
   border: var(--spacing-stroke-2px) solid var(--status-info-blue) !important;
 }
 
-/* Force state classes for success buttons - Updated for Figma design */
-.button.success.force-hover {
-  background: var(--status-green) !important;
-  border: var(--spacing-stroke-1px) solid var(--status-dark-green) !important;
-  box-shadow: 2px 2px 0 0 var(--status-dark-green) !important;
-}
-
-.button.success.force-hover .button-text {
-  font-weight: var(--type-weight-bold) !important;
-}
-
-.button.success.force-clicked {
-  background: var(--status-green) !important;
-  border: var(--spacing-stroke-1px) solid var(--status-dark-green) !important;
-  box-shadow: 2px 2px 0 0 var(--status-dark-green) !important;
-}
-
-.button.success.force-clicked .button-text {
-  font-weight: var(--type-weight-bold) !important;
-}
-
-.button.success.force-focused {
-  background: var(--status-green) !important;
-  border: var(--spacing-stroke-2px) solid var(--status-dark-green) !important;
-}
-
-/* Force state classes for success outline buttons - Updated for Figma design */
-.button.success.outline.force-hover {
-  background: var(--base-white) !important;
-  border: var(--spacing-stroke-1px) solid var(--status-dark-green) !important;
-  box-shadow: 2px 2px 0 0 var(--status-dark-green) !important;
-}
-
-.button.success.outline.force-hover .button-text {
-  font-weight: var(--type-weight-bold) !important;
-}
-
-.button.success.outline.force-clicked {
-  background: var(--base-white) !important;
-  border: var(--spacing-stroke-1px) solid var(--status-dark-green) !important;
-  box-shadow: 2px 2px 0 0 var(--status-dark-green) !important;
-}
-
-.button.success.outline.force-clicked .button-text {
-  font-weight: var(--type-weight-bold) !important;
-}
-
-.button.success.outline.force-focused {
-  background: var(--base-white) !important;
-  border: var(--spacing-stroke-3px) solid var(--status-dark-green) !important;
-}
-
 /* Force state classes for error outline buttons - Updated for Figma design */
 .button.error.outline.force-hover {
   background: var(--base-white) !important;
