@@ -31,7 +31,6 @@ export const createEchoMUITheme = () => {
   const buttonHeightDefault = getSize('--sizing-button-height-default', '40px');
   const buttonHeightLarge = getSize('--sizing-button-height-large', '48px');
 
-  const borderRadiusSm = getSize('--spacing-radius-2px', '2px');
   const borderRadiusMd = getSize('--spacing-radius-4px', '4px');
   const borderRadiusLg = getSize('--spacing-radius-8px', '8px');
   const borderRadiusPill = getSize('--spacing-radius-full', '9999px');
