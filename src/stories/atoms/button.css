@@ -102,10 +102,10 @@
 }
 
 .button.small {
-  min-width: var(--sizing-button-min-width-sm);
-  height: var(--sizing-button-height-sm);
-  min-height: var(--sizing-button-height-sm);
-  max-height: var(--sizing-button-height-sm);
+  min-width: 80px;
+  height: 32px;
+  min-height: 30px;
+  max-height: 32px;
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-12px);
   gap: var(--spacing-sizing-12px);
 }
@@ -302,26 +302,26 @@
 /* State variants for secondary outline buttons - Updated for Figma design */
 .button.secondary.outline.default {
   background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500);
+  border: var(--spacing-stroke-0-5px) solid var(--primary-sky-blue-500);
 }
 
 .button.secondary.outline.hover,
 .button.secondary.outline:hover:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500);
-  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
+  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.secondary.outline.hover .button-text,
 .button.secondary.outline:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.secondary.outline.clicked,
 .button.secondary.outline:active:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500);
-  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
+  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.secondary.outline.clicked .button-text,
@@ -397,19 +397,21 @@
 
 .button.primary.hover,
 .button.primary:hover:not(.disabled):not(.loading) {
+  background: var(--secondary-navy);
   border: var(--spacing-stroke-1px) solid var(--primary-blue-blue-200);
-  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
+  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.primary.hover .button-text,
 .button.primary:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.primary.clicked,
 .button.primary:active:not(.disabled):not(.loading) {
+  background: var(--secondary-navy);
   border: var(--spacing-stroke-1px) solid var(--primary-blue-blue-200);
-  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
+  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.primary.clicked .button-text,
@@ -419,6 +421,7 @@
 
 .button.primary.focused,
 .button.primary:focus-visible:not(.disabled):not(.loading) {
+  background: var(--primary-blue-blue);
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-300);
 }
 
@@ -445,14 +448,14 @@
 /* State variants for primary outline buttons */
 .button.primary.outline.default {
   background: var(--primary-blue-blue-50);
-  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
+  border: var(--spacing-stroke-1px) solid var(--primary-blue-blue);
 }
 
 .button.primary.outline.hover,
 .button.primary.outline:hover:not(.disabled):not(.loading) {
   background: var(--primary-blue-blue-100);
-  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
-  box-shadow: 3px 3px 0 0 var(--primary-blue-blue-400);
+  border: var(--spacing-stroke-1px) solid var(--primary-blue-blue-300);
+  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.primary.outline.hover .button-text,
@@ -463,8 +466,8 @@
 .button.primary.outline.clicked,
 .button.primary.outline:active:not(.disabled):not(.loading) {
   background: var(--primary-blue-blue-100);
-  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
-  box-shadow: 3px 3px 0 0 var(--primary-blue-blue-400);
+  border: var(--spacing-stroke-1px) solid var(--primary-blue-blue-300);
+  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.primary.outline.clicked .button-text,
@@ -475,7 +478,7 @@
 .button.primary.outline.focused,
 .button.primary.outline:focus-visible:not(.disabled):not(.loading) {
   background: var(--primary-blue-blue-50);
-  border: var(--spacing-stroke-3px) solid var(--primary-blue-blue-300);
+  border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-300);
 }
 
 .button.primary.outline.loading {
@@ -508,24 +511,24 @@
 .button.secondary:hover:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-light-alt);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500);
-  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
+  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.secondary.hover .button-text,
 .button.secondary:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.secondary.clicked,
 .button.secondary:active:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-light-alt);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500);
-  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
+  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
 }
 
 .button.secondary.clicked .button-text,
 .button.secondary:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.secondary.focused,
@@ -564,24 +567,24 @@
 .button.tertiary:hover:not(.disabled):not(.loading) {
   background: var(--primary-seafoam-400);
   border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam);
-  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
+  box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam);
 }
 
 .button.tertiary.hover .button-text,
 .button.tertiary:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.tertiary.clicked,
 .button.tertiary:active:not(.disabled):not(.loading) {
   background: var(--primary-seafoam-400);
   border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam);
-  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
+  box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam);
 }
 
 .button.tertiary.clicked .button-text,
 .button.tertiary:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.tertiary.focused,
@@ -818,38 +821,38 @@
 
 /* State variants for tertiary outline buttons - Updated for Figma design */
 .button.tertiary.outline.default {
-  background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500);
+  background: var(--primary-seafoam-seafoam-25);
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
 }
 
 .button.tertiary.outline.hover,
 .button.tertiary.outline:hover:not(.disabled):not(.loading) {
-  background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500);
-  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
+  background: var(--primary-seafoam-seafoam-25);
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
+  box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam);
 }
 
 .button.tertiary.outline.hover .button-text,
 .button.tertiary.outline:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.tertiary.outline.clicked,
 .button.tertiary.outline:active:not(.disabled):not(.loading) {
-  background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-500);
-  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
+  background: var(--primary-seafoam-seafoam-25);
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
+  box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam);
 }
 
 .button.tertiary.outline.clicked .button-text,
 .button.tertiary.outline:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.tertiary.outline.focused,
 .button.tertiary.outline:focus-visible:not(.disabled):not(.loading) {
-  background: var(--base-white);
-  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-500);
+  background: var(--primary-seafoam-seafoam-25);
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
 }
 
 .button.tertiary.outline.loading {
@@ -1121,19 +1124,19 @@
 .button.ghost:hover:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500);
-  box-shadow: 1px 1px 0 0 var(--neutral-gray-gray-300);
+  box-shadow: 2px 2px 0 0 var(--neutral-gray-gray-300);
 }
 
 .button.ghost.hover .button-text,
 .button.ghost:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-medium);
 }
 
 .button.ghost.clicked,
 .button.ghost:active:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-500);
-  box-shadow: 1px 1px 0 0 var(--neutral-gray-gray-200);
+  box-shadow: 2px 2px 0 0 var(--neutral-gray-gray-200);
 }
 
 .button.ghost.clicked .button-text,
@@ -1145,11 +1148,11 @@
 .button.ghost:focus-visible:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-500);
-  color: var(--neutral-gray-gray-600);
+  color: var(--base-black);
 }
 
 .button.ghost.focused .button-text {
-  color: var(--neutral-gray-gray-600);
+  color: var(--base-black);
 }
 
 .button.ghost.loading {
@@ -1242,19 +1245,19 @@
 .button.error.outline:hover:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-2px) solid var(--status-red);
-  box-shadow: 1px 1px 0 0 var(--status-red-light-alt);
+  box-shadow: 2px 2px 0 0 var(--base-black);
 }
 
 .button.error.outline.hover .button-text,
 .button.error.outline:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-bold);
 }
 
 .button.error.outline.clicked,
 .button.error.outline:active:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-2px) solid var(--status-red);
-  box-shadow: 1px 1px 0 0 var(--status-red-light-alt);
+  box-shadow: 2px 2px 0 0 var(--base-black);
 }
 
 .button.error.outline.clicked .button-text,
@@ -1347,37 +1350,37 @@
 /* State variants for warning outline buttons - Updated for Figma design */
 .button.warning.outline.default {
   background: var(--base-white);
-  border: var(--spacing-stroke-1px) solid var(--status-orange-alt);
+  border: var(--spacing-stroke-0-5px) solid var(--status-orange);
 }
 
 .button.warning.outline.hover,
 .button.warning.outline:hover:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-2px) solid var(--status-orange-alt);
-  box-shadow: 1px 1px 0 0 var(--status-dark-orange);
+  border: var(--spacing-stroke-1px) solid var(--status-orange);
+  box-shadow: 2px 2px 0 0 var(--status-dark-orange);
 }
 
 .button.warning.outline.hover .button-text,
 .button.warning.outline:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-bold);
 }
 
 .button.warning.outline.clicked,
 .button.warning.outline:active:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-2px) solid var(--status-orange-alt);
-  box-shadow: 1px 1px 0 0 var(--status-dark-orange);
+  border: var(--spacing-stroke-1px) solid var(--status-orange);
+  box-shadow: 2px 2px 0 0 var(--status-dark-orange);
 }
 
 .button.warning.outline.clicked .button-text,
 .button.warning.outline:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-light);
+  font-weight: var(--type-weight-bold);
 }
 
 .button.warning.outline.focused,
 .button.warning.outline:focus-visible:not(.disabled):not(.loading) {
   background: var(--base-white);
-  border: var(--spacing-stroke-3px) solid var(--status-orange-alt);
+  border: var(--spacing-stroke-3px) solid var(--status-orange);
 }
 
 .button.warning.outline.loading {
