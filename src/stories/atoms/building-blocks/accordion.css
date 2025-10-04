@@ -191,6 +191,11 @@
 }
 
 .accordion--type-simple.accordion--size-small .accordion__trigger {
+  align-items: flex-start;
+}
+
+/* Small size plus icon variant centers alignment */
+.accordion--type-simple.accordion--open-icon-plus.accordion--size-small .accordion__trigger {
   align-items: center;
 }
 
