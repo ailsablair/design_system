@@ -330,12 +330,21 @@
   font-size: var(--type-archivo-heading-5); /* 19px */
   line-height: var(--type-line-height-heading-5); /* 24px */
   letter-spacing: var(--type-letter-spacing-archivo-heading-5); /* -0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
 }
 
 .accordion--type-no-stroke.accordion--size-large .accordion__title {
   font-size: var(--type-archivo-heading-4); /* 24px */
   line-height: var(--type-line-height-heading-4); /* 24px */
   letter-spacing: var(--type-letter-spacing-archivo-heading-4); /* -0.25px */
+  font-weight: var(--type-weight-medium); /* 500 */
+}
+
+.accordion--type-no-stroke.accordion--size-small .accordion__title {
+  font-size: var(--type-archivo-label-lg); /* 18px */
+  line-height: var(--type-line-height-label-lg); /* 24px */
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg); /* 0.15px */
+  font-weight: var(--type-weight-medium); /* 500 */
 }
 
 /* Decorative, Number, and Label types use black color */
