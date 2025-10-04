@@ -275,7 +275,7 @@
 .button.secondary {
   background: var(--primary-sky-blue-light-alt);
   border: var(--spacing-stroke-0-5px) solid var(--primary-sky-blue-500);
-  color: var(--base-black);
+  color: var(--primary-blue-blue-500);
 }
 
 .button.secondary .button-icon {
