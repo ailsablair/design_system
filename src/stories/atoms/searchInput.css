@@ -77,7 +77,7 @@
   border: none;
   outline: none;
   background: transparent;
-  color: var(--secondary-blue-gray, #61607C);
+  color: var(--neutral-gray-gray-700, #374151);
   font-family: var(--type-typeface-roboto-flex, 'Roboto Flex');
   font-weight: 400;
   padding: 0;
