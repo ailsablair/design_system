@@ -2270,6 +2270,24 @@
   border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-500) !important;
 }
 
+/* Force state classes for extra-small icon-only ghost buttons - Updated for Figma design */
+.button.extra-small.ghost.icon-only.force-hover {
+  background: var(--base-white) !important;
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-500) !important;
+  box-shadow: 2px 2px 0 0 var(--neutral-gray-gray-300) !important;
+}
+
+.button.extra-small.ghost.icon-only.force-clicked {
+  background: var(--base-white) !important;
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-500) !important;
+  box-shadow: 2px 2px 0 0 var(--neutral-gray-gray-300) !important;
+}
+
+.button.extra-small.ghost.icon-only.force-focused {
+  background: var(--base-white) !important;
+  border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-500) !important;
+}
+
 /* Info button variant - Updated for Figma design */
 .button.info {
   background: var(--status-info-blue);
