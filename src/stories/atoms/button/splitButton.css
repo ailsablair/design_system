@@ -227,7 +227,7 @@
 .split-button.secondary {
   background: var(--primary-sky-blue-50);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
-  color: var(--base-black);
+  color: var(--primary-blue-blue-500);
 }
 
 .split-button.secondary .split-button-icon {
