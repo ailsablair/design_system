@@ -2177,16 +2177,16 @@
 /* Special hover effects for extra-small ghost buttons - Updated for Figma design */
 .button.extra-small.ghost.hover,
 .button.extra-small.ghost:hover:not(.disabled):not(.loading) {
-  background: var(--base-white);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500);
-  box-shadow: 1px 1px 0 0 var(--neutral-gray-gray-300);
+  background: var(--neutral-gray-gray-50);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-500);
+  box-shadow: 2px 2px 0 0 var(--neutral-gray-gray-300);
 }
 
 .button.extra-small.ghost.clicked,
 .button.extra-small.ghost:active:not(.disabled):not(.loading) {
-  background: var(--base-white);
+  background: var(--neutral-gray-gray-50);
   border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-500);
-  box-shadow: 0 1px 3px 0 rgba(39, 39, 39, 0.05);
+  box-shadow: 2px 2px 0 0 var(--neutral-gray-gray-300);
 }
 
 .button.extra-small.ghost.focused,
@@ -2197,25 +2197,25 @@
 
 .button.extra-small.ghost.disabled {
   background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
   color: var(--neutral-gray-gray-300);
 }
 
 .button.extra-small.ghost.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .button.ghost.force-hover.extra-small {
-  background: var(--base-white) !important;
-  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-500) !important;
-  box-shadow: 1px 1px 0 0 var(--neutral-gray-gray-300) !important;
+  background: var(--neutral-gray-gray-50) !important;
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-500) !important;
+  box-shadow: 2px 2px 0 0 var(--neutral-gray-gray-300) !important;
 }
 
 .button.ghost.force-clicked.extra-small {
-  background: var(--base-white) !important;
+  background: var(--neutral-gray-gray-50) !important;
   border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-500) !important;
-  box-shadow: 0 1px 3px 0 rgba(39, 39, 39, 0.05) !important;
+  box-shadow: 2px 2px 0 0 var(--neutral-gray-gray-300) !important;
 }
 
 .button.ghost.force-focused.extra-small {
