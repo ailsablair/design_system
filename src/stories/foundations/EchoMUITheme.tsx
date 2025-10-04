@@ -1,12 +1,12 @@
-import React from 'react';
+import { useMemo, type ReactNode } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 
 /**
  * Echo Design System + MUI Integration
- * 
- * This theme provider completely overrides MUI's default design tokens 
- * with Echo design system tokens, giving you MUI functionality with 
+ *
+ * This theme provider completely overrides MUI's default design tokens
+ * with Echo design system tokens, giving you MUI functionality with
  * 100% Echo visual design.
  */
 
@@ -18,107 +18,133 @@ const getCSSVar = (varName: string): string => {
   return '';
 };
 
-// Create MUI theme using Echo tokens
-const createEchoMUITheme = () => {
+export const createEchoMUITheme = () => {
+  const getColor = (token: string, fallback: string) => getCSSVar(token) || fallback;
+  const getSize = (token: string, fallback: string) => getCSSVar(token) || fallback;
+
+  const spacingUnit = getSize('--spacing-sizing-4px', '4px');
+  const buttonPaddingSmall = `${getSize('--spacing-sizing-6px', '6px')} ${getSize('--spacing-sizing-12px', '12px')}`;
+  const buttonPaddingMedium = `${getSize('--spacing-sizing-8px', '8px')} ${getSize('--spacing-sizing-16px', '16px')}`;
+  const buttonPaddingLarge = `${getSize('--spacing-sizing-12px', '12px')} ${getSize('--spacing-sizing-20px', '20px')}`;
+
+  const buttonHeightSmall = getSize('--sizing-button-height-small', '32px');
+  const buttonHeightDefault = getSize('--sizing-button-height-default', '40px');
+  const buttonHeightLarge = getSize('--sizing-button-height-large', '48px');
+
+  const borderRadiusSm = getSize('--spacing-radius-2px', '2px');
+  const borderRadiusMd = getSize('--spacing-radius-4px', '4px');
+  const borderRadiusLg = getSize('--spacing-radius-8px', '8px');
+  const borderRadiusPill = getSize('--spacing-radius-full', '9999px');
+
+  const transitionFast = getSize('--transition-fast', '150ms ease-in-out');
+
+  const shadowNone = 'none';
+  const shadowSm = getSize('--shadow-sm', '0px 2px 4px rgba(39, 39, 39, 0.1)');
+  const shadowMd = getSize('--shadow-md', '0px 5px 10px rgba(39, 39, 39, 0.1)');
+  const shadowLg = getSize('--shadow-lg', '0px 12px 20px rgba(39, 39, 39, 0.15)');
+  const shadowXl = getSize('--shadow-xl', '0px 32px 48px rgba(39, 39, 39, 0.2)');
+  const shadow2Xl = getSize('--shadow-2xl', '0px 48px 80px rgba(39, 39, 39, 0.25)');
+
+  const shadows: string[] = [shadowNone, shadowSm, shadowMd, shadowLg, shadowXl, shadow2Xl];
+  while (shadows.length < 25) {
+    shadows.push(shadow2Xl);
+  }
+
   return createTheme({
     palette: {
-      // Primary colors from Echo tokens (using actual color values for MUI compatibility)
       primary: {
-        main: '#2F42BD', // --primary-blue-blue
-        light: '#95A0E5', // --primary-blue-blue-300
-        dark: '#191E3C', // --primary-blue-dark-blue
-        contrastText: '#FFFFFF', // --base-white
+        main: getColor('--primary-blue-blue', '#2F42BD'),
+        light: getColor('--primary-blue-blue-300', '#95A0E5'),
+        dark: getColor('--primary-blue-dark-blue', '#191E3C'),
+        contrastText: getColor('--base-white', '#FFFFFF'),
       },
       secondary: {
-        main: '#8BBF9F', // --primary-seafoam-seafoam
-        light: '#DCECE2', // --primary-seafoam-seafoam-100
-        dark: '#4B6D58', // --primary-seafoam-dark-seafoam
-        contrastText: '#FFFFFF', // --base-white
+        main: getColor('--primary-seafoam-seafoam', '#8BBF9F'),
+        light: getColor('--primary-seafoam-seafoam-100', '#DCECE2'),
+        dark: getColor('--primary-seafoam-dark-seafoam', '#4B6D58'),
+        contrastText: getColor('--base-white', '#FFFFFF'),
       },
       error: {
-        main: '#CE2031', // --status-red
-        light: '#FBEBEB', // --status-red-light
-        dark: '#B91C1C', // --status-red-600
-        contrastText: '#FFFFFF', // --base-white
+        main: getColor('--status-red', '#CE2031'),
+        light: getColor('--status-red-light', '#FBEBEB'),
+        dark: getColor('--status-red-600', '#B91C1C'),
+        contrastText: getColor('--base-white', '#FFFFFF'),
       },
       warning: {
-        main: '#F4A403', // --status-orange-alt
-        light: '#FEF4DA', // --status-orange-light
-        dark: '#D07C06', // --status-dark-orange
-        contrastText: '#FFFFFF', // --base-white
+        main: getColor('--status-orange-alt', '#F4A403'),
+        light: getColor('--status-orange-light', '#FEF4DA'),
+        dark: getColor('--status-dark-orange', '#D07C06'),
+        contrastText: getColor('--base-white', '#FFFFFF'),
       },
       success: {
-        main: '#70CC67', // --status-green
-        light: '#F2FFF1', // --status-green-light
-        dark: '#227F1A', // --status-dark-green
-        contrastText: '#FFFFFF', // --base-white
+        main: getColor('--status-green', '#70CC67'),
+        light: getColor('--status-green-light', '#F2FFF1'),
+        dark: getColor('--status-dark-green', '#227F1A'),
+        contrastText: getColor('--base-white', '#FFFFFF'),
       },
       info: {
-        main: '#0BA7EA', // --primary-sky-blue-sky-blue
-        light: '#E0F6FE', // --primary-sky-blue-100
-        dark: '#04435E', // --primary-sky-blue-dark-sky-blue
-        contrastText: '#FFFFFF', // --base-white
+        main: getColor('--primary-sky-blue-sky-blue', '#0BA7EA'),
+        light: getColor('--primary-sky-blue-100', '#E0F6FE'),
+        dark: getColor('--primary-sky-blue-dark-sky-blue', '#04435E'),
+        contrastText: getColor('--base-white', '#FFFFFF'),
       },
-      // Neutral colors (using actual values for better MUI compatibility)
       grey: {
-        50: '#F9FAFB', // --neutral-gray-gray-50
-        100: '#F3F4F6', // --neutral-gray-gray-100
-        200: '#E5E7EB', // --neutral-gray-gray-200
-        300: '#D2D5DA', // --neutral-gray-gray-300
-        400: '#9CA3AF', // --neutral-gray-gray-400
-        500: '#6D7280', // --neutral-gray-gray-500
-        600: '#4B5563', // --neutral-gray-gray-600
-        700: '#374151', // --neutral-gray-gray-700
-        800: '#1F2937', // --neutral-gray-gray-800
-        900: '#111827', // --neutral-gray-gray-900
+        50: getColor('--neutral-gray-gray-50', '#F9FAFB'),
+        100: getColor('--neutral-gray-gray-100', '#F3F4F6'),
+        200: getColor('--neutral-gray-gray-200', '#E5E7EB'),
+        300: getColor('--neutral-gray-gray-300', '#D2D5DA'),
+        400: getColor('--neutral-gray-gray-400', '#9CA3AF'),
+        500: getColor('--neutral-gray-gray-500', '#6D7280'),
+        600: getColor('--neutral-gray-gray-600', '#4B5563'),
+        700: getColor('--neutral-gray-gray-700', '#374151'),
+        800: getColor('--neutral-gray-gray-800', '#1F2937'),
+        900: getColor('--neutral-gray-gray-900', '#111827'),
       },
-      // Background colors
       background: {
-        default: '#FFFFFF', // --base-white
-        paper: '#FFFFFF', // --base-white
+        default: getColor('--base-white', '#FFFFFF'),
+        paper: getColor('--base-white', '#FFFFFF'),
       },
       text: {
-        primary: '#1C1C1C', // --base-black
-        secondary: '#4B5563', // --neutral-gray-gray-600
-        disabled: '#9CA3AF', // --neutral-gray-gray-400
+        primary: getColor('--base-black', '#1C1C1C'),
+        secondary: getColor('--neutral-gray-gray-600', '#4B5563'),
+        disabled: getColor('--neutral-gray-gray-400', '#9CA3AF'),
       },
     },
-    
+
     typography: {
-      // Use Echo font families
-      fontFamily: 'var(--type-typeface-roboto-flex)',
+      fontFamily: "var(--type-typeface-roboto-flex, 'Roboto Flex')",
       h1: {
-        fontFamily: 'var(--type-typeface-archivo)',
+        fontFamily: "var(--type-typeface-archivo, 'Archivo')",
         fontSize: 'var(--type-size-4xl)',
         fontWeight: 'var(--type-weight-semibold)',
         lineHeight: 'var(--type-leading-normal)',
       },
       h2: {
-        fontFamily: 'var(--type-typeface-archivo)',
+        fontFamily: "var(--type-typeface-archivo, 'Archivo')",
         fontSize: 'var(--type-size-3xl)',
         fontWeight: 'var(--type-weight-semibold)',
         lineHeight: 'var(--type-leading-normal)',
       },
       h3: {
-        fontFamily: 'var(--type-typeface-archivo)',
+        fontFamily: "var(--type-typeface-archivo, 'Archivo')",
         fontSize: 'var(--type-size-2xl)',
         fontWeight: 'var(--type-weight-semibold)',
         lineHeight: 'var(--type-leading-normal)',
       },
       h4: {
-        fontFamily: 'var(--type-typeface-archivo)',
+        fontFamily: "var(--type-typeface-archivo, 'Archivo')",
         fontSize: 'var(--type-size-xl)',
         fontWeight: 'var(--type-weight-semibold)',
         lineHeight: 'var(--type-leading-normal)',
       },
       h5: {
-        fontFamily: 'var(--type-typeface-archivo)',
+        fontFamily: "var(--type-typeface-archivo, 'Archivo')",
         fontSize: 'var(--type-size-lg)',
         fontWeight: 'var(--type-weight-medium)',
         lineHeight: 'var(--type-leading-normal)',
       },
       h6: {
-        fontFamily: 'var(--type-typeface-archivo)',
+        fontFamily: "var(--type-typeface-archivo, 'Archivo')",
         fontSize: 'var(--type-size-base)',
         fontWeight: 'var(--type-weight-medium)',
         lineHeight: 'var(--type-leading-normal)',
@@ -132,49 +158,21 @@ const createEchoMUITheme = () => {
         lineHeight: 'var(--type-leading-relaxed)',
       },
       button: {
-        fontFamily: 'var(--type-typeface-archivo)',
+        fontFamily: "var(--type-typeface-archivo, 'Archivo')",
         fontSize: 'var(--type-size-sm)',
         fontWeight: 'var(--type-weight-medium)',
-        textTransform: 'none', // Override MUI's uppercase default
+        textTransform: 'none',
       },
     },
-    
-    // Override spacing to use Echo tokens
-    spacing: (factor: number) => `calc(${factor} * var(--spacing-sizing-4px))`,
-    
+
+    spacing: (factor: number) => `calc(${factor} * ${spacingUnit})`,
+
     shape: {
-      borderRadius: 'var(--spacing-radius-4px)',
+      borderRadius: borderRadiusMd,
     },
-    
-    shadows: [
-      'none',
-      'var(--shadow-sm)',
-      'var(--shadow-md)',
-      'var(--shadow-lg)',
-      'var(--shadow-xl)',
-      'var(--shadow-2xl)',
-      // Add more shadow levels as needed
-      'var(--shadow-lg)',
-      'var(--shadow-xl)',
-      'var(--shadow-2xl)',
-      'var(--shadow-2xl)',
-      'var(--shadow-2xl)',
-      'var(--shadow-2xl)',
-      'var(--shadow-2xl)',
-      'var(--shadow-2xl)',
-      'var(--shadow-2xl)',
-      'var(--shadow-2xl)',
-      'var(--shadow-2xl)',
-      'var(--shadow-2xl)',
-      'var(--shadow-2xl)',
-      'var(--shadow-2xl)',
-      'var(--shadow-2xl)',
-      'var(--shadow-2xl)',
-      'var(--shadow-2xl)',
-      'var(--shadow-2xl)',
-      'var(--shadow-2xl)',
-    ],
-    
+
+    shadows,
+
     transitions: {
       duration: {
         shortest: 150,
@@ -192,122 +190,112 @@ const createEchoMUITheme = () => {
         sharp: 'cubic-bezier(0.4, 0, 0.6, 1)',
       },
     },
-    
-    // Component-specific overrides
+
     components: {
       MuiButton: {
         styleOverrides: {
           root: {
-            borderRadius: 'var(--spacing-radius-4px)',
+            borderRadius: borderRadiusMd,
             textTransform: 'none',
-            fontFamily: 'var(--type-typeface-archivo)',
+            fontFamily: "var(--type-typeface-archivo, 'Archivo')",
             fontWeight: 'var(--type-weight-medium)',
-            transition: 'all var(--transition-fast)',
-            
-            // Size variants using Echo tokens
+            transition: `all ${transitionFast}`,
             '&.MuiButton-sizeSmall': {
-              padding: 'var(--spacing-sizing-6px) var(--spacing-sizing-12px)',
+              padding: buttonPaddingSmall,
               fontSize: 'var(--type-size-sm)',
-              minHeight: 'var(--sizing-button-height-small)',
+              minHeight: buttonHeightSmall,
             },
             '&.MuiButton-sizeMedium': {
-              padding: 'var(--spacing-sizing-8px) var(--spacing-sizing-16px)',
+              padding: buttonPaddingMedium,
               fontSize: 'var(--type-size-sm)',
-              minHeight: 'var(--sizing-button-height-default)',
+              minHeight: buttonHeightDefault,
             },
             '&.MuiButton-sizeLarge': {
-              padding: 'var(--spacing-sizing-12px) var(--spacing-sizing-20px)',
+              padding: buttonPaddingLarge,
               fontSize: 'var(--type-size-base)',
-              minHeight: 'var(--sizing-button-height-large)',
+              minHeight: buttonHeightLarge,
             },
           },
           containedPrimary: {
-            backgroundColor: '#2F42BD', // --primary-blue-blue
-            color: '#FFFFFF', // --base-white
+            backgroundColor: getColor('--primary-blue-blue', '#2F42BD'),
+            color: getColor('--base-white', '#FFFFFF'),
             '&:hover': {
-              backgroundColor: '#253699', // --primary-blue-blue-600
+              backgroundColor: getColor('--primary-blue-blue-600', '#253699'),
             },
             '&:active': {
-              backgroundColor: '#1B2B75', // --primary-blue-blue-700
+              backgroundColor: getColor('--primary-blue-blue-700', '#1B2B75'),
             },
           },
           outlinedPrimary: {
-            borderColor: '#2F42BD', // --primary-blue-blue
-            color: '#2F42BD', // --primary-blue-blue
+            borderColor: getColor('--primary-blue-blue', '#2F42BD'),
+            color: getColor('--primary-blue-blue', '#2F42BD'),
             '&:hover': {
-              borderColor: '#253699', // --primary-blue-blue-600
-              backgroundColor: '#F9F9FE', // --primary-blue-blue-50
+              borderColor: getColor('--primary-blue-blue-600', '#253699'),
+              backgroundColor: getColor('--primary-blue-blue-50', '#F9F9FE'),
             },
           },
         },
       },
-      
+
       MuiTextField: {
         styleOverrides: {
           root: {
             '& .MuiOutlinedInput-root': {
-              borderRadius: 'var(--spacing-radius-4px)',
-              fontFamily: 'var(--type-typeface-roboto-flex)',
-              
+              borderRadius: borderRadiusMd,
+              fontFamily: "var(--type-typeface-roboto-flex, 'Roboto Flex')",
               '& fieldset': {
-                borderColor: '#D2D5DA', // --neutral-gray-gray-300
+                borderColor: getColor('--neutral-gray-gray-300', '#D2D5DA'),
               },
               '&:hover fieldset': {
-                borderColor: '#9CA3AF', // --neutral-gray-gray-400
+                borderColor: getColor('--neutral-gray-gray-400', '#9CA3AF'),
               },
               '&.Mui-focused fieldset': {
-                borderColor: '#2F42BD', // --primary-blue-blue
-                borderWidth: 'var(--spacing-stroke-2px)',
+                borderColor: getColor('--primary-blue-blue', '#2F42BD'),
+                borderWidth: getSize('--spacing-stroke-2px', '2px'),
               },
             },
             '& .MuiInputLabel-root': {
-              fontFamily: 'var(--type-typeface-archivo)',
-              color: '#4B5563', // --neutral-gray-gray-600
+              fontFamily: "var(--type-typeface-archivo, 'Archivo')",
+              color: getColor('--neutral-gray-gray-600', '#4B5563'),
               '&.Mui-focused': {
-                color: '#2F42BD', // --primary-blue-blue
+                color: getColor('--primary-blue-blue', '#2F42BD'),
               },
             },
           },
         },
       },
-      
+
       MuiCard: {
         styleOverrides: {
           root: {
-            borderRadius: 'var(--spacing-radius-8px)',
-            boxShadow: 'var(--shadow-sm)',
-            border: '1px solid #E5E7EB', // --neutral-gray-gray-200
+            borderRadius: borderRadiusLg,
+            boxShadow: shadowSm,
+            border: `1px solid ${getColor('--neutral-gray-gray-200', '#E5E7EB')}`,
           },
         },
       },
-      
+
       MuiChip: {
         styleOverrides: {
           root: {
-            borderRadius: 'var(--spacing-radius-full)',
-            fontFamily: 'var(--type-typeface-roboto-flex)',
+            borderRadius: borderRadiusPill,
+            fontFamily: "var(--type-typeface-roboto-flex, 'Roboto Flex')",
             fontSize: 'var(--type-size-sm)',
           },
         },
       },
-      
-      // Add more component overrides as needed
     },
   });
 };
 
-interface EchoMUIThemeProviderProps {
-  children: React.ReactNode;
-}
+export const echoTheme = createEchoMUITheme();
 
-/**
- * Echo MUI Theme Provider
- * 
- * Wrap your app with this provider to use MUI components 
- * styled with Echo design tokens.
- */
-export const EchoMUIThemeProvider: React.FC<EchoMUIThemeProviderProps> = ({ children }) => {
-  const theme = createEchoMUITheme();
+type EchoMUIThemeProviderProps = {
+  children: ReactNode;
+};
+
+export const EchoMUIThemeProvider = ({ children }: EchoMUIThemeProviderProps) => {
+  const theme = useMemo(() => createEchoMUITheme(), []);
 
   return (
     <ThemeProvider theme={theme}>
