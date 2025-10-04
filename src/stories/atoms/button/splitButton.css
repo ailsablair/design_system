@@ -121,7 +121,7 @@
 
 .split-button.extra-small .split-button-text {
   font-size: var(--type-archivo-footnote);
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
   line-height: var(--type-line-height-footnote);
   letter-spacing: var(--type-letter-spacing-archivo-footnote);
 }
@@ -148,7 +148,7 @@
 
 .split-button.small .split-button-text {
   font-size: var(--type-archivo-label-sm);
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
   line-height: var(--type-line-height-label-sm);
   letter-spacing: var(--type-letter-spacing-archivo-label-sm);
 }
@@ -175,7 +175,7 @@
 
 .split-button.default .split-button-text {
   font-size: var(--type-archivo-label);
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
   line-height: var(--type-line-height-label);
   letter-spacing: var(--type-letter-spacing-archivo-label);
 }
@@ -202,7 +202,7 @@
 
 .split-button.large .split-button-text {
   font-size: var(--type-archivo-label-lg);
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
   line-height: var(--type-line-height-label-lg);
   letter-spacing: var(--type-letter-spacing-archivo-label-lg);
 }
@@ -264,7 +264,7 @@
 
 .split-button.primary.hover .split-button-text,
 .split-button.primary:hover:not(.disabled):not(.loading) .split-button-text {
-  font-weight: var(--type-weight-semibold);
+  font-weight: var(--type-weight-light);
 }
 
 .split-button.primary.clicked,
@@ -275,7 +275,7 @@
 
 .split-button.primary.clicked .split-button-text,
 .split-button.primary:active:not(.disabled):not(.loading) .split-button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .split-button.primary.focused,
@@ -313,7 +313,7 @@
 
 .split-button.secondary.hover .split-button-text,
 .split-button.secondary:hover:not(.disabled):not(.loading) .split-button-text {
-  font-weight: var(--type-weight-semibold);
+  font-weight: var(--type-weight-light);
 }
 
 .split-button.secondary.clicked,
@@ -325,7 +325,7 @@
 
 .split-button.secondary.clicked .split-button-text,
 .split-button.secondary:active:not(.disabled):not(.loading) .split-button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 .split-button.secondary.focused,
@@ -363,7 +363,7 @@
 
 .split-button.ghost.hover .split-button-text,
 .split-button.ghost:hover:not(.disabled):not(.loading) .split-button-text {
-  font-weight: var(--type-weight-semibold);
+  font-weight: var(--type-weight-light);
 }
 
 .split-button.ghost.clicked,
@@ -374,7 +374,7 @@
 
 .split-button.ghost.clicked .split-button-text,
 .split-button.ghost:active:not(.disabled):not(.loading) .split-button-text {
-  font-weight: var(--type-weight-semibold);
+  font-weight: var(--type-weight-light);
 }
 
 .split-button.ghost.focused,
@@ -548,7 +548,7 @@
 }
 
 .split-button-container.open .split-button.primary .split-button-text {
-  font-weight: var(--type-weight-semibold);
+  font-weight: var(--type-weight-light);
 }
 
 /* Open state visual feedback for secondary buttons */
@@ -559,7 +559,7 @@
 }
 
 .split-button-container.open .split-button.secondary .split-button-text {
-  font-weight: var(--type-weight-semibold);
+  font-weight: var(--type-weight-light);
 }
 
 /* Open state visual feedback for ghost buttons */
@@ -570,7 +570,7 @@
 }
 
 .split-button-container.open .split-button.ghost .split-button-text {
-  font-weight: var(--type-weight-semibold);
+  font-weight: var(--type-weight-light);
 }
 
 /* Responsive adjustments */
