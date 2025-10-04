@@ -644,9 +644,10 @@
   padding: 0 var(--spacing-sizing-12px) var(--spacing-sizing-16px) var(--spacing-sizing-12px);
 }
 
-/* No-stroke type content */
+/* No-stroke type content - uses gray-700 per Figma */
 .accordion--type-no-stroke .accordion__content-text {
   padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-16px) 0;
+  color: var(--neutral-gray-gray-700); /* #374151 */
 }
 
 .accordion--type-no-stroke.accordion--size-large .accordion__content-text {
