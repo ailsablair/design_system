@@ -2016,17 +2016,17 @@
 /* Success button variant - Updated for Figma design */
 .button.success {
   background: var(--status-green);
-  border: var(--spacing-stroke-0-5px) solid var(--status-dark-green);
+  border: var(--spacing-stroke-1px) solid var(--status-dark-green);
   color: var(--base-black);
 }
 
 .button.success .button-icon {
   color: var(--base-black);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .button.success .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 /* Success outline button variant - Updated for Figma design */
@@ -2038,41 +2038,55 @@
 
 .button.success.outline .button-icon {
   color: var(--status-dark-green);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .button.success.outline .button-text {
-  font-weight: var(--type-weight-medium);
+  font-weight: var(--type-weight-light);
 }
 
 /* State variants for success buttons - Updated for Figma design */
 .button.success.default {
   background: var(--status-green);
-  border: var(--spacing-stroke-0-5px) solid var(--status-dark-green);
+  border: var(--spacing-stroke-1px) solid var(--status-dark-green);
 }
 
 .button.success.hover,
 .button.success:hover:not(.disabled):not(.loading) {
-  background: var(--status-green);
+  background: var(--status-dark-green);
   border: var(--spacing-stroke-1px) solid var(--status-dark-green);
   box-shadow: 2px 2px 0 0 var(--status-dark-green);
+  color: var(--base-white);
+}
+
+.button.success.hover .button-icon,
+.button.success:hover:not(.disabled):not(.loading) .button-icon {
+  color: var(--base-white);
+  opacity: 0.7;
 }
 
 .button.success.hover .button-text,
 .button.success:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
 }
 
 .button.success.clicked,
 .button.success:active:not(.disabled):not(.loading) {
-  background: var(--status-green);
+  background: var(--status-dark-green);
   border: var(--spacing-stroke-1px) solid var(--status-dark-green);
   box-shadow: 2px 2px 0 0 var(--status-dark-green);
+  color: var(--base-white);
+}
+
+.button.success.clicked .button-icon,
+.button.success:active:not(.disabled):not(.loading) .button-icon {
+  color: var(--base-white);
+  opacity: 0.7;
 }
 
 .button.success.clicked .button-text,
 .button.success:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
 }
 
 .button.success.focused,
@@ -2083,9 +2097,13 @@
 
 .button.success.loading {
   background: var(--status-green);
-  border: var(--spacing-stroke-0-5px) solid var(--status-dark-green);
+  border: var(--spacing-stroke-1px) solid var(--status-dark-green);
   cursor: wait;
   pointer-events: none;
+}
+
+.button.success.loading .button-loading-content {
+  opacity: 0.6;
 }
 
 .button.success.disabled {
@@ -2098,7 +2116,7 @@
 
 .button.success.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 /* State variants for success outline buttons - Updated for Figma design */
@@ -2109,26 +2127,26 @@
 
 .button.success.outline.hover,
 .button.success.outline:hover:not(.disabled):not(.loading) {
-  background: var(--base-white);
+  background: var(--status-green-light);
   border: var(--spacing-stroke-1px) solid var(--status-dark-green);
   box-shadow: 2px 2px 0 0 var(--status-dark-green);
 }
 
 .button.success.outline.hover .button-text,
 .button.success.outline:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
 }
 
 .button.success.outline.clicked,
 .button.success.outline:active:not(.disabled):not(.loading) {
-  background: var(--base-white);
+  background: var(--status-green-light);
   border: var(--spacing-stroke-1px) solid var(--status-dark-green);
   box-shadow: 2px 2px 0 0 var(--status-dark-green);
 }
 
 .button.success.outline.clicked .button-text,
 .button.success.outline:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
 }
 
 .button.success.outline.focused,
@@ -2144,6 +2162,10 @@
   pointer-events: none;
 }
 
+.button.success.outline.loading .button-loading-content {
+  opacity: 0.6;
+}
+
 .button.success.outline.disabled {
   background: var(--base-white);
   border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
@@ -2154,7 +2176,7 @@
 
 .button.success.outline.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .button.warning.force-clicked {
