@@ -1332,13 +1332,13 @@
 /* Error button variant - Updated for Figma design */
 .button.error {
   background: var(--status-red);
-  border: var(--spacing-stroke-0-5px) solid var(--status-red);
+  border: var(--spacing-stroke-0-5px) solid var(--status-red-light);
   color: var(--base-white);
 }
 
 .button.error .button-icon {
   color: var(--base-white);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .button.error .button-text {
@@ -1354,7 +1354,7 @@
 
 .button.error.outline .button-icon {
   color: var(--status-red);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .button.error.outline .button-text {
@@ -1508,14 +1508,14 @@
 /* State variants for error buttons - Updated for Figma design */
 .button.error.default {
   background: var(--status-red);
-  border: var(--spacing-stroke-0-5px) solid var(--status-red);
+  border: var(--spacing-stroke-0-5px) solid var(--status-red-light);
 }
 
 .button.error.hover,
 .button.error:hover:not(.disabled):not(.loading) {
   background: var(--status-red);
-  border: var(--spacing-stroke-2px) solid var(--status-red);
-  box-shadow: 1px 1px 0 0 var(--status-red-light-alt);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-700);
+  box-shadow: 2px 2px 0 0 var(--base-black);
 }
 
 .button.error.hover .button-text,
@@ -1526,8 +1526,8 @@
 .button.error.clicked,
 .button.error:active:not(.disabled):not(.loading) {
   background: var(--status-red);
-  border: var(--spacing-stroke-2px) solid var(--status-red);
-  box-shadow: 1px 1px 0 0 var(--status-red-light-alt);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-700);
+  box-shadow: 2px 2px 0 0 var(--base-black);
 }
 
 .button.error.clicked .button-text,
@@ -1538,14 +1538,18 @@
 .button.error.focused,
 .button.error:focus-visible:not(.disabled):not(.loading) {
   background: var(--status-red);
-  border: var(--spacing-stroke-2px) solid var(--status-red-light-alt);
+  border: var(--spacing-stroke-2px) solid var(--status-red-light);
 }
 
 .button.error.loading {
   background: var(--status-red);
-  border: var(--spacing-stroke-0-5px) solid var(--status-red);
+  border: var(--spacing-stroke-0-5px) solid var(--status-red-light);
   cursor: wait;
   pointer-events: none;
+}
+
+.button.error.loading .button-loading-content {
+  opacity: 0.6;
 }
 
 .button.error.disabled {
@@ -1558,7 +1562,7 @@
 
 .button.error.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 /* State variants for error outline buttons - Updated for Figma design */
@@ -1576,7 +1580,7 @@
 
 .button.error.outline.hover .button-text,
 .button.error.outline:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-bold);
+  font-weight: var(--type-weight-light);
 }
 
 .button.error.outline.clicked,
@@ -1604,6 +1608,10 @@
   pointer-events: none;
 }
 
+.button.error.outline.loading .button-loading-content {
+  opacity: 0.6;
+}
+
 .button.error.outline.disabled {
   background: var(--neutral-gray-gray-50);
   border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
@@ -1614,7 +1622,7 @@
 
 .button.error.outline.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 /* State variants for warning buttons - Updated for Figma design */
