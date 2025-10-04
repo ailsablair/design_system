@@ -754,10 +754,18 @@
   box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400) !important;
 }
 
+.button.outline.force-hover .button-text {
+  font-weight: var(--type-weight-medium) !important;
+}
+
 .button.outline.force-clicked {
   background: var(--primary-blue-blue-100) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-blue-blue-300) !important;
   box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400) !important;
+}
+
+.button.outline.force-clicked .button-text {
+  font-weight: var(--type-weight-light) !important;
 }
 
 .button.outline.force-focused {
