@@ -1235,6 +1235,49 @@
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue) !important;
 }
 
+/* Force state classes for extra-small tertiary buttons - Updated for Figma design */
+.button.tertiary.force-hover.extra-small {
+  background: var(--primary-seafoam-seafoam-300) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam) !important;
+  box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam) !important;
+}
+
+.button.tertiary.force-hover.extra-small .button-text {
+  font-weight: var(--type-weight-medium) !important;
+}
+
+.button.tertiary.force-clicked.extra-small {
+  background: var(--primary-seafoam-seafoam-300) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam) !important;
+  box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam) !important;
+}
+
+.button.tertiary.force-clicked.extra-small .button-text {
+  font-weight: var(--type-weight-light) !important;
+}
+
+.button.tertiary.force-focused.extra-small {
+  background: var(--primary-seafoam-seafoam-300) !important;
+  border: var(--spacing-stroke-3px) solid var(--primary-seafoam-dark-seafoam) !important;
+}
+
+.button.tertiary.extra-small.icon-only.force-hover {
+  background: var(--primary-seafoam-seafoam) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam) !important;
+  box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam) !important;
+}
+
+.button.tertiary.extra-small.icon-only.force-clicked {
+  background: var(--primary-seafoam-seafoam) !important;
+  border: var(--spacing-stroke-2px) solid var(--primary-seafoam-dark-seafoam) !important;
+  box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam) !important;
+}
+
+.button.tertiary.extra-small.icon-only.force-focused {
+  background: var(--primary-seafoam-seafoam) !important;
+  border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam) !important;
+}
+
 /* Accessibility and responsive improvements */
 @media (max-width: 768px) {
   .button {
