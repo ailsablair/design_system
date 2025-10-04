@@ -136,6 +136,11 @@
 
 /* Size-specific padding */
 .accordion--size-small .accordion__trigger {
+  padding: var(--spacing-sizing-20px) var(--spacing-sizing-32px) var(--spacing-sizing-20px) var(--spacing-sizing-24px);
+}
+
+/* Small size with plus icon uses 16px padding */
+.accordion--open-icon-plus.accordion--size-small .accordion__trigger {
   padding: var(--spacing-sizing-16px) var(--spacing-sizing-32px) var(--spacing-sizing-16px) var(--spacing-sizing-24px);
 }
 
