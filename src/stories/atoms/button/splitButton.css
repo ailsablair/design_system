@@ -214,6 +214,10 @@
   color: var(--base-white);
 }
 
+.split-button.primary .split-button-text {
+  color: var(--base-white);
+}
+
 .split-button.primary .split-button-icon {
   color: var(--base-white);
   opacity: 0.6;
