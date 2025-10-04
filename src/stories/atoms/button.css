@@ -938,6 +938,16 @@
   opacity: 0.7;
 }
 
+/* Force state classes for primary icon-only buttons */
+.button.primary.icon-only.force-focused {
+  background: var(--primary-blue-blue) !important;
+  border: var(--spacing-stroke-1px) solid var(--primary-blue-blue-300) !important;
+}
+
+.button.primary.small.icon-only.force-default {
+  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-blue) !important;
+}
+
 /* Force state classes for tertiary icon-only buttons */
 .button.tertiary.icon-only.force-hover {
   background: var(--primary-seafoam-seafoam) !important;
