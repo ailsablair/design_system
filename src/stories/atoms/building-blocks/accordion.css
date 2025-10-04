@@ -597,18 +597,23 @@
 }
 
 .accordion__content-text {
-  color: var(--neutral-gray-gray-900);
+  color: var(--neutral-gray-gray-900); /* #111827 default */
   font-family: var(--type-typeface-roboto-flex);
   font-style: normal;
   font-weight: 400;
-  
+
   /* Default content typography */
   font-size: var(--type-roboto-flex-body);
   line-height: var(--type-line-height-body);
   letter-spacing: var(--type-letter-spacing-roboto-flex-body);
-  
+
   /* Default padding */
   padding: 0 var(--spacing-sizing-32px) var(--spacing-sizing-24px) var(--spacing-sizing-24px);
+}
+
+/* Simple type uses default gray-900 (#111827) for content */
+.accordion--type-simple .accordion__content-text {
+  color: var(--neutral-gray-gray-900);
 }
 
 /* Small size content */
