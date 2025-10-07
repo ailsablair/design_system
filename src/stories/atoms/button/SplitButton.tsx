@@ -14,7 +14,7 @@ export interface SplitButtonProps {
   /** Size variant */
   size?: 'extra-small' | 'small' | 'default' | 'large';
   /** Button type/variant */
-  type?: 'primary' | 'secondary' | 'ghost';
+  type?: 'primary' | 'secondary' | 'ghost' | 'warning';
   /** Visual state (for controlled states) */
   state?: 'default' | 'hover' | 'clicked' | 'focused' | 'loading' | 'disabled';
   /** Loading state */
