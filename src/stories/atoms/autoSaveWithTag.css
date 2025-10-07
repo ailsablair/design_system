@@ -1,143 +1,242 @@
-@import '../foundations/tokens.css';
+/* ===== AUTO-SAVE WITH TAG - FIGMA DESIGN ===== */
 
-/* AutoSaveWithTag Component Base */
+/* Base container for AutoSave with Tag component */
 .autosave-with-tag {
   display: inline-flex;
   flex-direction: column;
   align-items: stretch;
-  gap: var(--spacing-sizing-16px);
-  font-family: var(--type-typeface-archivo);
+  gap: var(--spacing-sizing-16px, 16px);
+  font-family: var(--type-typeface-archivo, Archivo);
 }
 
-/* AutoSave Button Container with styled background */
-.autosave-button-container {
+/* ===== BUTTON STYLING ===== */
+
+/* Remove default button styles - the wrapper provides the visual styling */
+.autosave-with-tag__button {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Button content wrapper with padding */
+.autosave-with-tag__button .autosave-content {
+  padding: var(--spacing-sizing-4px, 4px);
+}
+
+/* Default state button styling */
+.autosave-with-tag--default .autosave-with-tag__button {
   display: flex;
-  width: 160px;
-  padding: var(--spacing-sizing-8px) var(--spacing-sizing-24px);
+  width: 155px;
+  padding: var(--spacing-sizing-8px, 8px) var(--spacing-sizing-16px, 16px);
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  border-radius: var(--spacing-radius-99999px);
-  border: 1px solid;
+  border-radius: var(--spacing-radius-99999px, 99999px);
+  border: var(--spacing-stroke-1px, 1px) solid var(--primary-sky-blue-sky-blue, #0BA7EA);
+  background: var(--primary-sky-blue-sky-blue-100, #D6F0FB) !important;
 }
 
-/* Button container styling by status */
-.autosave-button-container.default {
-  border-color: var(--primary-sky-blue-sky-blue);
-  background: var(--primary-sky-blue-sky-blue-100);
-}
-
-.autosave-button-container.saving {
-  border: 2px solid var(--primary-sky-blue-sky-blue);
-  background: var(--primary-sky-blue-sky-blue-100);
-  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
-}
-
-.autosave-button-container.saved {
-  border-color: var(--status-dark-green);
-  background: var(--status-green-light);
-}
-
-.autosave-button-container.error {
-  border-color: var(--status-red);
-  background: var(--status-red-light);
-}
-
-.autosave-button-container.disabled {
-  border-color: var(--neutral-gray-gray-200);
-  background: var(--neutral-gray-gray-50);
-}
-
-/* Remove default styling from the inner AutoSave component */
-.autosave-button-container .autosave-button {
-  background: none;
-  border: none;
-  padding: 0;
-}
-
-.autosave-button-container .autosave-button .autosave-content {
-  padding: var(--spacing-sizing-4px);
-}
-
-/* Timestamp Tag */
-.autosave-tag {
+/* Auto-saving state */
+.autosave-with-tag--auto-save .autosave-with-tag__button {
   display: flex;
-  padding: var(--spacing-sizing-4px) var(--spacing-sizing-12px);
+  width: 155px;
+  padding: var(--spacing-sizing-8px, 8px) var(--spacing-sizing-24px, 24px);
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-sizing-4px);
-  align-self: stretch;
-  border-radius: var(--spacing-radius-99999px);
-  border: 1px solid var(--neutral-gray-gray-300);
-  background: var(--neutral-gray-gray-100);
+  gap: 10px;
+  border-radius: var(--spacing-radius-99999px, 99999px);
+  border: var(--spacing-stroke-1px, 1px) solid var(--primary-sky-blue-sky-blue, #0BA7EA);
+  background: var(--primary-sky-blue-sky-blue-100, #D6F0FB) !important;
 }
 
-.autosave-tag-content {
+/* Error state */
+.autosave-with-tag--error .autosave-with-tag__button {
+  display: flex;
+  width: 155px;
+  padding: var(--spacing-sizing-8px, 8px) var(--spacing-sizing-24px, 24px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--spacing-radius-99999px, 99999px);
+  border: var(--spacing-stroke-1px, 1px) solid var(--status-red, #CE2031);
+  background: var(--status-red-light, #FBEBEB) !important;
+}
+
+/* Saved state */
+.autosave-with-tag--saved .autosave-with-tag__button {
+  display: flex;
+  width: 155px;
+  padding: var(--spacing-sizing-8px, 8px) var(--spacing-sizing-24px, 24px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--spacing-radius-99999px, 99999px);
+  border: var(--spacing-stroke-1px, 1px) solid var(--status-dark-green, #227F1A);
+  background: var(--status-green-light, #F2FFF1) !important;
+}
+
+/* Saving state with enhanced border and shadow */
+.autosave-with-tag--saving .autosave-with-tag__button {
+  display: flex;
+  width: 155px;
+  padding: var(--spacing-sizing-8px, 8px) var(--spacing-sizing-24px, 24px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--spacing-radius-99999px, 99999px);
+  border: var(--spacing-stroke-2px, 2px) solid var(--primary-sky-blue-sky-blue, #0BA7EA);
+  background: var(--primary-sky-blue-sky-blue-100, #D6F0FB) !important;
+  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400, #6171DF);
+}
+
+/* Disabled state */
+.autosave-with-tag--disabled .autosave-with-tag__button {
+  display: flex;
+  width: 155px;
+  padding: var(--spacing-sizing-8px, 8px) var(--spacing-sizing-24px, 24px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--spacing-radius-99999px, 99999px);
+  border: var(--spacing-stroke-1px, 1px) solid var(--neutral-gray-gray-200, #E5E7EB);
+  background: var(--neutral-gray-gray-50, #F9FAFB) !important;
+}
+
+/* ===== TIMESTAMP TAG ===== */
+
+.autosave-with-tag__tag {
+  display: flex;
+  padding: var(--spacing-sizing-4px, 4px) var(--spacing-sizing-12px, 12px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sizing-4px, 4px);
+  align-self: stretch;
+  border-radius: var(--spacing-radius-99999px, 99999px);
+  border: var(--spacing-stroke-1px, 1px) solid var(--neutral-gray-gray-300, #D2D5DA);
+  background: var(--neutral-gray-gray-100, #F3F4F6);
+}
+
+.autosave-with-tag__tag-content {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sizing-4px);
-  border-radius: var(--spacing-radius-99999px);
+  gap: var(--spacing-sizing-4px, 4px);
+  border-radius: var(--spacing-radius-99999px, 99999px);
 }
 
-.autosave-tag-label {
-  color: var(--neutral-gray-gray-800);
-  font-family: var(--type-typeface-archivo);
-  font-size: var(--type-archivo-label-sm);
+.autosave-with-tag__tag-label {
+  color: var(--neutral-gray-gray-800, #1F2937);
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-size: var(--type-archivo-label-sm, 14px);
   font-style: normal;
-  font-weight: var(--type-weight-bold);
-  line-height: var(--type-line-height-label-sm);
-  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
-  padding: var(--spacing-sizing-2px);
+  font-weight: var(--type-weight-bold, 700);
+  line-height: var(--type-line-height-label-sm, 16px);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm, 0.15px);
+  padding: var(--spacing-sizing-2px, 2px);
 }
 
-.autosave-tag-timestamp {
-  color: var(--neutral-gray-gray-800);
-  font-family: var(--type-typeface-archivo);
-  font-size: var(--type-archivo-label-sm);
+.autosave-with-tag__tag-timestamp {
+  color: var(--neutral-gray-gray-800, #1F2937);
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-size: var(--type-archivo-label-sm, 14px);
   font-style: normal;
-  font-weight: var(--type-weight-light);
-  line-height: var(--type-line-height-label-sm);
-  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
+  font-weight: var(--type-weight-light, 300);
+  line-height: var(--type-line-height-label-sm, 16px);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm, 0.15px);
 }
 
-/* Responsive adjustments */
+/* ===== RESPONSIVE DESIGN ===== */
+
 @media (max-width: 768px) {
-  .autosave-button-container {
-    width: 140px;
-    padding: var(--spacing-sizing-6px) var(--spacing-sizing-16px);
+  .autosave-with-tag {
+    gap: var(--spacing-sizing-12px, 12px);
   }
   
-  .autosave-tag {
-    padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
+  .autosave-with-tag__button {
+    width: 140px !important;
+    padding: var(--spacing-sizing-6px, 6px) var(--spacing-sizing-16px, 16px) !important;
   }
   
-  .autosave-tag-label,
-  .autosave-tag-timestamp {
-    font-size: var(--type-archivo-footnote);
-    line-height: var(--type-line-height-footnote);
+  .autosave-with-tag--default .autosave-with-tag__button {
+    padding: var(--spacing-sizing-6px, 6px) var(--spacing-sizing-12px, 12px) !important;
+  }
+  
+  .autosave-with-tag__tag {
+    padding: var(--spacing-sizing-4px, 4px) var(--spacing-sizing-8px, 8px);
+  }
+  
+  .autosave-with-tag__tag-label,
+  .autosave-with-tag__tag-timestamp {
+    font-size: 12px;
+    line-height: 14px;
   }
 }
+
+@media (max-width: 480px) {
+  .autosave-with-tag__button {
+    width: 120px !important;
+    padding: var(--spacing-sizing-6px, 6px) var(--spacing-sizing-12px, 12px) !important;
+  }
+  
+  .autosave-with-tag__tag-timestamp {
+    font-size: 11px;
+    line-height: 13px;
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-  .autosave-button-container {
+  .autosave-with-tag__button {
+    border-width: 2px !important;
+  }
+  
+  .autosave-with-tag__tag {
     border-width: 2px;
   }
   
-  .autosave-tag {
-    border-width: 2px;
+  .autosave-with-tag__tag-label,
+  .autosave-with-tag__tag-timestamp {
+    font-weight: 600;
   }
-  
-  .autosave-tag-label,
-  .autosave-tag-timestamp {
-    opacity: 1;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .autosave-with-tag * {
+    transition: none !important;
+    animation: none !important;
   }
 }
 
 /* Focus management */
-.autosave-with-tag:focus-within .autosave-button-container {
-  outline: 2px solid var(--primary-blue-blue);
+.autosave-with-tag:focus-within .autosave-with-tag__button {
+  outline: 2px solid var(--primary-blue-blue, #2F42BD);
   outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .autosave-with-tag__button {
+    border: 1px solid #000 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+  
+  .autosave-with-tag__tag {
+    border: 1px solid #000;
+  }
+  
+  .autosave-with-tag__tag-label,
+  .autosave-with-tag__tag-timestamp {
+    color: #000;
+  }
 }
