@@ -1,0 +1,327 @@
+/* ===== FULL ACCORDION - FIGMA HEADER INTEGRATION ===== */
+
+/* This file integrates the Figma accordion headers with the full accordion component */
+
+/* ===== ACCORDION TRIGGER UPDATES FOR FIGMA HEADERS ===== */
+
+/* Ensure trigger uses header styling when using Figma header variants */
+.accordion--figma-headers .accordion__trigger {
+  all: unset;
+  width: 100%;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+/* Remove default padding when using figma headers */
+.accordion--figma-headers.accordion--size-small .accordion__trigger {
+  padding: 20px 32px 20px 24px;
+}
+
+.accordion--figma-headers.accordion--size-default .accordion__trigger {
+  padding: 24px 32px;
+}
+
+.accordion--figma-headers.accordion--size-large .accordion__trigger {
+  padding: 28px 32px 28px 24px;
+}
+
+/* ===== HEADER ALIGNMENT BASED ON POSITION ===== */
+
+/* Default position - center aligned */
+.accordion--figma-headers.accordion--position-default .accordion__trigger {
+  align-items: center;
+}
+
+/* Top position - align to top */
+.accordion--figma-headers.accordion--position-top .accordion__trigger {
+  align-items: flex-start;
+}
+
+/* Bottom position - align to bottom */
+.accordion--figma-headers.accordion--position-bottom .accordion__trigger {
+  align-items: flex-end;
+}
+
+/* ===== ICON STYLE ADJUSTMENTS ===== */
+
+/* Plus icon style with small size - specific padding */
+.accordion--figma-headers.accordion--icon-plus.accordion--size-small .accordion__trigger {
+  padding: 16px 32px 16px 24px;
+  align-items: center;
+}
+
+/* Chevron icon style - default alignment */
+.accordion--figma-headers.accordion--icon-chevron .accordion__trigger {
+  align-items: center;
+}
+
+/* Small chevron with default position - flex-start */
+.accordion--figma-headers.accordion--icon-chevron.accordion--size-small.accordion--position-default .accordion__trigger {
+  align-items: flex-start;
+}
+
+/* ===== OPEN STATE ADJUSTMENTS ===== */
+
+/* Open state - ensure proper spacing */
+.accordion--figma-headers.accordion--state-open .accordion__trigger {
+  margin-bottom: 0;
+}
+
+/* ===== STATUS ICON INTEGRATION ===== */
+
+/* Status icon within trigger - ensure proper sizing */
+.accordion--figma-headers .accordion__trigger .accordion__status-icon {
+  display: flex;
+  width: 26px;
+  height: 26px;
+  padding: 2px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ===== BELL ICON INTEGRATION ===== */
+
+/* Bell icon within trigger */
+.accordion--figma-headers .accordion__trigger .accordion__bell-icon {
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.accordion--figma-headers.accordion--size-small .accordion__trigger .accordion__bell-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.accordion--figma-headers.accordion--size-default .accordion__trigger .accordion__bell-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.accordion--figma-headers.accordion--size-large .accordion__trigger .accordion__bell-icon {
+  width: 26px;
+  height: 26px;
+}
+
+/* ===== TOGGLE ICON INTEGRATION ===== */
+
+/* Toggle icon within trigger */
+.accordion--figma-headers .accordion__trigger .accordion__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.accordion--figma-headers.accordion--size-small .accordion__trigger .accordion__toggle {
+  width: 20px;
+  height: 20px;
+}
+
+.accordion--figma-headers.accordion--size-default .accordion__trigger .accordion__toggle {
+  width: 28px;
+  height: 28px;
+}
+
+.accordion--figma-headers.accordion--size-large .accordion__trigger .accordion__toggle {
+  width: 32px;
+  height: 32px;
+}
+
+/* ===== TITLE STYLING INTEGRATION ===== */
+
+/* Title within accordion trigger - Figma typography */
+.accordion--figma-headers .accordion__trigger .accordion__title {
+  color: var(--primary-blue-dark-blue, #191E3C);
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-style: normal;
+  flex: 1 0 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Small size title */
+.accordion--figma-headers.accordion--size-small .accordion__trigger .accordion__title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+
+/* Default size title */
+.accordion--figma-headers.accordion--size-default .accordion__trigger .accordion__title {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.15px;
+}
+
+/* Large size title */
+.accordion--figma-headers.accordion--size-large .accordion__trigger .accordion__title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.25px;
+}
+
+/* ===== HOVER STATES ===== */
+
+.accordion--figma-headers .accordion__trigger:hover .accordion__title {
+  color: var(--base-black, #1C1C1C);
+}
+
+.accordion--figma-headers .accordion__trigger:hover .accordion__bell-icon {
+  opacity: 1;
+}
+
+.accordion--figma-headers .accordion__trigger:hover .accordion__toggle {
+  opacity: 1;
+}
+
+/* ===== FOCUS STATES ===== */
+
+.accordion--figma-headers .accordion__trigger:focus-visible {
+  outline: 2px solid var(--primary-blue-dark-blue, #191E3C);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.accordion--figma-headers .accordion__trigger:focus-visible .accordion__title {
+  color: var(--base-black, #1C1C1C);
+}
+
+/* ===== ACTIVE STATES ===== */
+
+.accordion--figma-headers .accordion__trigger:active .accordion__toggle {
+  transform: scale(0.95);
+}
+
+/* ===== OPEN STATE STYLING ===== */
+
+.accordion--figma-headers.accordion--state-open .accordion__title {
+  color: var(--base-black, #1C1C1C);
+}
+
+/* ===== CONTENT BODY INTEGRATION ===== */
+
+/* Content body styling - matches Figma spacing */
+.accordion--figma-headers .accordion__content-body {
+  width: 100%;
+  overflow: hidden;
+}
+
+.accordion--figma-headers .accordion__content-text {
+  color: var(--neutral-gray-gray-900, #111827);
+  font-family: var(--type-typeface-roboto-flex, "Roboto Flex");
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Small size content */
+.accordion--figma-headers.accordion--size-small .accordion__content-text {
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.15px;
+  padding: 0 32px 16px 24px;
+}
+
+/* Default size content */
+.accordion--figma-headers.accordion--size-default .accordion__content-text {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.05px;
+  padding: 0 32px 24px 24px;
+}
+
+/* Large size content */
+.accordion--figma-headers.accordion--size-large .accordion__content-text {
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.15px;
+  padding: 0 32px 28px 24px;
+}
+
+/* Plus icon small size content uses gray color */
+.accordion--figma-headers.accordion--icon-plus.accordion--size-small .accordion__content-text {
+  color: var(--neutral-gray-gray-700, #374151);
+}
+
+/* ===== GAP ADJUSTMENTS ===== */
+
+/* Trigger gap between elements */
+.accordion--figma-headers .accordion__trigger {
+  gap: 12px;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+
+@media (max-width: 768px) {
+  .accordion--figma-headers .accordion__trigger {
+    gap: 8px;
+  }
+  
+  .accordion--figma-headers.accordion--size-small .accordion__trigger {
+    padding: 16px 24px;
+  }
+  
+  .accordion--figma-headers.accordion--size-default .accordion__trigger {
+    padding: 20px 24px;
+  }
+  
+  .accordion--figma-headers.accordion--size-large .accordion__trigger {
+    padding: 24px;
+  }
+  
+  /* Adjust title font sizes on mobile */
+  .accordion--figma-headers.accordion--size-large .accordion__title {
+    font-size: 20px !important;
+    line-height: 22px !important;
+  }
+  
+  .accordion--figma-headers.accordion--size-default .accordion__title {
+    font-size: 18px !important;
+    line-height: 22px !important;
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion--figma-headers .accordion__trigger *,
+  .accordion--figma-headers .accordion__toggle,
+  .accordion--figma-headers .accordion__bell-icon {
+    transition: none !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .accordion--figma-headers .accordion__title {
+    font-weight: 600 !important;
+  }
+  
+  .accordion--figma-headers .accordion__status-icon circle {
+    stroke-width: 2px !important;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+
+@media print {
+  .accordion--figma-headers .accordion__toggle {
+    display: none !important;
+  }
+  
+  .accordion--figma-headers .accordion__title {
+    color: black !important;
+    font-weight: 600 !important;
+  }
+  
+  .accordion--figma-headers .accordion__content-body {
+    display: block !important;
+  }
+}
