@@ -1,0 +1,475 @@
+/* ===== ACCORDION STATUS INDICATORS - FIGMA DESIGN ===== */
+
+/* Design tokens from Figma */
+:root {
+  --accordion-status-border-active: #61607C;
+  --accordion-status-border-disabled: #D2D5DA;
+  --accordion-status-warning-fill: #FCE4A5;
+  --accordion-status-complete-fill: #96F78D;
+  --accordion-status-locked-fill: #C8C7D1;
+  --accordion-status-comments-fill: #B6E5F9;
+  --accordion-status-notifications-fill: #C5CAED;
+  --accordion-status-error-fill: #CE2031;
+  --accordion-status-note-fill: #5D2C82;
+}
+
+/* ===== BASE STATUS ICON STRUCTURE ===== */
+
+.accordion__status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.accordion__status-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== SIZE VARIANTS ===== */
+
+/* Small size - 22-26px */
+.accordion--size-small .accordion__status {
+  width: 26px;
+  height: 26px;
+}
+
+.accordion--size-small .accordion__status-container {
+  width: 22px;
+  height: 22px;
+}
+
+/* Default size - 48-50px */
+.accordion--size-default .accordion__status {
+  width: 50px;
+  height: 50px;
+}
+
+.accordion--size-default .accordion__status-container {
+  width: 48px;
+  height: 48px;
+}
+
+/* Large size - 62-64px */
+.accordion--size-large .accordion__status {
+  width: 64px;
+  height: 64px;
+}
+
+.accordion--size-large .accordion__status-container {
+  width: 62px;
+  height: 62px;
+}
+
+/* ===== WARNING STATUS ===== */
+
+.accordion__status--warning .accordion__status-circle {
+  display: flex;
+  width: 22px;
+  height: 22px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--spacing-radius-99999px);
+  border: var(--spacing-stroke-1px) dashed var(--accordion-status-border-active);
+}
+
+.accordion--size-default .accordion__status--warning .accordion__status-circle,
+.accordion--size-large .accordion__status--warning .accordion__status-circle {
+  width: 48px;
+  height: 48px;
+}
+
+.accordion--size-large .accordion__status--warning .accordion__status-circle {
+  width: 62px;
+  height: 62px;
+}
+
+.accordion__status--warning svg path {
+  fill: var(--accordion-status-warning-fill);
+}
+
+/* Warning disabled state */
+.accordion__status--warning.accordion__status--disabled .accordion__status-circle {
+  border-color: var(--accordion-status-border-disabled);
+}
+
+.accordion__status--warning.accordion__status--disabled svg path {
+  fill: var(--accordion-status-border-disabled);
+}
+
+/* ===== COMPLETE STATUS ===== */
+
+.accordion__status--complete .accordion__status-dashed-circle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 22px;
+  height: 22px;
+}
+
+.accordion--size-default .accordion__status--complete .accordion__status-dashed-circle {
+  width: 48px;
+  height: 48px;
+}
+
+.accordion--size-large .accordion__status--complete .accordion__status-dashed-circle {
+  width: 62px;
+  height: 62px;
+}
+
+.accordion__status--complete .accordion__status-check {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  opacity: 0.5;
+}
+
+.accordion--size-default .accordion__status--complete .accordion__status-check,
+.accordion--size-large .accordion__status--complete .accordion__status-check {
+  width: 36px;
+  height: 36px;
+  opacity: 0.3;
+}
+
+.accordion--size-large .accordion__status--complete .accordion__status-check {
+  opacity: 0.5;
+}
+
+.accordion__status--complete svg path {
+  fill: var(--accordion-status-complete-fill);
+}
+
+/* Complete disabled state */
+.accordion__status--complete.accordion__status--disabled .accordion__status-dashed-circle circle {
+  stroke: var(--accordion-status-border-disabled);
+}
+
+.accordion__status--complete.accordion__status--disabled .accordion__status-check {
+  opacity: 0.6;
+}
+
+.accordion__status--complete.accordion__status--disabled svg path {
+  fill: var(--accordion-status-border-disabled);
+}
+
+/* ===== LOCKED STATUS ===== */
+
+.accordion__status--locked .accordion__status-circle {
+  display: flex;
+  width: 22px;
+  height: 22px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--spacing-radius-99999px);
+  border: var(--spacing-stroke-1px) dashed var(--accordion-status-border-active);
+}
+
+.accordion--size-default .accordion__status--locked .accordion__status-circle,
+.accordion--size-large .accordion__status--locked .accordion__status-circle {
+  width: 48px;
+  height: 48px;
+}
+
+.accordion--size-large .accordion__status--locked .accordion__status-circle {
+  width: 62px;
+  height: 62px;
+}
+
+.accordion__status--locked svg path {
+  fill: var(--accordion-status-locked-fill);
+}
+
+/* Locked disabled state */
+.accordion__status--locked.accordion__status--disabled .accordion__status-circle {
+  border-color: var(--accordion-status-border-disabled);
+}
+
+.accordion__status--locked.accordion__status--disabled svg {
+  opacity: 0.7;
+}
+
+/* ===== COMMENTS STATUS ===== */
+
+.accordion__status--comments .accordion__status-circle {
+  display: flex;
+  width: 22px;
+  height: 22px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--spacing-radius-99999px);
+  border: var(--spacing-stroke-1px) dashed var(--accordion-status-border-active);
+}
+
+.accordion--size-default .accordion__status--comments .accordion__status-circle,
+.accordion--size-large .accordion__status--comments .accordion__status-circle {
+  width: 48px;
+  height: 48px;
+}
+
+.accordion--size-large .accordion__status--comments .accordion__status-circle {
+  width: 62px;
+  height: 62px;
+}
+
+.accordion__status--comments svg path {
+  fill: var(--accordion-status-comments-fill);
+}
+
+/* Comments disabled state */
+.accordion__status--comments.accordion__status--disabled .accordion__status-circle {
+  border-color: var(--accordion-status-border-disabled);
+}
+
+.accordion__status--comments.accordion__status--disabled svg {
+  opacity: 0.7;
+}
+
+.accordion__status--comments.accordion__status--disabled svg path {
+  fill: var(--accordion-status-border-disabled);
+}
+
+/* ===== NOTIFICATIONS STATUS ===== */
+
+.accordion__status--notifications .accordion__status-circle {
+  display: flex;
+  width: 22px;
+  height: 22px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--spacing-radius-99999px);
+  border: var(--spacing-stroke-1px) dashed var(--accordion-status-border-active);
+}
+
+.accordion--size-default .accordion__status--notifications .accordion__status-circle,
+.accordion--size-large .accordion__status--notifications .accordion__status-circle {
+  width: 48px;
+  height: 48px;
+}
+
+.accordion--size-large .accordion__status--notifications .accordion__status-circle {
+  width: 62px;
+  height: 62px;
+}
+
+.accordion__status--notifications svg path {
+  fill: var(--accordion-status-notifications-fill);
+}
+
+/* Notifications disabled state */
+.accordion__status--notifications.accordion__status--disabled .accordion__status-circle {
+  border-color: var(--accordion-status-border-disabled);
+}
+
+.accordion__status--notifications.accordion__status--disabled svg path {
+  fill: var(--accordion-status-border-disabled);
+}
+
+/* ===== ERROR STATUS ===== */
+
+.accordion__status--error .accordion__status-circle {
+  display: flex;
+  width: 22px;
+  height: 22px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--spacing-radius-99999px);
+  border: var(--spacing-stroke-1px) dashed var(--accordion-status-border-active);
+}
+
+.accordion--size-default .accordion__status--error .accordion__status-circle,
+.accordion--size-large .accordion__status--error .accordion__status-circle {
+  width: 48px;
+  height: 48px;
+}
+
+.accordion--size-large .accordion__status--error .accordion__status-circle {
+  width: 62px;
+  height: 62px;
+}
+
+.accordion__status--error svg {
+  opacity: 0.25;
+}
+
+.accordion__status--error svg path {
+  fill: var(--accordion-status-error-fill);
+}
+
+/* Error disabled state */
+.accordion__status--error.accordion__status--disabled .accordion__status-circle {
+  border-color: var(--accordion-status-border-disabled);
+}
+
+.accordion__status--error.accordion__status--disabled svg {
+  opacity: 1;
+}
+
+.accordion__status--error.accordion__status--disabled svg path {
+  fill: var(--accordion-status-border-disabled);
+}
+
+/* ===== NOTE STATUS ===== */
+
+.accordion__status--note .accordion__status-circle {
+  display: flex;
+  width: 22px;
+  height: 22px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--spacing-radius-99999px);
+  border: var(--spacing-stroke-1px) dashed var(--accordion-status-border-active);
+}
+
+.accordion--size-default .accordion__status--note .accordion__status-circle,
+.accordion--size-large .accordion__status--note .accordion__status-circle {
+  width: 48px;
+  height: 48px;
+}
+
+.accordion--size-large .accordion__status--note .accordion__status-circle {
+  width: 62px;
+  height: 62px;
+}
+
+.accordion__status--note svg {
+  opacity: 0.4;
+}
+
+.accordion__status--note svg path {
+  fill: var(--accordion-status-note-fill);
+}
+
+/* Note disabled state */
+.accordion__status--note.accordion__status--disabled .accordion__status-circle {
+  border-color: var(--accordion-status-border-disabled);
+}
+
+.accordion__status--note.accordion__status--disabled svg {
+  opacity: 1;
+}
+
+.accordion__status--note.accordion__status--disabled svg path {
+  fill: var(--accordion-status-border-disabled);
+}
+
+/* ===== ICON SIZING ===== */
+
+/* Small size icons */
+.accordion--size-small .accordion__status svg {
+  width: 16px;
+  height: 16px;
+}
+
+.accordion--size-small .accordion__status--note svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Default size icons */
+.accordion--size-default .accordion__status svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Large size icons - most use 28px, note uses 28px */
+.accordion--size-large .accordion__status svg {
+  width: 28px;
+  height: 28px;
+}
+
+.accordion--size-large .accordion__status--warning svg,
+.accordion--size-large .accordion__status--locked svg,
+.accordion--size-large .accordion__status--comments svg,
+.accordion--size-large .accordion__status--notifications svg {
+  width: 28px;
+  height: 28px;
+}
+
+.accordion--size-large .accordion__status--complete svg.accordion__status-check {
+  width: 36px;
+  height: 36px;
+}
+
+/* ===== POSITIONING ADJUSTMENTS ===== */
+
+/* Small size positioning */
+.accordion--size-small .accordion__status--warning,
+.accordion--size-small .accordion__status--locked,
+.accordion--size-small .accordion__status--comments,
+.accordion--size-small .accordion__status--notifications,
+.accordion--size-small .accordion__status--error,
+.accordion--size-small .accordion__status--note {
+  padding: 1px;
+}
+
+.accordion--size-small .accordion__status--warning .accordion__status-circle,
+.accordion--size-small .accordion__status--locked .accordion__status-circle,
+.accordion--size-small .accordion__status--comments .accordion__status-circle,
+.accordion--size-small .accordion__status--notifications .accordion__status-circle,
+.accordion--size-small .accordion__status--error .accordion__status-circle,
+.accordion--size-small .accordion__status--note .accordion__status-circle {
+  padding: 2px 3px;
+}
+
+/* Complete status small size positioning */
+.accordion--size-small .accordion__status--complete .accordion__status-check {
+  left: 3px;
+  top: 3px;
+}
+
+/* Default and large size positioning */
+.accordion--size-default .accordion__status--complete .accordion__status-check,
+.accordion--size-large .accordion__status--complete .accordion__status-check {
+  left: 6px;
+  top: 6px;
+}
+
+.accordion--size-large .accordion__status--complete .accordion__status-check {
+  left: 13px;
+  top: 13px;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+
+@media (max-width: 480px) {
+  /* Scale down status icons on mobile if needed */
+  .accordion--size-large .accordion__status {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .accordion--size-large .accordion__status-container {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion__status,
+  .accordion__status-circle {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .accordion__status-circle {
+    border-width: var(--spacing-stroke-2px);
+  }
+  
+  .accordion__status svg {
+    opacity: 1 !important;
+  }
+}
