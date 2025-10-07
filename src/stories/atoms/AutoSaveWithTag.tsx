@@ -1,5 +1,6 @@
 import React from 'react';
-import { AutoSave, AutoSaveProps } from './AutoSave';
+import { AutoSave } from './AutoSave';
+import type { AutoSaveProps } from './AutoSave';
 import './autoSaveWithTag.css';
 
 export interface AutoSaveWithTagProps extends Omit<AutoSaveProps, 'className'> {
