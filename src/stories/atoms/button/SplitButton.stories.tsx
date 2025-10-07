@@ -23,7 +23,7 @@ const meta: Meta<typeof SplitButton> = {
     },
     type: {
       control: 'select',
-      options: ['primary', 'secondary', 'ghost'],
+      options: ['primary', 'secondary', 'ghost', 'warning'],
       description: 'Split button type/variant',
     },
     state: {
