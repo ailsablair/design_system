@@ -5,9 +5,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-sizing-8px) var(--spacing-sizing-16px);
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-24px);
   border-radius: var(--spacing-radius-99999px);
-  border: 1px solid transparent;
+  border: var(--spacing-stroke-1px) solid transparent;
   background: var(--primary-sky-blue-sky-blue-100);
   color: var(--primary-sky-blue-dark-sky-blue);
   font-family: var(--type-typeface-archivo);
@@ -66,6 +66,7 @@
   }
 }
 
+/* Default state */
 .autosave.default {
   border-color: var(--primary-sky-blue-sky-blue);
   background: var(--primary-sky-blue-sky-blue-100);
@@ -79,6 +80,7 @@
   color: var(--primary-sky-blue-dark-sky-blue);
 }
 
+/* Disabled state */
 .autosave.disabled {
   background: var(--neutral-gray-gray-50);
   border-color: var(--neutral-gray-gray-200);
@@ -87,22 +89,29 @@
   pointer-events: none;
 }
 
-.autosave.saving,
+/* Auto-saving state - 1px border per Figma */
 .autosave.auto-saving {
-  background:
-    linear-gradient(var(--primary-sky-blue-sky-blue-100), var(--primary-sky-blue-sky-blue-100)) padding-box,
-    linear-gradient(135deg, var(--primary-sky-blue-sky-blue) 0%, var(--primary-blue-blue) 100%) border-box;
-  border: 2px solid transparent;
-  box-shadow: 1px 1px 0 0 var(--primary-blue-blue-400);
+  border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
+  background: var(--primary-sky-blue-sky-blue-100);
   color: var(--primary-sky-blue-dark-sky-blue);
 }
 
+/* Saving state - 2px border with shadow per Figma */
+.autosave.saving {
+  border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
+  background: var(--primary-sky-blue-sky-blue-100);
+  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
+  color: var(--primary-sky-blue-dark-sky-blue);
+}
+
+/* Saved state */
 .autosave.saved {
   background: var(--status-green-light);
   border-color: var(--status-dark-green);
   color: var(--status-dark-green);
 }
 
+/* Error-saving state */
 .autosave.error-saving {
   background: var(--status-red-light);
   border-color: var(--status-red);
