@@ -436,6 +436,24 @@ export const ExtraSmallWithLongText: Story = {
 };
 
 
+// Figma Design Showcase
+export const FigmaWarningExtraSmall: Story = {
+  args: {
+    children: 'Label',
+    size: 'extra-small',
+    type: 'warning',
+    menuItems: defaultMenuItems,
+    onClick: () => console.log('Main button clicked'),
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Warning split button in extra-small size matching the Figma design specification (button/extra-small/default (primary)/default/split).',
+      },
+    },
+  },
+};
+
 // Interactive examples
 export const Interactive: Story = {
   render: () => {
