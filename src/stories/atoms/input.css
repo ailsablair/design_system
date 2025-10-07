@@ -73,16 +73,17 @@
   will-change: auto;
 }
 
-.input-container.small {
+.input-container.simple.small {
+  height: var(--sizing-height-32, 32px);
   padding: var(--spacing-sizing-8px);
 }
 
-.input-container.default {
+.input-container.simple.default {
   height: var(--sizing-height-44);
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
 }
 
-.input-container.large {
+.input-container.simple.large {
   height: var(--sizing-height-54);
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
 }
