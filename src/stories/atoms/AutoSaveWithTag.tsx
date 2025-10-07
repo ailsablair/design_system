@@ -18,8 +18,10 @@ export const AutoSaveWithTag: React.FC<AutoSaveWithTagProps> = ({
   className = '',
   ...autoSaveProps
 }) => {
-  const getButtonStyling = () => {
+  const getButtonType = () => {
     switch (status) {
+      case 'auto-saving':
+        return 'auto-save';
       case 'error-saving':
         return 'error';
       case 'saved':
@@ -33,24 +35,22 @@ export const AutoSaveWithTag: React.FC<AutoSaveWithTagProps> = ({
     }
   };
 
-  const buttonStyle = getButtonStyling();
+  const buttonType = getButtonType();
 
   return (
-    <div className={`autosave-with-tag ${buttonStyle} ${className}`}>
-      {/* AutoSave Button with styled container */}
-      <div className={`autosave-button-container ${buttonStyle}`}>
-        <AutoSave 
-          status={status}
-          className="autosave-button"
-          {...autoSaveProps}
-        />
-      </div>
-      
+    <div className={`autosave-with-tag autosave-with-tag--${buttonType} ${className}`}>
+      {/* AutoSave Button */}
+      <AutoSave
+        status={status}
+        className="autosave-with-tag__button"
+        {...autoSaveProps}
+      />
+
       {/* Timestamp Tag */}
-      <div className="autosave-tag">
-        <div className="autosave-tag-content">
-          <span className="autosave-tag-label">{timestampLabel}</span>
-          <span className="autosave-tag-timestamp">{timestamp}</span>
+      <div className="autosave-with-tag__tag">
+        <div className="autosave-with-tag__tag-content">
+          <span className="autosave-with-tag__tag-label">{timestampLabel}</span>
+          <span className="autosave-with-tag__tag-timestamp">{timestamp}</span>
         </div>
       </div>
     </div>
