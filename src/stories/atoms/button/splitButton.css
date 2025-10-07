@@ -648,6 +648,17 @@
   font-weight: var(--type-weight-light);
 }
 
+/* Open state visual feedback for warning buttons */
+.split-button-container.open .split-button.warning {
+  border: var(--spacing-stroke-2px) solid var(--status-dark-orange);
+  box-shadow: var(--shadow-xl);
+  background: var(--status-dark-orange);
+}
+
+.split-button-container.open .split-button.warning .split-button-text {
+  font-weight: var(--type-weight-light);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .split-button {
