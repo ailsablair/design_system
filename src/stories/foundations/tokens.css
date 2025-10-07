@@ -101,6 +101,7 @@
 
   /* Legacy Sky Blue (maintain backward compatibility) */
   --primary-sky-blue-sky-blue: #0BA7EA;
+  --primary-sky-blue-sky-blue-100: #D6F0FB; /* Figma exact naming */
 
   /* === NEUTRAL GRAY PALETTE === */
   --neutral-gray-gray-50: #F9FAFB;
