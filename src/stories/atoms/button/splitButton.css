@@ -259,6 +259,26 @@
   border-left: var(--spacing-stroke-0-5px) solid rgba(156, 163, 175, 0.5);
 }
 
+/* Warning split button variant */
+.split-button.warning {
+  background: var(--status-orange-alt);
+  border: var(--spacing-stroke-0-5px) solid var(--status-orange-alt);
+  color: var(--base-white);
+}
+
+.split-button.warning .split-button-text {
+  color: var(--base-white);
+}
+
+.split-button.warning .split-button-icon {
+  color: var(--base-white);
+  opacity: 0.7;
+}
+
+.split-button.warning .split-button-dropdown {
+  border-left: var(--spacing-stroke-0-5px) solid rgba(255, 255, 255, 0.2);
+}
+
 /* State variants for primary split buttons */
 .split-button.primary.hover,
 .split-button.primary:hover:not(.disabled):not(.loading) {
