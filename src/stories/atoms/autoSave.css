@@ -1,6 +1,6 @@
 @import '../foundations/tokens.css';
 
-/* AutoSave Component Base */
+/* AutoSave Component Base - Figma Design Match */
 .autosave {
   display: inline-flex;
   align-items: center;
@@ -22,28 +22,31 @@
   outline-offset: 2px;
 }
 
-/* AutoSave Content Layout */
+/* AutoSave Content Layout - Exact Figma Specs */
 .autosave-content {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sizing-6px);
-  padding: var(--spacing-sizing-4px);
+  gap: 6px; /* Figma: 6px gap */
+  padding: 4px; /* Figma: 4px padding */
+  justify-content: center;
 }
 
-/* AutoSave Text */
+/* AutoSave Text - Exact Figma Typography */
 .autosave-text {
-  font-size: var(--type-archivo-label);
-  font-weight: var(--type-weight-light);
-  line-height: var(--type-line-height-label);
-  letter-spacing: var(--type-letter-spacing-archivo-label);
+  color: var(--primary-sky-blue-dark-sky-blue);
+  font-family: var(--type-typeface-archivo);
+  font-size: 16px; /* Figma: --type-archivo-label */
+  font-weight: 400; /* Figma: font-weight 400 */
+  line-height: 20px; /* Figma: 20px line-height */
+  letter-spacing: 0.15px; /* Figma: --type-letter-spacing-archivo-label */
 }
 
-/* AutoSave Icons */
+/* AutoSave Icons - Exact Figma Specs */
 .autosave-icon {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-  opacity: 0.6;
+  opacity: 0.6; /* Figma: icon opacity 0.6 */
 }
 
 .autosave-icon.loading {
@@ -59,71 +62,78 @@
   }
 }
 
-/* Status-specific styling */
+/* Status: Default - "Save draft" with floppy disk */
 .autosave.default .autosave-icon {
-  color: var(--primary-sky-blue-dark-sky-blue);
+  color: var(--primary-sky-blue-dark-sky-blue); /* Figma: #04435E */
 }
 
 .autosave.default .autosave-text {
-  color: var(--primary-sky-blue-dark-sky-blue);
+  color: var(--primary-sky-blue-dark-sky-blue); /* Figma: #04435E */
+}
+
+/* Status: Disabled - Grayed out */
+.autosave.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .autosave.disabled .autosave-icon {
-  color: var(--neutral-gray-gray-300);
+  color: var(--neutral-gray-gray-300); /* Figma: #D2D5DA */
 }
 
 .autosave.disabled .autosave-text {
-  color: var(--neutral-gray-gray-300);
+  color: var(--neutral-gray-gray-300); /* Figma: #D2D5DA */
 }
 
+/* Status: Hover - Same as default */
 .autosave.hover .autosave-icon {
-  color: var(--primary-sky-blue-dark-sky-blue);
+  color: var(--primary-sky-blue-dark-sky-blue); /* Figma: #04435E */
 }
 
 .autosave.hover .autosave-text {
-  color: var(--primary-sky-blue-dark-sky-blue);
+  color: var(--primary-sky-blue-dark-sky-blue); /* Figma: #04435E */
 }
 
+/* Status: Saving - "Saving draft" with loading spinner */
 .autosave.saving .autosave-icon {
-  color: var(--primary-sky-blue-dark-sky-blue);
+  color: var(--primary-sky-blue-dark-sky-blue); /* Figma: #04435E */
 }
 
 .autosave.saving .autosave-text {
-  color: var(--primary-sky-blue-dark-sky-blue);
+  color: var(--primary-sky-blue-dark-sky-blue); /* Figma: #04435E */
 }
 
+/* Status: Auto-saving - "Auto-saving" with loading spinner */
 .autosave.auto-saving .autosave-icon {
-  color: var(--primary-sky-blue-dark-sky-blue);
+  color: var(--primary-sky-blue-dark-sky-blue); /* Figma: #04435E */
 }
 
 .autosave.auto-saving .autosave-text {
-  color: var(--primary-sky-blue-dark-sky-blue);
+  color: var(--primary-sky-blue-dark-sky-blue); /* Figma: #04435E */
 }
 
+/* Status: Saved - "Draft saved" with green check */
 .autosave.saved .autosave-icon {
-  color: var(--status-dark-green);
+  color: var(--status-dark-green); /* Figma: #227F1A */
 }
 
 .autosave.saved .autosave-text {
-  color: var(--status-dark-green);
+  color: var(--status-dark-green); /* Figma: #227F1A */
 }
 
+/* Status: Error-saving - "Unable to save" with red X */
 .autosave.error-saving .autosave-icon {
-  color: var(--status-red);
+  color: var(--status-red); /* Figma: #CE2031 */
 }
 
 .autosave.error-saving .autosave-text {
-  color: var(--status-red);
+  color: var(--status-red); /* Figma: #CE2031 */
 }
 
 /* Interactive states for clickable variants */
 .autosave.clickable.default:hover .autosave-icon,
 .autosave.clickable.default:hover .autosave-text {
   color: var(--primary-sky-blue-dark-sky-blue);
-}
-
-.autosave.clickable:active:not(.disabled) .autosave-text {
-  font-weight: var(--type-weight-medium);
 }
 
 /* Size variants */

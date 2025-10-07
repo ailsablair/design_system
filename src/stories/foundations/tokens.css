@@ -394,7 +394,7 @@
   --type-line-height-tight: 1.25;
   --type-line-height-normal: 1.5;
   --type-line-height-relaxed: 1.75;
-  --type-line-height-label: 22px;
+  --type-line-height-label: 20px; /* Figma design token match */
   --type-line-height-label-sm: 17px;
   --type-line-height-label-lg: 24px; /* Figma design token match */
   --type-line-height-footnote: 15px;
