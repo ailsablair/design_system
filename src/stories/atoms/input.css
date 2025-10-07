@@ -19,6 +19,18 @@
   gap: var(--spacing-sizing-4px);
 }
 
+.input-wrapper.small.has-label {
+  min-height: var(--sizing-height-76, 76px);
+}
+
+.input-wrapper.default.has-label {
+  min-height: var(--sizing-height-96, 96px);
+}
+
+.input-wrapper.large.has-label {
+  min-height: var(--sizing-height-114, 114px);
+}
+
 .input-label {
   font-family: var(--type-typeface-archivo);
   font-weight: var(--type-weight-medium);
