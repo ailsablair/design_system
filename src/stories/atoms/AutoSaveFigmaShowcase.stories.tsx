@@ -385,10 +385,36 @@ export const FigmaCompleteShowcase: Story = {
               lineHeight: '24px',
             }}>
               <li>• Display: flex</li>
-              <li>• Padding: 4px</li>
+              <li>• Outer padding: 8px 24px</li>
+              <li>• Inner padding: 4px</li>
               <li>• Gap: 6px</li>
-              <li>• Align: center</li>
-              <li>• Justify: center</li>
+              <li>• Border radius: 99999px</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style={{
+              margin: 0,
+              fontSize: '14px',
+              fontWeight: '600',
+              color: '#374151',
+              marginBottom: '12px',
+              fontFamily: 'Archivo, -apple-system, sans-serif',
+            }}>
+              Borders & Effects
+            </h3>
+            <ul style={{
+              margin: 0,
+              padding: 0,
+              listStyle: 'none',
+              fontSize: '14px',
+              color: '#6B7280',
+              lineHeight: '24px',
+            }}>
+              <li>• Auto-saving: 1px border</li>
+              <li>• Saving: 2px border</li>
+              <li>• Saving shadow: 2px 2px 0 #6171DF</li>
+              <li>• Default: 1px border</li>
             </ul>
           </div>
 
