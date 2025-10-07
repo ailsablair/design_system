@@ -29,8 +29,8 @@ type Story = StoryObj<typeof AutoSave>;
  * - Hover: "Save draft" with floppy disk icon (#04435E)
  * 
  * **Processing States:**
- * - Saving: "Saving draft" with loading spinner (#04435E)
- * - Auto-saving: "Auto-saving" with loading spinner (#04435E)
+ * - Auto-saving: "Auto-saving" with loading spinner, 1px border (#04435E)
+ * - Saving: "Saving draft" with loading spinner, 2px border + shadow (#04435E)
  * 
  * **Result States:**
  * - Saved: "Draft saved" with green check icon (#227F1A)
@@ -42,7 +42,7 @@ type Story = StoryObj<typeof AutoSave>;
  * - Letter spacing: 0.15px
  * - Icon size: 18x18px
  * - Icon opacity: 0.6
- * - Layout: Flexbox with 4px padding, 6px gap
+ * - Layout: Flexbox with 4px inner padding, 8px/24px outer padding, 6px gap
  */
 export const FigmaCompleteShowcase: Story = {
   render: () => (
