@@ -368,6 +368,39 @@ export const GhostLargeOpen: Story = {
   },
 };
 
+export const WarningSmallOpen: Story = {
+  args: {
+    children: 'Label',
+    size: 'small',
+    type: 'warning',
+    isOpen: true,
+    menuItems: defaultMenuItems,
+    onClick: () => console.log('Main button clicked'),
+  },
+};
+
+export const WarningDefaultOpen: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'warning',
+    isOpen: true,
+    menuItems: defaultMenuItems,
+    onClick: () => console.log('Main button clicked'),
+  },
+};
+
+export const WarningLargeOpen: Story = {
+  args: {
+    children: 'Label',
+    size: 'large',
+    type: 'warning',
+    isOpen: true,
+    menuItems: defaultMenuItems,
+    onClick: () => console.log('Main button clicked'),
+  },
+};
+
 // State variants
 export const LoadingState: Story = {
   args: {
