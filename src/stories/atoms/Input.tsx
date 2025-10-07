@@ -134,6 +134,17 @@ export const Input: React.FC<InputProps> = ({
   const isFocused = state === 'focus' || state === 'typing';
   const isTyping = state === 'typing';
   const isFilled = variant === 'simple' && (value !== undefined && value !== '');
+  const hasLabel = Boolean(label);
+
+  const wrapperClasses = [
+    'input-wrapper',
+    size,
+    variant,
+    hasLabel ? 'has-label' : 'no-label',
+    className
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   const getIconColor = () => {
     if (state === 'error') return '#CE2031';
@@ -145,7 +156,7 @@ export const Input: React.FC<InputProps> = ({
   };
 
   return (
-    <div className={`input-wrapper ${size} ${variant} ${className}`}>
+    <div className={wrapperClasses}>
       {label && (
         <label htmlFor={inputId} className={`input-label ${size}`}>
           {label}
