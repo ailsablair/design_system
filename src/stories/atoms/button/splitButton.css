@@ -432,6 +432,57 @@
   opacity: 0.8;
 }
 
+/* State variants for warning split buttons */
+.split-button.warning.hover,
+.split-button.warning:hover:not(.disabled):not(.loading) {
+  background: var(--status-dark-orange);
+  border: var(--spacing-stroke-1px) solid var(--status-dark-orange);
+  box-shadow: var(--shadow-lg);
+}
+
+.split-button.warning.hover .split-button-text,
+.split-button.warning:hover:not(.disabled):not(.loading) .split-button-text {
+  font-weight: var(--type-weight-light);
+}
+
+.split-button.warning.clicked,
+.split-button.warning:active:not(.disabled):not(.loading) {
+  background: var(--status-dark-orange);
+  border: var(--spacing-stroke-2px) solid var(--status-dark-orange);
+  box-shadow: var(--shadow-lg);
+}
+
+.split-button.warning.clicked .split-button-text,
+.split-button.warning:active:not(.disabled):not(.loading) .split-button-text {
+  font-weight: var(--type-weight-light);
+}
+
+.split-button.warning.focused,
+.split-button.warning:focus-visible:not(.disabled):not(.loading) {
+  background: var(--status-orange-alt);
+  border: var(--spacing-stroke-2px) solid var(--status-dark-orange);
+}
+
+.split-button.warning.loading {
+  background: var(--status-orange-alt);
+  border: var(--spacing-stroke-0-5px) solid var(--status-orange-alt);
+  cursor: wait;
+  pointer-events: none;
+}
+
+.split-button.warning.disabled {
+  background: var(--neutral-gray-gray-100);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-300);
+  color: var(--neutral-gray-gray-500);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.split-button.warning.disabled .split-button-icon {
+  color: var(--neutral-gray-gray-500);
+  opacity: 0.8;
+}
+
 /* Width variants */
 .split-button.full-width {
   width: 100%;
