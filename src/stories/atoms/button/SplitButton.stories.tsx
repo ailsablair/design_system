@@ -547,7 +547,7 @@ export const Interactive: Story = {
             >
               Small
             </SplitButton>
-            
+
             <SplitButton
               size="default"
               type="ghost"
@@ -556,12 +556,44 @@ export const Interactive: Story = {
             >
               Default
             </SplitButton>
-            
+
             <SplitButton
               size="large"
               type="ghost"
               onClick={() => handleMainClick('Ghost Large')}
               menuItems={createMenuItems('Ghost Large')}
+            >
+              Large
+            </SplitButton>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+          <h4 style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>Warning Split Buttons</h4>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+            <SplitButton
+              size="small"
+              type="warning"
+              onClick={() => handleMainClick('Warning Small')}
+              menuItems={createMenuItems('Warning Small')}
+            >
+              Small
+            </SplitButton>
+
+            <SplitButton
+              size="default"
+              type="warning"
+              onClick={() => handleMainClick('Warning Default')}
+              menuItems={createMenuItems('Warning Default')}
+            >
+              Default
+            </SplitButton>
+
+            <SplitButton
+              size="large"
+              type="warning"
+              onClick={() => handleMainClick('Warning Large')}
+              menuItems={createMenuItems('Warning Large')}
             >
               Large
             </SplitButton>
