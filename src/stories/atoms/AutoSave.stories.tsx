@@ -9,7 +9,7 @@ const meta: Meta<typeof AutoSave> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'AutoSave component displays the current state of auto-save functionality. Includes various states like saving, auto-saving, saved, and error states with appropriate icons and text. Matches the Figma design specifications.',
+        component: 'AutoSave component displays the current state of auto-save functionality. Includes various states like saving, auto-saving, saved, and error states with appropriate icons and text. Matches the Figma design specifications exactly with pixel-perfect implementation. For complete Figma showcase, see: Design System > Figma Showcase Files > Auto-Save Buttons Figma Showcase',
       },
     },
   },
