@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, type ButtonVariant } from './Button';
+import { Button, type ButtonVariant, type ButtonSize } from './Button';
 import type { AutoSaveProps } from './AutoSave';
 import {
   FloppyDiskIcon,
@@ -17,6 +17,14 @@ export interface AutoSaveWithTagProps extends Omit<AutoSaveProps, 'className'> {
   /** Additional CSS classes */
   className?: string;
 }
+
+const mapSizeToButtonSize = (value: AutoSaveProps['size']): ButtonSize => {
+  switch (value) {
+    case 'default':
+    default:
+      return 'default';
+  }
+};
 
 export const AutoSaveWithTag: React.FC<AutoSaveWithTagProps> = ({
   status = 'default',
@@ -108,7 +116,7 @@ export const AutoSaveWithTag: React.FC<AutoSaveWithTagProps> = ({
     onClick?.();
   };
 
-  const buttonSize = size === 'default' ? 'default' : 'default';
+  const buttonSize = mapSizeToButtonSize(size);
 
   return (
     <div className={containerClassName}>
