@@ -220,7 +220,7 @@ export const FigmaCompleteShowcase: Story = {
               color: '#9CA3AF',
               marginTop: '4px',
             }}>
-              #04435E • Loading
+              #04435E • 2px border + shadow
             </div>
           </div>
 
@@ -249,7 +249,7 @@ export const FigmaCompleteShowcase: Story = {
               color: '#9CA3AF',
               marginTop: '4px',
             }}>
-              #04435E • Automatic
+              #04435E • 1px border
             </div>
           </div>
 
