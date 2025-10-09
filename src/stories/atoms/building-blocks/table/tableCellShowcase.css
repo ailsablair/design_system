@@ -20,16 +20,16 @@
 .table-cell-showcase__title {
   margin: 0;
   font-family: var(--type-typeface-archivo);
-  font-size: var(--type-archivo-display-md, 32px);
+  font-size: var(--type-archivo-heading-2);
   font-weight: var(--type-weight-bold);
-  line-height: var(--type-line-height-display-md, 1.1);
+  line-height: var(--type-line-height-heading-2, 1.2);
   color: var(--neutral-gray-gray-900);
 }
 
 .table-cell-showcase__subtitle {
   margin: 0;
   max-width: 640px;
-  font-size: var(--type-roboto-flex-body, 16px);
+  font-size: var(--type-roboto-flex-body);
   line-height: var(--type-line-height-body, 1.5);
   color: var(--neutral-gray-gray-600);
 }
@@ -306,7 +306,7 @@
 .table-cell-showcase__section-title {
   margin: 0;
   font-family: var(--type-typeface-archivo);
-  font-size: var(--type-archivo-display-sm, 28px);
+  font-size: var(--type-archivo-heading-3);
   font-weight: var(--type-weight-semibold);
   color: var(--neutral-gray-gray-900);
 }
@@ -320,8 +320,8 @@
 .table-cell-showcase__card {
   background: var(--base-white);
   border-radius: var(--spacing-radius-8px);
-  box-shadow: var(--shadow-xs, 0 1px 3px rgba(39, 39, 39, 0.08));
-  padding: var(--spacing-sizing-20px, 20px);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-sizing-20px);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sizing-16px);
@@ -336,7 +336,7 @@
 .table-cell-showcase__card-title {
   margin: 0;
   font-family: var(--type-typeface-archivo);
-  font-size: var(--type-archivo-title-sm, 18px);
+  font-size: var(--type-archivo-heading-4);
   font-weight: var(--type-weight-medium);
   color: var(--neutral-gray-gray-700);
 }
