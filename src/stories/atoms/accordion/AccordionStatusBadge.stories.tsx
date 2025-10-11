@@ -1,5 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { AccordionStatusBadge, type AccordionStatusBadgeTone, type AccordionStatusBadgeVariant } from './AccordionStatusBadge';
+import {
+  AccordionStatusBadge,
+  type AccordionStatusBadgeTone,
+  type AccordionStatusBadgeVariant,
+  type AccordionStatusBadgeSize,
+} from './AccordionStatusBadge';
 
 const meta: Meta<typeof AccordionStatusBadge> = {
   title: 'Atoms/Accordion/StatusBadge',
