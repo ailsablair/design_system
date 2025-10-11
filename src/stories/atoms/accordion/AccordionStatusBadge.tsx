@@ -54,18 +54,20 @@ export const AccordionStatusBadge: React.FC<AccordionStatusBadgeProps> = ({
 }) => {
   const iconDimension = sizeToIconDimension[size];
 
+  const badgeClassName = [
+    'accordion-status-badge',
+    `accordion-status-badge--tone-${tone}`,
+    `accordion-status-badge--size-${size}`,
+    `accordion-status-badge--variant-${variant}`,
+    disabled ? 'accordion-status-badge--disabled' : '',
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
     <span
-      className={classNames(
-        'accordion-status-badge',
-        `accordion-status-badge--tone-${tone}`,
-        `accordion-status-badge--size-${size}`,
-        `accordion-status-badge--variant-${variant}`,
-        {
-          'accordion-status-badge--disabled': disabled,
-        },
-        className,
-      )}
+      className={badgeClassName}
       role="img"
       aria-label={ariaLabel ?? `${tone} status`}
     >
