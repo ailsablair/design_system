@@ -1,0 +1,170 @@
+.accordion-status-badge {
+  --badge-border-color-default: var(--neutral-gray-gray-400);
+  --badge-border-color-active: var(--neutral-gray-gray-400);
+  --badge-fill-color: var(--badge-border-color-active);
+  --badge-icon-color-default: var(--neutral-gray-gray-500);
+  --badge-icon-color-active: var(--badge-icon-color-default);
+  --badge-icon-color-filled: var(--base-white);
+  --badge-icon-opacity-default: var(--icon-opacity-medium);
+  --badge-icon-opacity-active: var(--icon-opacity-full);
+  --badge-icon-opacity-filled: var(--icon-opacity-full);
+  --badge-border-color-current: var(--badge-border-color-default);
+  --badge-icon-color-current: var(--badge-icon-color-default);
+  --badge-icon-opacity-current: var(--badge-icon-opacity-default);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--spacing-radius-full);
+  background: transparent;
+  transition: background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.accordion-status-badge::before {
+  content: '';
+  position: absolute;
+  inset: var(--badge-circle-inset, var(--spacing-sizing-2px));
+  border-radius: inherit;
+  border: var(--spacing-stroke-1px) dashed var(--badge-border-color-current);
+  transition: border-color var(--transition-fast), opacity var(--transition-fast);
+}
+
+.accordion-status-badge__icon {
+  position: relative;
+  z-index: 1;
+  color: var(--badge-icon-color-current);
+  opacity: var(--badge-icon-opacity-current);
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* ===== Size variants ===== */
+
+.accordion-status-badge--size-small {
+  width: calc(var(--spacing-sizing-24px) + var(--spacing-sizing-2px));
+  height: calc(var(--spacing-sizing-24px) + var(--spacing-sizing-2px));
+  --badge-circle-inset: var(--spacing-sizing-2px);
+}
+
+.accordion-status-badge--size-default {
+  width: calc(var(--spacing-sizing-48px) + var(--spacing-sizing-2px));
+  height: calc(var(--spacing-sizing-48px) + var(--spacing-sizing-2px));
+  --badge-circle-inset: var(--spacing-sizing-1px);
+}
+
+.accordion-status-badge--size-large {
+  width: var(--spacing-sizing-64px);
+  height: var(--spacing-sizing-64px);
+  --badge-circle-inset: var(--spacing-sizing-1px);
+}
+
+/* ===== Variants ===== */
+
+.accordion-status-badge--variant-default {
+  --badge-border-color-current: var(--badge-border-color-default);
+  --badge-icon-color-current: var(--badge-icon-color-default);
+  --badge-icon-opacity-current: var(--badge-icon-opacity-default);
+}
+
+.accordion-status-badge--variant-active {
+  --badge-border-color-current: var(--badge-border-color-active);
+  --badge-icon-color-current: var(--badge-icon-color-active);
+  --badge-icon-opacity-current: var(--badge-icon-opacity-active);
+}
+
+.accordion-status-badge--variant-filled {
+  background: var(--badge-fill-color);
+  --badge-icon-color-current: var(--badge-icon-color-filled);
+  --badge-icon-opacity-current: var(--badge-icon-opacity-filled);
+}
+
+.accordion-status-badge--variant-filled::before {
+  display: none;
+}
+
+/* ===== Disabled ===== */
+
+.accordion-status-badge--disabled {
+  --badge-border-color-current: var(--neutral-gray-gray-300);
+  --badge-icon-color-current: var(--neutral-gray-gray-400);
+  --badge-icon-opacity-current: var(--icon-opacity-medium);
+  background: transparent;
+}
+
+.accordion-status-badge--disabled::before {
+  border-color: var(--neutral-gray-gray-300);
+}
+
+/* ===== Tone mappings ===== */
+
+.accordion-status-badge--tone-warning {
+  --badge-border-color-default: var(--neutral-gray-gray-400);
+  --badge-border-color-active: var(--status-orange-alt);
+  --badge-fill-color: var(--status-orange-alt);
+  --badge-icon-color-default: var(--status-orange-light);
+  --badge-icon-color-active: var(--status-orange);
+}
+
+.accordion-status-badge--tone-complete {
+  --badge-border-color-default: var(--neutral-gray-gray-400);
+  --badge-border-color-active: var(--status-dark-green);
+  --badge-fill-color: var(--status-dark-green);
+  --badge-icon-color-default: var(--status-dark-green);
+  --badge-icon-opacity-default: 0.5;
+  --badge-icon-color-active: var(--status-dark-green);
+}
+
+.accordion-status-badge--tone-locked {
+  --badge-border-color-default: var(--neutral-gray-gray-400);
+  --badge-border-color-active: var(--neutral-gray-gray-500);
+  --badge-icon-color-default: var(--neutral-gray-gray-300);
+  --badge-icon-color-active: var(--neutral-gray-gray-500);
+  --badge-fill-color: var(--neutral-gray-gray-500);
+  --badge-icon-color-filled: var(--base-white);
+}
+
+.accordion-status-badge--tone-comments {
+  --badge-border-color-default: var(--neutral-gray-gray-400);
+  --badge-border-color-active: var(--primary-sky-blue-500);
+  --badge-fill-color: var(--primary-sky-blue-500);
+  --badge-icon-color-default: var(--primary-sky-blue-200);
+  --badge-icon-color-active: var(--primary-sky-blue-500);
+}
+
+.accordion-status-badge--tone-notifications {
+  --badge-border-color-default: var(--neutral-gray-gray-400);
+  --badge-border-color-active: var(--primary-blue-blue);
+  --badge-fill-color: var(--primary-blue-blue);
+  --badge-icon-color-default: var(--primary-blue-blue-200);
+  --badge-icon-color-active: var(--primary-blue-blue);
+}
+
+.accordion-status-badge--tone-error {
+  --badge-border-color-default: var(--neutral-gray-gray-400);
+  --badge-border-color-active: var(--status-red);
+  --badge-fill-color: var(--status-red);
+  --badge-icon-color-default: var(--status-red);
+  --badge-icon-opacity-default: 0.25;
+  --badge-icon-color-active: var(--status-red);
+}
+
+.accordion-status-badge--tone-note {
+  --badge-border-color-default: var(--neutral-gray-gray-400);
+  --badge-border-color-active: var(--status-purple);
+  --badge-fill-color: var(--status-purple);
+  --badge-icon-color-default: var(--status-purple-light);
+  --badge-icon-color-active: var(--status-purple);
+}
+
+/* ===== Reduced motion ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion-status-badge,
+  .accordion-status-badge::before,
+  .accordion-status-badge__icon {
+    transition: none;
+  }
+}
