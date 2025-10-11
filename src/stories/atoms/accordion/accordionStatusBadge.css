@@ -1,3 +1,5 @@
+@import '../../foundations/tokens.css';
+
 .accordion-status-badge {
   --badge-border-color-default: var(--neutral-gray-gray-400);
   --badge-border-color-active: var(--neutral-gray-gray-400);
@@ -113,7 +115,7 @@
   --badge-border-color-active: var(--status-dark-green);
   --badge-fill-color: var(--status-dark-green);
   --badge-icon-color-default: var(--status-dark-green);
-  --badge-icon-opacity-default: 0.5;
+  --badge-icon-opacity-default: var(--icon-opacity-subtle);
   --badge-icon-color-active: var(--status-dark-green);
 }
 
@@ -147,7 +149,7 @@
   --badge-border-color-active: var(--status-red);
   --badge-fill-color: var(--status-red);
   --badge-icon-color-default: var(--status-red);
-  --badge-icon-opacity-default: 0.25;
+  --badge-icon-opacity-default: var(--icon-opacity-subtle);
   --badge-icon-color-active: var(--status-red);
 }
 
