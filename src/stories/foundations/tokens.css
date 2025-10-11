@@ -246,6 +246,7 @@
   --status-orange: #EE5622;
   --status-orange-alt: #F4A403;
   --status-orange-light: #FEF4DA;
+  --status-orange-icon: #FCE4A5;
   --status-dark-orange: #D07C06;
   --status-green: #70CC67;
   --status-green-light: #F2FFF1;
@@ -254,6 +255,8 @@
   --status-purple-light: #FBF7FF;
   --status-info-blue: #366F97;
   --status-info-blue-light: #F5FCFF;
+  --status-comments-icon: #B6E5F9;
+  --status-notifications-icon: #C5CAED;
 
   /* === EXTENDED STATUS PALETTES === */
   /* Red Status Palette */
