@@ -114,7 +114,7 @@
   --badge-border-color-default: var(--secondary-blue-gray);
   --badge-border-color-active: var(--status-orange-alt);
   --badge-fill-color: var(--status-orange-alt);
-  --badge-icon-color-default: var(--status-orange-light);
+  --badge-icon-color-default: var(--status-orange-icon);
   --badge-icon-color-active: var(--status-orange-alt);
 }
 
@@ -148,7 +148,7 @@
   --badge-border-color-default: var(--secondary-blue-gray);
   --badge-border-color-active: var(--primary-sky-blue-500);
   --badge-fill-color: var(--primary-sky-blue-500);
-  --badge-icon-color-default: var(--primary-sky-blue-200);
+  --badge-icon-color-default: var(--status-comments-icon);
   --badge-icon-color-active: var(--primary-sky-blue-500);
 }
 
@@ -160,7 +160,7 @@
   --badge-border-color-default: var(--secondary-blue-gray);
   --badge-border-color-active: var(--primary-blue-blue);
   --badge-fill-color: var(--primary-blue-blue);
-  --badge-icon-color-default: var(--primary-blue-blue-200);
+  --badge-icon-color-default: var(--status-notifications-icon);
   --badge-icon-color-active: var(--primary-blue-blue);
 }
 
