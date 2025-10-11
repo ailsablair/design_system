@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import { Icon, type IconName } from '../../foundations/Icon';
 import './accordionStatusBadge.css';
 
