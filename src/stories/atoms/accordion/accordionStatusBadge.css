@@ -91,8 +91,8 @@
 
 .accordion-status-badge--disabled {
   --badge-border-color-current: var(--neutral-gray-gray-300);
-  --badge-icon-color-current: var(--neutral-gray-gray-400);
-  --badge-icon-opacity-current: var(--icon-opacity-medium);
+  --badge-icon-color-current: var(--neutral-gray-gray-300);
+  --badge-icon-opacity-current: var(--icon-opacity-full);
   background: transparent;
 }
 
@@ -100,44 +100,64 @@
   border-color: var(--neutral-gray-gray-300);
 }
 
+.accordion-status-badge--tone-locked.accordion-status-badge--disabled {
+  --badge-icon-opacity-current: 0.7;
+}
+
+.accordion-status-badge--tone-complete.accordion-status-badge--disabled {
+  --badge-icon-opacity-current: 0.6;
+}
+
 /* ===== Tone mappings ===== */
 
 .accordion-status-badge--tone-warning {
-  --badge-border-color-default: var(--neutral-gray-gray-400);
+  --badge-border-color-default: var(--secondary-blue-gray);
   --badge-border-color-active: var(--status-orange-alt);
   --badge-fill-color: var(--status-orange-alt);
   --badge-icon-color-default: var(--status-orange-light);
-  --badge-icon-color-active: var(--status-orange);
+  --badge-icon-color-active: var(--status-orange-alt);
 }
 
 .accordion-status-badge--tone-complete {
-  --badge-border-color-default: var(--neutral-gray-gray-400);
+  --badge-border-color-default: var(--secondary-blue-gray);
   --badge-border-color-active: var(--status-dark-green);
   --badge-fill-color: var(--status-dark-green);
   --badge-icon-color-default: var(--status-dark-green);
-  --badge-icon-opacity-default: var(--icon-opacity-subtle);
+  --badge-icon-opacity-default: 0.5;
   --badge-icon-color-active: var(--status-dark-green);
 }
 
+.accordion-status-badge--tone-complete.accordion-status-badge--size-default {
+  --badge-icon-opacity-default: 0.3;
+}
+
+.accordion-status-badge--tone-complete.accordion-status-badge--size-large {
+  --badge-icon-opacity-default: 0.5;
+}
+
 .accordion-status-badge--tone-locked {
-  --badge-border-color-default: var(--neutral-gray-gray-400);
-  --badge-border-color-active: var(--neutral-gray-gray-500);
-  --badge-icon-color-default: var(--neutral-gray-gray-300);
-  --badge-icon-color-active: var(--neutral-gray-gray-500);
-  --badge-fill-color: var(--neutral-gray-gray-500);
+  --badge-border-color-default: var(--secondary-blue-gray);
+  --badge-border-color-active: var(--secondary-blue-gray);
+  --badge-icon-color-default: var(--secondary-blue-gray-light);
+  --badge-icon-color-active: var(--secondary-blue-gray);
+  --badge-fill-color: var(--secondary-blue-gray);
   --badge-icon-color-filled: var(--base-white);
 }
 
 .accordion-status-badge--tone-comments {
-  --badge-border-color-default: var(--neutral-gray-gray-400);
+  --badge-border-color-default: var(--secondary-blue-gray);
   --badge-border-color-active: var(--primary-sky-blue-500);
   --badge-fill-color: var(--primary-sky-blue-500);
   --badge-icon-color-default: var(--primary-sky-blue-200);
   --badge-icon-color-active: var(--primary-sky-blue-500);
 }
 
+.accordion-status-badge--tone-comments.accordion-status-badge--disabled {
+  --badge-icon-opacity-current: 0.7;
+}
+
 .accordion-status-badge--tone-notifications {
-  --badge-border-color-default: var(--neutral-gray-gray-400);
+  --badge-border-color-default: var(--secondary-blue-gray);
   --badge-border-color-active: var(--primary-blue-blue);
   --badge-fill-color: var(--primary-blue-blue);
   --badge-icon-color-default: var(--primary-blue-blue-200);
@@ -145,19 +165,20 @@
 }
 
 .accordion-status-badge--tone-error {
-  --badge-border-color-default: var(--neutral-gray-gray-400);
+  --badge-border-color-default: var(--secondary-blue-gray);
   --badge-border-color-active: var(--status-red);
   --badge-fill-color: var(--status-red);
   --badge-icon-color-default: var(--status-red);
-  --badge-icon-opacity-default: var(--icon-opacity-subtle);
+  --badge-icon-opacity-default: 0.25;
   --badge-icon-color-active: var(--status-red);
 }
 
 .accordion-status-badge--tone-note {
-  --badge-border-color-default: var(--neutral-gray-gray-400);
+  --badge-border-color-default: var(--secondary-blue-gray);
   --badge-border-color-active: var(--status-purple);
   --badge-fill-color: var(--status-purple);
-  --badge-icon-color-default: var(--status-purple-light);
+  --badge-icon-color-default: var(--status-purple);
+  --badge-icon-opacity-default: 0.4;
   --badge-icon-color-active: var(--status-purple);
 }
 
