@@ -575,7 +575,7 @@ export const UsageExamples: Story = {
             justifyContent: 'center',
             width: '36px',
             height: '36px',
-            backgroundColor: 'var(--semantic-success-500)',
+            backgroundColor: 'var(--semantic-success)',
             border: 'none',
             borderRadius: 'var(--spacing-radius-6px)',
             cursor: 'pointer',
@@ -590,7 +590,7 @@ export const UsageExamples: Story = {
             justifyContent: 'center',
             width: '36px',
             height: '36px',
-            backgroundColor: 'var(--semantic-error-500)',
+            backgroundColor: 'var(--semantic-error)',
             border: 'none',
             borderRadius: 'var(--spacing-radius-6px)',
             cursor: 'pointer',
@@ -671,9 +671,9 @@ export const ColorAndOpacity: Story = {
   render: () => {
     const colors = [
       { name: 'Primary Blue', value: 'var(--primary-blue-blue-500)' },
-      { name: 'Success', value: 'var(--semantic-success-500)' },
-      { name: 'Error', value: 'var(--semantic-error-500)' },
-      { name: 'Warning', value: 'var(--semantic-warning-500)' },
+      { name: 'Success', value: 'var(--semantic-success)' },
+      { name: 'Error', value: 'var(--semantic-error)' },
+      { name: 'Warning', value: 'var(--semantic-warning)' },
       { name: 'Neutral', value: 'var(--neutral-gray-gray-600)' },
     ];
     
@@ -748,7 +748,7 @@ export const ColorAndOpacity: Story = {
                   name="favorite" 
                   size="lg" 
                   opacity={opacity}
-                  color="var(--semantic-error-500)"
+                  color="var(--semantic-error)"
                   aria-label={`Heart icon with ${opacity} opacity`}
                 />
                 <span style={{ 

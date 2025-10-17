@@ -190,7 +190,7 @@ export const ComprehensiveGuide: Story = {
                   <Icon 
                     name={`star${variant.suffix}` as MaterialIconFilledName} 
                     size="lg" 
-                    color="var(--semantic-warning-500)"
+                    color="var(--semantic-warning)"
                     aria-label={`Star ${variant.label} example`}
                   />
                   <Icon 
@@ -377,7 +377,7 @@ export const ComprehensiveGuide: Story = {
 {`<Icon 
   name="notifications" 
   size="lg"
-  color="var(--semantic-error-500)"
+  color="var(--semantic-error)"
   opacity="strong"
   aria-label="Notifications"
 />`}
@@ -425,13 +425,13 @@ export const MigrationGuide: Story = {
           ❌ Before (Direct MUI Imports)
         </h2>
         <pre style={{ 
-          backgroundColor: 'var(--semantic-error-100)',
+          backgroundColor: 'var(--semantic-error-light)',
           padding: '16px',
           borderRadius: 'var(--spacing-radius-8px)',
           fontSize: '14px',
           color: 'var(--neutral-gray-gray-800)',
           overflow: 'auto',
-          border: '1px solid var(--semantic-error-300)'
+          border: '1px solid var(--semantic-error)'
         }}>
 {`import { Search, FilterList, Delete } from '@mui/icons-material';
 
@@ -452,20 +452,20 @@ export const MigrationGuide: Story = {
           ✅ After (Centralized Icon Component)
         </h2>
         <pre style={{ 
-          backgroundColor: 'var(--semantic-success-100)',
+          backgroundColor: 'var(--semantic-success-light)',
           padding: '16px',
           borderRadius: 'var(--spacing-radius-8px)',
           fontSize: '14px',
           color: 'var(--neutral-gray-gray-800)',
           overflow: 'auto',
-          border: '1px solid var(--semantic-success-300)'
+          border: '1px solid var(--semantic-success)'
         }}>
 {`import { Icon } from './foundations/Icon';
 
 // Consistent sizing and styling with design tokens
 <Icon name="search" />
 <Icon name="filter-list" size="lg" />
-<Icon name="delete" color="var(--semantic-error-500)" />`}
+<Icon name="delete" color="var(--semantic-error)" />`}
         </pre>
       </div>
 

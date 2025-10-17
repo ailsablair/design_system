@@ -8,7 +8,7 @@ const meta: Meta<typeof Logo> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'The ECHO logo is available in multiple variants and color schemes. The logomark features a distinctive circular design with geometric elements representing growth and innovation. Use the appropriate variant based on your layout needs and ensure proper contrast for accessibility.',
+        component: 'The Echo logo is available in multiple variants and color schemes. The logomark features a distinctive circular design with geometric elements representing growth and innovation. Use the appropriate variant based on your layout needs and ensure proper contrast for accessibility.',
       },
     },
   },
@@ -217,7 +217,7 @@ export const WordmarkVariations: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'ECHO wordmark in different color variations as shown in the Figma designs.',
+        story: 'Echo wordmark in different color variations as shown in the Figma designs.',
       },
     },
   },

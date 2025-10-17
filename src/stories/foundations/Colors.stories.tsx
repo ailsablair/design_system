@@ -10,24 +10,24 @@ const meta: Meta = {
         component: `
 # Echo Design System Color Foundation
 
-Our comprehensive color system includes **151 design tokens** organized into semantic palettes that ensure accessibility, consistency, and visual hierarchy across all interfaces.
+Our comprehensive color system includes design tokens organized into semantic palettes that ensure accessibility, consistency, and visual hierarchy across all interfaces.
 
 ## Color System Overview
 
-### 🎨 Primary Palettes (110 tokens)
+### 🎨 Primary Palettes
 - **Blue Palette**: Traditional brand colors (10 tokens)
 - **Sky Blue Palette**: Interactive states and focus indicators (24 tokens)
 - **Yellow Palette**: Attention, highlights, and warnings (25 tokens)
 - **Seafoam Green Palette**: Nature, growth, and positive actions (24 tokens)
 - **Dark Blue**: Accent brand color (1 token)
 
-### 🔘 Neutral & Base Colors (17 tokens)
+### 🔘 Neutral & Base Colors
 - **Neutral Grays**: Professional neutral palette (10 tokens)
 - **Extended Base Grays**: Additional neutral variations (11 tokens)
 - **Pure Base Colors**: High contrast colors (3 tokens)
 - **Peach Cream Base**: Warm neutral variations (3 tokens)
 
-### ⚠️ Status & Feedback Colors (43 tokens)
+### ⚠️ Status & Feedback Colors
 - **Echo Status Colors**: Branded validation colors (4 tokens)
 - **Extended Red Palette**: Error states and critical alerts (10 tokens)
 - **Extended Orange Palette**: Warning states and attention (10 tokens)
@@ -56,7 +56,7 @@ All colors follow consistent naming conventions:
 
 ✅ **WCAG 2.1 AA Compliance**: All color combinations meet minimum contrast ratios
 ✅ **Color Independence**: Information is never conveyed through color alone
-��� **Focus Indicators**: High contrast focus states for keyboard navigation
+✅ **Focus Indicators**: High contrast focus states for keyboard navigation
 ✅ **Screen Reader Support**: Semantic color naming and proper markup
 
 ## Usage Guidelines
@@ -177,7 +177,7 @@ export const ColorSystemOverview: Story = {
             🎨 Primary Palettes
           </h3>
           <p style={{ color: '#6b7280', marginBottom: '1rem', fontSize: '0.875rem' }}>
-            110 tokens for brand identity and key interface elements with comprehensive tints and shades
+            Comprehensive palettes for brand identity and key interface elements with extensive tints and shades
           </p>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
@@ -208,7 +208,7 @@ export const ColorSystemOverview: Story = {
             🔘 Neutral & Base Colors
           </h3>
           <p style={{ color: '#6b7280', marginBottom: '1rem', fontSize: '0.875rem' }}>
-            17 tokens for text, backgrounds, and structural elements
+            Core tokens for text, backgrounds, and structural elements
           </p>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
@@ -236,7 +236,7 @@ export const ColorSystemOverview: Story = {
             ⚠️ Status & Feedback
           </h3>
           <p style={{ color: '#6b7280', marginBottom: '1rem', fontSize: '0.875rem' }}>
-            43 tokens for validation states and user feedback
+            Extensive tokens for validation states and user feedback
           </p>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             <li style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
@@ -650,7 +650,7 @@ export const DesignTokensUsage: Story = {
           💡 Implementation Guide
         </h3>
         <p style={{ color: '#92400e', fontSize: '0.875rem', margin: 0 }}>
-          These examples show how to use the 67 design tokens in real CSS and components. Copy the patterns below for consistent theming.
+          These examples show how to use the design tokens in real CSS and components. Copy the patterns below for consistent theming.
         </p>
       </div>
 

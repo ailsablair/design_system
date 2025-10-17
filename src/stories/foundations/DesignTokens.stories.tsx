@@ -30,7 +30,7 @@ const meta: Meta = {
     layout: 'padded',
     docs: {
       description: {
-        component: 'Design tokens are the foundation of our design system. They define consistent values for colors, spacing, typography, and other design properties. Our tokens ensure Figma design specifications are faithfully implemented across all components. Now enhanced with complete Material UI 6/7 theme integration for superior interactions while maintaining Echo visual consistency.',
+        component: 'Design tokens are the foundation of our design system. They define consistent values for colors, spacing, typography, and other design properties. Our tokens ensure Figma design specifications are faithfully implemented across all components. Now enhanced with complete MUI 7 theme integration for superior interactions while maintaining Echo visual consistency.',
       },
     },
   },
