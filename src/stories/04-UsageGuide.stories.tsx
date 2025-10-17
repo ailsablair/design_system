@@ -43,7 +43,7 @@ export const UsageGuide: Story = {
         color: '#666',
         marginBottom: '32px'
       }}>
-        This comprehensive guide helps developers implement the Echo Design System effectively in their projects, including the new MUI 6/7 integration for enhanced interactions. Follow these patterns and examples for consistent, accessible, and performant implementations.
+        This comprehensive guide helps developers implement the Echo Design System effectively in their projects, including the MUI 7 integration for enhanced interactions. Follow these patterns and examples for consistent, accessible, and performant implementations.
       </p>
 
       <div style={{ marginBottom: '40px' }}>
@@ -79,10 +79,7 @@ export const UsageGuide: Story = {
               fontSize: '13px',
               marginBottom: '12px'
             }}>
-              <div># Clone or access the design system</div>
-              <div>git clone [repository-url]</div>
-              <div>cd design_system</div>
-              <div style={{ marginTop: '8px' }}># Install dependencies</div>
+              <div># Install dependencies</div>
               <div>npm install</div>
               <div style={{ marginTop: '8px' }}># Start Storybook for development</div>
               <div>npm run storybook</div>

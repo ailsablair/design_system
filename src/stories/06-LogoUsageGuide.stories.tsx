@@ -8,9 +8,9 @@ const meta: Meta = {
     docs: {
       description: {
         component: `
-# ECHO Logo Usage Guide
+# Echo Logo Usage Guide
 
-The ECHO logo is a distinctive brand mark that represents our identity. This guide provides comprehensive instructions for proper logo usage across all applications.
+The Echo logo is a distinctive brand mark that represents our identity. This guide provides comprehensive instructions for proper logo usage across all applications.
         `,
       },
     },
@@ -35,7 +35,7 @@ export const LogoUsageGuide: Story = {
         marginBottom: '24px',
         color: '#1a1a1a'
       }}>
-        ECHO Logo Usage Guide
+        Echo Logo Usage Guide
       </h1>
       
       <p style={{ 
@@ -43,7 +43,7 @@ export const LogoUsageGuide: Story = {
         color: '#666',
         marginBottom: '32px'
       }}>
-        The ECHO logo is a distinctive brand mark that represents our identity. This guide provides comprehensive instructions for proper logo usage across all applications.
+        The Echo logo is a distinctive brand mark that represents our identity. This guide provides comprehensive instructions for proper logo usage across all applications.
       </p>
 
       <div style={{ marginBottom: '40px' }}>
@@ -71,7 +71,7 @@ export const LogoUsageGuide: Story = {
               Logomark
             </h3>
             <p style={{ fontSize: '14px', marginBottom: '12px' }}>
-              The ECHO logomark is a circular symbol featuring geometric elements that can be used independently when space is limited or when the brand name is well-established in context.
+              The Echo logomark is a circular symbol featuring geometric elements that can be used independently when space is limited or when the brand name is well-established in context.
             </p>
             <div style={{ marginBottom: '12px' }}>
               <strong style={{ fontSize: '14px' }}>Best for:</strong>
@@ -95,7 +95,7 @@ export const LogoUsageGuide: Story = {
               Wordmark
             </h3>
             <p style={{ fontSize: '14px', marginBottom: '12px' }}>
-              The ECHO wordmark consists of clean, modern typography spelling "ECHO" and should be used when the symbol alone might not provide sufficient brand recognition.
+              The Echo wordmark consists of clean, modern typography spelling "Echo" and should be used when the symbol alone might not provide sufficient brand recognition.
             </p>
             <div style={{ marginBottom: '12px' }}>
               <strong style={{ fontSize: '14px' }}>Best for:</strong>
@@ -515,7 +515,7 @@ export const LogoUsageGuide: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Comprehensive guide for proper ECHO logo usage, including variants, color specifications, sizing guidelines, and best practices.',
+        story: 'Comprehensive guide for proper Echo logo usage, including variants, color specifications, sizing guidelines, and best practices.',
       },
     },
   },

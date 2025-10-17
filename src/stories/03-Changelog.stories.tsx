@@ -131,7 +131,7 @@ export const Changelog: Story = {
                   borderRadius: 'var(--spacing-radius-4px)' 
                 }}>
                   <div style={{ fontWeight: 'var(--type-weight-semibold)', marginBottom: 'var(--spacing-sizing-4px)' }}>
-                    ✍��� Display Typography
+                    ✍️ Display Typography
                   </div>
                   <div style={{ fontFamily: 'Monaco, Consolas, monospace', fontSize: 'var(--type-size-xs)' }}>
                     --type-size-display-sm (48px)<br/>
