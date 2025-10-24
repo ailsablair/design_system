@@ -179,7 +179,14 @@ export const Tab: React.FC<TabProps> = ({
 
   // For default and secondary types, render as traditional tabs with bottom line
   return (
-    <div className={`tab-wrapper ${className}`}>
+    <div
+      className={`tab-wrapper ${size} ${type} ${actualState} ${className}`}
+      onClick={handleClick}
+      role="tab"
+      aria-selected={actualState === 'active'}
+      aria-disabled={disabled}
+      tabIndex={disabled ? -1 : 0}
+    >
       <div className="tab-label">
         <div className="tab-label-content">
           <span className="tab-icon tab-leading-icon">
@@ -193,9 +200,9 @@ export const Tab: React.FC<TabProps> = ({
           </span>
 
           {showBadge && badge && (
-            <span className={`tab-badge ${badgeSize} ${type}`}>
-              {badge}
-            </span>
+            <div className={`tab-badge ${badgeSize} ${type}`}>
+              <div className="tab-badge-number">{badge}</div>
+            </div>
           )}
         </div>
       </div>
