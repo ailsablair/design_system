@@ -11,6 +11,20 @@
   align-items: flex-start;
   position: relative;
   min-width: fit-content;
+  cursor: pointer;
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.tab-wrapper:focus-visible {
+  outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
+  outline-offset: var(--spacing-sizing-2px);
+  border-radius: var(--spacing-radius-4px);
+}
+
+.tab-wrapper.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* ===============================================
