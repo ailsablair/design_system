@@ -524,13 +524,21 @@
 }
 
 .split-button-menu-item:hover:not(.disabled) {
-  background: var(--neutral-gray-gray-50);
+  color: var(--primary-sky-blue-dark-sky-blue);
+  background: var(--base-white);
 }
 
 .split-button-menu-item.focused {
-  background: var(--primary-blue-blue-50);
+  background: var(--base-white);
   outline: var(--spacing-stroke-2px) solid var(--primary-blue-blue-200);
   outline-offset: -2px;
+}
+
+.split-button-menu-item.clicked,
+.split-button-menu-item:active:not(.disabled) {
+  color: var(--base-black);
+  font-weight: var(--type-weight-semibold);
+  background: var(--base-white);
 }
 
 .split-button-menu-item.disabled {
