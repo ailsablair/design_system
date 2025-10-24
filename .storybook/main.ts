@@ -9,6 +9,9 @@ const config: StorybookConfig = {
     "@storybook/addon-docs",
     "@storybook/addon-a11y"
   ],
+  "managerEntries": [
+    "./.storybook/manager.ts"
+  ],
   "framework": {
     "name": "@storybook/react-vite",
     "options": {}
