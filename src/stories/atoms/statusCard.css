@@ -1,0 +1,47 @@
+@import '../foundations/tokens.css';
+
+.status-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-8px);
+  border-radius: var(--spacing-radius-4px);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
+  background: var(--base-white);
+  font-family: var(--type-typeface-archivo);
+  color: var(--base-black);
+  min-width: 468px;
+}
+
+/* sizes */
+.status-card--small { padding: var(--spacing-sizing-16px); }
+.status-card--default { padding: var(--spacing-sizing-16px) var(--spacing-sizing-12px) var(--spacing-sizing-8px); }
+.status-card--large { padding: var(--spacing-sizing-20px); }
+
+.status-card__content {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sizing-8px);
+}
+
+.status-card__icon { padding: var(--spacing-sizing-16px) var(--spacing-sizing-16px) var(--spacing-sizing-24px) var(--spacing-sizing-8px); }
+
+.status-card__text { display: flex; flex-direction: column; gap: var(--spacing-sizing-12px); flex: 1; padding: var(--spacing-sizing-8px) 0 var(--spacing-sizing-4px); }
+
+.status-card__title { margin: 0; font-weight: var(--type-weight-medium); letter-spacing: -0.25px; line-height: 1; }
+.status-card--small .status-card__title { font-size: var(--type-archivo-heading-4); }
+.status-card--default .status-card__title { font-size: var(--type-archivo-heading-4); }
+.status-card--large .status-card__title { font-size: var(--type-archivo-heading-3); }
+
+.status-card__description { margin: 0; width: 344px; height: 64px; display: flex; align-items: center; font-family: var(--type-typeface-roboto-flex); font-size: var(--type-roboto-flex-body-sm); letter-spacing: -0.15px; }
+
+.status-card__close { position: relative; margin-left: auto; background: transparent; border: none; cursor: pointer; padding: var(--spacing-sizing-4px); border-radius: var(--spacing-radius-2px); }
+.status-card__close:hover { background: var(--neutral-gray-gray-100); }
+.status-card__close:focus-visible { outline: 2px solid var(--primary-blue-blue); outline-offset: 2px; }
+
+.status-card__actions { display: flex; gap: var(--spacing-sizing-6px); margin-bottom: var(--spacing-sizing-16px); }
+
+/* semantic colours */
+.status-card--warning .status-card__title { color: var(--status-orange-500); }
+.status-card--error .status-card__title { color: var(--status-red-500); }
+.status-card--info .status-card__title { color: var(--status-info-blue); }
+.status-card--success .status-card__title { color: var(--status-dark-green); }
