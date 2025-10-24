@@ -88,37 +88,11 @@
   background: var(--secondary-navy-light);
 }
 
-.tab-badge.x-small::after {
-  content: attr(data-badge);
-  display: flex;
-  width: 14px;
-  height: 14px;
-  flex-direction: column;
-  justify-content: center;
-  color: var(--secondary-navy);
-  font-size: var(--type-archivo-footnote);
-  line-height: var(--type-line-height-footnote);
-  letter-spacing: var(--type-letter-spacing-archivo-footnote);
-  position: absolute;
-  left: 1px;
-  top: 1px;
-}
-
 .tab-badge.small {
   width: 18px;
   height: 18px;
   padding: 2px;
   background: var(--secondary-navy-light);
-}
-
-.tab-badge.small::before {
-  content: '';
-  display: flex;
-  width: 14px;
-  height: 14px;
-  position: absolute;
-  left: 2px;
-  top: 2px;
 }
 
 .tab-badge.default {
@@ -128,14 +102,22 @@
   background: var(--secondary-navy-light);
 }
 
-.tab-badge.default::before {
-  content: '';
+/* Badge number inner element */
+.tab-badge-number {
   display: flex;
   width: 14px;
   height: 14px;
-  position: absolute;
-  left: 4px;
-  top: 4px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--secondary-navy);
+  text-align: center;
+  font-family: var(--type-typeface-archivo);
+  font-size: var(--type-archivo-footnote);
+  font-style: normal;
+  font-weight: var(--type-weight-bold);
+  line-height: var(--type-line-height-footnote);
+  letter-spacing: var(--type-letter-spacing-archivo-footnote);
 }
 
 /* Badge type color variants */
@@ -147,21 +129,7 @@
   background: var(--primary-seafoam-seafoam);
 }
 
-/* Badge text content */
-.tab-badge.small,
-.tab-badge.default {
-  color: var(--secondary-navy);
-  font-size: var(--type-archivo-footnote);
-  line-height: var(--type-line-height-footnote);
-  letter-spacing: var(--type-letter-spacing-archivo-footnote);
-}
-
-.tab-badge.x-small {
-  color: var(--secondary-navy);
-}
-
-/* Secondary type badge colors */
-.tab-badge.secondary {
+.tab-badge.secondary .tab-badge-number {
   color: var(--primary-seafoam-extra-dark-seafoam);
 }
 
