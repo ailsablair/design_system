@@ -185,22 +185,23 @@
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease;
   flex-shrink: 0;
+  margin-left: -1px; /* overlap input border to attach flush */
 }
 
 .search-button.small {
-  min-height: 30px;
+  height: 30px; /* match input height */
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-12px);
   gap: var(--spacing-sizing-12px);
 }
 
 .search-button.default {
-  min-height: 42px;
+  height: 44px; /* match input height */
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px);
   gap: var(--spacing-sizing-12px);
 }
 
 .search-button.large {
-  min-height: 52px;
+  height: 54px; /* match input height */
   padding: var(--spacing-stroke-3px) var(--spacing-sizing-16px);
   gap: var(--spacing-sizing-12px);
 }
