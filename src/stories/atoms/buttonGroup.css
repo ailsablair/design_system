@@ -49,15 +49,15 @@
 }
 
 .button-group--size-small {
-  min-height: 30px;
+  min-height: var(--sizing-button-height-sm);
 }
 
 .button-group--size-default {
-  min-height: 42px;
+  min-height: var(--sizing-button-height-default);
 }
 
 .button-group--size-large {
-  min-height: 52px;
+  min-height: var(--sizing-button-height-lg);
 }
 
 /* Type-specific styling for different button group layouts */
@@ -121,10 +121,10 @@
 
 /* Many-icons button group styling (toolbar style) */
 .button-group--type-many-icons.button-group--connected .button {
-  min-width: 30px;
-  max-width: 30px;
-  min-height: 30px;
-  max-height: 30px;
+  min-width: var(--sizing-button-height-sm);
+  max-width: var(--sizing-button-height-sm);
+  min-height: var(--sizing-button-height-sm);
+  max-height: var(--sizing-button-height-sm);
   padding: var(--spacing-sizing-4px);
   aspect-ratio: 1/1;
 }
@@ -137,17 +137,17 @@
 }
 
 .button-group--type-many-icons.button-group--size-default .button {
-  min-width: 30px;
-  max-width: 30px;
-  min-height: 30px;
-  max-height: 30px;
+  min-width: var(--sizing-button-height-sm);
+  max-width: var(--sizing-button-height-sm);
+  min-height: var(--sizing-button-height-sm);
+  max-height: var(--sizing-button-height-sm);
 }
 
 .button-group--type-many-icons.button-group--size-large .button {
-  min-width: 52px;
-  max-width: 52px;
-  min-height: 52px;
-  max-height: 52px;
+  min-width: var(--sizing-button-height-lg);
+  max-width: var(--sizing-button-height-lg);
+  min-height: var(--sizing-button-height-lg);
+  max-height: var(--sizing-button-height-lg);
 }
 
 /* State variants for many-icons groups */
@@ -196,14 +196,14 @@
 
 .button-group--type-table-actions.button-group--size-default .button {
   min-width: 80px;
-  min-height: 42px;
+  min-height: var(--sizing-button-height-default);
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px);
   gap: var(--spacing-sizing-12px);
 }
 
 .button-group--type-table-actions.button-group--size-large .button {
   min-width: 80px;
-  min-height: 52px;
+  min-height: var(--sizing-button-height-lg);
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px);
   gap: var(--spacing-sizing-12px);
 }
@@ -477,13 +477,13 @@
 }
 
 .button-group.small {
-  min-height: 30px;
+  min-height: var(--sizing-button-height-sm);
 }
 
 .button-group.default {
-  min-height: 42px;
+  min-height: var(--sizing-button-height-default);
 }
 
 .button-group.large {
-  min-height: 52px;
+  min-height: var(--sizing-button-height-lg);
 }
