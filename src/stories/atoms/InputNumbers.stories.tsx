@@ -120,7 +120,7 @@ export const DefaultSmallDefault: Story = {
 
 export const DefaultSmallDisabled: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'small',
     state: 'disabled',
@@ -128,66 +128,72 @@ export const DefaultSmallDisabled: Story = {
     value: 0,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Small / Zero / Disabled',
 };
 
 export const DefaultSmallFocus: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'small',
     state: 'focus',
     value: 0,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Small / Zero / Focus',
 };
 
 export const DefaultSmallPressed: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'small',
     state: 'pressed',
     value: 0,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Small / Zero / Clicked',
 };
 
 export const DefaultSmallFilled4: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'small',
     state: 'default',
     value: 4,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Small / Four / Filled',
 };
 
 export const DefaultSmallFilled1: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'small',
     state: 'default',
     value: 1,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Small / One / Filled',
 };
 
 export const DefaultDefaultDefault: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'default',
     state: 'default',
     value: 0,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Default / Zero / Default',
 };
 
 export const DefaultDefaultDisabled: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'default',
     state: 'disabled',
@@ -195,66 +201,72 @@ export const DefaultDefaultDisabled: Story = {
     value: 0,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Default / Zero / Disabled',
 };
 
 export const DefaultDefaultFocus: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'default',
     state: 'focus',
     value: 0,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Default / Zero / Focus',
 };
 
 export const DefaultDefaultPressed: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'default',
     state: 'pressed',
     value: 0,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Default / Zero / Clicked',
 };
 
 export const DefaultDefaultFilled4: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'default',
     state: 'default',
     value: 4,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Default / Four / Filled',
 };
 
 export const DefaultDefaultFilled1: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'default',
     state: 'default',
     value: 1,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Default / One / Filled',
 };
 
 export const DefaultLargeDefault: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'large',
     state: 'default',
     value: 0,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Large / Zero / Default',
 };
 
 export const DefaultLargeDisabled: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'large',
     state: 'disabled',
@@ -262,234 +274,257 @@ export const DefaultLargeDisabled: Story = {
     value: 0,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Large / Zero / Disabled',
 };
 
 export const DefaultLargeFocus: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'large',
     state: 'focus',
     value: 0,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Large / Zero / Focus',
 };
 
 export const DefaultLargePressed: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'large',
     state: 'pressed',
     value: 0,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Large / Zero / Clicked',
 };
 
 export const DefaultLargeFilled4: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'large',
     state: 'default',
     value: 4,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Large / Four / Filled',
 };
 
 export const DefaultLargeFilled1: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'large',
     state: 'default',
     value: 1,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Large / One / Filled',
 };
 
 // Simple Type Stories
 export const SimpleSmallDefault: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'small',
     state: 'default',
     value: 0,
   },
+  name: 'Simple / Small / Zero / Default',
 };
 
 export const SimpleSmallDisabled: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'small',
     state: 'disabled',
     disabled: true,
     value: 0,
   },
+  name: 'Simple / Small / Zero / Disabled',
 };
 
 export const SimpleSmallFocus: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'small',
     state: 'focus',
     value: 0,
   },
+  name: 'Simple / Small / Zero / Focus',
 };
 
 export const SimpleSmallPressed: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'small',
     state: 'pressed',
     value: 0,
   },
+  name: 'Simple / Small / Zero / Clicked',
 };
 
 export const SimpleSmallFilled4: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'small',
     state: 'default',
     value: 4,
   },
+  name: 'Simple / Small / Four / Filled',
 };
 
 export const SimpleSmallFilled1: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'small',
     state: 'default',
     value: 1,
   },
+  name: 'Simple / Small / One / Filled',
 };
 
 export const SimpleDefaultDefault: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'default',
     state: 'default',
     value: 0,
   },
+  name: 'Simple / Default / Zero / Default',
 };
 
 export const SimpleDefaultDisabled: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'default',
     state: 'disabled',
     disabled: true,
     value: 0,
   },
+  name: 'Simple / Default / Zero / Disabled',
 };
 
 export const SimpleDefaultFocus: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'default',
     state: 'focus',
     value: 0,
   },
+  name: 'Simple / Default / Zero / Focus',
 };
 
 export const SimpleDefaultPressed: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'default',
     state: 'pressed',
     value: 0,
   },
+  name: 'Simple / Default / Zero / Clicked',
 };
 
 export const SimpleDefaultFilled4: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'default',
     state: 'default',
     value: 4,
   },
+  name: 'Simple / Default / Four / Filled',
 };
 
 export const SimpleDefaultFilled1: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'default',
     state: 'default',
     value: 1,
   },
+  name: 'Simple / Default / One / Filled',
 };
 
 export const SimpleLargeDefault: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'large',
     state: 'default',
     value: 0,
   },
+  name: 'Simple / Large / Zero / Default',
 };
 
 export const SimpleLargeDisabled: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'large',
     state: 'disabled',
     disabled: true,
     value: 0,
   },
+  name: 'Simple / Large / Zero / Disabled',
 };
 
 export const SimpleLargeFocus: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'large',
     state: 'focus',
     value: 0,
   },
+  name: 'Simple / Large / Zero / Focus',
 };
 
 export const SimpleLargePressed: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'large',
     state: 'pressed',
     value: 0,
   },
+  name: 'Simple / Large / Zero / Clicked',
 };
 
 export const SimpleLargeFilled4: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'large',
     state: 'default',
     value: 4,
   },
+  name: 'Simple / Large / Four / Filled',
 };
 
 export const SimpleLargeFilled1: Story = {
   args: {
-    label: 'Select quantity',
+    label: 'Select',
     type: 'simple',
     size: 'large',
     state: 'default',
     value: 1,
   },
+  name: 'Simple / Large / One / Filled',
 };
 
 // Interactive Examples
