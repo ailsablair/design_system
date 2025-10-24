@@ -371,3 +371,11 @@
     height: 16px;
   }
 }
+
+/* Ensure SVG icons fill their containers for consistent sizing */
+.datetime-input-icon svg,
+.datetime-input-close-button svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
