@@ -61,7 +61,7 @@
 
 /* Field size variants */
 .search-input--small .search-input__field {
-  height: 30px;
+  height: var(--sizing-height-32);
   gap: var(--spacing-sizing-4px, 4px);
 }
 
@@ -71,7 +71,7 @@
 }
 
 .search-input--large .search-input__field {
-  height: 54px;
+  height: var(--sizing-height-54);
   gap: var(--spacing-sizing-8px, 8px);
   padding: var(--spacing-sizing-4px, 4px) var(--spacing-sizing-8px, 8px);
 }

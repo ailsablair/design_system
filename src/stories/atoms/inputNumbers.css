@@ -87,7 +87,7 @@
 }
 
 .input-numbers-container.large {
-  height: 54px;
+  height: var(--sizing-height-54);
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
   gap: var(--spacing-sizing-8px);
 }

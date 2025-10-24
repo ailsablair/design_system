@@ -26,18 +26,18 @@
 }
 
 .avatar--small {
-  width: var(--components-avatar-avatar-small);
-  height: var(--components-avatar-avatar-small);
+  width: var(--sizing-height-32);
+  height: var(--sizing-height-32);
 }
 
 .avatar--default {
-  width: var(--components-avatar-avatar);
-  height: var(--components-avatar-avatar);
+  width: var(--sizing-height-44);
+  height: var(--sizing-height-44);
 }
 
 .avatar--large {
-  width: var(--components-avatar-avatar-large);
-  height: var(--components-avatar-avatar-large);
+  width: var(--sizing-height-54);
+  height: var(--sizing-height-54);
 }
 
 /* Avatar Shapes */

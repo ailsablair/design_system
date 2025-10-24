@@ -20,6 +20,24 @@
   transition: background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), color var(--transition-fast);
 }
 
+.autosave.small {
+  height: var(--sizing-button-height-sm);
+  min-height: var(--sizing-button-height-sm);
+  max-height: var(--sizing-button-height-sm);
+}
+
+.autosave.default {
+  height: var(--sizing-button-height-default);
+  min-height: var(--sizing-button-height-default);
+  max-height: var(--sizing-button-height-default);
+}
+
+.autosave.large {
+  height: var(--sizing-button-height-lg);
+  min-height: var(--sizing-button-height-lg);
+  max-height: var(--sizing-button-height-lg);
+}
+
 .autosave.clickable {
   cursor: pointer;
 }
