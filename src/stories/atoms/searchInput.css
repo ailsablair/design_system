@@ -49,6 +49,16 @@
   background: var(--base-white, #FFF);
 }
 
+/* Only the field border reacts to hover/focus, not label/placeholder containers */
+.search-input__field:hover {
+  border-color: var(--neutral-gray-gray-400, #9CA3AF);
+}
+
+.search-input__field:focus-within {
+  border-color: var(--primary-sky-blue-sky-blue, #0BA7EA);
+  box-shadow: 0 0 0 2px rgba(11, 167, 234, 0.2);
+}
+
 /* Field size variants */
 .search-input--small .search-input__field {
   height: 30px;
