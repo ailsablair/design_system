@@ -28,18 +28,66 @@ export interface TabProps {
   active?: boolean;
 }
 
-// Default icons for tabs
-const HomeIcon: React.FC<{ size: number }> = ({ size }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z" fill="currentColor"/>
-  </svg>
-);
+// Default icons for tabs (Figma exact SVGs)
+const HomeIcon: React.FC<{ size: number }> = ({ size }) => {
+  // Scale viewBox based on size for pixel-perfect rendering
+  if (size === 16) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g opacity="0.6">
+          <path d="M6.66659 13.3333V9.33333H9.33325V13.3333H12.6666V8H14.6666L7.99992 2L1.33325 8H3.33325V13.3333H6.66659Z" fill="currentColor"/>
+        </g>
+      </svg>
+    );
+  } else if (size === 18) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g opacity="0.6">
+          <path d="M7.5 15V10.5H10.5V15H14.25V9H16.5L9 2.25L1.5 9H3.75V15H7.5Z" fill="currentColor"/>
+        </g>
+      </svg>
+    );
+  } else {
+    // size === 22 (large)
+    return (
+      <svg width={size} height={size} viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g opacity="0.6">
+          <path d="M9.16658 18.3333V12.8333H12.8333V18.3333H17.4166V11H20.1666L10.9999 2.75L1.83325 11H4.58325V18.3333H9.16658Z" fill="currentColor"/>
+        </g>
+      </svg>
+    );
+  }
+};
 
-const ChevronDownIcon: React.FC<{ size: number }> = ({ size }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z" fill="currentColor"/>
-  </svg>
-);
+const ChevronDownIcon: React.FC<{ size: number }> = ({ size }) => {
+  // Scale viewBox based on size for pixel-perfect rendering
+  if (size === 16) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g opacity="0.6">
+          <path d="M4.94 5.71997L8 8.77997L11.06 5.71997L12 6.66664L8 10.6666L4 6.66664L4.94 5.71997Z" fill="currentColor"/>
+        </g>
+      </svg>
+    );
+  } else if (size === 18) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g opacity="0.6">
+          <path d="M5.5575 6.435L9 9.8775L12.4425 6.435L13.5 7.5L9 12L4.5 7.5L5.5575 6.435Z" fill="currentColor"/>
+        </g>
+      </svg>
+    );
+  } else {
+    // size === 22 (large)
+    return (
+      <svg width={size} height={size} viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g opacity="0.6">
+          <path d="M6.7925 7.86499L11 12.0725L15.2075 7.86499L16.5 9.16666L11 14.6667L5.5 9.16666L6.7925 7.86499Z" fill="currentColor"/>
+        </g>
+      </svg>
+    );
+  }
+};
 
 export const Tab: React.FC<TabProps> = ({
   children = 'Tab label',
@@ -58,23 +106,23 @@ export const Tab: React.FC<TabProps> = ({
   // Determine the actual state
   const actualState = disabled ? 'disabled' : (active ? 'active' : state);
   
-  // Get icon sizes based on tab size
+  // Get icon sizes based on tab size (Figma exact specifications)
   const getIconSize = () => {
     switch (size) {
-      case 'small': return 14;
-      case 'default': return 16;
-      case 'large': return 20;
-      default: return 16;
+      case 'small': return 16;
+      case 'default': return 18;
+      case 'large': return 22;
+      default: return 18;
     }
   };
 
-  // Get badge size based on tab size
+  // Get badge size based on tab size (Figma specifications)
   const getBadgeSize = () => {
     switch (size) {
-      case 'small': return 'small';
-      case 'default': return 'default';
-      case 'large': return 'large';
-      default: return 'default';
+      case 'small': return 'x-small';
+      case 'default': return 'small';
+      case 'large': return 'default';
+      default: return 'small';
     }
   };
 
@@ -131,17 +179,9 @@ export const Tab: React.FC<TabProps> = ({
 
   // For default and secondary types, render as traditional tabs with bottom line
   return (
-    <div className={`tab-container ${className}`}>
-      <button
-        className={`tab ${size} ${type} ${actualState}`}
-        onClick={handleClick}
-        disabled={disabled}
-        role="tab"
-        aria-selected={actualState === 'active'}
-        aria-disabled={disabled}
-        type="button"
-      >
-        <div className="tab-content">
+    <div className={`tab-wrapper ${className}`}>
+      <div className="tab-label">
+        <div className="tab-label-content">
           <span className="tab-icon tab-leading-icon">
             {leadingIconElement}
           </span>
@@ -153,14 +193,16 @@ export const Tab: React.FC<TabProps> = ({
           </span>
 
           {showBadge && badge && (
-            <span className={`tab-badge ${badgeSize}`}>
+            <span className={`tab-badge ${badgeSize} ${type}`}>
               {badge}
             </span>
           )}
         </div>
-      </button>
-      
-      <div className={`tab-line ${type} ${actualState}`}></div>
+      </div>
+
+      <div className="tab-spacer"></div>
+
+      <div className={`tab-line ${size} ${type} ${actualState}`}></div>
     </div>
   );
 };
