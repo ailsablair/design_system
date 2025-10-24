@@ -439,3 +439,12 @@
     height: 16px;
   }
 }
+
+/* Ensure SVG icons fill their containers for consistent sizing */
+.input-leading-icon svg,
+.input-close-button svg,
+.input-dropdown-button svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
