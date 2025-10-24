@@ -94,6 +94,10 @@
   padding: 0;
 }
 
+.search-input__input:focus-visible {
+  outline: none;
+}
+
 .search-input__input::placeholder {
   color: var(--secondary-blue-gray, #61607C);
 }
