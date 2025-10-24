@@ -219,20 +219,20 @@
 
 .card.card-size-small .card-btn {
   min-width: 80px;
-  min-height: 30px;
+  min-height: var(--sizing-button-height-sm);
   font-size: var(--type-archivo-label-sm);
 }
 
 .card.card-size-default .card-btn {
   min-width: 80px;
-  min-height: 42px;
+  min-height: var(--sizing-button-height-default);
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px);
   font-size: var(--type-archivo-label);
 }
 
 .card.card-size-large .card-btn {
   min-width: 80px;
-  min-height: 52px;
+  min-height: var(--sizing-button-height-lg);
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-16px);
   font-size: var(--type-archivo-label-lg);
 }
