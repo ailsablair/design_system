@@ -128,9 +128,9 @@
 
 .split-button.small {
   min-width: 80px;
-  height: 30px;
-  min-height: 30px;
-  max-height: 30px;
+  height: var(--sizing-button-height-sm);
+  min-height: var(--sizing-button-height-sm);
+  max-height: var(--sizing-button-height-sm);
 }
 
 .split-button.small .split-button-main {
@@ -155,9 +155,9 @@
 
 .split-button.default {
   min-width: 80px;
-  height: 42px;
-  min-height: 42px;
-  max-height: 42px;
+  height: var(--sizing-button-height-default);
+  min-height: var(--sizing-button-height-default);
+  max-height: var(--sizing-button-height-default);
 }
 
 .split-button.default .split-button-main {
@@ -182,9 +182,9 @@
 
 .split-button.large {
   min-width: 80px;
-  height: 52px;
-  min-height: 52px;
-  max-height: 52px;
+  height: var(--sizing-button-height-lg);
+  min-height: var(--sizing-button-height-lg);
+  max-height: var(--sizing-button-height-lg);
 }
 
 .split-button.large .split-button-main {
