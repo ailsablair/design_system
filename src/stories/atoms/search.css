@@ -78,7 +78,7 @@
 .search-input-container.small {
   padding: var(--spacing-sizing-8px);
   gap: var(--spacing-sizing-4px);
-  min-height: 30px;
+  height: 30px;
 }
 
 .search-input-container.default {
