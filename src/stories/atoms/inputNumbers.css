@@ -1,16 +1,16 @@
 @import '../foundations/tokens.css';
 
+/* Wrapper */
 .input-numbers-wrapper {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 400px;
-  contain: layout style size;
-  isolation: isolate;
+  gap: var(--spacing-sizing-4px);
+  align-items: flex-start;
+  position: relative;
 }
 
 .input-numbers-wrapper.small {
-  gap: var(--spacing-sizing-2px);
+  gap: var(--spacing-sizing-4px);
 }
 
 .input-numbers-wrapper.default {
@@ -21,11 +21,16 @@
   gap: var(--spacing-sizing-4px);
 }
 
-/* Label Styles */
+/* Label */
 .input-numbers-label {
+  padding: var(--spacing-sizing-2px);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-4px);
+  align-self: stretch;
+  color: var(--base-black);
   font-family: var(--type-typeface-archivo);
   font-weight: var(--type-weight-medium);
-  color: var(--base-black);
   margin: 0;
 }
 
@@ -41,6 +46,7 @@
   line-height: var(--type-line-height-label);
   letter-spacing: var(--type-letter-spacing-archivo-label);
   padding: var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-6px);
 }
 
 .input-numbers-label.large {
@@ -48,20 +54,26 @@
   line-height: var(--type-line-height-label-lg);
   letter-spacing: var(--type-letter-spacing-archivo-label-lg);
   padding: var(--spacing-sizing-4px);
+  gap: var(--spacing-sizing-8px);
 }
 
-/* Container Styles */
+/* Disabled label */
+.input-numbers-wrapper.disabled .input-numbers-label {
+  color: var(--neutral-gray-gray-500);
+}
+
+/* Container */
 .input-numbers-container {
   display: flex;
   align-items: center;
   border-radius: var(--spacing-radius-2px);
   border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-300);
   background: var(--base-white);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.2s ease;
   position: relative;
-  contain: layout style;
 }
 
+/* Container sizing */
 .input-numbers-container.small {
   height: 32px;
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-8px);
@@ -80,73 +92,73 @@
   gap: var(--spacing-sizing-8px);
 }
 
-/* Default type has space between text and controls */
-.input-numbers-container.default.default,
-.input-numbers-container.default.small,
-.input-numbers-container.default.large {
+/* Type variations */
+.input-numbers-container.default.simple,
+.input-numbers-container.large.simple {
+  gap: var(--spacing-sizing-8px);
+}
+
+/* Default type - full width with text */
+.input-numbers-container.default.small {
+  width: 300px;
   justify-content: space-between;
 }
 
-.input-numbers-container.default.small {
-  min-width: 300px;
-  max-width: 300px;
+.input-numbers-container.default.default {
+  width: 299px;
+  justify-content: space-between;
 }
 
-.input-numbers-container.default.default,
 .input-numbers-container.default.large {
-  min-width: 299px;
-  max-width: 299px;
+  width: 298px;
+  justify-content: space-between;
 }
 
-/* Simple type has controls only */
-.input-numbers-container.simple {
-  justify-content: center;
-  width: auto;
-  min-width: auto;
-}
-
+/* Simple type - compact */
 .input-numbers-container.simple.small {
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-12px);
   gap: var(--spacing-sizing-8px);
+  width: auto;
 }
 
 .input-numbers-container.simple.default {
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-12px);
   gap: var(--spacing-sizing-8px);
+  width: auto;
 }
 
 .input-numbers-container.simple.large {
   padding: var(--spacing-sizing-4px) var(--spacing-sizing-12px);
   gap: var(--spacing-sizing-12px);
+  width: auto;
 }
 
-/* State Styles */
+/* States */
 .input-numbers-container.focus {
   border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
-  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+  box-shadow: 0px 2px 4px 0px rgba(39, 39, 39, 0.1);
 }
 
 .input-numbers-container.pressed {
   border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-dark-sky-blue);
-  box-shadow: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
+  box-shadow: 0px 2px 4px 0px rgba(39, 39, 39, 0.1);
 }
 
 .input-numbers-container.disabled {
   background: var(--neutral-gray-gray-50);
   border-color: var(--neutral-gray-gray-300);
+  cursor: not-allowed;
 }
 
-.input-numbers-container.disabled .input-numbers-label {
-  color: var(--neutral-gray-gray-500);
-}
-
-/* Text Content (for default type) */
+/* Text (for default type) */
 .input-numbers-text {
   flex: 1;
+  display: flex;
+  align-items: center;
   font-family: var(--type-typeface-roboto-flex);
   font-weight: 400;
   color: var(--base-black);
-  text-align: left;
+  padding-right: var(--spacing-sizing-8px);
 }
 
 .input-numbers-text.small {
@@ -171,7 +183,7 @@
   color: var(--neutral-gray-gray-500);
 }
 
-/* Controls Container */
+/* Controls */
 .input-numbers-controls {
   display: flex;
   align-items: center;
@@ -189,6 +201,7 @@
   gap: var(--spacing-sizing-8px);
 }
 
+/* Simple type controls have larger gaps */
 .input-numbers-container.simple .input-numbers-controls.small {
   gap: var(--spacing-sizing-8px);
 }
@@ -201,7 +214,7 @@
   gap: var(--spacing-sizing-12px);
 }
 
-/* Button Styles */
+/* Buttons */
 .input-numbers-button {
   display: flex;
   align-items: center;
@@ -210,21 +223,43 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: opacity 0.2s ease;
-  will-change: opacity;
+  flex-shrink: 0;
+  transition: transform 0.1s ease, opacity 0.2s ease;
 }
 
 .input-numbers-button:disabled {
   cursor: not-allowed;
+  opacity: 1;
 }
 
 .input-numbers-button:hover:not(:disabled) {
-  opacity: 0.8;
+  transform: scale(1.05);
 }
 
 .input-numbers-button:active:not(:disabled) {
   transform: scale(0.95);
-  transform-origin: center;
+}
+
+.input-numbers-button.small {
+  width: 18px;
+  height: 18px;
+}
+
+.input-numbers-button.default {
+  width: 22px;
+  height: 22px;
+}
+
+.input-numbers-button.large {
+  width: 26px;
+  height: 26px;
+}
+
+/* Icon sizing */
+.input-numbers-button svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 /* Value Display */
@@ -232,6 +267,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
   font-family: var(--type-typeface-roboto-flex);
   font-weight: 600;
@@ -262,64 +298,47 @@
   color: var(--neutral-gray-gray-400);
 }
 
-/* Responsive Design */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .input-numbers-wrapper {
-    max-width: 100%;
-    contain: layout style;
-  }
-
+  .input-numbers-container.default.small,
   .input-numbers-container.default.default,
   .input-numbers-container.default.large {
-    min-width: 280px;
-    max-width: 100%;
-  }
-
-  .input-numbers-container.default.small {
-    min-width: 260px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 300px;
   }
 }
 
 @media (max-width: 480px) {
-  .input-numbers-controls.small {
+  .input-numbers-controls.small,
+  .input-numbers-controls.default {
     gap: var(--spacing-sizing-2px);
   }
-  
-  .input-numbers-controls.default,
-  .input-numbers-controls.large {
-    gap: var(--spacing-sizing-4px);
-  }
-  
+
   .input-numbers-container.simple .input-numbers-controls.small,
   .input-numbers-container.simple .input-numbers-controls.default {
     gap: var(--spacing-sizing-6px);
   }
-  
-  .input-numbers-container.simple .input-numbers-controls.large {
-    gap: var(--spacing-sizing-8px);
-  }
 }
 
-/* High contrast mode support */
+/* Accessibility */
 @media (prefers-contrast: high) {
   .input-numbers-container {
     border-width: 2px;
   }
-  
+
   .input-numbers-container.focus,
   .input-numbers-container.pressed {
     border-width: 3px;
   }
 }
 
-/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .input-numbers-container,
   .input-numbers-button {
     transition: none;
   }
-  
+
+  .input-numbers-button:hover:not(:disabled),
   .input-numbers-button:active:not(:disabled) {
     transform: none;
   }

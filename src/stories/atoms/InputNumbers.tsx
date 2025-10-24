@@ -127,7 +127,7 @@ const TrashIcon = ({ size = 'default' }: { size?: 'small' | 'default' | 'large' 
 };
 
 export const InputNumbers: React.FC<InputNumbersProps> = ({
-  label,
+  label = 'Select',
   type = 'simple',
   size = 'default',
   state = 'default',
@@ -215,7 +215,7 @@ export const InputNumbers: React.FC<InputNumbersProps> = ({
       }
       timeoutRef.current = setTimeout(() => {
         setIsPressed(false);
-      }, 10); // Small delay to prevent rapid state changes
+      }, 10);
     }
   }, [state]);
 
@@ -227,16 +227,31 @@ export const InputNumbers: React.FC<InputNumbersProps> = ({
     return 'default';
   };
 
+  const wrapperClasses = [
+    'input-numbers-wrapper',
+    size,
+    type,
+    disabled && 'disabled',
+    className,
+  ].filter(Boolean).join(' ');
+
+  const containerClasses = [
+    'input-numbers-container',
+    getStateClass(),
+    size,
+    type,
+  ].filter(Boolean).join(' ');
+
   return (
-    <div className={`input-numbers-wrapper ${size} ${type} ${className}`}>
+    <div className={wrapperClasses}>
       {label && (
         <label className={`input-numbers-label ${size}`}>
           {label}
         </label>
       )}
-      
-      <div 
-        className={`input-numbers-container ${getStateClass()} ${size} ${type}`}
+
+      <div
+        className={containerClasses}
         onFocus={handleFocus}
         onBlur={handleBlur}
         onMouseDown={handleMouseDown}
@@ -248,7 +263,7 @@ export const InputNumbers: React.FC<InputNumbersProps> = ({
             {placeholder}
           </div>
         )}
-        
+
         <div className={`input-numbers-controls ${size}`}>
           <button
             type="button"
@@ -263,11 +278,11 @@ export const InputNumbers: React.FC<InputNumbersProps> = ({
               <MinusIcon size={size} disabled={disabled || isAtMin} />
             )}
           </button>
-          
+
           <div className={`input-numbers-value ${size}`}>
             {currentValue}
           </div>
-          
+
           <button
             type="button"
             className={`input-numbers-button plus ${size}`}
@@ -275,8 +290,8 @@ export const InputNumbers: React.FC<InputNumbersProps> = ({
             disabled={disabled || isAtMax}
             aria-label="Increase value"
           >
-            <PlusIcon 
-              size={size} 
+            <PlusIcon
+              size={size}
               disabled={disabled || isAtMax}
               focused={isFocused || state === 'focus'}
               pressed={isPressed || state === 'pressed'}

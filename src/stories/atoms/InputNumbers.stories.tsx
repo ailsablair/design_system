@@ -108,13 +108,14 @@ type Story = StoryObj<typeof meta>;
 // Default Type Stories
 export const DefaultSmallDefault: Story = {
   args: {
-    label: 'Additional users',
+    label: 'Select',
     type: 'default',
     size: 'small',
     state: 'default',
     value: 0,
     placeholder: 'Standard licence',
   },
+  name: 'Default / Small / Zero / Default',
 };
 
 export const DefaultSmallDisabled: Story = {
