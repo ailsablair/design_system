@@ -25,6 +25,7 @@
   --spacing-sizing-400px: 97.98px;
 
   /* === BORDER RADIUS TOKENS === */
+  --spacing-radius-0px: 0;
   --spacing-radius-2px: 2px;
   --spacing-radius-4px: 4px;
   --spacing-radius-6px: 6px;
