@@ -1,0 +1,194 @@
+@import '../foundations/tokens.css';
+
+/* ===============================================
+   TAB GROUP - Container for multiple tabs
+   =============================================== */
+
+.tab-group {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* ===============================================
+   DIRECTION VARIANTS
+   =============================================== */
+
+/* Horizontal Narrow - Tabs close together */
+.tab-group.horizontal-narrow {
+  flex-direction: row;
+  gap: 0;
+}
+
+/* Horizontal Wide - Tabs with spacing */
+.tab-group.horizontal-wide {
+  flex-direction: row;
+  gap: 0;
+}
+
+/* Vertical - Stacked tabs */
+.tab-group.vertical {
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ===============================================
+   SIZE & TYPE SPECIFIC SPACING
+   =============================================== */
+
+/* Small tabs in horizontal-wide layout */
+.tab-group.horizontal-wide.size-small {
+  gap: var(--spacing-sizing-12px);
+}
+
+/* Small tabs in vertical layout */
+.tab-group.vertical.size-small.type-default,
+.tab-group.vertical.size-small.type-secondary {
+  gap: 0;
+}
+
+.tab-group.vertical.size-small.type-contained,
+.tab-group.vertical.size-small.type-dark-contained {
+  gap: var(--spacing-sizing-12px);
+}
+
+/* Default tabs in vertical layout */
+.tab-group.vertical.size-default.type-default,
+.tab-group.vertical.size-default.type-secondary {
+  gap: 0;
+}
+
+.tab-group.vertical.size-default.type-contained,
+.tab-group.vertical.size-default.type-dark-contained {
+  gap: var(--spacing-sizing-16px);
+}
+
+/* Large tabs - wider spacing */
+.tab-group.horizontal-wide.size-large.type-default,
+.tab-group.horizontal-wide.size-large.type-secondary {
+  gap: var(--spacing-sizing-36px);
+}
+
+.tab-group.vertical.size-large.type-default,
+.tab-group.vertical.size-large.type-secondary {
+  gap: 0;
+}
+
+.tab-group.vertical.size-large.type-contained,
+.tab-group.vertical.size-large.type-dark-contained {
+  gap: var(--spacing-sizing-20px);
+}
+
+.tab-group.horizontal-wide.size-large.type-contained,
+.tab-group.horizontal-wide.size-large.type-dark-contained {
+  gap: var(--spacing-sizing-16px);
+}
+
+.tab-group.horizontal-narrow.size-small.type-contained,
+.tab-group.horizontal-narrow.size-small.type-dark-contained {
+  gap: var(--spacing-sizing-12px);
+}
+
+.tab-group.horizontal-narrow.size-default.type-contained,
+.tab-group.horizontal-narrow.size-default.type-dark-contained {
+  gap: var(--spacing-sizing-16px);
+}
+
+.tab-group.horizontal-narrow.size-large.type-contained,
+.tab-group.horizontal-narrow.size-large.type-dark-contained {
+  gap: var(--spacing-sizing-24px);
+}
+
+.tab-group.horizontal-wide.size-default.type-default,
+.tab-group.horizontal-wide.size-default.type-secondary {
+  gap: var(--spacing-sizing-12px);
+}
+
+/* ===============================================
+   VERTICAL TAB GROUP SPECIFIC WIDTHS
+   =============================================== */
+
+/* Vertical contained tabs need fixed width for alignment */
+.tab-group.vertical.size-small.type-contained,
+.tab-group.vertical.size-small.type-dark-contained {
+  width: 103px;
+}
+
+.tab-group.vertical.size-default.type-contained,
+.tab-group.vertical.size-default.type-dark-contained {
+  width: 122px;
+}
+
+.tab-group.vertical.size-large.type-contained,
+.tab-group.vertical.size-large.type-dark-contained {
+  width: 142px;
+}
+
+/* Tabs in vertical groups stretch to fill */
+.tab-group.vertical .tab-contained {
+  align-self: stretch;
+  width: 100%;
+}
+
+/* ===============================================
+   RESPONSIVE DESIGN
+   =============================================== */
+
+/* Tablet and mobile adjustments */
+@media (max-width: 768px) {
+  .tab-group.horizontal-wide,
+  .tab-group.horizontal-narrow {
+    gap: var(--spacing-sizing-8px);
+  }
+  
+  .tab-group.vertical {
+    width: 100%;
+  }
+  
+  .tab-group.vertical.type-contained,
+  .tab-group.vertical.type-dark-contained {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+/* Mobile - stack horizontal tabs if needed */
+@media (max-width: 480px) {
+  .tab-group.horizontal-wide,
+  .tab-group.horizontal-narrow {
+    flex-wrap: wrap;
+    gap: var(--spacing-sizing-8px);
+  }
+  
+  /* Contained tabs take full width on mobile */
+  .tab-group.type-contained .tab-contained,
+  .tab-group.type-dark-contained .tab-contained {
+    flex: 1 1 auto;
+    min-width: max-content;
+  }
+}
+
+/* ===============================================
+   ACCESSIBILITY
+   =============================================== */
+
+/* Focus management for keyboard navigation */
+.tab-group:focus-within {
+  outline: none;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .tab-group {
+    border: 1px solid currentColor;
+    padding: var(--spacing-sizing-4px);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .tab-group * {
+    transition: none;
+  }
+}
