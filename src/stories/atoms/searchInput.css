@@ -119,8 +119,9 @@
   transition: opacity 0.2s ease;
 }
 
+/* Clear button should not visually react; interactions limited to border/button */
 .search-input__clear:hover {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .search-input__button {
