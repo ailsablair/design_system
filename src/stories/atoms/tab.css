@@ -133,6 +133,20 @@
   color: var(--primary-seafoam-extra-dark-seafoam);
 }
 
+/* Badge font size by size variant */
+.tab-badge.x-small .tab-badge-number,
+.tab-badge.small .tab-badge-number {
+  font-size: var(--type-archivo-footnote);
+  line-height: var(--type-line-height-footnote);
+  letter-spacing: var(--type-letter-spacing-archivo-footnote);
+}
+
+.tab-badge.default .tab-badge-number {
+  font-size: var(--type-archivo-label-sm);
+  line-height: var(--type-line-height-label-sm);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm);
+}
+
 /* ===============================================
    TAB SPACER - Vertical spacing element
    =============================================== */
@@ -255,6 +269,10 @@
 .tab-wrapper.secondary:hover .tab-badge.secondary,
 .tab-wrapper.secondary.hover .tab-badge.secondary {
   background: var(--primary-seafoam-dark-seafoam);
+}
+
+.tab-wrapper.secondary:hover .tab-badge.secondary .tab-badge-number,
+.tab-wrapper.secondary.hover .tab-badge.secondary .tab-badge-number {
   color: var(--base-white);
 }
 
@@ -268,7 +286,7 @@
   color: var(--primary-seafoam-dark-seafoam);
 }
 
-.tab-wrapper.secondary.active .tab-badge.secondary {
+.tab-wrapper.secondary.active .tab-badge.secondary .tab-badge-number {
   color: var(--base-black);
 }
 
@@ -283,6 +301,14 @@
 
 .tab-wrapper.secondary.disabled .tab-icon {
   color: var(--neutral-gray-gray-400);
+}
+
+.tab-wrapper.secondary.disabled .tab-badge.secondary {
+  background: var(--neutral-gray-gray-300);
+}
+
+.tab-wrapper.secondary.disabled .tab-badge.secondary .tab-badge-number {
+  color: var(--neutral-gray-gray-500);
 }
 
 /* ===============================================
