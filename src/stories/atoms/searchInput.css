@@ -35,6 +35,7 @@
 .search-input__wrapper {
   display: flex;
   gap: 0;
+  align-items: stretch; /* make button match field height */
 }
 
 .search-input__field {
@@ -136,6 +137,8 @@
   letter-spacing: var(--type-letter-spacing-archivo-label-sm, 0.15px);
   cursor: pointer;
   transition: opacity 0.2s ease;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .search-input__button:hover:not(:disabled) {
@@ -154,7 +157,6 @@
 /* Button size variants */
 .search-input--small .search-input__button {
   min-width: 80px;
-  min-height: 30px;
   padding: var(--spacing-sizing-4px, 4px) var(--spacing-sizing-12px, 12px);
   font-size: var(--type-archivo-label-sm, 14px);
   line-height: var(--type-line-height-label-sm, 16px);
@@ -162,7 +164,6 @@
 
 .search-input--default .search-input__button {
   min-width: 80px;
-  min-height: 42px;
   padding: var(--spacing-sizing-4px, 4px) var(--spacing-sizing-16px, 16px);
   font-size: var(--type-archivo-label, 16px);
   line-height: var(--type-line-height-label, 20px);
@@ -170,7 +171,6 @@
 
 .search-input--large .search-input__button {
   min-width: 80px;
-  min-height: 52px;
   padding: 3px var(--spacing-sizing-16px, 16px);
   font-size: var(--type-archivo-label-lg, 18px);
   line-height: var(--type-line-height-label-lg, 24px);
