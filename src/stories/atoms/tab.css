@@ -243,11 +243,12 @@
   color: var(--neutral-gray-gray-400);
 }
 
-.tab-wrapper.disabled .tab-badge {
+.tab-wrapper.disabled .tab-badge.default,
+.tab-wrapper.disabled .tab-badge.secondary {
   background: var(--neutral-gray-gray-300);
 }
 
-.tab-wrapper.disabled .tab-badge {
+.tab-wrapper.disabled .tab-badge-number {
   color: var(--neutral-gray-gray-500);
 }
 
