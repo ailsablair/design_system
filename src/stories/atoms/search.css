@@ -93,6 +93,10 @@
   height: 54px;
 }
 
+.search-input-container:hover {
+  border-color: var(--neutral-gray-gray-400);
+}
+
 .search-input-container:focus-within {
   border-color: var(--primary-sky-blue-sky-blue);
   box-shadow: 0 0 0 2px rgba(11, 167, 234, 0.2);
@@ -159,12 +163,13 @@
   transition: opacity 0.2s ease;
 }
 
+/* Clear button should not visually react on hover/typing */
 .search-clear-button:hover {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .search-clear-button:active {
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .search-clear-button:disabled {
@@ -344,11 +349,9 @@
   .search-input:focus {
     outline: none;
   }
-  
+
   .search-input:focus-visible {
-    outline: 2px solid var(--primary-sky-blue-sky-blue);
-    outline-offset: -2px;
-    border-radius: 2px;
+    outline: none; /* focus is indicated on the container border only */
   }
 }
 
