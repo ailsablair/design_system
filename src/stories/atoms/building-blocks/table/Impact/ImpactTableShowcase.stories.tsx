@@ -3,7 +3,7 @@ import { ImpactTable } from './ImpactTable';
 import { ImpactTableCell } from './ImpactTableCell';
 
 const meta: Meta = {
-  title: 'Tables/Impact/Showcase',
+  title: 'Atoms/🧱 Building Blocks/Tables/Impact/Showcase',
   parameters: {
     layout: 'padded',
     docs: {
