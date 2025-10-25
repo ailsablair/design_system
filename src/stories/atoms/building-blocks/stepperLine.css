@@ -54,23 +54,22 @@
 /* === DASHED LINE STYLES === */
 .stepper-line-type-dashed {
   background: transparent;
-  border-style: dashed;
-  border-color: var(--neutral-gray-gray-200, #E5E7EB);
+  border: 0; /* prevent default borders on multiple sides causing double lines */
 }
 
 .stepper-line-type-dashed.stepper-line-orientation-horizontal.stepper-line-stroke-1px {
   border-top: 1px dashed var(--neutral-gray-gray-200, #E5E7EB);
-  height: 1px;
+  height: 0; /* rely solely on border for thickness to avoid visual doubling */
 }
 
 .stepper-line-type-dashed.stepper-line-orientation-horizontal.stepper-line-stroke-2px {
   border-top: 2px dashed var(--neutral-gray-gray-200, #E5E7EB);
-  height: 2px;
+  height: 0; /* rely solely on border for thickness to avoid visual doubling */
 }
 
 .stepper-line-type-dashed.stepper-line-orientation-horizontal.stepper-line-stroke-3px {
   border-top: 3px dashed var(--neutral-gray-gray-200, #E5E7EB);
-  height: 3px;
+  height: 0; /* rely solely on border for thickness to avoid visual doubling */
 }
 
 /* Vertical dashed lines */
@@ -95,23 +94,22 @@
 /* === DOTTED LINE STYLES === */
 .stepper-line-type-dotted {
   background: transparent;
-  border-style: dotted;
-  border-color: var(--neutral-gray-gray-200, #E5E7EB);
+  border: 0; /* prevent default borders on multiple sides causing double lines */
 }
 
 .stepper-line-type-dotted.stepper-line-orientation-horizontal.stepper-line-stroke-1px {
   border-top: 1px dotted var(--neutral-gray-gray-200, #E5E7EB);
-  height: 1px;
+  height: 0; /* rely solely on border for thickness to avoid visual doubling */
 }
 
 .stepper-line-type-dotted.stepper-line-orientation-horizontal.stepper-line-stroke-2px {
   border-top: 2px dotted var(--neutral-gray-gray-200, #E5E7EB);
-  height: 2px;
+  height: 0; /* rely solely on border for thickness to avoid visual doubling */
 }
 
 .stepper-line-type-dotted.stepper-line-orientation-horizontal.stepper-line-stroke-3px {
   border-top: 3px dotted var(--neutral-gray-gray-200, #E5E7EB);
-  height: 3px;
+  height: 0; /* rely solely on border for thickness to avoid visual doubling */
 }
 
 /* Vertical dotted lines */
