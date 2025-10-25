@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ImpactTable } from './ImpactTable';
 
 const meta: Meta<typeof ImpactTable> = {
-  title: 'Tables/Impact/ImpactTable',
+  title: 'Atoms/🧱 Building Blocks/Tables/Impact/ImpactTable',
   component: ImpactTable,
   parameters: {
     layout: 'fullscreen',
