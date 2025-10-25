@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ImpactTableCell } from './ImpactTableCell';
 
 const meta: Meta<typeof ImpactTableCell> = {
-  title: 'Tables/Impact/ImpactTableCell',
+  title: 'Atoms/🧱 Building Blocks/Tables/Impact/ImpactTableCell',
   component: ImpactTableCell,
   parameters: {
     layout: 'centered',
