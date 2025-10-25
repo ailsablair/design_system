@@ -1,0 +1,252 @@
+/* Impact Table Component Styles */
+
+.impact-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-16px, 16px);
+  background: var(--base-white, #FFF);
+}
+
+/* Title Section */
+.impact-table__title-section {
+  padding: var(--spacing-sizing-16px, 16px) var(--spacing-sizing-24px, 24px);
+}
+
+.impact-table__title {
+  color: var(--secondary-navy, #3A3282);
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-size: var(--type-archivo-heading-5, 19px);
+  font-weight: var(--type-weight-bold, 700);
+  line-height: var(--type-line-height-heading-5, 24px);
+  letter-spacing: var(--type-letter-spacing-archivo-heading-5, -0.15px);
+  margin: 0;
+}
+
+/* Table Container */
+.impact-table__container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+}
+
+.impact-table__table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: auto;
+}
+
+/* Corner Cell */
+.impact-table__corner-cell {
+  width: 201px;
+  min-width: 201px;
+  background: var(--base-white, #FFF);
+  border: 1px solid var(--neutral-gray-gray-300, #D2D5DA);
+  padding: 0;
+  position: sticky;
+  left: 0;
+  z-index: 3;
+}
+
+/* Category Header Row */
+.impact-table__category-header {
+  position: relative;
+}
+
+.impact-table__category-cell {
+  padding: 0;
+  border: 0;
+  vertical-align: middle;
+  background: transparent;
+}
+
+/* Column Headers */
+.impact-table__header {
+  position: relative;
+}
+
+.impact-table__column-header {
+  padding: 0;
+  border: 0;
+  vertical-align: middle;
+  background: transparent;
+}
+
+.impact-table__column-header--special {
+  background: transparent;
+}
+
+/* Row Headers */
+.impact-table__row-header {
+  padding: 0;
+  border: 0;
+  vertical-align: middle;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: var(--base-white, #FFF);
+}
+
+/* Data Cells */
+.impact-table__body {
+  position: relative;
+}
+
+.impact-table__row {
+  position: relative;
+}
+
+.impact-table__data-cell {
+  padding: 0;
+  border: 0;
+  vertical-align: middle;
+  background: transparent;
+}
+
+/* Hover Effects for Rows */
+.impact-table__row:hover .impact-table__data-cell {
+  /* Let individual cells handle their own hover states */
+}
+
+/* Accessibility */
+.impact-table__table:focus-within {
+  outline: 2px solid var(--primary-sky-blue-sky-blue, #0BA7EA);
+  outline-offset: 4px;
+  border-radius: var(--spacing-radius-4px, 4px);
+}
+
+/* Keyboard Navigation */
+.impact-table__data-cell:focus-within,
+.impact-table__column-header:focus-within,
+.impact-table__row-header:focus-within,
+.impact-table__category-cell:focus-within {
+  position: relative;
+  z-index: 10;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .impact-table__container {
+    border: 1px solid var(--neutral-gray-gray-200, #E5E7EB);
+    border-radius: var(--spacing-radius-4px, 4px);
+  }
+  
+  .impact-table__corner-cell {
+    width: 160px;
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .impact-table__title {
+    font-size: var(--type-archivo-label-lg, 18px);
+    line-height: var(--type-line-height-label-lg, 24px);
+  }
+  
+  .impact-table__corner-cell {
+    width: 140px;
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .impact-table__title-section {
+    padding: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-16px, 16px);
+  }
+  
+  .impact-table__title {
+    font-size: var(--type-archivo-label, 16px);
+    line-height: var(--type-line-height-label, 20px);
+  }
+  
+  .impact-table__corner-cell {
+    width: 120px;
+    min-width: 120px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .impact-table__container {
+    overflow: visible;
+  }
+  
+  .impact-table__table {
+    page-break-inside: auto;
+  }
+  
+  .impact-table__row {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  
+  .impact-table__header {
+    display: table-header-group;
+  }
+  
+  .impact-table__row-header {
+    position: static;
+  }
+  
+  .impact-table__corner-cell {
+    position: static;
+  }
+}
+
+/* Loading State */
+.impact-table--loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.impact-table--loading .impact-table__container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--base-overlay, rgba(28, 28, 28, 0.45));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+/* Empty State */
+.impact-table--empty .impact-table__body {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.impact-table__empty-message {
+  color: var(--neutral-gray-gray-500, #6D7280);
+  font-family: var(--type-typeface-roboto-flex, "Roboto Flex");
+  font-size: var(--type-roboto-flex-body, 16px);
+  line-height: var(--type-line-height-body, 20px);
+  text-align: center;
+  padding: var(--spacing-sizing-24px, 24px);
+}
+
+/* Scrollbar Styling */
+.impact-table__container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.impact-table__container::-webkit-scrollbar-track {
+  background: var(--neutral-gray-gray-100, #F3F4F6);
+  border-radius: 4px;
+}
+
+.impact-table__container::-webkit-scrollbar-thumb {
+  background: var(--neutral-gray-gray-400, #9CA3AF);
+  border-radius: 4px;
+}
+
+.impact-table__container::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-gray-gray-500, #6D7280);
+}
