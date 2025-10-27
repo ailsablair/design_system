@@ -14,7 +14,7 @@
   gap: 8px;
   align-items: flex-start;
   justify-content: center;
-  width: 202px;
+  width: var(--impact-table-col-lg, 200px);
   height: 60px;
   min-height: 60px;
   max-height: 60px;
@@ -52,11 +52,11 @@
 /* ===== WIDTH VARIANTS ===== */
 
 .building-blocks-table-impact.width-sm {
-  width: 94px;
+  width: var(--impact-table-col-sm, 94px);
 }
 
 .building-blocks-table-impact.width-lg {
-  width: 202px;
+  width: var(--impact-table-col-lg, 200px);
 }
 
 /* ===== TYPE VARIANTS ===== */
