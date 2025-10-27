@@ -9,16 +9,18 @@ const meta: Meta<typeof ImpactTableCell> = {
     docs: {
       description: {
         component: `
-The Impact Table Cell component is a specialized cell for impact assessment tables. It supports various types including:
+The Impact Table Cell component is a specialized cell for impact assessment tables based on the new Figma design. It supports:
 
-- **Dropdown cells**: For selecting impact values from predefined options
-- **Input cells**: For entering numerical or text data
-- **Header cells**: For displaying category names with optional lock icons
-- **Row headers**: For displaying row titles with optional subtexts
-- **Column headers**: For displaying year and unit information
-- **Total cells**: For displaying calculated read-only values
+- **Dropdown cells**: For selecting impact values with chevron icon
+- **Input cells**: For entering numerical data
+- **Header cells**: Category names with optional lock icons and subtitles  
+- **Row headers**: Right-aligned titles with optional subtexts
+- **Total cells**: Read-only cells displaying calculated values
+- **Populated cells**: Read-only cells showing finalized data
+- **Locked cells**: Read-only cells with lock indicator
+- **Impact cells**: Special category headers with lock icon and subtitle
 
-The component follows the Echo Design System guidelines and uses only custom design tokens.
+The component follows the Echo Design System and uses only custom design tokens from Figma.
         `,
       },
     },
@@ -28,11 +30,11 @@ The component follows the Echo Design System guidelines and uses only custom des
     role: {
       control: 'select',
       options: ['cell', 'cell-0', 'row'],
-      description: 'Cell role variant',
+      description: 'Cell role variant - determines background color',
     },
     type: {
       control: 'select',
-      options: ['dropdown', 'input', 'header', 'header-w-subtext', 'header-subtext', 'bolded', 'bolded-w-subtext', 'total'],
+      options: ['dropdown', 'input', 'header', 'header-w-subtext', 'total', 'populated', 'locked', 'impact'],
       description: 'Cell type determines the layout and content',
     },
     width: {
@@ -42,16 +44,12 @@ The component follows the Echo Design System guidelines and uses only custom des
     },
     state: {
       control: 'select',
-      options: ['default', 'filled', 'empty', 'disabled', 'disabled-empty', 'hover', 'decimal', 'text', 'scale'],
+      options: ['default', 'empty', 'disabled', 'disabled-empty', 'decimal', 'text', 'scale'],
       description: 'Cell state',
     },
     hover: {
       control: 'boolean',
       description: 'Hover state',
-    },
-    disabled: {
-      control: 'boolean',
-      description: 'Disabled state',
     },
   },
 };
@@ -59,13 +57,15 @@ The component follows the Echo Design System guidelines and uses only custom des
 export default meta;
 type Story = StoryObj<typeof ImpactTableCell>;
 
-// Dropdown Cell Variants
-export const DropdownFilledLarge: Story = {
+// ===== DROPDOWN CELLS =====
+
+export const DropdownScaleLarge: Story = {
+  name: 'Dropdown - Scale (Large)',
   args: {
     role: 'cell',
     type: 'dropdown',
     width: 'lg',
-    state: 'filled',
+    state: 'scale',
     value: '3 - Significant',
     options: [
       { label: '1 - Negligible', value: '1 - Negligible' },
@@ -77,24 +77,25 @@ export const DropdownFilledLarge: Story = {
   },
 };
 
-export const DropdownDefaultLarge: Story = {
+export const DropdownScaleLargeHover: Story = {
+  name: 'Dropdown - Scale Hover (Large)',
   args: {
     role: 'cell',
     type: 'dropdown',
     width: 'lg',
-    state: 'default',
-    placeholder: 'Select an option',
+    state: 'scale',
+    value: '3 - Significant',
+    hover: true,
     options: [
       { label: '1 - Negligible', value: '1 - Negligible' },
       { label: '2 - Minor', value: '2 - Minor' },
       { label: '3 - Significant', value: '3 - Significant' },
-      { label: '4 - Major', value: '4 - Major' },
-      { label: '5 - Critical', value: '5 - Critical' },
     ],
   },
 };
 
 export const DropdownEmptyLarge: Story = {
+  name: 'Dropdown - Empty (Large)',
   args: {
     role: 'cell',
     type: 'dropdown',
@@ -103,61 +104,72 @@ export const DropdownEmptyLarge: Story = {
   },
 };
 
+export const DropdownDefaultLarge: Story = {
+  name: 'Dropdown - Default (Large)',
+  args: {
+    role: 'cell',
+    type: 'dropdown',
+    width: 'lg',
+    state: 'default',
+  },
+};
+
 export const DropdownDisabledLarge: Story = {
+  name: 'Dropdown - Disabled (Large)',
   args: {
     role: 'cell',
     type: 'dropdown',
     width: 'lg',
     state: 'disabled',
-    disabled: true,
-    placeholder: 'Select an option',
   },
 };
 
-export const DropdownFilledSmall: Story = {
+export const DropdownDisabledEmptyLarge: Story = {
+  name: 'Dropdown - Disabled Empty (Large)',
   args: {
     role: 'cell',
     type: 'dropdown',
+    width: 'lg',
+    state: 'disabled-empty',
+  },
+};
+
+export const DropdownScaleSmall: Story = {
+  name: 'Dropdown - Scale (Small, Cell-0)',
+  args: {
+    role: 'cell-0',
+    type: 'dropdown',
     width: 'sm',
-    state: 'filled',
+    state: 'scale',
     value: '3',
-    options: [
-      { label: '1', value: '1' },
-      { label: '2', value: '2' },
-      { label: '3', value: '3' },
-      { label: '4', value: '4' },
-      { label: '5', value: '5' },
-    ],
   },
 };
 
 export const DropdownDefaultSmall: Story = {
+  name: 'Dropdown - Default (Small)',
   args: {
     role: 'cell',
     type: 'dropdown',
     width: 'sm',
     state: 'default',
-    placeholder: '0.00',
-    options: [
-      { label: '0.00', value: '0.00' },
-      { label: '1.00', value: '1.00' },
-      { label: '2.00', value: '2.00' },
-    ],
   },
 };
 
-// Input Cell Variants
-export const InputFilledLarge: Story = {
+// ===== INPUT CELLS =====
+
+export const InputDecimalLarge: Story = {
+  name: 'Input - Decimal (Large)',
   args: {
     role: 'cell',
     type: 'input',
     width: 'lg',
-    state: 'filled',
+    state: 'decimal',
     value: '2.65',
   },
 };
 
 export const InputDefaultLarge: Story = {
+  name: 'Input - Default (Large)',
   args: {
     role: 'cell',
     type: 'input',
@@ -168,6 +180,7 @@ export const InputDefaultLarge: Story = {
 };
 
 export const InputEmptyLarge: Story = {
+  name: 'Input - Empty (Large)',
   args: {
     role: 'cell',
     type: 'input',
@@ -177,115 +190,283 @@ export const InputEmptyLarge: Story = {
 };
 
 export const InputDisabledLarge: Story = {
+  name: 'Input - Disabled (Large)',
   args: {
     role: 'cell',
     type: 'input',
     width: 'lg',
     state: 'disabled',
-    disabled: true,
-    placeholder: 'Enter initial value',
   },
 };
 
-export const InputFilledSmall: Story = {
+export const InputDisabledEmptyLarge: Story = {
+  name: 'Input - Disabled Empty (Large)',
+  args: {
+    role: 'cell',
+    type: 'input',
+    width: 'lg',
+    state: 'disabled-empty',
+  },
+};
+
+export const InputDecimalSmall: Story = {
+  name: 'Input - Decimal (Small, Cell-0)',
   args: {
     role: 'cell-0',
     type: 'input',
     width: 'sm',
-    state: 'filled',
+    state: 'decimal',
     value: '5.67',
   },
 };
 
 export const InputDefaultSmall: Story = {
+  name: 'Input - Default (Small)',
   args: {
     role: 'cell',
     type: 'input',
     width: 'sm',
     state: 'default',
-    placeholder: '0.00',
   },
 };
 
-// Total Cell Variants
-export const TotalDecimal: Story = {
+export const InputEmptySmall: Story = {
+  name: 'Input - Empty (Small, Cell-0)',
+  args: {
+    role: 'cell-0',
+    type: 'input',
+    width: 'sm',
+    state: 'empty',
+  },
+};
+
+export const InputDisabledSmall: Story = {
+  name: 'Input - Disabled (Small)',
+  args: {
+    role: 'cell',
+    type: 'input',
+    width: 'sm',
+    state: 'disabled',
+  },
+};
+
+// ===== TOTAL CELLS =====
+
+export const TotalDecimalSmall: Story = {
+  name: 'Total - Decimal (Small)',
   args: {
     role: 'cell',
     type: 'total',
     width: 'sm',
     state: 'decimal',
     value: '5.67',
-    readOnly: true,
   },
 };
 
-export const TotalText: Story = {
+export const TotalTextSmall: Story = {
+  name: 'Total - Text (Small)',
   args: {
     role: 'cell',
     type: 'total',
     width: 'sm',
     state: 'text',
     value: 'Text',
-    readOnly: true,
   },
 };
 
-export const TotalScale: Story = {
+export const TotalScaleSmall: Story = {
+  name: 'Total - Scale (Small)',
   args: {
     role: 'cell',
     type: 'total',
     width: 'sm',
     state: 'scale',
     value: '3',
-    readOnly: true,
   },
 };
 
-export const TotalDefault: Story = {
+export const TotalDefaultSmall: Story = {
+  name: 'Total - Default (Small)',
   args: {
     role: 'cell',
     type: 'total',
     width: 'sm',
     state: 'default',
     value: '$0.00 M',
-    readOnly: true,
   },
 };
 
-// Header Cell Variants
-export const HeaderCategoryLarge: Story = {
+export const TotalDecimalLarge: Story = {
+  name: 'Total - Decimal (Large)',
   args: {
     role: 'cell',
-    type: 'header',
+    type: 'total',
     width: 'lg',
-    title: 'Category name',
-    showLock: true,
+    state: 'decimal',
+    value: '5.67',
   },
 };
 
-export const HeaderCategoryWithSubtext: Story = {
+// ===== POPULATED CELLS =====
+
+export const PopulatedDecimalSmall: Story = {
+  name: 'Populated - Decimal (Small)',
   args: {
     role: 'cell',
-    type: 'header-w-subtext',
-    width: 'lg',
-    title: 'Category name',
-    subtext: 'This is a subtitle',
-    showLock: true,
+    type: 'populated',
+    width: 'sm',
+    state: 'decimal',
+    value: '5.67',
   },
 };
 
-export const HeaderCategoryDisabled: Story = {
+export const PopulatedTextSmall: Story = {
+  name: 'Populated - Text (Small)',
   args: {
     role: 'cell',
-    type: 'header',
-    width: 'lg',
-    title: 'Category name',
-    showLock: true,
-    disabled: true,
+    type: 'populated',
+    width: 'sm',
+    state: 'text',
+    value: 'Text',
   },
 };
+
+export const PopulatedScaleSmall: Story = {
+  name: 'Populated - Scale (Small)',
+  args: {
+    role: 'cell',
+    type: 'populated',
+    width: 'sm',
+    state: 'scale',
+    value: '3',
+  },
+};
+
+export const PopulatedDefaultSmall: Story = {
+  name: 'Populated - Default (Small)',
+  args: {
+    role: 'cell',
+    type: 'populated',
+    width: 'sm',
+    state: 'default',
+    value: '$0.00 M',
+  },
+};
+
+export const PopulatedTextLarge: Story = {
+  name: 'Populated - Text (Large)',
+  args: {
+    role: 'cell',
+    type: 'populated',
+    width: 'lg',
+    state: 'text',
+    value: 'Populated response here',
+  },
+};
+
+export const PopulatedDecimalLarge: Story = {
+  name: 'Populated - Decimal (Large)',
+  args: {
+    role: 'cell',
+    type: 'populated',
+    width: 'lg',
+    state: 'decimal',
+    value: '2.65',
+  },
+};
+
+export const PopulatedScaleLarge: Story = {
+  name: 'Populated - Scale (Large)',
+  args: {
+    role: 'cell',
+    type: 'populated',
+    width: 'lg',
+    state: 'scale',
+    value: '3 - Significant',
+  },
+};
+
+// ===== LOCKED CELLS =====
+
+export const LockedDefaultSmall: Story = {
+  name: 'Locked - Default (Small)',
+  args: {
+    role: 'cell',
+    type: 'locked',
+    width: 'sm',
+    state: 'default',
+    value: '2001',
+  },
+};
+
+export const LockedDisabledSmall: Story = {
+  name: 'Locked - Disabled (Small)',
+  args: {
+    role: 'cell',
+    type: 'locked',
+    width: 'sm',
+    state: 'disabled',
+    value: '5.67',
+  },
+};
+
+export const LockedScaleSmall: Story = {
+  name: 'Locked - Scale (Small)',
+  args: {
+    role: 'cell',
+    type: 'locked',
+    width: 'sm',
+    state: 'scale',
+    value: '3',
+  },
+};
+
+export const LockedDecimalSmall: Story = {
+  name: 'Locked - Decimal (Small, Cell-0)',
+  args: {
+    role: 'cell-0',
+    type: 'locked',
+    width: 'sm',
+    state: 'decimal',
+    value: '5.67',
+  },
+};
+
+export const LockedEmptyLarge: Story = {
+  name: 'Locked - Empty (Large)',
+  args: {
+    role: 'cell',
+    type: 'locked',
+    width: 'lg',
+    state: 'empty',
+  },
+};
+
+export const LockedDecimalLarge: Story = {
+  name: 'Locked - Decimal (Large)',
+  args: {
+    role: 'cell',
+    type: 'locked',
+    width: 'lg',
+    state: 'decimal',
+    value: '2.65',
+  },
+};
+
+export const LockedDisabledLarge: Story = {
+  name: 'Locked - Disabled (Large)',
+  args: {
+    role: 'cell',
+    type: 'locked',
+    width: 'lg',
+    state: 'disabled',
+  },
+};
+
+// ===== HEADER CELLS =====
 
 export const HeaderColumnSmall: Story = {
+  name: 'Header - Column (Small)',
   args: {
     role: 'cell',
     type: 'header',
@@ -294,108 +475,187 @@ export const HeaderColumnSmall: Story = {
   },
 };
 
-export const HeaderColumnWithYear: Story = {
-  args: {
-    role: 'cell-0',
-    type: 'header',
-    width: 'sm',
-    yearLabel: '2025',
-    unitLabel: '0A',
-  },
-};
-
 export const HeaderColumnDisabled: Story = {
-  args: {
-    role: 'cell-0',
-    type: 'header',
-    width: 'sm',
-    yearLabel: '2025',
-    unitLabel: '0A',
-    disabled: true,
-  },
-};
-
-// Row Header Variants
-export const RowHeaderDefault: Story = {
-  args: {
-    role: 'row',
-    type: 'header',
-    title: 'Row title goes here',
-  },
-};
-
-export const RowHeaderWithSubtext: Story = {
-  args: {
-    role: 'row',
-    type: 'header-subtext',
-    title: 'Row title goes here',
-    subtext: 'This is subtext',
-  },
-};
-
-export const RowHeaderBolded: Story = {
-  args: {
-    role: 'row',
-    type: 'bolded',
-    title: 'Total amount ($M)',
-  },
-};
-
-export const RowHeaderBoldedWithSubtext: Story = {
-  args: {
-    role: 'row',
-    type: 'bolded-w-subtext',
-    title: 'Total amount ($M)',
-    subtext: 'This is subtext',
-  },
-};
-
-export const RowHeaderDisabled: Story = {
-  args: {
-    role: 'row',
-    type: 'header',
-    title: 'Row title goes here',
-    disabled: true,
-  },
-};
-
-// Interactive Examples
-export const DropdownHoverState: Story = {
+  name: 'Header - Column Disabled (Small)',
   args: {
     role: 'cell',
-    type: 'dropdown',
-    width: 'lg',
-    state: 'filled',
-    value: '3 - Significant',
-    hover: true,
-    options: [
-      { label: '1 - Negligible', value: '1 - Negligible' },
-      { label: '2 - Minor', value: '2 - Minor' },
-      { label: '3 - Significant', value: '3 - Significant' },
-      { label: '4 - Major', value: '4 - Major' },
-      { label: '5 - Critical', value: '5 - Critical' },
-    ],
+    type: 'header',
+    width: 'sm',
+    unitLabel: 'U1',
+    state: 'disabled',
   },
 };
 
-export const InputHoverState: Story = {
+export const HeaderColumnWithYear: Story = {
+  name: 'Header - Column with Year (Small, Cell-0)',
   args: {
     role: 'cell-0',
-    type: 'input',
+    type: 'header',
     width: 'sm',
-    state: 'filled',
-    value: '5.67',
-    hover: true,
+    yearLabel: '2025',
+    unitLabel: '0A',
   },
 };
 
-export const HeaderHoverState: Story = {
+export const HeaderColumnWithYearDisabled: Story = {
+  name: 'Header - Column with Year Disabled (Small)',
+  args: {
+    role: 'cell-0',
+    type: 'header',
+    width: 'sm',
+    yearLabel: '2025',
+    unitLabel: '0A',
+    state: 'disabled',
+  },
+};
+
+export const HeaderCategorySmall: Story = {
+  name: 'Header - Category (Small, Cell-0)',
+  args: {
+    role: 'cell-0',
+    type: 'header-w-subtext',
+    width: 'sm',
+    title: 'Category',
+    subtext: 'Subtitle',
+  },
+};
+
+export const HeaderCategoryDisabledSmall: Story = {
+  name: 'Header - Category Disabled (Small)',
+  args: {
+    role: 'cell',
+    type: 'header-w-subtext',
+    width: 'sm',
+    title: 'Category',
+    subtext: 'Subtitle',
+    state: 'disabled',
+  },
+};
+
+export const HeaderCategoryLarge: Story = {
+  name: 'Header - Category (Large)',
   args: {
     role: 'cell',
     type: 'header',
     width: 'lg',
     title: 'Category name',
-    showLock: true,
-    hover: true,
+  },
+};
+
+export const HeaderCategoryDisabledLarge: Story = {
+  name: 'Header - Category Disabled (Large)',
+  args: {
+    role: 'cell',
+    type: 'header',
+    width: 'lg',
+    title: 'Category name',
+    state: 'disabled',
+  },
+};
+
+// ===== IMPACT CELLS (Category with Lock) =====
+
+export const ImpactCategorySmall: Story = {
+  name: 'Impact - Category with Lock (Small, Cell-0)',
+  args: {
+    role: 'cell-0',
+    type: 'impact',
+    width: 'sm',
+    title: 'Category name',
+    subtext: 'This is a subtitle',
+  },
+};
+
+export const ImpactCategoryLarge: Story = {
+  name: 'Impact - Category with Lock (Large)',
+  args: {
+    role: 'cell',
+    type: 'impact',
+    width: 'lg',
+    title: 'Category name',
+    subtext: 'This is a subtitle',
+  },
+};
+
+// ===== ROW HEADERS =====
+
+export const RowHeaderDefault: Story = {
+  name: 'Row - Header Default',
+  args: {
+    role: 'row',
+    type: 'header',
+    title: 'Row title goes here',
+  },
+};
+
+export const RowHeaderDisabled: Story = {
+  name: 'Row - Header Disabled',
+  args: {
+    role: 'row',
+    type: 'header',
+    title: 'Row title goes here',
+    state: 'disabled',
+  },
+};
+
+export const RowHeaderWithSubtext: Story = {
+  name: 'Row - Header with Subtext',
+  args: {
+    role: 'row',
+    type: 'header-w-subtext',
+    title: 'Row title goes here',
+    subtext: 'This is subtext',
+  },
+};
+
+export const RowHeaderWithSubtextDisabled: Story = {
+  name: 'Row - Header with Subtext Disabled',
+  args: {
+    role: 'row',
+    type: 'header-w-subtext',
+    title: 'Row title goes here',
+    subtext: 'This is subtext',
+    state: 'disabled',
+  },
+};
+
+export const RowImpact: Story = {
+  name: 'Row - Impact Total',
+  args: {
+    role: 'row',
+    type: 'impact',
+    title: 'Total amount ($M)',
+  },
+};
+
+export const RowTotal: Story = {
+  name: 'Row - Total with Subtext',
+  args: {
+    role: 'row',
+    type: 'total',
+    title: 'Total amount ($M)',
+    subtext: 'This is subtext',
+  },
+};
+
+export const RowTotalText: Story = {
+  name: 'Row - Total Text',
+  args: {
+    role: 'row',
+    type: 'total',
+    title: 'Total amount ($M)',
+    subtext: 'This is subtext',
+    state: 'text',
+  },
+};
+
+export const RowTotalDisabled: Story = {
+  name: 'Row - Total Disabled',
+  args: {
+    role: 'row',
+    type: 'total',
+    title: 'Total amount ($M)',
+    subtext: 'This is subtext',
+    state: 'disabled',
   },
 };
