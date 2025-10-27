@@ -8,12 +8,7 @@
  */
 
 export { ImpactTable } from './ImpactTable';
-export type { 
-  ImpactTableProps, 
-  ImpactTableColumnHeader, 
-  ImpactTableRowHeader, 
-  ImpactTableCellData 
-} from './ImpactTable';
+export type { ImpactTableProps } from './ImpactTable';
 
 export { ImpactTableCell } from './ImpactTableCell';
 export type { ImpactTableCellProps } from './ImpactTableCell';
