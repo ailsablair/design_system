@@ -41,6 +41,14 @@
   padding: var(--spacing-sizing-16px, 16px);
 }
 
+/* Total currency cells: hug content and no wrap */
+.building-blocks-table-impact.type-total {
+  width: max-content;
+}
+.building-blocks-table-impact.type-total.width-lg {
+  min-width: 94px; /* allow hugging content instead of forcing 202px */
+}
+
 .building-blocks-table-impact.type-populated.width-sm,
 .building-blocks-table-impact.type-total.width-sm {
   padding: 17px 16px;
