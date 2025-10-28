@@ -462,7 +462,7 @@ export const ResponsiveExample: Story = {
   render: () => (
     <div className="impact-showcase-root">
       <div className="impact-tip-panel">
-        <p className="impact-subtitle" style={{ margin: 0 }}>
+        <p className="impact-subtitle impact-no-margin">
           💡 <strong>Tip:</strong> Resize your browser window to see how the table adapts to different screen sizes.
           The table maintains usability on mobile, tablet, and desktop viewports.
         </p>
