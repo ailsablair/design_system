@@ -76,7 +76,7 @@ export const ImpactTableCell: React.FC<ImpactTableCellProps> = ({
   // Render input cell
   if (type === 'input') {
     return (
-      <div className={cellClasses}>
+      <div className={cellClasses} aria-disabled={isDisabled}>
         <div className="simple">
           <div className="placeholder">
             {children && <div className="placeholder-text">{children}</div>}
@@ -89,7 +89,7 @@ export const ImpactTableCell: React.FC<ImpactTableCellProps> = ({
   // Render total cell
   if (type === 'total') {
     return (
-      <div className={cellClasses}>
+      <div className={cellClasses} aria-disabled={isDisabled}>
         <div className="simple">
           <div className="placeholder">
             {children && <div className="placeholder-text">{children}</div>}
@@ -102,7 +102,7 @@ export const ImpactTableCell: React.FC<ImpactTableCellProps> = ({
   // Render populated cell
   if (type === 'populated') {
     return (
-      <div className={cellClasses}>
+      <div className={cellClasses} aria-disabled={isDisabled}>
         <div className="simple">
           <div className="placeholder">
             {children && <div className="placeholder-text">{children}</div>}
