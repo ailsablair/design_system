@@ -14,6 +14,11 @@
   gap: var(--spacing-sizing-48px, 48px);
 }
 
+/* Tighter spacing variant */
+.impact-showcase-tight {
+  gap: var(--spacing-sizing-24px, 24px);
+}
+
 .impact-section {
   display: block;
 }
@@ -70,6 +75,11 @@
   background: var(--primary-seafoam-50, #EFF7F3);
   border-radius: var(--spacing-radius-4px, 4px);
   border: 1px solid var(--primary-seafoam-seafoam, #8BBF9F);
+}
+
+/* Utility */
+.impact-no-margin {
+  margin: 0 !important;
 }
 
 .impact-highlight-title {
