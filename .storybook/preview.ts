@@ -1,6 +1,8 @@
 import React, { type PropsWithChildren, useEffect } from 'react';
 import type { Decorator, Preview as StorybookPreview } from '@storybook/react-vite';
 import '../src/utils/storybookResizeObserverFix';
+import '../src/utils/browserResizeObserverSuppression';
+import '../src/utils/minimalResizeObserverSuppression';
 
 const ResizeObserverErrorBoundary: React.FC<PropsWithChildren> = ({ children }) => {
   useEffect(() => {
