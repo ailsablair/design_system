@@ -164,12 +164,26 @@
   padding: var(--spacing-sizing-4px, 4px) var(--spacing-sizing-8px, 8px);
   display: flex;
   align-items: center;
-  gap: var(--spacing-sizing-4px, 4px);
+  gap: var(--spacing-sizing-24px, 24px);
   align-self: stretch;
+  height: 32px;
 }
 
 .building-blocks-table-impact.type-dropdown .placeholder {
   justify-content: space-between;
+  gap: var(--spacing-sizing-4px, 4px);
+}
+
+.building-blocks-table-impact.type-input .placeholder {
+  gap: var(--spacing-sizing-4px, 4px);
+  justify-content: flex-start;
+}
+
+.building-blocks-table-impact.type-populated .placeholder,
+.building-blocks-table-impact.type-total .placeholder {
+  border-color: transparent;
+  background: transparent;
+  justify-content: center;
 }
 
 .building-blocks-table-impact.state-default.type-dropdown.width-sm .placeholder,
