@@ -1,0 +1,72 @@
+/* Impact Stories Tokenized Styles */
+
+.impact-showcase-root {
+  padding: var(--spacing-sizing-24px, 24px);
+  background: var(--neutral-gray-gray-50, #F9FAFB);
+  border-radius: var(--spacing-radius-4px, 4px);
+}
+
+.impact-section {
+  margin-bottom: var(--spacing-sizing-48px, 48px);
+}
+
+.impact-section:last-child {
+  margin-bottom: 0;
+}
+
+.impact-section-title {
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-size: var(--type-archivo-heading-4, 24px);
+  line-height: var(--type-line-height-heading-4, 24px);
+  letter-spacing: var(--type-letter-spacing-archivo-heading-4, -0.25px);
+  font-weight: var(--type-weight-bold, 700);
+  margin: 0 0 var(--spacing-sizing-24px, 24px) 0;
+  color: var(--secondary-navy, #3A3282);
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--spacing-sizing-24px, 24px);
+}
+
+.impact-comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--spacing-sizing-24px, 24px);
+  max-width: 900px;
+}
+
+.impact-variant-label {
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-size: var(--type-archivo-label-sm, 14px);
+  line-height: var(--type-line-height-label-sm, 16px);
+  letter-spacing: var(--type-letter-spacing-archivo-label-sm, 0.15px);
+  font-weight: var(--type-weight-medium, 500);
+  margin: 0 0 var(--spacing-sizing-8px, 8px) 0;
+  color: var(--neutral-gray-gray-700, #374151);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .impact-grid,
+  .impact-comparison-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--spacing-sizing-16px, 16px);
+  }
+  
+  .impact-showcase-root {
+    padding: var(--spacing-sizing-16px, 16px);
+  }
+  
+  .impact-section {
+    margin-bottom: var(--spacing-sizing-32px, 32px);
+  }
+}
+
+@media (max-width: 480px) {
+  .impact-grid,
+  .impact-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+}
