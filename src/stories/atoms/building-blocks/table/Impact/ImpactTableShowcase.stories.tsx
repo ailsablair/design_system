@@ -343,7 +343,7 @@ export const AllCellVariants: Story = {
         }}>
           Header Cells
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmin(200px, 1fr))', gap: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
           <div>
             <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Category Header</p>
             <ImpactTableCell
