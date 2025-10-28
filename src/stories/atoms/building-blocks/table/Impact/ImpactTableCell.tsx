@@ -58,11 +58,11 @@ export const ImpactTableCell: React.FC<ImpactTableCellProps> = ({
   // Render dropdown cell
   if (type === 'dropdown') {
     return (
-      <div className={cellClasses}>
+      <div className={cellClasses} aria-disabled={isDisabled}>
         <div className="simple">
           <div className="placeholder">
             {children && <div className="placeholder-text">{children}</div>}
-            <svg className="filled-icons" width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <svg className="filled-icons" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
               <g opacity="0.6">
                 <path d="M4.3225 5.00488L7 7.68238L9.6775 5.00488L10.5 5.83322L7 9.33322L3.5 5.83322L4.3225 5.00488Z" fill="#61607C"/>
               </g>
