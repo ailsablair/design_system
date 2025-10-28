@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ImpactTable } from './ImpactTable';
 import { ImpactTableCell } from './ImpactTableCell';
+import './impactStories.css';
 
 const meta: Meta = {
   title: 'Atoms/🧱 Building Blocks/Tables/Impact/Showcase',
@@ -71,20 +72,12 @@ const impactScaleOptions = [
 
 export const AllCellVariants: Story = {
   render: () => (
-    <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '48px' }}>
-      <section>
-        <h2 style={{ 
-          fontSize: '24px', 
-          fontWeight: 700, 
-          marginBottom: '24px',
-          fontFamily: 'Archivo',
-          color: '#3A3282'
-        }}>
-          Dropdown Cells
-        </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+    <div className="impact-showcase-root">
+      <section className="impact-section">
+        <h2 className="impact-section-title">Dropdown Cells</h2>
+        <div className="impact-grid">
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Default (Large)</p>
+            <p className="impact-label">Default (Large)</p>
             <ImpactTableCell
               role="cell"
               type="dropdown"
@@ -95,7 +88,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Scale (Large)</p>
+            <p className="impact-label">Scale (Large)</p>
             <ImpactTableCell
               role="cell"
               type="dropdown"
@@ -106,7 +99,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Empty (Large)</p>
+            <p className="impact-label">Empty (Large)</p>
             <ImpactTableCell
               role="cell"
               type="dropdown"
@@ -116,7 +109,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Disabled (Large)</p>
+            <p className="impact-label">Disabled (Large)</p>
             <ImpactTableCell
               role="cell"
               type="dropdown"
@@ -126,7 +119,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Scale (Small)</p>
+            <p className="impact-label">Scale (Small)</p>
             <ImpactTableCell
               role="cell"
               type="dropdown"
@@ -137,7 +130,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Hover State</p>
+            <p className="impact-label">Hover State</p>
             <ImpactTableCell
               role="cell"
               type="dropdown"
@@ -151,19 +144,11 @@ export const AllCellVariants: Story = {
         </div>
       </section>
 
-      <section>
-        <h2 style={{ 
-          fontSize: '24px', 
-          fontWeight: 700, 
-          marginBottom: '24px',
-          fontFamily: 'Archivo',
-          color: '#3A3282'
-        }}>
-          Input Cells
-        </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+      <section className="impact-section">
+        <h2 className="impact-section-title">Input Cells</h2>
+        <div className="impact-grid">
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Decimal (Large)</p>
+            <p className="impact-label">Decimal (Large)</p>
             <ImpactTableCell
               role="cell"
               type="input"
@@ -173,7 +158,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Default (Large)</p>
+            <p className="impact-label">Default (Large)</p>
             <ImpactTableCell
               role="cell"
               type="input"
@@ -183,7 +168,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Empty (Large)</p>
+            <p className="impact-label">Empty (Large)</p>
             <ImpactTableCell
               role="cell"
               type="input"
@@ -192,7 +177,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Disabled (Large)</p>
+            <p className="impact-label">Disabled (Large)</p>
             <ImpactTableCell
               role="cell"
               type="input"
@@ -202,7 +187,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Decimal (Small)</p>
+            <p className="impact-label">Decimal (Small)</p>
             <ImpactTableCell
               role="cell-0"
               type="input"
@@ -212,7 +197,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Hover State</p>
+            <p className="impact-label">Hover State</p>
             <ImpactTableCell
               role="cell-0"
               type="input"
@@ -225,19 +210,11 @@ export const AllCellVariants: Story = {
         </div>
       </section>
 
-      <section>
-        <h2 style={{ 
-          fontSize: '24px', 
-          fontWeight: 700, 
-          marginBottom: '24px',
-          fontFamily: 'Archivo',
-          color: '#3A3282'
-        }}>
-          Populated Cells (Read-Only)
-        </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+      <section className="impact-section">
+        <h2 className="impact-section-title">Populated Cells (Read-Only)</h2>
+        <div className="impact-grid">
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Decimal (Large)</p>
+            <p className="impact-label">Decimal (Large)</p>
             <ImpactTableCell
               role="cell"
               type="populated"
@@ -247,7 +224,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Decimal (Small)</p>
+            <p className="impact-label">Decimal (Small)</p>
             <ImpactTableCell
               role="cell-0"
               type="populated"
@@ -257,7 +234,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Scale (Small)</p>
+            <p className="impact-label">Scale (Small)</p>
             <ImpactTableCell
               role="cell"
               type="populated"
@@ -267,7 +244,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Text (Small)</p>
+            <p className="impact-label">Text (Small)</p>
             <ImpactTableCell
               role="cell"
               type="populated"
@@ -279,19 +256,11 @@ export const AllCellVariants: Story = {
         </div>
       </section>
 
-      <section>
-        <h2 style={{ 
-          fontSize: '24px', 
-          fontWeight: 700, 
-          marginBottom: '24px',
-          fontFamily: 'Archivo',
-          color: '#3A3282'
-        }}>
-          Total Cells (Bold, Read-Only)
-        </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+      <section className="impact-section">
+        <h2 className="impact-section-title">Total Cells (Bold, Read-Only)</h2>
+        <div className="impact-grid">
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Decimal (Large)</p>
+            <p className="impact-label">Decimal (Large)</p>
             <ImpactTableCell
               role="cell"
               type="total"
@@ -301,7 +270,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Decimal (Small)</p>
+            <p className="impact-label">Decimal (Small)</p>
             <ImpactTableCell
               role="cell-0"
               type="total"
@@ -311,7 +280,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Scale (Small)</p>
+            <p className="impact-label">Scale (Small)</p>
             <ImpactTableCell
               role="cell-0"
               type="total"
@@ -321,7 +290,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Text (Small)</p>
+            <p className="impact-label">Text (Small)</p>
             <ImpactTableCell
               role="cell-0"
               type="total"
@@ -333,19 +302,11 @@ export const AllCellVariants: Story = {
         </div>
       </section>
 
-      <section>
-        <h2 style={{ 
-          fontSize: '24px', 
-          fontWeight: 700, 
-          marginBottom: '24px',
-          fontFamily: 'Archivo',
-          color: '#3A3282'
-        }}>
-          Header Cells
-        </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+      <section className="impact-section">
+        <h2 className="impact-section-title">Header Cells</h2>
+        <div className="impact-grid">
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Category Header</p>
+            <p className="impact-label">Category Header</p>
             <ImpactTableCell
               role="cell"
               type="header-w-subtext"
@@ -355,7 +316,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Impact Header with Lock</p>
+            <p className="impact-label">Impact Header with Lock</p>
             <ImpactTableCell
               role="cell"
               type="impact"
@@ -365,7 +326,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Column Header (0A)</p>
+            <p className="impact-label">Column Header (0A)</p>
             <ImpactTableCell
               role="cell-0"
               type="header"
@@ -374,7 +335,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Column Header (U1)</p>
+            <p className="impact-label">Column Header (U1)</p>
             <ImpactTableCell
               role="cell"
               type="header"
@@ -385,19 +346,11 @@ export const AllCellVariants: Story = {
         </div>
       </section>
 
-      <section>
-        <h2 style={{ 
-          fontSize: '24px', 
-          fontWeight: 700, 
-          marginBottom: '24px',
-          fontFamily: 'Archivo',
-          color: '#3A3282'
-        }}>
-          Row Headers
-        </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+      <section className="impact-section">
+        <h2 className="impact-section-title">Row Headers</h2>
+        <div className="impact-grid">
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Row with Subtext</p>
+            <p className="impact-label">Row with Subtext</p>
             <ImpactTableCell
               role="row"
               type="header-w-subtext"
@@ -407,7 +360,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Total Row with Subtext</p>
+            <p className="impact-label">Total Row with Subtext</p>
             <ImpactTableCell
               role="row"
               type="total"
@@ -417,7 +370,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Impact Row</p>
+            <p className="impact-label">Impact Row</p>
             <ImpactTableCell
               role="row"
               type="impact"
@@ -428,19 +381,11 @@ export const AllCellVariants: Story = {
         </div>
       </section>
 
-      <section>
-        <h2 style={{ 
-          fontSize: '24px', 
-          fontWeight: 700, 
-          marginBottom: '24px',
-          fontFamily: 'Archivo',
-          color: '#3A3282'
-        }}>
-          Locked Cells
-        </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+      <section className="impact-section">
+        <h2 className="impact-section-title">Locked Cells</h2>
+        <div className="impact-grid">
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Locked Decimal</p>
+            <p className="impact-label">Locked Decimal</p>
             <ImpactTableCell
               role="cell"
               type="locked"
@@ -450,7 +395,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Locked Scale</p>
+            <p className="impact-label">Locked Scale</p>
             <ImpactTableCell
               role="cell"
               type="locked"
@@ -460,7 +405,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Locked Text</p>
+            <p className="impact-label">Locked Text</p>
             <ImpactTableCell
               role="cell"
               type="locked"
@@ -470,7 +415,7 @@ export const AllCellVariants: Story = {
             />
           </div>
           <div>
-            <p style={{ fontSize: '14px', marginBottom: '8px', fontWeight: 500 }}>Locked Disabled</p>
+            <p className="impact-label">Locked Disabled</p>
             <ImpactTableCell
               role="cell"
               type="locked"
@@ -487,59 +432,26 @@ export const AllCellVariants: Story = {
 
 export const CompleteTableExample: Story = {
   render: () => (
-    <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+    <div className="impact-showcase-root" style={{ gap: 'var(--spacing-sizing-24px, 24px)' }}>
       <div>
-        <h2 style={{ 
-          fontSize: '32px', 
-          fontWeight: 700, 
-          marginBottom: '8px',
-          fontFamily: 'Archivo',
-          color: '#3A3282'
-        }}>
-          Complete Impact Table
-        </h2>
-        <p style={{ 
-          fontSize: '16px', 
-          color: '#6D7280', 
-          marginBottom: '24px',
-          fontFamily: 'Roboto Flex'
-        }}>
+        <h2 className="impact-section-title" style={{ marginBottom: 'var(--spacing-sizing-8px, 8px)' }}>Complete Impact Table</h2>
+        <p className="impact-subtitle">
           This is the fully assembled Impact Table component matching the exact Figma design.
           It demonstrates all cell types, states, and the complete table structure.
         </p>
       </div>
-      
+
       <ImpactTable />
-      
-      <div style={{ 
-        marginTop: '24px', 
-        padding: '16px', 
-        background: '#F3F9F5', 
-        borderRadius: '4px',
-        border: '1px solid #8BBF9F'
-      }}>
-        <h3 style={{ 
-          fontSize: '16px', 
-          fontWeight: 600, 
-          marginBottom: '8px',
-          fontFamily: 'Archivo',
-          color: '#4B6D58'
-        }}>
-          Design Highlights
-        </h3>
-        <ul style={{ 
-          fontSize: '14px', 
-          color: '#374151', 
-          marginLeft: '20px',
-          fontFamily: 'Roboto Flex',
-          lineHeight: '1.6'
-        }}>
+
+      <div className="impact-highlight-card">
+        <h3 className="impact-highlight-title">Design Highlights</h3>
+        <ul className="impact-highlight-list">
           <li><strong>Header Row:</strong> Category headers with optional lock icons and subtexts</li>
           <li><strong>Special Column:</strong> "Impact values" column with green border separator</li>
-          <li><strong>0A Column:</strong> Light green background (#F3F9F5) for visual distinction</li>
+          <li><strong>0A Column:</strong> Light green background for visual distinction</li>
           <li><strong>Body Rows:</strong> Mix of populated decimals (2.65, 5.67), scale values (3), dropdown, and input cells</li>
-          <li><strong>Total Row:</strong> Bold values with light blue backgrounds (#F9F9FE)</li>
-          <li><strong>Borders:</strong> Dark seafoam (#4B6D58) for header and total rows, gray (#D2D5DA) for cells</li>
+          <li><strong>Total Row:</strong> Bold values with light blue backgrounds</li>
+          <li><strong>Borders:</strong> Dark seafoam for header and total rows, gray for cells</li>
         </ul>
       </div>
     </div>
@@ -548,14 +460,14 @@ export const CompleteTableExample: Story = {
 
 export const ResponsiveExample: Story = {
   render: () => (
-    <div style={{ padding: '24px' }}>
-      <div style={{ marginBottom: '24px', padding: '16px', background: '#F9FAFB', borderRadius: '4px' }}>
-        <p style={{ fontSize: '14px', color: '#6D7280', margin: 0, fontFamily: 'Roboto Flex' }}>
+    <div className="impact-showcase-root">
+      <div className="impact-tip-panel">
+        <p className="impact-subtitle" style={{ margin: 0 }}>
           💡 <strong>Tip:</strong> Resize your browser window to see how the table adapts to different screen sizes.
           The table maintains usability on mobile, tablet, and desktop viewports.
         </p>
       </div>
-      
+
       <ImpactTable />
     </div>
   ),
@@ -563,43 +475,19 @@ export const ResponsiveExample: Story = {
 
 export const MultipleTablesExample: Story = {
   render: () => (
-    <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '48px' }}>
-      <section>
-        <h3 style={{ 
-          fontSize: '20px', 
-          fontWeight: 600, 
-          marginBottom: '16px',
-          fontFamily: 'Archivo',
-          color: '#3A3282'
-        }}>
-          Environmental Impact Assessment
-        </h3>
+    <div className="impact-showcase-root">
+      <section className="impact-section">
+        <h3 className="impact-multi-table-section-title">Environmental Impact Assessment</h3>
         <ImpactTable />
       </section>
-      
-      <section>
-        <h3 style={{ 
-          fontSize: '20px', 
-          fontWeight: 600, 
-          marginBottom: '16px',
-          fontFamily: 'Archivo',
-          color: '#3A3282'
-        }}>
-          Social Impact Assessment
-        </h3>
+
+      <section className="impact-section">
+        <h3 className="impact-multi-table-section-title">Social Impact Assessment</h3>
         <ImpactTable />
       </section>
-      
-      <section>
-        <h3 style={{ 
-          fontSize: '20px', 
-          fontWeight: 600, 
-          marginBottom: '16px',
-          fontFamily: 'Archivo',
-          color: '#3A3282'
-        }}>
-          Economic Impact Assessment
-        </h3>
+
+      <section className="impact-section">
+        <h3 className="impact-multi-table-section-title">Economic Impact Assessment</h3>
         <ImpactTable />
       </section>
     </div>
