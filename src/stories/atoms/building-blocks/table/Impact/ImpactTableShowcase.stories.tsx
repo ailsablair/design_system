@@ -432,7 +432,7 @@ export const AllCellVariants: Story = {
 
 export const CompleteTableExample: Story = {
   render: () => (
-    <div className="impact-showcase-root" style={{ gap: 'var(--spacing-sizing-24px, 24px)' }}>
+    <div className="impact-showcase-root impact-showcase-tight">
       <div>
         <h2 className="impact-section-title" style={{ marginBottom: 'var(--spacing-sizing-8px, 8px)' }}>Complete Impact Table</h2>
         <p className="impact-subtitle">
