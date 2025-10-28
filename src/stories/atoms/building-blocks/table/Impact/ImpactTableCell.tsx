@@ -53,6 +53,8 @@ export const ImpactTableCell: React.FC<ImpactTableCellProps> = ({
     className
   ].filter(Boolean).join(' ');
 
+  const isDisabled = state === 'disabled' || state === 'disabled-empty';
+
   // Render dropdown cell
   if (type === 'dropdown') {
     return (
