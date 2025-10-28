@@ -73,6 +73,13 @@
   background: var(--primary-blue-blue-50, #f9f9fe);
 }
 
+/* Blue background for populated/input/dropdown cells in impact values column */
+.building-blocks-table-impact.role-cell.type-populated.width-lg.state-decimal,
+.building-blocks-table-impact.role-cell.type-input.width-lg.state-default,
+.building-blocks-table-impact.role-cell.type-dropdown.width-lg.state-default {
+  background: var(--primary-blue-blue-50, #f9f9fe);
+}
+
 .building-blocks-table-impact.state-scale.width-lg:hover,
 .building-blocks-table-impact.hover-true.state-scale.width-lg,
 .building-blocks-table-impact.state-empty.type-dropdown.width-lg:hover,
