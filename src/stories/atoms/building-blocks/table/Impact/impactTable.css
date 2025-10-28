@@ -14,7 +14,7 @@
 }
 
 .table-impact {
-  border-radius: var(--spacing-sizing-2px, 2px);
+  border-radius: var(--spacing-radius-2px, 2px);
   border: 1px solid var(--neutral-gray-gray-300, #D2D5DA);
   display: inline-flex;
   flex-direction: column;
