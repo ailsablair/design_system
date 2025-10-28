@@ -1,0 +1,116 @@
+/* Impact Table Component Styles */
+
+.table-impact,
+.table-impact * {
+  box-sizing: border-box;
+}
+
+/* Scroll Wrapper */
+.impact-table-wrapper {
+  overflow: auto;
+  max-width: 100%;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-impact {
+  border-radius: var(--spacing-radius-2px, 2px);
+  border: 1px solid var(--neutral-gray-gray-300, #D2D5DA);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 100%;
+}
+
+/* Header Row */
+.row-header {
+  border-bottom: 2px solid var(--primary-seafoam-dark-seafoam, #4B6D58);
+  padding-bottom: var(--spacing-stroke-1px, 1px);
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  background: var(--base-white, #ffffff);
+}
+
+/* Body */
+.body {
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+/* Total Row */
+.row-total {
+  border-top: 2px solid var(--primary-seafoam-dark-seafoam, #4B6D58);
+  padding-top: var(--spacing-stroke-1px, 1px);
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  background: var(--base-white, #ffffff);
+}
+
+/* Column: Row Header (Sticky first column) */
+.column-row-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 202px;
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background: var(--base-white, #ffffff);
+  box-shadow: var(--shadow-shadow-sm-box-shadow, 0 2px 4px 0 rgba(39, 39, 39, 0.10));
+}
+
+/* Column: Data */
+.column-data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+/* Column: Total */
+.column-total {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .impact-table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .table-impact {
+    min-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-impact {
+    min-width: 600px;
+  }
+  
+  .column-row-header {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-impact {
+    min-width: 500px;
+    font-size: 12px;
+  }
+  
+  .column-row-header {
+    width: 120px;
+  }
+}
