@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ImpactTable } from './ImpactTable';
+import './impactStories.css';
 
 const meta: Meta<typeof ImpactTable> = {
   title: 'Atoms/🧱 Building Blocks/Tables/Impact/ImpactTable',
@@ -67,11 +68,7 @@ export const InContainer: Story = {
   args: {},
   decorators: [
     (Story) => (
-      <div style={{ 
-        padding: '24px', 
-        background: 'var(--neutral-gray-gray-50, #F9FAFB)',
-        borderRadius: '8px'
-      }}>
+      <div className="impact-story-wrapper">
         <Story />
       </div>
     ),
@@ -113,14 +110,6 @@ export const WithCustomClass: Story = {
   decorators: [
     (Story) => (
       <div>
-        <style>
-          {`
-            .custom-impact-table {
-              box-shadow: 0px 5px 10px 0px rgba(39, 39, 39, 0.1);
-              border-radius: 4px;
-            }
-          `}
-        </style>
         <Story />
       </div>
     ),
