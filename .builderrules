@@ -5,3 +5,5 @@ We are attempting to make Echo as simple as possible, given the very complex sub
 Echo is a collection of reusable components and clear standards designed to help teams build beautiful, consistent, and accessible user experiences efficiently.
 
 Where possible, we should reassess the code that has already been written and see if there is a way to improve it alongside any new UI element additions.  
+
+It is paramount that a lot of attention must be paid to getting the UI design right. The closer to pixel perfect you can get it, the better.
