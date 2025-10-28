@@ -29,6 +29,22 @@
   width: 202px;
 }
 
+/* Type-specific padding */
+.building-blocks-table-impact.type-input,
+.building-blocks-table-impact.type-dropdown {
+  padding: var(--spacing-sizing-16px, 16px);
+}
+
+.building-blocks-table-impact.type-populated.width-lg,
+.building-blocks-table-impact.type-total.width-lg {
+  padding: var(--spacing-sizing-16px, 16px);
+}
+
+.building-blocks-table-impact.type-populated.width-sm,
+.building-blocks-table-impact.type-total.width-sm {
+  padding: 17px 16px;
+}
+
 /* Role: Cell-0 (First column - sticky background) */
 .building-blocks-table-impact.role-cell-0 {
   background: var(--primary-seafoam-seafoam-50, #f3f9f5);
