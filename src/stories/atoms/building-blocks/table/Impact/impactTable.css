@@ -29,58 +29,63 @@
   display: flex;
   align-items: center;
   align-self: stretch;
-  position: sticky;
-  top: 0;
-  z-index: 6;
-  background: var(--base-white, #ffffff);
+  position: relative;
 }
 
 /* Body */
 .body {
   display: flex;
-  align-items: flex-start;
-  align-self: stretch;
+  align-items: center;
+  position: relative;
 }
 
 /* Total Row */
 .row-total {
   border-top: 2px solid var(--primary-seafoam-dark-seafoam, #4B6D58);
-  padding-top: var(--spacing-stroke-1px, 1px);
   display: flex;
   align-items: center;
-  align-self: stretch;
-  position: sticky;
-  bottom: 0;
-  z-index: 5;
-  background: var(--base-white, #ffffff);
+  position: relative;
 }
 
 /* Column: Row Header (Sticky first column) */
 .column-row-header {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   width: 202px;
-  position: sticky;
-  left: 0;
-  z-index: 5;
-  background: var(--base-white, #ffffff);
-  box-shadow: var(--shadow-shadow-sm-box-shadow, 0 2px 4px 0 rgba(39, 39, 39, 0.10));
-}
-
-/* Column: Data */
-.column-data {
-  display: flex;
   flex-direction: column;
   align-items: flex-start;
-  flex: 1;
+  position: relative;
 }
 
-/* Column: Total */
-.column-total {
+/* Column: Special (Impact values with blue background) */
+.column-special {
   display: flex;
+  width: 202px;
+  padding-right: var(--spacing-stroke-1px, 1px);
   flex-direction: column;
   align-items: flex-start;
+  border-right: 1px solid var(--primary-seafoam-seafoam, #8BBF9F);
+  position: relative;
+}
+
+/* Column: Cell-0 (0A column with seafoam background) */
+.column-cell-0 {
+  display: flex;
+  width: 94px;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Columns: U1, U2, U3, U4 */
+.column-1,
+.column-2,
+.column-3,
+.column-4 {
+  display: flex;
+  width: 94px;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
 }
 
 /* Responsive Layout */
@@ -99,18 +104,35 @@
     min-width: 600px;
   }
   
-  .column-row-header {
+  .column-row-header,
+  .column-special {
     width: 150px;
+  }
+  
+  .column-cell-0,
+  .column-1,
+  .column-2,
+  .column-3,
+  .column-4 {
+    width: 80px;
   }
 }
 
 @media (max-width: 480px) {
   .table-impact {
     min-width: 500px;
-    font-size: 12px;
   }
   
-  .column-row-header {
+  .column-row-header,
+  .column-special {
     width: 120px;
+  }
+  
+  .column-cell-0,
+  .column-1,
+  .column-2,
+  .column-3,
+  .column-4 {
+    width: 70px;
   }
 }
