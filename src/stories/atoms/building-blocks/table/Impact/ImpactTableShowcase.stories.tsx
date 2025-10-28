@@ -434,7 +434,7 @@ export const CompleteTableExample: Story = {
   render: () => (
     <div className="impact-showcase-root impact-showcase-tight">
       <div>
-        <h2 className="impact-section-title" style={{ marginBottom: 'var(--spacing-sizing-8px, 8px)' }}>Complete Impact Table</h2>
+        <h2 className="impact-section-title">Complete Impact Table</h2>
         <p className="impact-subtitle">
           This is the fully assembled Impact Table component matching the exact Figma design.
           It demonstrates all cell types, states, and the complete table structure.
