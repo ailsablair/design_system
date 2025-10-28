@@ -50,7 +50,7 @@
   left: 0;
   z-index: 5;
   background: var(--base-white, #ffffff);
-  box-shadow: 4px 0 6px rgba(39, 39, 39, 0.06);
+  box-shadow: var(--shadow-focus, 0 2px 4px 0 rgba(39, 39, 39, 0.10));
 }
 
 /* Column: Special (Impact Values) */
