@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+/* Scroll Wrapper */
+.impact-table-wrapper {
+  overflow: auto;
+  max-width: 100%;
+  position: relative;
+}
+
 .table-impact {
   border-radius: var(--spacing-sizing-2px, 2px);
   border: 1px solid var(--neutral-gray-gray-300, #D2D5DA);
@@ -20,6 +27,10 @@
   display: flex;
   align-items: center;
   align-self: stretch;
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  background: var(--base-white, #ffffff);
 }
 
 /* Body */
@@ -28,12 +39,17 @@
   align-items: center;
 }
 
-/* Column: Row Header */
+/* Column: Row Header (Sticky first column) */
 .column-row-header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: var(--impact-table-col-lg, 200px);
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background: var(--base-white, #ffffff);
+  box-shadow: 4px 0 6px rgba(39, 39, 39, 0.06);
 }
 
 /* Column: Special (Impact Values) */
@@ -65,11 +81,15 @@
   width: var(--impact-table-col-sm, 94px);
 }
 
-/* Total Row */
+/* Total Row (Sticky bottom) */
 .row-total {
   border-top: 2px solid var(--primary-seafoam-dark-seafoam, #4B6D58);
   display: flex;
   align-items: center;
+  position: sticky;
+  bottom: 0;
+  z-index: 6;
+  background: var(--base-white, #ffffff);
 }
 
 /* Responsive Design */
