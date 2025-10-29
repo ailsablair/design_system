@@ -35,7 +35,10 @@
   justify-content: flex-start;
   align-self: stretch;
   flex-shrink: 0;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  background: var(--base-white, #ffffff);
 }
 
 /* Body */
@@ -60,7 +63,10 @@
   align-items: center;
   justify-content: flex-start;
   flex-shrink: 0;
-  position: relative;
+  position: sticky;
+  bottom: 0;
+  z-index: 6;
+  background: var(--base-white, #ffffff);
 }
 
 /* Column: Row Header (Sticky first column) */
@@ -72,7 +78,11 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-shrink: 0;
-  position: relative;
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background: var(--base-white, #ffffff);
+  border-right: 1px solid var(--neutral-gray-gray-300, #D2D5DA);
 }
 
 /* Column: Special (Impact values with blue background) */
