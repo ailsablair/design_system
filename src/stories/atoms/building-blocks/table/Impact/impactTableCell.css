@@ -338,10 +338,23 @@
 
 /* Icons */
 .building-blocks-table-impact .filled-icons {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  position: relative;
+  aspect-ratio: 1;
+}
+
+/* Lock icons in category headers should not have opacity */
+.building-blocks-table-impact.type-header-w-subtext .filled-icons {
+  opacity: 1;
+}
+
+/* Other icons maintain opacity */
+.building-blocks-table-impact .placeholder .filled-icons {
   opacity: 0.6;
   width: 14px;
   height: 14px;
-  flex-shrink: 0;
 }
 
 /* Content Container */
@@ -380,6 +393,10 @@
   line-height: var(--type-line-height-label-sm, 16px);
   letter-spacing: var(--type-letter-spacing-archivo-label-sm, 0.15px);
   font-weight: var(--type-weight-medium, 500);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 /* Subtitle and subtext - using footnote typography */
@@ -418,11 +435,17 @@
   line-height: var(--type-line-height-footnote, 15px);
   letter-spacing: var(--type-letter-spacing-archivo-footnote, 0.2px);
   font-weight: var(--type-weight-light, 300);
+  display: flex;
   width: 122px;
   height: 15px;
-  display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+}
+
+.building-blocks-table-impact.role-row.type-total .this-is-subtext {
+  width: 131px;
+  height: 13px;
 }
 
 /* Clamp long text to 2 lines, 42 characters max visual width */
