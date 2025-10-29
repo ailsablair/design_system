@@ -556,6 +556,23 @@
 }
 
 
+/* Header-with-subtext Large: right-align category and subtitle */
+.building-blocks-table-impact.type-header-w-subtext.width-lg .content {
+  align-items: flex-end;
+}
+.building-blocks-table-impact.type-header-w-subtext.width-lg .category-lock {
+  justify-content: flex-end;
+}
+.building-blocks-table-impact.type-header-w-subtext.width-lg .category {
+  text-align: right;
+  justify-content: flex-end;
+}
+.building-blocks-table-impact.type-header-w-subtext.width-lg .this-is-a-subtitle {
+  text-align: right;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .building-blocks-table-impact.width-lg {
