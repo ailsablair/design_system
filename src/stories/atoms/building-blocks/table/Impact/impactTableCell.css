@@ -127,9 +127,19 @@
 /* Role: Row */
 .building-blocks-table-impact.role-row {
   padding: 2px var(--spacing-sizing-12px, 12px);
-  flex-direction: row;
-  gap: 10px;
-  justify-content: flex-end;
+  flex-direction: column;
+  gap: var(--spacing-sizing-4px, 4px);
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.building-blocks-table-impact.role-row .content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-4px, 4px);
+  align-items: flex-end;
+  justify-content: center;
+  align-self: stretch;
 }
 
 .building-blocks-table-impact.role-row:hover,
@@ -435,7 +445,10 @@
   letter-spacing: var(--type-letter-spacing-archivo-label-sm, 0.15px);
   font-weight: var(--type-weight-medium, 500);
   color: var(--secondary-navy, #3a3282);
-  flex: 1;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .building-blocks-table-impact.type-total .title,

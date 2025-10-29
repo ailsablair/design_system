@@ -21,52 +21,53 @@ export const ImpactTable: React.FC<ImpactTableProps> = ({
       <div className="table-impact">
         {/* Header Row */}
         <div className="row-header">
-          <ImpactTableCell 
-            role="cell" 
-            type="header-w-subtext" 
+          <ImpactTableCell
+            role="cell"
+            type="header-w-subtext"
             width="lg"
             category="Category name"
             subtitle="This is a subtitle"
+            showLock
           />
-          <ImpactTableCell 
-            role="cell" 
-            type="header-w-subtext" 
+          <ImpactTableCell
+            role="cell"
+            type="header-w-subtext"
             width="lg"
             category="Impact values"
             subtitle="This is a subtitle"
             showLock
           />
-          <ImpactTableCell 
-            role="cell-0" 
-            type="header" 
+          <ImpactTableCell
+            role="cell-0"
+            type="header"
             width="sm"
           >
             0A
           </ImpactTableCell>
-          <ImpactTableCell 
-            role="cell" 
-            type="header" 
+          <ImpactTableCell
+            role="cell"
+            type="header"
             width="sm"
           >
             U1
           </ImpactTableCell>
-          <ImpactTableCell 
-            role="cell" 
-            type="header" 
+          <ImpactTableCell
+            role="cell"
+            type="header"
             width="sm"
           >
             U2
           </ImpactTableCell>
-          <ImpactTableCell 
-            role="cell" 
-            type="header" 
+          <ImpactTableCell
+            role="cell"
+            type="header"
             width="sm"
           >
             U3
           </ImpactTableCell>
-          <ImpactTableCell 
-            role="cell" 
-            type="header" 
+          <ImpactTableCell
+            role="cell"
+            type="header"
             width="sm"
           >
             U4
