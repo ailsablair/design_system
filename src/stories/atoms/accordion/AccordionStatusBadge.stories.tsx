@@ -8,7 +8,7 @@ import {
 
 const meta: Meta<typeof AccordionStatusBadge> = {
   id: 'atoms-building-blocks-accordion-status-badge',
-  title: 'Atoms/Building Blocks/Accordion Status Badge',
+  title: 'Atoms/🧱 Building Blocks/Accordion Status Badge',
   component: AccordionStatusBadge,
   parameters: {
     layout: 'padded',

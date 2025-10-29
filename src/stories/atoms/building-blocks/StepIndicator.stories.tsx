@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StepIndicator } from './StepIndicator';
 
 const meta: Meta<typeof StepIndicator> = {
-  title: 'Atoms/Building Blocks/StepIndicator',
+  title: 'Atoms/🧱 Building Blocks/StepIndicator',
   component: StepIndicator,
   parameters: {
     layout: 'centered',

@@ -3,7 +3,7 @@ import { Stepper } from './Stepper';
 import { StepperLine } from './StepperLine';
 
 const meta: Meta<typeof Stepper> = {
-  title: 'Atoms/Building Blocks/Stepper/Comprehensive Showcase',
+  title: 'Atoms/🧱 Building Blocks/Stepper/Comprehensive Showcase',
   component: Stepper,
   parameters: {
     layout: 'fullscreen',

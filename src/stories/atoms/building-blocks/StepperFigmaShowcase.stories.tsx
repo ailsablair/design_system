@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Stepper } from './Stepper';
 
 const meta: Meta<typeof Stepper> = {
-  title: 'Atoms/Building Blocks/Stepper/Figma Showcase',
+  title: 'Atoms/🧱 Building Blocks/Stepper/Figma Showcase',
   component: Stepper,
   parameters: {
     layout: 'fullscreen',

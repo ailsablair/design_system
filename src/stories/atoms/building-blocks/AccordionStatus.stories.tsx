@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AccordionStatus } from './AccordionStatus';
 
 const meta = {
-  title: 'Atoms/Building Blocks/Accordion Status',
+  title: 'Atoms/🧱 Building Blocks/Accordion Status',
   component: AccordionStatus,
   parameters: {
     layout: 'centered',

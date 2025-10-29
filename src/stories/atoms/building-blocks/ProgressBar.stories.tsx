@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ProgressBar } from './ProgressBar';
 
 const meta = {
-  title: 'Atoms/Building Blocks/ProgressBar',
+  title: 'Atoms/🧱 Building Blocks/ProgressBar',
   component: ProgressBar,
   parameters: {
     layout: 'centered',
