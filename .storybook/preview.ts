@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Decorator, Preview as StorybookPreview } from '@storybook/react';
-// Keep a single, safe suppression that runs inside the preview iframe
-import '../src/utils/storybookResizeObserverFix';
+// No global suppression imported here to avoid interfering with Storybook render; suppression handled per-story if needed
 
 // Minimal decorator that calls Story with context to avoid rendering issues
 const withSafeBoundary: Decorator = (Story, context) => (
