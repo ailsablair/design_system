@@ -1,5 +1,5 @@
 import React, { useEffect, PropsWithChildren } from 'react';
-import type { Decorator, Preview as StorybookPreview } from '@storybook/react-vite';
+import type { Decorator, Preview as StorybookPreview } from '@storybook/react';
 import '../src/utils/storybookResizeObserverFix';
 import '../src/utils/browserResizeObserverSuppression';
 import '../src/utils/minimalResizeObserverSuppression';
