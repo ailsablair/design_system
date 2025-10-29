@@ -8,7 +8,7 @@ const withSafeBoundary: Decorator = (Story, context) => (
 );
 
 const preview: StorybookPreview = {
-  decorators: [withSafeBoundary],
+  decorators: [],
   parameters: {
     options: {
       storySort: {
