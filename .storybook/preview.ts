@@ -3,9 +3,9 @@ import type { Decorator, Preview as StorybookPreview } from '@storybook/react';
 // Keep a single, safe suppression that runs inside the preview iframe
 import '../src/utils/storybookResizeObserverFix';
 
-// Minimal no-op decorator to ensure standard React rendering path
-const withSafeBoundary: Decorator = (Story) => (
-  React.createElement(React.Fragment, null, React.createElement(Story))
+// Minimal decorator that calls Story with context to avoid rendering issues
+const withSafeBoundary: Decorator = (Story, context) => (
+  React.createElement(React.Fragment, null, Story(context))
 );
 
 const preview: StorybookPreview = {
