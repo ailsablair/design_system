@@ -5,13 +5,15 @@ export interface ImpactTableCellProps {
   /** Role of the cell */
   role?: 'cell' | 'cell-0' | 'row';
   /** Type of cell content */
-  type?: 'dropdown' | 'header' | 'input' | 'total' | 'header-w-subtext' | 'populated' | 'locked';
+  type?: 'dropdown' | 'header' | 'input' | 'total' | 'header-w-subtext' | 'populated' | 'locked' | 'impact';
   /** Width variant */
   width?: 'lg' | 'sm';
   /** State of the cell */
-  state?: 'default' | 'empty' | 'disabled' | 'decimal' | 'text' | 'scale';
+  state?: 'default' | 'empty' | 'filled' | 'decimal' | 'text' | 'scale';
   /** Hover state */
   hover?: boolean;
+  /** Disabled state (separate from state prop) */
+  disabled?: boolean;
   /** Cell content/text */
   children?: React.ReactNode;
   /** Additional CSS classes */
@@ -36,6 +38,7 @@ export const ImpactTableCell: React.FC<ImpactTableCellProps> = ({
   width = 'sm',
   state = 'default',
   hover = false,
+  disabled = false,
   children,
   className = '',
   title,
@@ -50,10 +53,11 @@ export const ImpactTableCell: React.FC<ImpactTableCellProps> = ({
     `width-${width}`,
     `state-${state}`,
     hover ? 'hover-true' : 'hover-false',
+    disabled ? 'disabled-true' : 'disabled-false',
     className
   ].filter(Boolean).join(' ');
 
-  const isDisabled = state === 'disabled' || state === 'disabled-empty';
+  const isDisabled = disabled;
 
   // Render dropdown cell
   if (type === 'dropdown') {
@@ -121,9 +125,32 @@ export const ImpactTableCell: React.FC<ImpactTableCellProps> = ({
             {children && <div className="placeholder-text">{children}</div>}
             <svg className="filled-icons" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
               <g opacity="0.6">
-                <path d="M6.99992 9.91634C7.30934 9.91634 7.60608 9.79342 7.82488 9.57463C8.04367 9.35584 8.16659 9.05909 8.16659 8.74967C8.16659 8.10217 7.64159 7.58301 6.99992 7.58301C6.6905 7.58301 6.39375 7.70592 6.17496 7.92472C5.95617 8.14351 5.83325 8.44025 5.83325 8.74967C5.83325 9.05909 5.95617 9.35584 6.17496 9.57463C6.39375 9.79342 6.6905 9.91634 6.99992 9.91634ZM10.4999 4.66634C10.8093 4.66634 11.1061 4.78926 11.3249 5.00805C11.5437 5.22684 11.6666 5.52359 11.6666 5.83301V11.6663C11.6666 11.9758 11.5437 12.2725 11.3249 12.4913C11.1061 12.7101 10.8093 12.833 10.4999 12.833H3.49992C3.1905 12.833 2.89375 12.7101 2.67496 12.4913C2.45617 12.2725 2.33325 11.9758 2.33325 11.6663V5.83301C2.33325 5.18551 2.85825 4.66634 3.49992 4.66634H4.08325V3.49967C4.08325 2.72613 4.39054 1.98426 4.93752 1.43728C5.48451 0.890299 6.22637 0.583008 6.99992 0.583008C7.38294 0.583008 7.76221 0.65845 8.11608 0.805026C8.46995 0.951602 8.79148 1.16644 9.06231 1.43728C9.33315 1.70812 9.54799 2.02965 9.69457 2.38351C9.84114 2.73738 9.91659 3.11665 9.91659 3.49967V4.66634H10.4999ZM6.99992 1.74967C6.53579 1.74967 6.09067 1.93405 5.76248 2.26224C5.43429 2.59043 5.24992 3.03555 5.24992 3.49967V4.66634H8.74992V3.49967C8.74992 3.03555 8.56554 2.59043 8.23736 2.26224C7.90917 1.93405 7.46405 1.74967 6.99992 1.74967Z" fill="#61607C"/>
+                <path d="M6.99967 9.91634C7.30909 9.91634 7.60584 9.79342 7.82463 9.57463C8.04343 9.35584 8.16634 9.05909 8.16634 8.74967C8.16634 8.10217 7.64134 7.58301 6.99967 7.58301C6.69026 7.58301 6.39351 7.70592 6.17472 7.92472C5.95592 8.14351 5.83301 8.44026 5.83301 8.74967C5.83301 9.05909 5.95592 9.35584 6.17472 9.57463C6.39351 9.79342 6.69026 9.91634 6.99967 9.91634ZM10.4997 4.66634C10.8091 4.66634 11.1058 4.78926 11.3246 5.00805C11.5434 5.22684 11.6663 5.52359 11.6663 5.83301V11.6663C11.6663 11.9758 11.5434 12.2725 11.3246 12.4913C11.1058 12.7101 10.8091 12.833 10.4997 12.833H3.49967C3.19026 12.833 2.89351 12.7101 2.67472 12.4913C2.45592 12.2725 2.33301 11.9758 2.33301 11.6663V5.83301C2.33301 5.18551 2.85801 4.66634 3.49967 4.66634H4.08301V3.49967C4.08301 2.72613 4.3903 1.98426 4.93728 1.43728C5.48426 0.890299 6.22613 0.583008 6.99967 0.583008C7.3827 0.583008 7.76197 0.65845 8.11583 0.805026C8.4697 0.951602 8.79123 1.16644 9.06207 1.43728C9.33291 1.70812 9.54775 2.02965 9.69432 2.38351C9.8409 2.73738 9.91634 3.11665 9.91634 3.49967V4.66634H10.4997ZM6.99967 1.74967C6.53555 1.74967 6.09043 1.93405 5.76224 2.26224C5.43405 2.59043 5.24967 3.03555 5.24967 3.49967V4.66634H8.74967V3.49967C8.74967 3.03555 8.5653 2.59043 8.23711 2.26224C7.90892 1.93405 7.4638 1.74967 6.99967 1.74967Z" fill="var(--secondary-blue-gray, #61607C)"/>
               </g>
             </svg>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Render impact cell (same as total but different semantics)
+  if (type === 'impact') {
+    if (role === 'row') {
+      return (
+        <div className={cellClasses}>
+          <div className="content">
+            <div className="title">{title || children || 'Impact title'}</div>
+            {subtitle && <div className="this-is-subtext">{subtitle}</div>}
+          </div>
+        </div>
+      );
+    }
+    return (
+      <div className={cellClasses} aria-disabled={isDisabled}>
+        <div className="simple">
+          <div className="placeholder">
+            {children && <div className="placeholder-text">{children}</div>}
           </div>
         </div>
       </div>
@@ -168,11 +195,21 @@ export const ImpactTableCell: React.FC<ImpactTableCellProps> = ({
   // Render header-w-subtext cell
   if (type === 'header-w-subtext') {
     if (width === 'sm') {
+      if (role === 'cell-0') {
+        return (
+          <div className={cellClasses}>
+            <div className="content">
+              <div className="_2025">{children || subtitle || '2025'}</div>
+              <div className="_0-a">{category || '0A'}</div>
+            </div>
+          </div>
+        );
+      }
       return (
         <div className={cellClasses}>
           <div className="content">
-            <div className="_2025">{subtitle || '2025'}</div>
-            <div className="_0-a">{children || '0A'}</div>
+            <div className="_2025">{subtitle || children || '2025'}</div>
+            <div className="_0-a">{category || '0A'}</div>
           </div>
         </div>
       );
