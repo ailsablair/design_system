@@ -1,6 +1,35 @@
 import React from 'react';
 import type { Decorator, Preview as StorybookPreview } from '@storybook/react';
-// No global suppression imported here to avoid interfering with Storybook render; suppression handled per-story if needed
+// Minimal, targeted suppression of the noisy ResizeObserver console errors
+import '../src/utils/minimalResizeObserverSuppression';
+
+if (typeof window !== 'undefined' && !(window as any).__RO_SUPPRESS_PATCHED) {
+  (window as any).__RO_SUPPRESS_PATCHED = true;
+  const originalError = window.console.error.bind(window.console);
+  const originalWarn = window.console.warn.bind(window.console);
+  const shouldSuppress = (args: any[]): boolean => {
+    try {
+      const text = args
+        .map((a) => (typeof a === 'string' ? a : (a && (a.message || a.toString())) || ''))
+        .join(' ')
+        .toLowerCase();
+      return (
+        text.includes('resizeobserver loop completed with undelivered notifications') ||
+        text.includes('resizeobserver loop limit exceeded')
+      );
+    } catch {
+      return false;
+    }
+  };
+  window.console.error = (...args: any[]) => {
+    if (shouldSuppress(args)) return;
+    originalError(...args);
+  };
+  window.console.warn = (...args: any[]) => {
+    if (shouldSuppress(args)) return;
+    originalWarn(...args);
+  };
+}
 
 // Minimal decorator that calls Story with context to avoid rendering issues
 const withSafeBoundary: Decorator = (Story, context) => (
