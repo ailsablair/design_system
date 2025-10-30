@@ -2,6 +2,10 @@ import React from 'react';
 import type { Decorator, Preview as StorybookPreview } from '@storybook/react';
 // Minimal, targeted suppression of the noisy ResizeObserver console errors
 import '../src/utils/minimalResizeObserverSuppression';
+// Additional browser-level suppression and safe observer wrapper
+import '../src/utils/browserResizeObserverSuppression';
+// Story-level decorator suppression
+import { withResizeObserverSuppression } from '../src/utils/resizeObserverDecorator';
 
 if (typeof window !== 'undefined' && !(window as any).__RO_SUPPRESS_PATCHED) {
   (window as any).__RO_SUPPRESS_PATCHED = true;
