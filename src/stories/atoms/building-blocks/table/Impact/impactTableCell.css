@@ -161,6 +161,7 @@
 }
 
 /* Disabled State (via disabled prop) */
+/* Cell background: gray-100, Interactive area (placeholder): gray-50 */
 .building-blocks-table-impact.disabled-true {
   pointer-events: none;
   cursor: not-allowed;
@@ -168,7 +169,8 @@
 }
 
 .building-blocks-table-impact.disabled-true .placeholder {
-  background: var(--neutral-gray-gray-100, #f3f4f6);
+  background: var(--neutral-gray-gray-50, #f9fafb);
+  border-color: var(--neutral-gray-gray-300, #d2d5da);
   cursor: not-allowed;
 }
 
@@ -276,7 +278,7 @@
 .building-blocks-table-impact.disabled-true.type-dropdown .placeholder,
 .building-blocks-table-impact.disabled-true.type-input .placeholder,
 .building-blocks-table-impact.disabled-true.type-locked .placeholder {
-  background: var(--neutral-gray-gray-100, #f3f4f6);
+  background: var(--neutral-gray-gray-50, #f9fafb);
   border-color: var(--neutral-gray-gray-300, #d2d5da);
 }
 
@@ -285,9 +287,9 @@
   background: var(--base-white, #ffffff);
   justify-content: space-between;
 }
-/* Ensure disabled locked never white */
+/* Ensure disabled locked uses gray-50 for interactive area */
 .building-blocks-table-impact.disabled-true.type-locked .placeholder {
-  background: var(--neutral-gray-gray-100, #f3f4f6);
+  background: var(--neutral-gray-gray-50, #f9fafb);
 }
 
 .building-blocks-table-impact.role-cell-0.state-default.type-input:hover .placeholder,
