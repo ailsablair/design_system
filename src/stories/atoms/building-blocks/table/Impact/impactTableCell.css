@@ -112,6 +112,14 @@
 .building-blocks-table-impact.hover-true.state-empty.type-dropdown.width-lg,
 .building-blocks-table-impact.state-default.type-dropdown.width-lg:hover,
 .building-blocks-table-impact.hover-true.state-default.type-dropdown.width-lg,
+/* Filled dropdown should behave like empty small */
+.building-blocks-table-impact.state-filled.type-dropdown.width-lg:hover,
+.building-blocks-table-impact.hover-true.state-filled.type-dropdown.width-lg,
+/* Input large: decimal & empty match default */
+.building-blocks-table-impact.state-decimal.type-input.width-lg:hover,
+.building-blocks-table-impact.hover-true.state-decimal.type-input.width-lg,
+.building-blocks-table-impact.state-empty.type-input.width-lg:hover,
+.building-blocks-table-impact.hover-true.state-empty.type-input.width-lg,
 .building-blocks-table-impact.hover-true.state-decimal.width-lg,
 .building-blocks-table-impact.state-default.type-input.width-lg:hover,
 .building-blocks-table-impact.hover-true.state-default.type-input.width-lg,
@@ -119,8 +127,13 @@
 .building-blocks-table-impact.hover-true.state-default.type-locked.width-lg,
 .building-blocks-table-impact.state-empty.type-locked:hover,
 .building-blocks-table-impact.hover-true.state-empty.type-locked,
+/* Impact/Total large consistency */
 .building-blocks-table-impact.role-cell.state-text.width-lg:hover,
-.building-blocks-table-impact.hover-true.role-cell.state-text.width-lg {
+.building-blocks-table-impact.hover-true.role-cell.state-text.width-lg,
+.building-blocks-table-impact.type-total.width-lg:hover,
+.building-blocks-table-impact.hover-true.type-total.width-lg,
+.building-blocks-table-impact.type-impact.width-lg:hover,
+.building-blocks-table-impact.hover-true.type-impact.width-lg {
   background: var(--primary-blue-blue-100, #e7e9f4);
 }
 
@@ -307,8 +320,14 @@
 .building-blocks-table-impact.hover-true.role-cell.state-empty.type-dropdown .placeholder,
 .building-blocks-table-impact.state-default.type-dropdown.width-lg:hover .placeholder,
 .building-blocks-table-impact.hover-true.state-default.type-dropdown.width-lg .placeholder,
+/* Filled dropdown hover border */
+.building-blocks-table-impact.state-filled.type-dropdown.width-lg:hover .placeholder,
+.building-blocks-table-impact.hover-true.state-filled.type-dropdown.width-lg .placeholder,
+/* Input hover border for large as well */
 .building-blocks-table-impact.role-cell.type-input.width-sm:hover .placeholder,
-.building-blocks-table-impact.hover-true.role-cell.type-input.width-sm .placeholder {
+.building-blocks-table-impact.hover-true.role-cell.type-input.width-sm .placeholder,
+.building-blocks-table-impact.role-cell.type-input.width-lg:hover .placeholder,
+.building-blocks-table-impact.hover-true.role-cell.type-input.width-lg .placeholder {
   border-color: var(--primary-blue-blue-300, #95a0e5);
 }
 
