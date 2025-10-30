@@ -556,21 +556,21 @@
 }
 
 
-/* Header-with-subtext Large: right-align category and subtitle */
+/* Header-with-subtext Large: left-align category and subtitle (per latest spec) */
 .building-blocks-table-impact.type-header-w-subtext.width-lg .content {
-  align-items: flex-end;
+  align-items: flex-start;
 }
 .building-blocks-table-impact.type-header-w-subtext.width-lg .category-lock {
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 .building-blocks-table-impact.type-header-w-subtext.width-lg .category {
-  text-align: right;
-  justify-content: flex-end;
+  text-align: left;
+  justify-content: flex-start;
 }
 .building-blocks-table-impact.type-header-w-subtext.width-lg .this-is-a-subtitle {
-  text-align: right;
-  align-items: flex-end;
-  justify-content: flex-end;
+  text-align: left;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 /* Responsive adjustments */
