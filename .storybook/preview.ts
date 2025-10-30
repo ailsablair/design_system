@@ -41,7 +41,7 @@ const withSafeBoundary: Decorator = (Story, context) => (
 );
 
 const preview: StorybookPreview = {
-  decorators: [],
+  decorators: [withResizeObserverSuppression],
   parameters: {
     options: {
       storySort: {
