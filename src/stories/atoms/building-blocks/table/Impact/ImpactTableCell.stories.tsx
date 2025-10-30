@@ -41,12 +41,16 @@ const meta: Meta<typeof ImpactTableCell> = {
     },
     state: {
       control: 'select',
-      options: ['default', 'empty', 'disabled', 'disabled-empty', 'decimal', 'text', 'scale'],
+      options: ['default', 'empty', 'filled', 'decimal', 'text', 'scale'],
       description: 'State of the cell',
     },
     hover: {
       control: 'boolean',
       description: 'Hover state',
+    },
+    disabled: {
+      control: 'boolean',
+      description: 'Disabled state (non-interactive)',
     },
   },
 };
@@ -256,7 +260,7 @@ export const HeaderLarge: Story = {
 
 /**
  * Header with Subtext - Small
- * 
+ *
  * Time period header (e.g., year and period).
  */
 export const HeaderWithSubtextSmall: Story = {
@@ -264,8 +268,8 @@ export const HeaderWithSubtextSmall: Story = {
     type: 'header-w-subtext',
     width: 'sm',
     state: 'default',
-    children: '2025',
-    subtitle: '0A',
+    subtitle: '2025',
+    category: '0A',
   },
 };
 
@@ -317,16 +321,62 @@ export const RowTotal: Story = {
 };
 
 /**
+ * Filled State
+ *
+ * Dropdown with a selected filled value.
+ */
+export const DropdownFilled: Story = {
+  args: {
+    type: 'dropdown',
+    width: 'lg',
+    state: 'filled',
+    children: '3 - Significant',
+  },
+};
+
+/**
+ * Impact Cell - Row Total
+ *
+ * Impact row with bold title (same as total semantically).
+ */
+export const ImpactRow: Story = {
+  args: {
+    role: 'row',
+    type: 'impact',
+    width: 'lg',
+    state: 'default',
+    title: 'Total Impact ($M)',
+    subtitle: 'This is subtext',
+  },
+};
+
+/**
  * Disabled State
- * 
+ *
  * Non-interactive disabled cell.
  */
 export const Disabled: Story = {
   args: {
     type: 'dropdown',
     width: 'lg',
-    state: 'disabled',
+    state: 'default',
+    disabled: true,
     children: 'Select an option',
+  },
+};
+
+/**
+ * Disabled Filled
+ *
+ * Disabled cell with filled value.
+ */
+export const DisabledFilled: Story = {
+  args: {
+    type: 'dropdown',
+    width: 'lg',
+    state: 'filled',
+    disabled: true,
+    children: '3 - Significant',
   },
 };
 
@@ -347,7 +397,7 @@ export const Hover: Story = {
 
 /**
  * First Column Cell
- * 
+ *
  * Cell with seafoam background (role: cell-0).
  * Used for the sticky first column.
  */
@@ -358,5 +408,51 @@ export const FirstColumn: Story = {
     width: 'sm',
     state: 'scale',
     children: '3',
+  },
+};
+
+/**
+ * First Column Header with Subtext
+ *
+ * Header cell with year and period for first column.
+ */
+export const FirstColumnHeader: Story = {
+  args: {
+    role: 'cell-0',
+    type: 'header-w-subtext',
+    width: 'sm',
+    state: 'default',
+    children: '2025',
+    category: '0A',
+  },
+};
+
+/**
+ * Disabled First Column Header
+ *
+ * Disabled header cell for first column.
+ */
+export const DisabledFirstColumnHeader: Story = {
+  args: {
+    role: 'cell-0',
+    type: 'header-w-subtext',
+    width: 'sm',
+    state: 'default',
+    disabled: true,
+    children: '2025',
+    category: '0A',
+  },
+};
+
+/**
+ * Locked Cell - Empty State
+ *
+ * Empty locked cell with only icon.
+ */
+export const LockedEmpty: Story = {
+  args: {
+    type: 'locked',
+    width: 'sm',
+    state: 'empty',
   },
 };
