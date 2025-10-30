@@ -65,9 +65,21 @@ export const AllCellVariants: Story = {
             <ImpactTableCell type="dropdown" width="sm" state="empty" />
           </div>
           <div>
+            <h3 className="impact-variant-label">Filled</h3>
+            <ImpactTableCell type="dropdown" width="lg" state="filled">
+              3 - Significant
+            </ImpactTableCell>
+          </div>
+          <div>
             <h3 className="impact-variant-label">Disabled</h3>
-            <ImpactTableCell type="dropdown" width="lg" state="disabled">
+            <ImpactTableCell type="dropdown" width="lg" state="default" disabled={true}>
               Select an option
+            </ImpactTableCell>
+          </div>
+          <div>
+            <h3 className="impact-variant-label">Disabled Filled</h3>
+            <ImpactTableCell type="dropdown" width="lg" state="filled" disabled={true}>
+              3 - Significant
             </ImpactTableCell>
           </div>
           <div>
@@ -116,15 +128,53 @@ export const AllCellVariants: Story = {
           </div>
           <div>
             <h3 className="impact-variant-label">Disabled - Small</h3>
-            <ImpactTableCell type="input" width="sm" state="disabled">
+            <ImpactTableCell type="input" width="sm" state="default" disabled={true}>
               0.00
             </ImpactTableCell>
           </div>
           <div>
             <h3 className="impact-variant-label">Disabled - Large</h3>
-            <ImpactTableCell type="input" width="lg" state="disabled">
+            <ImpactTableCell type="input" width="lg" state="default" disabled={true}>
               Enter initial value
             </ImpactTableCell>
+          </div>
+        </div>
+      </section>
+
+      <section className="impact-section">
+        <h2 className="impact-section-title">Impact Cells</h2>
+        <div className="impact-grid">
+          <div>
+            <h3 className="impact-variant-label">Impact Row</h3>
+            <ImpactTableCell role="row" type="impact" width="lg" state="default" title="Total Impact ($M)" subtitle="This is subtext" />
+          </div>
+          <div>
+            <h3 className="impact-variant-label">Impact Cell - Decimal</h3>
+            <ImpactTableCell type="impact" width="sm" state="decimal">
+              5.67
+            </ImpactTableCell>
+          </div>
+          <div>
+            <h3 className="impact-variant-label">Impact Cell - Text</h3>
+            <ImpactTableCell type="impact" width="sm" state="text">
+              Text
+            </ImpactTableCell>
+          </div>
+          <div>
+            <h3 className="impact-variant-label">Impact Cell - Scale</h3>
+            <ImpactTableCell type="impact" width="sm" state="scale">
+              3
+            </ImpactTableCell>
+          </div>
+          <div>
+            <h3 className="impact-variant-label">Impact Cell - Currency</h3>
+            <ImpactTableCell type="impact" width="lg" state="default">
+              $0.00 M
+            </ImpactTableCell>
+          </div>
+          <div>
+            <h3 className="impact-variant-label">Disabled Impact</h3>
+            <ImpactTableCell role="row" type="impact" width="lg" state="default" disabled={true} title="Total Impact ($M)" />
           </div>
         </div>
       </section>
@@ -251,8 +301,18 @@ export const AllCellVariants: Story = {
             <ImpactTableCell type="locked" width="lg" state="empty" />
           </div>
           <div>
+            <h3 className="impact-variant-label">Empty - Small</h3>
+            <ImpactTableCell type="locked" width="sm" state="empty" />
+          </div>
+          <div>
             <h3 className="impact-variant-label">Disabled - Small</h3>
-            <ImpactTableCell type="locked" width="sm" state="disabled">
+            <ImpactTableCell type="locked" width="sm" state="default" disabled={true}>
+              5.67
+            </ImpactTableCell>
+          </div>
+          <div>
+            <h3 className="impact-variant-label">Disabled - Decimal</h3>
+            <ImpactTableCell type="locked" width="sm" state="decimal" disabled={true}>
               5.67
             </ImpactTableCell>
           </div>
@@ -284,15 +344,21 @@ export const AllCellVariants: Story = {
           </div>
           <div>
             <h3 className="impact-variant-label">Disabled - Small</h3>
-            <ImpactTableCell type="header" width="sm" state="disabled">
+            <ImpactTableCell type="header" width="sm" state="default" disabled={true}>
               U1
             </ImpactTableCell>
           </div>
           <div>
-            <h3 className="impact-variant-label">Disabled w/ Subtext</h3>
-            <ImpactTableCell type="header-w-subtext" width="sm" state="disabled" subtitle="0A">
-              2025
-            </ImpactTableCell>
+            <h3 className="impact-variant-label">Disabled w/ Subtext - Small</h3>
+            <ImpactTableCell type="header-w-subtext" width="sm" state="default" disabled={true} subtitle="2025" category="0A" />
+          </div>
+          <div>
+            <h3 className="impact-variant-label">Cell-0 Header w/ Subtext</h3>
+            <ImpactTableCell role="cell-0" type="header-w-subtext" width="sm" state="default" subtitle="2025" category="0A" />
+          </div>
+          <div>
+            <h3 className="impact-variant-label">Disabled Cell-0 Header</h3>
+            <ImpactTableCell role="cell-0" type="header-w-subtext" width="sm" state="default" disabled={true} subtitle="2025" category="0A" />
           </div>
         </div>
       </section>
@@ -309,12 +375,8 @@ export const AllCellVariants: Story = {
             <ImpactTableCell role="row" type="total" width="lg" state="default" title="Total amount ($M)" subtitle="This is subtext" />
           </div>
           <div>
-            <h3 className="impact-variant-label">Row Impact</h3>
-            <ImpactTableCell role="row" type="impact" width="lg" state="default" title="Total amount ($M)" />
-          </div>
-          <div>
             <h3 className="impact-variant-label">Disabled Row</h3>
-            <ImpactTableCell role="row" type="header" width="lg" state="disabled" title="Row title goes here" />
+            <ImpactTableCell role="row" type="header" width="lg" state="default" disabled={true} title="Row title goes here" />
           </div>
         </div>
       </section>
@@ -411,7 +473,7 @@ export const ComparisonGrid: Story = {
           </div>
           <div>
             <h3 className="impact-variant-label">Disabled</h3>
-            <ImpactTableCell type="input" width="sm" state="disabled">
+            <ImpactTableCell type="input" width="sm" state="default" disabled={true}>
               0.00
             </ImpactTableCell>
           </div>
