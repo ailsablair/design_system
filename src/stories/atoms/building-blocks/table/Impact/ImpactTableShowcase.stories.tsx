@@ -168,7 +168,7 @@ export const AllCellVariants: Story = {
           </div>
           <div>
             <h3 className="impact-variant-label">Impact Cell - Currency</h3>
-            <ImpactTableCell type="impact" width="lg" state="default">
+            <ImpactTableCell type="impact" width="lg" state="text">
               $0.00 M
             </ImpactTableCell>
           </div>
