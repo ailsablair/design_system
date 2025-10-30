@@ -147,6 +147,14 @@
   background: var(--primary-sky-blue-sky-blue-50, #f4fcff);
 }
 
+/* Ensure Row Header/Disabled Row align right like Row Impact */
+.building-blocks-table-impact.role-row.type-header .content,
+.building-blocks-table-impact.role-row.type-total .content,
+.building-blocks-table-impact.role-row.type-impact .content {
+  align-items: flex-end;
+  justify-content: center;
+}
+
 /* State: Filled (dropdown with selected value) */
 .building-blocks-table-impact.state-filled {
   /* Same styling as scale/decimal states */
@@ -156,10 +164,11 @@
 .building-blocks-table-impact.disabled-true {
   pointer-events: none;
   cursor: not-allowed;
+  background: var(--neutral-gray-gray-100, #f3f4f6);
 }
 
 .building-blocks-table-impact.disabled-true .placeholder {
-  background: var(--neutral-gray-gray-50, #f9fafb);
+  background: var(--neutral-gray-gray-100, #f3f4f6);
   cursor: not-allowed;
 }
 
@@ -267,7 +276,7 @@
 .building-blocks-table-impact.disabled-true.type-dropdown .placeholder,
 .building-blocks-table-impact.disabled-true.type-input .placeholder,
 .building-blocks-table-impact.disabled-true.type-locked .placeholder {
-  background: var(--neutral-gray-gray-50, #f9fafb);
+  background: var(--neutral-gray-gray-100, #f3f4f6);
   border-color: var(--neutral-gray-gray-300, #d2d5da);
 }
 
@@ -275,6 +284,10 @@
 .building-blocks-table-impact.state-decimal.type-locked .placeholder {
   background: var(--base-white, #ffffff);
   justify-content: space-between;
+}
+/* Ensure disabled locked never white */
+.building-blocks-table-impact.disabled-true.type-locked .placeholder {
+  background: var(--neutral-gray-gray-100, #f3f4f6);
 }
 
 .building-blocks-table-impact.role-cell-0.state-default.type-input:hover .placeholder,
@@ -404,6 +417,12 @@
 .building-blocks-table-impact.type-header .content {
   align-items: center;
   justify-content: flex-end;
+}
+
+/* Header - Large: left align fully with padding */
+.building-blocks-table-impact.type-header.width-lg .content {
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 /* Category Lock Container */
@@ -614,17 +633,21 @@
 
 
 /* Header-with-subtext Large: left-align category and subtitle (per latest spec) */
-.building-blocks-table-impact.type-header-w-subtext.width-lg .content {
+.building-blocks-table-impact.type-header-w-subtext.width-lg .content,
+.building-blocks-table-impact.role-row.type-header-w-subtext.width-lg .content {
   align-items: flex-start;
 }
-.building-blocks-table-impact.type-header-w-subtext.width-lg .category-lock {
+.building-blocks-table-impact.type-header-w-subtext.width-lg .category-lock,
+.building-blocks-table-impact.role-row.type-header-w-subtext.width-lg .category-lock {
   justify-content: flex-start;
 }
-.building-blocks-table-impact.type-header-w-subtext.width-lg .category {
+.building-blocks-table-impact.type-header-w-subtext.width-lg .category,
+.building-blocks-table-impact.role-row.type-header-w-subtext.width-lg .category {
   text-align: left;
   justify-content: flex-start;
 }
-.building-blocks-table-impact.type-header-w-subtext.width-lg .this-is-a-subtitle {
+.building-blocks-table-impact.type-header-w-subtext.width-lg .this-is-a-subtitle,
+.building-blocks-table-impact.role-row.type-header-w-subtext.width-lg .this-is-a-subtitle {
   text-align: left;
   align-items: center;
   justify-content: flex-start;
