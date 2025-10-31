@@ -46,20 +46,20 @@
 /* ===== Size variants ===== */
 
 .accordion-status-badge--size-small {
-  width: var(--sizing-height-32);
-  height: var(--sizing-height-32);
+  width: var(--spacing-sizing-24px);
+  height: var(--spacing-sizing-24px);
   --badge-circle-inset: var(--spacing-sizing-2px);
 }
 
 .accordion-status-badge--size-default {
-  width: var(--sizing-height-44);
-  height: var(--sizing-height-44);
+  width: var(--spacing-sizing-48px);
+  height: var(--spacing-sizing-48px);
   --badge-circle-inset: var(--spacing-sizing-1px);
 }
 
 .accordion-status-badge--size-large {
-  width: var(--sizing-height-54);
-  height: var(--sizing-height-54);
+  width: var(--spacing-sizing-64px);
+  height: var(--spacing-sizing-64px);
   --badge-circle-inset: var(--spacing-sizing-1px);
 }
 
