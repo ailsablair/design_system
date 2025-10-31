@@ -242,6 +242,16 @@
   top: 0;
 }
 
+/* Use token for dashed circle stroke */
+.accordion__status-circle circle {
+  stroke: var(--secondary-blue-gray, #61607C);
+}
+
+/* Use token for check color */
+.accordion__status-check path {
+  fill: var(--status-green, #96F78D);
+}
+
 .accordion__status-check {
   position: absolute;
   left: 50%;
@@ -255,6 +265,12 @@
   flex-shrink: 0;
   opacity: 0.5;
   transition: all 0.2s ease;
+  color: var(--primary-blue-dark-blue, #191E3C);
+}
+
+/* Ensure bell icon paths inherit currentColor */
+.accordion__bell-icon path {
+  fill: currentColor;
 }
 
 /* ===== CONTENT AREA STYLING ===== */
@@ -557,6 +573,12 @@
   background: var(--neutral-gray-gray-50);
   transition: all 0.2s ease;
   opacity: 0.5;
+  color: var(--primary-blue-blue, #2F42BD);
+}
+
+/* Toggle icon path inherits color */
+.accordion__toggle svg path {
+  fill: currentColor;
 }
 
 /* Default size toggle */
@@ -687,7 +709,7 @@
 
 .accordion__trigger:hover .accordion__bell-icon {
   opacity: 1;
-  fill: var(--primary-sky-blue-sky-blue);
+  color: var(--primary-sky-blue-sky-blue);
 }
 
 .accordion__trigger:hover .accordion__toggle {
