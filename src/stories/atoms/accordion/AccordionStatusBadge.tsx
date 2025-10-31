@@ -1,4 +1,4 @@
-import { Icon, type IconName } from '../../foundations/Icon';
+import React from 'react';
 import './accordionStatusBadge.css';
 
 export type AccordionStatusBadgeTone =
@@ -10,7 +10,6 @@ export type AccordionStatusBadgeTone =
   | 'error'
   | 'note';
 
-export type AccordionStatusBadgeVariant = 'default' | 'active' | 'filled';
 export type AccordionStatusBadgeSize = 'small' | 'default' | 'large';
 
 export interface AccordionStatusBadgeProps {
@@ -18,8 +17,6 @@ export interface AccordionStatusBadgeProps {
   tone: AccordionStatusBadgeTone;
   /** Size variant */
   size?: AccordionStatusBadgeSize;
-  /** Visual treatment variant */
-  variant?: AccordionStatusBadgeVariant;
   /** Disabled state */
   disabled?: boolean;
   /** Accessible label */
@@ -28,37 +25,168 @@ export interface AccordionStatusBadgeProps {
   className?: string;
 }
 
-const toneToIcon: Record<AccordionStatusBadgeTone, IconName> = {
-  warning: 'warning',
-  complete: 'check',
-  locked: 'lock',
-  comments: 'chat',
-  notifications: 'notifications',
-  error: 'close',
-  note: 'description',
+const getSizeIconDimensions = (size: AccordionStatusBadgeSize, tone: AccordionStatusBadgeTone) => {
+  const baseMap = {
+    small: { width: '14px', height: '14px', viewBox: '0 0 14 14' },
+    default: { width: '28px', height: '28px', viewBox: '0 0 28 28' },
+    large: { width: '36px', height: '36px', viewBox: '0 0 36 36' },
+  };
+
+  if (tone === 'comments' || tone === 'notifications') {
+    return {
+      small: { width: '14px', height: '14px', viewBox: '0 0 14 14' },
+      default: { width: '28px', height: '28px', viewBox: '0 0 28 28' },
+      large: { width: '32px', height: '32px', viewBox: '0 0 32 32' },
+    }[size];
+  }
+
+  if (tone === 'complete' || tone === 'locked' || tone === 'note') {
+    return baseMap[size];
+  }
+
+  return baseMap[size];
 };
 
-const sizeToIconDimension: Record<AccordionStatusBadgeSize, string> = {
-  small: '14px',
-  default: '28px',
-  large: '32px',
+const renderIcon = (tone: AccordionStatusBadgeTone, size: AccordionStatusBadgeSize, disabled: boolean) => {
+  const dims = getSizeIconDimensions(size, tone);
+  const baseClass = 'accordion-status-badge__icon';
+
+  const icons = {
+    warning: {
+      small: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.66663 9.33337H7.33329V6.00004H8.66663M8.66663 12H7.33329V10.6667H8.66663M0.666626 14H15.3333L7.99996 1.33337L0.666626 14Z" />
+        </svg>
+      ),
+      default: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.1666 16.3334H12.8333V10.5H15.1666M15.1666 21H12.8333V18.6667H15.1666M1.16663 24.5H26.8333L14 2.33337L1.16663 24.5Z" />
+        </svg>
+      ),
+      large: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.5 21H16.5V13.5H19.5M19.5 27H16.5V24H19.5M1.5 31.5H34.5L18 3L1.5 31.5Z" />
+        </svg>
+      ),
+    },
+    complete: {
+      small: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.99999 13.6133L1.85999 9.4733L3.74665 7.58663L5.99999 9.84663L12.5867 3.2533L14.4733 5.13996L5.99999 13.6133Z" />
+        </svg>
+      ),
+      default: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.5001 30.6301L4.18506 21.3151L8.43006 17.0701L13.5001 22.1551L28.3201 7.32007L32.5651 11.5651L13.5001 30.6301Z" />
+        </svg>
+      ),
+      large: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.5001 30.6301L4.18506 21.3151L8.43006 17.0701L13.5001 22.1551L28.3201 7.32007L32.5651 11.5651L13.5001 30.6301Z" />
+        </svg>
+      ),
+    },
+    locked: {
+      small: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.99996 11.3334C8.35358 11.3334 8.69272 11.1929 8.94277 10.9429C9.19282 10.6928 9.33329 10.3537 9.33329 10.0001C9.33329 9.26008 8.73329 8.66675 7.99996 8.66675C7.64634 8.66675 7.3072 8.80722 7.05715 9.05727C6.8071 9.30732 6.66663 9.64646 6.66663 10.0001C6.66663 10.3537 6.8071 10.6928 7.05715 10.9429C7.3072 11.1929 7.64634 11.3334 7.99996 11.3334ZM12 5.33342C12.3536 5.33342 12.6927 5.47389 12.9428 5.72394C13.1928 5.97399 13.3333 6.31313 13.3333 6.66675V13.3334C13.3333 13.687 13.1928 14.0262 12.9428 14.2762C12.6927 14.5263 12.3536 14.6667 12 14.6667H3.99996C3.64634 14.6667 3.3072 14.5263 3.05715 14.2762C2.8071 14.0262 2.66663 13.687 2.66663 13.3334V6.66675C2.66663 5.92675 3.26663 5.33342 3.99996 5.33342H4.66663V4.00008C4.66663 3.11603 5.01782 2.26818 5.64294 1.64306C6.26806 1.01794 7.1159 0.666748 7.99996 0.666748C8.4377 0.666748 8.87115 0.752967 9.27557 0.920483C9.67999 1.088 10.0475 1.33353 10.357 1.64306C10.6665 1.95259 10.912 2.32005 11.0796 2.72447C11.2471 3.12889 11.3333 3.56234 11.3333 4.00008V5.33342H12ZM7.99996 2.00008C7.46953 2.00008 6.96082 2.2108 6.58575 2.58587C6.21067 2.96094 5.99996 3.46965 5.99996 4.00008V5.33342H9.99996V4.00008C9.99996 3.46965 9.78925 2.96094 9.41417 2.58587C9.0391 2.2108 8.53039 2.00008 7.99996 2.00008Z" />
+        </svg>
+      ),
+      default: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 19.8334C14.6188 19.8334 15.2123 19.5876 15.6499 19.15C16.0875 18.7124 16.3333 18.1189 16.3333 17.5001C16.3333 16.2051 15.2833 15.1667 14 15.1667C13.3811 15.1667 12.7876 15.4126 12.35 15.8502C11.9125 16.2878 11.6666 16.8812 11.6666 17.5001C11.6666 18.1189 11.9125 18.7124 12.35 19.15C12.7876 19.5876 13.3811 19.8334 14 19.8334ZM21 9.33341C21.6188 9.33341 22.2123 9.57925 22.6499 10.0168C23.0875 10.4544 23.3333 11.0479 23.3333 11.6667V23.3334C23.3333 23.9523 23.0875 24.5457 22.6499 24.9833C22.2123 25.4209 21.6188 25.6667 21 25.6667H6.99996C6.38112 25.6667 5.78763 25.4209 5.35004 24.9833C4.91246 24.5457 4.66663 23.9523 4.66663 23.3334V11.6667C4.66663 10.3717 5.71663 9.33341 6.99996 9.33341H8.16663V7.00008C8.16663 5.45298 8.78121 3.96925 9.87517 2.87529C10.9691 1.78133 12.4529 1.16675 14 1.16675C14.766 1.16675 15.5245 1.31763 16.2323 1.61078C16.94 1.90394 17.5831 2.33362 18.1248 2.87529C18.6664 3.41697 19.0961 4.06003 19.3893 4.76776C19.6824 5.47549 19.8333 6.23404 19.8333 7.00008V9.33341H21ZM14 3.50008C13.0717 3.50008 12.1815 3.86883 11.5251 4.52521C10.8687 5.18158 10.5 6.07182 10.5 7.00008V9.33341H17.5V7.00008C17.5 6.07182 17.1312 5.18158 16.4748 4.52521C15.8185 3.86883 14.9282 3.50008 14 3.50008Z" />
+        </svg>
+      ),
+      large: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 19.8334C14.6188 19.8334 15.2123 19.5876 15.6499 19.15C16.0875 18.7124 16.3333 18.1189 16.3333 17.5001C16.3333 16.2051 15.2833 15.1667 14 15.1667C13.3811 15.1667 12.7876 15.4126 12.35 15.8502C11.9125 16.2878 11.6666 16.8812 11.6666 17.5001C11.6666 18.1189 11.9125 18.7124 12.35 19.15C12.7876 19.5876 13.3811 19.8334 14 19.8334ZM21 9.33341C21.6188 9.33341 22.2123 9.57925 22.6499 10.0168C23.0875 10.4544 23.3333 11.0479 23.3333 11.6667V23.3334C23.3333 23.9523 23.0875 24.5457 22.6499 24.9833C22.2123 25.4209 21.6188 25.6667 21 25.6667H6.99996C6.38112 25.6667 5.78763 25.4209 5.35004 24.9833C4.91246 24.5457 4.66663 23.9523 4.66663 23.3334V11.6667C4.66663 10.3717 5.71663 9.33341 6.99996 9.33341H8.16663V7.00008C8.16663 5.45298 8.78121 3.96925 9.87517 2.87529C10.9691 1.78133 12.4529 1.16675 14 1.16675C14.766 1.16675 15.5245 1.31763 16.2323 1.61078C16.94 1.90394 17.5831 2.33362 18.1248 2.87529C18.6664 3.41697 19.0961 4.06003 19.3893 4.76776C19.6824 5.47549 19.8333 6.23404 19.8333 7.00008V9.33341H21ZM14 3.50008C13.0717 3.50008 12.1815 3.86883 11.5251 4.52521C10.8687 5.18158 10.5 6.07182 10.5 7.00008V9.33341H17.5V7.00008C17.5 6.07182 17.1312 5.18158 16.4748 4.52521C15.8185 3.86883 14.9282 3.50008 14 3.50008Z" />
+        </svg>
+      ),
+    },
+    comments: {
+      small: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.24996 12.8334C5.09525 12.8334 4.94688 12.772 4.83748 12.6626C4.72808 12.5532 4.66663 12.4048 4.66663 12.2501V10.5001H2.33329C2.02387 10.5001 1.72713 10.3772 1.50833 10.1584C1.28954 9.93958 1.16663 9.64283 1.16663 9.33341V2.33341C1.16663 1.68591 1.69163 1.16675 2.33329 1.16675H11.6666C11.976 1.16675 12.2728 1.28966 12.4916 1.50846C12.7104 1.72725 12.8333 2.024 12.8333 2.33341V9.33341C12.8333 9.64283 12.7104 9.93958 12.4916 10.1584C12.2728 10.3772 11.976 10.5001 11.6666 10.5001H8.10829L5.94996 12.6642C5.83329 12.7751 5.68746 12.8334 5.54163 12.8334H5.24996ZM2.91663 2.91675V4.08341H11.0833V2.91675H2.91663ZM2.91663 5.25008V6.41675H7.58329V5.25008H2.91663ZM2.91663 7.58341V8.75008H8.74996V7.58341H2.91663Z" />
+        </svg>
+      ),
+      default: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10.5 25.6666C10.1906 25.6666 9.89388 25.5437 9.67508 25.3249C9.45629 25.1061 9.33337 24.8093 9.33337 24.4999V20.9999H4.66671C4.04787 20.9999 3.45438 20.7541 3.01679 20.3165C2.57921 19.8789 2.33337 19.2854 2.33337 18.6666V4.66659C2.33337 3.37159 3.38337 2.33325 4.66671 2.33325H23.3334C23.9522 2.33325 24.5457 2.57908 24.9833 3.01667C25.4209 3.45425 25.6667 4.04775 25.6667 4.66659V18.6666C25.6667 19.2854 25.4209 19.8789 24.9833 20.3165C24.5457 20.7541 23.9522 20.9999 23.3334 20.9999H16.2167L11.9 25.3283C11.6667 25.5499 11.375 25.6666 11.0834 25.6666H10.5ZM5.83337 5.83325V8.16658H22.1667V5.83325H5.83337ZM5.83337 10.4999V12.8333H15.1667V10.4999H5.83337ZM5.83337 15.1666V17.4999H17.5V15.1666H5.83337Z" />
+        </svg>
+      ),
+      large: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 29.3334C11.6463 29.3334 11.3072 29.1929 11.0572 28.9429C10.8071 28.6928 10.6666 28.3537 10.6666 28.0001V24.0001H5.33329C4.62605 24.0001 3.94777 23.7191 3.44767 23.219C2.94758 22.7189 2.66663 22.0407 2.66663 21.3334V5.33341C2.66663 3.85341 3.86663 2.66675 5.33329 2.66675H26.6666C27.3739 2.66675 28.0521 2.9477 28.5522 3.4478C29.0523 3.94789 29.3333 4.62617 29.3333 5.33341V21.3334C29.3333 22.0407 29.0523 22.7189 28.5522 23.219C28.0521 23.7191 27.3739 24.0001 26.6666 24.0001H18.5333L13.6 28.9467C13.3333 29.2001 13 29.3334 12.6666 29.3334H12ZM6.66663 6.66675V9.33342H25.3333V6.66675H6.66663ZM6.66663 12.0001V14.6667H17.3333V12.0001H6.66663ZM6.66663 17.3334V20.0001H20V17.3334H6.66663Z" />
+        </svg>
+      ),
+    },
+    notifications: {
+      small: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.25 3.79175C12.25 4.91758 11.3342 5.83341 10.2083 5.83341C9.0825 5.83341 8.16667 4.91758 8.16667 3.79175C8.16667 2.66591 9.0825 1.75008 10.2083 1.75008C11.3342 1.75008 12.25 2.66591 12.25 3.79175ZM11.0833 6.87758C10.7917 6.95341 10.5 7.00008 10.2083 7.00008C8.44083 7.00008 7 5.55925 7 3.79175C7 2.93425 7.33833 2.15841 7.875 1.58091C7.67083 1.33008 7.35583 1.16675 7 1.16675C6.35833 1.16675 5.83333 1.69175 5.83333 2.33341V2.50258C4.10083 3.01591 2.91667 4.60841 2.91667 6.41675V9.91675L1.75 11.0834V11.6667H12.25V11.0834L11.0833 9.91675V6.87758ZM7 13.4167C7.6475 13.4167 8.16667 12.8976 8.16667 12.2501H5.83333C5.83333 12.8976 6.35833 13.4167 7 13.4167Z" />
+        </svg>
+      ),
+      default: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24.5 7.58325C24.5 9.83492 22.6683 11.6666 20.4167 11.6666C18.165 11.6666 16.3333 9.83492 16.3333 7.58325C16.3333 5.33159 18.165 3.49992 20.4167 3.49992C22.6683 3.49992 24.5 5.33159 24.5 7.58325ZM22.1667 13.7549C21.5833 13.9066 21 13.9999 20.4167 13.9999C16.8817 13.9999 14 11.1183 14 7.58325C14 5.86825 14.6767 4.31659 15.75 3.16159C15.3417 2.65992 14.7117 2.33325 14 2.33325C12.7167 2.33325 11.6667 3.38325 11.6667 4.66659V5.00492C8.20167 6.03159 5.83333 9.21659 5.83333 12.8333V19.8333L3.5 22.1666V23.3333H24.5V22.1666L22.1667 19.8333V13.7549ZM14 26.8333C15.295 26.8333 16.3333 25.7949 16.3333 24.4999H11.6667C11.6667 25.7949 12.7167 26.8333 14 26.8333Z" />
+        </svg>
+      ),
+      large: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M28 8.66675C28 11.2401 25.9067 13.3334 23.3333 13.3334C20.76 13.3334 18.6667 11.2401 18.6667 8.66675C18.6667 6.09341 20.76 4.00008 23.3333 4.00008C25.9067 4.00008 28 6.09341 28 8.66675ZM25.3333 15.7201C24.6667 15.8934 24 16.0001 23.3333 16.0001C19.2933 16.0001 16 12.7067 16 8.66675C16 6.70675 16.7733 4.93341 18 3.61341C17.5333 3.04008 16.8133 2.66675 16 2.66675C14.5333 2.66675 13.3333 3.86675 13.3333 5.33341V5.72008C9.37333 6.89341 6.66667 10.5334 6.66667 14.6667V22.6667L4 25.3334V26.6667H28V25.3334L25.3333 22.6667V15.7201ZM16 30.6667C17.48 30.6667 18.6667 29.4801 18.6667 28.0001H13.3333C13.3333 29.4801 14.5333 30.6667 16 30.6667Z" />
+        </svg>
+      ),
+    },
+    error: {
+      small: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.6667 4.031L9.96921 2.3335L7.00004 5.30266L4.03087 2.3335L2.33337 4.031L5.30254 7.00016L2.33337 9.96933L4.03087 11.6668L7.00004 8.69766L9.96921 11.6668L11.6667 9.96933L8.69754 7.00016L11.6667 4.031Z" />
+        </svg>
+      ),
+      default: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M23.3333 8.0615L19.9383 4.6665L14 10.6048L8.06163 4.6665L4.66663 8.0615L10.605 13.9998L4.66663 19.9382L8.06163 23.3332L14 17.3948L19.9383 23.3332L23.3333 19.9382L17.395 13.9998L23.3333 8.0615Z" />
+        </svg>
+      ),
+      large: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M26.6667 9.2135L22.7867 5.3335L16 12.1202L9.21337 5.3335L5.33337 9.2135L12.12 16.0002L5.33337 22.7868L9.21337 26.6668L16 19.8802L22.7867 26.6668L26.6667 22.7868L19.88 16.0002L26.6667 9.2135Z" />
+        </svg>
+      ),
+    },
+    note: {
+      small: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.58337 5.24984H10.7917L7.58337 2.0415V5.24984ZM3.50004 1.1665H8.16671L11.6667 4.6665V11.6665C11.6667 11.9759 11.5438 12.2727 11.325 12.4915C11.1062 12.7103 10.8095 12.8332 10.5 12.8332H3.50004C2.85254 12.8332 2.33337 12.3082 2.33337 11.6665V2.33317C2.33337 1.68567 2.85254 1.1665 3.50004 1.1665ZM8.75004 10.4998V9.33317H3.50004V10.4998H8.75004ZM10.5 8.1665V6.99984H3.50004V8.1665H10.5Z" />
+        </svg>
+      ),
+      default: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.1666 10.5002H21.5833L15.1666 4.0835V10.5002ZM6.99996 2.3335H16.3333L23.3333 9.3335V23.3335C23.3333 23.9523 23.0875 24.5458 22.6499 24.9834C22.2123 25.421 21.6188 25.6668 21 25.6668H6.99996C5.70496 25.6668 4.66663 24.6168 4.66663 23.3335V4.66683C4.66663 3.37183 5.70496 2.3335 6.99996 2.3335ZM17.5 21.0002V18.6668H6.99996V21.0002H17.5ZM21 16.3335V14.0002H6.99996V16.3335H21Z" />
+        </svg>
+      ),
+      large: (
+        <svg className={baseClass} width={dims.width} height={dims.height} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.3334 11.9998H24.6667L17.3334 4.6665V11.9998ZM8.00004 2.6665H18.6667L26.6667 10.6665V26.6665C26.6667 27.3737 26.3858 28.052 25.8857 28.5521C25.3856 29.0522 24.7073 29.3332 24 29.3332H8.00004C6.52004 29.3332 5.33337 28.1332 5.33337 26.6665V5.33317C5.33337 3.85317 6.52004 2.6665 8.00004 2.6665ZM20 23.9998V21.3332H8.00004V23.9998H20ZM24 18.6665V15.9998H8.00004V18.6665H24Z" />
+        </svg>
+      ),
+    },
+  };
+
+  return icons[tone][size];
 };
 
 export const AccordionStatusBadge: React.FC<AccordionStatusBadgeProps> = ({
   tone,
   size = 'default',
-  variant = 'default',
   disabled = false,
   className,
   'aria-label': ariaLabel,
 }) => {
-  const iconDimension = sizeToIconDimension[size];
-
   const badgeClassName = [
     'accordion-status-badge',
     `accordion-status-badge--tone-${tone}`,
     `accordion-status-badge--size-${size}`,
-    `accordion-status-badge--variant-${variant}`,
     disabled ? 'accordion-status-badge--disabled' : '',
     className,
   ]
@@ -66,19 +194,15 @@ export const AccordionStatusBadge: React.FC<AccordionStatusBadgeProps> = ({
     .join(' ');
 
   return (
-    <span
+    <div
       className={badgeClassName}
       role="img"
-      aria-label={ariaLabel ?? `${tone} status`}
+      aria-label={ariaLabel ?? `${tone} status${disabled ? ' (disabled)' : ''}`}
     >
-      <Icon
-        name={toneToIcon[tone]}
-        size="xl"
-        opacity="full"
-        className="accordion-status-badge__icon"
-        style={{ width: iconDimension, height: iconDimension }}
-      />
-    </span>
+      <div className="accordion-status-badge__circle">
+        {renderIcon(tone, size, disabled)}
+      </div>
+    </div>
   );
 };
 
