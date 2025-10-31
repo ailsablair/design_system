@@ -45,8 +45,22 @@
 .building-blocks-table-impact.type-total {
   width: max-content;
 }
+/* Total Cells: Small = seafoam-50 base, seafoam-100 hover */
+.building-blocks-table-impact.type-total.width-sm {
+  background: var(--primary-seafoam-seafoam-50, #f3f9f5);
+}
+.building-blocks-table-impact.type-total.width-sm:hover,
+.building-blocks-table-impact.hover-true.type-total.width-sm {
+  background: var(--primary-seafoam-seafoam-100, #dcece2);
+}
+/* Total Cells: Large = blue-50 base, blue-100 hover */
 .building-blocks-table-impact.type-total.width-lg {
   min-width: 94px; /* allow hugging content instead of forcing 202px */
+  background: var(--primary-blue-blue-50, #f9f9fe);
+}
+.building-blocks-table-impact.type-total.width-lg:hover,
+.building-blocks-table-impact.hover-true.type-total.width-lg {
+  background: var(--primary-blue-blue-100, #e7e9f4);
 }
 
 .building-blocks-table-impact.type-populated.width-sm,
