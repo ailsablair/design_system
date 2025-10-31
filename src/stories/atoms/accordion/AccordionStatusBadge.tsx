@@ -39,9 +39,9 @@ const toneToIcon: Record<AccordionStatusBadgeTone, IconName> = {
 };
 
 const sizeToIconDimension: Record<AccordionStatusBadgeSize, string> = {
-  small: 'var(--icon-size-md)',
-  default: 'calc(var(--icon-size-xl) + var(--spacing-sizing-4px))',
-  large: 'calc(var(--icon-size-2xl) + var(--spacing-sizing-4px))',
+  small: '14px',
+  default: '28px',
+  large: '32px',
 };
 
 export const AccordionStatusBadge: React.FC<AccordionStatusBadgeProps> = ({
