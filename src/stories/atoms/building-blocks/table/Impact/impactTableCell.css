@@ -141,11 +141,9 @@
 .building-blocks-table-impact.hover-true.state-default.type-locked.width-lg,
 .building-blocks-table-impact.state-empty.type-locked:hover,
 .building-blocks-table-impact.hover-true.state-empty.type-locked,
-/* Impact/Total large consistency */
+/* Impact large consistency */
 .building-blocks-table-impact.role-cell.state-text.width-lg:hover,
 .building-blocks-table-impact.hover-true.role-cell.state-text.width-lg,
-.building-blocks-table-impact.type-total.width-lg:hover,
-.building-blocks-table-impact.hover-true.type-total.width-lg,
 .building-blocks-table-impact.type-impact.width-lg:hover,
 .building-blocks-table-impact.hover-true.type-impact.width-lg {
   background: var(--primary-blue-blue-100, #e7e9f4);
