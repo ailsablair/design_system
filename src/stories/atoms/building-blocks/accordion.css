@@ -265,7 +265,7 @@
   flex-shrink: 0;
   opacity: 0.5;
   transition: all 0.2s ease;
-  color: var(--primary-blue-dark-blue, #191E3C);
+  color: var(--primary-blue-blue, #2F42BD);
 }
 
 /* Ensure bell icon paths inherit currentColor */
