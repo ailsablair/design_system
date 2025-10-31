@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import {
   AccordionStatusBadge,
   type AccordionStatusBadgeTone,
-  type AccordionStatusBadgeVariant,
   type AccordionStatusBadgeSize,
 } from './AccordionStatusBadge';
 
@@ -15,7 +14,7 @@ const meta: Meta<typeof AccordionStatusBadge> = {
     docs: {
       description: {
         component:
-          'Accordion status badges built with Echo design tokens. Supports multiple tones (warning, complete, locked, comments, notifications, error, note), three size variants (small, default, large), and disabled states. Each badge features a dashed circular border with an icon inside, following the Figma design specifications precisely.',
+          'Accordion status badges built with Echo design tokens. Supports multiple tones (warning, complete, locked, comments, notifications, error, note), three size variants (small, default, large), and disabled states. Each badge features a dashed circular border with an icon inside, pixel-perfect to Figma specifications.',
       },
     },
   },
@@ -30,11 +29,6 @@ const meta: Meta<typeof AccordionStatusBadge> = {
       options: ['small', 'default', 'large'],
       description: 'Size variant of the badge',
     },
-    variant: {
-      control: 'select',
-      options: ['default', 'active', 'filled'],
-      description: 'Visual treatment variant',
-    },
     disabled: {
       control: 'boolean',
       description: 'Disabled state with muted colors',
@@ -43,7 +37,6 @@ const meta: Meta<typeof AccordionStatusBadge> = {
   args: {
     tone: 'warning',
     size: 'default',
-    variant: 'default',
     disabled: false,
   },
 };
@@ -68,7 +61,7 @@ const allTones: AccordionStatusBadgeTone[] = [
 
 const sizes: AccordionStatusBadgeSize[] = ['small', 'default', 'large'];
 
-export const FigmaShowcase: Story = {
+export const AllStates: Story = {
   render: () => (
     <div
       style={{
@@ -91,32 +84,52 @@ export const FigmaShowcase: Story = {
           <h2
             style={{
               fontSize: '24px',
-              fontWeight: 500,
-              color: 'var(--neutral-gray-gray-700)',
+              fontWeight: 400,
+              color: 'var(--neutral-gray-gray-600)',
               textTransform: 'lowercase',
               margin: 0,
               lineHeight: '32px',
-              letterSpacing: '-0.4px',
             }}
           >
             {tone}
           </h2>
 
-          {/* Column headers */}
           <div
             style={{
               display: 'grid',
               gridTemplateColumns: '100px 104px 104px',
               gap: 'var(--spacing-sizing-80px)',
-              paddingLeft: '120px',
-              fontSize: '24px',
-              color: 'var(--neutral-gray-gray-600)',
-              marginBottom: 'var(--spacing-sizing-8px)',
+              alignItems: 'center',
             }}
           >
-            <div></div>
-            <div>default</div>
-            <div>disabled True</div>
+            <div
+              style={{
+                fontSize: '24px',
+                color: 'var(--neutral-gray-gray-600)',
+                fontWeight: 400,
+                gridColumn: '1',
+              }}
+            >
+              {/* Size labels row - moved below */}
+            </div>
+            <div
+              style={{
+                fontSize: '24px',
+                color: 'var(--neutral-gray-gray-600)',
+                fontWeight: 400,
+              }}
+            >
+              default
+            </div>
+            <div
+              style={{
+                fontSize: '24px',
+                color: 'var(--neutral-gray-gray-600)',
+                fontWeight: 400,
+              }}
+            >
+              disabled True
+            </div>
           </div>
 
           {sizes.map((size) => (
@@ -129,7 +142,6 @@ export const FigmaShowcase: Story = {
                 alignItems: 'center',
               }}
             >
-              {/* Size label */}
               <div
                 style={{
                   fontSize: '24px',
@@ -140,14 +152,12 @@ export const FigmaShowcase: Story = {
                 {size}
               </div>
 
-              {/* Default state */}
               <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-                <AccordionStatusBadge tone={tone} size={size} variant="default" disabled={false} />
+                <AccordionStatusBadge tone={tone} size={size} disabled={false} />
               </div>
 
-              {/* Disabled state */}
               <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-                <AccordionStatusBadge tone={tone} size={size} variant="default" disabled={true} />
+                <AccordionStatusBadge tone={tone} size={size} disabled={true} />
               </div>
             </div>
           ))}
@@ -160,138 +170,6 @@ export const FigmaShowcase: Story = {
       description: {
         story:
           'Complete showcase of all accordion status badges matching the Figma design specification. Each tone is displayed across all three sizes (small, default, large) in both default and disabled states.',
-      },
-    },
-  },
-};
-
-export const AllStates: Story = {
-  render: () => (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 'var(--spacing-sizing-48px)',
-      }}
-    >
-      {allTones.map((tone) => (
-        <section
-          key={tone}
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 'var(--spacing-sizing-24px)',
-          }}
-        >
-          <h3
-            style={{
-              fontFamily: 'var(--type-typeface-archivo)',
-              fontSize: 'var(--type-archivo-heading-3)',
-              fontWeight: 'var(--type-weight-medium)',
-              color: 'var(--neutral-gray-gray-700)',
-              textTransform: 'capitalize',
-              margin: 0,
-            }}
-          >
-            {tone}
-          </h3>
-
-          {sizes.map((size) => (
-            <div
-              key={`${tone}-${size}`}
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 'var(--spacing-sizing-16px)',
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: 'var(--type-typeface-archivo)',
-                  fontSize: 'var(--type-archivo-label)',
-                  fontWeight: 'var(--type-weight-medium)',
-                  color: 'var(--neutral-gray-gray-600)',
-                  textTransform: 'lowercase',
-                }}
-              >
-                {size}
-              </div>
-
-              <div
-                style={{
-                  display: 'flex',
-                  gap: 'var(--spacing-sizing-40px)',
-                  flexWrap: 'wrap',
-                  alignItems: 'flex-start',
-                }}
-              >
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sizing-12px)' }}>
-                  <span
-                    style={{
-                      fontFamily: 'var(--type-typeface-archivo)',
-                      fontSize: 'var(--type-archivo-label)',
-                      fontWeight: 'var(--type-weight-medium)',
-                      color: 'var(--neutral-gray-gray-500)',
-                    }}
-                  >
-                    default
-                  </span>
-                  <AccordionStatusBadge tone={tone} size={size} variant="default" disabled={false} />
-                </div>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sizing-12px)' }}>
-                  <span
-                    style={{
-                      fontFamily: 'var(--type-typeface-archivo)',
-                      fontSize: 'var(--type-archivo-label)',
-                      fontWeight: 'var(--type-weight-medium)',
-                      color: 'var(--neutral-gray-gray-500)',
-                    }}
-                  >
-                    active
-                  </span>
-                  <AccordionStatusBadge tone={tone} size={size} variant="active" disabled={false} />
-                </div>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sizing-12px)' }}>
-                  <span
-                    style={{
-                      fontFamily: 'var(--type-typeface-archivo)',
-                      fontSize: 'var(--type-archivo-label)',
-                      fontWeight: 'var(--type-weight-medium)',
-                      color: 'var(--neutral-gray-gray-500)',
-                    }}
-                  >
-                    filled
-                  </span>
-                  <AccordionStatusBadge tone={tone} size={size} variant="filled" disabled={false} />
-                </div>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sizing-12px)' }}>
-                  <span
-                    style={{
-                      fontFamily: 'var(--type-typeface-archivo)',
-                      fontSize: 'var(--type-archivo-label)',
-                      fontWeight: 'var(--type-weight-medium)',
-                      color: 'var(--neutral-gray-gray-500)',
-                    }}
-                  >
-                    disabled
-                  </span>
-                  <AccordionStatusBadge tone={tone} size={size} variant="default" disabled={true} />
-                </div>
-              </div>
-            </div>
-          ))}
-        </section>
-      ))}
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'Comprehensive display of all status badge tones with all variants (default, active, filled) and disabled state across all sizes.',
       },
     },
   },
@@ -328,7 +206,7 @@ export const SizeComparison: Story = {
           >
             {size}
           </span>
-          <AccordionStatusBadge tone="warning" size={size} variant="default" />
+          <AccordionStatusBadge tone="warning" size={size} />
         </div>
       ))}
     </div>
@@ -342,13 +220,14 @@ export const SizeComparison: Story = {
   },
 };
 
-export const DisabledStates: Story = {
+export const DisabledComparison: Story = {
   render: () => (
     <div
       style={{
         display: 'flex',
         flexDirection: 'column',
         gap: 'var(--spacing-sizing-32px)',
+        padding: 'var(--spacing-sizing-24px)',
       }}
     >
       {allTones.map((tone) => (
@@ -372,8 +251,36 @@ export const DisabledStates: Story = {
           >
             {tone}
           </span>
-          <AccordionStatusBadge tone={tone} size="default" variant="default" disabled={false} />
-          <AccordionStatusBadge tone={tone} size="default" variant="default" disabled={true} />
+          <div
+            style={{
+              display: 'flex',
+              gap: 'var(--spacing-sizing-24px)',
+              alignItems: 'center',
+            }}
+          >
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+              <span
+                style={{
+                  fontSize: '12px',
+                  color: 'var(--neutral-gray-gray-500)',
+                }}
+              >
+                Default
+              </span>
+              <AccordionStatusBadge tone={tone} size="default" disabled={false} />
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+              <span
+                style={{
+                  fontSize: '12px',
+                  color: 'var(--neutral-gray-gray-500)',
+                }}
+              >
+                Disabled
+              </span>
+              <AccordionStatusBadge tone={tone} size="default" disabled={true} />
+            </div>
+          </div>
         </div>
       ))}
     </div>
@@ -382,6 +289,135 @@ export const DisabledStates: Story = {
     docs: {
       description: {
         story: 'Comparison of enabled and disabled states for all tones at default size.',
+      },
+    },
+  },
+};
+
+export const AllTonesSmall: Story = {
+  render: () => (
+    <div
+      style={{
+        display: 'flex',
+        gap: 'var(--spacing-sizing-24px)',
+        flexWrap: 'wrap',
+        padding: 'var(--spacing-sizing-24px)',
+      }}
+    >
+      {allTones.map((tone) => (
+        <div
+          key={tone}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'var(--spacing-sizing-12px)',
+            alignItems: 'center',
+          }}
+        >
+          <AccordionStatusBadge tone={tone} size="small" />
+          <span
+            style={{
+              fontSize: '12px',
+              color: 'var(--neutral-gray-gray-600)',
+              textTransform: 'capitalize',
+            }}
+          >
+            {tone}
+          </span>
+        </div>
+      ))}
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'All badge tones displayed at small size.',
+      },
+    },
+  },
+};
+
+export const AllTonesDefault: Story = {
+  render: () => (
+    <div
+      style={{
+        display: 'flex',
+        gap: 'var(--spacing-sizing-32px)',
+        flexWrap: 'wrap',
+        padding: 'var(--spacing-sizing-24px)',
+      }}
+    >
+      {allTones.map((tone) => (
+        <div
+          key={tone}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'var(--spacing-sizing-16px)',
+            alignItems: 'center',
+          }}
+        >
+          <AccordionStatusBadge tone={tone} size="default" />
+          <span
+            style={{
+              fontSize: '14px',
+              color: 'var(--neutral-gray-gray-600)',
+              textTransform: 'capitalize',
+            }}
+          >
+            {tone}
+          </span>
+        </div>
+      ))}
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'All badge tones displayed at default size.',
+      },
+    },
+  },
+};
+
+export const AllTonesLarge: Story = {
+  render: () => (
+    <div
+      style={{
+        display: 'flex',
+        gap: 'var(--spacing-sizing-40px)',
+        flexWrap: 'wrap',
+        padding: 'var(--spacing-sizing-32px)',
+      }}
+    >
+      {allTones.map((tone) => (
+        <div
+          key={tone}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'var(--spacing-sizing-20px)',
+            alignItems: 'center',
+          }}
+        >
+          <AccordionStatusBadge tone={tone} size="large" />
+          <span
+            style={{
+              fontSize: '16px',
+              color: 'var(--neutral-gray-gray-600)',
+              textTransform: 'capitalize',
+            }}
+          >
+            {tone}
+          </span>
+        </div>
+      ))}
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'All badge tones displayed at large size.',
       },
     },
   },
