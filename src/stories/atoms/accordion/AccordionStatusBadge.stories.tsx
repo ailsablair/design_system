@@ -109,9 +109,7 @@ export const AllStates: Story = {
                 fontWeight: 400,
                 gridColumn: '1',
               }}
-            >
-              {/* Size labels row - moved below */}
-            </div>
+            ></div>
             <div
               style={{
                 fontSize: '24px',
