@@ -5,6 +5,18 @@ const meta: Meta = {
   title: 'Test/Minimal Connection',
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: `
+# Minimal Connection Test
+
+Ensures the preview connection and basic interactions are functioning.
+
+- Click the button to verify interactivity
+- Check console for any errors
+        `,
+      },
+    },
   },
 };
 
