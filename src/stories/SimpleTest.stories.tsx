@@ -5,6 +5,18 @@ const meta: Meta = {
   title: 'Test/Simple',
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: `
+# Simple Test Story
+
+Basic smoke test used to verify that the Storybook environment is healthy.
+
+- Purpose: quick render/preview check
+- Expected: text renders and no runtime errors
+        `,
+      },
+    },
   },
 };
 
