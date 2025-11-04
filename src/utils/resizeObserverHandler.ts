@@ -157,7 +157,7 @@ export const setupResizeObserverErrorHandler = (): void => {
 
     if (isResizeError) {
       // In development, show a friendly warning once
-      if (process.env.NODE_ENV === 'development' && !window.__resizeObserverErrorLogged) {
+      if (isDevelopmentEnv() && !window.__resizeObserverErrorLogged) {
         console.warn(
           '�� ResizeObserver loops detected and suppressed.\n' +
           'These are typically harmless warnings caused by CSS transforms or Storybook.\n' +
@@ -181,7 +181,7 @@ export const setupResizeObserverErrorHandler = (): void => {
       event.stopPropagation();
       event.stopImmediatePropagation();
       
-      if (process.env.NODE_ENV === 'development' && !window.__resizeObserverErrorLogged) {
+      if (isDevelopmentEnv() && !window.__resizeObserverErrorLogged) {
         console.warn('ResizeObserver error caught and suppressed in error handler');
         window.__resizeObserverErrorLogged = true;
       }
@@ -201,7 +201,7 @@ export const setupResizeObserverErrorHandler = (): void => {
       event.stopPropagation();
       event.stopImmediatePropagation();
       
-      if (process.env.NODE_ENV === 'development' && !window.__resizeObserverErrorLogged) {
+      if (isDevelopmentEnv() && !window.__resizeObserverErrorLogged) {
         console.warn('ResizeObserver promise rejection caught and suppressed');
         window.__resizeObserverErrorLogged = true;
       }
@@ -281,7 +281,7 @@ export const setupResizeObserverErrorHandler = (): void => {
   }
 
   // Log successful initialization in development
-  if (process.env.NODE_ENV === 'development') {
+  if (isDevelopmentEnv()) {
     console.debug('🔧 Enhanced ResizeObserver error handler initialized');
   }
 };
