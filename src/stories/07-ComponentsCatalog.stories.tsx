@@ -57,6 +57,7 @@ export const ComponentsCatalog: Story = {
         title="Atoms"
         items={[
           { name: 'AccordionStatusBadge', path: 'Atoms/Building Blocks/Accordion Status Badge', note: 'Status indicator badge; tones and sizes documented' },
+          { name: 'AccordionSimple', path: 'Atoms/Accordion/AccordionSimple', note: 'Figma-accurate accordion with types, sizes, and states' },
           { name: 'SplitButton', path: 'Atoms/Button/Split Button', note: 'Primary + menu actions' },
           { name: 'Avatar', path: 'Design System/Figma Showcase Files/Avatar Figma Showcase', note: 'Variants and sizing' },
           { name: 'AvatarGroup', path: 'Design System/Figma Showcase Files/Avatar Group & Content Figma Showcase', note: 'Grouping behavior' },
