@@ -1,0 +1,827 @@
+/* ===== ACCORDION SIMPLE - PIXEL PERFECT FIGMA IMPLEMENTATION ===== */
+
+/* Reset and base styles */
+.accordion-simple,
+.accordion-simple * {
+  box-sizing: border-box;
+}
+
+/* ===== BASE ACCORDION CONTAINER ===== */
+.accordion-simple {
+  background: var(--base-white, #ffffff);
+  border-radius: var(--spacing-radius-6px, 6px);
+  border-style: solid;
+  border-color: var(--neutral-gray-gray-300, #d2d5da);
+  border-width: 1px;
+  padding: var(--spacing-sizing-24px, 24px) var(--spacing-sizing-32px, 32px) var(--spacing-sizing-24px, 24px) var(--spacing-sizing-24px, 24px);
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-sizing-12px, 12px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 200px;
+  max-width: 1280px;
+  position: relative;
+}
+
+/* Accordion button wrapper */
+.accordion-simple .accordion-button {
+  all: unset;
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-sizing-12px, 12px);
+  align-items: flex-start;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* ===== STATUS ICON (Building blocks accordion) ===== */
+.building-blocks-accordion {
+  border-radius: var(--spacing-radius-99999px, 99999px);
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.empty {
+  border-radius: var(--spacing-radius-99999px, 99999px);
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  left: 50%;
+  translate: -50% -50%;
+  top: 50%;
+  aspect-ratio: 1;
+}
+
+.dashed {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  left: 50%;
+  translate: -50% -50%;
+  top: 50%;
+  aspect-ratio: 1;
+}
+
+.filled-icons {
+  opacity: 0.3;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  left: 50%;
+  translate: -50% -50%;
+  top: 50%;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+
+.current {
+  border-radius: 50%;
+  border-style: solid;
+  border-color: var(--status-dark-green, #227f1a);
+  position: absolute;
+  aspect-ratio: 1;
+  border-width: 2px;
+  width: 48px;
+  height: 48px;
+  left: 50%;
+  translate: -50% -50%;
+  top: 50%;
+}
+
+/* ===== BELL RING ICON ===== */
+.filled-icons2 {
+  opacity: 0.5;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  position: relative;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+
+/* ===== HEADING AND ICON SECTION ===== */
+.heading-icon {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-sizing-12px, 12px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-8px, 8px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+
+.accordion-title {
+  color: var(--primary-blue-dark-blue, #191e3c);
+  text-align: left;
+  font-family: var(--h4-archivo-h4-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--h4-archivo-h4-med-font-size, 24px);
+  line-height: var(--h4-archivo-h4-med-line-height, 24px);
+  letter-spacing: var(--h4-archivo-h4-med-letter-spacing, -0.25px);
+  font-weight: var(--h4-archivo-h4-med-font-weight, 500);
+  position: relative;
+  align-self: stretch;
+}
+
+.accordion-title2 {
+  color: var(--neutral-gray-gray-500, #6d7280);
+  text-align: left;
+  font-family: var(--body-body-default-font-family, "RobotoFlex-Regular", sans-serif);
+  font-size: var(--body-body-default-font-size, 16px);
+  line-height: var(--body-body-default-line-height, 20px);
+  letter-spacing: var(--body-body-default-letter-spacing, 0.05px);
+  font-weight: var(--body-body-default-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+}
+
+.filled-icons3 {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  position: relative;
+  overflow: visible;
+  aspect-ratio: 1;
+}
+
+/* ===== NO-STROKE TYPE ===== */
+.accordion-simple.type-no-stroke {
+  border-color: transparent;
+}
+
+.accordion-simple.size-default.type-no-stroke {
+  padding: var(--spacing-sizing-24px, 24px) var(--spacing-sizing-32px, 32px) var(--spacing-sizing-24px, 24px) var(--spacing-sizing-32px, 32px);
+}
+
+.accordion-simple.state-default.type-no-stroke .accordion-button,
+.accordion-simple.type-no-stroke .heading-icon {
+  align-items: center;
+}
+
+.accordion-simple.type-no-stroke .filled-icons {
+  opacity: 0.5;
+  flex-shrink: 0;
+  position: relative;
+  left: unset;
+  translate: unset;
+  top: unset;
+}
+
+.accordion-simple.size-default.type-no-stroke .filled-icons {
+  width: 22px;
+  height: 22px;
+}
+
+.accordion-simple.type-no-stroke .accordion-title {
+  flex: 1;
+  align-self: unset;
+}
+
+.accordion-simple.size-default.type-no-stroke .accordion-title {
+  font-family: var(--h5-archivo-h5-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--h5-archivo-h5-med-font-size, 19px);
+  line-height: var(--h5-archivo-h5-med-line-height, 24px);
+  letter-spacing: var(--h5-archivo-h5-med-letter-spacing, -0.15px);
+  font-weight: var(--h5-archivo-h5-med-font-weight, 500);
+}
+
+.accordion-simple.type-no-stroke .filled-icons2 {
+  opacity: unset;
+}
+
+.accordion-simple.size-default.type-no-stroke .filled-icons2 {
+  width: 28px;
+  height: 28px;
+}
+
+.accordion-simple.size-default.state-open.type-simple .content,
+.accordion-simple.size-default.type-no-stroke .content {
+  gap: var(--spacing-sizing-16px, 16px);
+}
+
+.accordion-simple.state-open.type-no-stroke .accordion-title {
+  color: var(--base-black, #1c1c1c);
+}
+
+.accordion-simple.type-no-stroke .lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-nulla-rutrum-ac-tortor-et-lacinia-suspendisse-hendrerit-mi-vitae-mauris-dictum-interdum-vitae-eget-dui-vivamus-urna-eros-facilisis-et-laoreet-accumsan-feugiat-sed-sapien-vestibulum-euismod-massa-enim-nec-malesuada-tellus-scelerisque-in-donec-sodales-posuere-convallis-donec-vel-urna-finibus-augue-accumsan-posuere-in-et-nunc {
+  color: var(--neutral-gray-gray-700, #374151);
+}
+
+/* ===== LARGE SIZE ===== */
+.accordion-simple.size-large.type-simple {
+  padding: var(--spacing-sizing-28px, 28px) var(--spacing-sizing-32px, 32px) var(--spacing-sizing-28px, 28px) var(--spacing-sizing-24px, 24px);
+}
+
+.accordion-simple.size-large .building-blocks-accordion {
+  width: 64px;
+  height: 64px;
+  overflow: unset;
+}
+
+.accordion-simple.size-large .empty,
+.accordion-simple.size-large .dashed {
+  width: 62px;
+  height: 62px;
+}
+
+.accordion-simple.size-large.type-simple .filled-icons {
+  opacity: 0.5;
+}
+
+.accordion-simple.size-large.type-simple .filled-icons2,
+.accordion-simple.size-large.type-no-stroke .filled-icons {
+  width: 26px;
+  height: 26px;
+}
+
+.accordion-simple.size-large.type-simple .accordion-title {
+  font-family: var(--h3-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--h3-med-font-size, 28px);
+  line-height: var(--h3-med-line-height, 28px);
+  letter-spacing: var(--h3-med-letter-spacing, -0.5px);
+  font-weight: var(--h3-med-font-weight, 500);
+}
+
+.accordion-simple.size-large .accordion-title2 {
+  font-family: var(--body-body-lg-default-font-family, "RobotoFlex-Regular", sans-serif);
+  font-size: var(--body-body-lg-default-font-size, 18px);
+  line-height: var(--body-body-lg-default-line-height, 22px);
+  letter-spacing: var(--body-body-lg-default-letter-spacing, -0.15px);
+  font-weight: var(--body-body-lg-default-font-weight, 400);
+}
+
+.accordion-simple.size-large .filled-icons3,
+.accordion-simple.size-large.type-no-stroke .filled-icons2 {
+  width: 32px;
+  height: 32px;
+}
+
+.accordion-simple.size-large.type-no-stroke {
+  padding: var(--spacing-sizing-28px, 28px) var(--spacing-sizing-32px, 32px) var(--spacing-sizing-28px, 28px) var(--spacing-sizing-32px, 32px);
+}
+
+.accordion-simple.size-large .current {
+  border-width: 2px;
+  width: 62px;
+  height: 62px;
+  left: 50%;
+  translate: -50% -50%;
+  top: 50%;
+}
+
+.accordion-simple.size-large.state-open.type-simple .content,
+.accordion-simple.size-large.type-no-stroke .content {
+  gap: 16px;
+}
+
+/* ===== SMALL SIZE ===== */
+.accordion-simple.open-icon-default-chevron.size-small.state-default.type-simple {
+  padding: var(--spacing-sizing-20px, 20px) var(--spacing-sizing-32px, 32px) var(--spacing-sizing-20px, 20px) var(--spacing-sizing-24px, 24px);
+}
+
+.accordion-simple.size-small .empty {
+  width: 22px;
+  height: 22px;
+  left: 2px;
+  top: 2px;
+  translate: unset;
+}
+
+.accordion-simple.size-small .dashed {
+  width: 22px;
+  height: 22px;
+  left: 0px;
+  top: 0px;
+  translate: unset;
+}
+
+.accordion-simple.size-small.type-simple .filled-icons {
+  opacity: 0.5;
+  width: 16px;
+  height: 16px;
+  left: 3px;
+  top: 3px;
+  translate: unset;
+}
+
+.accordion-simple.size-small.type-simple .filled-icons2,
+.accordion-simple.size-small.type-no-stroke .filled-icons {
+  width: 18px;
+  height: 18px;
+}
+
+.accordion-simple.size-small .accordion-title {
+  font-family: var(--label-label-lg-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--label-label-lg-med-font-size, 18px);
+  line-height: var(--label-label-lg-med-line-height, 24px);
+  letter-spacing: var(--label-label-lg-med-letter-spacing, 0.15px);
+  font-weight: var(--label-label-lg-med-font-weight, 500);
+}
+
+.accordion-simple.size-small .accordion-title2 {
+  font-family: var(--body-body-sm-default-font-family, "RobotoFlex-Regular", sans-serif);
+  font-size: var(--body-body-sm-default-font-size, 14px);
+  line-height: var(--body-body-sm-default-line-height, 16px);
+  letter-spacing: var(--body-body-sm-default-letter-spacing, -0.15px);
+  font-weight: var(--body-body-sm-default-font-weight, 400);
+}
+
+.accordion-simple.size-small .filled-icons3,
+.accordion-simple.size-small.type-no-stroke .filled-icons2 {
+  width: 20px;
+  height: 20px;
+}
+
+.accordion-simple.size-small.type-no-stroke {
+  padding: var(--spacing-sizing-16px, 16px) var(--spacing-sizing-32px, 32px) var(--spacing-sizing-16px, 16px) var(--spacing-sizing-32px, 32px);
+}
+
+.accordion-simple.size-small.state-open.type-simple,
+.accordion-simple.open-icon-plus.size-small.state-default.type-simple {
+  padding: var(--spacing-sizing-16px, 16px) var(--spacing-sizing-32px, 32px) var(--spacing-sizing-16px, 16px) var(--spacing-sizing-24px, 24px);
+}
+
+.accordion-simple.size-small .current {
+  border-width: 1px;
+  width: 22px;
+  height: 22px;
+  left: 2px;
+  top: 2px;
+}
+
+.accordion-simple.size-small.state-open .content {
+  gap: var(--spacing-sizing-12px, 12px);
+}
+
+.accordion-simple.size-small .building-blocks-accordion {
+  width: 26px;
+  height: 26px;
+}
+
+.accordion-simple.size-small .icon-frame,
+.accordion-simple.size-small .open-close {
+  width: 22px;
+  height: 22px;
+}
+
+/* ===== DECORATIVE AND NUMBER TYPES ===== */
+.accordion-simple.type-decorative,
+.accordion-simple.type-number {
+  flex-direction: column;
+  overflow: hidden;
+  min-width: unset;
+  max-width: unset;
+}
+
+.accordion-simple.size-default.type-decorative,
+.accordion-simple.size-small.type-decorative,
+.accordion-simple.size-small.state-open.type-number {
+  gap: 10px;
+}
+
+.accordion-simple.state-default.type-decorative,
+.accordion-simple.state-default.type-number {
+  border-color: var(--neutral-gray-gray-200, #e5e7eb);
+  padding: var(--spacing-sizing-16px, 16px) var(--spacing-sizing-12px, 12px) var(--spacing-sizing-16px, 16px) var(--spacing-sizing-12px, 12px);
+}
+
+.accordion-simple .header {
+  display: flex;
+  flex-direction: row;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.accordion-simple.type-decorative .header,
+.accordion-simple.type-number .header {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-simple .icon-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  gap: 12px;
+}
+
+.accordion-simple .icon-frame {
+  border-radius: var(--spacing-radius-99999px, 99999px);
+  border-style: solid;
+  border-width: 1px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.accordion-simple.state-default .icon-frame {
+  background: var(--primary-sky-blue-sky-blue-50, #f4fcff);
+  border-color: var(--primary-sky-blue-sky-blue-200, #b6e5f9);
+}
+
+.accordion-simple.state-open .icon-frame {
+  background: transparent;
+  border-color: transparent;
+}
+
+.accordion-simple.size-default .icon-frame,
+.accordion-simple.size-large .icon-frame {
+  width: 28px;
+  height: 28px;
+}
+
+.accordion-simple.size-small .icon-frame {
+  width: 22px;
+  height: 22px;
+}
+
+.accordion-simple.size-default.state-default.type-decorative .filled-icons {
+  width: 18px;
+  height: 18px;
+  left: 5px;
+  top: 5px;
+  translate: unset;
+}
+
+.accordion-simple.size-default.state-open.type-decorative .filled-icons {
+  width: 16px;
+  height: 16px;
+}
+
+.accordion-simple.size-small.type-decorative .filled-icons {
+  width: 14px;
+  height: 14px;
+}
+
+.accordion-simple.size-large.type-decorative .filled-icons {
+  width: 18px;
+  height: 18px;
+}
+
+.accordion-simple .this-is-a-decorative-accordion {
+  color: var(--base-black, #1c1c1c);
+  text-align: left;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: var(--label-label-lg-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--label-label-lg-med-font-size, 18px);
+  line-height: var(--label-label-lg-med-line-height, 24px);
+  letter-spacing: var(--label-label-lg-med-letter-spacing, 0.15px);
+  font-weight: var(--label-label-lg-med-font-weight, 500);
+}
+
+.accordion-simple.size-small .this-is-a-decorative-accordion {
+  font-family: var(--label-label-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--label-label-med-font-size, 16px);
+  line-height: var(--label-label-med-line-height, 20px);
+  letter-spacing: var(--label-label-med-letter-spacing, 0.15px);
+  font-weight: var(--label-label-med-font-weight, 500);
+}
+
+.accordion-simple.size-large .this-is-a-decorative-accordion {
+  font-family: var(--h5-archivo-h5-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--h5-archivo-h5-med-font-size, 19px);
+  line-height: var(--h5-archivo-h5-med-line-height, 24px);
+  letter-spacing: var(--h5-archivo-h5-med-letter-spacing, -0.15px);
+  font-weight: var(--h5-archivo-h5-med-font-weight, 500);
+}
+
+.accordion-simple .open-close {
+  background: var(--neutral-gray-gray-50, #f9fafb);
+  border-radius: var(--spacing-radius-99999px, 99999px);
+  border-style: solid;
+  border-color: var(--neutral-gray-gray-200, #e5e7eb);
+  border-width: 1px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion-simple.size-default .open-close {
+  width: 24px;
+  height: 24px;
+}
+
+.accordion-simple.size-large .open-close {
+  width: 28px;
+  height: 28px;
+}
+
+.accordion-simple.state-open.type-decorative {
+  background: linear-gradient(-66.26deg, rgba(255, 255, 255, 1) 0.48%, rgba(255, 255, 255, 0.6) 15.73%, rgba(214, 240, 251, 1) 100%);
+  border-color: var(--primary-sky-blue-sky-blue, #0ba7ea);
+  border-width: 2px;
+}
+
+.accordion-simple.size-default.state-open.type-decorative {
+  padding: var(--spacing-sizing-16px, 16px);
+}
+
+.accordion-simple.size-large.state-open.type-decorative {
+  padding: var(--spacing-sizing-16px, 16px);
+}
+
+.accordion-simple.size-small.state-open.type-decorative {
+  padding: var(--spacing-sizing-16px, 16px) var(--spacing-sizing-12px, 12px) var(--spacing-sizing-16px, 16px) var(--spacing-sizing-12px, 12px);
+}
+
+/* ===== NUMBER TYPE ===== */
+.accordion-simple .title {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.accordion-simple ._01 {
+  color: var(--primary-sky-blue-sky-blue-300, #85d3f5);
+  text-align: left;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.accordion-simple.size-default ._01 {
+  font-family: var(--h3-bold-font-family, "Archivo-Bold", sans-serif);
+  font-size: var(--h3-bold-font-size, 28px);
+  line-height: var(--h3-bold-line-height, 28px);
+  letter-spacing: var(--h3-bold-letter-spacing, -0.5px);
+  font-weight: var(--h3-bold-font-weight, 700);
+}
+
+.accordion-simple.size-small ._01 {
+  font-family: var(--h4-archivo-h4-bold-font-family, "Archivo-Bold", sans-serif);
+  font-size: var(--h4-archivo-h4-bold-font-size, 24px);
+  line-height: var(--h4-archivo-h4-bold-line-height, 24px);
+  letter-spacing: var(--h4-archivo-h4-bold-letter-spacing, -0.25px);
+  font-weight: var(--h4-archivo-h4-bold-font-weight, 700);
+}
+
+.accordion-simple.size-large ._01 {
+  font-family: var(--h2-bold-font-family, "Archivo-Bold", sans-serif);
+  font-size: var(--h2-bold-font-size, 32px);
+  line-height: var(--h2-bold-line-height, 34px);
+  letter-spacing: var(--h2-bold-letter-spacing, -1px);
+  font-weight: var(--h2-bold-font-weight, 700);
+}
+
+.accordion-simple .this-is-a-numbered-accordion-list {
+  color: var(--base-black, #1c1c1c);
+  text-align: left;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: var(--label-label-lg-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--label-label-lg-med-font-size, 18px);
+  line-height: var(--label-label-lg-med-line-height, 24px);
+  letter-spacing: var(--label-label-lg-med-letter-spacing, 0.15px);
+  font-weight: var(--label-label-lg-med-font-weight, 500);
+}
+
+.accordion-simple.size-small .this-is-a-numbered-accordion-list {
+  font-family: var(--label-label-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--label-label-med-font-size, 16px);
+  line-height: var(--label-label-med-line-height, 20px);
+  letter-spacing: var(--label-label-med-letter-spacing, 0.15px);
+  font-weight: var(--label-label-med-font-weight, 500);
+}
+
+.accordion-simple.size-large .this-is-a-numbered-accordion-list {
+  font-family: var(--h5-archivo-h5-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--h5-archivo-h5-med-font-size, 19px);
+  line-height: var(--h5-archivo-h5-med-line-height, 24px);
+  letter-spacing: var(--h5-archivo-h5-med-letter-spacing, -0.15px);
+  font-weight: var(--h5-archivo-h5-med-font-weight, 500);
+}
+
+.accordion-simple.state-open.type-number {
+  border-color: var(--primary-sky-blue-sky-blue, #0ba7ea);
+  border-width: 2px;
+  padding: var(--spacing-sizing-16px, 16px);
+}
+
+/* ===== LABEL TYPE ===== */
+.accordion-simple.type-label {
+  border-color: var(--neutral-gray-gray-200, #e5e7eb);
+  flex-direction: column;
+  min-width: unset;
+  max-width: unset;
+  overflow: hidden;
+}
+
+.accordion-simple.size-default.type-label,
+.accordion-simple.size-small.state-default.type-label {
+  padding: var(--spacing-sizing-16px, 16px) var(--spacing-sizing-12px, 12px) var(--spacing-sizing-16px, 16px) var(--spacing-sizing-12px, 12px);
+}
+
+.accordion-simple.size-large.state-default.type-label {
+  padding: var(--spacing-sizing-20px, 20px) var(--spacing-sizing-12px, 12px) var(--spacing-sizing-20px, 20px) var(--spacing-sizing-12px, 12px);
+}
+
+.accordion-simple.type-label .header {
+  gap: var(--spacing-sizing-12px, 12px);
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.accordion-simple .tag {
+  background: var(--primary-sky-blue-sky-blue, #0ba7ea);
+  border-radius: var(--spacing-radius-99999px, 99999px);
+  border-style: solid;
+  border-color: var(--primary-sky-blue-sky-blue-400, #54c1f0);
+  border-width: 1px;
+  padding: 2px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.accordion-simple .label {
+  border-radius: var(--spacing-radius-99999px, 99999px);
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.accordion-simple .left-align {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.accordion-simple.type-label .filled-icons {
+  opacity: 0.6;
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  position: relative;
+  left: unset;
+  translate: unset;
+  top: unset;
+}
+
+.accordion-simple .label2 {
+  color: var(--base-white, #ffffff);
+  text-align: left;
+  font-family: var(--label-label-sm-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--label-label-sm-med-font-size, 14px);
+  line-height: var(--label-label-sm-med-line-height, 16px);
+  letter-spacing: var(--label-label-sm-med-letter-spacing, 0.15px);
+  font-weight: var(--label-label-sm-med-font-weight, 500);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.accordion-simple .this-is-a-label-accordion {
+  color: var(--base-black, #1c1c1c);
+  text-align: left;
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: var(--label-label-lg-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--label-label-lg-med-font-size, 18px);
+  line-height: var(--label-label-lg-med-line-height, 24px);
+  letter-spacing: var(--label-label-lg-med-letter-spacing, 0.15px);
+  font-weight: var(--label-label-lg-med-font-weight, 500);
+}
+
+.accordion-simple.size-small .this-is-a-label-accordion {
+  font-family: var(--label-label-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--label-label-med-font-size, 16px);
+  line-height: var(--label-label-med-line-height, 20px);
+  letter-spacing: var(--label-label-med-letter-spacing, 0.15px);
+  font-weight: var(--label-label-med-font-weight, 500);
+}
+
+.accordion-simple.size-large .this-is-a-label-accordion {
+  font-family: var(--h5-archivo-h5-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--h5-archivo-h5-med-font-size, 19px);
+  line-height: var(--h5-archivo-h5-med-line-height, 24px);
+  letter-spacing: var(--h5-archivo-h5-med-letter-spacing, -0.15px);
+  font-weight: var(--h5-archivo-h5-med-font-weight, 500);
+}
+
+/* ===== CONTENT BODY ===== */
+.accordion-simple .content2 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-8px, 8px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+
+.accordion-simple.type-decorative .content,
+.accordion-simple.type-number .content,
+.accordion-simple.type-label .content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-12px, 12px);
+  align-items: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* ===== OPEN STATE ===== */
+.accordion-simple.state-open .heading-icon {
+  align-self: stretch;
+  flex-shrink: 0;
+  flex: unset;
+}
+
+.accordion-simple.state-open.type-decorative .header,
+.accordion-simple.state-open.type-number .header,
+.accordion-simple.state-open.type-label .header {
+  align-items: flex-start;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .accordion-simple {
+    max-width: 100%;
+  }
+  
+  .accordion-simple.size-large .accordion-title {
+    font-size: 22px;
+    line-height: 26px;
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  .accordion-simple * {
+    transition: none !important;
+  }
+}
+
+/* ===== HOVER STATES ===== */
+.accordion-simple .accordion-button:hover .accordion-title {
+  color: var(--base-black, #1c1c1c);
+}
+
+.accordion-simple .accordion-button:hover .filled-icons2,
+.accordion-simple .accordion-button:hover .filled-icons3 {
+  opacity: 1;
+}
+
+/* ===== FOCUS STATES ===== */
+.accordion-simple .accordion-button:focus-visible {
+  outline: 2px solid var(--primary-blue-blue, #2f42bd);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
