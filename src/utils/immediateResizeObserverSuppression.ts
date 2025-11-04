@@ -242,17 +242,25 @@ const suppressImmediately = (): void => {
   }
   
   // Emergency catch-all for any remaining errors
-  process.nextTick = process.nextTick || ((callback: Function, ...args: any[]) => {
-    setTimeout(() => {
-      try {
-        callback(...args);
-      } catch (error) {
-        if (!isResizeObserverRelated(error)) {
-          console.error('nextTick error:', error);
-        }
-      }
-    }, 0);
-  });
+  try {
+    const g: any = (typeof globalThis !== 'undefined') ? globalThis : (typeof window !== 'undefined' ? window : {});
+    if (g && g.process && typeof g.process.nextTick === 'function') {
+      const originalNextTick = g.process.nextTick.bind(g.process);
+      g.process.nextTick = (callback: Function, ...args: any[]) => {
+        setTimeout(() => {
+          try {
+            callback(...args);
+          } catch (error) {
+            if (!isResizeObserverRelated(error)) {
+              console.error('nextTick error:', error);
+            }
+          }
+        }, 0);
+      };
+    }
+  } catch {
+    // no-op
+  }
   
   console.debug('🚫 IMMEDIATE ResizeObserver suppression activated (aggressive mode)');
 };
