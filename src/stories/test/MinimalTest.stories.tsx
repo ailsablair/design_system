@@ -5,6 +5,18 @@ const meta: Meta = {
   parameters: {
     layout: 'centered',
     chromatic: { disable: true },
+    docs: {
+      description: {
+        component: `
+# Minimal Verification Story
+
+Lightweight sanity check to confirm Storybook renders correctly and interactions work.
+
+- Purpose: connectivity and preview verification
+- How to use: open this story; you should see static text and no console errors
+        `,
+      },
+    },
   },
 };
 
