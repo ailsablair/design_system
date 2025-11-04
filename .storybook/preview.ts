@@ -4,8 +4,18 @@ import type { Decorator, Preview as StorybookPreview } from '@storybook/react';
 import '../src/utils/minimalResizeObserverSuppression';
 // Additional browser-level suppression and safe observer wrapper
 import '../src/utils/browserResizeObserverSuppression';
+// Storybook-wide early suppression utility (auto-inits on import)
+import '../src/utils/storybookResizeObserverFix';
+// Emergency-level immediate suppression (initialize early)
+import { initImmediateSuppression } from '../src/utils/immediateResizeObserverSuppression';
 // Story-level decorator suppression
 import { withResizeObserverSuppression } from '../src/utils/resizeObserverDecorator';
+
+// Initialize immediate suppression as early as possible in the preview context
+if (typeof window !== 'undefined' && !(window as any).__RO_IMMEDIATE_INIT) {
+  (window as any).__RO_IMMEDIATE_INIT = true;
+  initImmediateSuppression();
+}
 
 if (typeof window !== 'undefined' && !(window as any).__RO_SUPPRESS_PATCHED) {
   (window as any).__RO_SUPPRESS_PATCHED = true;
@@ -19,7 +29,8 @@ if (typeof window !== 'undefined' && !(window as any).__RO_SUPPRESS_PATCHED) {
         .toLowerCase();
       return (
         text.includes('resizeobserver loop completed with undelivered notifications') ||
-        text.includes('resizeobserver loop limit exceeded')
+        text.includes('resizeobserver loop limit exceeded') ||
+        (text.includes('resizeobserver') && (text.includes('undelivered') || text.includes('loop completed')))
       );
     } catch {
       return false;
