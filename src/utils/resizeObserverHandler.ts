@@ -102,6 +102,23 @@ const isResizeObserverError = (message: any): boolean => {
   );
 };
 
+// Safe environment check for development mode without relying on global `process`
+const isDevelopmentEnv = (): boolean => {
+  try {
+    // Prefer Vite's import.meta.env when available
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const meta: any = (typeof import.meta !== 'undefined') ? (import.meta as any) : null;
+    if (meta && meta.env && typeof meta.env.MODE === 'string') {
+      return meta.env.MODE === 'development';
+    }
+  } catch {}
+  try {
+    return typeof process !== 'undefined' && !!(process as any).env && (process as any).env.NODE_ENV === 'development';
+  } catch {
+    return false;
+  }
+};
+
 /**
  * Enhanced ResizeObserver error suppression with immediate setup
  */
