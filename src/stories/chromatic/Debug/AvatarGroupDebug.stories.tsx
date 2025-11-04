@@ -6,6 +6,19 @@ const meta: Meta<typeof AvatarGroup> = {
   component: AvatarGroup,
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: `
+# AvatarGroup Debug
+
+Detailed diagnostics for AvatarGroup overlap, z-index and class application in Chromatic.
+
+- Purpose: investigate visual diffs
+- Inspect: class names, margins, and stacking context
+        `,
+      },
+    },
+    chromatic: { disable: false }
   }
 };
 
