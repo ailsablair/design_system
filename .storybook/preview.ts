@@ -1,50 +1,88 @@
 import React from 'react';
 import type { Decorator, Preview as StorybookPreview } from '@storybook/react';
-// Minimal, targeted suppression of the noisy ResizeObserver console errors
-import '../src/utils/minimalResizeObserverSuppression';
-// Additional browser-level suppression and safe observer wrapper
-import '../src/utils/browserResizeObserverSuppression';
-// Storybook-wide early suppression utility (auto-inits on import)
-import '../src/utils/storybookResizeObserverFix';
-// Emergency-level immediate suppression (initialize early)
-import { initImmediateSuppression } from '../src/utils/immediateResizeObserverSuppression';
-// Story-level decorator suppression
-import { withResizeObserverSuppression } from '../src/utils/resizeObserverDecorator';
 
-// Initialize immediate suppression as early as possible in the preview context
-if (typeof window !== 'undefined' && !(window as any).__RO_IMMEDIATE_INIT) {
-  (window as any).__RO_IMMEDIATE_INIT = true;
-  initImmediateSuppression();
-}
+// Early, focused suppression of noisy ResizeObserver errors for Storybook preview
+const applyResizeObserverSuppression = (): void => {
+  if (typeof window === 'undefined') return;
+  const w = window as any;
 
-if (typeof window !== 'undefined' && !(window as any).__RO_SUPPRESS_PATCHED) {
-  (window as any).__RO_SUPPRESS_PATCHED = true;
-  const originalError = window.console.error.bind(window.console);
-  const originalWarn = window.console.warn.bind(window.console);
+  if (w.__RO_STORYBOOK_SUPPRESSION_APPLIED) return;
+  w.__RO_STORYBOOK_SUPPRESSION_APPLIED = true;
+
+  const originalError = console.error.bind(console);
+  const originalWarn = console.warn.bind(console);
+
   const shouldSuppress = (args: any[]): boolean => {
     try {
       const text = args
-        .map((a) => (typeof a === 'string' ? a : (a && (a.message || a.toString())) || ''))
+        .map((a) => {
+          if (typeof a === 'string') return a;
+          if (a && typeof a.message === 'string') return a.message;
+          try {
+            return String(a);
+          } catch {
+            return '';
+          }
+        })
         .join(' ')
         .toLowerCase();
+
       return (
         text.includes('resizeobserver loop completed with undelivered notifications') ||
         text.includes('resizeobserver loop limit exceeded') ||
-        (text.includes('resizeobserver') && (text.includes('undelivered') || text.includes('loop completed')))
+        text.includes('resizeobserver') && (text.includes('undelivered') || text.includes('loop completed'))
       );
     } catch {
       return false;
     }
   };
-  window.console.error = (...args: any[]) => {
+
+  console.error = (...args: any[]) => {
     if (shouldSuppress(args)) return;
     originalError(...args);
   };
-  window.console.warn = (...args: any[]) => {
+
+  console.warn = (...args: any[]) => {
     if (shouldSuppress(args)) return;
     originalWarn(...args);
   };
-}
+
+  window.addEventListener(
+    'error',
+    (event: ErrorEvent) => {
+      const message = (event.message || '').toLowerCase();
+      if (
+        message.includes('resizeobserver loop completed with undelivered notifications') ||
+        message.includes('resizeobserver loop limit exceeded') ||
+        message.includes('resizeobserver') && (message.includes('undelivered') || message.includes('loop completed'))
+      ) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+      }
+    },
+    true,
+  );
+
+  window.addEventListener(
+    'unhandledrejection',
+    (event: PromiseRejectionEvent) => {
+      const reason = String(event.reason || '').toLowerCase();
+      if (
+        reason.includes('resizeobserver loop completed with undelivered notifications') ||
+        reason.includes('resizeobserver loop limit exceeded') ||
+        reason.includes('resizeobserver') && (reason.includes('undelivered') || reason.includes('loop completed'))
+      ) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+      }
+    },
+    true,
+  );
+};
+
+applyResizeObserverSuppression();
 
 // Minimal decorator that calls Story with context to avoid rendering issues
 const withSafeBoundary: Decorator = (Story, context) => (
@@ -52,7 +90,7 @@ const withSafeBoundary: Decorator = (Story, context) => (
 );
 
 const preview: StorybookPreview = {
-  decorators: [withResizeObserverSuppression],
+  decorators: [withSafeBoundary],
   parameters: {
     options: {
       storySort: {
@@ -63,7 +101,7 @@ const preview: StorybookPreview = {
           'Molecules',
           'Chromatic',
           'Test',
-          '*'
+          '*',
         ],
         locales: 'en-US',
       },
