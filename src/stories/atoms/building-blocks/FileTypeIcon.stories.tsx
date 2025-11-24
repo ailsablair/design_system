@@ -8,7 +8,7 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'File type icons for use in tables and file displays. Supports various file types with three size options.',
+        component: 'File type icon component for use in tables and file listings. Supports various file types and three sizes.',
       },
     },
   },
@@ -50,15 +50,15 @@ const meta = {
         '.psd',
         '.indd',
         '.aep',
-        '.mp3',
-        '.wav',
-        '.mp4',
-        '.mpeg',
-        '.avi',
-        '.mkv',
-        '.html',
-        '.css',
         '.rss',
+        '.css',
+        '.html',
+        '.mkv',
+        '.avi',
+        '.mpeg',
+        '.mp4',
+        '.wav',
+        '.mp3',
         '.sql',
         '.js',
         '.json',
@@ -74,7 +74,11 @@ const meta = {
     size: {
       control: 'select',
       options: ['small', 'default', 'large'],
-      description: 'The size of the icon',
+      description: 'Size of the icon',
+    },
+    className: {
+      control: 'text',
+      description: 'Additional CSS classes',
     },
   },
 } satisfies Meta<typeof FileTypeIcon>;
@@ -110,14 +114,49 @@ export const PDF: Story = {
   },
 };
 
-export const Small: Story = {
+export const Document: Story = {
+  args: {
+    type: '.docx',
+    size: 'default',
+  },
+};
+
+export const Spreadsheet: Story = {
+  args: {
+    type: '.xlsx',
+    size: 'default',
+  },
+};
+
+export const Code: Story = {
+  args: {
+    type: '.js',
+    size: 'default',
+  },
+};
+
+export const Video: Story = {
+  args: {
+    type: '.mp4',
+    size: 'default',
+  },
+};
+
+export const Audio: Story = {
+  args: {
+    type: '.mp3',
+    size: 'default',
+  },
+};
+
+export const SmallSize: Story = {
   args: {
     type: '.pdf',
     size: 'small',
   },
 };
 
-export const Large: Story = {
+export const LargeSize: Story = {
   args: {
     type: '.pdf',
     size: 'large',
@@ -126,143 +165,127 @@ export const Large: Story = {
 
 export const AllGenericTypes: Story = {
   render: () => (
-    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', padding: '20px' }}>
-      <div style={{ textAlign: 'center' }}>
-        <FileTypeIcon type="default" />
-        <div style={{ fontSize: '12px', marginTop: '8px' }}>Default</div>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <FileTypeIcon type="folder" />
-        <div style={{ fontSize: '12px', marginTop: '8px' }}>Folder</div>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <FileTypeIcon type="image" />
-        <div style={{ fontSize: '12px', marginTop: '8px' }}>Image</div>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <FileTypeIcon type="film" />
-        <div style={{ fontSize: '12px', marginTop: '8px' }}>Film</div>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <FileTypeIcon type="video" />
-        <div style={{ fontSize: '12px', marginTop: '8px' }}>Video</div>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <FileTypeIcon type="audio" />
-        <div style={{ fontSize: '12px', marginTop: '8px' }}>Audio</div>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <FileTypeIcon type="adobe-pdf" />
-        <div style={{ fontSize: '12px', marginTop: '8px' }}>Adobe PDF</div>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <FileTypeIcon type="text" />
-        <div style={{ fontSize: '12px', marginTop: '8px' }}>Text</div>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <FileTypeIcon type="sheet" />
-        <div style={{ fontSize: '12px', marginTop: '8px' }}>Sheet</div>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <FileTypeIcon type="code" />
-        <div style={{ fontSize: '12px', marginTop: '8px' }}>Code</div>
-      </div>
+    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
+      <FileTypeIcon type="default" />
+      <FileTypeIcon type="folder" />
+      <FileTypeIcon type="image" />
+      <FileTypeIcon type="film" />
+      <FileTypeIcon type="video" />
+      <FileTypeIcon type="audio" />
+      <FileTypeIcon type="adobe-pdf" />
+      <FileTypeIcon type="text" />
+      <FileTypeIcon type="sheet" />
+      <FileTypeIcon type="code" />
     </div>
   ),
 };
 
 export const AllImageTypes: Story = {
   render: () => (
-    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', padding: '20px' }}>
-      {['.img', '.jpg', '.jpeg', '.png', '.webp', '.svg', '.gif', '.tiff', '.eps'].map((type) => (
-        <div key={type} style={{ textAlign: 'center' }}>
-          <FileTypeIcon type={type as any} />
-          <div style={{ fontSize: '12px', marginTop: '8px' }}>{type}</div>
-        </div>
-      ))}
+    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
+      <FileTypeIcon type=".img" />
+      <FileTypeIcon type=".jpg" />
+      <FileTypeIcon type=".jpeg" />
+      <FileTypeIcon type=".png" />
+      <FileTypeIcon type=".webp" />
+      <FileTypeIcon type=".svg" />
+      <FileTypeIcon type=".gif" />
+      <FileTypeIcon type=".tiff" />
+      <FileTypeIcon type=".eps" />
     </div>
   ),
 };
 
 export const AllDocumentTypes: Story = {
   render: () => (
-    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', padding: '20px' }}>
-      {['.pdf', '.doc', '.docx', '.txt', '.csv', '.xls', '.xlsx', '.ppt', '.pptx'].map((type) => (
-        <div key={type} style={{ textAlign: 'center' }}>
-          <FileTypeIcon type={type as any} />
-          <div style={{ fontSize: '12px', marginTop: '8px' }}>{type}</div>
-        </div>
-      ))}
+    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
+      <FileTypeIcon type=".txt" />
+      <FileTypeIcon type=".doc" />
+      <FileTypeIcon type=".docx" />
+      <FileTypeIcon type=".pdf" />
     </div>
   ),
 };
 
-export const AllMediaTypes: Story = {
+export const AllSpreadsheetTypes: Story = {
   render: () => (
-    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', padding: '20px' }}>
-      {['.mp3', '.wav', '.mp4', '.mpeg', '.avi', '.mkv'].map((type) => (
-        <div key={type} style={{ textAlign: 'center' }}>
-          <FileTypeIcon type={type as any} />
-          <div style={{ fontSize: '12px', marginTop: '8px' }}>{type}</div>
-        </div>
-      ))}
+    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
+      <FileTypeIcon type=".csv" />
+      <FileTypeIcon type=".xls" />
+      <FileTypeIcon type=".xlsx" />
+    </div>
+  ),
+};
+
+export const AllVideoTypes: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
+      <FileTypeIcon type=".mp4" />
+      <FileTypeIcon type=".mkv" />
+      <FileTypeIcon type=".avi" />
+      <FileTypeIcon type=".mpeg" />
+    </div>
+  ),
+};
+
+export const AllAudioTypes: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
+      <FileTypeIcon type=".mp3" />
+      <FileTypeIcon type=".wav" />
     </div>
   ),
 };
 
 export const AllCodeTypes: Story = {
   render: () => (
-    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', padding: '20px' }}>
-      {['.html', '.css', '.js', '.json', '.java', '.xml', '.sql', '.rss'].map((type) => (
-        <div key={type} style={{ textAlign: 'center' }}>
-          <FileTypeIcon type={type as any} />
-          <div style={{ fontSize: '12px', marginTop: '8px' }}>{type}</div>
-        </div>
-      ))}
+    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
+      <FileTypeIcon type=".js" />
+      <FileTypeIcon type=".json" />
+      <FileTypeIcon type=".html" />
+      <FileTypeIcon type=".css" />
+      <FileTypeIcon type=".sql" />
+      <FileTypeIcon type=".java" />
+      <FileTypeIcon type=".xml" />
     </div>
   ),
 };
 
 export const AllDesignTypes: Story = {
   render: () => (
-    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', padding: '20px' }}>
-      {['.fig', '.ai', '.psd', '.indd', '.aep'].map((type) => (
-        <div key={type} style={{ textAlign: 'center' }}>
-          <FileTypeIcon type={type as any} />
-          <div style={{ fontSize: '12px', marginTop: '8px' }}>{type}</div>
-        </div>
-      ))}
+    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
+      <FileTypeIcon type=".fig" />
+      <FileTypeIcon type=".ai" />
+      <FileTypeIcon type=".psd" />
+      <FileTypeIcon type=".indd" />
+      <FileTypeIcon type=".aep" />
     </div>
   ),
 };
 
 export const AllArchiveTypes: Story = {
   render: () => (
-    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', padding: '20px' }}>
-      {['.zip', '.rar', '.dmg', '.exe'].map((type) => (
-        <div key={type} style={{ textAlign: 'center' }}>
-          <FileTypeIcon type={type as any} />
-          <div style={{ fontSize: '12px', marginTop: '8px' }}>{type}</div>
-        </div>
-      ))}
+    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
+      <FileTypeIcon type=".zip" />
+      <FileTypeIcon type=".rar" />
     </div>
   ),
 };
 
 export const SizeComparison: Story = {
   render: () => (
-    <div style={{ display: 'flex', gap: '32px', alignItems: 'center', padding: '20px' }}>
+    <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-end' }}>
       <div style={{ textAlign: 'center' }}>
         <FileTypeIcon type=".pdf" size="small" />
-        <div style={{ fontSize: '12px', marginTop: '8px' }}>Small</div>
+        <div style={{ marginTop: '8px', fontSize: '12px' }}>Small</div>
       </div>
       <div style={{ textAlign: 'center' }}>
         <FileTypeIcon type=".pdf" size="default" />
-        <div style={{ fontSize: '12px', marginTop: '8px' }}>Default</div>
+        <div style={{ marginTop: '8px', fontSize: '12px' }}>Default</div>
       </div>
       <div style={{ textAlign: 'center' }}>
         <FileTypeIcon type=".pdf" size="large" />
-        <div style={{ fontSize: '12px', marginTop: '8px' }}>Large</div>
+        <div style={{ marginTop: '8px', fontSize: '12px' }}>Large</div>
       </div>
     </div>
   ),
@@ -270,83 +293,41 @@ export const SizeComparison: Story = {
 
 export const InTableContext: Story = {
   render: () => (
-    <table style={{ 
-      borderCollapse: 'collapse', 
-      width: '100%',
-      fontFamily: 'var(--body-body-default-font-family, system-ui, sans-serif)',
-    }}>
+    <table style={{ borderCollapse: 'collapse', width: '100%', maxWidth: '600px' }}>
       <thead>
-        <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
-          <th style={{ padding: '12px', textAlign: 'left', fontWeight: 600 }}>File</th>
-          <th style={{ padding: '12px', textAlign: 'left', fontWeight: 600 }}>Name</th>
-          <th style={{ padding: '12px', textAlign: 'left', fontWeight: 600 }}>Size</th>
-          <th style={{ padding: '12px', textAlign: 'left', fontWeight: 600 }}>Modified</th>
+        <tr style={{ borderBottom: '2px solid #e5e7eb' }}>
+          <th style={{ padding: '12px', textAlign: 'left' }}>File</th>
+          <th style={{ padding: '12px', textAlign: 'left' }}>Name</th>
+          <th style={{ padding: '12px', textAlign: 'left' }}>Size</th>
+          <th style={{ padding: '12px', textAlign: 'left' }}>Modified</th>
         </tr>
       </thead>
       <tbody>
         <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
           <td style={{ padding: '12px' }}><FileTypeIcon type=".pdf" size="small" /></td>
-          <td style={{ padding: '12px' }}>Report_2024.pdf</td>
+          <td style={{ padding: '12px' }}>Document.pdf</td>
           <td style={{ padding: '12px' }}>2.4 MB</td>
-          <td style={{ padding: '12px' }}>2024-01-15</td>
+          <td style={{ padding: '12px' }}>2 hours ago</td>
         </tr>
         <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
           <td style={{ padding: '12px' }}><FileTypeIcon type=".xlsx" size="small" /></td>
-          <td style={{ padding: '12px' }}>Budget.xlsx</td>
-          <td style={{ padding: '12px' }}>856 KB</td>
-          <td style={{ padding: '12px' }}>2024-01-14</td>
+          <td style={{ padding: '12px' }}>Spreadsheet.xlsx</td>
+          <td style={{ padding: '12px' }}>1.2 MB</td>
+          <td style={{ padding: '12px' }}>1 day ago</td>
         </tr>
         <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
-          <td style={{ padding: '12px' }}><FileTypeIcon type=".png" size="small" /></td>
-          <td style={{ padding: '12px' }}>Screenshot.png</td>
-          <td style={{ padding: '12px' }}>1.2 MB</td>
-          <td style={{ padding: '12px' }}>2024-01-13</td>
+          <td style={{ padding: '12px' }}><FileTypeIcon type=".jpg" size="small" /></td>
+          <td style={{ padding: '12px' }}>Photo.jpg</td>
+          <td style={{ padding: '12px' }}>3.8 MB</td>
+          <td style={{ padding: '12px' }}>3 days ago</td>
         </tr>
         <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
           <td style={{ padding: '12px' }}><FileTypeIcon type="folder" size="small" /></td>
-          <td style={{ padding: '12px' }}>Documents</td>
+          <td style={{ padding: '12px' }}>Projects</td>
           <td style={{ padding: '12px' }}>--</td>
-          <td style={{ padding: '12px' }}>2024-01-12</td>
-        </tr>
-        <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
-          <td style={{ padding: '12px' }}><FileTypeIcon type=".mp4" size="small" /></td>
-          <td style={{ padding: '12px' }}>Presentation.mp4</td>
-          <td style={{ padding: '12px' }}>45.8 MB</td>
-          <td style={{ padding: '12px' }}>2024-01-11</td>
+          <td style={{ padding: '12px' }}>1 week ago</td>
         </tr>
       </tbody>
     </table>
   ),
-};
-
-export const AllVariants: Story = {
-  render: () => {
-    const allTypes = [
-      { category: 'Generic', types: ['default', 'folder', 'image', 'film', 'video', 'audio', 'adobe-pdf', 'text', 'sheet', 'code'] },
-      { category: 'Images', types: ['.img', '.jpg', '.jpeg', '.png', '.webp', '.svg', '.gif', '.tiff', '.eps'] },
-      { category: 'Documents', types: ['.pdf', '.doc', '.docx', '.txt', '.csv', '.xls', '.xlsx', '.ppt', '.pptx'] },
-      { category: 'Media', types: ['.mp3', '.wav', '.mp4', '.mpeg', '.avi', '.mkv'] },
-      { category: 'Code', types: ['.html', '.css', '.js', '.json', '.java', '.xml', '.sql', '.rss'] },
-      { category: 'Design', types: ['.fig', '.ai', '.psd', '.indd', '.aep'] },
-      { category: 'Archive', types: ['.zip', '.rar', '.dmg', '.exe'] },
-    ];
-
-    return (
-      <div style={{ padding: '20px' }}>
-        {allTypes.map(({ category, types }) => (
-          <div key={category} style={{ marginBottom: '40px' }}>
-            <h3 style={{ marginBottom: '16px', fontSize: '18px', fontWeight: 600 }}>{category}</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))', gap: '16px' }}>
-              {types.map((type) => (
-                <div key={type} style={{ textAlign: 'center', padding: '8px' }}>
-                  <FileTypeIcon type={type as any} />
-                  <div style={{ fontSize: '11px', marginTop: '8px', color: '#6d7280' }}>{type}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    );
-  },
 };
