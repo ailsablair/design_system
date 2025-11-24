@@ -47,6 +47,25 @@
   font-weight: var(--type-weight-bold, 700);
 }
 
+/* When used inside table header cells with selection */
+.table-header-cell.select-type-selected .header-text,
+.table-header-cell.select-type-some-selected .header-text {
+  font-weight: var(--type-weight-bold, 700);
+}
+
+/* Dark backgrounds need white text */
+.table-header-cell.bg-gray-600 .header-text,
+.table-header-cell.bg-dark-seafoam .header-text {
+  color: var(--base-white, #ffffff);
+}
+
+/* Medium weight for certain backgrounds */
+.table-header-cell.bg-blue-100 .header-text,
+.table-header-cell.bg-gray-600 .header-text,
+.table-header-cell.bg-dark-seafoam .header-text {
+  font-weight: var(--type-weight-medium, 500);
+}
+
 .help-icon-button {
   display: flex;
   align-items: center;
