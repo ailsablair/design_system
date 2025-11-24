@@ -61,7 +61,6 @@ export const ComponentsCatalog: Story = {
           { name: 'SplitButton', path: 'Atoms/Button/Split Button', note: 'Primary + menu actions' },
           { name: 'Avatar', path: 'Design System/Figma Showcase Files/Avatar Figma Showcase', note: 'Variants and sizing' },
           { name: 'AvatarGroup', path: 'Design System/Figma Showcase Files/Avatar Group & Content Figma Showcase', note: 'Grouping behavior' },
-          { name: 'DataTable (atoms building blocks)', path: 'Atoms/Building Blocks/Table', note: 'Cells, headers, and variants' },
           { name: 'Tag', path: 'Atoms/Tag', note: 'Interactive tags and variants' },
           { name: 'Button', path: 'Atoms/Button', note: 'Primary/secondary, states, and accessibility' },
         ]}
