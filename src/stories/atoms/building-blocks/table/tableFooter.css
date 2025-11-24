@@ -1,1 +1,169 @@
 /* TableFooter Component - Figma Design Implementation */
+
+.table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sizing-12px, 12px);
+  padding: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-16px, 16px);
+  border-top: var(--spacing-stroke-1px, 1px) solid var(--neutral-gray-gray-200, #E5E7EB);
+  background-color: var(--base-white, #ffffff);
+}
+
+.table-footer--small {
+  padding: var(--spacing-sizing-8px, 8px) var(--spacing-sizing-12px, 12px);
+}
+
+.table-footer--default {
+  padding: var(--spacing-sizing-12px, 12px) var(--spacing-sizing-16px, 16px);
+}
+
+.table-footer--light-gray {
+  background-color: var(--neutral-gray-gray-50, #F9FAFB);
+}
+
+.table-footer--blue-50 {
+  background-color: var(--primary-blue-blue-50, #F9F9FE);
+}
+
+.table-footer--black {
+  background-color: var(--base-black, #1C1C1C);
+}
+
+.table-footer__navigation {
+  display: flex;
+  align-items: center;
+}
+
+.table-footer__navigation--previous {
+  margin-right: auto;
+}
+
+.table-footer__navigation--next {
+  margin-left: auto;
+}
+
+.table-footer__nav-button {
+  display: inline-flex;
+  align-items: center;
+}
+
+.table-footer__pagination {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-4px, 4px);
+}
+
+.table-footer__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-footer__page-number {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.table-footer__page-number--small {
+  min-width: 28px;
+}
+
+.table-footer__page-number--default {
+  min-width: 32px;
+}
+
+.table-footer__page-number--active {
+  cursor: default;
+}
+
+.table-footer__page-number:disabled {
+  cursor: default;
+}
+
+.table-footer__page-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md, 999px);
+  border: var(--spacing-stroke-1px, 1px) solid transparent;
+}
+
+.table-footer__page-content--small {
+  padding: 2px 8px;
+}
+
+.table-footer__page-content--default {
+  padding: 4px 10px;
+}
+
+.table-footer__page-text {
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-weight: var(--type-weight-light, 300);
+  letter-spacing: 0.02em;
+  color: var(--neutral-gray-gray-600, #4B5563);
+}
+
+.table-footer__page-text--small {
+  font-size: var(--type-archivo-label-sm, 14px);
+  line-height: var(--type-line-height-label-sm, 16px);
+}
+
+.table-footer__page-text--default {
+  font-size: var(--type-archivo-label, 16px);
+  line-height: var(--type-line-height-label, 20px);
+}
+
+.table-footer__page-text--active {
+  font-weight: var(--type-weight-bold, 700);
+  color: var(--base-black, #1C1C1C);
+}
+
+.table-footer--black .table-footer__page-text {
+  color: var(--base-white, #FFFFFF);
+}
+
+.table-footer--black .table-footer__page-text--active {
+  color: var(--base-white, #FFFFFF);
+}
+
+.table-footer__view-more {
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .table-footer {
+    flex-wrap: wrap;
+    row-gap: var(--spacing-sizing-8px, 8px);
+  }
+
+  .table-footer__navigation--previous,
+  .table-footer__navigation--next {
+    order: 2;
+  }
+
+  .table-footer__pagination {
+    order: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-footer__pagination {
+    gap: var(--spacing-sizing-2px, 2px);
+  }
+
+  .table-footer__page-number--default,
+  .table-footer__page-number--small {
+    min-width: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .table-footer,
+  .table-footer__page-content,
+  .table-footer__nav-button {
+    transition: none;
+  }
+}
