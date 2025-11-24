@@ -1,14 +1,2 @@
-export { Accordion } from './Accordion';
-export type { AccordionProps } from './Accordion';
-export { AccordionGroup } from './AccordionGroup';
-export type { AccordionGroupProps } from './AccordionGroup';
-export { AccordionHeader } from './AccordionHeader';
-export type { AccordionHeaderProps } from './AccordionHeader';
-export { ImageAccordion } from './ImageAccordion';
-export type { ImageAccordionProps } from './ImageAccordion';
-export { ProgressCircle } from './ProgressCircle';
-export type { ProgressCircleProps } from './ProgressCircle';
-export { ProgressBar } from './ProgressBar';
-export type { ProgressBarProps } from './ProgressBar';
-export { CardBlock } from './Card';
-export type { CardBlockProps } from './Card';
+export { FileTypeIcon } from './FileTypeIcon';
+export type { FileTypeIconProps, FileType, FileSize } from './FileTypeIcon';
