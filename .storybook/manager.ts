@@ -10,6 +10,7 @@
       log: console.log.bind(console),
       info: console.info.bind(console),
       warn: console.warn.bind(console),
+      error: console.error.bind(console),
     };
 
     const isNoise = (args: any[]): boolean => {
@@ -43,6 +44,7 @@
     console.info = wrap(original.info);
     // keep warnings unless they match the noise filter
     console.warn = wrap(original.warn);
+    console.error = wrap(original.error);
   } catch {
     // no-op if anything goes wrong; do not break manager
   }
