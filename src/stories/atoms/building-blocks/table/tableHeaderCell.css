@@ -144,6 +144,20 @@
   opacity: 0.7;
 }
 
+/* Checkbox spacing and sizing */
+.table-header-cell .checkbox-wrapper {
+  margin: 0;
+}
+
+.table-header-cell .checkbox-row {
+  margin: 0;
+}
+
+.table-header-cell .checkbox-container {
+  width: 22px;
+  height: 22px;
+}
+
 /* Text color adjustments for dark backgrounds */
 .table-header-cell.bg-gray-600 .table-header-label,
 .table-header-cell.bg-dark-seafoam .table-header-label {
