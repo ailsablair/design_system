@@ -1,0 +1,113 @@
+.star-icon {
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.star-icon.size-small {
+  width: 20px;
+  height: 20px;
+}
+
+.star-icon.size-default {
+  width: 24px;
+  height: 24px;
+}
+
+.star-icon.size-large {
+  width: 28px;
+  height: 28px;
+}
+
+.star-background {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.star-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.star-icon.fill-empty .star-fill {
+  width: 1px;
+}
+
+.star-icon.fill-5 .star-fill {
+  width: 15%;
+}
+
+.star-icon.fill-15 .star-fill {
+  width: 25%;
+}
+
+.star-icon.fill-25 .star-fill {
+  width: 35%;
+}
+
+.star-icon.fill-40 .star-fill {
+  width: 45%;
+}
+
+.star-icon.fill-50 .star-fill {
+  width: 50%;
+}
+
+.star-icon.fill-60 .star-fill {
+  width: 65%;
+}
+
+.star-icon.fill-75 .star-fill {
+  width: 75%;
+}
+
+.star-icon.fill-85 .star-fill {
+  width: 87%;
+}
+
+.star-icon.fill-95 .star-fill {
+  width: 97%;
+}
+
+.star-icon.fill-100 .star-fill {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .star-icon.size-large {
+    width: 24px;
+    height: 24px;
+  }
+
+  .star-icon.size-default {
+    width: 20px;
+    height: 20px;
+  }
+
+  .star-icon.size-small {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .star-icon.size-large {
+    width: 20px;
+    height: 20px;
+  }
+
+  .star-icon.size-default {
+    width: 18px;
+    height: 18px;
+  }
+
+  .star-icon.size-small {
+    width: 14px;
+    height: 14px;
+  }
+}
