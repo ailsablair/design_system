@@ -1,0 +1,314 @@
+.file-type-icon,
+.file-type-icon * {
+  box-sizing: border-box;
+}
+
+.file-type-icon {
+  width: 42px;
+  height: 42px;
+  position: relative;
+  aspect-ratio: 1;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.file-type-icon .page {
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  right: 2.5%;
+  left: 17.5%;
+  top: 0;
+  overflow: visible;
+}
+
+.file-type-icon .icon-wrap {
+  width: 45%;
+  height: 45%;
+  position: absolute;
+  right: 27.5%;
+  left: 27.5%;
+  bottom: 17.5%;
+  top: 37.5%;
+  overflow: visible;
+}
+
+.file-type-icon .file-type-wrap {
+  background: #232f3e;
+  border-radius: 2px;
+  padding: 2px 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 4.11%;
+  bottom: 15.95%;
+  height: 38.1%;
+}
+
+.file-type-icon .file-type {
+  color: var(--base-white, #ffffff);
+  text-align: center;
+  font-family: "Inter", -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Size variants */
+.file-type-icon.size-small {
+  width: 40px;
+  height: 40px;
+}
+
+.file-type-icon.size-large {
+  width: 46px;
+  height: 46px;
+}
+
+.file-type-icon.size-small .page {
+  width: 75%;
+}
+
+/* Icon types - page positioning */
+.file-type-icon.type-default .page,
+.file-type-icon.type-folder .page,
+.file-type-icon.type-image .page,
+.file-type-icon.type-film .page,
+.file-type-icon.type-video .page,
+.file-type-icon.type-audio .page,
+.file-type-icon.type-adobe-pdf .page,
+.file-type-icon.type-text .page,
+.file-type-icon.type-sheet .page,
+.file-type-icon.type-code .page {
+  left: 10%;
+  right: 10%;
+}
+
+.file-type-icon.size-small.type-default .page,
+.file-type-icon.size-small.type-folder .page,
+.file-type-icon.size-small.type-image .page,
+.file-type-icon.size-small.type-film .page,
+.file-type-icon.size-small.type-video .page,
+.file-type-icon.size-small.type-audio .page,
+.file-type-icon.size-small.type-adobe-pdf .page,
+.file-type-icon.size-small.type-text .page,
+.file-type-icon.size-small.type-sheet .page,
+.file-type-icon.size-small.type-code .page {
+  left: 10%;
+  right: 15%;
+}
+
+/* File extension types - page positioning */
+.file-type-icon.size-small[class*="."] .page {
+  left: 17.5%;
+  right: 7.5%;
+}
+
+.file-type-icon[class*="."] .page {
+  left: 17.5%;
+  right: 2.5%;
+}
+
+/* Label background colors */
+.file-type-icon.type-\\.img .file-type-wrap,
+.file-type-icon.type-\\.jpg .file-type-wrap,
+.file-type-icon.type-\\.jpeg .file-type-wrap,
+.file-type-icon.type-\\.png .file-type-wrap,
+.file-type-icon.type-\\.webp .file-type-wrap,
+.file-type-icon.type-\\.tiff .file-type-wrap,
+.file-type-icon.type-\\.gif .file-type-wrap,
+.file-type-icon.type-\\.svg .file-type-wrap,
+.file-type-icon.type-\\.eps .file-type-wrap,
+.file-type-icon.type-\\.fig .file-type-wrap {
+  background: #7f56d9;
+}
+
+.file-type-icon.type-\\.pdf .file-type-wrap,
+.file-type-icon.type-\\.ppt .file-type-wrap,
+.file-type-icon.type-\\.pptx .file-type-wrap,
+.file-type-icon.type-\\.ai .file-type-wrap {
+  background: #d92d20;
+}
+
+.file-type-icon.type-\\.doc .file-type-wrap,
+.file-type-icon.type-\\.docx .file-type-wrap,
+.file-type-icon.type-\\.psd .file-type-wrap,
+.file-type-icon.type-\\.mp4 .file-type-wrap,
+.file-type-icon.type-\\.mpeg .file-type-wrap,
+.file-type-icon.type-\\.avi .file-type-wrap,
+.file-type-icon.type-\\.mkv .file-type-wrap {
+  background: #155eef;
+}
+
+.file-type-icon.type-\\.csv .file-type-wrap,
+.file-type-icon.type-\\.xls .file-type-wrap,
+.file-type-icon.type-\\.xlsx .file-type-wrap {
+  background: #099250;
+}
+
+.file-type-icon.type-\\.indd .file-type-wrap {
+  background: #ba24d5;
+}
+
+.file-type-icon.type-\\.aep .file-type-wrap {
+  background: #6938ef;
+}
+
+.file-type-icon.type-\\.mp3 .file-type-wrap,
+.file-type-icon.type-\\.wav .file-type-wrap {
+  background: #dd2590;
+}
+
+.file-type-icon.type-\\.html .file-type-wrap,
+.file-type-icon.type-\\.css .file-type-wrap,
+.file-type-icon.type-\\.rss .file-type-wrap,
+.file-type-icon.type-\\.sql .file-type-wrap,
+.file-type-icon.type-\\.js .file-type-wrap,
+.file-type-icon.type-\\.json .file-type-wrap,
+.file-type-icon.type-\\.java .file-type-wrap,
+.file-type-icon.type-\\.xml .file-type-wrap,
+.file-type-icon.type-\\.exe .file-type-wrap,
+.file-type-icon.type-\\.dmg .file-type-wrap {
+  background: #444ce7;
+}
+
+.file-type-icon.type-\\.txt .file-type-wrap,
+.file-type-icon.type-\\.zip .file-type-wrap,
+.file-type-icon.type-\\.rar .file-type-wrap {
+  background: #232f3e;
+}
+
+/* Label widths by file extension */
+.file-type-icon.type-\\.img .file-type-wrap,
+.file-type-icon.type-\\.jpg .file-type-wrap,
+.file-type-icon.type-\\.eps .file-type-wrap,
+.file-type-icon.type-\\.pdf .file-type-wrap,
+.file-type-icon.type-\\.xls .file-type-wrap,
+.file-type-icon.type-\\.ppt .file-type-wrap,
+.file-type-icon.type-\\.rss .file-type-wrap,
+.file-type-icon.type-\\.exe .file-type-wrap {
+  width: 26px;
+}
+
+.file-type-icon.type-\\.png .file-type-wrap,
+.file-type-icon.type-\\.tiff .file-type-wrap,
+.file-type-icon.type-\\.svg .file-type-wrap,
+.file-type-icon.type-\\.csv .file-type-wrap,
+.file-type-icon.type-\\.xml .file-type-wrap {
+  width: 28px;
+}
+
+.file-type-icon.type-\\.doc .file-type-wrap,
+.file-type-icon.type-\\.mp3 .file-type-wrap,
+.file-type-icon.type-\\.mp4 .file-type-wrap {
+  width: 29px;
+}
+
+.file-type-icon.type-\\.wav .file-type-wrap,
+.file-type-icon.type-\\.mkv .file-type-wrap {
+  width: 30px;
+}
+
+.file-type-icon.type-\\.indd .file-type-wrap,
+.file-type-icon.type-\\.dmg .file-type-wrap {
+  width: 31px;
+}
+
+.file-type-icon.type-\\.jpeg .file-type-wrap {
+  width: 32px;
+}
+
+.file-type-icon.type-\\.java .file-type-wrap,
+.file-type-icon.type-\\.pptx .file-type-wrap,
+.file-type-icon.type-\\.xlsx .file-type-wrap {
+  width: 33px;
+}
+
+.file-type-icon.type-\\.json .file-type-wrap {
+  width: 34px;
+}
+
+.file-type-icon.type-\\.html .file-type-wrap {
+  width: 35px;
+}
+
+.file-type-icon.type-\\.webp .file-type-wrap,
+.file-type-icon.type-\\.docx .file-type-wrap,
+.file-type-icon.type-\\.mpeg .file-type-wrap {
+  width: 36px;
+}
+
+.file-type-icon.type-\\.gif .file-type-wrap,
+.file-type-icon.type-\\.fig .file-type-wrap,
+.file-type-icon.type-\\.avi .file-type-wrap {
+  width: 23px;
+}
+
+.file-type-icon.type-\\.ai .file-type-wrap {
+  width: 17px;
+}
+
+.file-type-icon.type-\\.js .file-type-wrap {
+  width: 19px;
+}
+
+.file-type-icon.type-\\.zip .file-type-wrap {
+  width: 22px;
+}
+
+.file-type-icon.type-\\.psd .file-type-wrap,
+.file-type-icon.type-\\.aep .file-type-wrap,
+.file-type-icon.type-\\.css .file-type-wrap,
+.file-type-icon.type-\\.sql .file-type-wrap,
+.file-type-icon.type-\\.rar .file-type-wrap {
+  width: 27px;
+}
+
+.file-type-icon.type-\\.txt .file-type-wrap {
+  width: 27px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .file-type-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .file-type-icon.size-small {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .file-type-icon.size-large {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .file-type-icon .file-type {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .file-type-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .file-type-icon.size-small {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .file-type-icon.size-large {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .file-type-icon .file-type {
+    font-size: 8px;
+  }
+}
