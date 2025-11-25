@@ -56,11 +56,7 @@ export const ComponentsCatalog: Story = {
       <Section
         title="Atoms"
         items={[
-          { name: 'AccordionStatusBadge', path: 'Atoms/Building Blocks/Accordion Status Badge', note: 'Status indicator badge; tones and sizes documented' },
-          { name: 'AccordionSimple', path: 'Atoms/Accordion/AccordionSimple', note: 'Figma-accurate accordion with types, sizes, and states' },
           { name: 'SplitButton', path: 'Atoms/Button/Split Button', note: 'Primary + menu actions' },
-          { name: 'Avatar', path: 'Design System/Figma Showcase Files/Avatar Figma Showcase', note: 'Variants and sizing' },
-          { name: 'AvatarGroup', path: 'Design System/Figma Showcase Files/Avatar Group & Content Figma Showcase', note: 'Grouping behavior' },
           { name: 'Tag', path: 'Atoms/Tag', note: 'Interactive tags and variants' },
           { name: 'Button', path: 'Atoms/Button', note: 'Primary/secondary, states, and accessibility' },
         ]}
@@ -69,7 +65,6 @@ export const ComponentsCatalog: Story = {
       <Section
         title="Molecules"
         items={[
-          { name: 'DataTable', path: 'Molecules/DataTable', note: 'Paginated table with sorting and actions' },
           { name: 'ActionBar', path: 'Molecules/Action Bar', note: 'Actions toolbar patterns' },
           { name: 'EchoMUI Components', path: 'Design System/Echo MUI Guide', note: 'Using MUI 7 with Echo tokens' },
         ]}
