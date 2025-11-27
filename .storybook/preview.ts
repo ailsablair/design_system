@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Decorator, Preview as StorybookPreview } from '@storybook/react';
+import { setupStorybookResizeObserverFix } from '../src/utils/storybookResizeObserverFix';
 
 // Early, focused suppression of noisy ResizeObserver errors for Storybook preview
 const applyResizeObserverSuppression = (): void => {
@@ -8,6 +9,12 @@ const applyResizeObserverSuppression = (): void => {
 
   if (w.__RO_STORYBOOK_SUPPRESSION_APPLIED) return;
   w.__RO_STORYBOOK_SUPPRESSION_APPLIED = true;
+
+  try {
+    setupStorybookResizeObserverFix();
+  } catch {
+    // no-op; do not break Storybook if suppression setup fails
+  }
 
   const originalError = console.error.bind(console);
   const originalWarn = console.warn.bind(console);
