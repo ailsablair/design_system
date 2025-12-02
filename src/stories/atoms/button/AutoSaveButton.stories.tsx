@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { AutoSaveButton, type AutoSaveStatus } from './AutoSaveButton';
 import './autoSave.css';
+import './autoSaveStories.css';
 import '../button.css';
 
 const meta: Meta<typeof AutoSaveButton> = {
