@@ -90,7 +90,8 @@
 .autosave.clickable.default:hover,
 .autosave.hover {
   border-color: var(--primary-sky-blue-sky-blue);
-  background: var(--primary-sky-blue-75);
+  background: var(--primary-sky-blue-sky-blue-100);
+  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
   color: var(--primary-sky-blue-dark-sky-blue);
 }
 
