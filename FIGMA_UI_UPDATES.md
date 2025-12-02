@@ -33,39 +33,6 @@ Combines the AutoSave button with a timestamp tag component:
 - Tag uses outline-gray style with small size
 - Contains "Saved" label (bold) + timestamp (regular weight)
 
-### 3. Organizational Buttons - NEW (organizationalButtons.css)
-**Status**: ✅ Created to match Figma design
-
-Created comprehensive styling for Filter, Sort, and More Actions buttons with:
-
-**Button Types**:
-- **Primary**: Blue background (`#2F42BD`), dark blue border (`#191E3C`), white text
-- **Secondary**: Light blue background (`#D6F0FB`), sky blue border (`#0BA7EA`), black text
-- **Tertiary**: Seafoam background (`#AED2BC`), dark seafoam border (`#4B6D58`), black text
-- **Ghost**: White background, gray border (`#6D7280`), black text
-
-**Sizes**:
-- **Extra-small**: 2px/12px/8px padding, 13px footnote font
-- **Small**: 32px min-height, 4px/16px/12px padding, 14px label-sm font
-- **Default**: 44px min-height, 4px/16px padding, 16px label font
-- **Large**: 56px min-height, 4px/16px padding, 18px label-lg font
-
-**Icons**:
-- Extra-small & Small: 14px icons
-- Default: 18px icons
-- Large: 20px icons
-
-**States**:
-- Hover: Box shadow and slight background change
-- Focus: 2px blue outline with 2px offset
-- Active: Subtle scale transform
-- Disabled: 50% opacity, not-allowed cursor
-
-**Accessibility**:
-- Reduced motion support
-- High contrast mode (thicker borders)
-- Responsive breakpoints for mobile
-
 ### 4. Button Component (button.css)
 **Status**: ✅ Already aligned with Figma design
 
@@ -170,7 +137,6 @@ All CSS uses standard properties with:
 ## Files Modified
 
 1. `src/stories/atoms/button/splitButton.css` - Updated menu hover/clicked states
-2. `src/stories/atoms/organizationalButtons.css` - New file created
 
 ## Files Verified (No changes needed)
 
@@ -184,8 +150,7 @@ All CSS uses standard properties with:
 The following Figma designs were used as reference:
 1. AutoSave button states (7 variants)
 2. AutoSave with Tag states (6 variants)
-3. Organizational buttons (Filter, Sort, More Actions) - 48 variants
-4. Split button menu (3 size variants)
-5. Split button menu parts (36 state/size combinations)
+3. Split button menu (3 size variants)
+4. Split button menu parts (36 state/size combinations)
 
 All designs have been implemented to be 100% pixel-perfect while maintaining responsive behavior and accessibility standards.
