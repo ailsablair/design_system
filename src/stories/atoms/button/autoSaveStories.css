@@ -1,0 +1,29 @@
+.autosave-story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-sizing-24px);
+  padding: var(--spacing-sizing-16px);
+}
+
+.autosave-story-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sizing-12px);
+}
+
+.autosave-story-label {
+  font-family: var(--type-typeface-archivo);
+  font-size: var(--type-archivo-label);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-line-height-label);
+  letter-spacing: var(--type-letter-spacing-archivo-label);
+  color: var(--neutral-gray-gray-600);
+}
+
+@media (max-width: 768px) {
+  .autosave-story-grid {
+    grid-template-columns: 1fr;
+  }
+}
