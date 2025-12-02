@@ -1,7 +1,5 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { AutoSave } from '../atoms/AutoSave';
-import { AutoSaveWithTag } from '../atoms/AutoSaveWithTag';
 import { MenuItem } from '../atoms/building-blocks/MenuItem';
 import { ButtonGroup } from '../atoms/ButtonGroup';
 import { Button } from '../atoms/Button';
@@ -19,7 +17,7 @@ const meta: Meta<typeof FigmaComponentsShowcase> = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Comprehensive showcase of all components updated to match the latest Figma design specifications. This includes AutoSave buttons, AutoSaveWithTag, updated MenuItem components, ButtonGroup layouts, OrganizationalButtons (Filter, Sort, More Actions), and enhanced SplitButton styling.',
+        component: 'Comprehensive showcase of all components updated to match the latest Figma design specifications. This includes updated MenuItem components, ButtonGroup layouts, OrganizationalButtons (Filter, Sort, More Actions), and enhanced SplitButton styling.',
       },
     },
   },
@@ -96,75 +94,6 @@ export const CompleteFigmaShowcase: Story = {
             Comprehensive showcase of all components updated to match the latest Figma design specifications.
             This includes AutoSave functionality, MenuItem components, ButtonGroup layouts, and enhanced styling throughout.
           </p>
-        </div>
-
-        {/* AutoSave Components Section */}
-        <div style={{ 
-          marginBottom: '48px',
-          padding: '32px',
-          background: 'white',
-          borderRadius: '16px',
-          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)'
-        }}>
-          <h2 style={{ 
-            margin: 0, 
-            fontSize: '24px', 
-            fontWeight: '600', 
-            marginBottom: '8px',
-            color: '#2F42BD'
-          }}>
-            AutoSave Components
-          </h2>
-          <p style={{ 
-            margin: 0, 
-            fontSize: '16px', 
-            color: '#666', 
-            marginBottom: '32px'
-          }}>
-            button/auto-save and button/auto-save/w-tag components from Figma
-          </p>
-          
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
-            {/* AutoSave standalone */}
-            <div>
-              <h3 style={{ 
-                margin: 0, 
-                fontSize: '18px', 
-                fontWeight: '600', 
-                marginBottom: '16px',
-                color: '#333'
-              }}>
-                AutoSave States
-              </h3>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <AutoSave status="default" onClick={() => console.log('Save clicked')} />
-                <AutoSave status="saving" />
-                <AutoSave status="auto-saving" />
-                <AutoSave status="saved" />
-                <AutoSave status="error-saving" />
-                <AutoSave status="disabled" />
-              </div>
-            </div>
-            
-            {/* AutoSaveWithTag */}
-            <div>
-              <h3 style={{ 
-                margin: 0, 
-                fontSize: '18px', 
-                fontWeight: '600', 
-                marginBottom: '16px',
-                color: '#333'
-              }}>
-                AutoSave with Timestamp Tags
-              </h3>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <AutoSaveWithTag status="default" timestamp={timestamp} />
-                <AutoSaveWithTag status="saving" timestamp={timestamp} />
-                <AutoSaveWithTag status="saved" timestamp={timestamp} />
-                <AutoSaveWithTag status="error-saving" timestamp={timestamp} />
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* MenuItem Components Section */}
