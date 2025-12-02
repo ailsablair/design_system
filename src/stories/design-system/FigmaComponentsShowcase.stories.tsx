@@ -92,7 +92,7 @@ export const CompleteFigmaShowcase: Story = {
             lineHeight: '1.6'
           }}>
             Comprehensive showcase of all components updated to match the latest Figma design specifications.
-            This includes AutoSave functionality, MenuItem components, ButtonGroup layouts, and enhanced styling throughout.
+            This includes MenuItem components, ButtonGroup layouts, and enhanced styling throughout.
           </p>
         </div>
 
@@ -794,7 +794,7 @@ export const CompleteFigmaShowcase: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Complete showcase of all components updated to match the Figma design specifications. This demonstrates the AutoSave components, MenuItem updates, ButtonGroup layouts, and enhanced styling across all button variants.',
+        story: 'Complete showcase of all components updated to match the Figma design specifications. This demonstrates MenuItem updates, ButtonGroup layouts, and enhanced styling across all button variants.',
       },
     },
   },
@@ -819,25 +819,6 @@ export const ComponentOverview: Story = {
         </h1>
         
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
-          {/* AutoSave Card */}
-          <div style={{ 
-            padding: '24px',
-            background: 'white',
-            borderRadius: '12px',
-            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
-          }}>
-            <h3 style={{ margin: 0, fontSize: '18px', fontWeight: '600', marginBottom: '12px' }}>
-              AutoSave Components
-            </h3>
-            <p style={{ margin: 0, fontSize: '14px', color: '#666', marginBottom: '16px' }}>
-              New components for save functionality with status indicators and timestamp tracking.
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <AutoSave status="default" />
-              <AutoSave status="saved" />
-            </div>
-          </div>
-
           {/* MenuItem Card */}
           <div style={{ 
             padding: '24px',
