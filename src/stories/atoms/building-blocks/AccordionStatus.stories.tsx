@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta as StorybookMeta, StoryObj } from '@storybook/react';
 import AccordionStatus from './AccordionStatus';
 import './accordionStatus.css';
 import './accordionStatus.stories.css';
 
-const meta: Meta<typeof AccordionStatus> = {
+const meta: StorybookMeta<typeof AccordionStatus> = {
   title: 'Atoms/🧱 Building Blocks/Accordion Status',
   component: AccordionStatus,
   parameters: {
