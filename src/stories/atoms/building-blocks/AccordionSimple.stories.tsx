@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import AccordionSimple from './AccordionSimple';
 import './accordionSimple.css';
+import './accordionSimple.stories.css';
 
 const meta: Meta<typeof AccordionSimple> = {
   title: 'Atoms/🧱 Building Blocks/Accordion Simple',
