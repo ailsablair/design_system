@@ -1,11 +1,11 @@
 import React from 'react';
-import { 
-  Table, 
-  TableBody, 
-  TableCell, 
-  TableContainer, 
-  TableHead, 
-  TableRow, 
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
   TableSortLabel,
   Paper,
   Checkbox,
@@ -15,40 +15,34 @@ import {
   Box,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { 
-  MoreVert as MoreVertIcon,
-  Edit as EditIcon,
-  Delete as DeleteIcon,
-  Visibility as ViewIcon,
-} from '@mui/icons-material';
 
 /**
  * Echo MUI Table
- * 
+ *
  * Enhanced table component using MUI Table with Echo design tokens
  */
 
-export interface EchoTableColumn<T = any> {
+export interface EchoTableColumn<RowType = unknown> {
   id: string;
   label: string;
   minWidth?: number;
   align?: 'left' | 'center' | 'right';
   sortable?: boolean;
-  render?: (value: any, row: T) => React.ReactNode;
+  render?: (value: unknown, row: RowType) => React.ReactNode;
 }
 
-export interface EchoTableAction<T = any> {
+export interface EchoTableAction<RowType = unknown> {
   icon: React.ReactNode;
   label: string;
-  onClick: (row: T) => void;
+  onClick: (row: RowType) => void;
   color?: 'primary' | 'secondary' | 'error' | 'warning' | 'success';
 }
 
-interface EchoMUITableProps<T = any> {
+interface EchoMUITableProps<RowType = unknown> {
   /** Table columns configuration */
-  columns: EchoTableColumn<T>[];
+  columns: EchoTableColumn<RowType>[];
   /** Table data */
-  data: T[];
+  data: RowType[];
   /** Enable row selection */
   selectable?: boolean;
   /** Selected row IDs */
@@ -56,7 +50,7 @@ interface EchoMUITableProps<T = any> {
   /** Row selection change handler */
   onSelectionChange?: (selectedIds: string[]) => void;
   /** Row ID accessor */
-  getRowId?: (row: T) => string;
+  getRowId?: (row: RowType) => string;
   /** Enable sorting */
   sortable?: boolean;
   /** Current sort configuration */
@@ -66,7 +60,7 @@ interface EchoMUITableProps<T = any> {
   /** Sort change handler */
   onSortChange?: (column: string, direction: 'asc' | 'desc') => void;
   /** Row actions */
-  actions?: EchoTableAction<T>[];
+  actions?: EchoTableAction<RowType>[];
   /** Enable pagination */
   pagination?: boolean;
   /** Current page (0-indexed) */
@@ -91,23 +85,23 @@ interface EchoMUITableProps<T = any> {
   dense?: boolean;
 }
 
-const StyledTableContainer = styled(TableContainer)(({ theme }) => ({
+const StyledTableContainer = styled(TableContainer)(() => ({
   borderRadius: 'var(--spacing-radius-8px)',
   border: '1px solid var(--neutral-gray-gray-200)',
   boxShadow: 'var(--shadow-sm)',
   overflow: 'hidden',
 }));
 
-const StyledTable = styled(Table)(({ theme }) => ({
+const StyledTable = styled(Table)(() => ({
   '& .MuiTableCell-root': {
     fontFamily: 'var(--type-typeface-roboto-flex)',
     borderBottom: '1px solid var(--neutral-gray-gray-200)',
   },
 }));
 
-const StyledTableHead = styled(TableHead)(({ theme }) => ({
+const StyledTableHead = styled(TableHead)(() => ({
   backgroundColor: 'var(--neutral-gray-gray-50)',
-  
+
   '& .MuiTableCell-head': {
     fontFamily: 'var(--type-typeface-archivo)',
     fontSize: 'var(--type-size-sm)',
@@ -121,48 +115,48 @@ const StyledTableHead = styled(TableHead)(({ theme }) => ({
 
 const StyledTableRow = styled(TableRow, {
   shouldForwardProp: (prop) => prop !== 'hover',
-})<{ hover?: boolean }>(({ theme, hover = true }) => ({
+})<{ hover?: boolean }>(({ hover = true }) => ({
   '&:nth-of-type(even)': {
     backgroundColor: 'var(--neutral-gray-gray-25)',
   },
-  
+
   ...(hover && {
     '&:hover': {
       backgroundColor: 'var(--primary-blue-blue-50)',
       cursor: 'pointer',
     },
   }),
-  
+
   '&.Mui-selected': {
     backgroundColor: 'var(--primary-blue-blue-100)',
-    
+
     '&:hover': {
       backgroundColor: 'var(--primary-blue-blue-150)',
     },
   },
 }));
 
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
+const StyledTableCell = styled(TableCell)(() => ({
   fontSize: 'var(--type-size-base)',
   color: 'var(--base-black)',
   padding: 'var(--spacing-sizing-12px) var(--spacing-sizing-16px)',
-  
+
   '&.MuiTableCell-head': {
     backgroundColor: 'var(--neutral-gray-gray-50)',
   },
 }));
 
-const StyledTableSortLabel = styled(TableSortLabel)(({ theme }) => ({
+const StyledTableSortLabel = styled(TableSortLabel)(() => ({
   '&.MuiTableSortLabel-root': {
     color: 'var(--neutral-gray-gray-700)',
-    
+
     '&:hover': {
       color: 'var(--primary-blue-blue)',
     },
-    
+
     '&.Mui-active': {
       color: 'var(--primary-blue-blue)',
-      
+
       '& .MuiTableSortLabel-icon': {
         color: 'var(--primary-blue-blue)',
       },
@@ -170,23 +164,37 @@ const StyledTableSortLabel = styled(TableSortLabel)(({ theme }) => ({
   },
 }));
 
-const ActionButton = styled(IconButton)(({ theme }) => ({
+const ActionButton = styled(IconButton)(() => ({
   padding: 'var(--spacing-sizing-4px)',
   borderRadius: 'var(--spacing-radius-4px)',
   transition: 'all var(--transition-fast)',
-  
+
   '&:hover': {
     backgroundColor: 'var(--neutral-gray-gray-100)',
   },
 }));
 
-export function EchoMUITable<T = any>({
+const defaultGetRowId = <RowType,>(row: RowType): string => {
+  const candidate = row as { id?: string; _id?: string };
+
+  if (candidate.id) {
+    return candidate.id;
+  }
+
+  if (candidate._id) {
+    return candidate._id;
+  }
+
+  return JSON.stringify(row);
+};
+
+export function EchoMUITable<RowType = unknown>({
   columns,
   data,
   selectable = false,
   selectedIds = [],
   onSelectionChange,
-  getRowId = (row: any) => row.id || row._id || JSON.stringify(row),
+  getRowId = defaultGetRowId,
   sortable = false,
   sortBy,
   sortDirection = 'asc',
@@ -203,7 +211,7 @@ export function EchoMUITable<T = any>({
   size = 'medium',
   hover = true,
   dense = false,
-}: EchoMUITableProps<T>) {
+}: EchoMUITableProps<RowType>) {
   const handleSelectAll = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (onSelectionChange) {
       if (event.target.checked) {
@@ -220,7 +228,7 @@ export function EchoMUITable<T = any>({
       if (event.target.checked) {
         onSelectionChange([...selectedIds, rowId]);
       } else {
-        onSelectionChange(selectedIds.filter(id => id !== rowId));
+        onSelectionChange(selectedIds.filter((id) => id !== rowId));
       }
     }
   };
@@ -256,7 +264,7 @@ export function EchoMUITable<T = any>({
                   />
                 </StyledTableCell>
               )}
-              
+
               {columns.map((column) => (
                 <StyledTableCell
                   key={column.id}
@@ -276,7 +284,7 @@ export function EchoMUITable<T = any>({
                   )}
                 </StyledTableCell>
               ))}
-              
+
               {actions.length > 0 && (
                 <StyledTableCell align="center" style={{ width: 60 }}>
                   Actions
@@ -284,12 +292,14 @@ export function EchoMUITable<T = any>({
               )}
             </TableRow>
           </StyledTableHead>
-          
+
           <TableBody>
             {loading ? (
               <TableRow>
-                <StyledTableCell 
-                  colSpan={columns.length + (selectable ? 1 : 0) + (actions.length > 0 ? 1 : 0)}
+                <StyledTableCell
+                  colSpan={
+                    columns.length + (selectable ? 1 : 0) + (actions.length > 0 ? 1 : 0)
+                  }
                   align="center"
                   sx={{ py: 4 }}
                 >
@@ -298,8 +308,10 @@ export function EchoMUITable<T = any>({
               </TableRow>
             ) : data.length === 0 ? (
               <TableRow>
-                <StyledTableCell 
-                  colSpan={columns.length + (selectable ? 1 : 0) + (actions.length > 0 ? 1 : 0)}
+                <StyledTableCell
+                  colSpan={
+                    columns.length + (selectable ? 1 : 0) + (actions.length > 0 ? 1 : 0)
+                  }
                   align="center"
                   sx={{ py: 4, color: 'var(--neutral-gray-gray-500)' }}
                 >
@@ -310,13 +322,10 @@ export function EchoMUITable<T = any>({
               data.map((row) => {
                 const rowId = getRowId(row);
                 const isSelected = selectedIds.includes(rowId);
-                
+                const typedRow = row as Record<string, unknown>;
+
                 return (
-                  <StyledTableRow 
-                    key={rowId} 
-                    hover={hover}
-                    selected={isSelected}
-                  >
+                  <StyledTableRow key={rowId} hover={hover} selected={isSelected}>
                     {selectable && (
                       <StyledTableCell padding="checkbox">
                         <Checkbox
@@ -331,16 +340,17 @@ export function EchoMUITable<T = any>({
                         />
                       </StyledTableCell>
                     )}
-                    
+
                     {columns.map((column) => {
-                      const value = (row as any)[column.id];
+                      const value = typedRow[column.id];
+
                       return (
                         <StyledTableCell key={column.id} align={column.align}>
                           {column.render ? column.render(value, row) : value}
                         </StyledTableCell>
                       );
                     })}
-                    
+
                     {actions.length > 0 && (
                       <StyledTableCell align="center">
                         <Box sx={{ display: 'flex', gap: 0.5, justifyContent: 'center' }}>
@@ -350,7 +360,11 @@ export function EchoMUITable<T = any>({
                                 size="small"
                                 onClick={() => action.onClick(row)}
                                 sx={{
-                                  color: action.color ? `var(--status-${action.color === 'primary' ? 'blue' : action.color})` : 'var(--neutral-gray-gray-600)',
+                                  color: action.color
+                                    ? `var(--status-${
+                                        action.color === 'primary' ? 'blue' : action.color
+                                      })`
+                                    : 'var(--neutral-gray-gray-600)',
                                 }}
                               >
                                 {action.icon}
@@ -367,7 +381,7 @@ export function EchoMUITable<T = any>({
           </TableBody>
         </StyledTable>
       </StyledTableContainer>
-      
+
       {pagination && (
         <TablePagination
           component="div"
@@ -375,7 +389,9 @@ export function EchoMUITable<T = any>({
           page={page}
           onPageChange={(event, newPage) => onPageChange?.(newPage)}
           rowsPerPage={rowsPerPage}
-          onRowsPerPageChange={(event) => onRowsPerPageChange?.(parseInt(event.target.value, 10))}
+          onRowsPerPageChange={(event) =>
+            onRowsPerPageChange?.(parseInt(event.target.value, 10))
+          }
           rowsPerPageOptions={[5, 10, 25, 50]}
           sx={{
             borderTop: '1px solid var(--neutral-gray-gray-200)',
