@@ -1,11 +1,11 @@
 # Accordion Simple Implementation Summary
 
 ## Overview
-Successfully implemented the **AccordionSimple** component with full design token integration, matching the Figma designs provided. This component works alongside the existing **AccordionStatus** component to create complete accordion variants.
+Successfully implemented the **Simple** accordion component with full design token integration, matching the Figma designs provided. This component works alongside the existing **AccordionStatus** component to create complete accordion variants.
 
 ## What Was Implemented
 
-### 1. AccordionSimple Component (`AccordionSimple.tsx`)
+### 1. Simple Accordion Component (`src/stories/atoms/accordion/Simple.tsx`)
 A comprehensive accordion component supporting multiple variants:
 
 #### Type Variants
@@ -70,7 +70,7 @@ All styling uses design tokens from the Echo Design System:
 
 #### Props Interface
 ```typescript
-interface AccordionSimpleProps {
+interface SimpleProps {
   type?: 'simple' | 'no-stroke';
   state?: 'default' | 'open';
   size?: 'small' | 'default' | 'large';
@@ -88,7 +88,7 @@ interface AccordionSimpleProps {
 
 ### 4. Storybook Stories Created
 
-#### Stories in `AccordionSimple.stories.tsx`:
+#### Stories in `src/stories/atoms/accordion/Simple.stories.tsx`:
 1. **Default** - Interactive playground
 2. **SimpleTypeDefaultSize** - Simple type with chevron, default size
 3. **SimpleTypeLargeSize** - Simple type with chevron, large size
@@ -122,11 +122,11 @@ interface AccordionSimpleProps {
 - Status icons for: warning, complete, locked, comments, notifications, error, note
 - Three sizes: small (24px), default (50px), large (64px)
 - Disabled state support
-- Used within AccordionSimple for the "simple" type variant
+- Used within the Simple accordion component for the "simple" type variant
 
 ### 7. CSS Architecture
 
-#### CSS File Structure (`accordionSimple.css`):
+#### CSS File Structure (`src/stories/atoms/accordion/simple.css`):
 - Base styles with design tokens
 - Size variant modifiers
 - Type variant modifiers (simple vs no-stroke)
@@ -148,12 +148,14 @@ All values use `var(--token-name, fallback)` pattern for robustness.
 
 ## Files Created/Modified
 
-### New Files Created:
-1. `src/stories/atoms/building-blocks/AccordionSimple.tsx` - Main component
-2. `src/stories/atoms/building-blocks/accordionSimple.css` - Component styles
-3. `src/stories/atoms/building-blocks/AccordionSimple.stories.tsx` - Storybook stories
-4. `src/stories/atoms/building-blocks/index.ts` - Export index (updated)
-5. `ACCORDION_SIMPLE_IMPLEMENTATION.md` - This documentation
+### Files Created/Updated:
+1. `src/stories/atoms/accordion/Simple.tsx` - Main component (moved and renamed from `AccordionSimple.tsx`)
+2. `src/stories/atoms/accordion/simple.css` - Component styles (moved and renamed from `accordionSimple.css`)
+3. `src/stories/atoms/accordion/Simple.stories.tsx` - Storybook stories (moved and renamed from `AccordionSimple.stories.tsx`)
+4. `src/stories/atoms/accordion/simple.stories.css` - Story layout styles (moved and renamed from `accordionSimple.stories.css`)
+5. `src/stories/atoms/accordion/index.ts` - New export index for accordion atoms
+6. `src/stories/atoms/building-blocks/index.ts` - Export index updated to remove `AccordionSimple`
+7. `ACCORDION_SIMPLE_IMPLEMENTATION.md` - This documentation (updated)
 
 ### Files Verified (Already Using Design Tokens):
 1. `src/stories/atoms/building-blocks/AccordionStatus.tsx` ✓
@@ -203,10 +205,10 @@ All values use `var(--token-name, fallback)` pattern for robustness.
 
 ### Basic Usage:
 ```tsx
-import { AccordionSimple } from './atoms/building-blocks';
+import { Simple } from './atoms/accordion';
 
 // Simple type with default settings
-<AccordionSimple 
+<Simple 
   type="simple"
   statusType="complete"
   title="Section Title"
@@ -215,14 +217,14 @@ import { AccordionSimple } from './atoms/building-blocks';
 />
 
 // No-stroke type
-<AccordionSimple 
+<Simple 
   type="no-stroke"
   title="Question or Title"
   content="Answer or content"
 />
 
 // Controlled state
-<AccordionSimple 
+<Simple 
   isOpen={isOpen}
   onToggle={setIsOpen}
   type="simple"
@@ -230,7 +232,7 @@ import { AccordionSimple } from './atoms/building-blocks';
 ```
 
 ### Storybook:
-Navigate to: `Atoms > 🧱 Building Blocks > Accordion Simple`
+Navigate to: `Atoms > Accordion > Simple`
 
 ## Testing Checklist
 
