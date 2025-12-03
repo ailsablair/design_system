@@ -5,11 +5,11 @@ import { styled } from '@mui/material/styles';
 
 /**
  * Approach 1: Styled Components with Echo Tokens
- * 
+ *
  * Use MUI Button as foundation, completely override styling with Echo tokens
  */
 
-interface EchoMUIButtonProps extends Omit<MUIButtonProps, 'size' | 'color'> {
+interface EchoMUIButtonProps extends Omit<MUIButtonProps, 'size' | 'color' | 'variant'> {
   /** Echo button variants */
   variant?: 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'error' | 'warning' | 'success';
   /** Echo size variants */
@@ -29,10 +29,8 @@ interface EchoMUIButtonProps extends Omit<MUIButtonProps, 'size' | 'color'> {
 }
 
 const StyledEchoButton = styled(MUIButton, {
-  shouldForwardProp: (prop) => !['variant', 'size', 'leadingIcon', 'trailingIcon'].includes(prop as string),
-})<{ variant?: string; size?: string }>(({ variant = 'primary', size = 'default' }) => {
-  
-  // Size mappings using Echo tokens
+  shouldForwardProp: (prop) => !['echoVariant', 'echoSize', 'leadingIcon', 'trailingIcon'].includes(prop as string),
+})<{ echoVariant?: string; echoSize?: string }>(({ echoVariant = 'primary', echoSize = 'default' }) => {
   const sizeStyles = {
     'extra-small': {
       padding: 'var(--spacing-sizing-4px) var(--spacing-sizing-8px)',
@@ -58,102 +56,100 @@ const StyledEchoButton = styled(MUIButton, {
       minHeight: 'var(--sizing-button-height-large)',
       gap: 'var(--spacing-sizing-8px)',
     },
-  };
+  } as const;
 
-  // Variant mappings using Echo tokens
   const variantStyles = {
     primary: {
-      backgroundColor: '#2F42BD', // --primary-blue-blue
-      color: '#FFFFFF', // --base-white
-      border: '1px solid #2F42BD', // --primary-blue-blue
+      backgroundColor: '#2F42BD',
+      color: '#FFFFFF',
+      border: '1px solid #2F42BD',
 
       '&:hover': {
-        backgroundColor: '#253699', // --primary-blue-blue-600
-        borderColor: '#253699', // --primary-blue-blue-600
+        backgroundColor: '#253699',
+        borderColor: '#253699',
       },
 
       '&:active': {
-        backgroundColor: '#1B2B75', // --primary-blue-blue-700
-        borderColor: '#1B2B75', // --primary-blue-blue-700
+        backgroundColor: '#1B2B75',
+        borderColor: '#1B2B75',
       },
 
       '&:focus-visible': {
-        outline: '2px solid #2F42BD', // --primary-blue-blue
+        outline: '2px solid #2F42BD',
         outlineOffset: '2px',
       },
     },
     secondary: {
-      backgroundColor: '#FFFFFF', // --base-white
-      color: '#2F42BD', // --primary-blue-blue
-      border: '1px solid #2F42BD', // --primary-blue-blue
+      backgroundColor: '#FFFFFF',
+      color: '#2F42BD',
+      border: '1px solid #2F42BD',
 
       '&:hover': {
-        backgroundColor: '#F9F9FE', // --primary-blue-blue-50
-        borderColor: '#253699', // --primary-blue-blue-600
+        backgroundColor: '#F9F9FE',
+        borderColor: '#253699',
       },
 
       '&:active': {
-        backgroundColor: '#E8EBFA', // --primary-blue-blue-100
-        borderColor: '#1B2B75', // --primary-blue-blue-700
+        backgroundColor: '#E8EBFA',
+        borderColor: '#1B2B75',
       },
     },
     tertiary: {
       backgroundColor: 'transparent',
-      color: '#2F42BD', // --primary-blue-blue
+      color: '#2F42BD',
       border: '1px solid transparent',
 
       '&:hover': {
-        backgroundColor: '#F9F9FE', // --primary-blue-blue-50
+        backgroundColor: '#F9F9FE',
       },
 
       '&:active': {
-        backgroundColor: '#E8EBFA', // --primary-blue-blue-100
+        backgroundColor: '#E8EBFA',
       },
     },
     ghost: {
       backgroundColor: 'transparent',
-      color: '#374151', // --neutral-gray-gray-700
-      border: '1px solid #D2D5DA', // --neutral-gray-gray-300
+      color: '#374151',
+      border: '1px solid #D2D5DA',
 
       '&:hover': {
-        backgroundColor: '#F9FAFB', // --neutral-gray-gray-50
-        borderColor: '#9CA3AF', // --neutral-gray-gray-400
+        backgroundColor: '#F9FAFB',
+        borderColor: '#9CA3AF',
       },
     },
     error: {
-      backgroundColor: '#CE2031', // --status-red
-      color: '#FFFFFF', // --base-white
-      border: '1px solid #CE2031', // --status-red
+      backgroundColor: '#CE2031',
+      color: '#FFFFFF',
+      border: '1px solid #CE2031',
 
       '&:hover': {
-        backgroundColor: '#B91C1C', // --status-red-600
-        borderColor: '#B91C1C', // --status-red-600
+        backgroundColor: '#B91C1C',
+        borderColor: '#B91C1C',
       },
     },
     warning: {
-      backgroundColor: '#F4A403', // --status-orange-alt
-      color: '#FFFFFF', // --base-white
-      border: '1px solid #F4A403', // --status-orange-alt
+      backgroundColor: '#F4A403',
+      color: '#FFFFFF',
+      border: '1px solid #F4A403',
 
       '&:hover': {
-        backgroundColor: '#D07C06', // --status-dark-orange
-        borderColor: '#D07C06', // --status-dark-orange
+        backgroundColor: '#D07C06',
+        borderColor: '#D07C06',
       },
     },
     success: {
-      backgroundColor: '#70CC67', // --status-green
-      color: '#FFFFFF', // --base-white
-      border: '1px solid #70CC67', // --status-green
+      backgroundColor: '#70CC67',
+      color: '#FFFFFF',
+      border: '1px solid #70CC67',
 
       '&:hover': {
-        backgroundColor: '#227F1A', // --status-dark-green
-        borderColor: '#227F1A', // --status-dark-green
+        backgroundColor: '#227F1A',
+        borderColor: '#227F1A',
       },
     },
-  };
+  } as const;
 
   return {
-    // Base styles using Echo tokens
     fontFamily: 'var(--type-typeface-archivo)',
     fontWeight: 'var(--type-weight-medium)',
     borderRadius: 'var(--spacing-radius-4px)',
@@ -164,28 +160,25 @@ const StyledEchoButton = styled(MUIButton, {
     alignItems: 'center',
     justifyContent: 'center',
     lineHeight: 1,
-    
-    // Apply size styles
-    ...sizeStyles[size as keyof typeof sizeStyles],
-    
-    // Apply variant styles
-    ...variantStyles[variant as keyof typeof variantStyles],
-    
-    // Disabled state
+    ...sizeStyles[echoSize as keyof typeof sizeStyles],
+    ...variantStyles[echoVariant as keyof typeof variantStyles],
     '&:disabled': {
       opacity: 'var(--opacity-disabled)',
       cursor: 'not-allowed',
-      backgroundColor: '#F3F4F6', // --neutral-gray-gray-100
-      color: '#9CA3AF', // --neutral-gray-gray-400
-      borderColor: '#E5E7EB', // --neutral-gray-gray-200
+      backgroundColor: '#F3F4F6',
+      color: '#9CA3AF',
+      borderColor: '#E5E7EB',
     },
-    
-    // Remove MUI's default ripple effect styling if you want custom
     '& .MuiTouchRipple-root': {
       color: 'currentColor',
     },
   };
 });
+
+const IconWrapper = styled('span')(() => ({
+  display: 'flex',
+  alignItems: 'center',
+}));
 
 export const EchoMUIButton: React.FC<EchoMUIButtonProps> = ({
   children,
@@ -199,32 +192,32 @@ export const EchoMUIButton: React.FC<EchoMUIButtonProps> = ({
   tooltip,
   ...props
 }) => {
-  // For icon-only buttons, require tooltip for accessibility
   if (iconOnly && !tooltip && !props['aria-label']) {
-    console.warn('EchoMUIButton: Icon-only buttons should have a tooltip or aria-label for accessibility');
+    console.warn(
+      'EchoMUIButton: Icon-only buttons should have a tooltip or aria-label for accessibility',
+    );
   }
 
   const buttonContent = (
     <StyledEchoButton
-      variant={variant}
-      size={size}
+      echoVariant={variant}
+      echoSize={size}
       fullWidth={fullWidth}
       aria-label={iconOnly ? (tooltip || props['aria-label']) : props['aria-label']}
       {...props}
     >
       {iconOnly ? (
-        icon && <span style={{ display: 'flex', alignItems: 'center' }}>{icon}</span>
+        icon && <IconWrapper>{icon}</IconWrapper>
       ) : (
         <>
-          {leadingIcon && <span style={{ display: 'flex', alignItems: 'center' }}>{leadingIcon}</span>}
+          {leadingIcon && <IconWrapper>{leadingIcon}</IconWrapper>}
           {children}
-          {trailingIcon && <span style={{ display: 'flex', alignItems: 'center' }}>{trailingIcon}</span>}
+          {trailingIcon && <IconWrapper>{trailingIcon}</IconWrapper>}
         </>
       )}
     </StyledEchoButton>
   );
 
-  // Wrap with tooltip if provided
   if (tooltip) {
     return (
       <Tooltip title={tooltip} arrow>

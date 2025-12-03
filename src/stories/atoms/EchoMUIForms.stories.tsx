@@ -17,7 +17,6 @@ import { Button } from './Button';
 
 import {
   Box,
-  Grid,
   Card,
   CardContent,
   Typography,
@@ -49,8 +48,17 @@ interface FormDataState {
   comments: string;
 }
 
-type TextInputField = 'firstName' | 'lastName' | 'email' | 'phone' | 'company' | 'role' | 'comments';
+type TextInputField =
+  | 'firstName'
+  | 'lastName'
+  | 'email'
+  | 'phone'
+  | 'company'
+  | 'role'
+  | 'comments';
+
 type CheckboxField = 'newsletter' | 'terms';
+
 type ErrorField = TextInputField | CheckboxField;
 
 const createInitialFormState = (): FormDataState => ({
@@ -113,6 +121,7 @@ Complete form components using MUI foundation with Echo design tokens.
 } satisfies Meta;
 
 export default meta;
+
 type Story = StoryObj;
 
 // Form Components Showcase
@@ -134,7 +143,11 @@ export const FormsShowcase: Story = {
 
     const handleInputChange =
       (field: TextInputField) =>
-      (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | SelectChangeEvent<string>) => {
+      (
+        event:
+          | React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+          | SelectChangeEvent<string>,
+      ) => {
         const { value } = event.target;
         setFormData((prev) => ({ ...prev, [field]: value }));
         clearFieldError(field);
@@ -153,7 +166,7 @@ export const FormsShowcase: Story = {
         ...prev,
         interests: prev.interests.includes(interest)
           ? prev.interests.filter((item) => item !== interest)
-          : [...prev.interests, interest]
+          : [...prev.interests, interest],
       }));
     };
 
@@ -164,21 +177,21 @@ export const FormsShowcase: Story = {
 
     const validateForm = () => {
       const newErrors: Partial<Record<ErrorField, string>> = {};
-      
+
       if (!formData.firstName.trim()) {
         newErrors.firstName = 'First name is required';
       }
-      
+
       if (!formData.email.trim()) {
         newErrors.email = 'Email is required';
       } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
         newErrors.email = 'Please enter a valid email address';
       }
-      
+
       if (!formData.terms) {
         newErrors.terms = 'You must accept the terms and conditions';
       }
-      
+
       setErrors(newErrors);
       return Object.keys(newErrors).length === 0;
     };
@@ -196,10 +209,16 @@ export const FormsShowcase: Story = {
           <Typography variant="h3" gutterBottom>
             Echo + MUI Forms Showcase
           </Typography>
-          
-          <Grid container spacing={4}>
+
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: { xs: '1fr', lg: '2fr 1fr' },
+              gap: 4,
+            }}
+          >
             {/* Enhanced Forms */}
-            <Grid item xs={12} lg={8}>
+            <Box>
               <Card>
                 <CardContent>
                   <Typography variant="h5" gutterBottom color="primary">
@@ -215,8 +234,17 @@ export const FormsShowcase: Story = {
                       <Typography variant="h6" gutterBottom>
                         Personal Information
                       </Typography>
-                      <Grid container spacing={2}>
-                        <Grid item xs={12} sm={6}>
+                      <Box
+                        sx={{
+                          display: 'grid',
+                          gridTemplateColumns: {
+                            xs: '1fr',
+                            sm: 'repeat(2, minmax(0, 1fr))',
+                          },
+                          gap: 2,
+                        }}
+                      >
+                        <Box>
                           <EchoMUIInput
                             label="First Name"
                             placeholder="Enter your first name"
@@ -230,8 +258,8 @@ export const FormsShowcase: Story = {
                             onClear={handleClear('firstName')}
                             required
                           />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
+                        </Box>
+                        <Box>
                           <EchoMUIInput
                             label="Last Name"
                             placeholder="Enter your last name"
@@ -242,24 +270,35 @@ export const FormsShowcase: Story = {
                             showClear={!!formData.lastName}
                             onClear={handleClear('lastName')}
                           />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
+                        </Box>
+                        <Box>
                           <EchoMUIInput
                             label="Email"
                             type="email"
                             placeholder="your.email@example.com"
                             value={formData.email}
                             onChange={handleInputChange('email')}
-                            state={errors.email ? 'error' : formData.email && /\S+@\S+\.\S+/.test(formData.email) ? 'success' : 'default'}
-                            message={errors.email || (formData.email && /\S+@\S+\.\S+/.test(formData.email) ? 'Valid email address' : '')}
+                            state={
+                              errors.email
+                                ? 'error'
+                                : formData.email && /\S+@\S+\.\S+/.test(formData.email)
+                                  ? 'success'
+                                  : 'default'
+                            }
+                            message={
+                              errors.email ||
+                              (formData.email && /\S+@\S+\.\S+/.test(formData.email)
+                                ? 'Valid email address'
+                                : '')
+                            }
                             showLeadingIcon
                             leadingIcon={<EmailIcon />}
                             showClear={!!formData.email}
                             onClear={handleClear('email')}
                             required
                           />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
+                        </Box>
+                        <Box>
                           <EchoMUIInput
                             label="Phone Number"
                             placeholder="(555) 123-4567"
@@ -270,8 +309,8 @@ export const FormsShowcase: Story = {
                             showClear={!!formData.phone}
                             onClear={handleClear('phone')}
                           />
-                        </Grid>
-                      </Grid>
+                        </Box>
+                      </Box>
                     </Box>
 
                     <Divider />
@@ -281,8 +320,17 @@ export const FormsShowcase: Story = {
                       <Typography variant="h6" gutterBottom>
                         Professional Information
                       </Typography>
-                      <Grid container spacing={2}>
-                        <Grid item xs={12} sm={6}>
+                      <Box
+                        sx={{
+                          display: 'grid',
+                          gridTemplateColumns: {
+                            xs: '1fr',
+                            sm: 'repeat(2, minmax(0, 1fr))',
+                          },
+                          gap: 2,
+                        }}
+                      >
+                        <Box>
                           <EchoMUIInput
                             label="Company"
                             placeholder="Your company name"
@@ -291,8 +339,8 @@ export const FormsShowcase: Story = {
                             showClear={!!formData.company}
                             onClear={handleClear('company')}
                           />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
+                        </Box>
+                        <Box>
                           <EchoMUISelect
                             label="Role"
                             placeholder="Select your role"
@@ -307,8 +355,8 @@ export const FormsShowcase: Story = {
                               { value: 'other', label: 'Other' },
                             ]}
                           />
-                        </Grid>
-                      </Grid>
+                        </Box>
+                      </Box>
                     </Box>
 
                     <Divider />
@@ -326,7 +374,7 @@ export const FormsShowcase: Story = {
                           { value: 'expert', label: 'Expert (10+ years)' },
                         ]}
                         value={formData.experience}
-                        onChange={(value) => setFormData(prev => ({ ...prev, experience: value }))}
+                        onChange={(value) => setFormData((prev) => ({ ...prev, experience: value }))}
                         row
                       />
                     </Box>
@@ -338,24 +386,34 @@ export const FormsShowcase: Story = {
                       <Typography variant="h6" gutterBottom>
                         Areas of Interest
                       </Typography>
-                      <Grid container spacing={1}>
+                      <Box
+                        sx={{
+                          display: 'grid',
+                          gridTemplateColumns: {
+                            xs: '1fr',
+                            sm: 'repeat(2, minmax(0, 1fr))',
+                            md: 'repeat(3, minmax(0, 1fr))',
+                          },
+                          gap: 1,
+                        }}
+                      >
                         {[
                           'Frontend Development',
                           'Backend Development',
                           'UI/UX Design',
                           'Data Science',
                           'DevOps',
-                          'Mobile Development'
+                          'Mobile Development',
                         ].map((interest) => (
-                          <Grid item xs={12} sm={6} md={4} key={interest}>
+                          <Box key={interest}>
                             <EchoMUICheckbox
                               label={interest}
                               checked={formData.interests.includes(interest)}
                               onChange={() => handleInterestChange(interest)}
                             />
-                          </Grid>
+                          </Box>
                         ))}
-                      </Grid>
+                      </Box>
                     </Box>
 
                     <Divider />
@@ -424,10 +482,10 @@ export const FormsShowcase: Story = {
                   </Stack>
                 </CardContent>
               </Card>
-            </Grid>
+            </Box>
 
             {/* Original Forms Comparison */}
-            <Grid item xs={12} lg={4}>
+            <Box>
               <Card>
                 <CardContent>
                   <Typography variant="h5" gutterBottom color="primary">
@@ -444,38 +502,33 @@ export const FormsShowcase: Story = {
                       showLeadingIcon
                       state="default"
                     />
-                    
+
                     <Input
                       label="Email"
                       placeholder="your.email@example.com"
                       showLeadingIcon
                       state="default"
                     />
-                    
+
                     <div>
-                      <Checkbox
-                        label="Subscribe to newsletter"
-                        state="default"
-                      />
+                      <Checkbox label="Subscribe to newsletter" state="default" />
                     </div>
-                    
+
                     <div>
                       <RadioButton
                         label="Beginner"
                         name="experience-original"
-                        selected={true}
+                        selected
                       />
                     </div>
-                    
+
                     <Textarea
                       label="Comments"
                       placeholder="Your comments..."
                       state="default"
                     />
-                    
-                    <Button type="primary">
-                      Submit Form
-                    </Button>
+
+                    <Button type="primary">Submit Form</Button>
                   </Stack>
                 </CardContent>
               </Card>
@@ -495,7 +548,7 @@ export const FormsShowcase: Story = {
                         Better keyboard navigation, ARIA attributes, screen reader support
                       </Typography>
                     </Paper>
-                    
+
                     <Paper sx={{ p: 2, bgcolor: 'info.light', color: 'info.contrastText' }}>
                       <Typography variant="subtitle2" gutterBottom>
                         🎨 Visual Consistency
@@ -504,7 +557,7 @@ export const FormsShowcase: Story = {
                         100% Echo design tokens maintained across all components
                       </Typography>
                     </Paper>
-                    
+
                     <Paper sx={{ p: 2, bgcolor: 'warning.light', color: 'warning.contrastText' }}>
                       <Typography variant="subtitle2" gutterBottom>
                         ⚡ Better Interactions
@@ -516,8 +569,8 @@ export const FormsShowcase: Story = {
                   </Stack>
                 </CardContent>
               </Card>
-            </Grid>
-          </Grid>
+            </Box>
+          </Box>
         </Box>
       </EchoMUIThemeProvider>
     );
