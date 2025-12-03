@@ -143,7 +143,7 @@
   opacity: 0.5;
 }
 
-.accordion__status--complete svg path {
+.accordion__status--complete:not(.accordion__status--disabled) svg path {
   fill: var(--status-dark-green, #227f1a);
 }
 
@@ -310,6 +310,10 @@
 
 .accordion__status--error.accordion__status--disabled svg {
   opacity: 1;
+}
+
+.accordion__status--error.accordion__status--disabled svg path {
+  fill: var(--accordion-status-border-disabled);
 }
 
 /* ===== NOTE STATUS ===== */
