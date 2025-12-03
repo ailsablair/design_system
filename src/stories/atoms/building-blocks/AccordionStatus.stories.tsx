@@ -36,7 +36,6 @@ const meta: StorybookMeta<typeof AccordionStatus> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof AccordionStatus>;
 
 export const Default: Story = {
   args: {
