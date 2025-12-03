@@ -12,7 +12,6 @@ import {
   Typography,
   Box,
   Stack,
-  Grid,
   Chip,
   Switch,
   FormControlLabel,
@@ -122,8 +121,14 @@ export const IntegrationShowcase: Story = {
                   All buttons use Echo design tokens, but different implementation approaches
                 </Typography>
 
-                <Grid container spacing={4}>
-                  <Grid item xs={12} md={4}>
+                <Box
+                  sx={{
+                    display: 'grid',
+                    gridTemplateColumns: { xs: '1fr', md: 'repeat(3, minmax(0, 1fr))' },
+                    gap: 4,
+                  }}
+                >
+                  <Box>
                     <Typography variant="h6" gutterBottom>
                       1. Original Echo Button
                     </Typography>
@@ -141,9 +146,9 @@ export const IntegrationShowcase: Story = {
                         Learn More
                       </OriginalEchoButton>
                     </Stack>
-                  </Grid>
+                  </Box>
 
-                  <Grid item xs={12} md={4}>
+                  <Box>
                     <Typography variant="h6" gutterBottom>
                       2. Styled MUI Button
                     </Typography>
@@ -161,9 +166,9 @@ export const IntegrationShowcase: Story = {
                         Learn More
                       </EchoMUIButton>
                     </Stack>
-                  </Grid>
+                  </Box>
 
-                  <Grid item xs={12} md={4}>
+                  <Box>
                     <Typography variant="h6" gutterBottom>
                       3. CSS-styled MUI Button
                     </Typography>
@@ -181,8 +186,8 @@ export const IntegrationShowcase: Story = {
                         Learn More
                       </EchoMUIButtonCSS>
                     </Stack>
-                  </Grid>
-                </Grid>
+                  </Box>
+                </Box>
 
                 <Box sx={{ mt: 3, p: 2, bgcolor: 'grey.50', borderRadius: 1 }}>
                   <Typography variant="body2" sx={{ fontStyle: 'italic' }}>
@@ -203,8 +208,14 @@ export const IntegrationShowcase: Story = {
                   Standard MUI components automatically styled with Echo tokens via theme provider
                 </Typography>
 
-                <Grid container spacing={4}>
-                  <Grid item xs={12} md={6}>
+                <Box
+                  sx={{
+                    display: 'grid',
+                    gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+                    gap: 4,
+                  }}
+                >
+                  <Box>
                     <Stack spacing={3}>
                       <TextField
                         label="Your Name"
@@ -236,9 +247,9 @@ export const IntegrationShowcase: Story = {
                         />
                       </Box>
                     </Stack>
-                  </Grid>
+                  </Box>
 
-                  <Grid item xs={12} md={6}>
+                  <Box>
                     <Stack spacing={3}>
                       <FormControlLabel
                         control={
@@ -267,8 +278,8 @@ export const IntegrationShowcase: Story = {
                         <Chip label="Best of Both" variant="outlined" />
                       </Box>
                     </Stack>
-                  </Grid>
-                </Grid>
+                  </Box>
+                </Box>
               </CardContent>
               <CardActions>
                 <Button
@@ -296,28 +307,38 @@ export const IntegrationShowcase: Story = {
                   Examples of MUI components with complex behaviors, styled with Echo tokens
                 </Typography>
 
-                <Grid container spacing={3}>
-                  <Grid item xs={12} sm={6} md={3}>
+                <Box
+                  sx={{
+                    display: 'grid',
+                    gridTemplateColumns: {
+                      xs: '1fr',
+                      sm: 'repeat(2, minmax(0, 1fr))',
+                      md: 'repeat(4, minmax(0, 1fr))',
+                    },
+                    gap: 3,
+                  }}
+                >
+                  <Box>
                     <Alert severity="success" sx={{ mb: 2 }}>
                       Success! Data saved using Echo green.
                     </Alert>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={3}>
+                  </Box>
+                  <Box>
                     <Alert severity="error" sx={{ mb: 2 }}>
                       Error! Uses Echo red tokens.
                     </Alert>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={3}>
+                  </Box>
+                  <Box>
                     <Alert severity="warning" sx={{ mb: 2 }}>
                       Warning! Uses Echo orange tokens.
                     </Alert>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={3}>
+                  </Box>
+                  <Box>
                     <Alert severity="info" sx={{ mb: 2 }}>
                       Info! Uses Echo blue tokens.
                     </Alert>
-                  </Grid>
-                </Grid>
+                  </Box>
+                </Box>
 
                 <Box sx={{ mt: 3 }}>
                   <Typography variant="h6" gutterBottom>
@@ -356,32 +377,38 @@ export const IntegrationShowcase: Story = {
                 <Typography variant="h5" gutterBottom>
                   🎯 Integration Benefits
                 </Typography>
-                <Grid container spacing={3}>
-                  <Grid item xs={12} md={6}>
+                <Box
+                  sx={{
+                    display: 'grid',
+                    gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+                    gap: 3,
+                  }}
+                >
+                  <Box>
                     <Typography variant="h6" gutterBottom>
                       What You Keep (Echo):
                     </Typography>
-                    <ul style={{ paddingLeft: '20px', lineHeight: 1.6 }}>
+                    <Box component="ul" sx={{ pl: 2.5, lineHeight: 1.6, m: 0 }}>
                       <li>100% Echo visual design and branding</li>
                       <li>Your existing design token system</li>
                       <li>Familiar CSS-based styling approach</li>
                       <li>Full control over appearance</li>
                       <li>Existing components work unchanged</li>
-                    </ul>
-                  </Grid>
-                  <Grid item xs={12} md={6}>
+                    </Box>
+                  </Box>
+                  <Box>
                     <Typography variant="h6" gutterBottom>
                       What You Gain (MUI):
                     </Typography>
-                    <ul style={{ paddingLeft: '20px', lineHeight: 1.6 }}>
+                    <Box component="ul" sx={{ pl: 2.5, lineHeight: 1.6, m: 0 }}>
                       <li>Enhanced accessibility and keyboard navigation</li>
                       <li>Ripple effects and better touch interactions</li>
                       <li>Complex components (data tables, date pickers)</li>
                       <li>Proven, battle-tested component behaviors</li>
                       <li>Rich ecosystem and community support</li>
-                    </ul>
-                  </Grid>
-                </Grid>
+                    </Box>
+                  </Box>
+                </Box>
               </CardContent>
             </Card>
           </Stack>
