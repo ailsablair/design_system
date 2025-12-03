@@ -1,5 +1,4 @@
 import React from 'react';
-import React from 'react';
 import type { Decorator, Preview as StorybookPreview } from '@storybook/react';
 import { setupStorybookResizeObserverFix } from '../src/utils/storybookResizeObserverFix';
 
