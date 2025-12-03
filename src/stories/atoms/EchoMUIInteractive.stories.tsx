@@ -11,7 +11,6 @@ import { Tag } from './Tag';
 
 import {
   Box,
-  Grid,
   Card,
   CardContent,
   Typography,
@@ -81,12 +80,23 @@ export const InteractiveShowcase: Story = {
       autoSave: true,
       sharing: false,
     });
-    const [tags, setTags] = useState([
-      { id: '1', label: 'React', variant: 'primary' as const },
-      { id: '2', label: 'TypeScript', variant: 'blue' as const },
-      { id: '3', label: 'Design System', variant: 'green' as const },
-      { id: '4', label: 'MUI Integration', variant: 'orange' as const },
-      { id: '5', label: 'Echo Tokens', variant: 'purple' as const },
+
+    type InteractiveTagVariant =
+      | 'primary'
+      | 'blue'
+      | 'green'
+      | 'orange'
+      | 'purple'
+      | 'outline-blue';
+
+    const [tags, setTags] = useState<
+      Array<{ id: string; label: string; variant: InteractiveTagVariant }>
+    >([
+      { id: '1', label: 'React', variant: 'primary' },
+      { id: '2', label: 'TypeScript', variant: 'blue' },
+      { id: '3', label: 'Design System', variant: 'green' },
+      { id: '4', label: 'MUI Integration', variant: 'orange' },
+      { id: '5', label: 'Echo Tokens', variant: 'purple' },
     ]);
 
     const handleToggleChange = (key: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -103,12 +113,12 @@ export const InteractiveShowcase: Story = {
     };
 
     const addTag = () => {
-      const newTag = {
+      const newTag: { id: string; label: string; variant: InteractiveTagVariant } = {
         id: Date.now().toString(),
         label: `New Tag ${tags.length + 1}`,
-        variant: 'outline-blue' as const,
+        variant: 'outline-blue',
       };
-      setTags(prev => [...prev, newTag]);
+      setTags((prev) => [...prev, newTag]);
     };
 
     return (
@@ -117,10 +127,16 @@ export const InteractiveShowcase: Story = {
           <Typography variant="h3" gutterBottom>
             Interactive Elements Showcase
           </Typography>
-          
-          <Grid container spacing={4}>
+
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: { xs: '1fr', lg: '2fr 1fr' },
+              gap: 4,
+            }}
+          >
             {/* Enhanced Interactive Elements */}
-            <Grid item xs={12} lg={8}>
+            <Box>
               <Stack spacing={4}>
                 {/* Buttons Section */}
                 <Card>
@@ -388,10 +404,10 @@ export const InteractiveShowcase: Story = {
                   </CardContent>
                 </Card>
               </Stack>
-            </Grid>
+            </Box>
 
             {/* Original Components Comparison */}
-            <Grid item xs={12} lg={4}>
+            <Box>
               <Stack spacing={3}>
                 <Card>
                   <CardContent>
@@ -511,8 +527,8 @@ export const InteractiveShowcase: Story = {
                   </CardContent>
                 </Card>
               </Stack>
-            </Grid>
-          </Grid>
+            </Box>
+          </Box>
         </Box>
       </EchoMUIThemeProvider>
     );
