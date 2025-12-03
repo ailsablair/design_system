@@ -516,56 +516,86 @@ function App() {
               <Typography variant="h5" gutterBottom color="primary">
                 Step 2: Choose Your Approach
               </Typography>
-              <Grid container spacing={3}>
-                <Grid item xs={12} md={4}>
+              <Box
+                sx={{
+                  display: 'grid',
+                  gridTemplateColumns: { xs: '1fr', md: 'repeat(3, minmax(0, 1fr))' },
+                  gap: 3,
+                }}
+              >
+                <Box>
                   <Typography variant="h6" gutterBottom>
                     CSS Classes (Recommended)
                   </Typography>
                   <Typography variant="body2" sx={{ mb: 2 }}>
                     Similar to your current approach, easy migration
                   </Typography>
-                  <Box sx={{ bgcolor: 'grey.100', p: 2, borderRadius: 1, fontFamily: 'monospace', fontSize: '0.8em' }}>
-                    {`<EchoMUIButtonCSS 
-  variant="primary" 
+                  <Box
+                    sx={{
+                      bgcolor: 'grey.100',
+                      p: 2,
+                      borderRadius: 1,
+                      fontFamily: 'monospace',
+                      fontSize: '0.8em',
+                    }}
+                  >
+                    {`<EchoMUIButtonCSS
+  variant="primary"
   size="default"
 >
   Save
 </EchoMUIButtonCSS>`}
                   </Box>
-                </Grid>
-                <Grid item xs={12} md={4}>
+                </Box>
+                <Box>
                   <Typography variant="h6" gutterBottom>
                     Styled Components
                   </Typography>
                   <Typography variant="body2" sx={{ mb: 2 }}>
                     More dynamic, runtime styling
                   </Typography>
-                  <Box sx={{ bgcolor: 'grey.100', p: 2, borderRadius: 1, fontFamily: 'monospace', fontSize: '0.8em' }}>
-                    {`<EchoMUIButton 
-  variant="primary" 
+                  <Box
+                    sx={{
+                      bgcolor: 'grey.100',
+                      p: 2,
+                      borderRadius: 1,
+                      fontFamily: 'monospace',
+                      fontSize: '0.8em',
+                    }}
+                  >
+                    {`<EchoMUIButton
+  variant="primary"
   size="default"
 >
   Save
 </EchoMUIButton>`}
                   </Box>
-                </Grid>
-                <Grid item xs={12} md={4}>
+                </Box>
+                <Box>
                   <Typography variant="h6" gutterBottom>
                     Direct MUI
                   </Typography>
                   <Typography variant="body2" sx={{ mb: 2 }}>
                     Use MUI components directly with theme
                   </Typography>
-                  <Box sx={{ bgcolor: 'grey.100', p: 2, borderRadius: 1, fontFamily: 'monospace', fontSize: '0.8em' }}>
-                    {`<Button 
-  variant="contained" 
+                  <Box
+                    sx={{
+                      bgcolor: 'grey.100',
+                      p: 2,
+                      borderRadius: 1,
+                      fontFamily: 'monospace',
+                      fontSize: '0.8em',
+                    }}
+                  >
+                    {`<Button
+  variant="contained"
   color="primary"
 >
   Save
 </Button>`}
                   </Box>
-                </Grid>
-              </Grid>
+                </Box>
+              </Box>
             </CardContent>
           </Card>
 
@@ -574,30 +604,44 @@ function App() {
               <Typography variant="h5" gutterBottom color="primary">
                 Step 3: Migration Strategy
               </Typography>
-              <Grid container spacing={3}>
-                <Grid item xs={12} md={6}>
+              <Box
+                sx={{
+                  display: 'grid',
+                  gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+                  gap: 3,
+                }}
+              >
+                <Box>
                   <Typography variant="h6" gutterBottom>
                     Progressive Approach
                   </Typography>
-                  <ol style={{ paddingLeft: '20px', lineHeight: 1.8 }}>
+                  <Box component="ol" sx={{ pl: 2.5, lineHeight: 1.8, m: 0 }}>
                     <li>Keep existing Echo components unchanged</li>
                     <li>Use MUI for new complex components (data tables, date pickers)</li>
                     <li>Gradually replace existing components where you need enhanced UX</li>
                     <li>Always use Echo tokens for styling</li>
-                  </ol>
-                </Grid>
-                <Grid item xs={12} md={6}>
+                  </Box>
+                </Box>
+                <Box>
                   <Typography variant="h6" gutterBottom>
                     Recommended Migration Order
                   </Typography>
-                  <ol style={{ paddingLeft: '20px', lineHeight: 1.8 }}>
-                    <li><strong>Forms</strong>: Inputs, selects, checkboxes (better accessibility)</li>
-                    <li><strong>Buttons</strong>: Enhanced interactions and ripple effects</li>
-                    <li><strong>Data Display</strong>: Tables, lists, cards (complex behaviors)</li>
-                    <li><strong>Navigation</strong>: Tabs, menus, breadcrumbs (keyboard support)</li>
-                  </ol>
-                </Grid>
-              </Grid>
+                  <Box component="ol" sx={{ pl: 2.5, lineHeight: 1.8, m: 0 }}>
+                    <li>
+                      <strong>Forms</strong>: Inputs, selects, checkboxes (better accessibility)
+                    </li>
+                    <li>
+                      <strong>Buttons</strong>: Enhanced interactions and ripple effects
+                    </li>
+                    <li>
+                      <strong>Data Display</strong>: Tables, lists, cards (complex behaviors)
+                    </li>
+                    <li>
+                      <strong>Navigation</strong>: Tabs, menus, breadcrumbs (keyboard support)
+                    </li>
+                  </Box>
+                </Box>
+              </Box>
             </CardContent>
           </Card>
         </Stack>
