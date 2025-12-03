@@ -18,7 +18,6 @@ import {
   StepContent,
   Alert,
   Chip,
-  Grid,
   List,
   ListItem,
   ListItemIcon,
@@ -201,32 +200,40 @@ npm run analyze`,
                 Complete guide to integrating MUI with your Echo design system
               </Typography>
               
-              <Grid container spacing={2} justifyContent="center" sx={{ mt: 2 }}>
-                <Grid item>
-                  <Chip 
-                    icon={<CheckIcon />} 
-                    label="Production Ready" 
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  gap: 2,
+                  mt: 2,
+                  flexWrap: 'wrap',
+                }}
+              >
+                <Box>
+                  <Chip
+                    icon={<CheckIcon />}
+                    label="Production Ready"
                     color="success"
                     sx={{ fontFamily: 'var(--type-typeface-roboto-flex)' }}
                   />
-                </Grid>
-                <Grid item>
-                  <Chip 
-                    icon={<SpeedIcon />} 
-                    label="Performance Optimized" 
+                </Box>
+                <Box>
+                  <Chip
+                    icon={<SpeedIcon />}
+                    label="Performance Optimized"
                     color="primary"
                     sx={{ fontFamily: 'var(--type-typeface-roboto-flex)' }}
                   />
-                </Grid>
-                <Grid item>
-                  <Chip 
-                    icon={<AccessibilityIcon />} 
-                    label="Accessibility Enhanced" 
+                </Box>
+                <Box>
+                  <Chip
+                    icon={<AccessibilityIcon />}
+                    label="Accessibility Enhanced"
                     color="secondary"
                     sx={{ fontFamily: 'var(--type-typeface-roboto-flex)' }}
                   />
-                </Grid>
-              </Grid>
+                </Box>
+              </Box>
             </Box>
 
             {/* Tab Navigation */}
@@ -261,8 +268,14 @@ npm run analyze`,
                   Get up and running with Echo + MUI in under 10 minutes.
                 </Typography>
 
-                <Grid container spacing={4}>
-                  <Grid item xs={12} md={6}>
+                <Box
+                  sx={{
+                    display: 'grid',
+                    gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+                    gap: 4,
+                  }}
+                >
+                  <Box>
                     <Alert severity="info" sx={{ mb: 3 }}>
                       <Typography variant="body2">
                         <strong>Prerequisites:</strong> Existing React app with Echo design system
@@ -301,9 +314,9 @@ function App() {
 </EchoMUIButton>`}
                       </Typography>
                     </Paper>
-                  </Grid>
+                  </Box>
 
-                  <Grid item xs={12} md={6}>
+                  <Box>
                     <Typography variant="h6" gutterBottom>
                       Live Demo
                     </Typography>
@@ -328,12 +341,12 @@ function App() {
                         </EchoMUIButton>
                       </EchoMUIStack>
                     </EchoMUICard>
-                    
+
                     <Alert severity="success" sx={{ mt: 2 }}>
                       This form uses 100% Echo design tokens with MUI functionality!
                     </Alert>
-                  </Grid>
-                </Grid>
+                  </Box>
+                </Box>
               </TabPanel>
 
               {/* Step-by-Step Setup Tab */}
@@ -456,8 +469,14 @@ function App() {
                   Recommended patterns and approaches for optimal results.
                 </Typography>
 
-                <Grid container spacing={3}>
-                  <Grid item xs={12} md={6}>
+                <Box
+                  sx={{
+                    display: 'grid',
+                    gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+                    gap: 3,
+                  }}
+                >
+                  <Box>
                     <EchoMUICard elevation="small" padding="medium">
                       <Typography variant="h6" gutterBottom color="success.main">
                         ✅ Do's
@@ -485,9 +504,9 @@ function App() {
                         </ListItem>
                       </List>
                     </EchoMUICard>
-                  </Grid>
+                  </Box>
 
-                  <Grid item xs={12} md={6}>
+                  <Box>
                     <EchoMUICard elevation="small" padding="medium">
                       <Typography variant="h6" gutterBottom color="error.main">
                         ❌ Don'ts
@@ -510,8 +529,8 @@ function App() {
                         </ListItem>
                       </List>
                     </EchoMUICard>
-                  </Grid>
-                </Grid>
+                  </Box>
+                </Box>
 
                 <Typography variant="h6" gutterBottom sx={{ mt: 4 }}>
                   Performance Considerations
@@ -661,32 +680,42 @@ import type { EchoMUIButtonProps } from './atoms/EchoMUIButton';`}
                 Remember to migrate progressively, test thoroughly, and maintain your Echo design consistency.
               </Typography>
               
-              <Grid container spacing={2}>
-                <Grid item xs={12} sm={6} md={3}>
+              <Box
+                sx={{
+                  display: 'grid',
+                  gridTemplateColumns: {
+                    xs: 'repeat(1, minmax(0, 1fr))',
+                    sm: 'repeat(2, minmax(0, 1fr))',
+                    md: 'repeat(4, minmax(0, 1fr))',
+                  },
+                  gap: 2,
+                }}
+              >
+                <Box>
                   <Paper sx={{ p: 2, textAlign: 'center', bgcolor: 'success.light', color: 'success.contrastText' }}>
                     <CheckIcon sx={{ fontSize: 40, mb: 1 }} />
                     <Typography variant="subtitle2">Setup Complete</Typography>
                   </Paper>
-                </Grid>
-                <Grid item xs={12} sm={6} md={3}>
+                </Box>
+                <Box>
                   <Paper sx={{ p: 2, textAlign: 'center', bgcolor: 'info.light', color: 'info.contrastText' }}>
                     <CodeIcon sx={{ fontSize: 40, mb: 1 }} />
                     <Typography variant="subtitle2">Components Ready</Typography>
                   </Paper>
-                </Grid>
-                <Grid item xs={12} sm={6} md={3}>
+                </Box>
+                <Box>
                   <Paper sx={{ p: 2, textAlign: 'center', bgcolor: 'warning.light', color: 'warning.contrastText' }}>
                     <SpeedIcon sx={{ fontSize: 40, mb: 1 }} />
                     <Typography variant="subtitle2">Performance Optimized</Typography>
                   </Paper>
-                </Grid>
-                <Grid item xs={12} sm={6} md={3}>
+                </Box>
+                <Box>
                   <Paper sx={{ p: 2, textAlign: 'center', bgcolor: 'secondary.light', color: 'secondary.contrastText' }}>
                     <AccessibilityIcon sx={{ fontSize: 40, mb: 1 }} />
                     <Typography variant="subtitle2">Accessible by Default</Typography>
                   </Paper>
-                </Grid>
-              </Grid>
+                </Box>
+              </Box>
             </EchoMUICard>
           </EchoMUIStack>
         </EchoMUIContainer>
