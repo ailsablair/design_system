@@ -204,8 +204,8 @@ export const AccordionStatus: React.FC<AccordionStatusProps> = ({
         const errorPath = size === 'small'
           ? "M13.3333 5.1065L11.3933 3.1665L7.99996 6.55984L4.60663 3.1665L2.66663 5.1065L6.05996 8.49984L2.66663 11.8932L4.60663 13.8332L7.99996 10.4398L11.3933 13.8332L13.3333 11.8932L9.93996 8.49984L13.3333 5.1065Z"
           : "M23.3333 8.5615L19.9383 5.1665L14 11.1048L8.06163 5.1665L4.66663 8.5615L10.605 14.4998L4.66663 20.4382L8.06163 23.8332L14 17.8948L19.9383 23.8332L23.3333 20.4382L17.395 14.4998L23.3333 8.5615Z";
-        const errorOpacity = disabled ? "1" : "0.25";
-        const errorFill = disabled ? "#D2D5DA" : "#CE2031";
+        const errorOpacity = disabled ? "0.7" : "0.4";
+        const errorFill = "var(--status-red, #CE2031)";
 
         return (
           <div className="accordion__status-circle">
