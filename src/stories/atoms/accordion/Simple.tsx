@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './accordionSimple.css';
-import AccordionStatus from './AccordionStatus';
+import './simple.css';
+import AccordionStatus from '../building-blocks/AccordionStatus';
 
-export interface AccordionSimpleProps {
+export interface SimpleProps {
   /** Accordion type - simple (with status icon) or no-stroke (title only) */
   type?: 'simple' | 'no-stroke';
   /** State of the accordion */
@@ -30,7 +30,7 @@ export interface AccordionSimpleProps {
 }
 
 /**
- * AccordionSimple Component
+ * Simple Component
  * 
  * A flexible accordion component with status indicators, supporting multiple variants:
  * - Type: simple (with status icon) or no-stroke (without status icon)
@@ -38,7 +38,7 @@ export interface AccordionSimpleProps {
  * - State: default (collapsed) or open (expanded)
  * - Open Icon: chevron or plus
  */
-export const AccordionSimple: React.FC<AccordionSimpleProps> = ({
+export const Simple: React.FC<SimpleProps> = ({
   type = 'simple',
   state = 'default',
   size = 'default',
@@ -186,4 +186,4 @@ export const AccordionSimple: React.FC<AccordionSimpleProps> = ({
   );
 };
 
-export default AccordionSimple;
+export default Simple;
