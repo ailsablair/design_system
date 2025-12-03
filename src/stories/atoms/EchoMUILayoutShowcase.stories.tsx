@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { EchoMUIThemeProvider } from '../foundations/EchoMUITheme';
 import { 
@@ -24,13 +25,12 @@ import {
 
 import {
   Share as ShareIcon,
-  Share as ShareIcon,
   MoreVert as MoreVertIcon,
   Settings as SettingsIcon,
   Notifications as NotificationsIcon,
 } from '@mui/icons-material';
 
-const meta = {
+const meta: Meta = {
   title: 'Echo + MUI/Layout Components',
   parameters: {
     layout: 'fullscreen',
@@ -70,7 +70,7 @@ All components maintain 100% Echo visual design while providing MUI's layout cap
 } satisfies Meta;
 
 export default meta;
-type Story = StoryObj;
+type Story = StoryObj<typeof EchoMUILayout>;
 
 // Layout Components Showcase
 export const LayoutShowcase: Story = {
