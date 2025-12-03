@@ -1,0 +1,89 @@
+/* ===== ACCORDION SIMPLE STORIES - LAYOUT STYLES ===== */
+
+.accordion-simple-story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-sizing-24px, 24px);
+  padding: var(--spacing-sizing-20px, 20px);
+}
+
+.accordion-simple-story-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sizing-12px, 12px);
+}
+
+.accordion-simple-story-label {
+  font-family: var(--type-typeface-archivo, 'Archivo', sans-serif);
+  font-size: var(--type-roboto-flex-body-sm, 14px);
+  font-weight: var(--type-weight-medium, 500);
+  color: var(--neutral-gray-gray-700, #374151);
+  text-align: center;
+}
+
+.accordion-simple-story-columns {
+  display: flex;
+  gap: var(--spacing-sizing-24px, 24px);
+  align-items: flex-start;
+  padding: var(--spacing-sizing-20px, 20px);
+  flex-wrap: wrap;
+}
+
+.accordion-simple-story-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sizing-12px, 12px);
+}
+
+.accordion-simple-story-column-title {
+  font-family: var(--type-typeface-archivo, 'Archivo', sans-serif);
+  font-size: var(--type-roboto-flex-body, 16px);
+  font-weight: var(--type-weight-medium, 500);
+  color: var(--primary-blue-dark-blue, #191e3c);
+  margin-bottom: var(--spacing-sizing-8px, 8px);
+}
+
+.accordion-simple-story-matrix {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-24px, 24px);
+  padding: var(--spacing-sizing-20px, 20px);
+}
+
+.accordion-simple-story-matrix-row {
+  display: flex;
+  gap: var(--spacing-sizing-16px, 16px);
+  align-items: center;
+}
+
+.accordion-simple-story-matrix-label {
+  font-family: var(--type-typeface-archivo, 'Archivo', sans-serif);
+  font-size: var(--type-roboto-flex-body, 16px);
+  font-weight: var(--type-weight-medium, 500);
+  color: var(--primary-blue-dark-blue, #191e3c);
+  min-width: 100px;
+}
+
+.accordion-simple-story-matrix-icons {
+  display: flex;
+  gap: var(--spacing-sizing-16px, 16px);
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .accordion-simple-story-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .accordion-simple-story-columns {
+    flex-direction: column;
+  }
+  
+  .accordion-simple-story-matrix-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
