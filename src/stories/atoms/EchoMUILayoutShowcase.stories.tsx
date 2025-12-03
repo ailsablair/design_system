@@ -23,7 +23,6 @@ import {
 } from '@mui/material';
 
 import {
-  Share as ShareIcon,
   MoreVert as MoreVertIcon,
   Settings as SettingsIcon,
   Notifications as NotificationsIcon,
