@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import type { Meta as StorybookMeta, StoryObj } from '@storybook/react';
+import type { Meta as StorybookMeta } from '@storybook/react';
 import AccordionStatus from './AccordionStatus';
 import './accordionStatus.css';
 import './accordionStatus.stories.css';
@@ -37,7 +37,7 @@ const meta: StorybookMeta<typeof AccordionStatus> = {
 
 export default meta;
 
-export const Default: Story = {
+export const Default = {
   args: {
     type: 'warning',
     size: 'default',
@@ -45,7 +45,7 @@ export const Default: Story = {
   },
 };
 
-export const AllTypesDefaultSize: Story = {
+export const AllTypesDefaultSize = {
   render: () => (
     <div className="accordion-status-story-grid">
       <div className="accordion-status-story-item">
@@ -87,7 +87,7 @@ export const AllTypesDefaultSize: Story = {
   },
 };
 
-export const SizeComparison: Story = {
+export const SizeComparison = {
   render: () => (
     <div className="accordion-status-story-columns">
       <div className="accordion-status-story-column">
@@ -113,7 +113,7 @@ export const SizeComparison: Story = {
   },
 };
 
-export const StatesMatrix: Story = {
+export const StatesMatrix = {
   render: () => (
     <div className="accordion-status-story-matrix">
       <div className="accordion-status-story-matrix-row">
