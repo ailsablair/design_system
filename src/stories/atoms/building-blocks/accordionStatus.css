@@ -127,6 +127,9 @@
   width: 16px;
   height: 16px;
   opacity: 0.5;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .accordion--size-default .accordion__status--complete .accordion__status-check,
@@ -414,23 +417,7 @@
   padding: 2px 3px;
 }
 
-/* Complete status small size positioning */
-.accordion--size-small .accordion__status--complete .accordion__status-check {
-  left: 3px;
-  top: 3px;
-}
 
-/* Default and large size positioning */
-.accordion--size-default .accordion__status--complete .accordion__status-check,
-.accordion--size-large .accordion__status--complete .accordion__status-check {
-  left: 6px;
-  top: 6px;
-}
-
-.accordion--size-large .accordion__status--complete .accordion__status-check {
-  left: 13px;
-  top: 13px;
-}
 
 /* ===== RESPONSIVE ADJUSTMENTS ===== */
 

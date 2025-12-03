@@ -107,7 +107,8 @@ export const AccordionStatus: React.FC<AccordionStatusProps> = ({
         const checkSize = size === 'small' ? 16 : 36;
         const checkViewBox = size === 'small' ? '0 0 16 17' : '0 0 36 37';
         const checkOpacity = disabled ? '0.6' : size === 'small' ? '0.5' : size === 'default' ? '0.3' : '0.5';
-        
+        const checkFill = disabled ? '#D2D5DA' : 'var(--status-dark-green, #227f1a)';
+
         return (
           <div className="accordion__status-container">
             {getDashedCircle()}
@@ -121,9 +122,9 @@ export const AccordionStatus: React.FC<AccordionStatusProps> = ({
             >
               <g opacity={checkOpacity}>
                 {size === 'small' ? (
-                  <path d="M5.99999 14.1133L1.85999 9.9733L3.74665 8.08663L5.99999 10.3466L12.5867 3.7533L14.4733 5.63996L5.99999 14.1133Z" fill="var(--status-dark-green, #227f1a)"/>
+                  <path d="M5.99999 14.1133L1.85999 9.9733L3.74665 8.08663L5.99999 10.3466L12.5867 3.7533L14.4733 5.63996L5.99999 14.1133Z" fill={checkFill}/>
                 ) : (
-                  <path d="M13.5001 31.1301L4.18506 21.8151L8.43006 17.5701L13.5001 22.6551L28.3201 7.82007L32.5651 12.0651L13.5001 31.1301Z" fill="var(--status-dark-green, #227f1a)"/>
+                  <path d="M13.5001 31.1301L4.18506 21.8151L8.43006 17.5701L13.5001 22.6551L28.3201 7.82007L32.5651 12.0651L13.5001 31.1301Z" fill={checkFill}/>
                 )}
               </g>
             </svg>
@@ -146,7 +147,7 @@ export const AccordionStatus: React.FC<AccordionStatusProps> = ({
             >
               {disabled ? (
                 <g opacity="0.7">
-                  <path d={lockedPath} fill="#C8C7D1"/>
+                  <path d={lockedPath} fill="#D2D5DA"/>
                 </g>
               ) : (
                 <path d={lockedPath} fill="#C8C7D1"/>
@@ -205,7 +206,7 @@ export const AccordionStatus: React.FC<AccordionStatusProps> = ({
           ? "M13.3333 5.1065L11.3933 3.1665L7.99996 6.55984L4.60663 3.1665L2.66663 5.1065L6.05996 8.49984L2.66663 11.8932L4.60663 13.8332L7.99996 10.4398L11.3933 13.8332L13.3333 11.8932L9.93996 8.49984L13.3333 5.1065Z"
           : "M23.3333 8.5615L19.9383 5.1665L14 11.1048L8.06163 5.1665L4.66663 8.5615L10.605 14.4998L4.66663 20.4382L8.06163 23.8332L14 17.8948L19.9383 23.8332L23.3333 20.4382L17.395 14.4998L23.3333 8.5615Z";
         const errorOpacity = disabled ? "0.7" : "0.4";
-        const errorFill = "var(--status-red, #CE2031)";
+        const errorFill = disabled ? "#D2D5DA" : "var(--status-red, #CE2031)";
 
         return (
           <div className="accordion__status-circle">
