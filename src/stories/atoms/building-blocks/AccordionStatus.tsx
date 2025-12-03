@@ -106,7 +106,7 @@ export const AccordionStatus: React.FC<AccordionStatusProps> = ({
       case 'complete':
         const checkSize = size === 'small' ? 16 : 36;
         const checkViewBox = size === 'small' ? '0 0 16 17' : '0 0 36 37';
-        const checkOpacity = disabled ? '0.6' : size === 'small' ? '0.5' : size === 'default' ? '0.3' : '0.5';
+        const checkOpacity = disabled ? '1' : size === 'small' ? '0.5' : size === 'default' ? '0.3' : '0.5';
         const checkFill = disabled ? '#D2D5DA' : 'var(--status-dark-green, #227f1a)';
 
         return (
@@ -146,7 +146,7 @@ export const AccordionStatus: React.FC<AccordionStatusProps> = ({
               xmlns="http://www.w3.org/2000/svg"
             >
               {disabled ? (
-                <g opacity="0.7">
+                <g opacity="1">
                   <path d={lockedPath} fill="#D2D5DA"/>
                 </g>
               ) : (
@@ -171,7 +171,7 @@ export const AccordionStatus: React.FC<AccordionStatusProps> = ({
               xmlns="http://www.w3.org/2000/svg"
             >
               {disabled ? (
-                <g opacity="0.7">
+                <g opacity="1">
                   <path d={commentsPath} fill="#D2D5DA"/>
                 </g>
               ) : (
@@ -205,7 +205,7 @@ export const AccordionStatus: React.FC<AccordionStatusProps> = ({
         const errorPath = size === 'small'
           ? "M13.3333 5.1065L11.3933 3.1665L7.99996 6.55984L4.60663 3.1665L2.66663 5.1065L6.05996 8.49984L2.66663 11.8932L4.60663 13.8332L7.99996 10.4398L11.3933 13.8332L13.3333 11.8932L9.93996 8.49984L13.3333 5.1065Z"
           : "M23.3333 8.5615L19.9383 5.1665L14 11.1048L8.06163 5.1665L4.66663 8.5615L10.605 14.4998L4.66663 20.4382L8.06163 23.8332L14 17.8948L19.9383 23.8332L23.3333 20.4382L17.395 14.4998L23.3333 8.5615Z";
-        const errorOpacity = disabled ? "0.7" : "0.4";
+        const errorOpacity = disabled ? "1" : "0.4";
         const errorFill = disabled ? "#D2D5DA" : "var(--status-red, #CE2031)";
 
         return (

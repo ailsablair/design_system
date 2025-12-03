@@ -153,7 +153,7 @@
 }
 
 .accordion__status--complete.accordion__status--disabled .accordion__status-check {
-  opacity: 0.6;
+  opacity: 1;
 }
 
 /* ===== LOCKED STATUS ===== */
@@ -190,7 +190,7 @@
 }
 
 .accordion__status--locked.accordion__status--disabled svg {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 /* ===== COMMENTS STATUS ===== */
@@ -227,7 +227,7 @@
 }
 
 .accordion__status--comments.accordion__status--disabled svg {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .accordion__status--comments.accordion__status--disabled svg path {
@@ -309,7 +309,7 @@
 }
 
 .accordion__status--error.accordion__status--disabled svg {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 /* ===== NOTE STATUS ===== */
