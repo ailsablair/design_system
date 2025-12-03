@@ -170,6 +170,16 @@ export const FormsShowcase: Story = {
       }));
     };
 
+    const handleRoleChange = (event: SelectChangeEvent<string>) => {
+      const { value } = event.target;
+      setFormData((prev) => ({ ...prev, role: value }));
+      clearFieldError('role');
+    };
+
+    const handleExperienceChange = (value: FormDataState['experience']) => {
+      setFormData((prev) => ({ ...prev, experience: value }));
+    };
+
     const handleClear = (field: TextInputField) => () => {
       setFormData((prev) => ({ ...prev, [field]: '' }));
       clearFieldError(field);
@@ -345,7 +355,7 @@ export const FormsShowcase: Story = {
                             label="Role"
                             placeholder="Select your role"
                             value={formData.role}
-                            onChange={handleInputChange('role')}
+                            onChange={handleRoleChange}
                             options={[
                               { value: 'developer', label: 'Developer' },
                               { value: 'designer', label: 'Designer' },
@@ -374,7 +384,7 @@ export const FormsShowcase: Story = {
                           { value: 'expert', label: 'Expert (10+ years)' },
                         ]}
                         value={formData.experience}
-                        onChange={(value) => setFormData((prev) => ({ ...prev, experience: value }))}
+                        onChange={handleExperienceChange}
                         row
                       />
                     </Box>
