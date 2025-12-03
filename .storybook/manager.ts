@@ -13,7 +13,7 @@
       error: console.error.bind(console),
     };
 
-    const isNoise = (args: any[]): boolean => {
+    const isNoise = (args: Parameters<typeof console.debug>): boolean => {
       try {
         const text = args
           .map((a) => {
@@ -33,8 +33,8 @@
       }
     };
 
-    const wrap = (fn: (...args: any[]) => void) =>
-      (...args: any[]) => {
+    const wrap = (fn: (...args: Parameters<typeof console.debug>) => void) =>
+      (...args: Parameters<typeof console.debug>) => {
         if (isNoise(args)) return; // suppress only the targeted noise
         fn(...args);
       };

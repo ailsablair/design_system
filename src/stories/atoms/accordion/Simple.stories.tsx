@@ -1,11 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import AccordionSimple from './AccordionSimple';
-import './accordionSimple.css';
-import './accordionSimple.stories.css';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import Simple from './Simple';
+import './simple.css';
+import './simple.stories.css';
 
-const meta: Meta<typeof AccordionSimple> = {
-  title: 'Atoms/🧱 Building Blocks/Accordion Simple',
-  component: AccordionSimple,
+const meta: Meta<typeof Simple> = {
+  title: 'Atoms/Accordion/Simple',
+  component: Simple,
   parameters: {
     layout: 'padded',
     docs: {
@@ -62,7 +62,7 @@ const meta: Meta<typeof AccordionSimple> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof AccordionSimple>;
+type Story = StoryObj<typeof Simple>;
 
 export const Default: Story = {
   args: {
@@ -78,14 +78,14 @@ export const Default: Story = {
 export const SimpleTypeDefaultSize: Story = {
   render: () => (
     <div className="accordion-simple-story-vertical-group">
-      <AccordionSimple
+      <Simple
         type="simple"
         state="default"
         size="default"
         openIcon="chevron"
         statusType="complete"
       />
-      <AccordionSimple
+      <Simple
         type="simple"
         state="open"
         size="default"
@@ -106,14 +106,14 @@ export const SimpleTypeDefaultSize: Story = {
 export const SimpleTypeLargeSize: Story = {
   render: () => (
     <div className="accordion-simple-story-vertical-group">
-      <AccordionSimple
+      <Simple
         type="simple"
         state="default"
         size="large"
         openIcon="chevron"
         statusType="complete"
       />
-      <AccordionSimple
+      <Simple
         type="simple"
         state="open"
         size="large"
@@ -134,14 +134,14 @@ export const SimpleTypeLargeSize: Story = {
 export const SimpleTypeSmallSize: Story = {
   render: () => (
     <div className="accordion-simple-story-vertical-group">
-      <AccordionSimple
+      <Simple
         type="simple"
         state="default"
         size="small"
         openIcon="chevron"
         statusType="complete"
       />
-      <AccordionSimple
+      <Simple
         type="simple"
         state="open"
         size="small"
@@ -163,14 +163,14 @@ export const SimpleTypePlusIcon: Story = {
   render: () => (
     <div className="accordion-simple-story-vertical-group">
       <h3 className="accordion-simple-story-size-heading">Default Size</h3>
-      <AccordionSimple
+      <Simple
         type="simple"
         state="default"
         size="default"
         openIcon="plus"
         statusType="complete"
       />
-      <AccordionSimple
+      <Simple
         type="simple"
         state="open"
         size="default"
@@ -179,14 +179,14 @@ export const SimpleTypePlusIcon: Story = {
       />
       
       <h3 className="accordion-simple-story-size-heading-with-margin">Large Size</h3>
-      <AccordionSimple
+      <Simple
         type="simple"
         state="default"
         size="large"
         openIcon="plus"
         statusType="complete"
       />
-      <AccordionSimple
+      <Simple
         type="simple"
         state="open"
         size="large"
@@ -195,14 +195,14 @@ export const SimpleTypePlusIcon: Story = {
       />
       
       <h3 className="accordion-simple-story-size-heading-with-margin">Small Size</h3>
-      <AccordionSimple
+      <Simple
         type="simple"
         state="default"
         size="small"
         openIcon="plus"
         statusType="complete"
       />
-      <AccordionSimple
+      <Simple
         type="simple"
         state="open"
         size="small"
@@ -223,14 +223,14 @@ export const SimpleTypePlusIcon: Story = {
 export const NoStrokeTypeDefaultSize: Story = {
   render: () => (
     <div className="accordion-simple-story-vertical-group">
-      <AccordionSimple
+      <Simple
         type="no-stroke"
         state="default"
         size="default"
         openIcon="chevron"
         title="This is a section title or a long question taking up a lot of space..."
       />
-      <AccordionSimple
+      <Simple
         type="no-stroke"
         state="open"
         size="default"
@@ -251,14 +251,14 @@ export const NoStrokeTypeDefaultSize: Story = {
 export const NoStrokeTypeLargeSize: Story = {
   render: () => (
     <div className="accordion-simple-story-vertical-group">
-      <AccordionSimple
+      <Simple
         type="no-stroke"
         state="default"
         size="large"
         openIcon="chevron"
         title="This is a section title or a long question taking up a lot of space..."
       />
-      <AccordionSimple
+      <Simple
         type="no-stroke"
         state="open"
         size="large"
@@ -279,14 +279,14 @@ export const NoStrokeTypeLargeSize: Story = {
 export const NoStrokeTypeSmallSize: Story = {
   render: () => (
     <div className="accordion-simple-story-vertical-group">
-      <AccordionSimple
+      <Simple
         type="no-stroke"
         state="default"
         size="small"
         openIcon="chevron"
         title="This is a section title or a long question taking up a lot of space..."
       />
-      <AccordionSimple
+      <Simple
         type="no-stroke"
         state="open"
         size="small"
@@ -308,14 +308,14 @@ export const NoStrokeTypePlusIcon: Story = {
   render: () => (
     <div className="accordion-simple-story-vertical-group">
       <h3 className="accordion-simple-story-size-heading">Default Size</h3>
-      <AccordionSimple
+      <Simple
         type="no-stroke"
         state="default"
         size="default"
         openIcon="plus"
         title="This is a section title or a long question taking up a lot of space..."
       />
-      <AccordionSimple
+      <Simple
         type="no-stroke"
         state="open"
         size="default"
@@ -324,14 +324,14 @@ export const NoStrokeTypePlusIcon: Story = {
       />
       
       <h3 className="accordion-simple-story-size-heading-with-margin">Large Size</h3>
-      <AccordionSimple
+      <Simple
         type="no-stroke"
         state="default"
         size="large"
         openIcon="plus"
         title="This is a section title or a long question taking up a lot of space..."
       />
-      <AccordionSimple
+      <Simple
         type="no-stroke"
         state="open"
         size="large"
@@ -340,14 +340,14 @@ export const NoStrokeTypePlusIcon: Story = {
       />
       
       <h3 className="accordion-simple-story-size-heading-with-margin">Small Size</h3>
-      <AccordionSimple
+      <Simple
         type="no-stroke"
         state="default"
         size="small"
         openIcon="plus"
         title="This is a section title or a long question taking up a lot of space..."
       />
-      <AccordionSimple
+      <Simple
         type="no-stroke"
         state="open"
         size="small"
@@ -371,48 +371,48 @@ export const AllVariantsShowcase: Story = {
       <div>
         <h2 className="accordion-simple-story-variant-heading">Simple Type - Default Size - Chevron</h2>
         <div className="accordion-simple-story-variant-column">
-          <AccordionSimple type="simple" state="default" size="default" openIcon="chevron" statusType="complete" />
-          <AccordionSimple type="simple" state="open" size="default" openIcon="chevron" statusType="complete" />
+          <Simple type="simple" state="default" size="default" openIcon="chevron" statusType="complete" />
+          <Simple type="simple" state="open" size="default" openIcon="chevron" statusType="complete" />
         </div>
       </div>
       
       <div>
         <h2 className="accordion-simple-story-variant-heading">Simple Type - Large Size - Chevron</h2>
         <div className="accordion-simple-story-variant-column">
-          <AccordionSimple type="simple" state="default" size="large" openIcon="chevron" statusType="complete" />
-          <AccordionSimple type="simple" state="open" size="large" openIcon="chevron" statusType="complete" />
+          <Simple type="simple" state="default" size="large" openIcon="chevron" statusType="complete" />
+          <Simple type="simple" state="open" size="large" openIcon="chevron" statusType="complete" />
         </div>
       </div>
       
       <div>
         <h2 className="accordion-simple-story-variant-heading">Simple Type - Small Size - Chevron</h2>
         <div className="accordion-simple-story-variant-column">
-          <AccordionSimple type="simple" state="default" size="small" openIcon="chevron" statusType="complete" />
-          <AccordionSimple type="simple" state="open" size="small" openIcon="chevron" statusType="complete" />
+          <Simple type="simple" state="default" size="small" openIcon="chevron" statusType="complete" />
+          <Simple type="simple" state="open" size="small" openIcon="chevron" statusType="complete" />
         </div>
       </div>
       
       <div>
         <h2 className="accordion-simple-story-variant-heading">Simple Type - Plus Icon</h2>
         <div className="accordion-simple-story-variant-column">
-          <AccordionSimple type="simple" state="default" size="default" openIcon="plus" statusType="complete" />
-          <AccordionSimple type="simple" state="open" size="default" openIcon="plus" statusType="complete" />
+          <Simple type="simple" state="default" size="default" openIcon="plus" statusType="complete" />
+          <Simple type="simple" state="open" size="default" openIcon="plus" statusType="complete" />
         </div>
       </div>
       
       <div>
         <h2 className="accordion-simple-story-variant-heading">No-Stroke Type - Default Size</h2>
         <div className="accordion-simple-story-variant-column">
-          <AccordionSimple type="no-stroke" state="default" size="default" openIcon="chevron" title="This is a section title or a long question taking up a lot of space..." />
-          <AccordionSimple type="no-stroke" state="open" size="default" openIcon="chevron" title="This is a section title or a long question taking up a lot of space..." />
+          <Simple type="no-stroke" state="default" size="default" openIcon="chevron" title="This is a section title or a long question taking up a lot of space..." />
+          <Simple type="no-stroke" state="open" size="default" openIcon="chevron" title="This is a section title or a long question taking up a lot of space..." />
         </div>
       </div>
       
       <div>
         <h2 className="accordion-simple-story-variant-heading">No-Stroke Type - Plus Icon</h2>
         <div className="accordion-simple-story-variant-column">
-          <AccordionSimple type="no-stroke" state="default" size="default" openIcon="plus" title="This is a section title or a long question taking up a lot of space..." />
-          <AccordionSimple type="no-stroke" state="open" size="default" openIcon="plus" title="This is a section title or a long question taking up a lot of space..." />
+          <Simple type="no-stroke" state="default" size="default" openIcon="plus" title="This is a section title or a long question taking up a lot of space..." />
+          <Simple type="no-stroke" state="open" size="default" openIcon="plus" title="This is a section title or a long question taking up a lot of space..." />
         </div>
       </div>
     </div>
