@@ -141,7 +141,7 @@
 }
 
 .accordion__status--complete svg path {
-  fill: var(--accordion-status-complete-fill);
+  fill: var(--status-dark-green, #227f1a);
 }
 
 /* Complete disabled state */
@@ -151,10 +151,6 @@
 
 .accordion__status--complete.accordion__status--disabled .accordion__status-check {
   opacity: 0.6;
-}
-
-.accordion__status--complete.accordion__status--disabled svg path {
-  fill: var(--accordion-status-border-disabled);
 }
 
 /* ===== LOCKED STATUS ===== */
@@ -297,11 +293,11 @@
 }
 
 .accordion__status--error svg {
-  opacity: 0.25;
+  opacity: 0.4;
 }
 
 .accordion__status--error svg path {
-  fill: var(--accordion-status-error-fill);
+  fill: var(--status-red, #CE2031);
 }
 
 /* Error disabled state */
@@ -310,11 +306,7 @@
 }
 
 .accordion__status--error.accordion__status--disabled svg {
-  opacity: 1;
-}
-
-.accordion__status--error.accordion__status--disabled svg path {
-  fill: var(--accordion-status-border-disabled);
+  opacity: 0.7;
 }
 
 /* ===== NOTE STATUS ===== */
@@ -368,6 +360,7 @@
 .accordion--size-small .accordion__status svg {
   width: 16px;
   height: 16px;
+  display: block;
 }
 
 .accordion--size-small .accordion__status--note svg {
