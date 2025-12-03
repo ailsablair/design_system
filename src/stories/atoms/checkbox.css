@@ -1,0 +1,100 @@
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sizing-8px);
+  font-family: var(--type-typeface-roboto-flex);
+  font-size: var(--type-size-sm);
+  color: var(--base-black);
+}
+
+.checkbox__control {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--spacing-radius-2px);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-400);
+  background: var(--base-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.checkbox__input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox__icon {
+  width: 12px;
+  height: 12px;
+  border-radius: inherit;
+}
+
+.checkbox--size-small .checkbox__control {
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox--size-large .checkbox__control {
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox--shape-round .checkbox__control {
+  border-radius: 9999px;
+}
+
+.checkbox--variant-primary .checkbox__control {
+  border-color: var(--primary-blue-blue);
+}
+
+.checkbox--variant-success .checkbox__control {
+  border-color: var(--status-green);
+}
+
+.checkbox--variant-warning .checkbox__control {
+  border-color: var(--status-orange);
+}
+
+.checkbox--variant-error .checkbox__control {
+  border-color: var(--status-red);
+}
+
+.checkbox__input:checked + .checkbox__icon,
+.checkbox--state-success .checkbox__icon,
+.checkbox--state-warning .checkbox__icon,
+.checkbox--state-error .checkbox__icon {
+  background: var(--primary-blue-blue);
+}
+
+.checkbox--state-success .checkbox__icon {
+  background: var(--status-green);
+}
+
+.checkbox--state-warning .checkbox__icon {
+  background: var(--status-orange);
+}
+
+.checkbox--state-error .checkbox__icon {
+  background: var(--status-red);
+}
+
+.checkbox--disabled {
+  opacity: var(--opacity-disabled);
+}
+
+.checkbox__label {
+  line-height: var(--type-leading-normal);
+}
+
+.checkbox__message {
+  display: block;
+  margin-left: calc(18px + var(--spacing-sizing-8px));
+  margin-top: var(--spacing-sizing-4px);
+  font-size: var(--type-size-xs);
+  color: var(--status-red);
+}

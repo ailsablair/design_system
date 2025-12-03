@@ -1,0 +1,189 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sizing-4px);
+  padding: 0 var(--spacing-sizing-8px);
+  border-radius: var(--spacing-radius-99999px);
+  border: var(--spacing-stroke-1px) solid transparent;
+  background: var(--neutral-gray-gray-100);
+  color: var(--neutral-gray-gray-700);
+  font-family: var(--type-typeface-roboto-flex);
+  font-size: var(--type-size-sm);
+  line-height: var(--type-leading-tight);
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.tag--clickable {
+  cursor: pointer;
+  transition: background-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.tag--clickable:hover {
+  box-shadow: var(--shadow-shadow-xs-box-shadow);
+  transform: translateY(-1px);
+}
+
+.tag--clickable:active {
+  transform: translateY(0);
+}
+
+.tag--disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
+
+.tag--size-small {
+  padding: 0 var(--spacing-sizing-6px);
+  font-size: var(--type-size-xs);
+}
+
+.tag--size-large {
+  padding: 0 var(--spacing-sizing-12px);
+  font-size: var(--type-size-base);
+}
+
+.tag--shape-rounded {
+  border-radius: var(--spacing-radius-8px);
+}
+
+.tag__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tag__icon--leading {
+  margin-right: var(--spacing-sizing-4px);
+}
+
+.tag__icon--trailing {
+  margin-left: var(--spacing-sizing-4px);
+}
+
+.tag__label {
+  display: inline-block;
+}
+
+.tag__close-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: var(--spacing-sizing-2px);
+  width: var(--spacing-sizing-16px);
+  height: var(--spacing-sizing-16px);
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.tag__close-icon {
+  font-size: 10px;
+  line-height: 1;
+}
+
+/* Variant colors */
+
+.tag--variant-light-gray {
+  background: var(--neutral-gray-gray-100);
+  color: var(--neutral-gray-gray-700);
+  border-color: var(--neutral-gray-gray-200);
+}
+
+.tag--variant-primary {
+  background: var(--primary-blue-blue);
+  color: var(--base-white);
+  border-color: var(--primary-blue-blue);
+}
+
+.tag--variant-secondary {
+  background: var(--primary-seafoam-seafoam);
+  color: var(--base-white);
+  border-color: var(--primary-seafoam-seafoam);
+}
+
+.tag--variant-blue {
+  background: var(--primary-sky-blue-sky-blue);
+  color: var(--base-white);
+  border-color: var(--primary-sky-blue-sky-blue);
+}
+
+.tag--variant-green {
+  background: var(--status-green);
+  color: var(--base-white);
+  border-color: var(--status-green);
+}
+
+.tag--variant-orange {
+  background: var(--status-orange);
+  color: var(--base-white);
+  border-color: var(--status-orange);
+}
+
+.tag--variant-purple {
+  background: var(--status-purple);
+  color: var(--base-white);
+  border-color: var(--status-purple);
+}
+
+.tag--variant-gray {
+  background: var(--neutral-gray-gray-200);
+  color: var(--neutral-gray-gray-700);
+  border-color: var(--neutral-gray-gray-300);
+}
+
+.tag--variant-black {
+  background: var(--base-black);
+  color: var(--base-white);
+  border-color: var(--base-black);
+}
+
+.tag--variant-outline-blue,
+.tag--variant-outline-sky-blue,
+.tag--variant-outline-black,
+.tag--variant-outline-gray,
+.tag--variant-outline-info-blue {
+  background: transparent;
+}
+
+.tag--variant-outline-blue {
+  color: var(--primary-blue-blue);
+  border-color: var(--primary-blue-blue);
+}
+
+.tag--variant-outline-sky-blue {
+  color: var(--primary-sky-blue-sky-blue);
+  border-color: var(--primary-sky-blue-sky-blue);
+}
+
+.tag--variant-outline-black {
+  color: var(--base-black);
+  border-color: var(--base-black);
+}
+
+.tag--variant-outline-gray {
+  color: var(--neutral-gray-gray-700);
+  border-color: var(--neutral-gray-gray-300);
+}
+
+.tag--variant-outline-info-blue {
+  color: var(--status-info-blue);
+  border-color: var(--status-info-blue);
+}
+
+.tag--variant-red {
+  background: var(--status-red);
+  color: var(--base-white);
+  border-color: var(--status-red);
+}
+
+.tag--variant-yellow {
+  background: var(--primary-yellow-yellow);
+  color: var(--base-black);
+  border-color: var(--primary-yellow-yellow);
+}
