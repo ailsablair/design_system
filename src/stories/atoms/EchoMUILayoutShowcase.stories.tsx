@@ -90,8 +90,14 @@ export const LayoutShowcase: Story = {
                 Cards with Echo design tokens and interactive behaviors
               </Typography>
 
-              <EchoMUIGrid container spacing={3}>
-                <EchoMUIGrid item xs={12} md={4}>
+              <Box
+                sx={{
+                  display: 'grid',
+                  gridTemplateColumns: { xs: '1fr', md: 'repeat(3, minmax(0, 1fr))' },
+                  gap: 3,
+                }}
+              >
+                <Box>
                   <EchoMUICard elevation="small" interactive>
                     <EchoMUICardContent>
                       <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
@@ -124,9 +130,9 @@ export const LayoutShowcase: Story = {
                       </EchoMUIButton>
                     </EchoMUICardActions>
                   </EchoMUICard>
-                </EchoMUIGrid>
+                </Box>
 
-                <EchoMUIGrid item xs={12} md={4}>
+                <Box>
                   <EchoMUICard elevation="medium">
                     <EchoMUICardContent>
                       <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
@@ -159,9 +165,9 @@ export const LayoutShowcase: Story = {
                       </IconButton>
                     </EchoMUICardActions>
                   </EchoMUICard>
-                </EchoMUIGrid>
+                </Box>
 
-                <EchoMUIGrid item xs={12} md={4}>
+                <Box>
                   <EchoMUICard elevation="large" padding="large">
                     <Typography variant="h6" gutterBottom>
                       Team Activity
@@ -169,7 +175,7 @@ export const LayoutShowcase: Story = {
                     <Typography variant="body2" color="text.secondary" paragraph>
                       Recent activity from your team members and project updates.
                     </Typography>
-                    
+
                     <EchoMUIStack spacing="small">
                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                         <Avatar sx={{ width: 24, height: 24 }}>J</Avatar>
@@ -191,8 +197,8 @@ export const LayoutShowcase: Story = {
                       </Box>
                     </EchoMUIStack>
                   </EchoMUICard>
-                </EchoMUIGrid>
-              </EchoMUIGrid>
+                </Box>
+              </Box>
             </Box>
 
             <EchoMUIDivider variant="primary" spacing="large">
@@ -208,8 +214,14 @@ export const LayoutShowcase: Story = {
                 Consistent spacing and layout patterns using Echo design tokens
               </Typography>
 
-              <EchoMUIGrid container spacing={3}>
-                <EchoMUIGrid item xs={12} md={6}>
+              <Box
+                sx={{
+                  display: 'grid',
+                  gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+                  gap: 3,
+                }}
+              >
+                <Box>
                   <EchoMUIPaper elevation={1} padding="medium">
                     <Typography variant="h6" gutterBottom>
                       Stack Layouts
@@ -232,9 +244,9 @@ export const LayoutShowcase: Story = {
                       <EchoMUIButton variant="tertiary" size="small">Button 3</EchoMUIButton>
                     </EchoMUIStack>
                   </EchoMUIPaper>
-                </EchoMUIGrid>
+                </Box>
 
-                <EchoMUIGrid item xs={12} md={6}>
+                <Box>
                   <EchoMUIPaper elevation={2} padding="large">
                     <Typography variant="h6" gutterBottom>
                       Divider Variants
@@ -269,8 +281,8 @@ export const LayoutShowcase: Story = {
                       Primary divider with text above
                     </Typography>
                   </EchoMUIPaper>
-                </EchoMUIGrid>
-              </EchoMUIGrid>
+                </Box>
+              </Box>
             </Box>
 
             {/* Container Examples */}
@@ -290,28 +302,37 @@ export const LayoutShowcase: Story = {
                   <Typography variant="body2" color="text.secondary" paragraph>
                     This content is contained within a medium-width container with consistent padding.
                   </Typography>
-                  
-                  <EchoMUIGrid container spacing={2}>
+
+                  <Box
+                    sx={{
+                      display: 'grid',
+                      gridTemplateColumns: {
+                        xs: 'repeat(2, minmax(0, 1fr))',
+                        sm: 'repeat(3, minmax(0, 1fr))',
+                      },
+                      gap: 2,
+                    }}
+                  >
                     {[1, 2, 3, 4, 5, 6].map((item) => (
-                      <EchoMUIGrid item xs={6} sm={4} md={2} key={item}>
-                        <EchoMUIPaper 
-                          elevation={0} 
-                          padding="small"
-                          sx={{ 
-                            bgcolor: 'primary.light', 
-                            color: 'primary.contrastText',
-                            textAlign: 'center',
-                            minHeight: 60,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                          }}
-                        >
-                          Item {item}
+                      <Box key={item}>
+                        <EchoMUIPaper elevation={0} padding="small">
+                          <Box
+                            sx={{
+                              bgcolor: 'primary.light',
+                              color: 'primary.contrastText',
+                              textAlign: 'center',
+                              minHeight: 60,
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                            }}
+                          >
+                            Item {item}
+                          </Box>
                         </EchoMUIPaper>
-                      </EchoMUIGrid>
+                      </Box>
                     ))}
-                  </EchoMUIGrid>
+                  </Box>
                 </EchoMUIPaper>
               </EchoMUIContainer>
             </Box>
@@ -321,32 +342,38 @@ export const LayoutShowcase: Story = {
               <Typography variant="h5" gutterBottom color="primary">
                 🎯 Layout Component Benefits
               </Typography>
-              
-              <EchoMUIGrid container spacing={3}>
-                <EchoMUIGrid item xs={12} md={6}>
+
+              <Box
+                sx={{
+                  display: 'grid',
+                  gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+                  gap: 3,
+                }}
+              >
+                <Box>
                   <Typography variant="h6" gutterBottom>
                     Consistent Spacing
                   </Typography>
-                  <ul style={{ paddingLeft: '20px', lineHeight: 1.6 }}>
+                  <Box component="ul" sx={{ pl: 2.5, lineHeight: 1.6, m: 0 }}>
                     <li>Echo design token-based spacing</li>
                     <li>Predictable layout patterns</li>
                     <li>Responsive design support</li>
                     <li>Flexible container sizes</li>
-                  </ul>
-                </EchoMUIGrid>
-                
-                <EchoMUIGrid item xs={12} md={6}>
+                  </Box>
+                </Box>
+
+                <Box>
                   <Typography variant="h6" gutterBottom>
                     Enhanced Components
                   </Typography>
-                  <ul style={{ paddingLeft: '20px', lineHeight: 1.6 }}>
+                  <Box component="ul" sx={{ pl: 2.5, lineHeight: 1.6, m: 0 }}>
                     <li>Interactive card hover states</li>
                     <li>Multiple divider variants</li>
                     <li>Flexible stack layouts</li>
                     <li>Echo visual consistency</li>
-                  </ul>
-                </EchoMUIGrid>
-              </EchoMUIGrid>
+                  </Box>
+                </Box>
+              </Box>
             </EchoMUICard>
           </EchoMUIStack>
         </EchoMUILayout>
