@@ -1,459 +1,210 @@
-/* ===== ACCORDION STATUS INDICATORS - FIGMA DESIGN ===== */
+/* ===== ACCORDION STATUS ICONS - FIGMA SOLID CIRCLE DESIGN ===== */
 
-/* Design tokens from Figma */
-:root {
-  --accordion-status-border-active: #61607C;
-  --accordion-status-border-disabled: #D2D5DA;
-  --accordion-status-warning-fill: #FCE4A5;
-  --accordion-status-complete-fill: #96F78D;
-  --accordion-status-locked-fill: #C8C7D1;
-  --accordion-status-comments-fill: #B6E5F9;
-  --accordion-status-notifications-fill: #C5CAED;
-  --accordion-status-error-fill: #CE2031;
-  --accordion-status-note-fill: #5D2C82;
-}
-
-/* ===== BASE STATUS ICON STRUCTURE ===== */
-
-.accordion__status {
+/* Base status icon structure */
+.status-icon {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: var(--spacing-radius-99999px, 99999px);
   flex-shrink: 0;
   position: relative;
+  aspect-ratio: 1 / 1;
 }
 
-.accordion__status-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.status-icon svg {
+  display: block;
+  flex-shrink: 0;
 }
 
 /* ===== SIZE VARIANTS ===== */
 
-/* Small size - 22-26px */
-.accordion--size-small .accordion__status {
-  width: var(--sizing-height-32);
-  height: var(--sizing-height-32);
+/* Small - 24px */
+.status-icon--small {
+  width: 24px;
+  height: 24px;
+  padding: 4px;
 }
 
-.accordion--size-small .accordion__status-container {
-  width: var(--sizing-height-32);
-  height: var(--sizing-height-32);
-}
-
-/* Default size - 48-50px */
-.accordion--size-default .accordion__status {
-  width: var(--sizing-height-44);
-  height: var(--sizing-height-44);
-}
-
-.accordion--size-default .accordion__status-container {
-  width: var(--sizing-height-44);
-  height: var(--sizing-height-44);
-}
-
-/* Large size - 62-64px */
-.accordion--size-large .accordion__status {
-  width: var(--sizing-height-54);
-  height: var(--sizing-height-54);
-}
-
-.accordion--size-large .accordion__status-container {
-  width: var(--sizing-height-54);
-  height: var(--sizing-height-54);
-}
-
-/* ===== WARNING STATUS ===== */
-
-.accordion__status--warning .accordion__status-circle {
-  display: flex;
-  width: var(--sizing-height-32);
-  height: var(--sizing-height-32);
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  border-radius: var(--spacing-radius-99999px);
-  border: var(--spacing-stroke-1px) dashed var(--accordion-status-border-active);
-}
-
-.accordion--size-default .accordion__status--warning .accordion__status-circle,
-.accordion--size-large .accordion__status--warning .accordion__status-circle {
-  width: var(--sizing-height-44);
-  height: var(--sizing-height-44);
-}
-
-.accordion--size-large .accordion__status--warning .accordion__status-circle {
-  width: var(--sizing-height-54);
-  height: var(--sizing-height-54);
-}
-
-.accordion__status--warning svg path {
-  fill: var(--accordion-status-warning-fill);
-}
-
-/* Warning disabled state */
-.accordion__status--warning.accordion__status--disabled .accordion__status-circle {
-  border-color: var(--accordion-status-border-disabled);
-}
-
-.accordion__status--warning.accordion__status--disabled svg path {
-  fill: var(--accordion-status-border-disabled);
-}
-
-/* ===== COMPLETE STATUS ===== */
-
-.accordion__status--complete .accordion__status-dashed-circle {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: var(--sizing-height-32);
-  height: var(--sizing-height-32);
-}
-
-.accordion--size-default .accordion__status--complete .accordion__status-dashed-circle {
-  width: var(--sizing-height-44);
-  height: var(--sizing-height-44);
-}
-
-.accordion--size-large .accordion__status--complete .accordion__status-dashed-circle {
-  width: var(--sizing-height-54);
-  height: var(--sizing-height-54);
-}
-
-.accordion__status--complete .accordion__status-check {
-  position: absolute;
+.status-icon--small svg {
   width: 16px;
   height: 16px;
-  opacity: 0.5;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 
-.accordion--size-default .accordion__status--complete .accordion__status-check,
-.accordion--size-large .accordion__status--complete .accordion__status-check {
+/* Default - 50px */
+.status-icon--default {
+  width: 50px;
+  height: 50px;
+  padding: 4px;
+}
+
+.status-icon--default svg {
   width: 36px;
   height: 36px;
-  opacity: 0.3;
 }
 
-.accordion--size-large .accordion__status--complete .accordion__status-check {
-  opacity: 0.5;
+/* Large - 64px */
+.status-icon--large {
+  width: 64px;
+  height: 64px;
+  padding: 4px;
 }
 
-.accordion__status--complete:not(.accordion__status--disabled) svg path {
-  fill: var(--status-dark-green, #227f1a);
+.status-icon--large svg {
+  width: 36px;
+  height: 36px;
 }
 
-/* Complete disabled state */
-.accordion__status--complete.accordion__status--disabled .accordion__status-dashed-circle circle {
-  stroke: var(--accordion-status-border-disabled);
+/* ===== TYPE COLORS (ENABLED STATES) ===== */
+
+.status-icon--complete:not(.status-icon--disabled) {
+  background: var(--status-dark-green, #227F1A);
 }
 
-.accordion__status--complete.accordion__status--disabled .accordion__status-check {
-  opacity: 1;
+.status-icon--warning:not(.status-icon--disabled) {
+  background: var(--status-orange, #F4A403);
 }
 
-/* ===== LOCKED STATUS ===== */
-
-.accordion__status--locked .accordion__status-circle {
-  display: flex;
-  width: var(--sizing-height-32);
-  height: var(--sizing-height-32);
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  border-radius: var(--spacing-radius-99999px);
-  border: var(--spacing-stroke-1px) dashed var(--accordion-status-border-active);
+.status-icon--locked:not(.status-icon--disabled) {
+  background: var(--secondary-blue-gray, #61607C);
 }
 
-.accordion--size-default .accordion__status--locked .accordion__status-circle,
-.accordion--size-large .accordion__status--locked .accordion__status-circle {
-  width: var(--sizing-height-44);
-  height: var(--sizing-height-44);
+.status-icon--comments:not(.status-icon--disabled) {
+  background: var(--primary-sky-blue-sky-blue, #0BA7EA);
 }
 
-.accordion--size-large .accordion__status--locked .accordion__status-circle {
-  width: var(--sizing-height-54);
-  height: var(--sizing-height-54);
+.status-icon--notifications:not(.status-icon--disabled) {
+  background: var(--primary-blue-blue, #2F42BD);
 }
 
-.accordion__status--locked svg path {
-  fill: var(--accordion-status-locked-fill);
+.status-icon--error:not(.status-icon--disabled) {
+  background: var(--status-red, #CE2031);
 }
 
-/* Locked disabled state */
-.accordion__status--locked.accordion__status--disabled .accordion__status-circle {
-  border-color: var(--accordion-status-border-disabled);
+.status-icon--note:not(.status-icon--disabled) {
+  background: var(--status-purple, #5D2C82);
 }
 
-.accordion__status--locked.accordion__status--disabled svg {
-  opacity: 1;
+/* ===== DISABLED STATE ===== */
+
+.status-icon--disabled {
+  background: var(--neutral-gray-gray-200, #E5E7EB);
 }
 
-/* ===== COMMENTS STATUS ===== */
+/* ===== SIZE-SPECIFIC ADJUSTMENTS ===== */
 
-.accordion__status--comments .accordion__status-circle {
-  display: flex;
-  width: var(--sizing-height-32);
-  height: var(--sizing-height-32);
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  border-radius: var(--spacing-radius-99999px);
-  border: var(--spacing-stroke-1px) dashed var(--accordion-status-border-active);
+/* Warning icon padding adjustments */
+.status-icon--small.status-icon--warning {
+  padding: 3px 4px 5px 4px;
 }
 
-.accordion--size-default .accordion__status--comments .accordion__status-circle,
-.accordion--size-large .accordion__status--comments .accordion__status-circle {
-  width: var(--sizing-height-44);
-  height: var(--sizing-height-44);
+.status-icon--default.status-icon--warning {
+  padding: 3px 4px 5px 4px;
 }
 
-.accordion--size-large .accordion__status--comments .accordion__status-circle {
-  width: var(--sizing-height-54);
-  height: var(--sizing-height-54);
+.status-icon--large.status-icon--warning {
+  padding-bottom: 2px;
 }
 
-.accordion__status--comments svg path {
-  fill: var(--accordion-status-comments-fill);
-}
-
-/* Comments disabled state */
-.accordion__status--comments.accordion__status--disabled .accordion__status-circle {
-  border-color: var(--accordion-status-border-disabled);
-}
-
-.accordion__status--comments.accordion__status--disabled svg {
-  opacity: 1;
-}
-
-.accordion__status--comments.accordion__status--disabled svg path {
-  fill: var(--accordion-status-border-disabled);
-}
-
-/* ===== NOTIFICATIONS STATUS ===== */
-
-.accordion__status--notifications .accordion__status-circle {
-  display: flex;
-  width: var(--sizing-height-32);
-  height: var(--sizing-height-32);
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  border-radius: var(--spacing-radius-99999px);
-  border: var(--spacing-stroke-1px) dashed var(--accordion-status-border-active);
-}
-
-.accordion--size-default .accordion__status--notifications .accordion__status-circle,
-.accordion--size-large .accordion__status--notifications .accordion__status-circle {
-  width: var(--sizing-height-44);
-  height: var(--sizing-height-44);
-}
-
-.accordion--size-large .accordion__status--notifications .accordion__status-circle {
-  width: var(--sizing-height-54);
-  height: var(--sizing-height-54);
-}
-
-.accordion__status--notifications svg path {
-  fill: var(--accordion-status-notifications-fill);
-}
-
-/* Notifications disabled state */
-.accordion__status--notifications.accordion__status--disabled .accordion__status-circle {
-  border-color: var(--accordion-status-border-disabled);
-}
-
-.accordion__status--notifications.accordion__status--disabled svg path {
-  fill: var(--accordion-status-border-disabled);
-}
-
-/* ===== ERROR STATUS ===== */
-
-.accordion__status--error .accordion__status-circle {
-  display: flex;
-  width: var(--sizing-height-32);
-  height: var(--sizing-height-32);
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  border-radius: var(--spacing-radius-99999px);
-  border: var(--spacing-stroke-1px) dashed var(--accordion-status-border-active);
-}
-
-.accordion--size-default .accordion__status--error .accordion__status-circle,
-.accordion--size-large .accordion__status--error .accordion__status-circle {
-  width: var(--sizing-height-44);
-  height: var(--sizing-height-44);
-}
-
-.accordion--size-large .accordion__status--error .accordion__status-circle {
-  width: var(--sizing-height-54);
-  height: var(--sizing-height-54);
-}
-
-.accordion__status--error svg {
-  opacity: 0.4;
-}
-
-.accordion__status--error svg path {
-  fill: var(--status-red, #CE2031);
-}
-
-/* Error disabled state */
-.accordion__status--error.accordion__status--disabled .accordion__status-circle {
-  border-color: var(--accordion-status-border-disabled);
-}
-
-.accordion__status--error.accordion__status--disabled svg {
-  opacity: 1;
-}
-
-.accordion__status--error.accordion__status--disabled svg path {
-  fill: var(--accordion-status-border-disabled);
-}
-
-/* ===== NOTE STATUS ===== */
-
-.accordion__status--note .accordion__status-circle {
-  display: flex;
-  width: var(--sizing-height-32);
-  height: var(--sizing-height-32);
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  border-radius: var(--spacing-radius-99999px);
-  border: var(--spacing-stroke-1px) dashed var(--accordion-status-border-active);
-}
-
-.accordion--size-default .accordion__status--note .accordion__status-circle,
-.accordion--size-large .accordion__status--note .accordion__status-circle {
-  width: var(--sizing-height-44);
-  height: var(--sizing-height-44);
-}
-
-.accordion--size-large .accordion__status--note .accordion__status-circle {
-  width: var(--sizing-height-54);
-  height: var(--sizing-height-54);
-}
-
-.accordion__status--note svg {
-  opacity: 0.4;
-}
-
-.accordion__status--note svg path {
-  fill: var(--accordion-status-note-fill);
-}
-
-/* Note disabled state */
-.accordion__status--note.accordion__status--disabled .accordion__status-circle {
-  border-color: var(--accordion-status-border-disabled);
-}
-
-.accordion__status--note.accordion__status--disabled svg {
-  opacity: 1;
-}
-
-.accordion__status--note.accordion__status--disabled svg path {
-  fill: var(--accordion-status-border-disabled);
-}
-
-/* ===== ICON SIZING ===== */
-
-/* Small size icons */
-.accordion--size-small .accordion__status svg {
-  width: 16px;
-  height: 16px;
-  display: block;
-}
-
-.accordion--size-small .accordion__status--note svg {
+/* Comments icon sizing */
+.status-icon--small.status-icon--comments svg,
+.status-icon--small.status-icon--notifications svg,
+.status-icon--small.status-icon--error svg,
+.status-icon--small.status-icon--note svg {
   width: 14px;
   height: 14px;
 }
 
-/* Default size icons */
-.accordion--size-default .accordion__status svg {
+.status-icon--default.status-icon--comments svg,
+.status-icon--default.status-icon--notifications svg,
+.status-icon--default.status-icon--error svg,
+.status-icon--default.status-icon--note svg,
+.status-icon--default.status-icon--warning svg,
+.status-icon--default.status-icon--locked svg {
   width: 28px;
   height: 28px;
 }
 
-/* Large size icons - most use 28px, note uses 28px */
-.accordion--size-large .accordion__status svg {
+.status-icon--large.status-icon--comments svg,
+.status-icon--large.status-icon--notifications svg,
+.status-icon--large.status-icon--error svg,
+.status-icon--large.status-icon--note svg,
+.status-icon--large.status-icon--warning svg,
+.status-icon--large.status-icon--locked svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Note icon specific sizing */
+.status-icon--small.status-icon--note svg {
+  width: 14px;
+  height: 14px;
+}
+
+.status-icon--default.status-icon--note svg,
+.status-icon--large.status-icon--note svg {
   width: 28px;
   height: 28px;
 }
 
-.accordion--size-large .accordion__status--warning svg,
-.accordion--size-large .accordion__status--locked svg,
-.accordion--size-large .accordion__status--comments svg,
-.accordion--size-large .accordion__status--notifications svg {
-  width: 28px;
-  height: 28px;
+/* Locked icon sizing */
+.status-icon--small.status-icon--locked svg {
+  width: 16px;
+  height: 16px;
 }
 
-.accordion--size-large .accordion__status--complete svg.accordion__status-check {
-  width: 36px;
-  height: 36px;
+/* Comments and notifications padding */
+.status-icon--default.status-icon--comments {
+  padding: 3px 4px 2px 4px;
 }
 
-/* ===== POSITIONING ADJUSTMENTS ===== */
-
-/* Small size positioning */
-.accordion--size-small .accordion__status--warning,
-.accordion--size-small .accordion__status--locked,
-.accordion--size-small .accordion__status--comments,
-.accordion--size-small .accordion__status--notifications,
-.accordion--size-small .accordion__status--error,
-.accordion--size-small .accordion__status--note {
-  padding: 1px;
+.status-icon--large.status-icon--comments {
+  padding-top: 2px;
 }
 
-.accordion--size-small .accordion__status--warning .accordion__status-circle,
-.accordion--size-small .accordion__status--locked .accordion__status-circle,
-.accordion--size-small .accordion__status--comments .accordion__status-circle,
-.accordion--size-small .accordion__status--notifications .accordion__status-circle,
-.accordion--size-small .accordion__status--error .accordion__status-circle,
-.accordion--size-small .accordion__status--note .accordion__status-circle {
-  padding: 2px 3px;
+.status-icon--large.status-icon--notifications,
+.status-icon--large.status-icon--error,
+.status-icon--large.status-icon--note {
+  padding: 2px 4px 2px 4px;
 }
 
+/* Error padding */
+.status-icon--small.status-icon--error,
+.status-icon--small.status-icon--notifications,
+.status-icon--small.status-icon--note {
+  padding: 2px 4px 2px 4px;
+}
 
+.status-icon--default.status-icon--error,
+.status-icon--default.status-icon--notifications,
+.status-icon--default.status-icon--note {
+  padding: 2px 4px 2px 4px;
+}
 
-/* ===== RESPONSIVE ADJUSTMENTS ===== */
+/* ===== DISABLED STATE - ALTERNATIVE GREY ===== */
+
+.status-icon--disabled.status-icon--note {
+  background: var(--neutral-gray-gray-300, #D2D5DA);
+}
+
+/* ===== RESPONSIVE ===== */
 
 @media (max-width: 480px) {
-  /* Scale down status icons on mobile if needed */
-  .accordion--size-large .accordion__status {
-    width: var(--sizing-height-44);
-    height: var(--sizing-height-44);
-  }
-  
-  .accordion--size-large .accordion__status-container {
-    width: var(--sizing-height-44);
-    height: var(--sizing-height-44);
+  .status-icon--large {
+    width: 50px;
+    height: 50px;
   }
 }
 
 /* ===== ACCESSIBILITY ===== */
 
 @media (prefers-reduced-motion: reduce) {
-  .accordion__status,
-  .accordion__status-circle {
+  .status-icon {
     transition: none;
   }
 }
 
-/* High contrast mode support */
 @media (prefers-contrast: high) {
-  .accordion__status-circle {
-    border-width: var(--spacing-stroke-2px);
-  }
-  
-  .accordion__status svg {
+  .status-icon svg {
     opacity: 1 !important;
   }
 }
