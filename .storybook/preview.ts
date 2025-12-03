@@ -1,11 +1,12 @@
 import React from 'react';
+import React from 'react';
 import type { Decorator, Preview as StorybookPreview } from '@storybook/react';
 import { setupStorybookResizeObserverFix } from '../src/utils/storybookResizeObserverFix';
 
 // Early, focused suppression of noisy ResizeObserver errors for Storybook preview
 const applyResizeObserverSuppression = (): void => {
   if (typeof window === 'undefined') return;
-  const w = window as any;
+  const w = window as unknown as { __RO_STORYBOOK_SUPPRESSION_APPLIED?: boolean } & Window;
 
   if (w.__RO_STORYBOOK_SUPPRESSION_APPLIED) return;
   w.__RO_STORYBOOK_SUPPRESSION_APPLIED = true;
@@ -19,7 +20,7 @@ const applyResizeObserverSuppression = (): void => {
   const originalError = console.error.bind(console);
   const originalWarn = console.warn.bind(console);
 
-  const shouldSuppress = (args: any[]): boolean => {
+  const shouldSuppress = (args: Parameters<typeof console.error>): boolean => {
     try {
       const text = args
         .map((a) => {
@@ -44,12 +45,12 @@ const applyResizeObserverSuppression = (): void => {
     }
   };
 
-  console.error = (...args: any[]) => {
+  console.error = (...args: Parameters<typeof console.error>) => {
     if (shouldSuppress(args)) return;
     originalError(...args);
   };
 
-  console.warn = (...args: any[]) => {
+  console.warn = (...args: Parameters<typeof console.warn>) => {
     if (shouldSuppress(args)) return;
     originalWarn(...args);
   };

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { EchoMUIThemeProvider } from '../foundations/EchoMUITheme';
 import { 
@@ -23,7 +23,7 @@ import {
 } from '@mui/material';
 
 import {
-  Favorite as FavoriteIcon,
+  Share as ShareIcon,
   Share as ShareIcon,
   MoreVert as MoreVertIcon,
   Settings as SettingsIcon,
