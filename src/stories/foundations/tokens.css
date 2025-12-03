@@ -522,6 +522,11 @@
   --components-avatar-border-radius: 8px;
   --spacing-radius-99999px: 99999px;
 
+  /* === ACCORDION STATUS COMPONENT TOKENS === */
+  --components-accordion-status-size-small: 24px;
+  --components-accordion-status-size-default: 50px;
+  --components-accordion-status-size-large: 64px;
+
   /* === AVATAR GROUP TOKENS === */
   --avatar-group-spacing-default: 15px;
   --avatar-group-spacing-small: 6px;

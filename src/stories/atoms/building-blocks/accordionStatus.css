@@ -21,9 +21,9 @@
 
 /* Small - 24px */
 .status-icon--small {
-  width: 24px;
-  height: 24px;
-  padding: 4px;
+  width: var(--components-accordion-status-size-small, 24px);
+  height: var(--components-accordion-status-size-small, 24px);
+  padding: var(--spacing-sizing-4px, 4px);
 }
 
 .status-icon--small svg {
@@ -33,9 +33,9 @@
 
 /* Default - 50px */
 .status-icon--default {
-  width: 50px;
-  height: 50px;
-  padding: 4px;
+  width: var(--components-accordion-status-size-default, 50px);
+  height: var(--components-accordion-status-size-default, 50px);
+  padding: var(--spacing-sizing-4px, 4px);
 }
 
 .status-icon--default svg {
@@ -45,9 +45,9 @@
 
 /* Large - 64px */
 .status-icon--large {
-  width: 64px;
-  height: 64px;
-  padding: 4px;
+  width: var(--components-accordion-status-size-large, 64px);
+  height: var(--components-accordion-status-size-large, 64px);
+  padding: var(--spacing-sizing-4px, 4px);
 }
 
 .status-icon--large svg {
