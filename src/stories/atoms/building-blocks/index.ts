@@ -1,3 +1,5 @@
 export type { FileTypeIconProps, FileType, FileSize } from './FileTypeIcon';
 export { TableHeaderLabel } from './table/TableHeaderLabel';
 export type { TableHeaderLabelProps, TableHeaderLabelSize, TableHeaderLabelArrowDirection } from './table/TableHeaderLabel';
+export { AccordionStatus } from './AccordionStatus';
+export type { AccordionStatusProps } from './AccordionStatus';
