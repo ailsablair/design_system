@@ -57,7 +57,7 @@ const StyledRadio = styled(Radio, {
 })<{
   echoSize?: string;
   echoVariant?: string;
-}>(({ theme, echoSize = 'default', echoVariant = 'primary' }) => {
+}>(({ echoSize = 'default', echoVariant = 'primary' }) => {
   
   // Size variants using Echo tokens
   const sizeStyles = {
@@ -126,7 +126,7 @@ const StyledRadio = styled(Radio, {
   };
 });
 
-const StyledFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
+const StyledFormControlLabel = styled(FormControlLabel)(() => ({
   margin: 0,
   alignItems: 'flex-start',
   
@@ -143,7 +143,7 @@ const StyledFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
   },
 }));
 
-const StyledFormLabel = styled(FormLabel)(({ theme }) => ({
+const StyledFormLabel = styled(FormLabel)(() => ({
   fontFamily: 'var(--type-typeface-archivo)',
   fontSize: 'var(--type-size-base)',
   fontWeight: 'var(--type-weight-medium)',
@@ -163,7 +163,7 @@ const StyledFormLabel = styled(FormLabel)(({ theme }) => ({
   },
 }));
 
-const StyledFormHelperText = styled(FormHelperText)(({ theme }) => ({
+const StyledFormHelperText = styled(FormHelperText)(() => ({
   fontFamily: 'var(--type-typeface-roboto-flex)',
   fontSize: 'var(--type-size-sm)',
   marginTop: 'var(--spacing-sizing-4px)',
@@ -174,7 +174,7 @@ const StyledFormHelperText = styled(FormHelperText)(({ theme }) => ({
   },
 }));
 
-const StyledRadioGroup = styled(RadioGroup)(({ theme }) => ({
+const StyledRadioGroup = styled(RadioGroup)(() => ({
   gap: 'var(--spacing-sizing-8px)',
 }));
 

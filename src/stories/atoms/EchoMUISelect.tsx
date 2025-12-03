@@ -31,7 +31,7 @@ const StyledFormControl = styled(FormControl, {
 })<{
   echoSize?: string;
   echoState?: string;
-}>(({ theme, echoSize = 'default', echoState = 'default' }) => {
+}>(({ echoSize = 'default', echoState = 'default' }) => {
   
   // Size variants using Echo tokens
   const sizeStyles = {
@@ -216,7 +216,7 @@ const StyledFormControl = styled(FormControl, {
   };
 });
 
-const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
+const StyledMenuItem = styled(MenuItem)(() => ({
   fontFamily: 'var(--type-typeface-roboto-flex)',
   fontSize: 'var(--type-size-base)',
   padding: 'var(--spacing-sizing-8px) var(--spacing-sizing-16px)',

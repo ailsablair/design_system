@@ -40,7 +40,7 @@ const StyledPagination = styled(Pagination, {
 })<{
   echoSize?: string;
   echoVariant?: string;
-}>(({ theme, echoSize = 'default', echoVariant = 'primary' }) => {
+}>(({ echoSize = 'default', echoVariant = 'primary' }) => {
   
   // Size variants using Echo tokens
   const sizeStyles = {
@@ -185,7 +185,10 @@ const StyledPagination = styled(Pagination, {
 });
 
 // Custom icons that match Echo design
-const CustomPaginationItem = (props: any) => {
+
+type CustomPaginationItemProps = React.ComponentProps<typeof PaginationItem>;
+
+const CustomPaginationItem = (props: CustomPaginationItemProps) => {
   const { type, ...other } = props;
   
   const iconMap = {
