@@ -68,12 +68,6 @@
 
 ### **FULLY MIGRATED COMPONENTS** (7 Major Components)
 
-#### ✅ **Stepper Component** - COMPLETE
-- **Before**: Hardcoded gaps (19px, 39px) and dimensions (100px, 140px)
-- **After**: Tokenized with `--spacing-sizing-20px`, `--spacing-sizing-40px`, `--sizing-width-*`
-- **Typography**: Large font size now uses `--type-size-5xl` instead of hardcoded 60px
-- **Positioning**: Calculated positioning using design tokens instead of fixed pixel values
-
 #### ✅ **Toggle Component** - COMPLETE  
 - **Before**: Fixed track sizes (32px, 44px, 56px) and thumb dimensions
 - **After**: Complete tokenization with `--sizing-toggle-*-width/height` and `--sizing-toggle-thumb-*`

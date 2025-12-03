@@ -1,5 +1,4 @@
 import React, { useState, useId } from 'react';
-import { StepIndicator } from './StepIndicator';
 import './accordionFigma.css';
 
 export interface AccordionFigmaProps {
@@ -27,8 +26,6 @@ export interface AccordionFigmaProps {
   onToggle?: (isOpen: boolean) => void;
   /** Additional CSS classes */
   className?: string;
-  /** Disable step indicator for simple type */
-  hideStepIndicator?: boolean;
   /** Disable bell icon */
   hideBellIcon?: boolean;
 }
@@ -59,7 +56,6 @@ export const AccordionFigma: React.FC<AccordionFigmaProps> = ({
   isOpen: controlledOpen,
   onToggle,
   className = '',
-  hideStepIndicator = false,
   hideBellIcon = false,
 }) => {
   const [internalOpen, setInternalOpen] = useState(defaultOpen);
@@ -220,9 +216,6 @@ export const AccordionFigma: React.FC<AccordionFigmaProps> = ({
       case 'simple':
         return (
           <div className="accordion-figma__header">
-            {!hideStepIndicator && (
-              <StepIndicator type="complete" size={size} />
-            )}
             {!hideBellIcon && <BellRingIcon size={size} />}
             <div className="accordion-figma__content">
               <div className="accordion-figma__heading-icon" />
