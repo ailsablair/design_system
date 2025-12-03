@@ -9,6 +9,7 @@
   flex-shrink: 0;
   position: relative;
   aspect-ratio: 1 / 1;
+  box-sizing: border-box;
 }
 
 .status-icon svg {
@@ -92,18 +93,6 @@
 
 /* ===== SIZE-SPECIFIC ADJUSTMENTS ===== */
 
-/* Warning icon padding adjustments */
-.status-icon--small.status-icon--warning {
-  padding: 3px 4px 5px 4px;
-}
-
-.status-icon--default.status-icon--warning {
-  padding: 3px 4px 5px 4px;
-}
-
-.status-icon--large.status-icon--warning {
-  padding-bottom: 2px;
-}
 
 /* Comments icon sizing */
 .status-icon--small.status-icon--comments svg,
@@ -153,32 +142,6 @@
 }
 
 /* Comments and notifications padding */
-.status-icon--default.status-icon--comments {
-  padding: 3px 4px 2px 4px;
-}
-
-.status-icon--large.status-icon--comments {
-  padding-top: 2px;
-}
-
-.status-icon--large.status-icon--notifications,
-.status-icon--large.status-icon--error,
-.status-icon--large.status-icon--note {
-  padding: 2px 4px 2px 4px;
-}
-
-/* Error padding */
-.status-icon--small.status-icon--error,
-.status-icon--small.status-icon--notifications,
-.status-icon--small.status-icon--note {
-  padding: 2px 4px 2px 4px;
-}
-
-.status-icon--default.status-icon--error,
-.status-icon--default.status-icon--notifications,
-.status-icon--default.status-icon--note {
-  padding: 2px 4px 2px 4px;
-}
 
 /* ===== DISABLED STATE - ALTERNATIVE GREY ===== */
 
