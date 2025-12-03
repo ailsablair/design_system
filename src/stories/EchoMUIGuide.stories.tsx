@@ -405,7 +405,7 @@ function App() {
                       id: 'category',
                       label: 'Category',
                       sortable: true,
-                      render: (value) => (
+                      render: (value: string) => (
                         <Chip 
                           label={value} 
                           size="small"
@@ -422,7 +422,7 @@ function App() {
                       id: 'mui', 
                       label: 'Enhanced Version', 
                       sortable: true,
-                      render: (value) => (
+                      render: (value: string) => (
                         <Typography variant="body2" sx={{ fontFamily: 'monospace', color: 'primary.main' }}>
                           {value}
                         </Typography>
@@ -431,7 +431,7 @@ function App() {
                     {
                       id: 'benefits',
                       label: 'Key Benefits',
-                      render: (benefits) => (
+                      render: (benefits: string[]) => (
                         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                           {benefits.map((benefit: string, index: number) => (
                             <Chip key={index} label={benefit} size="small" variant="outlined" />
