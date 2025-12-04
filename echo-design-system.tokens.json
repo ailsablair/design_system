@@ -41,7 +41,7 @@
       },
       "sky-blue-25": {
         "$type": "color",
-        "$value": "#f2fbff"
+        "$value": "#fafdff"
       },
       "sky-blue-50": {
         "$type": "color",
@@ -236,7 +236,7 @@
     },
     "green": {
       "$type": "color",
-      "$value": "#70cc67"
+      "$value": "#96f78d"
     },
     "dark-green": {
       "$type": "color",
@@ -803,7 +803,7 @@
       },
       "label": {
         "$type": "dimension",
-        "$value": "22px"
+        "$value": "20px"
       },
       "label-lg": {
         "$type": "dimension",
@@ -811,7 +811,7 @@
       },
       "label-sm": {
         "$type": "dimension",
-        "$value": "17px"
+        "$value": "16px"
       },
       "footnote": {
         "$type": "dimension",
