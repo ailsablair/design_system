@@ -1,0 +1,143 @@
+.accordion-group-header,
+.accordion-group-header * {
+  box-sizing: border-box;
+}
+
+.accordion-group-header {
+  background: var(--base-white, #ffffff);
+  border-style: solid;
+  border-color: var(--neutral-gray-gray-300, #d2d5da);
+  border-width: 1px;
+  padding: var(--spacing-sizing-16px, 16px) var(--spacing-sizing-32px, 32px);
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-sizing-12px, 12px);
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 200px;
+  max-width: 1280px;
+  position: relative;
+}
+
+.accordion-group-header__leading-icons {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-sizing-12px, 12px);
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.accordion-group-header__status-icon {
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+.accordion-group-header__title {
+  color: var(--primary-blue-dark-blue, #191e3c);
+  text-align: left;
+  font-family: var(--label-label-lg-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--label-label-lg-med-font-size, 18px);
+  line-height: var(--label-label-lg-med-line-height, 24px);
+  letter-spacing: var(--label-label-lg-med-letter-spacing, 0.15px);
+  font-weight: var(--label-label-lg-med-font-weight, 500);
+  position: relative;
+}
+
+.accordion-group-header__chevron-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+/* Content type variants */
+.accordion-group-header--content-header {
+  background: var(--primary-blue-blue-50, #f9f9fe);
+}
+
+/* Size variants */
+.accordion-group-header--size-small .accordion-group-header__status-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.accordion-group-header--size-small .accordion-group-header__chevron-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.accordion-group-header--size-default .accordion-group-header__status-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.accordion-group-header--size-large .accordion-group-header__status-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.accordion-group-header--size-default .accordion-group-header__chevron-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.accordion-group-header--size-large .accordion-group-header__chevron-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.accordion-group-header--size-default .accordion-group-header__title {
+  font-family: var(--h5-archivo-h5-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--h5-archivo-h5-med-font-size, 19px);
+  line-height: var(--h5-archivo-h5-med-line-height, 24px);
+  letter-spacing: var(--h5-archivo-h5-med-letter-spacing, -0.15px);
+  font-weight: var(--h5-archivo-h5-med-font-weight, 500);
+}
+
+.accordion-group-header--size-large .accordion-group-header__title {
+  font-family: var(--h4-archivo-h4-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--h4-archivo-h4-med-font-size, 24px);
+  line-height: var(--h4-archivo-h4-med-line-height, 24px);
+  letter-spacing: var(--h4-archivo-h4-med-letter-spacing, -0.25px);
+  font-weight: var(--h4-archivo-h4-med-font-weight, 500);
+}
+
+/* Position variants */
+.accordion-group-header--position-top.accordion-group-header--size-small {
+  border-radius: var(--spacing-radius-12px, 12px) var(--spacing-radius-12px, 12px) 0 0;
+}
+
+.accordion-group-header--position-top.accordion-group-header--size-default {
+  border-radius: var(--spacing-radius-16px, 16px) var(--spacing-radius-16px, 16px) 0 0;
+}
+
+.accordion-group-header--position-top.accordion-group-header--size-large {
+  border-radius: var(--spacing-radius-20px, 20px) var(--spacing-radius-20px, 20px) 0 0;
+}
+
+.accordion-group-header--position-bottom {
+  border-radius: 0 0 var(--spacing-radius-12px, 12px) var(--spacing-radius-12px, 12px);
+  padding: var(--spacing-sizing-16px, 16px) var(--spacing-sizing-32px, 32px)
+    var(--spacing-sizing-20px, 20px) var(--spacing-sizing-32px, 32px);
+}
+
+/* Selected state adjustments */
+.accordion-group-header--state-selected.accordion-group-header--position-top.accordion-group-header--size-default {
+  padding: var(--spacing-sizing-32px, 32px) var(--spacing-sizing-32px, 32px)
+    var(--spacing-sizing-24px, 24px) var(--spacing-sizing-32px, 32px);
+}
+
+.accordion-group-header--state-selected.accordion-group-header--position-top {
+  padding: var(--spacing-sizing-20px, 20px) var(--spacing-sizing-32px, 32px)
+    var(--spacing-sizing-16px, 16px) var(--spacing-sizing-32px, 32px);
+}
+
+/* Icon style modifiers */
+.accordion-group-header--icon-style-chevron.accordion-group-header--size-large {
+  align-items: flex-start;
+}
+
+.accordion-group-header--icon-style-chevron.accordion-group-header--size-default.accordion-group-header--open .accordion-group-header__title {
+  color: var(--base-black, #1c1c1c);
+}
