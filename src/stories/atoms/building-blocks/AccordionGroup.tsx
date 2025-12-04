@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Accordion, AccordionProps } from './Accordion';
+import { Accordion } from './Accordion';
+import type { AccordionProps } from './Accordion';
 import './accordionGroup.css';
 
 export interface AccordionGroupProps {
