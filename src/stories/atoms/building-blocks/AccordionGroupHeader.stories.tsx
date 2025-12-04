@@ -1,7 +1,6 @@
 import type { Meta as StorybookMeta, StoryObj } from '@storybook/react';
 import AccordionGroupHeader from './AccordionGroupHeader';
 import AccordionGroup from './AccordionGroup';
-import type { AccordionProps } from './Accordion';
 import AccordionStatus from './AccordionStatus';
 import './accordion.css';
 import './accordionGroup.css';
@@ -92,7 +91,7 @@ export const WithStatusIcon: Story = {
 
 export const GroupWithHeader: Story = {
   render: () => {
-    const accordions: AccordionProps[] = [
+    const accordions = [
       {
         type: 'simple',
         size: 'default',
