@@ -33,7 +33,7 @@ const StyledSwitch = styled(Switch, {
 })<{
   echoSize?: string;
   echoVariant?: string;
-}>(({ theme, echoSize = 'default', echoVariant = 'primary' }) => {
+}>(({ echoSize = 'default', echoVariant = 'primary' }) => {
   
   // Size variants using Echo tokens
   const sizeStyles = {
@@ -157,7 +157,7 @@ const StyledSwitch = styled(Switch, {
   };
 });
 
-const StyledFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
+const StyledFormControlLabel = styled(FormControlLabel)(() => ({
   margin: 0,
   alignItems: 'flex-start',
   
@@ -174,7 +174,7 @@ const StyledFormControlLabel = styled(FormControlLabel)(({ theme }) => ({
   },
 }));
 
-const StyledFormHelperText = styled(FormHelperText)(({ theme }) => ({
+const StyledFormHelperText = styled(FormHelperText)(() => ({
   fontFamily: 'var(--type-typeface-roboto-flex)',
   fontSize: 'var(--type-size-sm)',
   margin: 'var(--spacing-sizing-4px) 0 0 0',
@@ -184,7 +184,7 @@ const StyledFormHelperText = styled(FormHelperText)(({ theme }) => ({
   },
 }));
 
-const DescriptionText = styled('div')(({ theme }) => ({
+const DescriptionText = styled('div')(() => ({
   fontFamily: 'var(--type-typeface-roboto-flex)',
   fontSize: 'var(--type-size-sm)',
   color: 'var(--neutral-gray-gray-600)',

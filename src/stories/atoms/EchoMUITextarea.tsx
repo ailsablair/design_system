@@ -40,7 +40,7 @@ const StyledEchoTextarea = styled(TextField, {
   echoSize?: string;
   echoMinHeight?: number;
   echoMaxHeight?: number;
-}>(({ theme, echoState = 'default', echoSize = 'default', echoMinHeight, echoMaxHeight }) => {
+}>(({ echoState = 'default', echoSize = 'default', echoMinHeight, echoMaxHeight }) => {
   
   // Size variants using Echo tokens
   const sizeStyles = {
@@ -264,7 +264,7 @@ export const EchoMUITextarea: React.FC<EchoMUITextareaProps> = ({
   const finalHelperText = message || helperText;
 
   // Build InputProps for clear button
-  const inputProps: any = {};
+  const inputProps: TextFieldProps['InputProps'] = {};
   
   if (showClear && value && onClear) {
     inputProps.endAdornment = (
