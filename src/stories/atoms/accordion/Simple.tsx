@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './simple.css';
-import AccordionStatus from '../building-blocks/AccordionStatus';
+import BuildingBlocksAccordion from '../building-blocks/BuildingBlocksAccordion';
 
 export interface SimpleProps {
   /** Accordion type - simple (with status icon) or no-stroke (title only) */
@@ -14,7 +14,11 @@ export interface SimpleProps {
   /** Status type for simple variant */
   statusType?: 'warning' | 'complete' | 'locked' | 'comments' | 'notifications' | 'error' | 'note';
   /** Show notification icon */
-  showNotificationIcon?: boolean;
+  showIcon?: boolean;
+  /** Show description */
+  showDescription?: boolean;
+  /** Show status icon */
+  showStatusIcon?: boolean;
   /** Title text */
   title?: string;
   /** Description text */
@@ -44,7 +48,9 @@ export const Simple: React.FC<SimpleProps> = ({
   size = 'default',
   openIcon = 'chevron',
   statusType = 'complete',
-  showNotificationIcon = true,
+  showIcon = true,
+  showDescription = true,
+  showStatusIcon = true,
   title = 'This is a section title taking up a lot of space...',
   description = 'This is supporting text to help describe the content within the accordion',
   content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rutrum ac tortor et lacinia. Suspendisse hendrerit mi vitae mauris dictum interdum vitae eget dui. Vivamus urna eros, facilisis et laoreet accumsan, feugiat sed sapien. Vestibulum euismod massa enim, nec malesuada tellus scelerisque in. Donec sodales posuere convallis. Donec vel urna finibus augue accumsan posuere in et nunc.',
@@ -81,15 +87,22 @@ export const Simple: React.FC<SimpleProps> = ({
     
     if (openIcon === 'plus') {
       if (open) {
+        // Minus icon for open state
         return (
           <svg width={iconSize} height={iconSize} viewBox={`0 0 ${iconSize} ${iconSize}`} fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d={`M${iconSize * 0.791} ${iconSize * 0.542}H${iconSize * 0.208}V${iconSize * 0.458}H${iconSize * 0.791}V${iconSize * 0.542}Z`} fill="var(--primary-blue-blue, #2F42BD)"/>
+            <path d={size === 'small'
+              ? "M15.8332 10.8333H4.1665V9.16663H15.8332V10.8333Z"
+              : size === 'large'
+              ? "M25.3332 17.3333H6.6665V14.6666H25.3332V17.3333Z"
+              : "M22.1663 15.1667H5.83301V12.8334H22.1663V15.1667Z"
+            } fill="var(--primary-blue-blue, #2F42BD)"/>
           </svg>
         );
       }
+      // Plus icon for closed state
       return (
         <svg width={iconSize} height={iconSize} viewBox={`0 0 ${iconSize} ${iconSize}`} fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d={size === 'small' 
+          <path d={size === 'small'
             ? "M15.8332 10.8333H10.8332V15.8333H9.1665V10.8333H4.1665V9.16663H9.1665V4.16663H10.8332V9.16663H15.8332V10.8333Z"
             : size === 'large'
             ? "M25.3332 17.3333H17.3332V25.3333H14.6665V17.3333H6.6665V14.6666H14.6665V6.66663H17.3332V14.6666H25.3332V17.3333Z"
@@ -99,6 +112,7 @@ export const Simple: React.FC<SimpleProps> = ({
       );
     }
     
+    // Chevron icon
     if (open) {
       return (
         <svg width={iconSize} height={iconSize} viewBox={`0 0 ${iconSize} ${iconSize}`} fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -124,7 +138,7 @@ export const Simple: React.FC<SimpleProps> = ({
     );
   };
 
-  const renderNotificationIcon = () => {
+  const renderBellIcon = () => {
     const iconSize = size === 'small' ? 18 : size === 'large' ? 26 : 22;
     
     return (
@@ -143,42 +157,46 @@ export const Simple: React.FC<SimpleProps> = ({
 
   return (
     <div className={accordionClasses}>
-      {type === 'simple' && (
-        <AccordionStatus 
+      {type === 'simple' && showStatusIcon && (
+        <BuildingBlocksAccordion 
           type={statusType} 
-          size={size} 
+          size={size}
+          disabled={false}
         />
       )}
       
-      {showNotificationIcon && (
-        <div className="accordion-simple__notification-icon">
-          {renderNotificationIcon()}
+      {showIcon && (
+        <div className="accordion-simple__icon">
+          {renderBellIcon()}
         </div>
       )}
       
       <div className="accordion-simple__content-wrapper">
-        <div className="accordion-simple__header" onClick={handleToggle}>
+        <div className="accordion-simple__header" onClick={handleToggle} role="button" tabIndex={0} aria-expanded={open} onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            handleToggle();
+          }
+        }}>
           <div className="accordion-simple__text-content">
-            <h3 className="accordion-simple__title">{title}</h3>
-            {type === 'simple' && !open && description && (
-              <p className="accordion-simple__description">{description}</p>
-            )}
-            {type === 'simple' && open && description && (
-              <p className="accordion-simple__description">{description}</p>
-            )}
-            {type === 'no-stroke' && (
-              <p className="accordion-simple__description-hidden">{description}</p>
+            {showDescription && type === 'simple' ? (
+              <>
+                <div className="accordion-simple__title">{title}</div>
+                <div className="accordion-simple__description">{description}</div>
+              </>
+            ) : (
+              <div className="accordion-simple__title">{title}</div>
             )}
           </div>
           
-          <button className="accordion-simple__toggle-button" aria-label={open ? 'Collapse' : 'Expand'}>
+          <div className="accordion-simple__toggle-icon">
             {renderOpenIcon()}
-          </button>
+          </div>
         </div>
         
         {open && (
           <div className="accordion-simple__body">
-            <p className="accordion-simple__body-text">{content}</p>
+            <div className="accordion-simple__body-text">{content}</div>
           </div>
         )}
       </div>
