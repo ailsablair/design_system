@@ -1,0 +1,115 @@
+.accordion-status-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion-status-icon__circle {
+  position: relative;
+  border-radius: var(--spacing-radius-99999px, 99999px);
+  box-sizing: border-box;
+}
+
+.accordion-status-icon__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--spacing-radius-99999px, 99999px);
+  box-sizing: border-box;
+}
+
+.accordion-status-icon__ring--empty {
+  border-style: dashed;
+  border-color: var(--neutral-gray-gray-500, #6d7280);
+  border-width: 0.5px;
+}
+
+.accordion-status-icon__ring--current {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.accordion-status-icon__ring--complete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion-status-icon__svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Size variants */
+.accordion-status-icon--size-small .accordion-status-icon__circle {
+  width: var(--components-accordion-status-size-small, 24px);
+  height: var(--components-accordion-status-size-small, 24px);
+}
+
+.accordion-status-icon--size-default .accordion-status-icon__circle {
+  width: var(--components-accordion-status-size-default, 36px);
+  height: var(--components-accordion-status-size-default, 36px);
+}
+
+.accordion-status-icon--size-large .accordion-status-icon__circle {
+  width: var(--components-accordion-status-size-large, 48px);
+  height: var(--components-accordion-status-size-large, 48px);
+}
+
+/* Type colors */
+.accordion-status-icon--warning .accordion-status-icon__ring--current,
+.accordion-status-icon--warning .accordion-status-icon__ring--complete {
+  border-color: var(--status-orange, #f4a403);
+  background-color: var(--status-orange, #f4a403);
+}
+
+.accordion-status-icon--complete .accordion-status-icon__ring--current,
+.accordion-status-icon--complete .accordion-status-icon__ring--complete {
+  border-color: var(--status-dark-green, #227f1a);
+  background-color: var(--status-dark-green, #227f1a);
+}
+
+.accordion-status-icon--locked .accordion-status-icon__ring--current,
+.accordion-status-icon--locked .accordion-status-icon__ring--complete {
+  border-color: var(--secondary-blue-gray, #61607c);
+  background-color: var(--secondary-blue-gray, #61607c);
+}
+
+.accordion-status-icon--comments .accordion-status-icon__ring--current,
+.accordion-status-icon--comments .accordion-status-icon__ring--complete {
+  border-color: var(--primary-sky-blue-sky-blue, #0ba7ea);
+  background-color: var(--primary-sky-blue-sky-blue, #0ba7ea);
+}
+
+.accordion-status-icon--notifications .accordion-status-icon__ring--current,
+.accordion-status-icon--notifications .accordion-status-icon__ring--complete {
+  border-color: var(--primary-blue-blue, #2f42bd);
+  background-color: var(--primary-blue-blue, #2f42bd);
+}
+
+.accordion-status-icon--error .accordion-status-icon__ring--current,
+.accordion-status-icon--error .accordion-status-icon__ring--complete {
+  border-color: var(--status-red, #ce2031);
+  background-color: var(--status-red, #ce2031);
+}
+
+.accordion-status-icon--note .accordion-status-icon__ring--current,
+.accordion-status-icon--note .accordion-status-icon__ring--complete {
+  border-color: var(--status-purple, #5d2c82);
+  background-color: var(--status-purple, #5d2c82);
+}
+
+/* Disabled state */
+.accordion-status-icon--disabled .accordion-status-icon__ring--complete {
+  background-color: var(--neutral-gray-gray-200, #e5e7eb);
+  border-color: var(--neutral-gray-gray-200, #e5e7eb);
+}
+
+.accordion-status-icon--disabled.accordion-status-icon--note .accordion-status-icon__ring--complete {
+  background-color: var(--neutral-gray-gray-300, #d2d5da);
+  border-color: var(--neutral-gray-gray-300, #d2d5da);
+}
+
+.accordion-status-icon--disabled .accordion-status-icon__svg path,
+.accordion-status-icon--disabled .accordion-status-icon__svg g path {
+  fill: var(--neutral-gray-gray-400, #9ca3af);
+}
