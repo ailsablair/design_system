@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './simple.css';
-import { AccordionStatus } from '../building-blocks';
 
 export interface SimpleProps {
   /** Accordion type - simple (with status icon) or no-stroke (title only) */
@@ -157,14 +156,6 @@ export const Simple: React.FC<SimpleProps> = ({
 
   return (
     <div className={accordionClasses}>
-      {type === 'simple' && showStatusIcon && (
-        <AccordionStatus
-          type={statusType}
-          size={size}
-          disabled={false}
-        />
-      )}
-      
       {showIcon && (
         <div className="accordion-simple__icon">
           {renderBellIcon()}
