@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './simple.css';
-import BuildingBlocksAccordion from '../building-blocks/BuildingBlocksAccordion';
+import { AccordionStatus } from '../building-blocks';
 
 export interface SimpleProps {
   /** Accordion type - simple (with status icon) or no-stroke (title only) */
@@ -158,8 +158,8 @@ export const Simple: React.FC<SimpleProps> = ({
   return (
     <div className={accordionClasses}>
       {type === 'simple' && showStatusIcon && (
-        <BuildingBlocksAccordion 
-          type={statusType} 
+        <AccordionStatus
+          type={statusType}
           size={size}
           disabled={false}
         />
