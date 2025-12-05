@@ -32,6 +32,10 @@ const meta: StorybookMeta<typeof AccordionStatus> = {
       control: 'boolean',
       description: 'Disabled state',
     },
+    current: {
+      control: 'boolean',
+      description: 'Show current ring over dashed empty ring',
+    },
   },
 };
 
@@ -42,6 +46,7 @@ export const Default = {
     type: 'warning',
     size: 'default',
     disabled: false,
+    current: false,
   },
 };
 

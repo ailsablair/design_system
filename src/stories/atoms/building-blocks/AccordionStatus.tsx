@@ -8,6 +8,8 @@ export interface AccordionStatusProps {
   size?: 'small' | 'default' | 'large';
   /** Disabled state */
   disabled?: boolean;
+  /** Show current ring over the dashed empty ring */
+  current?: boolean;
   /** Additional CSS classes */
   className?: string;
 }
@@ -27,6 +29,7 @@ export const AccordionStatus: React.FC<AccordionStatusProps> = ({
   type = 'warning',
   size = 'default',
   disabled = false,
+  current = false,
   className = '',
 }) => {
   const statusClasses = [
@@ -99,7 +102,9 @@ export const AccordionStatus: React.FC<AccordionStatusProps> = ({
     <div className={statusClasses}>
       <div className="status-icon__circle">
         <div className="status-icon__layer status-icon__layer--empty" />
-        <div className="status-icon__layer status-icon__layer--current" />
+        {current && (
+          <div className="status-icon__layer status-icon__layer--current" />
+        )}
         <div className="status-icon__layer status-icon__layer--complete" />
         <div className="status-icon__icon">
           {renderIcon()}
