@@ -1,8 +1,8 @@
-/* ===== ACCORDION STATUS ICONS - FIGMA SOLID CIRCLE DESIGN ===== */
+/* ===== ACCORDION STATUS ICONS - LAYERED CIRCLE DESIGN ===== */
 
-/* Base status icon structure */
+/* Base status icon container */
 .status-icon {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--spacing-radius-99999px, 99999px);
@@ -17,13 +17,61 @@
   flex-shrink: 0;
 }
 
-/* ===== SIZE VARIANTS ===== */
+/* Layered circle structure (matches Figma building-blocks-accordion look) */
+.status-icon__circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-/* Small - 24px */
+.status-icon__layer {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Outer dashed ring */
+.status-icon__layer--empty {
+  border: 1px dashed var(--neutral-gray-gray-500, #6D7280);
+  background-color: transparent;
+}
+
+/* Current state ring */
+.status-icon__layer--current {
+  border: 1px solid currentColor;
+  background-color: transparent;
+  transform: scale(0.8);
+}
+
+/* Solid complete circle */
+.status-icon__layer--complete {
+  background-color: currentColor;
+  transform: scale(0.9);
+}
+
+/* Icon wrapper to sit above layers */
+.status-icon__icon {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== SIZE VARIANTS (USING TOKENS) ===== */
+
+/* Small */
 .status-icon--small {
   width: var(--components-accordion-status-size-small, 24px);
   height: var(--components-accordion-status-size-small, 24px);
-  padding: var(--spacing-sizing-4px, 4px);
 }
 
 .status-icon--small svg {
@@ -31,11 +79,10 @@
   height: 16px;
 }
 
-/* Default - 50px */
+/* Default */
 .status-icon--default {
   width: var(--components-accordion-status-size-default, 50px);
   height: var(--components-accordion-status-size-default, 50px);
-  padding: var(--spacing-sizing-4px, 4px);
 }
 
 .status-icon--default svg {
@@ -43,11 +90,10 @@
   height: 36px;
 }
 
-/* Large - 64px */
+/* Large */
 .status-icon--large {
   width: var(--components-accordion-status-size-large, 64px);
   height: var(--components-accordion-status-size-large, 64px);
-  padding: var(--spacing-sizing-4px, 4px);
 }
 
 .status-icon--large svg {
@@ -55,46 +101,85 @@
   height: 36px;
 }
 
+/* Fine-tune layer scales per size for closer Figma match */
+.status-icon--small .status-icon__layer--current {
+  transform: scale(0.78);
+}
+
+.status-icon--small .status-icon__layer--complete {
+  transform: scale(0.85);
+}
+
+.status-icon--default .status-icon__layer--current {
+  transform: scale(0.8);
+}
+
+.status-icon--default .status-icon__layer--complete {
+  transform: scale(0.9);
+}
+
+.status-icon--large .status-icon__layer--current {
+  transform: scale(0.82);
+}
+
+.status-icon--large .status-icon__layer--complete {
+  transform: scale(0.92);
+}
+
 /* ===== TYPE COLORS (ENABLED STATES) ===== */
 
 .status-icon--complete:not(.status-icon--disabled) {
-  background: var(--status-dark-green, #227F1A);
+  color: var(--status-dark-green, #227F1A);
 }
 
 .status-icon--warning:not(.status-icon--disabled) {
-  background: var(--status-orange, #F4A403);
+  color: var(--status-orange, #F4A403);
 }
 
 .status-icon--locked:not(.status-icon--disabled) {
-  background: var(--secondary-blue-gray, #61607C);
+  color: var(--secondary-blue-gray, #61607C);
 }
 
 .status-icon--comments:not(.status-icon--disabled) {
-  background: var(--primary-sky-blue-sky-blue, #0BA7EA);
+  color: var(--primary-sky-blue-sky-blue, #0BA7EA);
 }
 
 .status-icon--notifications:not(.status-icon--disabled) {
-  background: var(--primary-blue-blue, #2F42BD);
+  color: var(--primary-blue-blue, #2F42BD);
 }
 
 .status-icon--error:not(.status-icon--disabled) {
-  background: var(--status-red, #CE2031);
+  color: var(--status-red, #CE2031);
 }
 
 .status-icon--note:not(.status-icon--disabled) {
-  background: var(--status-purple, #5D2C82);
+  color: var(--status-purple, #5D2C82);
 }
 
 /* ===== DISABLED STATE ===== */
 
 .status-icon--disabled {
-  background: var(--neutral-gray-gray-200, #E5E7EB);
+  color: var(--neutral-gray-gray-200, #E5E7EB);
 }
 
-/* ===== SIZE-SPECIFIC ADJUSTMENTS ===== */
+.status-icon--disabled .status-icon__layer--empty {
+  border-color: var(--neutral-gray-gray-300, #D2D5DA);
+}
 
+.status-icon--disabled .status-icon__layer--current {
+  border-color: var(--neutral-gray-gray-200, #E5E7EB);
+}
 
-/* Comments icon sizing */
+.status-icon--disabled .status-icon__layer--complete {
+  background-color: var(--neutral-gray-gray-200, #E5E7EB);
+}
+
+.status-icon--disabled.status-icon--note .status-icon__layer--complete {
+  background-color: var(--neutral-gray-gray-300, #D2D5DA);
+}
+
+/* ===== SIZE-SPECIFIC ICON ADJUSTMENTS ===== */
+
 .status-icon--small.status-icon--comments svg,
 .status-icon--small.status-icon--notifications svg,
 .status-icon--small.status-icon--error svg,
@@ -123,7 +208,6 @@
   height: 32px;
 }
 
-/* Note icon specific sizing */
 .status-icon--small.status-icon--note svg {
   width: 14px;
   height: 14px;
@@ -135,18 +219,9 @@
   height: 28px;
 }
 
-/* Locked icon sizing */
 .status-icon--small.status-icon--locked svg {
   width: 16px;
   height: 16px;
-}
-
-/* Comments and notifications padding */
-
-/* ===== DISABLED STATE - ALTERNATIVE GREY ===== */
-
-.status-icon--disabled.status-icon--note {
-  background: var(--neutral-gray-gray-300, #D2D5DA);
 }
 
 /* ===== RESPONSIVE ===== */

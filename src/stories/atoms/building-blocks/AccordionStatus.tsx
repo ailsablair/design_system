@@ -13,18 +13,15 @@ export interface AccordionStatusProps {
 }
 
 /**
- * Accordion Status Component - Figma Design (Solid Circles)
- * 
- * Status indicators for accordion components with solid colored backgrounds:
- * - warning: Triangle alert icon (orange/yellow)
- * - complete: Checkmark icon (green)
- * - locked: Lock icon (blue-grey)
- * - comments: Comment bubble icon (sky blue)
- * - notifications: Bell icon (blue)
- * - error: X close icon (red)
- * - note: Document icon (purple)
- * 
- * Each type supports three sizes (small: 24px, default: 50px, large: 64px) and disabled states
+ * Accordion Status Component - Layered Circle Design
+ *
+ * Status indicators for accordion components using a layered circle treatment:
+ * - An outer dashed "empty" ring
+ * - A "current" ring highlighting the active state
+ * - A solid "complete" circle behind the icon
+ *
+ * Supports all status types (warning, complete, locked, comments, notifications, error, note),
+ * three sizes (small, default, large) and disabled states while matching the latest Figma design.
  */
 export const AccordionStatus: React.FC<AccordionStatusProps> = ({
   type = 'warning',
@@ -100,7 +97,14 @@ export const AccordionStatus: React.FC<AccordionStatusProps> = ({
 
   return (
     <div className={statusClasses}>
-      {renderIcon()}
+      <div className="status-icon__circle">
+        <div className="status-icon__layer status-icon__layer--empty" />
+        <div className="status-icon__layer status-icon__layer--current" />
+        <div className="status-icon__layer status-icon__layer--complete" />
+        <div className="status-icon__icon">
+          {renderIcon()}
+        </div>
+      </div>
     </div>
   );
 };
