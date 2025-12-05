@@ -82,7 +82,6 @@ const StyledChip = styled(Chip, {
 
   // Variant colors using Echo tokens
   const getVariantStyles = () => {
-    const isOutline = echoVariant.startsWith('outline-');
     
     switch (echoVariant) {
       case 'light-gray':

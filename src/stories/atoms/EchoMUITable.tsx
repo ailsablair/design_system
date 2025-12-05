@@ -246,7 +246,7 @@ export function EchoMUITable<RowType = unknown>({
   return (
     <Box>
       <StyledTableContainer component={Paper}>
-        <StyledTable size={size} sx={{ minWidth: 650 }}>
+        <StyledTable size={dense ? 'small' : size} sx={{ minWidth: 650 }}>
           <StyledTableHead>
             <TableRow>
               {selectable && (
