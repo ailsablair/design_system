@@ -1,5 +1,5 @@
 import React from 'react';
-import './BuildingBlocksAccordion.module.css';
+import styles from './BuildingBlocksAccordion.module.css';
 
 export interface BuildingBlocksAccordionProps {
   /** Status type variant */
@@ -30,11 +30,11 @@ export const BuildingBlocksAccordion: React.FC<BuildingBlocksAccordionProps> = (
   className = '',
 }) => {
   const componentClasses = [
-    'buildingBlocksAccordion',
-    `type-${type}`,
-    `size-${size}`,
-    `disabled-${disabled ? 'true' : 'false'}`,
-    className
+    styles.buildingBlocksAccordion,
+    styles[`type-${type}`],
+    styles[`size-${size}`],
+    styles[`disabled-${disabled ? 'true' : 'false'}`],
+    className,
   ].filter(Boolean).join(' ');
 
   const renderIcon = () => {

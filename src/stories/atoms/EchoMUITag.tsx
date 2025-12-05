@@ -35,7 +35,7 @@ const StyledChip = styled(Chip, {
   echoSize?: string;
   echoVariant?: string;
   echoLight?: boolean;
-}>(({ theme, echoSize = 'default', echoVariant = 'light-gray', echoLight = false }) => {
+}>(({ echoSize = 'default', echoVariant = 'light-gray', echoLight = false }) => {
   
   // Size variants using Echo tokens
   const sizeStyles = {

@@ -1,6 +1,6 @@
 import type { Meta as StorybookMeta, StoryObj } from '@storybook/react';
 import BuildingBlocksAccordion from './BuildingBlocksAccordion';
-import './BuildingBlocksAccordion.module.css';
+import styles from './BuildingBlocksAccordion.module.css';
 
 const meta: StorybookMeta<typeof BuildingBlocksAccordion> = {
   title: 'Atoms/🧱 Building Blocks/Building Blocks Accordion',
@@ -47,39 +47,34 @@ export const Default: Story = {
 
 export const AllTypesSmallSize: Story = {
   render: () => (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(7, 1fr)',
-      gap: '16px',
-      alignItems: 'center',
-    }}>
-      <div style={{ textAlign: 'center' }}>
+    <div className={styles.statusGrid}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="warning" size="small" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Warning</div>
+        <div className={styles.statusLabelSmall}>Warning</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="complete" size="small" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Complete</div>
+        <div className={styles.statusLabelSmall}>Complete</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="locked" size="small" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Locked</div>
+        <div className={styles.statusLabelSmall}>Locked</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="comments" size="small" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Comments</div>
+        <div className={styles.statusLabelSmall}>Comments</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="notifications" size="small" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Notifications</div>
+        <div className={styles.statusLabelSmall}>Notifications</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="error" size="small" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Error</div>
+        <div className={styles.statusLabelSmall}>Error</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="note" size="small" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Note</div>
+        <div className={styles.statusLabelSmall}>Note</div>
       </div>
     </div>
   ),
@@ -94,39 +89,34 @@ export const AllTypesSmallSize: Story = {
 
 export const AllTypesDefaultSize: Story = {
   render: () => (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(7, 1fr)',
-      gap: '16px',
-      alignItems: 'center',
-    }}>
-      <div style={{ textAlign: 'center' }}>
+    <div className={styles.statusGrid}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="warning" size="default" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Warning</div>
+        <div className={styles.statusLabelSmall}>Warning</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="complete" size="default" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Complete</div>
+        <div className={styles.statusLabelSmall}>Complete</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="locked" size="default" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Locked</div>
+        <div className={styles.statusLabelSmall}>Locked</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="comments" size="default" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Comments</div>
+        <div className={styles.statusLabelSmall}>Comments</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="notifications" size="default" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Notifications</div>
+        <div className={styles.statusLabelSmall}>Notifications</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="error" size="default" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Error</div>
+        <div className={styles.statusLabelSmall}>Error</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="note" size="default" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Note</div>
+        <div className={styles.statusLabelSmall}>Note</div>
       </div>
     </div>
   ),
@@ -141,39 +131,34 @@ export const AllTypesDefaultSize: Story = {
 
 export const AllTypesLargeSize: Story = {
   render: () => (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(7, 1fr)',
-      gap: '16px',
-      alignItems: 'center',
-    }}>
-      <div style={{ textAlign: 'center' }}>
+    <div className={styles.statusGrid}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="warning" size="large" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Warning</div>
+        <div className={styles.statusLabelSmall}>Warning</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="complete" size="large" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Complete</div>
+        <div className={styles.statusLabelSmall}>Complete</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="locked" size="large" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Locked</div>
+        <div className={styles.statusLabelSmall}>Locked</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="comments" size="large" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Comments</div>
+        <div className={styles.statusLabelSmall}>Comments</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="notifications" size="large" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Notifications</div>
+        <div className={styles.statusLabelSmall}>Notifications</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="error" size="large" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Error</div>
+        <div className={styles.statusLabelSmall}>Error</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="note" size="large" />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Note</div>
+        <div className={styles.statusLabelSmall}>Note</div>
       </div>
     </div>
   ),
@@ -188,24 +173,18 @@ export const AllTypesLargeSize: Story = {
 
 export const SizeComparison: Story = {
   render: () => (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(3, 1fr)',
-      gap: '32px',
-      alignItems: 'center',
-      textAlign: 'center',
-    }}>
+    <div className={styles.sizeComparisonGrid}>
       <div>
         <BuildingBlocksAccordion type="warning" size="small" />
-        <div style={{ fontSize: '14px', marginTop: '8px', fontWeight: '500' }}>Small (26px)</div>
+        <div className={styles.sizeComparisonLabel}>Small (26px)</div>
       </div>
       <div>
         <BuildingBlocksAccordion type="warning" size="default" />
-        <div style={{ fontSize: '14px', marginTop: '8px', fontWeight: '500' }}>Default (36px)</div>
+        <div className={styles.sizeComparisonLabel}>Default (36px)</div>
       </div>
       <div>
         <BuildingBlocksAccordion type="warning" size="large" />
-        <div style={{ fontSize: '14px', marginTop: '8px', fontWeight: '500' }}>Large (48px)</div>
+        <div className={styles.sizeComparisonLabel}>Large (48px)</div>
       </div>
     </div>
   ),
@@ -220,39 +199,34 @@ export const SizeComparison: Story = {
 
 export const DisabledStates: Story = {
   render: () => (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(7, 1fr)',
-      gap: '16px',
-      alignItems: 'center',
-    }}>
-      <div style={{ textAlign: 'center' }}>
+    <div className={styles.statusGrid}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="warning" size="small" disabled />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Warning</div>
+        <div className={styles.statusLabelSmall}>Warning</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="complete" size="small" disabled />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Complete</div>
+        <div className={styles.statusLabelSmall}>Complete</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="locked" size="small" disabled />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Locked</div>
+        <div className={styles.statusLabelSmall}>Locked</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="comments" size="small" disabled />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Comments</div>
+        <div className={styles.statusLabelSmall}>Comments</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="notifications" size="small" disabled />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Notifications</div>
+        <div className={styles.statusLabelSmall}>Notifications</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="error" size="small" disabled />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Error</div>
+        <div className={styles.statusLabelSmall}>Error</div>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div className={styles.statusItem}>
         <BuildingBlocksAccordion type="note" size="small" disabled />
-        <div style={{ fontSize: '12px', marginTop: '4px' }}>Note</div>
+        <div className={styles.statusLabelSmall}>Note</div>
       </div>
     </div>
   ),
@@ -267,20 +241,14 @@ export const DisabledStates: Story = {
 
 export const EnabledVsDisabled: Story = {
   render: () => (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(2, 1fr)',
-      gap: '32px',
-      alignItems: 'center',
-      textAlign: 'center',
-    }}>
+    <div className={styles.enabledDisabledGrid}>
       <div>
         <BuildingBlocksAccordion type="warning" size="default" disabled={false} />
-        <div style={{ fontSize: '14px', marginTop: '8px', fontWeight: '500' }}>Enabled</div>
+        <div className={styles.sizeComparisonLabel}>Enabled</div>
       </div>
       <div>
-        <BuildingBlocksAccordion type="warning" size="default" disabled={true} />
-        <div style={{ fontSize: '14px', marginTop: '8px', fontWeight: '500' }}>Disabled</div>
+        <BuildingBlocksAccordion type="warning" size="default" disabled />
+        <div className={styles.sizeComparisonLabel}>Disabled</div>
       </div>
     </div>
   ),
