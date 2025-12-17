@@ -32,7 +32,7 @@ const meta: Meta<typeof Button> = {
       control: 'boolean',
       description: 'Alt variant (previously called "outline")',
     },
-    outline: {
+    alt: {
       table: { disable: true },
     },
     loading: {
@@ -539,7 +539,7 @@ export const TertiaryLarge: Story = {
   },
 };
 
-// Tertiary outline button variants
+// Tertiary alt button variants
 export const TertiaryOutlineSmall: Story = {
   args: {
     children: 'Label',
@@ -951,7 +951,7 @@ export const ButtonTypeComparison: Story = {
           <Button size="default" type="primary" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
             Primary
           </Button>
-          <Button size="default" type="primary" outline leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
+          <Button size="default" type="primary" alt leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
             Primary Outline
           </Button>
         </div>
@@ -1064,8 +1064,8 @@ export const Interactive: Story = {
             <Button
               size="default"
               type="primary"
-              outline
-              onClick={() => handleClick('Primary outline')}
+              alt
+              onClick={() => handleClick('Primary alt')}
               leadingIcon={<AlarmIcon size={18} />}
             >
               Primary Outline
@@ -1198,27 +1198,27 @@ export const SecondaryTertiaryFigmaShowcase: Story = {
 
           {/* Small row */}
           <div style={{ fontSize: '14px', fontWeight: '500' }}>Small</div>
-          <Button size="small" type="secondary" outline leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
-          <Button size="small" type="secondary" outline state="hover" className="force-hover" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
-          <Button size="small" type="secondary" outline state="clicked" className="force-clicked" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
-          <Button size="small" type="secondary" outline state="focused" className="force-focused" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
-          <Button size="small" type="secondary" outline loading>Label</Button>
+          <Button size="small" type="secondary" alt leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
+          <Button size="small" type="secondary" alt state="hover" className="force-hover" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
+          <Button size="small" type="secondary" alt state="clicked" className="force-clicked" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
+          <Button size="small" type="secondary" alt state="focused" className="force-focused" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>Label</Button>
+          <Button size="small" type="secondary" alt loading>Label</Button>
 
           {/* Default row */}
           <div style={{ fontSize: '14px', fontWeight: '500' }}>Default</div>
-          <Button size="default" type="secondary" outline leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
-          <Button size="default" type="secondary" outline state="hover" className="force-hover" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
-          <Button size="default" type="secondary" outline state="clicked" className="force-clicked" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
-          <Button size="default" type="secondary" outline state="focused" className="force-focused" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
-          <Button size="default" type="secondary" outline loading>Label</Button>
+          <Button size="default" type="secondary" alt leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
+          <Button size="default" type="secondary" alt state="hover" className="force-hover" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
+          <Button size="default" type="secondary" alt state="clicked" className="force-clicked" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
+          <Button size="default" type="secondary" alt state="focused" className="force-focused" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>Label</Button>
+          <Button size="default" type="secondary" alt loading>Label</Button>
 
           {/* Large row */}
           <div style={{ fontSize: '14px', fontWeight: '500' }}>Large</div>
-          <Button size="large" type="secondary" outline leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
-          <Button size="large" type="secondary" outline state="hover" className="force-hover" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
-          <Button size="large" type="secondary" outline state="clicked" className="force-clicked" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
-          <Button size="large" type="secondary" outline state="focused" className="force-focused" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
-          <Button size="large" type="secondary" outline loading>Label</Button>
+          <Button size="large" type="secondary" alt leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
+          <Button size="large" type="secondary" alt state="hover" className="force-hover" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
+          <Button size="large" type="secondary" alt state="clicked" className="force-clicked" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
+          <Button size="large" type="secondary" alt state="focused" className="force-focused" leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>Label</Button>
+          <Button size="large" type="secondary" alt loading>Label</Button>
         </div>
       </div>
 
@@ -1549,13 +1549,13 @@ export const DesignSystemShowcase: Story = {
       <div>
         <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Tertiary Outline Buttons - All Sizes</h3>
         <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
-          <Button size="small" type="tertiary" outline leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
+          <Button size="small" type="tertiary" alt leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
             Small
           </Button>
-          <Button size="default" type="tertiary" outline leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
+          <Button size="default" type="tertiary" alt leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
             Default
           </Button>
-          <Button size="large" type="tertiary" outline leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>
+          <Button size="large" type="tertiary" alt leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>
             Large
           </Button>
         </div>
@@ -2006,7 +2006,7 @@ export const SuccessDisabledLarge: Story = {
   },
 };
 
-// Info outline button examples
+// Info alt button examples
 export const InfoOutlineSmall: Story = {
   args: {
     children: 'Info button',
@@ -2211,7 +2211,7 @@ export const InfoOutlineDisabledLarge: Story = {
   },
 };
 
-// Success outline button examples
+// Success alt button examples
 export const SuccessOutlineSmall: Story = {
   args: {
     children: 'Success button',
@@ -2416,7 +2416,7 @@ export const SuccessOutlineDisabledLarge: Story = {
   },
 };
 
-// Tertiary outline button examples
+// Tertiary alt button examples
 export const TertiaryOutlineDefaultSmall: Story = {
   args: {
     children: 'Label',

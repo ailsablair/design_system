@@ -32,7 +32,7 @@ const meta: Meta<typeof Button> = {
       control: 'boolean',
       description: 'Alt variant (previously called "outline")',
     },
-    outline: {
+    alt: {
       table: { disable: true },
     },
   },
@@ -41,7 +41,7 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-// Primary outline buttons (updated)
+// Primary alt buttons (updated)
 export const PrimaryOutlineSmall: Story = {
   args: {
     children: 'Label',
@@ -410,7 +410,7 @@ export const SuccessButtonDisabled: Story = {
   },
 };
 
-// Tertiary outline buttons (updated Figma styling)
+// Tertiary alt buttons (updated Figma styling)
 export const TertiaryOutlineSmall: Story = {
   args: {
     children: 'Label',
@@ -527,25 +527,25 @@ export const FigmaDesignShowcase: Story = {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', alignItems: 'center' }}>
           <div style={{ textAlign: 'center' }}>
             <p style={{ margin: '0 0 8px 0', fontSize: '12px', fontWeight: '500', color: '#666' }}>Small</p>
-            <Button size="small" type="primary" outline leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
+            <Button size="small" type="primary" alt leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
               Label
             </Button>
           </div>
           <div style={{ textAlign: 'center' }}>
             <p style={{ margin: '0 0 8px 0', fontSize: '12px', fontWeight: '500', color: '#666' }}>Default</p>
-            <Button size="default" type="primary" outline leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
+            <Button size="default" type="primary" alt leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
               Label
             </Button>
           </div>
           <div style={{ textAlign: 'center' }}>
             <p style={{ margin: '0 0 8px 0', fontSize: '12px', fontWeight: '500', color: '#666' }}>Large</p>
-            <Button size="large" type="primary" outline leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>
+            <Button size="large" type="primary" alt leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>
               Label
             </Button>
           </div>
           <div style={{ textAlign: 'center' }}>
             <p style={{ margin: '0 0 8px 0', fontSize: '12px', fontWeight: '500', color: '#666' }}>Hover</p>
-            <Button size="default" type="primary" outline className="force-hover" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
+            <Button size="default" type="primary" alt className="force-hover" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
               Label
             </Button>
           </div>
@@ -695,25 +695,25 @@ export const FigmaDesignShowcase: Story = {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', alignItems: 'center' }}>
           <div style={{ textAlign: 'center' }}>
             <p style={{ margin: '0 0 8px 0', fontSize: '12px', fontWeight: '500', color: '#666' }}>Small</p>
-            <Button size="small" type="tertiary" outline leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
+            <Button size="small" type="tertiary" alt leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
               Label
             </Button>
           </div>
           <div style={{ textAlign: 'center' }}>
             <p style={{ margin: '0 0 8px 0', fontSize: '12px', fontWeight: '500', color: '#666' }}>Default</p>
-            <Button size="default" type="tertiary" outline leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
+            <Button size="default" type="tertiary" alt leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
               Label
             </Button>
           </div>
           <div style={{ textAlign: 'center' }}>
             <p style={{ margin: '0 0 8px 0', fontSize: '12px', fontWeight: '500', color: '#666' }}>Large</p>
-            <Button size="large" type="tertiary" outline leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>
+            <Button size="large" type="tertiary" alt leadingIcon={<AlarmIcon size={20} />} trailingIcon={<ArrowDownIcon size={20} />}>
               Label
             </Button>
           </div>
           <div style={{ textAlign: 'center' }}>
             <p style={{ margin: '0 0 8px 0', fontSize: '12px', fontWeight: '500', color: '#666' }}>Hover</p>
-            <Button size="default" type="tertiary" outline className="force-hover" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
+            <Button size="default" type="tertiary" alt className="force-hover" leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
               Label
             </Button>
           </div>
@@ -782,8 +782,8 @@ export const FigmaDesignShowcase: Story = {
           <Button
             size="default"
             type="primary"
-            outline
-            onClick={() => alert('Primary outline button clicked!')}
+            alt
+            onClick={() => alert('Primary alt button clicked!')}
             leadingIcon={<AlarmIcon size={18} />}
           >
             Primary Outline
@@ -815,8 +815,8 @@ export const FigmaDesignShowcase: Story = {
           <Button
             size="default"
             type="tertiary"
-            outline
-            onClick={() => alert('Tertiary outline button clicked!')}
+            alt
+            onClick={() => alert('Tertiary alt button clicked!')}
             leadingIcon={<AlarmIcon size={18} />}
           >
             Tertiary Outline
@@ -853,12 +853,12 @@ export const StateComparisonGrid: Story = {
 
         {/* Primary Outline row */}
         <div style={{ fontSize: '14px', fontWeight: '500' }}>Primary Outline</div>
-        <Button size="small" type="primary" outline leadingIcon={<AlarmIcon size={14} />}>Label</Button>
-        <Button size="small" type="primary" outline className="force-hover" leadingIcon={<AlarmIcon size={14} />}>Label</Button>
-        <Button size="small" type="primary" outline className="force-clicked" leadingIcon={<AlarmIcon size={14} />}>Label</Button>
-        <Button size="small" type="primary" outline className="force-focused" leadingIcon={<AlarmIcon size={14} />}>Label</Button>
-        <Button size="small" type="primary" outline loading>Label</Button>
-        <Button size="small" type="primary" outline disabled leadingIcon={<AlarmIcon size={14} />}>Label</Button>
+        <Button size="small" type="primary" alt leadingIcon={<AlarmIcon size={14} />}>Label</Button>
+        <Button size="small" type="primary" alt className="force-hover" leadingIcon={<AlarmIcon size={14} />}>Label</Button>
+        <Button size="small" type="primary" alt className="force-clicked" leadingIcon={<AlarmIcon size={14} />}>Label</Button>
+        <Button size="small" type="primary" alt className="force-focused" leadingIcon={<AlarmIcon size={14} />}>Label</Button>
+        <Button size="small" type="primary" alt loading>Label</Button>
+        <Button size="small" type="primary" alt disabled leadingIcon={<AlarmIcon size={14} />}>Label</Button>
 
         {/* Warning row */}
         <div style={{ fontSize: '14px', fontWeight: '500' }}>Warning</div>
@@ -889,12 +889,12 @@ export const StateComparisonGrid: Story = {
 
         {/* Tertiary Outline row */}
         <div style={{ fontSize: '14px', fontWeight: '500' }}>Tertiary Outline</div>
-        <Button size="small" type="tertiary" outline leadingIcon={<AlarmIcon size={14} />}>Label</Button>
-        <Button size="small" type="tertiary" outline className="force-hover" leadingIcon={<AlarmIcon size={14} />}>Label</Button>
-        <Button size="small" type="tertiary" outline className="force-clicked" leadingIcon={<AlarmIcon size={14} />}>Label</Button>
-        <Button size="small" type="tertiary" outline className="force-focused" leadingIcon={<AlarmIcon size={14} />}>Label</Button>
-        <Button size="small" type="tertiary" outline loading>Label</Button>
-        <Button size="small" type="tertiary" outline disabled leadingIcon={<AlarmIcon size={14} />}>Label</Button>
+        <Button size="small" type="tertiary" alt leadingIcon={<AlarmIcon size={14} />}>Label</Button>
+        <Button size="small" type="tertiary" alt className="force-hover" leadingIcon={<AlarmIcon size={14} />}>Label</Button>
+        <Button size="small" type="tertiary" alt className="force-clicked" leadingIcon={<AlarmIcon size={14} />}>Label</Button>
+        <Button size="small" type="tertiary" alt className="force-focused" leadingIcon={<AlarmIcon size={14} />}>Label</Button>
+        <Button size="small" type="tertiary" alt loading>Label</Button>
+        <Button size="small" type="tertiary" alt disabled leadingIcon={<AlarmIcon size={14} />}>Label</Button>
       </div>
     </div>
   ),

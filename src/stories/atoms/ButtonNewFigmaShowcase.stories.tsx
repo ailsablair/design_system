@@ -32,7 +32,7 @@ const meta: Meta<typeof Button> = {
       control: 'boolean',
       description: 'Alt variant (previously called "outline")',
     },
-    outline: {
+    alt: {
       table: { disable: true },
     },
   },
@@ -140,13 +140,13 @@ export const CompleteFigmaShowcase: Story = {
           </div>
           <div style={{ textAlign: 'center' }}>
             <p style={{ margin: '0 0 12px 0', fontSize: '12px', fontWeight: '600', color: '#666', textTransform: 'uppercase' }}>Small Outline</p>
-            <Button size="small" type="tertiary" outline leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
+            <Button size="small" type="tertiary" alt leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
               Label
             </Button>
           </div>
           <div style={{ textAlign: 'center' }}>
             <p style={{ margin: '0 0 12px 0', fontSize: '12px', fontWeight: '600', color: '#666', textTransform: 'uppercase' }}>Outline Hover</p>
-            <Button size="small" type="tertiary" outline className="force-hover" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
+            <Button size="small" type="tertiary" alt className="force-hover" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
               Label
             </Button>
           </div>
@@ -427,8 +427,8 @@ export const CompleteFigmaShowcase: Story = {
           <Button
             size="default"
             type="tertiary"
-            outline
-            onClick={() => alert('Tertiary outline button clicked!')}
+            alt
+            onClick={() => alert('Tertiary alt button clicked!')}
             leadingIcon={<AlarmIcon size={18} />}
             trailingIcon={<ArrowDownIcon size={18} />}
           >
