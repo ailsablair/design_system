@@ -251,7 +251,7 @@
   opacity: 0.6;
 }
 
-/* Primary outline button variant */
+/* Primary alt button variant */
 .button.primary.alt {
   background: var(--primary-blue-blue-50);
   border: var(--spacing-stroke-1px) solid var(--primary-blue-blue);
@@ -263,7 +263,7 @@
   opacity: 0.6;
 }
 
-/* Default/Large outline button specific styling */
+/* Default/Large alt button specific styling */
 .button.default.primary.alt,
 .button.large.primary.alt {
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
@@ -285,7 +285,7 @@
   font-weight: var(--type-weight-light);
 }
 
-/* Secondary outline button variant - Updated for Figma design */
+/* Secondary alt button variant - Updated for Figma design */
 .button.secondary.alt {
   background: var(--base-white);
   border: var(--spacing-stroke-0-5px) solid var(--primary-sky-blue-sky-blue);
@@ -301,7 +301,7 @@
   font-weight: var(--type-weight-light);
 }
 
-/* State variants for secondary outline buttons - Updated for Figma design */
+/* State variants for secondary alt buttons - Updated for Figma design */
 .button.secondary.alt.default {
   background: var(--base-white);
   border: var(--spacing-stroke-0-5px) solid var(--primary-sky-blue-sky-blue);
@@ -383,7 +383,7 @@
   border: var(--spacing-stroke-0-5px) solid var(--primary-seafoam-dark-seafoam);
 }
 
-/* Tertiary outline button variant - Updated for Figma design */
+/* Tertiary alt button variant - Updated for Figma design */
 .button.tertiary.alt {
   background: var(--primary-seafoam-seafoam-25);
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
@@ -455,7 +455,7 @@
   opacity: 0.6;
 }
 
-/* State variants for primary outline buttons */
+/* State variants for primary alt buttons */
 .button.primary.alt.default {
   background: var(--primary-blue-blue-50);
   border: var(--spacing-stroke-1px) solid var(--primary-blue-blue);
@@ -793,7 +793,7 @@
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-300) !important;
 }
 
-/* Force state classes for outline buttons */
+/* Force state classes for alt buttons */
 .button.alt.force-hover {
   background: var(--primary-blue-blue-100) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-blue-blue-300) !important;
@@ -845,7 +845,7 @@
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue) !important;
 }
 
-/* Force state classes for secondary outline buttons - Updated for Figma design */
+/* Force state classes for secondary alt buttons - Updated for Figma design */
 .button.secondary.alt.force-hover {
   background: var(--primary-sky-blue-sky-blue-25) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue) !important;
@@ -871,7 +871,7 @@
   border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue) !important;
 }
 
-/* State variants for tertiary outline buttons - Updated for Figma design */
+/* State variants for tertiary alt buttons - Updated for Figma design */
 .button.tertiary.alt.default {
   background: var(--primary-seafoam-seafoam-25);
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
@@ -1013,7 +1013,7 @@
   opacity: 0.7;
 }
 
-/* Icon-only secondary outline button specific styling - Updated for Figma design */
+/* Icon-only secondary alt button specific styling - Updated for Figma design */
 .button.secondary.alt.icon-only.default {
   background: var(--base-white);
   border: var(--spacing-stroke-0-5px) solid var(--primary-sky-blue-sky-blue);
@@ -1158,7 +1158,7 @@
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam) !important;
 }
 
-/* Force state classes for tertiary outline buttons - Updated for Figma design */
+/* Force state classes for tertiary alt buttons - Updated for Figma design */
 .button.tertiary.alt.force-hover {
   background: var(--primary-seafoam-seafoam-50) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam) !important;
@@ -1348,7 +1348,7 @@
   font-weight: var(--type-weight-light);
 }
 
-/* Error outline button variant - Updated for Figma design */
+/* Error alt button variant - Updated for Figma design */
 .button.error.alt {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-red);
@@ -1380,7 +1380,7 @@
   font-weight: var(--type-weight-light);
 }
 
-/* Warning outline button variant - Updated for Figma design */
+/* Warning alt button variant - Updated for Figma design */
 .button.warning.alt {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-orange);
@@ -1568,7 +1568,7 @@
   opacity: 0.7;
 }
 
-/* State variants for error outline buttons - Updated for Figma design */
+/* State variants for error alt buttons - Updated for Figma design */
 .button.error.alt.default {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-red);
@@ -1688,7 +1688,7 @@
   opacity: 0.7;
 }
 
-/* State variants for warning outline buttons - Updated for Figma design */
+/* State variants for warning alt buttons - Updated for Figma design */
 .button.warning.alt.default {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-orange);
@@ -1827,7 +1827,7 @@
   border: var(--spacing-stroke-2px) solid var(--status-red-light) !important;
 }
 
-/* Force state classes for error outline buttons - Updated for Figma design */
+/* Force state classes for error alt buttons - Updated for Figma design */
 .button.error.alt.force-hover {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-2px) solid var(--status-red) !important;
@@ -1880,7 +1880,7 @@
   font-weight: var(--type-weight-light);
 }
 
-/* Info outline button variant - Updated for Figma design */
+/* Info alt button variant - Updated for Figma design */
 .button.info.alt {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-info-blue);
@@ -1956,7 +1956,7 @@
   opacity: 0.7;
 }
 
-/* State variants for info outline buttons - Updated for Figma design */
+/* State variants for info alt buttons - Updated for Figma design */
 .button.info.alt.default {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-info-blue);
@@ -2032,7 +2032,7 @@
   font-weight: var(--type-weight-light);
 }
 
-/* Success outline button variant - Updated for Figma design */
+/* Success alt button variant - Updated for Figma design */
 .button.success.alt {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-dark-green);
@@ -2122,7 +2122,7 @@
   opacity: 0.7;
 }
 
-/* State variants for success outline buttons - Updated for Figma design */
+/* State variants for success alt buttons - Updated for Figma design */
 .button.success.alt.default {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-dark-green);
@@ -2197,7 +2197,7 @@
   border: var(--spacing-stroke-2px) solid var(--status-dark-orange) !important;
 }
 
-/* Force state classes for warning outline buttons - Updated for Figma design */
+/* Force state classes for warning alt buttons - Updated for Figma design */
 .button.warning.alt.force-hover {
   background: var(--status-orange-light) !important;
   border: var(--spacing-stroke-1px) solid var(--status-orange) !important;
@@ -2374,7 +2374,7 @@
   border: var(--spacing-stroke-1px) solid var(--status-info-blue) !important;
 }
 
-/* Force state classes for info outline buttons - Updated for Figma design */
+/* Force state classes for info alt buttons - Updated for Figma design */
 .button.info.alt.force-hover {
   background: var(--primary-blue-blue-50) !important;
   border: var(--spacing-stroke-1px) solid var(--status-info-blue) !important;
@@ -2400,7 +2400,7 @@
   border: var(--spacing-stroke-2px) solid var(--status-info-blue) !important;
 }
 
-/* Force state classes for error outline buttons - Updated for Figma design */
+/* Force state classes for error alt buttons - Updated for Figma design */
 .button.error.alt.force-hover {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-2px) solid var(--status-red) !important;
@@ -2411,7 +2411,7 @@
   font-weight: var(--type-weight-bold) !important;
 }
 
-/* Force state classes for warning outline buttons - Updated for Figma design */
+/* Force state classes for warning alt buttons - Updated for Figma design */
 .button.warning.alt.force-hover {
   background: var(--status-orange-light) !important;
   border: var(--spacing-stroke-1px) solid var(--status-orange) !important;
@@ -2559,7 +2559,7 @@
   font-weight: var(--type-weight-light);
 }
 
-/* Outline button overrides for default/large sizes */
+/* Alt button overrides for default/large sizes */
 .button.default.secondary.alt.hover .button-text,
 .button.default.secondary.alt:hover:not(.disabled):not(.loading) .button-text,
 .button.large.secondary.alt.hover .button-text,
@@ -2656,7 +2656,7 @@
   border: var(--spacing-stroke-1px) solid var(--status-info-blue) !important;
 }
 
-/* Force state classes for info outline buttons - Updated for Figma design */
+/* Force state classes for info alt buttons - Updated for Figma design */
 .button.info.alt.force-hover {
   background: var(--primary-blue-blue-50) !important;
   border: var(--spacing-stroke-1px) solid var(--status-info-blue) !important;
@@ -2720,7 +2720,7 @@
   border: var(--spacing-stroke-2px) solid var(--status-dark-green) !important;
 }
 
-/* Force state classes for success outline buttons - Updated for Figma design */
+/* Force state classes for success alt buttons - Updated for Figma design */
 .button.success.alt.force-hover {
   background: var(--status-green-light) !important;
   border: var(--spacing-stroke-1px) solid var(--status-dark-green) !important;
