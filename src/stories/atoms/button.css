@@ -263,6 +263,57 @@
   opacity: 0.7;
 }
 
+/* Primary button sizing overrides (Figma) */
+.button.primary.small,
+.button.primary.alt.small {
+  height: 30px;
+  min-height: 30px;
+  max-height: 30px;
+}
+
+.button.primary.default,
+.button.primary.alt.default {
+  height: 42px;
+  min-height: 42px;
+  max-height: 42px;
+}
+
+.button.primary.large,
+.button.primary.alt.large {
+  height: 52px;
+  min-height: 52px;
+  max-height: 52px;
+}
+
+/* Primary icon-only button sizing overrides (Figma) */
+.button.primary.small.icon-only,
+.button.primary.alt.small.icon-only {
+  width: 30px;
+  min-width: 30px;
+  max-width: 30px;
+}
+
+.button.primary.default.icon-only,
+.button.primary.alt.default.icon-only {
+  width: 42px;
+  min-width: 42px;
+  max-width: 42px;
+}
+
+.button.primary.large.icon-only,
+.button.primary.alt.large.icon-only {
+  width: 52px;
+  min-width: 52px;
+  max-width: 52px;
+}
+
+.button.primary.extra-small.icon-only,
+.button.primary.alt.extra-small.icon-only {
+  width: 30px;
+  min-width: 30px;
+  max-width: 30px;
+}
+
 /* Default/Large alt button specific styling */
 .button.default.primary.alt,
 .button.large.primary.alt {
