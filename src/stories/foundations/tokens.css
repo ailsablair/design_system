@@ -444,6 +444,9 @@
   --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
   --shadow-focus: 0 2px 4px 0 rgba(39, 39, 39, 0.10);
 
+  /* === HOVER SHADOW TOKENS (Figma) === */
+  --hover-shadow-blue-box-shadow: 2px 2px 0 0 rgba(97, 113, 223, 1);
+
   /* === Z-INDEX TOKENS === */
   --z-index-0: 0;
   --z-index-10: 10;
