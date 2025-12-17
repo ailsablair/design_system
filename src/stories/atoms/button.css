@@ -328,13 +328,10 @@
 }
 
 .button.secondary .button-icon {
-  color: var(--primary-blue-blue-500);
+  color: var(--primary-blue-blue);
   opacity: 0.7;
 }
 
-.button.secondary .button-text {
-  font-weight: var(--type-weight-light);
-}
 
 /* Secondary alt button variant - Updated for Figma design */
 .button.secondary.alt {
@@ -344,13 +341,10 @@
 }
 
 .button.secondary.alt .button-icon {
-  color: var(--base-black);
+  color: var(--primary-blue-blue);
   opacity: 0.7;
 }
 
-.button.secondary.alt .button-text {
-  font-weight: var(--type-weight-light);
-}
 
 /* State variants for secondary alt buttons - Updated for Figma design */
 .button.secondary.alt.default {
@@ -362,24 +356,14 @@
 .button.secondary.alt:hover:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-sky-blue-25);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
-  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
-}
-
-.button.secondary.alt.hover .button-text,
-.button.secondary.alt:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  box-shadow: var(--hover-shadow-blue-box-shadow);
 }
 
 .button.secondary.alt.clicked,
 .button.secondary.alt:active:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-sky-blue-25);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
-  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
-}
-
-.button.secondary.alt.clicked .button-text,
-.button.secondary.alt:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-light);
+  box-shadow: var(--hover-shadow-blue-box-shadow);
 }
 
 .button.secondary.alt.focused,
@@ -552,24 +536,14 @@
 .button.secondary:hover:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-sky-blue-25);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
-  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
-}
-
-.button.secondary.hover .button-text,
-.button.secondary:hover:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-medium);
+  box-shadow: var(--hover-shadow-blue-box-shadow);
 }
 
 .button.secondary.clicked,
 .button.secondary:active:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-sky-blue-25);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
-  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
-}
-
-.button.secondary.clicked .button-text,
-.button.secondary:active:not(.disabled):not(.loading) .button-text {
-  font-weight: var(--type-weight-light);
+  box-shadow: var(--hover-shadow-blue-box-shadow);
 }
 
 .button.secondary.focused,
@@ -587,7 +561,7 @@
 
 .button.secondary.disabled {
   background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
   color: var(--neutral-gray-gray-300);
   cursor: not-allowed;
   pointer-events: none;
@@ -854,21 +828,13 @@
 .button.secondary.force-hover {
   background: var(--primary-sky-blue-sky-blue-25) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue) !important;
-  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400) !important;
-}
-
-.button.secondary.force-hover .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  box-shadow: var(--hover-shadow-blue-box-shadow) !important;
 }
 
 .button.secondary.force-clicked {
   background: var(--primary-sky-blue-sky-blue-25) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue) !important;
-  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400) !important;
-}
-
-.button.secondary.force-clicked .button-text {
-  font-weight: var(--type-weight-light) !important;
+  box-shadow: var(--hover-shadow-blue-box-shadow) !important;
 }
 
 .button.secondary.force-focused {
@@ -880,21 +846,13 @@
 .button.secondary.alt.force-hover {
   background: var(--primary-sky-blue-sky-blue-25) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue) !important;
-  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400) !important;
-}
-
-.button.secondary.alt.force-hover .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  box-shadow: var(--hover-shadow-blue-box-shadow) !important;
 }
 
 .button.secondary.alt.force-clicked {
   background: var(--primary-sky-blue-sky-blue-25) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue) !important;
-  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400) !important;
-}
-
-.button.secondary.alt.force-clicked .button-text {
-  font-weight: var(--type-weight-light) !important;
+  box-shadow: var(--hover-shadow-blue-box-shadow) !important;
 }
 
 .button.secondary.alt.force-focused {
@@ -1004,14 +962,14 @@
 .button.secondary.icon-only:hover:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-sky-blue-50);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
-  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
+  box-shadow: var(--hover-shadow-blue-box-shadow);
 }
 
 .button.secondary.icon-only.clicked,
 .button.secondary.icon-only:active:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-sky-blue-50);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
-  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
+  box-shadow: var(--hover-shadow-blue-box-shadow);
 }
 
 .button.secondary.icon-only.focused,
@@ -1028,12 +986,12 @@
 }
 
 .button.secondary.icon-only.loading .button-loading-content {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .button.secondary.icon-only.disabled {
   background: var(--neutral-gray-gray-50);
-  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
+  border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
   color: var(--neutral-gray-gray-300);
   cursor: not-allowed;
   pointer-events: none;
@@ -1054,14 +1012,14 @@
 .button.secondary.alt.icon-only:hover:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-sky-blue-50);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
-  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
+  box-shadow: var(--hover-shadow-blue-box-shadow);
 }
 
 .button.secondary.alt.icon-only.clicked,
 .button.secondary.alt.icon-only:active:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-sky-blue-50);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
-  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
+  box-shadow: var(--hover-shadow-blue-box-shadow);
 }
 
 .button.secondary.alt.icon-only.focused,
