@@ -136,7 +136,7 @@ export const Button = ({
     'button',
     size,
     resolvedVariant,
-    actualState,
+    actualState === 'default' ? '' : actualState,
     isAlt ? 'alt' : '',
     iconOnly ? 'icon-only' : '',
     width === 'full' ? 'full-width' : '',
