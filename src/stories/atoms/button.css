@@ -345,6 +345,56 @@
   opacity: 0.7;
 }
 
+/* Secondary button sizing overrides (Figma) */
+.button.secondary.small,
+.button.secondary.alt.small {
+  height: 30px;
+  min-height: 30px;
+  max-height: 30px;
+}
+
+.button.secondary.default,
+.button.secondary.alt.default {
+  height: 42px;
+  min-height: 42px;
+  max-height: 42px;
+}
+
+.button.secondary.large,
+.button.secondary.alt.large {
+  height: 52px;
+  min-height: 52px;
+  max-height: 52px;
+}
+
+/* Secondary icon-only button sizing overrides (Figma) */
+.button.secondary.small.icon-only,
+.button.secondary.alt.small.icon-only {
+  width: 30px;
+  min-width: 30px;
+  max-width: 30px;
+}
+
+.button.secondary.default.icon-only,
+.button.secondary.alt.default.icon-only {
+  width: 42px;
+  min-width: 42px;
+  max-width: 42px;
+}
+
+.button.secondary.large.icon-only,
+.button.secondary.alt.large.icon-only {
+  width: 52px;
+  min-width: 52px;
+  max-width: 52px;
+}
+
+.button.secondary.extra-small.icon-only,
+.button.secondary.alt.extra-small.icon-only {
+  width: 30px;
+  min-width: 30px;
+  max-width: 30px;
+}
 
 /* State variants for secondary alt buttons - Updated for Figma design */
 .button.secondary.alt.default {
@@ -1205,21 +1255,13 @@
 .button.secondary.force-hover.extra-small {
   background: var(--primary-sky-blue-sky-blue-25) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue) !important;
-  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400) !important;
-}
-
-.button.secondary.force-hover.extra-small .button-text {
-  font-weight: var(--type-weight-medium) !important;
+  box-shadow: var(--hover-shadow-blue-box-shadow) !important;
 }
 
 .button.secondary.force-clicked.extra-small {
   background: var(--primary-sky-blue-sky-blue-25) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue) !important;
-  box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400) !important;
-}
-
-.button.secondary.force-clicked.extra-small .button-text {
-  font-weight: var(--type-weight-light) !important;
+  box-shadow: var(--hover-shadow-blue-box-shadow) !important;
 }
 
 .button.secondary.force-focused.extra-small {
