@@ -442,7 +442,7 @@
 
 .button.primary.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 /* State variants for primary alt buttons */
@@ -473,7 +473,7 @@
 
 .button.primary.alt.loading {
   background: var(--primary-blue-blue-50);
-  border: var(--spacing-stroke-0-5px) solid var(--primary-blue-blue);
+  border: var(--spacing-stroke-1px) solid var(--primary-blue-blue);
   cursor: wait;
   pointer-events: none;
 }
