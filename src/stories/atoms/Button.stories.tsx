@@ -505,6 +505,132 @@ export const SecondaryLarge: Story = {
   },
 };
 
+// Secondary alt button variants
+export const SecondaryAltSmall: Story = {
+  args: {
+    children: 'Label',
+    size: 'small',
+    type: 'secondary',
+    alt: true,
+    leadingIcon: <AlarmIcon size={14} />,
+    trailingIcon: <ArrowDownIcon size={14} />,
+  },
+};
+
+export const SecondaryAltDefault: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'secondary',
+    alt: true,
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const SecondaryAltLarge: Story = {
+  args: {
+    children: 'Label',
+    size: 'large',
+    type: 'secondary',
+    alt: true,
+    leadingIcon: <AlarmIcon size={20} />,
+    trailingIcon: <ArrowDownIcon size={20} />,
+  },
+};
+
+export const SecondaryAltHover: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'secondary',
+    alt: true,
+    state: 'hover',
+    className: 'force-hover',
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const SecondaryAltClicked: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'secondary',
+    alt: true,
+    state: 'clicked',
+    className: 'force-clicked',
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const SecondaryAltFocused: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'secondary',
+    alt: true,
+    state: 'focused',
+    className: 'force-focused',
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+export const SecondaryAltLoading: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'secondary',
+    alt: true,
+    loading: true,
+  },
+};
+
+export const SecondaryAltDisabled: Story = {
+  args: {
+    children: 'Label',
+    size: 'default',
+    type: 'secondary',
+    alt: true,
+    disabled: true,
+    leadingIcon: <AlarmIcon size={18} />,
+    trailingIcon: <ArrowDownIcon size={18} />,
+  },
+};
+
+// Icon-only secondary alt button variants
+export const SecondaryAltIconOnlySmall: Story = {
+  args: {
+    size: 'small',
+    type: 'secondary',
+    alt: true,
+    iconOnly: true,
+    icon: <AlarmIcon size={14} />,
+  },
+};
+
+export const SecondaryAltIconOnlyDefault: Story = {
+  args: {
+    size: 'default',
+    type: 'secondary',
+    alt: true,
+    iconOnly: true,
+    icon: <AlarmIcon size={18} />,
+  },
+};
+
+export const SecondaryAltIconOnlyLarge: Story = {
+  args: {
+    size: 'large',
+    type: 'secondary',
+    alt: true,
+    iconOnly: true,
+    icon: <AlarmIcon size={20} />,
+  },
+};
+
 // Tertiary button variants
 export const TertiaryDefault: Story = {
   args: {
