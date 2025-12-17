@@ -30,10 +30,7 @@ const meta: Meta<typeof Button> = {
     },
     alt: {
       control: 'boolean',
-      description: 'Alt variant (previously called "outline")',
-    },
-    alt: {
-      table: { disable: true },
+      description: 'Alt variant',
     },
   },
 };
@@ -42,7 +39,7 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 // Primary alt buttons (updated)
-export const PrimaryOutlineSmall: Story = {
+export const PrimaryAltSmall: Story = {
   args: {
     children: 'Label',
     size: 'small',
@@ -53,7 +50,7 @@ export const PrimaryOutlineSmall: Story = {
   },
 };
 
-export const PrimaryOutlineDefault: Story = {
+export const PrimaryAltDefault: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -64,7 +61,7 @@ export const PrimaryOutlineDefault: Story = {
   },
 };
 
-export const PrimaryOutlineLarge: Story = {
+export const PrimaryAltLarge: Story = {
   args: {
     children: 'Label',
     size: 'large',
@@ -75,7 +72,7 @@ export const PrimaryOutlineLarge: Story = {
   },
 };
 
-export const PrimaryOutlineHover: Story = {
+export const PrimaryAltHover: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -88,7 +85,7 @@ export const PrimaryOutlineHover: Story = {
   },
 };
 
-export const PrimaryOutlineClicked: Story = {
+export const PrimaryAltClicked: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -101,7 +98,7 @@ export const PrimaryOutlineClicked: Story = {
   },
 };
 
-export const PrimaryOutlineFocused: Story = {
+export const PrimaryAltFocused: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -114,7 +111,7 @@ export const PrimaryOutlineFocused: Story = {
   },
 };
 
-export const PrimaryOutlineLoading: Story = {
+export const PrimaryAltLoading: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -124,7 +121,7 @@ export const PrimaryOutlineLoading: Story = {
   },
 };
 
-export const PrimaryOutlineDisabled: Story = {
+export const PrimaryAltDisabled: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -411,7 +408,7 @@ export const SuccessButtonDisabled: Story = {
 };
 
 // Tertiary alt buttons (updated Figma styling)
-export const TertiaryOutlineSmall: Story = {
+export const TertiaryAltSmall: Story = {
   args: {
     children: 'Label',
     size: 'small',
@@ -422,7 +419,7 @@ export const TertiaryOutlineSmall: Story = {
   },
 };
 
-export const TertiaryOutlineDefault: Story = {
+export const TertiaryAltDefault: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -433,7 +430,7 @@ export const TertiaryOutlineDefault: Story = {
   },
 };
 
-export const TertiaryOutlineLarge: Story = {
+export const TertiaryAltLarge: Story = {
   args: {
     children: 'Label',
     size: 'large',
@@ -444,7 +441,7 @@ export const TertiaryOutlineLarge: Story = {
   },
 };
 
-export const TertiaryOutlineHover: Story = {
+export const TertiaryAltHover: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -457,7 +454,7 @@ export const TertiaryOutlineHover: Story = {
   },
 };
 
-export const TertiaryOutlineClicked: Story = {
+export const TertiaryAltClicked: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -470,7 +467,7 @@ export const TertiaryOutlineClicked: Story = {
   },
 };
 
-export const TertiaryOutlineFocused: Story = {
+export const TertiaryAltFocused: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -483,7 +480,7 @@ export const TertiaryOutlineFocused: Story = {
   },
 };
 
-export const TertiaryOutlineLoading: Story = {
+export const TertiaryAltLoading: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -493,7 +490,7 @@ export const TertiaryOutlineLoading: Story = {
   },
 };
 
-export const TertiaryOutlineDisabled: Story = {
+export const TertiaryAltDisabled: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -519,10 +516,10 @@ export const FigmaDesignShowcase: Story = {
         </p>
       </div>
 
-      {/* Primary Outline Buttons */}
+      {/* Primary Alt Buttons */}
       <div style={{ background: 'white', padding: '24px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
         <h3 style={{ margin: '0 0 20px 0', fontSize: '18px', fontWeight: '600', color: '#2F42BD' }}>
-          Primary Outline Buttons
+          Primary Alt Buttons
         </h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', alignItems: 'center' }}>
           <div style={{ textAlign: 'center' }}>
@@ -687,10 +684,10 @@ export const FigmaDesignShowcase: Story = {
         </div>
       </div>
 
-      {/* Tertiary Outline Buttons */}
+      {/* Tertiary Alt Buttons */}
       <div style={{ background: 'white', padding: '24px', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
         <h3 style={{ margin: '0 0 20px 0', fontSize: '18px', fontWeight: '600', color: '#4B6D58' }}>
-          Tertiary Outline Buttons
+          Tertiary Alt Buttons
         </h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', alignItems: 'center' }}>
           <div style={{ textAlign: 'center' }}>
@@ -760,7 +757,7 @@ export const FigmaDesignShowcase: Story = {
             </div>
           </div>
           <div>
-            <h4 style={{ margin: '0 0 12px 0', fontSize: '14px', fontWeight: '600', color: '#4B6D58' }}>Tertiary Outline</h4>
+            <h4 style={{ margin: '0 0 12px 0', fontSize: '14px', fontWeight: '600', color: '#4B6D58' }}>Tertiary Alt</h4>
             <div style={{ fontSize: '12px', fontFamily: 'monospace', background: '#f8f9fa', padding: '12px', borderRadius: '4px' }}>
               <div>• Background: #FFFFFF (white)</div>
               <div>• Border: 1px solid #4B6D58</div>
@@ -786,7 +783,7 @@ export const FigmaDesignShowcase: Story = {
             onClick={() => alert('Primary alt button clicked!')}
             leadingIcon={<AlarmIcon size={18} />}
           >
-            Primary Outline
+            Primary Alt
           </Button>
           <Button
             size="default"
@@ -819,7 +816,7 @@ export const FigmaDesignShowcase: Story = {
             onClick={() => alert('Tertiary alt button clicked!')}
             leadingIcon={<AlarmIcon size={18} />}
           >
-            Tertiary Outline
+            Tertiary Alt
           </Button>
         </div>
       </div>
@@ -851,8 +848,8 @@ export const StateComparisonGrid: Story = {
         <div style={{ fontWeight: '600', fontSize: '14px', textAlign: 'center' }}>Loading</div>
         <div style={{ fontWeight: '600', fontSize: '14px', textAlign: 'center' }}>Disabled</div>
 
-        {/* Primary Outline row */}
-        <div style={{ fontSize: '14px', fontWeight: '500' }}>Primary Outline</div>
+        {/* Primary Alt row */}
+        <div style={{ fontSize: '14px', fontWeight: '500' }}>Primary Alt</div>
         <Button size="small" type="primary" alt leadingIcon={<AlarmIcon size={14} />}>Label</Button>
         <Button size="small" type="primary" alt className="force-hover" leadingIcon={<AlarmIcon size={14} />}>Label</Button>
         <Button size="small" type="primary" alt className="force-clicked" leadingIcon={<AlarmIcon size={14} />}>Label</Button>
@@ -887,8 +884,8 @@ export const StateComparisonGrid: Story = {
         <Button size="small" type="success" loading>Success</Button>
         <Button size="small" type="success" disabled leadingIcon={<InformationIcon size={14} />}>Success</Button>
 
-        {/* Tertiary Outline row */}
-        <div style={{ fontSize: '14px', fontWeight: '500' }}>Tertiary Outline</div>
+        {/* Tertiary Alt row */}
+        <div style={{ fontSize: '14px', fontWeight: '500' }}>Tertiary Alt</div>
         <Button size="small" type="tertiary" alt leadingIcon={<AlarmIcon size={14} />}>Label</Button>
         <Button size="small" type="tertiary" alt className="force-hover" leadingIcon={<AlarmIcon size={14} />}>Label</Button>
         <Button size="small" type="tertiary" alt className="force-clicked" leadingIcon={<AlarmIcon size={14} />}>Label</Button>

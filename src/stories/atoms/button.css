@@ -252,20 +252,20 @@
 }
 
 /* Primary outline button variant */
-.button.primary:is(.outline, .alt) {
+.button.primary.alt {
   background: var(--primary-blue-blue-50);
   border: var(--spacing-stroke-1px) solid var(--primary-blue-blue);
   color: var(--primary-blue-blue);
 }
 
-.button.primary:is(.outline, .alt) .button-icon {
+.button.primary.alt .button-icon {
   color: var(--primary-blue-blue);
   opacity: 0.6;
 }
 
 /* Default/Large outline button specific styling */
-.button.default.primary:is(.outline, .alt),
-.button.large.primary:is(.outline, .alt) {
+.button.default.primary.alt,
+.button.large.primary.alt {
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue);
 }
 
@@ -286,65 +286,65 @@
 }
 
 /* Secondary outline button variant - Updated for Figma design */
-.button.secondary:is(.outline, .alt) {
+.button.secondary.alt {
   background: var(--base-white);
   border: var(--spacing-stroke-0-5px) solid var(--primary-sky-blue-sky-blue);
   color: var(--base-black);
 }
 
-.button.secondary:is(.outline, .alt) .button-icon {
+.button.secondary.alt .button-icon {
   color: var(--base-black);
   opacity: 0.7;
 }
 
-.button.secondary:is(.outline, .alt) .button-text {
+.button.secondary.alt .button-text {
   font-weight: var(--type-weight-light);
 }
 
 /* State variants for secondary outline buttons - Updated for Figma design */
-.button.secondary:is(.outline, .alt).default {
+.button.secondary.alt.default {
   background: var(--base-white);
   border: var(--spacing-stroke-0-5px) solid var(--primary-sky-blue-sky-blue);
 }
 
-.button.secondary:is(.outline, .alt).hover,
-.button.secondary:is(.outline, .alt):hover:not(.disabled):not(.loading) {
+.button.secondary.alt.hover,
+.button.secondary.alt:hover:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-sky-blue-25);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
   box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
 }
 
-.button.secondary:is(.outline, .alt).hover .button-text,
-.button.secondary:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text {
+.button.secondary.alt.hover .button-text,
+.button.secondary.alt:hover:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-medium);
 }
 
-.button.secondary:is(.outline, .alt).clicked,
-.button.secondary:is(.outline, .alt):active:not(.disabled):not(.loading) {
+.button.secondary.alt.clicked,
+.button.secondary.alt:active:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-sky-blue-25);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
   box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
 }
 
-.button.secondary:is(.outline, .alt).clicked .button-text,
-.button.secondary:is(.outline, .alt):active:not(.disabled):not(.loading) .button-text {
+.button.secondary.alt.clicked .button-text,
+.button.secondary.alt:active:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.secondary:is(.outline, .alt).focused,
-.button.secondary:is(.outline, .alt):focus-visible:not(.disabled):not(.loading) {
+.button.secondary.alt.focused,
+.button.secondary.alt:focus-visible:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
 }
 
-.button.secondary:is(.outline, .alt).loading {
+.button.secondary.alt.loading {
   background: var(--base-white);
   border: var(--spacing-stroke-0-5px) solid var(--primary-sky-blue-sky-blue);
   cursor: wait;
   pointer-events: none;
 }
 
-.button.secondary:is(.outline, .alt).disabled {
+.button.secondary.alt.disabled {
   background: var(--neutral-gray-gray-50);
   border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-200);
   color: var(--neutral-gray-gray-300);
@@ -352,7 +352,7 @@
   pointer-events: none;
 }
 
-.button.secondary:is(.outline, .alt).disabled .button-icon {
+.button.secondary.alt.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
   opacity: 0.7;
 }
@@ -384,18 +384,18 @@
 }
 
 /* Tertiary outline button variant - Updated for Figma design */
-.button.tertiary:is(.outline, .alt) {
+.button.tertiary.alt {
   background: var(--primary-seafoam-seafoam-25);
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
   color: var(--base-black);
 }
 
-.button.tertiary:is(.outline, .alt) .button-icon {
+.button.tertiary.alt .button-icon {
   color: var(--base-black);
   opacity: 0.7;
 }
 
-.button.tertiary:is(.outline, .alt) .button-text {
+.button.tertiary.alt .button-text {
   font-weight: var(--type-weight-light);
 }
 
@@ -456,49 +456,49 @@
 }
 
 /* State variants for primary outline buttons */
-.button.primary:is(.outline, .alt).default {
+.button.primary.alt.default {
   background: var(--primary-blue-blue-50);
   border: var(--spacing-stroke-1px) solid var(--primary-blue-blue);
 }
 
-.button.primary:is(.outline, .alt).hover,
-.button.primary:is(.outline, .alt):hover:not(.disabled):not(.loading) {
+.button.primary.alt.hover,
+.button.primary.alt:hover:not(.disabled):not(.loading) {
   background: var(--primary-blue-blue-100);
   border: var(--spacing-stroke-1px) solid var(--primary-blue-blue-300);
   box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
 }
 
-.button.primary:is(.outline, .alt).hover .button-text,
-.button.primary:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text {
+.button.primary.alt.hover .button-text,
+.button.primary.alt:hover:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-medium);
 }
 
-.button.primary:is(.outline, .alt).clicked,
-.button.primary:is(.outline, .alt):active:not(.disabled):not(.loading) {
+.button.primary.alt.clicked,
+.button.primary.alt:active:not(.disabled):not(.loading) {
   background: var(--primary-blue-blue-100);
   border: var(--spacing-stroke-1px) solid var(--primary-blue-blue-300);
   box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
 }
 
-.button.primary:is(.outline, .alt).clicked .button-text,
-.button.primary:is(.outline, .alt):active:not(.disabled):not(.loading) .button-text {
+.button.primary.alt.clicked .button-text,
+.button.primary.alt:active:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.primary:is(.outline, .alt).focused,
-.button.primary:is(.outline, .alt):focus-visible:not(.disabled):not(.loading) {
+.button.primary.alt.focused,
+.button.primary.alt:focus-visible:not(.disabled):not(.loading) {
   background: var(--primary-blue-blue-50);
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-300);
 }
 
-.button.primary:is(.outline, .alt).loading {
+.button.primary.alt.loading {
   background: var(--primary-blue-blue-50);
   border: var(--spacing-stroke-0-5px) solid var(--primary-blue-blue);
   cursor: wait;
   pointer-events: none;
 }
 
-.button.primary:is(.outline, .alt).disabled {
+.button.primary.alt.disabled {
   background: var(--neutral-gray-gray-50);
   border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-200);
   color: var(--neutral-gray-gray-300);
@@ -506,7 +506,7 @@
   pointer-events: none;
 }
 
-.button.primary:is(.outline, .alt).disabled .button-icon {
+.button.primary.alt.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
   opacity: 0.7;
 }
@@ -794,27 +794,27 @@
 }
 
 /* Force state classes for outline buttons */
-.button:is(.outline, .alt).force-hover {
+.button.alt.force-hover {
   background: var(--primary-blue-blue-100) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-blue-blue-300) !important;
   box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400) !important;
 }
 
-.button:is(.outline, .alt).force-hover .button-text {
+.button.alt.force-hover .button-text {
   font-weight: var(--type-weight-medium) !important;
 }
 
-.button:is(.outline, .alt).force-clicked {
+.button.alt.force-clicked {
   background: var(--primary-blue-blue-100) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-blue-blue-300) !important;
   box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400) !important;
 }
 
-.button:is(.outline, .alt).force-clicked .button-text {
+.button.alt.force-clicked .button-text {
   font-weight: var(--type-weight-light) !important;
 }
 
-.button:is(.outline, .alt).force-focused {
+.button.alt.force-focused {
   background: var(--primary-blue-blue-50) !important;
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-300) !important;
 }
@@ -846,79 +846,79 @@
 }
 
 /* Force state classes for secondary outline buttons - Updated for Figma design */
-.button.secondary:is(.outline, .alt).force-hover {
+.button.secondary.alt.force-hover {
   background: var(--primary-sky-blue-sky-blue-25) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue) !important;
   box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400) !important;
 }
 
-.button.secondary:is(.outline, .alt).force-hover .button-text {
+.button.secondary.alt.force-hover .button-text {
   font-weight: var(--type-weight-medium) !important;
 }
 
-.button.secondary:is(.outline, .alt).force-clicked {
+.button.secondary.alt.force-clicked {
   background: var(--primary-sky-blue-sky-blue-25) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue) !important;
   box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400) !important;
 }
 
-.button.secondary:is(.outline, .alt).force-clicked .button-text {
+.button.secondary.alt.force-clicked .button-text {
   font-weight: var(--type-weight-light) !important;
 }
 
-.button.secondary:is(.outline, .alt).force-focused {
+.button.secondary.alt.force-focused {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue) !important;
 }
 
 /* State variants for tertiary outline buttons - Updated for Figma design */
-.button.tertiary:is(.outline, .alt).default {
+.button.tertiary.alt.default {
   background: var(--primary-seafoam-seafoam-25);
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
 }
 
-.button.tertiary:is(.outline, .alt).hover,
-.button.tertiary:is(.outline, .alt):hover:not(.disabled):not(.loading) {
+.button.tertiary.alt.hover,
+.button.tertiary.alt:hover:not(.disabled):not(.loading) {
   background: var(--primary-seafoam-seafoam-50);
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
   box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam);
 }
 
-.button.tertiary:is(.outline, .alt).hover .button-text,
-.button.tertiary:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text {
+.button.tertiary.alt.hover .button-text,
+.button.tertiary.alt:hover:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-medium);
 }
 
-.button.tertiary:is(.outline, .alt).clicked,
-.button.tertiary:is(.outline, .alt):active:not(.disabled):not(.loading) {
+.button.tertiary.alt.clicked,
+.button.tertiary.alt:active:not(.disabled):not(.loading) {
   background: var(--primary-seafoam-seafoam-50);
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
   box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam);
 }
 
-.button.tertiary:is(.outline, .alt).clicked .button-text,
-.button.tertiary:is(.outline, .alt):active:not(.disabled):not(.loading) .button-text {
+.button.tertiary.alt.clicked .button-text,
+.button.tertiary.alt:active:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.tertiary:is(.outline, .alt).focused,
-.button.tertiary:is(.outline, .alt):focus-visible:not(.disabled):not(.loading) {
+.button.tertiary.alt.focused,
+.button.tertiary.alt:focus-visible:not(.disabled):not(.loading) {
   background: var(--primary-seafoam-seafoam-25);
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
 }
 
-.button.tertiary:is(.outline, .alt).loading {
+.button.tertiary.alt.loading {
   background: var(--primary-seafoam-seafoam-25);
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam);
   cursor: wait;
   pointer-events: none;
 }
 
-.button.tertiary:is(.outline, .alt).loading .button-loading-content {
+.button.tertiary.alt.loading .button-loading-content {
   opacity: 0.7;
 }
 
-.button.tertiary:is(.outline, .alt).disabled {
+.button.tertiary.alt.disabled {
   background: var(--neutral-gray-gray-50);
   border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-200);
   color: var(--neutral-gray-gray-300);
@@ -926,7 +926,7 @@
   pointer-events: none;
 }
 
-.button.tertiary:is(.outline, .alt).disabled .button-icon {
+.button.tertiary.alt.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
   opacity: 0.7;
 }
@@ -1014,43 +1014,43 @@
 }
 
 /* Icon-only secondary outline button specific styling - Updated for Figma design */
-.button.secondary:is(.outline, .alt).icon-only.default {
+.button.secondary.alt.icon-only.default {
   background: var(--base-white);
   border: var(--spacing-stroke-0-5px) solid var(--primary-sky-blue-sky-blue);
 }
 
-.button.secondary:is(.outline, .alt).icon-only.hover,
-.button.secondary:is(.outline, .alt).icon-only:hover:not(.disabled):not(.loading) {
+.button.secondary.alt.icon-only.hover,
+.button.secondary.alt.icon-only:hover:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-sky-blue-50);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
   box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
 }
 
-.button.secondary:is(.outline, .alt).icon-only.clicked,
-.button.secondary:is(.outline, .alt).icon-only:active:not(.disabled):not(.loading) {
+.button.secondary.alt.icon-only.clicked,
+.button.secondary.alt.icon-only:active:not(.disabled):not(.loading) {
   background: var(--primary-sky-blue-sky-blue-50);
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue);
   box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400);
 }
 
-.button.secondary:is(.outline, .alt).icon-only.focused,
-.button.secondary:is(.outline, .alt).icon-only:focus-visible:not(.disabled):not(.loading) {
+.button.secondary.alt.icon-only.focused,
+.button.secondary.alt.icon-only:focus-visible:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue);
 }
 
-.button.secondary:is(.outline, .alt).icon-only.loading {
+.button.secondary.alt.icon-only.loading {
   background: var(--base-white);
   border: var(--spacing-stroke-0-5px) solid var(--primary-sky-blue-sky-blue);
   cursor: wait;
   pointer-events: none;
 }
 
-.button.secondary:is(.outline, .alt).icon-only.loading .button-loading-content {
+.button.secondary.alt.icon-only.loading .button-loading-content {
   opacity: 0.6;
 }
 
-.button.secondary:is(.outline, .alt).icon-only.disabled {
+.button.secondary.alt.icon-only.disabled {
   background: var(--neutral-gray-gray-50);
   border: var(--spacing-stroke-2px) solid var(--neutral-gray-gray-200);
   color: var(--neutral-gray-gray-300);
@@ -1058,7 +1058,7 @@
   pointer-events: none;
 }
 
-.button.secondary:is(.outline, .alt).icon-only.disabled .button-icon {
+.button.secondary.alt.icon-only.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
   opacity: 0.7;
 }
@@ -1123,19 +1123,19 @@
 }
 
 /* Force state classes for secondary outline icon-only buttons - Updated for Figma design */
-.button.secondary:is(.outline, .alt).icon-only.force-hover {
+.button.secondary.alt.icon-only.force-hover {
   background: var(--primary-sky-blue-sky-blue-50) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue) !important;
   box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400) !important;
 }
 
-.button.secondary:is(.outline, .alt).icon-only.force-clicked {
+.button.secondary.alt.icon-only.force-clicked {
   background: var(--primary-sky-blue-sky-blue-50) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-sky-blue-sky-blue) !important;
   box-shadow: 2px 2px 0 0 var(--primary-blue-blue-400) !important;
 }
 
-.button.secondary:is(.outline, .alt).icon-only.force-focused {
+.button.secondary.alt.icon-only.force-focused {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-2px) solid var(--primary-sky-blue-sky-blue) !important;
 }
@@ -1159,27 +1159,27 @@
 }
 
 /* Force state classes for tertiary outline buttons - Updated for Figma design */
-.button.tertiary:is(.outline, .alt).force-hover {
+.button.tertiary.alt.force-hover {
   background: var(--primary-seafoam-seafoam-50) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam) !important;
   box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam) !important;
 }
 
-.button.tertiary:is(.outline, .alt).force-hover .button-text {
+.button.tertiary.alt.force-hover .button-text {
   font-weight: var(--type-weight-medium) !important;
 }
 
-.button.tertiary:is(.outline, .alt).force-clicked {
+.button.tertiary.alt.force-clicked {
   background: var(--primary-seafoam-seafoam-50) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam) !important;
   box-shadow: 2px 2px 0 0 var(--primary-seafoam-extra-dark-seafoam) !important;
 }
 
-.button.tertiary:is(.outline, .alt).force-clicked .button-text {
+.button.tertiary.alt.force-clicked .button-text {
   font-weight: var(--type-weight-light) !important;
 }
 
-.button.tertiary:is(.outline, .alt).force-focused {
+.button.tertiary.alt.force-focused {
   background: var(--primary-seafoam-seafoam-25) !important;
   border: var(--spacing-stroke-1px) solid var(--primary-seafoam-dark-seafoam) !important;
 }
@@ -1201,13 +1201,13 @@
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue-300) !important;
 }
 
-.button:is(.outline, .alt).force-hover.extra-small {
+.button.alt.force-hover.extra-small {
   background: var(--primary-blue-blue-100) !important;
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue) !important;
   box-shadow: var(--spacing-stroke-3px) var(--spacing-stroke-3px) 0 0 var(--primary-blue-blue-400) !important;
 }
 
-.button:is(.outline, .alt).force-clicked.extra-small {
+.button.alt.force-clicked.extra-small {
   background: var(--primary-blue-blue-100) !important;
   border: var(--spacing-stroke-2px) solid var(--primary-blue-blue) !important;
   box-shadow: var(--spacing-stroke-3px) var(--spacing-stroke-3px) 0 0 var(--primary-blue-blue-400) !important;
@@ -1349,18 +1349,18 @@
 }
 
 /* Error outline button variant - Updated for Figma design */
-.button.error:is(.outline, .alt) {
+.button.error.alt {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-red);
   color: var(--status-red);
 }
 
-.button.error:is(.outline, .alt) .button-icon {
+.button.error.alt .button-icon {
   color: var(--status-red);
   opacity: 0.7;
 }
 
-.button.error:is(.outline, .alt) .button-text {
+.button.error.alt .button-text {
   font-weight: var(--type-weight-light);
 }
 
@@ -1381,18 +1381,18 @@
 }
 
 /* Warning outline button variant - Updated for Figma design */
-.button.warning:is(.outline, .alt) {
+.button.warning.alt {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-orange);
   color: var(--status-dark-orange);
 }
 
-.button.warning:is(.outline, .alt) .button-icon {
+.button.warning.alt .button-icon {
   color: var(--status-dark-orange);
   opacity: 0.7;
 }
 
-.button.warning:is(.outline, .alt) .button-text {
+.button.warning.alt .button-text {
   font-weight: var(--type-weight-light);
 }
 
@@ -1569,53 +1569,53 @@
 }
 
 /* State variants for error outline buttons - Updated for Figma design */
-.button.error:is(.outline, .alt).default {
+.button.error.alt.default {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-red);
 }
 
-.button.error:is(.outline, .alt).hover,
-.button.error:is(.outline, .alt):hover:not(.disabled):not(.loading) {
+.button.error.alt.hover,
+.button.error.alt:hover:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-2px) solid var(--status-red);
   box-shadow: 2px 2px 0 0 var(--base-black);
 }
 
-.button.error:is(.outline, .alt).hover .button-text,
-.button.error:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text {
+.button.error.alt.hover .button-text,
+.button.error.alt:hover:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.error:is(.outline, .alt).clicked,
-.button.error:is(.outline, .alt):active:not(.disabled):not(.loading) {
+.button.error.alt.clicked,
+.button.error.alt:active:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-2px) solid var(--status-red);
   box-shadow: 2px 2px 0 0 var(--base-black);
 }
 
-.button.error:is(.outline, .alt).clicked .button-text,
-.button.error:is(.outline, .alt):active:not(.disabled):not(.loading) .button-text {
+.button.error.alt.clicked .button-text,
+.button.error.alt:active:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.error:is(.outline, .alt).focused,
-.button.error:is(.outline, .alt):focus-visible:not(.disabled):not(.loading) {
+.button.error.alt.focused,
+.button.error.alt:focus-visible:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-2px) solid var(--status-red);
 }
 
-.button.error:is(.outline, .alt).loading {
+.button.error.alt.loading {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-red);
   cursor: wait;
   pointer-events: none;
 }
 
-.button.error:is(.outline, .alt).loading .button-loading-content {
+.button.error.alt.loading .button-loading-content {
   opacity: 0.6;
 }
 
-.button.error:is(.outline, .alt).disabled {
+.button.error.alt.disabled {
   background: var(--neutral-gray-gray-50);
   border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
   color: var(--neutral-gray-gray-300);
@@ -1623,7 +1623,7 @@
   pointer-events: none;
 }
 
-.button.error:is(.outline, .alt).disabled .button-icon {
+.button.error.alt.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
   opacity: 0.7;
 }
@@ -1689,53 +1689,53 @@
 }
 
 /* State variants for warning outline buttons - Updated for Figma design */
-.button.warning:is(.outline, .alt).default {
+.button.warning.alt.default {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-orange);
 }
 
-.button.warning:is(.outline, .alt).hover,
-.button.warning:is(.outline, .alt):hover:not(.disabled):not(.loading) {
+.button.warning.alt.hover,
+.button.warning.alt:hover:not(.disabled):not(.loading) {
   background: var(--status-orange-light);
   border: var(--spacing-stroke-1px) solid var(--status-orange);
   box-shadow: 2px 2px 0 0 var(--status-dark-orange);
 }
 
-.button.warning:is(.outline, .alt).hover .button-text,
-.button.warning:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text {
+.button.warning.alt.hover .button-text,
+.button.warning.alt:hover:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.warning:is(.outline, .alt).clicked,
-.button.warning:is(.outline, .alt):active:not(.disabled):not(.loading) {
+.button.warning.alt.clicked,
+.button.warning.alt:active:not(.disabled):not(.loading) {
   background: var(--status-orange-light);
   border: var(--spacing-stroke-1px) solid var(--status-orange);
   box-shadow: 2px 2px 0 0 var(--status-dark-orange);
 }
 
-.button.warning:is(.outline, .alt).clicked .button-text,
-.button.warning:is(.outline, .alt):active:not(.disabled):not(.loading) .button-text {
+.button.warning.alt.clicked .button-text,
+.button.warning.alt:active:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.warning:is(.outline, .alt).focused,
-.button.warning:is(.outline, .alt):focus-visible:not(.disabled):not(.loading) {
+.button.warning.alt.focused,
+.button.warning.alt:focus-visible:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-3px) solid var(--status-orange);
 }
 
-.button.warning:is(.outline, .alt).loading {
+.button.warning.alt.loading {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-orange);
   cursor: wait;
   pointer-events: none;
 }
 
-.button.warning:is(.outline, .alt).loading .button-loading-content {
+.button.warning.alt.loading .button-loading-content {
   opacity: 0.6;
 }
 
-.button.warning:is(.outline, .alt).disabled {
+.button.warning.alt.disabled {
   background: var(--base-white);
   border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
   color: var(--neutral-gray-gray-300);
@@ -1743,7 +1743,7 @@
   pointer-events: none;
 }
 
-.button.warning:is(.outline, .alt).disabled .button-icon {
+.button.warning.alt.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
   opacity: 0.7;
 }
@@ -1828,27 +1828,27 @@
 }
 
 /* Force state classes for error outline buttons - Updated for Figma design */
-.button.error:is(.outline, .alt).force-hover {
+.button.error.alt.force-hover {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-2px) solid var(--status-red) !important;
   box-shadow: 2px 2px 0 0 var(--base-black) !important;
 }
 
-.button.error:is(.outline, .alt).force-hover .button-text {
+.button.error.alt.force-hover .button-text {
   font-weight: var(--type-weight-light) !important;
 }
 
-.button.error:is(.outline, .alt).force-clicked {
+.button.error.alt.force-clicked {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-2px) solid var(--status-red) !important;
   box-shadow: 2px 2px 0 0 var(--base-black) !important;
 }
 
-.button.error:is(.outline, .alt).force-clicked .button-text {
+.button.error.alt.force-clicked .button-text {
   font-weight: var(--type-weight-light) !important;
 }
 
-.button.error:is(.outline, .alt).force-focused {
+.button.error.alt.force-focused {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-2px) solid var(--status-red) !important;
 }
@@ -1881,18 +1881,18 @@
 }
 
 /* Info outline button variant - Updated for Figma design */
-.button.info:is(.outline, .alt) {
+.button.info.alt {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-info-blue);
   color: var(--status-info-blue);
 }
 
-.button.info:is(.outline, .alt) .button-icon {
+.button.info.alt .button-icon {
   color: var(--status-info-blue);
   opacity: 0.7;
 }
 
-.button.info:is(.outline, .alt) .button-text {
+.button.info.alt .button-text {
   font-weight: var(--type-weight-light);
 }
 
@@ -1957,53 +1957,53 @@
 }
 
 /* State variants for info outline buttons - Updated for Figma design */
-.button.info:is(.outline, .alt).default {
+.button.info.alt.default {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-info-blue);
 }
 
-.button.info:is(.outline, .alt).hover,
-.button.info:is(.outline, .alt):hover:not(.disabled):not(.loading) {
+.button.info.alt.hover,
+.button.info.alt:hover:not(.disabled):not(.loading) {
   background: var(--primary-blue-blue-50);
   border: var(--spacing-stroke-1px) solid var(--status-info-blue);
   box-shadow: 2px 2px 0 0 var(--status-info-blue);
 }
 
-.button.info:is(.outline, .alt).hover .button-text,
-.button.info:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text {
+.button.info.alt.hover .button-text,
+.button.info.alt:hover:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.info:is(.outline, .alt).clicked,
-.button.info:is(.outline, .alt):active:not(.disabled):not(.loading) {
+.button.info.alt.clicked,
+.button.info.alt:active:not(.disabled):not(.loading) {
   background: var(--primary-blue-blue-50);
   border: var(--spacing-stroke-1px) solid var(--status-info-blue);
   box-shadow: 2px 2px 0 0 var(--status-info-blue);
 }
 
-.button.info:is(.outline, .alt).clicked .button-text,
-.button.info:is(.outline, .alt):active:not(.disabled):not(.loading) .button-text {
+.button.info.alt.clicked .button-text,
+.button.info.alt:active:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.info:is(.outline, .alt).focused,
-.button.info:is(.outline, .alt):focus-visible:not(.disabled):not(.loading) {
+.button.info.alt.focused,
+.button.info.alt:focus-visible:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-2px) solid var(--status-info-blue);
 }
 
-.button.info:is(.outline, .alt).loading {
+.button.info.alt.loading {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-info-blue);
   cursor: wait;
   pointer-events: none;
 }
 
-.button.info:is(.outline, .alt).loading .button-loading-content {
+.button.info.alt.loading .button-loading-content {
   opacity: 0.6;
 }
 
-.button.info:is(.outline, .alt).disabled {
+.button.info.alt.disabled {
   background: var(--base-white);
   border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
   color: var(--neutral-gray-gray-300);
@@ -2011,7 +2011,7 @@
   pointer-events: none;
 }
 
-.button.info:is(.outline, .alt).disabled .button-icon {
+.button.info.alt.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
   opacity: 0.7;
 }
@@ -2033,18 +2033,18 @@
 }
 
 /* Success outline button variant - Updated for Figma design */
-.button.success:is(.outline, .alt) {
+.button.success.alt {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-dark-green);
   color: var(--status-dark-green);
 }
 
-.button.success:is(.outline, .alt) .button-icon {
+.button.success.alt .button-icon {
   color: var(--status-dark-green);
   opacity: 0.7;
 }
 
-.button.success:is(.outline, .alt) .button-text {
+.button.success.alt .button-text {
   font-weight: var(--type-weight-light);
 }
 
@@ -2123,53 +2123,53 @@
 }
 
 /* State variants for success outline buttons - Updated for Figma design */
-.button.success:is(.outline, .alt).default {
+.button.success.alt.default {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-dark-green);
 }
 
-.button.success:is(.outline, .alt).hover,
-.button.success:is(.outline, .alt):hover:not(.disabled):not(.loading) {
+.button.success.alt.hover,
+.button.success.alt:hover:not(.disabled):not(.loading) {
   background: var(--status-green-light);
   border: var(--spacing-stroke-1px) solid var(--status-dark-green);
   box-shadow: 2px 2px 0 0 var(--status-dark-green);
 }
 
-.button.success:is(.outline, .alt).hover .button-text,
-.button.success:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text {
+.button.success.alt.hover .button-text,
+.button.success.alt:hover:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.success:is(.outline, .alt).clicked,
-.button.success:is(.outline, .alt):active:not(.disabled):not(.loading) {
+.button.success.alt.clicked,
+.button.success.alt:active:not(.disabled):not(.loading) {
   background: var(--status-green-light);
   border: var(--spacing-stroke-1px) solid var(--status-dark-green);
   box-shadow: 2px 2px 0 0 var(--status-dark-green);
 }
 
-.button.success:is(.outline, .alt).clicked .button-text,
-.button.success:is(.outline, .alt):active:not(.disabled):not(.loading) .button-text {
+.button.success.alt.clicked .button-text,
+.button.success.alt:active:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.success:is(.outline, .alt).focused,
-.button.success:is(.outline, .alt):focus-visible:not(.disabled):not(.loading) {
+.button.success.alt.focused,
+.button.success.alt:focus-visible:not(.disabled):not(.loading) {
   background: var(--base-white);
   border: var(--spacing-stroke-3px) solid var(--status-dark-green);
 }
 
-.button.success:is(.outline, .alt).loading {
+.button.success.alt.loading {
   background: var(--base-white);
   border: var(--spacing-stroke-1px) solid var(--status-dark-green);
   cursor: wait;
   pointer-events: none;
 }
 
-.button.success:is(.outline, .alt).loading .button-loading-content {
+.button.success.alt.loading .button-loading-content {
   opacity: 0.6;
 }
 
-.button.success:is(.outline, .alt).disabled {
+.button.success.alt.disabled {
   background: var(--base-white);
   border: var(--spacing-stroke-0-5px) solid var(--neutral-gray-gray-200);
   color: var(--neutral-gray-gray-300);
@@ -2177,7 +2177,7 @@
   pointer-events: none;
 }
 
-.button.success:is(.outline, .alt).disabled .button-icon {
+.button.success.alt.disabled .button-icon {
   color: var(--neutral-gray-gray-300);
   opacity: 0.7;
 }
@@ -2198,27 +2198,27 @@
 }
 
 /* Force state classes for warning outline buttons - Updated for Figma design */
-.button.warning:is(.outline, .alt).force-hover {
+.button.warning.alt.force-hover {
   background: var(--status-orange-light) !important;
   border: var(--spacing-stroke-1px) solid var(--status-orange) !important;
   box-shadow: 2px 2px 0 0 var(--status-dark-orange) !important;
 }
 
-.button.warning:is(.outline, .alt).force-hover .button-text {
+.button.warning.alt.force-hover .button-text {
   font-weight: var(--type-weight-light) !important;
 }
 
-.button.warning:is(.outline, .alt).force-clicked {
+.button.warning.alt.force-clicked {
   background: var(--status-orange-light) !important;
   border: var(--spacing-stroke-1px) solid var(--status-orange) !important;
   box-shadow: 2px 2px 0 0 var(--status-dark-orange) !important;
 }
 
-.button.warning:is(.outline, .alt).force-clicked .button-text {
+.button.warning.alt.force-clicked .button-text {
   font-weight: var(--type-weight-light) !important;
 }
 
-.button.warning:is(.outline, .alt).force-focused {
+.button.warning.alt.force-focused {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-3px) solid var(--status-orange) !important;
 }
@@ -2375,64 +2375,64 @@
 }
 
 /* Force state classes for info outline buttons - Updated for Figma design */
-.button.info:is(.outline, .alt).force-hover {
+.button.info.alt.force-hover {
   background: var(--primary-blue-blue-50) !important;
   border: var(--spacing-stroke-1px) solid var(--status-info-blue) !important;
   box-shadow: 2px 2px 0 0 var(--status-info-blue) !important;
 }
 
-.button.info:is(.outline, .alt).force-hover .button-text {
+.button.info.alt.force-hover .button-text {
   font-weight: var(--type-weight-light) !important;
 }
 
-.button.info:is(.outline, .alt).force-clicked {
+.button.info.alt.force-clicked {
   background: var(--primary-blue-blue-50) !important;
   border: var(--spacing-stroke-1px) solid var(--status-info-blue) !important;
   box-shadow: 2px 2px 0 0 var(--status-info-blue) !important;
 }
 
-.button.info:is(.outline, .alt).force-clicked .button-text {
+.button.info.alt.force-clicked .button-text {
   font-weight: var(--type-weight-light) !important;
 }
 
-.button.info:is(.outline, .alt).force-focused {
+.button.info.alt.force-focused {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-2px) solid var(--status-info-blue) !important;
 }
 
 /* Force state classes for error outline buttons - Updated for Figma design */
-.button.error:is(.outline, .alt).force-hover {
+.button.error.alt.force-hover {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-2px) solid var(--status-red) !important;
   box-shadow: 2px 2px 0 0 var(--base-black) !important;
 }
 
-.button.error:is(.outline, .alt).force-hover .button-text {
+.button.error.alt.force-hover .button-text {
   font-weight: var(--type-weight-bold) !important;
 }
 
 /* Force state classes for warning outline buttons - Updated for Figma design */
-.button.warning:is(.outline, .alt).force-hover {
+.button.warning.alt.force-hover {
   background: var(--status-orange-light) !important;
   border: var(--spacing-stroke-1px) solid var(--status-orange) !important;
   box-shadow: 2px 2px 0 0 var(--status-dark-orange) !important;
 }
 
-.button.warning:is(.outline, .alt).force-hover .button-text {
+.button.warning.alt.force-hover .button-text {
   font-weight: var(--type-weight-light) !important;
 }
 
-.button.warning:is(.outline, .alt).force-clicked {
+.button.warning.alt.force-clicked {
   background: var(--status-orange-light) !important;
   border: var(--spacing-stroke-1px) solid var(--status-orange) !important;
   box-shadow: 2px 2px 0 0 var(--status-dark-orange) !important;
 }
 
-.button.warning:is(.outline, .alt).force-clicked .button-text {
+.button.warning.alt.force-clicked .button-text {
   font-weight: var(--type-weight-light) !important;
 }
 
-.button.warning:is(.outline, .alt).force-focused {
+.button.warning.alt.force-focused {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-3px) solid var(--status-orange) !important;
 }
@@ -2560,73 +2560,73 @@
 }
 
 /* Outline button overrides for default/large sizes */
-.button.default.secondary:is(.outline, .alt).hover .button-text,
-.button.default.secondary:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text,
-.button.large.secondary:is(.outline, .alt).hover .button-text,
-.button.large.secondary:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text {
+.button.default.secondary.alt.hover .button-text,
+.button.default.secondary.alt:hover:not(.disabled):not(.loading) .button-text,
+.button.large.secondary.alt.hover .button-text,
+.button.large.secondary.alt:hover:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.default.tertiary:is(.outline, .alt).hover .button-text,
-.button.default.tertiary:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text,
-.button.large.tertiary:is(.outline, .alt).hover .button-text,
-.button.large.tertiary:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text {
+.button.default.tertiary.alt.hover .button-text,
+.button.default.tertiary.alt:hover:not(.disabled):not(.loading) .button-text,
+.button.large.tertiary.alt.hover .button-text,
+.button.large.tertiary.alt:hover:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.default.tertiary:is(.outline, .alt).clicked .button-text,
-.button.default.tertiary:is(.outline, .alt):active:not(.disabled):not(.loading) .button-text,
-.button.large.tertiary:is(.outline, .alt).clicked .button-text,
-.button.large.tertiary:is(.outline, .alt):active:not(.disabled):not(.loading) .button-text {
+.button.default.tertiary.alt.clicked .button-text,
+.button.default.tertiary.alt:active:not(.disabled):not(.loading) .button-text,
+.button.large.tertiary.alt.clicked .button-text,
+.button.large.tertiary.alt:active:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.default.error:is(.outline, .alt).hover .button-text,
-.button.default.error:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text,
-.button.large.error:is(.outline, .alt).hover .button-text,
-.button.large.error:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text {
+.button.default.error.alt.hover .button-text,
+.button.default.error.alt:hover:not(.disabled):not(.loading) .button-text,
+.button.large.error.alt.hover .button-text,
+.button.large.error.alt:hover:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.default.warning:is(.outline, .alt).hover .button-text,
-.button.default.warning:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text,
-.button.large.warning:is(.outline, .alt).hover .button-text,
-.button.large.warning:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text {
+.button.default.warning.alt.hover .button-text,
+.button.default.warning.alt:hover:not(.disabled):not(.loading) .button-text,
+.button.large.warning.alt.hover .button-text,
+.button.large.warning.alt:hover:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.default.warning:is(.outline, .alt).clicked .button-text,
-.button.default.warning:is(.outline, .alt):active:not(.disabled):not(.loading) .button-text,
-.button.large.warning:is(.outline, .alt).clicked .button-text,
-.button.large.warning:is(.outline, .alt):active:not(.disabled):not(.loading) .button-text {
+.button.default.warning.alt.clicked .button-text,
+.button.default.warning.alt:active:not(.disabled):not(.loading) .button-text,
+.button.large.warning.alt.clicked .button-text,
+.button.large.warning.alt:active:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.default.info:is(.outline, .alt).hover .button-text,
-.button.default.info:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text,
-.button.large.info:is(.outline, .alt).hover .button-text,
-.button.large.info:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text {
+.button.default.info.alt.hover .button-text,
+.button.default.info.alt:hover:not(.disabled):not(.loading) .button-text,
+.button.large.info.alt.hover .button-text,
+.button.large.info.alt:hover:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.default.info:is(.outline, .alt).clicked .button-text,
-.button.default.info:is(.outline, .alt):active:not(.disabled):not(.loading) .button-text,
-.button.large.info:is(.outline, .alt).clicked .button-text,
-.button.large.info:is(.outline, .alt):active:not(.disabled):not(.loading) .button-text {
+.button.default.info.alt.clicked .button-text,
+.button.default.info.alt:active:not(.disabled):not(.loading) .button-text,
+.button.large.info.alt.clicked .button-text,
+.button.large.info.alt:active:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.default.success:is(.outline, .alt).hover .button-text,
-.button.default.success:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text,
-.button.large.success:is(.outline, .alt).hover .button-text,
-.button.large.success:is(.outline, .alt):hover:not(.disabled):not(.loading) .button-text {
+.button.default.success.alt.hover .button-text,
+.button.default.success.alt:hover:not(.disabled):not(.loading) .button-text,
+.button.large.success.alt.hover .button-text,
+.button.large.success.alt:hover:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
-.button.default.success:is(.outline, .alt).clicked .button-text,
-.button.default.success:is(.outline, .alt):active:not(.disabled):not(.loading) .button-text,
-.button.large.success:is(.outline, .alt).clicked .button-text,
-.button.large.success:is(.outline, .alt):active:not(.disabled):not(.loading) .button-text {
+.button.default.success.alt.clicked .button-text,
+.button.default.success.alt:active:not(.disabled):not(.loading) .button-text,
+.button.large.success.alt.clicked .button-text,
+.button.large.success.alt:active:not(.disabled):not(.loading) .button-text {
   font-weight: var(--type-weight-light);
 }
 
@@ -2657,27 +2657,27 @@
 }
 
 /* Force state classes for info outline buttons - Updated for Figma design */
-.button.info:is(.outline, .alt).force-hover {
+.button.info.alt.force-hover {
   background: var(--primary-blue-blue-50) !important;
   border: var(--spacing-stroke-1px) solid var(--status-info-blue) !important;
   box-shadow: 2px 2px 0 0 var(--status-info-blue) !important;
 }
 
-.button.info:is(.outline, .alt).force-hover .button-text {
+.button.info.alt.force-hover .button-text {
   font-weight: var(--type-weight-light) !important;
 }
 
-.button.info:is(.outline, .alt).force-clicked {
+.button.info.alt.force-clicked {
   background: var(--primary-blue-blue-50) !important;
   border: var(--spacing-stroke-1px) solid var(--status-info-blue) !important;
   box-shadow: 2px 2px 0 0 var(--status-info-blue) !important;
 }
 
-.button.info:is(.outline, .alt).force-clicked .button-text {
+.button.info.alt.force-clicked .button-text {
   font-weight: var(--type-weight-light) !important;
 }
 
-.button.info:is(.outline, .alt).force-focused {
+.button.info.alt.force-focused {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-2px) solid var(--status-info-blue) !important;
 }
@@ -2721,27 +2721,27 @@
 }
 
 /* Force state classes for success outline buttons - Updated for Figma design */
-.button.success:is(.outline, .alt).force-hover {
+.button.success.alt.force-hover {
   background: var(--status-green-light) !important;
   border: var(--spacing-stroke-1px) solid var(--status-dark-green) !important;
   box-shadow: 2px 2px 0 0 var(--status-dark-green) !important;
 }
 
-.button.success:is(.outline, .alt).force-hover .button-text {
+.button.success.alt.force-hover .button-text {
   font-weight: var(--type-weight-light) !important;
 }
 
-.button.success:is(.outline, .alt).force-clicked {
+.button.success.alt.force-clicked {
   background: var(--status-green-light) !important;
   border: var(--spacing-stroke-1px) solid var(--status-dark-green) !important;
   box-shadow: 2px 2px 0 0 var(--status-dark-green) !important;
 }
 
-.button.success:is(.outline, .alt).force-clicked .button-text {
+.button.success.alt.force-clicked .button-text {
   font-weight: var(--type-weight-light) !important;
 }
 
-.button.success:is(.outline, .alt).force-focused {
+.button.success.alt.force-focused {
   background: var(--base-white) !important;
   border: var(--spacing-stroke-3px) solid var(--status-dark-green) !important;
 }

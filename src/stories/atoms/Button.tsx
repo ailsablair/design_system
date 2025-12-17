@@ -14,10 +14,8 @@ export interface ButtonProps
   /** @deprecated Use `variant` instead. */
   type?: ButtonVariant;
   state?: ButtonState;
-  /** Alt style (previously called "outline") */
+  /** Alt style */
   alt?: boolean;
-  /** @deprecated Use `alt` instead. */
-  outline?: boolean;
   loading?: boolean;
   disabled?: boolean;
   leadingIcon?: ReactNode;
@@ -87,8 +85,7 @@ export const Button = ({
   variant,
   type: deprecatedType,
   state = 'default',
-  alt: altProp,
-  outline: outlineProp,
+  alt = false,
   loading = false,
   disabled = false,
   leadingIcon,
@@ -103,7 +100,7 @@ export const Button = ({
 }: ButtonProps): JSX.Element => {
   const actualState: ButtonState = disabled ? 'disabled' : loading ? 'loading' : state;
   const resolvedVariant: ButtonVariant = variant ?? deprecatedType ?? 'primary';
-  const isAlt = typeof altProp === 'boolean' ? altProp : outlineProp ?? false;
+  const isAlt = alt;
 
   const getIconSize = () => {
     switch (size) {
@@ -141,7 +138,6 @@ export const Button = ({
     resolvedVariant,
     actualState,
     isAlt ? 'alt' : '',
-    outlineProp ? 'outline' : '',
     iconOnly ? 'icon-only' : '',
     width === 'full' ? 'full-width' : '',
     className,

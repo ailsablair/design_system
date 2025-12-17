@@ -30,10 +30,7 @@ const meta: Meta<typeof Button> = {
     },
     alt: {
       control: 'boolean',
-      description: 'Alt variant (previously called "outline")',
-    },
-    alt: {
-      table: { disable: true },
+      description: 'Alt variant',
     },
   },
 };
@@ -139,13 +136,13 @@ export const CompleteFigmaShowcase: Story = {
             </Button>
           </div>
           <div style={{ textAlign: 'center' }}>
-            <p style={{ margin: '0 0 12px 0', fontSize: '12px', fontWeight: '600', color: '#666', textTransform: 'uppercase' }}>Small Outline</p>
+            <p style={{ margin: '0 0 12px 0', fontSize: '12px', fontWeight: '600', color: '#666', textTransform: 'uppercase' }}>Small Alt</p>
             <Button size="small" type="tertiary" alt leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
               Label
             </Button>
           </div>
           <div style={{ textAlign: 'center' }}>
-            <p style={{ margin: '0 0 12px 0', fontSize: '12px', fontWeight: '600', color: '#666', textTransform: 'uppercase' }}>Outline Hover</p>
+            <p style={{ margin: '0 0 12px 0', fontSize: '12px', fontWeight: '600', color: '#666', textTransform: 'uppercase' }}>Alt Hover</p>
             <Button size="small" type="tertiary" alt className="force-hover" leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
               Label
             </Button>
@@ -432,7 +429,7 @@ export const CompleteFigmaShowcase: Story = {
             leadingIcon={<AlarmIcon size={18} />}
             trailingIcon={<ArrowDownIcon size={18} />}
           >
-            Tertiary Outline
+            Tertiary Alt
           </Button>
         </div>
       </div>
@@ -495,7 +492,7 @@ export const SuccessButtonShowcase: Story = {
   },
 };
 
-export const TertiaryOutlineShowcase: Story = {
+export const TertiaryAltShowcase: Story = {
   args: {
     children: 'Label',
     size: 'default',

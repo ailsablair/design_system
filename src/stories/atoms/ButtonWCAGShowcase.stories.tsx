@@ -40,7 +40,7 @@ export const ContrastCompliantButtons: Story = {
             <span style={{ fontSize: '11px', color: '#666' }}>Contrast: 3.89:1 ✓</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-            <Button type="primary" size="small" alt>Outline</Button>
+            <Button type="primary" size="small" alt>Alt</Button>
             <span style={{ fontSize: '11px', color: '#666' }}>Contrast: 8.91:1 ✓</span>
           </div>
         </div>
@@ -78,7 +78,7 @@ export const ContrastCompliantButtons: Story = {
             <span style={{ fontSize: '11px', color: '#666' }}>Contrast: 3.89:1 ✓</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-            <Button type="tertiary" size="small" alt>Outline</Button>
+            <Button type="tertiary" size="small" alt>Alt</Button>
             <span style={{ fontSize: '11px', color: '#666' }}>Contrast: 7.11:1 ✓</span>
           </div>
         </div>

@@ -40,7 +40,7 @@ All button variants properly implemented:
 - Primary, Secondary, Tertiary, Ghost variants
 - All size variants (extra-small, small, default, large)
 - Icon-only variants
-- Outline variants
+- Alt variants
 - All states (default, hover, clicked, focused, loading, disabled)
 
 **Typography**: Uses Archivo font family with correct weights and sizes

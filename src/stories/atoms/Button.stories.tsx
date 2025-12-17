@@ -30,10 +30,7 @@ const meta: Meta<typeof Button> = {
     },
     alt: {
       control: 'boolean',
-      description: 'Alt variant (previously called "outline")',
-    },
-    alt: {
-      table: { disable: true },
+      description: 'Alt variant',
     },
     loading: {
       control: 'boolean',
@@ -540,7 +537,7 @@ export const TertiaryLarge: Story = {
 };
 
 // Tertiary alt button variants
-export const TertiaryOutlineSmall: Story = {
+export const TertiaryAltSmall: Story = {
   args: {
     children: 'Label',
     size: 'small',
@@ -551,7 +548,7 @@ export const TertiaryOutlineSmall: Story = {
   },
 };
 
-export const TertiaryOutlineDefault: Story = {
+export const TertiaryAltDefault: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -562,7 +559,7 @@ export const TertiaryOutlineDefault: Story = {
   },
 };
 
-export const TertiaryOutlineLarge: Story = {
+export const TertiaryAltLarge: Story = {
   args: {
     children: 'Label',
     size: 'large',
@@ -573,7 +570,7 @@ export const TertiaryOutlineLarge: Story = {
   },
 };
 
-export const TertiaryOutlineHover: Story = {
+export const TertiaryAltHover: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -586,7 +583,7 @@ export const TertiaryOutlineHover: Story = {
   },
 };
 
-export const TertiaryOutlineClicked: Story = {
+export const TertiaryAltClicked: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -599,7 +596,7 @@ export const TertiaryOutlineClicked: Story = {
   },
 };
 
-export const TertiaryOutlineFocused: Story = {
+export const TertiaryAltFocused: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -612,7 +609,7 @@ export const TertiaryOutlineFocused: Story = {
   },
 };
 
-export const TertiaryOutlineLoading: Story = {
+export const TertiaryAltLoading: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -622,7 +619,7 @@ export const TertiaryOutlineLoading: Story = {
   },
 };
 
-export const TertiaryOutlineDisabled: Story = {
+export const TertiaryAltDisabled: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -952,7 +949,7 @@ export const ButtonTypeComparison: Story = {
             Primary
           </Button>
           <Button size="default" type="primary" alt leadingIcon={<AlarmIcon size={18} />} trailingIcon={<ArrowDownIcon size={18} />}>
-            Primary Outline
+            Primary Alt
           </Button>
         </div>
       </div>
@@ -1068,7 +1065,7 @@ export const Interactive: Story = {
               onClick={() => handleClick('Primary alt')}
               leadingIcon={<AlarmIcon size={18} />}
             >
-              Primary Outline
+              Primary Alt
             </Button>
           </div>
         </div>
@@ -1184,9 +1181,9 @@ export const SecondaryTertiaryFigmaShowcase: Story = {
         </div>
       </div>
 
-      {/* Secondary Buttons Outline */}
+      {/* Secondary Buttons Alt */}
       <div>
-        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Secondary Buttons - Outline</h4>
+        <h4 style={{ margin: '0 0 16px 0', fontSize: '16px', fontWeight: '600' }}>Secondary Buttons - Alt</h4>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '16px', alignItems: 'center' }}>
           {/* Header row */}
           <div style={{ fontWeight: '600', fontSize: '14px' }}>Size</div>
@@ -1308,7 +1305,7 @@ export const SecondaryTertiaryFigmaShowcase: Story = {
           fontFamily: 'monospace'
         }}>
           <div style={{ marginBottom: '8px' }}><strong>Secondary Solid:</strong> Background #D6F0FB, Border #0BA7EA</div>
-          <div style={{ marginBottom: '8px' }}><strong>Secondary Outline:</strong> Background white, Border #0BA7EA</div>
+          <div style={{ marginBottom: '8px' }}><strong>Secondary Alt:</strong> Background white, Border #0BA7EA</div>
           <div style={{ marginBottom: '8px' }}><strong>Tertiary Solid:</strong> Background #AED2BC, Border #4B6D58</div>
           <div style={{ marginBottom: '8px' }}><strong>Tertiary Icon-only:</strong> Background #8BBF9F, Border #8BBF9F</div>
           <div style={{ marginBottom: '8px' }}><strong>Hover/Clicked:</strong> Box shadow 1px 1px 0 0 #6171DF</div>
@@ -1547,7 +1544,7 @@ export const DesignSystemShowcase: Story = {
       </div>
 
       <div>
-        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Tertiary Outline Buttons - All Sizes</h3>
+        <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>Tertiary Alt Buttons - All Sizes</h3>
         <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
           <Button size="small" type="tertiary" alt leadingIcon={<AlarmIcon size={14} />} trailingIcon={<ArrowDownIcon size={14} />}>
             Small
@@ -2007,7 +2004,7 @@ export const SuccessDisabledLarge: Story = {
 };
 
 // Info alt button examples
-export const InfoOutlineSmall: Story = {
+export const InfoAltSmall: Story = {
   args: {
     children: 'Info button',
     size: 'small',
@@ -2017,7 +2014,7 @@ export const InfoOutlineSmall: Story = {
   },
 };
 
-export const InfoOutlineDefault: Story = {
+export const InfoAltDefault: Story = {
   args: {
     children: 'Info button',
     size: 'default',
@@ -2027,7 +2024,7 @@ export const InfoOutlineDefault: Story = {
   },
 };
 
-export const InfoOutlineLarge: Story = {
+export const InfoAltLarge: Story = {
   args: {
     children: 'Info button',
     size: 'large',
@@ -2037,7 +2034,7 @@ export const InfoOutlineLarge: Story = {
   },
 };
 
-export const InfoOutlineHover: Story = {
+export const InfoAltHover: Story = {
   args: {
     children: 'Info button',
     size: 'small',
@@ -2049,7 +2046,7 @@ export const InfoOutlineHover: Story = {
   },
 };
 
-export const InfoOutlineHoverMedium: Story = {
+export const InfoAltHoverMedium: Story = {
   args: {
     children: 'Info button',
     size: 'default',
@@ -2061,7 +2058,7 @@ export const InfoOutlineHoverMedium: Story = {
   },
 };
 
-export const InfoOutlineHoverLarge: Story = {
+export const InfoAltHoverLarge: Story = {
   args: {
     children: 'Info button',
     size: 'large',
@@ -2073,7 +2070,7 @@ export const InfoOutlineHoverLarge: Story = {
   },
 };
 
-export const InfoOutlineClicked: Story = {
+export const InfoAltClicked: Story = {
   args: {
     children: 'Info button',
     size: 'small',
@@ -2085,7 +2082,7 @@ export const InfoOutlineClicked: Story = {
   },
 };
 
-export const InfoOutlineClickedMedium: Story = {
+export const InfoAltClickedMedium: Story = {
   args: {
     children: 'Info button',
     size: 'default',
@@ -2097,7 +2094,7 @@ export const InfoOutlineClickedMedium: Story = {
   },
 };
 
-export const InfoOutlineClickedLarge: Story = {
+export const InfoAltClickedLarge: Story = {
   args: {
     children: 'Info button',
     size: 'large',
@@ -2109,7 +2106,7 @@ export const InfoOutlineClickedLarge: Story = {
   },
 };
 
-export const InfoOutlineFocused: Story = {
+export const InfoAltFocused: Story = {
   args: {
     children: 'Info button',
     size: 'small',
@@ -2121,7 +2118,7 @@ export const InfoOutlineFocused: Story = {
   },
 };
 
-export const InfoOutlineFocusedMedium: Story = {
+export const InfoAltFocusedMedium: Story = {
   args: {
     children: 'Info button',
     size: 'default',
@@ -2133,7 +2130,7 @@ export const InfoOutlineFocusedMedium: Story = {
   },
 };
 
-export const InfoOutlineFocusedLarge: Story = {
+export const InfoAltFocusedLarge: Story = {
   args: {
     children: 'Info button',
     size: 'large',
@@ -2145,7 +2142,7 @@ export const InfoOutlineFocusedLarge: Story = {
   },
 };
 
-export const InfoOutlineLoading: Story = {
+export const InfoAltLoading: Story = {
   args: {
     children: 'Info button',
     size: 'small',
@@ -2155,7 +2152,7 @@ export const InfoOutlineLoading: Story = {
   },
 };
 
-export const InfoOutlineLoadingMedium: Story = {
+export const InfoAltLoadingMedium: Story = {
   args: {
     children: 'Info button',
     size: 'default',
@@ -2165,7 +2162,7 @@ export const InfoOutlineLoadingMedium: Story = {
   },
 };
 
-export const InfoOutlineLoadingLarge: Story = {
+export const InfoAltLoadingLarge: Story = {
   args: {
     children: 'Info button',
     size: 'large',
@@ -2175,7 +2172,7 @@ export const InfoOutlineLoadingLarge: Story = {
   },
 };
 
-export const InfoOutlineDisabled: Story = {
+export const InfoAltDisabled: Story = {
   args: {
     children: 'Label',
     size: 'small',
@@ -2187,7 +2184,7 @@ export const InfoOutlineDisabled: Story = {
   },
 };
 
-export const InfoOutlineDisabledMedium: Story = {
+export const InfoAltDisabledMedium: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -2199,7 +2196,7 @@ export const InfoOutlineDisabledMedium: Story = {
   },
 };
 
-export const InfoOutlineDisabledLarge: Story = {
+export const InfoAltDisabledLarge: Story = {
   args: {
     children: 'Label',
     size: 'large',
@@ -2212,7 +2209,7 @@ export const InfoOutlineDisabledLarge: Story = {
 };
 
 // Success alt button examples
-export const SuccessOutlineSmall: Story = {
+export const SuccessAltSmall: Story = {
   args: {
     children: 'Success button',
     size: 'small',
@@ -2222,7 +2219,7 @@ export const SuccessOutlineSmall: Story = {
   },
 };
 
-export const SuccessOutlineDefault: Story = {
+export const SuccessAltDefault: Story = {
   args: {
     children: 'Success button',
     size: 'default',
@@ -2232,7 +2229,7 @@ export const SuccessOutlineDefault: Story = {
   },
 };
 
-export const SuccessOutlineLarge: Story = {
+export const SuccessAltLarge: Story = {
   args: {
     children: 'Success button',
     size: 'large',
@@ -2242,7 +2239,7 @@ export const SuccessOutlineLarge: Story = {
   },
 };
 
-export const SuccessOutlineHover: Story = {
+export const SuccessAltHover: Story = {
   args: {
     children: 'Success button',
     size: 'small',
@@ -2254,7 +2251,7 @@ export const SuccessOutlineHover: Story = {
   },
 };
 
-export const SuccessOutlineHoverMedium: Story = {
+export const SuccessAltHoverMedium: Story = {
   args: {
     children: 'Success button',
     size: 'default',
@@ -2266,7 +2263,7 @@ export const SuccessOutlineHoverMedium: Story = {
   },
 };
 
-export const SuccessOutlineHoverLarge: Story = {
+export const SuccessAltHoverLarge: Story = {
   args: {
     children: 'Success button',
     size: 'large',
@@ -2278,7 +2275,7 @@ export const SuccessOutlineHoverLarge: Story = {
   },
 };
 
-export const SuccessOutlineClicked: Story = {
+export const SuccessAltClicked: Story = {
   args: {
     children: 'Success button',
     size: 'small',
@@ -2290,7 +2287,7 @@ export const SuccessOutlineClicked: Story = {
   },
 };
 
-export const SuccessOutlineClickedMedium: Story = {
+export const SuccessAltClickedMedium: Story = {
   args: {
     children: 'Success button',
     size: 'default',
@@ -2302,7 +2299,7 @@ export const SuccessOutlineClickedMedium: Story = {
   },
 };
 
-export const SuccessOutlineClickedLarge: Story = {
+export const SuccessAltClickedLarge: Story = {
   args: {
     children: 'Success button',
     size: 'large',
@@ -2314,7 +2311,7 @@ export const SuccessOutlineClickedLarge: Story = {
   },
 };
 
-export const SuccessOutlineFocused: Story = {
+export const SuccessAltFocused: Story = {
   args: {
     children: 'Success button',
     size: 'small',
@@ -2326,7 +2323,7 @@ export const SuccessOutlineFocused: Story = {
   },
 };
 
-export const SuccessOutlineFocusedMedium: Story = {
+export const SuccessAltFocusedMedium: Story = {
   args: {
     children: 'Success button',
     size: 'default',
@@ -2338,7 +2335,7 @@ export const SuccessOutlineFocusedMedium: Story = {
   },
 };
 
-export const SuccessOutlineFocusedLarge: Story = {
+export const SuccessAltFocusedLarge: Story = {
   args: {
     children: 'Success button',
     size: 'large',
@@ -2350,7 +2347,7 @@ export const SuccessOutlineFocusedLarge: Story = {
   },
 };
 
-export const SuccessOutlineLoading: Story = {
+export const SuccessAltLoading: Story = {
   args: {
     children: 'Success button',
     size: 'small',
@@ -2360,7 +2357,7 @@ export const SuccessOutlineLoading: Story = {
   },
 };
 
-export const SuccessOutlineLoadingMedium: Story = {
+export const SuccessAltLoadingMedium: Story = {
   args: {
     children: 'Success button',
     size: 'default',
@@ -2370,7 +2367,7 @@ export const SuccessOutlineLoadingMedium: Story = {
   },
 };
 
-export const SuccessOutlineLoadingLarge: Story = {
+export const SuccessAltLoadingLarge: Story = {
   args: {
     children: 'Success button',
     size: 'large',
@@ -2380,7 +2377,7 @@ export const SuccessOutlineLoadingLarge: Story = {
   },
 };
 
-export const SuccessOutlineDisabled: Story = {
+export const SuccessAltDisabled: Story = {
   args: {
     children: 'Label',
     size: 'small',
@@ -2392,7 +2389,7 @@ export const SuccessOutlineDisabled: Story = {
   },
 };
 
-export const SuccessOutlineDisabledMedium: Story = {
+export const SuccessAltDisabledMedium: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -2404,7 +2401,7 @@ export const SuccessOutlineDisabledMedium: Story = {
   },
 };
 
-export const SuccessOutlineDisabledLarge: Story = {
+export const SuccessAltDisabledLarge: Story = {
   args: {
     children: 'Label',
     size: 'large',
@@ -2417,7 +2414,7 @@ export const SuccessOutlineDisabledLarge: Story = {
 };
 
 // Tertiary alt button examples
-export const TertiaryOutlineDefaultSmall: Story = {
+export const TertiaryAltDefaultSmall: Story = {
   args: {
     children: 'Label',
     size: 'small',
@@ -2428,7 +2425,7 @@ export const TertiaryOutlineDefaultSmall: Story = {
   },
 };
 
-export const TertiaryOutlineDefaultMedium: Story = {
+export const TertiaryAltDefaultMedium: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -2439,7 +2436,7 @@ export const TertiaryOutlineDefaultMedium: Story = {
   },
 };
 
-export const TertiaryOutlineDefaultLarge: Story = {
+export const TertiaryAltDefaultLarge: Story = {
   args: {
     children: 'Label',
     size: 'large',
@@ -2450,7 +2447,7 @@ export const TertiaryOutlineDefaultLarge: Story = {
   },
 };
 
-export const TertiaryOutlineHoverSmall: Story = {
+export const TertiaryAltHoverSmall: Story = {
   args: {
     children: 'Label',
     size: 'small',
@@ -2462,7 +2459,7 @@ export const TertiaryOutlineHoverSmall: Story = {
   },
 };
 
-export const TertiaryOutlineHoverMedium: Story = {
+export const TertiaryAltHoverMedium: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -2474,7 +2471,7 @@ export const TertiaryOutlineHoverMedium: Story = {
   },
 };
 
-export const TertiaryOutlineHoverLarge: Story = {
+export const TertiaryAltHoverLarge: Story = {
   args: {
     children: 'Label',
     size: 'large',
@@ -2486,7 +2483,7 @@ export const TertiaryOutlineHoverLarge: Story = {
   },
 };
 
-export const TertiaryOutlineClickedSmall: Story = {
+export const TertiaryAltClickedSmall: Story = {
   args: {
     children: 'Label',
     size: 'small',
@@ -2498,7 +2495,7 @@ export const TertiaryOutlineClickedSmall: Story = {
   },
 };
 
-export const TertiaryOutlineClickedMedium: Story = {
+export const TertiaryAltClickedMedium: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -2510,7 +2507,7 @@ export const TertiaryOutlineClickedMedium: Story = {
   },
 };
 
-export const TertiaryOutlineClickedLarge: Story = {
+export const TertiaryAltClickedLarge: Story = {
   args: {
     children: 'Label',
     size: 'large',
@@ -2522,7 +2519,7 @@ export const TertiaryOutlineClickedLarge: Story = {
   },
 };
 
-export const TertiaryOutlineFocusedSmall: Story = {
+export const TertiaryAltFocusedSmall: Story = {
   args: {
     children: 'Label',
     size: 'small',
@@ -2534,7 +2531,7 @@ export const TertiaryOutlineFocusedSmall: Story = {
   },
 };
 
-export const TertiaryOutlineFocusedMedium: Story = {
+export const TertiaryAltFocusedMedium: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -2546,7 +2543,7 @@ export const TertiaryOutlineFocusedMedium: Story = {
   },
 };
 
-export const TertiaryOutlineFocusedLarge: Story = {
+export const TertiaryAltFocusedLarge: Story = {
   args: {
     children: 'Label',
     size: 'large',
@@ -2558,7 +2555,7 @@ export const TertiaryOutlineFocusedLarge: Story = {
   },
 };
 
-export const TertiaryOutlineLoadingSmall: Story = {
+export const TertiaryAltLoadingSmall: Story = {
   args: {
     children: 'Label',
     size: 'small',
@@ -3088,7 +3085,7 @@ export const IconOnlyButtonsShowcase: Story = {
   },
 };
 
-export const TertiaryOutlineLoadingMedium: Story = {
+export const TertiaryAltLoadingMedium: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -3098,7 +3095,7 @@ export const TertiaryOutlineLoadingMedium: Story = {
   },
 };
 
-export const TertiaryOutlineLoadingLarge: Story = {
+export const TertiaryAltLoadingLarge: Story = {
   args: {
     children: 'Label',
     size: 'large',
@@ -3108,7 +3105,7 @@ export const TertiaryOutlineLoadingLarge: Story = {
   },
 };
 
-export const TertiaryOutlineDisabledSmall: Story = {
+export const TertiaryAltDisabledSmall: Story = {
   args: {
     children: 'Label',
     size: 'small',
@@ -3120,7 +3117,7 @@ export const TertiaryOutlineDisabledSmall: Story = {
   },
 };
 
-export const TertiaryOutlineDisabledMedium: Story = {
+export const TertiaryAltDisabledMedium: Story = {
   args: {
     children: 'Label',
     size: 'default',
@@ -3132,7 +3129,7 @@ export const TertiaryOutlineDisabledMedium: Story = {
   },
 };
 
-export const TertiaryOutlineDisabledLarge: Story = {
+export const TertiaryAltDisabledLarge: Story = {
   args: {
     children: 'Label',
     size: 'large',
