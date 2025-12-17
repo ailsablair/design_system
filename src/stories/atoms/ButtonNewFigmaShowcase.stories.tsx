@@ -28,9 +28,12 @@ const meta: Meta<typeof Button> = {
       options: ['default', 'hover', 'clicked', 'focused', 'loading', 'disabled'],
       description: 'Visual state (for controlled states)',
     },
-    outline: {
+    alt: {
       control: 'boolean',
-      description: 'Outline variant',
+      description: 'Alt variant (previously called "outline")',
+    },
+    outline: {
+      table: { disable: true },
     },
   },
 };
@@ -497,7 +500,7 @@ export const TertiaryOutlineShowcase: Story = {
     children: 'Label',
     size: 'default',
     type: 'tertiary',
-    outline: true,
+    alt: true,
     leadingIcon: <AlarmIcon size={18} />,
     trailingIcon: <ArrowDownIcon size={18} />,
   },
