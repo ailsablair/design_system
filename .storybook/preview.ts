@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Decorator, Preview as StorybookPreview } from '@storybook/react';
+import { initImmediateSuppression } from '../src/utils/immediateResizeObserverSuppression';
 import { setupStorybookResizeObserverFix } from '../src/utils/storybookResizeObserverFix';
 
 // Early, focused suppression of noisy ResizeObserver errors for Storybook preview
@@ -9,6 +10,12 @@ const applyResizeObserverSuppression = (): void => {
 
   if (w.__RO_STORYBOOK_SUPPRESSION_APPLIED) return;
   w.__RO_STORYBOOK_SUPPRESSION_APPLIED = true;
+
+  try {
+    initImmediateSuppression();
+  } catch {
+    // no-op
+  }
 
   try {
     setupStorybookResizeObserverFix();

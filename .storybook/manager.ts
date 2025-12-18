@@ -1,3 +1,5 @@
+import { initImmediateSuppression } from '../src/utils/immediateResizeObserverSuppression';
+
 // Manager-side console filter to suppress noisy internal event logs
 // Targets messages like:
 // "%c manager %c received %cstorybook/instrumenter/sync%c but was unable to determine the source of the event"
@@ -5,6 +7,8 @@
 
 (function () {
   try {
+    initImmediateSuppression();
+
     const original = {
       debug: console.debug.bind(console),
       log: console.log.bind(console),
