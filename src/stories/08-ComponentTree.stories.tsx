@@ -56,6 +56,16 @@ const treeData = [
     name: 'Atoms',
     type: 'category',
     children: [
+      {
+        name: 'Button',
+        type: 'component',
+        children: [
+          { name: 'Overview', type: 'story', link: './?path=/story/atoms-button--overview' },
+          { name: 'Playground', type: 'story', link: './?path=/story/atoms-button--playground' },
+          { name: 'Size Comparison', type: 'story', link: './?path=/story/atoms-button--size-comparison' },
+          { name: 'Primary Stacked', type: 'story', link: './?path=/story/atoms-button--primary-stacked' },
+        ]
+      },
       { name: 'Counter', type: 'component', link: './?path=/story/atoms-counter--default' },
       { name: 'DateTime Input', type: 'component', link: './?path=/story/atoms-date-time-input--default' },
       { name: 'Divider', type: 'component', link: './?path=/story/atoms-divider--default' },
