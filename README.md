@@ -88,13 +88,22 @@ src/
 
 ### Adding New Components
 
-1. Create component in appropriate directory
-2. Create `.stories.tsx` file for documentation
-3. Add proper TypeScript interfaces
-4. Use design tokens from `tokens.css`
-5. Test in Storybook locally
-6. Deploy to Chromatic for visual review
-7. Update `src/stories/08-ComponentTree.stories.tsx` to include the new component in the UI Component Tree Map
+1. Create component in appropriate directory.
+2. Create `.stories.tsx` file for documentation.
+3. Add proper TypeScript interfaces.
+4. Use design tokens from `tokens.css`.
+5. Test in Storybook locally.
+6. Deploy to Chromatic for visual review.
+7. Update `src/stories/08-ComponentTree.stories.tsx` to include the new component in the UI Component Tree Map.
+
+### Mandatory Component Documentation Sections
+
+Every new component must include the following sections in its documentation:
+
+1.  **Overview**: A detailed rundown of each variant and the specific design tokens used (color, spacing, stroke, typography, etc.).
+2.  **Interactive Playground**: A live area where users can interact with the component and its variants to see how it behaves in-app.
+3.  **Size Comparison**: A visual comparison of all different sizes with visible dimensions (full width, full height, horizontal padding, and vertical padding).
+4.  **Function Blurb**: A concise explanation of the component's general function, its purpose, and where/why it should be used in the application.
 
 ### Design Token Usage
 
