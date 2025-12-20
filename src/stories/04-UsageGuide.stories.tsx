@@ -154,8 +154,8 @@ export const UsageGuide: Story = {
           gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
           gap: '24px'
         }}>
-          <div style={{ 
-            padding: '24px', 
+          <div style={{
+            padding: '24px',
             border: '1px solid #dbeafe',
             borderRadius: '8px',
             background: '#eff6ff'
@@ -163,7 +163,7 @@ export const UsageGuide: Story = {
             <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px' }}>
               Primary Colors
             </h3>
-            <div style={{ 
+            <div style={{
               background: '#1f2937',
               color: '#f9fafb',
               padding: '16px',
@@ -172,9 +172,9 @@ export const UsageGuide: Story = {
               fontSize: '13px'
             }}>
               <div>// Use primary colors for brand elements</div>
-              <div>&lt;Button style=&#123;&#123; backgroundColor: 'var(--primary-sky-blue-500)' &#125;&#125;&gt;</div>
-              <div>&nbsp;&nbsp;Primary Action</div>
-              <div>&lt;/Button&gt;</div>
+              <div>&lt;Tag variant="primary"&gt;</div>
+              <div>&nbsp;&nbsp;Primary Tag</div>
+              <div>&lt;/Tag&gt;</div>
               <div style={{ marginTop: '8px' }}>// Status colors for feedback</div>
               <div>&lt;Alert style=&#123;&#123; borderColor: 'var(--status-green-500)' &#125;&#125;&gt;</div>
               <div>&nbsp;&nbsp;Success message</div>
