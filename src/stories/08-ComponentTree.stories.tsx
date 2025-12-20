@@ -56,21 +56,6 @@ const treeData = [
     name: 'Atoms',
     type: 'category',
     children: [
-      {
-        name: 'Button',
-        type: 'component',
-        children: [
-          { name: 'Default', type: 'story', link: './?path=/story/atoms-button--default' },
-          { name: 'Secondary', type: 'story', link: './?path=/story/atoms-button--secondary' },
-          { name: 'Ghost', type: 'story', link: './?path=/story/atoms-button--ghost-default' },
-          { name: 'Error', type: 'story', link: './?path=/story/atoms-button--error-default' },
-          { name: 'Warning', type: 'story', link: './?path=/story/atoms-button--warning-default' },
-          { name: 'Alt Variants', type: 'story', link: './?path=/story/atoms-button--primary-alt' },
-          { name: 'Split Button', type: 'story', link: './?path=/story/atoms-button-split-button--primary' },
-          { name: 'Auto Save Button', type: 'story', link: './?path=/story/atoms-button-auto-save-button--default' },
-          { name: 'Button Group', type: 'story', link: './?path=/story/atoms-button-group--default' },
-        ]
-      },
       { name: 'Counter', type: 'component', link: './?path=/story/atoms-counter--default' },
       { name: 'DateTime Input', type: 'component', link: './?path=/story/atoms-date-time-input--default' },
       { name: 'Divider', type: 'component', link: './?path=/story/atoms-divider--default' },
@@ -115,7 +100,6 @@ const treeData = [
     name: 'Showcases & Showroom',
     type: 'category',
     children: [
-      { name: 'Button Extended', type: 'story', link: './?path=/story/design-system-figma-showcase-files-button-extended-figma-showcase--primary' },
       { name: 'Design System Showcase', type: 'story', link: './?path=/story/design-system-figma-showcase-files-design-system-showcase--all-components' },
       { name: 'Effects Showcase', type: 'story', link: './?path=/story/design-system-figma-showcase-files-effects-showcase--all-effects' },
       { name: 'Avatar Extended', type: 'story', link: './?path=/story/design-system-figma-showcase-files-avatar-extended-figma-showcase--default' },
