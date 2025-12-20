@@ -94,6 +94,7 @@ src/
 4. Use design tokens from `tokens.css`
 5. Test in Storybook locally
 6. Deploy to Chromatic for visual review
+7. Update `src/stories/08-ComponentTree.stories.tsx` to include the new component in the UI Component Tree Map
 
 ### Design Token Usage
 
