@@ -19,7 +19,6 @@ The Echo Design System is a comprehensive, scalable design foundation built with
 - **Toggle**: Complete tokenization with proper track and thumb sizing
 - **Card**: Enhanced with tokenized dimensions and display typography
 - **Avatar**: Consistent sizing tokens across all variants
-- **Button**: Standardized heights and spacing for better accessibility
 - **DataTable**: Improved shadow system and visual consistency
 
 ### Performance Optimizations
@@ -122,8 +121,6 @@ export const Overview: Story = {
             <li><strong>Toggle</strong>: ✅ Complete design token migration</li>
             <li><strong>Card</strong>: ✅ Enhanced with display typography tokens</li>
             <li><strong>Avatar</strong>: ✅ Consistent sizing across all variants</li>
-            <li><strong>Button</strong>: ✅ Standardized heights and accessibility</li>
-            <li><strong>OrganizationalButtons</strong>: ✅ Filter, Sort, and More Actions buttons</li>
             <li><strong>DataTable</strong>: ✅ Improved shadows and consistency</li>
           </ul>
         </div>
@@ -144,7 +141,7 @@ export const Overview: Story = {
           </h3>
           <ul style={{ margin: 0, paddingLeft: 'var(--spacing-sizing-20px)' }}>
             <li><strong>295+ Design Tokens</strong>: Comprehensive token system</li>
-            <li><strong>Component Sizing</strong>: Button, avatar, toggle dimensions</li>
+            <li><strong>Component Sizing</strong>: Avatar, toggle dimensions</li>
             <li><strong>Display Typography</strong>: Large statistical values (48px-82px)</li>
             <li><strong>Font Aliases</strong>: Consistent typography references</li>
             <li><strong>Gradient System</strong>: Tokenized placeholder backgrounds</li>
@@ -222,15 +219,15 @@ export const Overview: Story = {
           gap: 'var(--spacing-sizing-16px)'
         }}>
           <div>
-            <h4 style={{ 
-              fontSize: 'var(--type-size-base)', 
-              fontWeight: 'var(--type-weight-semibold)', 
-              marginBottom: 'var(--spacing-sizing-8px)' 
+            <h4 style={{
+              fontSize: 'var(--type-size-base)',
+              fontWeight: 'var(--type-weight-semibold)',
+              marginBottom: 'var(--spacing-sizing-8px)'
             }}>
               Component Token Migration
             </h4>
             <div style={{ fontSize: 'var(--type-size-sm)', color: 'var(--neutral-gray-gray-700)' }}>
-              Stepper, Toggle, Card, Avatar, and Button components now use design tokens exclusively, 
+              Stepper, Toggle, Card, and Avatar components now use design tokens exclusively,
               eliminating hardcoded values and improving maintainability.
             </div>
           </div>
@@ -248,15 +245,15 @@ export const Overview: Story = {
             </div>
           </div>
           <div>
-            <h4 style={{ 
-              fontSize: 'var(--type-size-base)', 
-              fontWeight: 'var(--type-weight-semibold)', 
-              marginBottom: 'var(--spacing-sizing-8px)' 
+            <h4 style={{
+              fontSize: 'var(--type-size-base)',
+              fontWeight: 'var(--type-weight-semibold)',
+              marginBottom: 'var(--spacing-sizing-8px)'
             }}>
               Component Sizing Standards
             </h4>
             <div style={{ fontSize: 'var(--type-size-sm)', color: 'var(--neutral-gray-gray-700)' }}>
-              Standardized button heights, avatar sizes, and toggle dimensions with 
+              Standardized avatar sizes and toggle dimensions with
               dedicated component tokens for consistent UI scaling.
             </div>
           </div>
