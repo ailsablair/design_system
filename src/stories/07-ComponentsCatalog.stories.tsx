@@ -56,8 +56,6 @@ export const ComponentsCatalog: Story = {
       <Section
         title="Atoms"
         items={[
-          { name: 'SplitButton', path: 'Atoms/Button/Split Button', note: 'Primary + menu actions' },
-          { name: 'Button', path: 'Atoms/Button', note: 'Primary/secondary, states, and accessibility' },
         ]}
       />
 
