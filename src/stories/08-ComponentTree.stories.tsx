@@ -60,11 +60,15 @@ const treeData = [
         name: 'Button',
         type: 'component',
         children: [
-          { name: 'Default', type: 'story', link: './?path=/story/atoms-button--primary' },
+          { name: 'Default', type: 'story', link: './?path=/story/atoms-button--default' },
           { name: 'Secondary', type: 'story', link: './?path=/story/atoms-button--secondary' },
+          { name: 'Ghost', type: 'story', link: './?path=/story/atoms-button--ghost-default' },
+          { name: 'Error', type: 'story', link: './?path=/story/atoms-button--error-default' },
+          { name: 'Warning', type: 'story', link: './?path=/story/atoms-button--warning-default' },
           { name: 'Alt Variants', type: 'story', link: './?path=/story/atoms-button--primary-alt' },
           { name: 'Split Button', type: 'story', link: './?path=/story/atoms-button-split-button--primary' },
           { name: 'Auto Save Button', type: 'story', link: './?path=/story/atoms-button-auto-save-button--default' },
+          { name: 'Button Group', type: 'story', link: './?path=/story/atoms-button-group--default' },
         ]
       },
       { name: 'Counter', type: 'component', link: './?path=/story/atoms-counter--default' },
@@ -81,6 +85,7 @@ const treeData = [
         children: [
           { name: 'Standard', type: 'story', link: './?path=/story/atoms-accordion--default' },
           { name: 'Figma Variants', type: 'story', link: './?path=/story/atoms-accordion-accordion-figma--default' },
+          { name: 'Other Variants', type: 'story', link: './?path=/story/atoms-accordion-other--default' },
         ]
       },
     ]
@@ -113,6 +118,9 @@ const treeData = [
       { name: 'Button Extended', type: 'story', link: './?path=/story/design-system-figma-showcase-files-button-extended-figma-showcase--primary' },
       { name: 'Design System Showcase', type: 'story', link: './?path=/story/design-system-figma-showcase-files-design-system-showcase--all-components' },
       { name: 'Effects Showcase', type: 'story', link: './?path=/story/design-system-figma-showcase-files-effects-showcase--all-effects' },
+      { name: 'Avatar Extended', type: 'story', link: './?path=/story/design-system-figma-showcase-files-avatar-extended-figma-showcase--default' },
+      { name: 'Card Extended', type: 'story', link: './?path=/story/design-system-figma-showcase-files-card-extended-figma-showcase--default' },
+      { name: 'DataTable Figma Showcase', type: 'story', link: './?path=/story/molecules-data-table-figma-showcase--default' },
     ]
   }
 ];
