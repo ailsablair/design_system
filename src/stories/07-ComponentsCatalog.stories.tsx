@@ -56,6 +56,7 @@ export const ComponentsCatalog: Story = {
       <Section
         title="Atoms"
         items={[
+          { name: 'Button', path: 'Atoms/Button', note: 'Primary interaction elements with grouping support' },
         ]}
       />
 
