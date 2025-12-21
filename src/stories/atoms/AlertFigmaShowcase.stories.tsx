@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Alert } from './Alert';
 
 const meta: Meta<typeof Alert> = {
-  title: 'Design System/Figma Showcase Files/Alert Figma Showcase',
+  title: 'Atoms/Alert Figma Showcase',
   component: Alert,
   parameters: {
     layout: 'padded',
