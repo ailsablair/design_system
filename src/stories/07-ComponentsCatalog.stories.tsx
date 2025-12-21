@@ -59,7 +59,6 @@ export const ComponentsCatalog: Story = {
           { name: 'Alert', path: 'Atoms/Alert', note: 'Notification banners with multiple themes' },
           { name: 'Alert Figma Showcase', path: 'Design System/Figma Showcase Files/Alert Figma Showcase', note: 'Complete pixel-perfect Figma implementation' },
           { name: 'Badge', path: 'Atoms/Badge', note: 'Notification and status indicators' },
-          { name: 'Button', path: 'Atoms/Button', note: 'Primary interaction elements with grouping support' },
         ]}
       />
 
