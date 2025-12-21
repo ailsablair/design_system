@@ -114,6 +114,7 @@ const treeData = [
       { name: 'Effects Showcase', type: 'story', link: './?path=/story/design-system-figma-showcase-files-effects-showcase--all-effects' },
       { name: 'Avatar Extended', type: 'story', link: './?path=/story/design-system-figma-showcase-files-avatar-extended-figma-showcase--default' },
       { name: 'Card Extended', type: 'story', link: './?path=/story/design-system-figma-showcase-files-card-extended-figma-showcase--default' },
+      { name: 'Alert Figma Showcase', type: 'story', link: './?path=/story/design-system-figma-showcase-files-alert-figma-showcase--complete-figma-showcase' },
       { name: 'DataTable Figma Showcase', type: 'story', link: './?path=/story/molecules-data-table-figma-showcase--default' },
     ]
   }
