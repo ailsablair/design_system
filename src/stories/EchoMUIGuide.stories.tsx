@@ -128,12 +128,9 @@ import { EchoMUIDataTable } from './molecules/EchoMUIDataTable';
       {
         label: 'Migrate Gradually',
         description: 'Replace components progressively',
-        code: `// Keep existing components
-<Button type="primary">Original</Button>
-
-// Add enhanced versions where needed
+        code: `// Use enhanced versions for better accessibility and interactions
 <EchoMUIButton variant="primary" enhancedInteractions>
-  Enhanced
+  Enhanced Button
 </EchoMUIButton>`,
       },
       {
