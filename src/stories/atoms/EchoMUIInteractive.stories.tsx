@@ -6,7 +6,6 @@ import { EchoMUIToggle } from './EchoMUIToggle';
 import { EchoMUITag } from './EchoMUITag';
 
 // Import original components for comparison
-import { Button } from './Button';
 import { Tag } from './Tag';
 
 import {
@@ -419,24 +418,6 @@ export const InteractiveShowcase: Story = {
                     </Typography>
 
                     <Stack spacing={3}>
-                      {/* Original Buttons */}
-                      <Box>
-                        <Typography variant="h6" gutterBottom>
-                          Original Buttons
-                        </Typography>
-                        <Stack spacing={2}>
-                          <Button type="primary" leadingIcon={<SaveIcon />}>
-                            Primary Button
-                          </Button>
-                          <Button type="secondary">
-                            Secondary Button
-                          </Button>
-                          <Button type="tertiary" size="small">
-                            Tertiary Small
-                          </Button>
-                        </Stack>
-                      </Box>
-
                       {/* Original Tags */}
                       <Box>
                         <Typography variant="h6" gutterBottom>
