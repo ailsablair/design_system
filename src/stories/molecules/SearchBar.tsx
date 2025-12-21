@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Input } from '../atoms/Input';
-import { Button } from '../atoms/Button';
+import { EchoMUIButton as Button } from '../atoms/EchoMUIButton';
 import './searchBar.css';
 
 export interface SearchBarProps {
