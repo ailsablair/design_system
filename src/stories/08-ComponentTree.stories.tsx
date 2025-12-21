@@ -56,16 +56,6 @@ const treeData = [
     name: 'Atoms',
     type: 'category',
     children: [
-      {
-        name: 'Button',
-        type: 'component',
-        children: [
-          { name: 'Overview', type: 'story', link: './?path=/story/atoms-button--overview' },
-          { name: 'Playground', type: 'story', link: './?path=/story/atoms-button--playground' },
-          { name: 'Size Comparison', type: 'story', link: './?path=/story/atoms-button--size-comparison' },
-          { name: 'Primary Stacked', type: 'story', link: './?path=/story/atoms-button--primary-stacked' },
-        ]
-      },
       { name: 'Alert', type: 'component', link: './?path=/story/atoms-alert--default' },
       { name: 'Badge', type: 'component', link: './?path=/story/atoms-badge--dot-default' },
       { name: 'Counter', type: 'component', link: './?path=/story/atoms-counter--default' },
