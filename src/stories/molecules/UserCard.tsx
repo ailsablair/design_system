@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardProps } from '../atoms/Card';
 import { Avatar } from '../atoms/Avatar';
 import { Tag } from '../atoms/Tag';
-import { Button } from '../atoms/Button';
+import { EchoMUIButton as Button } from '../atoms/EchoMUIButton';
 import './userCard.css';
 
 export interface UserInfo {
