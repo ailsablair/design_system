@@ -34,9 +34,6 @@ import {
 import { EchoMUIButton } from './EchoMUIButton';
 import { EchoMUIButtonCSS } from './EchoMUIButtonCSS';
 
-// Import your original Echo Button for comparison
-import { Button as OriginalEchoButton } from './Button';
-
 // Import MUI icons (you already have these installed)
 import {
   Save as SaveIcon,
@@ -130,27 +127,7 @@ export const IntegrationShowcase: Story = {
                 >
                   <Box>
                     <Typography variant="h6" gutterBottom>
-                      1. Original Echo Button
-                    </Typography>
-                    <Typography variant="body2" sx={{ mb: 2, color: 'text.secondary' }}>
-                      Your current CSS-based approach
-                    </Typography>
-                    <Stack spacing={2}>
-                      <OriginalEchoButton type="primary" leadingIcon={<SaveIcon />}>
-                        Save Document
-                      </OriginalEchoButton>
-                      <OriginalEchoButton type="secondary">
-                        Cancel
-                      </OriginalEchoButton>
-                      <OriginalEchoButton type="tertiary" size="small">
-                        Learn More
-                      </OriginalEchoButton>
-                    </Stack>
-                  </Box>
-
-                  <Box>
-                    <Typography variant="h6" gutterBottom>
-                      2. Styled MUI Button
+                      1. Styled MUI Button
                     </Typography>
                     <Typography variant="body2" sx={{ mb: 2, color: 'text.secondary' }}>
                       MUI Button + styled-components + Echo tokens
@@ -170,7 +147,7 @@ export const IntegrationShowcase: Story = {
 
                   <Box>
                     <Typography variant="h6" gutterBottom>
-                      3. CSS-styled MUI Button
+                      2. CSS-styled MUI Button
                     </Typography>
                     <Typography variant="body2" sx={{ mb: 2, color: 'text.secondary' }}>
                       MUI Button + CSS classes + Echo tokens
@@ -187,12 +164,15 @@ export const IntegrationShowcase: Story = {
                       </EchoMUIButtonCSS>
                     </Stack>
                   </Box>
+
+                  <Box>
+                    {/* Placeholder or other content */}
+                  </Box>
                 </Box>
 
                 <Box sx={{ mt: 3, p: 2, bgcolor: 'grey.50', borderRadius: 1 }}>
                   <Typography variant="body2" sx={{ fontStyle: 'italic' }}>
-                    💡 <strong>Notice:</strong> All three approaches produce visually identical buttons using Echo tokens, 
-                    but approaches 2 & 3 gain MUI's enhanced interactions (ripple effects, better touch support, etc.)
+                    💡 <strong>Notice:</strong> These approaches gain MUI's enhanced interactions (ripple effects, better touch support, etc.) while using Echo tokens.
                   </Typography>
                 </Box>
               </CardContent>
