@@ -1,14 +1,20 @@
 import React from 'react';
-import { Button, ButtonProps } from '../atoms/Button';
+import { EchoMUIButton as Button } from '../atoms/EchoMUIButton';
 import './actionBar.css';
 
-export interface ActionItem extends Omit<ButtonProps, 'children'> {
+export interface ActionItem {
   /** Button label text */
   label: string;
   /** Unique action identifier */
   id: string;
   /** Action handler */
   onAction?: () => void;
+  /** Button type/variant */
+  type?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'success';
+  /** Click handler */
+  onClick?: () => void;
+  /** Leading icon */
+  leadingIcon?: React.ReactNode;
 }
 
 export interface ActionBarProps {
