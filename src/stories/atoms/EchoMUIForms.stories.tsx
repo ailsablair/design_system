@@ -13,7 +13,6 @@ import { Input } from './Input';
 import { Checkbox } from './Checkbox';
 import { RadioButton } from './RadioButton';
 import { Textarea } from './Textarea';
-import { Button } from './Button';
 
 import {
   Box,
@@ -537,8 +536,6 @@ export const FormsShowcase: Story = {
                       placeholder="Your comments..."
                       state="default"
                     />
-
-                    <Button type="primary">Submit Form</Button>
                   </Stack>
                 </CardContent>
               </Card>
