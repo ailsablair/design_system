@@ -66,6 +66,8 @@ const treeData = [
           { name: 'Primary Stacked', type: 'story', link: './?path=/story/atoms-button--primary-stacked' },
         ]
       },
+      { name: 'Alert', type: 'component', link: './?path=/story/atoms-alert--default' },
+      { name: 'Badge', type: 'component', link: './?path=/story/atoms-badge--dot-default' },
       { name: 'Counter', type: 'component', link: './?path=/story/atoms-counter--default' },
       { name: 'DateTime Input', type: 'component', link: './?path=/story/atoms-date-time-input--default' },
       { name: 'Divider', type: 'component', link: './?path=/story/atoms-divider--default' },
@@ -89,8 +91,6 @@ const treeData = [
     name: 'Building Blocks',
     type: 'category',
     children: [
-      { name: 'Alert', type: 'component', link: './?path=/story/atoms-building-blocks-alert--default' },
-      { name: 'Badge', type: 'component', link: './?path=/story/atoms-building-blocks-badge--default' },
       { name: 'File Type Icon', type: 'component', link: './?path=/story/atoms-building-blocks-file-type-icon--default' },
       { name: 'Progress Bar', type: 'component', link: './?path=/story/atoms-building-blocks-progress-bar--default' },
       { name: 'Progress Circle', type: 'component', link: './?path=/story/atoms-building-blocks-progress-circle--default' },
