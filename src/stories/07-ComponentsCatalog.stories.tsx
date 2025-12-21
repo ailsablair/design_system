@@ -56,6 +56,8 @@ export const ComponentsCatalog: Story = {
       <Section
         title="Atoms"
         items={[
+          { name: 'Alert', path: 'Atoms/Alert', note: 'Notification banners with multiple themes' },
+          { name: 'Badge', path: 'Atoms/Badge', note: 'Notification and status indicators' },
           { name: 'Button', path: 'Atoms/Button', note: 'Primary interaction elements with grouping support' },
         ]}
       />
