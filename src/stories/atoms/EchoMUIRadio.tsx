@@ -255,7 +255,7 @@ export const EchoMUIRadioGroup: React.FC<EchoMUIRadioGroupProps> = ({
   return (
     <FormControl error={error} disabled={disabled}>
       {label && (
-        <StyledFormLabel component="legend" required={required}>
+        <StyledFormLabel required={required}>
           {label}
         </StyledFormLabel>
       )}

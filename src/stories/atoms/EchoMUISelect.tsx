@@ -278,6 +278,7 @@ export const EchoMUISelect: React.FC<EchoMUISelectProps> = ({
         onChange={onChange}
         label={label}
         displayEmpty={!!placeholder}
+        variant="outlined"
         {...props}
       >
         {placeholder && (
