@@ -209,8 +209,6 @@ const CustomPaginationItem = (props: CustomPaginationItemProps) => {
         last: () => iconMap['last'],
         previous: () => iconMap['previous'],
         next: () => iconMap['next'],
-        startEllipsis: () => iconMap['start-ellipsis'],
-        endEllipsis: () => iconMap['end-ellipsis'],
       }}
     />
   );

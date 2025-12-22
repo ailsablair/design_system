@@ -76,7 +76,6 @@ export const HeaderWithCount: React.FC<HeaderWithCountProps> = ({
             variant={tagVariant}
             size="small"
             showClose={false}
-            light={false}
           />
         </div>
       )}
