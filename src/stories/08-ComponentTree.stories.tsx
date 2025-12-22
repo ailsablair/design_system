@@ -24,7 +24,7 @@ When adding new components, variants, or stories to the design system, please en
 export default meta;
 type Story = StoryObj;
 
-const treeData = [
+const treeData: any[] = [
   {
     name: 'Design System (Documentation)',
     type: 'category',
