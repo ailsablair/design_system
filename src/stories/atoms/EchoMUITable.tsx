@@ -245,7 +245,7 @@ export function EchoMUITable<RowType = unknown>({
 
   return (
     <Box>
-      <StyledTableContainer component={Paper as any}>
+      <StyledTableContainer>
         <StyledTable size={dense ? 'small' : size} sx={{ minWidth: 650 }}>
           <StyledTableHead>
             <TableRow>
@@ -384,7 +384,6 @@ export function EchoMUITable<RowType = unknown>({
 
       {pagination && (
         <TablePagination
-          component="div"
           count={totalRows || data.length}
           page={page}
           onPageChange={(event, newPage) => onPageChange?.(newPage)}
