@@ -16,7 +16,7 @@ import {
  * MUI Pagination component styled with Echo design tokens
  */
 
-interface EchoMUIPaginationProps extends Omit<PaginationProps, 'size'> {
+interface EchoMUIPaginationProps extends Omit<PaginationProps, 'size' | 'variant'> {
   /** Current page number (1-based) */
   page?: number;
   /** Total number of pages */
