@@ -327,7 +327,7 @@ export const TableCellShowcase: React.FC<TableCellShowcaseProps> = ({
                         {ratingRange.map((_, index) => (
                           <Star
                             key={index}
-                            fill={index < row.rating ? '100%' : '0%'}
+                            fill={index < row.rating ? '100%' : 'empty'}
                             size="default"
                           />
                         ))}
@@ -356,7 +356,7 @@ export const TableCellShowcase: React.FC<TableCellShowcaseProps> = ({
                       <div className="table-cell-showcase__actions">
                         <Button
                           size="small"
-                          variant="ghost"
+                          variant="tertiary"
                           state="default"
                           leadingIcon={<Icon name="edit" size="sm" opacity={0.6} />}
                         >
@@ -364,9 +364,9 @@ export const TableCellShowcase: React.FC<TableCellShowcaseProps> = ({
                         </Button>
                         <Button
                           size="small"
-                          variant="ghost"
+                          variant="tertiary"
                           state="default"
-                          leadingIcon={<Icon name="trash-can" size="sm" opacity={0.6} />}
+                          leadingIcon={<Icon name="delete" size="sm" opacity={0.6} />}
                         >
                           Delete
                         </Button>
