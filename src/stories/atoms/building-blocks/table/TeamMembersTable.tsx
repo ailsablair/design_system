@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
-import { Button } from '../../Button';
+import { EchoMUIButton as Button } from '../../EchoMUIButton';
 import { Tag, type TagVariant } from '../../Tag';
 import { Checkbox } from '../../Checkbox';
 import { AvatarGroup } from '../../AvatarGroup';
 import { Star } from '../Star';
-import { ProgressBar } from '../../ProgressBar';
+import { ProgressBar } from '../ProgressBar';
 import { Icon } from '../../../foundations/Icon';
 import './teamMembersTable.css';
 

@@ -6,9 +6,9 @@ import { AvatarGroup } from '../../AvatarGroup';
 import { PaymentIcon, type PaymentMethod } from '../PaymentIcon';
 import { FileIcon, type FileType } from '../FileIcon';
 import { Star } from '../Star';
-import { Button } from '../../Button';
+import { EchoMUIButton as Button } from '../../EchoMUIButton';
 import { Tag } from '../../Tag';
-import { ProgressBar } from '../../ProgressBar';
+import { ProgressBar } from '../ProgressBar';
 import { Icon } from '../../../foundations/Icon';
 import './tableCell.css';
 

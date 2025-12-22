@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Button } from '../../Button';
+import { EchoMUIButton as Button } from '../../EchoMUIButton';
 import { Tag } from '../../Tag';
 import { Checkbox } from '../../Checkbox';
 import { AvatarGroup } from '../../AvatarGroup';
 import { Star } from '../Star';
-import { ProgressBar } from '../../ProgressBar';
+import { ProgressBar } from '../ProgressBar';
 import { Icon } from '../../../foundations/Icon';
 import './figmaTable.css';
 
