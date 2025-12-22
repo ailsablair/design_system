@@ -182,7 +182,7 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
             <Tag
               label="Label"
               size={size === 'small' ? 'small' : 'default'}
-              variant="outline-sky-blue"
+              variant="outline-blue"
               leadingIcon={<Icon name="alarm" size="sm" />}
               trailingIcon={<Icon name="close" size="sm" />}
             />
@@ -256,11 +256,9 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
         return (
           <div className="figma-table__cell-progress-bar">
             <ProgressBar
-              value={30}
+              progress={30}
               size={size === 'small' ? 'small' : 'default'}
-              variant="default"
               showPercentage={true}
-              labelPosition="outside"
             />
           </div>
         );
@@ -270,8 +268,7 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
           <div className="figma-table__cell-button-group">
             <Button
               size="small"
-              type="ghost"
-              state="default"
+              variant="tertiary"
               leadingIcon={<Icon name="edit" size="sm" opacity={0.6} />}
               onClick={() => onEdit?.(rowData.id)}
             >
@@ -279,8 +276,7 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
             </Button>
             <Button
               size="small"
-              type="ghost"
-              state="default"
+              variant="tertiary"
               leadingIcon={<Icon name="delete" size="sm" opacity={0.6} />}
               onClick={() => onDelete?.(rowData.id)}
             >
@@ -360,7 +356,7 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
               <Tag
                 label={`${itemCount} items`}
                 size="small"
-                variant="sky-blue"
+                variant="cyan"
               />
             </div>
             {showSubText && subtitle && (
@@ -372,19 +368,16 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
             <div className="figma-table__header-actions">
               <Button
                 size={size === 'small' ? 'small' : 'default'}
-                type="secondary"
-                state="default"
+                variant="secondary"
                 trailingIcon={<Icon name="expand-more" size="sm" opacity={0.6} />}
-                special="split"
               >
                 Label
               </Button>
               <Button
                 size={size === 'small' ? 'small' : 'default'}
-                type="ghost"
-                state="default"
+                variant="tertiary"
                 leadingIcon={<Icon name="alarm" size="sm" opacity={0.6} />}
-                trailingIcon={<Icon name="arrow-down-circle" size="sm" opacity={0.6} />}
+                trailingIcon={<Icon name="arrow-downward" size="sm" opacity={0.6} />}
               >
                 Label
               </Button>
@@ -478,8 +471,7 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
             <div className="figma-table__footer-left">
               <Button
                 size={size === 'small' ? 'small' : 'default'}
-                type="ghost"
-                state="default"
+                variant="tertiary"
                 leadingIcon={<Icon name="arrow-back" size="sm" opacity={0.6} />}
                 onClick={() => currentPage > 1 && onPageChange?.(currentPage - 1)}
                 disabled={currentPage <= 1}
@@ -495,8 +487,7 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
             <div className="figma-table__footer-right">
               <Button
                 size={size === 'small' ? 'small' : 'default'}
-                type="ghost"
-                state="default"
+                variant="tertiary"
                 trailingIcon={<Icon name="arrow-forward" size="sm" opacity={0.6} />}
                 onClick={() => currentPage < totalPages && onPageChange?.(currentPage + 1)}
                 disabled={currentPage >= totalPages}
