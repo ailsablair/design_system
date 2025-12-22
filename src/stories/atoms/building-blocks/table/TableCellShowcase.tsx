@@ -316,7 +316,6 @@ export const TableCellShowcase: React.FC<TableCellShowcaseProps> = ({
                         <ProgressBar
                           progress={row.progress}
                           size="default"
-                          label={`${row.progress}%`}
                         />
                       </div>
                     </td>
