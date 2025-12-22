@@ -5,7 +5,7 @@ import {
   Tooltip,
   Box
 } from '@mui/material';
-import { styled, alpha } from '@mui/material/styles';
+import { styled, Theme, SxProps } from '@mui/material/styles';
 
 /**
  * EchoMUIButton Props
@@ -42,7 +42,7 @@ export interface EchoMUIButtonProps {
   /** Additional CSS classes */
   className?: string;
   /** Custom styles */
-  sx?: any;
+  sx?: SxProps<Theme>;
 }
 
 const StyledButton = styled(MUIButton, {
@@ -52,8 +52,15 @@ const StyledButton = styled(MUIButton, {
   echoSize: string;
   iconOnly?: boolean;
 }>(({ echoVariant, echoSize, iconOnly }) => {
+  interface ColorVariant {
+    main: string;
+    hover: string;
+    contrast: string;
+    border?: string;
+  }
+
   // Color mapping based on Echo tokens
-  const colors = {
+  const colors: Record<string, ColorVariant> = {
     primary: {
       main: 'var(--primary-blue-blue)',
       hover: 'var(--primary-blue-blue-700)',
@@ -82,7 +89,7 @@ const StyledButton = styled(MUIButton, {
     },
   };
 
-  const selectedColor = colors[echoVariant as keyof typeof colors] || colors.primary;
+  const selectedColor = colors[echoVariant] || colors.primary;
 
   // Size mapping
   const sizes = {
@@ -121,7 +128,7 @@ const StyledButton = styled(MUIButton, {
     minWidth: iconOnly ? selectedSize.minHeight : 'auto',
     backgroundColor: selectedColor.main,
     color: selectedColor.contrast,
-    border: (selectedColor as any).border || 'none',
+    border: selectedColor.border || 'none',
     transition: 'all var(--transition-fast, 0.2s)',
     boxShadow: 'none',
 

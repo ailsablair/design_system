@@ -448,71 +448,71 @@ export const CompleteFigmaShowcase: Story = {
           maxWidth: '1200px',
         }}>
           {/* Small with border */}
-          {['default', 'warning', 'light-gray', 'navy', 'error', 'success', 'purple', 'white'].map((colour) => (
-            <Alert 
+          {(['default', 'warning', 'light-gray', 'navy', 'error', 'success', 'purple', 'white'] as const).map((colour) => (
+            <Alert
               key={`small-border-${colour}`}
-              size="small" 
-              colour={colour as any} 
+              size="small"
+              colour={colour}
               border={true}
               title={`Small ${colour} with border`}
               description="Alert description text"
             />
           ))}
-          
+
           {/* Small without border */}
-          {['default', 'warning', 'light-gray', 'navy', 'error', 'success', 'purple', 'white'].map((colour) => (
-            <Alert 
+          {(['default', 'warning', 'light-gray', 'navy', 'error', 'success', 'purple', 'white'] as const).map((colour) => (
+            <Alert
               key={`small-no-border-${colour}`}
-              size="small" 
-              colour={colour as any} 
+              size="small"
+              colour={colour}
               border={false}
               title={`Small ${colour} without border`}
               description="Alert description text"
             />
           ))}
-          
+
           {/* Default with border */}
-          {['default', 'warning', 'light-gray', 'navy', 'error', 'success', 'purple', 'white'].map((colour) => (
-            <Alert 
+          {(['default', 'warning', 'light-gray', 'navy', 'error', 'success', 'purple', 'white'] as const).map((colour) => (
+            <Alert
               key={`default-border-${colour}`}
-              size="default" 
-              colour={colour as any} 
+              size="default"
+              colour={colour}
               border={true}
               title={`Default ${colour} with border`}
               description="Alert description text"
             />
           ))}
-          
+
           {/* Default without border */}
-          {['default', 'warning', 'light-gray', 'navy', 'error', 'success', 'purple', 'white'].map((colour) => (
-            <Alert 
+          {(['default', 'warning', 'light-gray', 'navy', 'error', 'success', 'purple', 'white'] as const).map((colour) => (
+            <Alert
               key={`default-no-border-${colour}`}
-              size="default" 
-              colour={colour as any} 
+              size="default"
+              colour={colour}
               border={false}
               title={`Default ${colour} without border`}
               description="Alert description text"
             />
           ))}
-          
+
           {/* Large with border */}
-          {['default', 'warning', 'light-gray', 'navy', 'error', 'success', 'purple', 'white'].map((colour) => (
-            <Alert 
+          {(['default', 'warning', 'light-gray', 'navy', 'error', 'success', 'purple', 'white'] as const).map((colour) => (
+            <Alert
               key={`large-border-${colour}`}
-              size="large" 
-              colour={colour as any} 
+              size="large"
+              colour={colour}
               border={true}
               title={`Large ${colour} with border`}
               description="Alert description text"
             />
           ))}
-          
+
           {/* Large without border */}
-          {['default', 'warning', 'light-gray', 'navy', 'error', 'success', 'purple', 'white'].map((colour) => (
-            <Alert 
+          {(['default', 'warning', 'light-gray', 'navy', 'error', 'success', 'purple', 'white'] as const).map((colour) => (
+            <Alert
               key={`large-no-border-${colour}`}
-              size="large" 
-              colour={colour as any} 
+              size="large"
+              colour={colour}
               border={false}
               title={`Large ${colour} without border`}
               description="Alert description text"
