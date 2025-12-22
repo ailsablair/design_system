@@ -346,7 +346,7 @@ export function EchoMUITable<RowType = unknown>({
 
                       return (
                         <StyledTableCell key={column.id} align={column.align}>
-                          {column.render ? column.render(value, row) : value}
+                          {column.render ? column.render(value, row) : (value as React.ReactNode)}
                         </StyledTableCell>
                       );
                     })}

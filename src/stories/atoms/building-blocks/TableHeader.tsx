@@ -1,7 +1,7 @@
 import React from 'react';
 import './table/tableHeader.css';
 import { Tag } from '../Tag';
-import { Button } from '../Button';
+import { EchoMUIButton as Button } from '../EchoMUIButton';
 
 export interface TableHeaderProps {
   /** Header title text */

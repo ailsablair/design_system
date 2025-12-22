@@ -1,6 +1,6 @@
 import React from 'react';
 import './table/tableFooter.css';
-import { Button } from '../Button';
+import { EchoMUIButton as Button } from '../EchoMUIButton';
 
 export interface TableFooterProps {
   /** Footer type/layout variant */
