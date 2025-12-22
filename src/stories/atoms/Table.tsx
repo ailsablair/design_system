@@ -175,18 +175,26 @@ export const Table: React.FC<TableProps> = ({
 
   const renderCellContent = (row: TableData, column: TableColumn) => {
     const value = row[column.key];
-    
+
     if (column.type === 'status') {
+      const statusValue = value as { status?: string; label?: string } | string | undefined;
+      const status = typeof statusValue === 'object' ? statusValue?.status : statusValue;
+      const label = typeof statusValue === 'object' ? statusValue?.label : statusValue;
+
       return (
-        <TableCell type="status" status={value?.status || value} align={column.align}>
-          {value?.label || value}
+        <TableCell
+          type="status"
+          status={status as any}
+          align={column.align}
+        >
+          {label as React.ReactNode}
         </TableCell>
       );
     }
-    
+
     return (
       <TableCell type={column.type} align={column.align} width={column.width}>
-        {value}
+        {value as React.ReactNode}
       </TableCell>
     );
   };
