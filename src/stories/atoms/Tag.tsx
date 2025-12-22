@@ -83,7 +83,7 @@ export const Tag: React.FC<TagProps> = ({
     onRemove?.();
   };
 
-  const Root = rootElement as any;
+  const Root = rootElement as React.ElementType;
 
   return (
     <Root

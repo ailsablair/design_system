@@ -25,7 +25,7 @@ export interface TableData {
   /** Unique row ID */
   id: string;
   /** Row data */
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export interface TableProps {
