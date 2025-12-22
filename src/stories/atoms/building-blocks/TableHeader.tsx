@@ -109,7 +109,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
       <Button
         key="filter1"
         size={buttonGroupProps.size}
-        type="ghost"
+        variant="tertiary"
         leadingIcon={<AlarmIcon size={iconSize} />}
         trailingIcon={<ArrowDownIcon size={iconSize} />}
       >
@@ -118,7 +118,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
       <Button
         key="filter2"
         size={buttonGroupProps.size}
-        type="ghost"
+        variant="tertiary"
         leadingIcon={<AlarmIcon size={iconSize} />}
         trailingIcon={<ArrowDownIcon size={iconSize} />}
       >
@@ -170,9 +170,9 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
         {/* Action menu button */}
         {showActionMenu && (
           <Button
-            size={size}
-            type="ghost"
-            iconOnly
+          size={size}
+          variant="tertiary"
+          iconOnly
             icon={<DotsVerticalIcon size={size === 'default' ? 22 : 18} />}
             onClick={onActionMenuClick}
             className="table-header__action-menu"

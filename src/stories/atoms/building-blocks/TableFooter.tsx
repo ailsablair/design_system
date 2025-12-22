@@ -179,7 +179,7 @@ export const TableFooter: React.FC<TableFooterProps> = ({
       <div className={footerClasses}>
         <Button
           size={size}
-          type="ghost"
+          variant="tertiary"
           trailingIcon={<TriangleDownIcon size={iconSize} />}
           onClick={handleViewMoreClick}
           className="table-footer__view-more"
@@ -197,7 +197,7 @@ export const TableFooter: React.FC<TableFooterProps> = ({
         <div className="table-footer__navigation table-footer__navigation--previous">
           <Button
             size={size}
-            type="ghost"
+            variant="tertiary"
             leadingIcon={<ArrowLeftIcon size={iconSize} />}
             onClick={handlePreviousClick}
             disabled={currentPage <= 1}
@@ -242,7 +242,7 @@ export const TableFooter: React.FC<TableFooterProps> = ({
         <div className="table-footer__navigation table-footer__navigation--next">
           <Button
             size={size}
-            type="ghost"
+            variant="tertiary"
             trailingIcon={<ArrowRightIcon size={iconSize} />}
             onClick={handleNextClick}
             disabled={currentPage >= totalPages}

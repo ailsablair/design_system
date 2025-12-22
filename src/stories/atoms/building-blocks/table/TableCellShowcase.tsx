@@ -314,11 +314,9 @@ export const TableCellShowcase: React.FC<TableCellShowcaseProps> = ({
                     <td className="table-cell-showcase__cell">
                       <div className="table-cell-showcase__progress">
                         <ProgressBar
-                          value={row.progress}
+                          progress={row.progress}
                           size="default"
-                          variant="default"
                           label={`${row.progress}%`}
-                          labelPosition="outside"
                         />
                       </div>
                     </td>
@@ -357,7 +355,6 @@ export const TableCellShowcase: React.FC<TableCellShowcaseProps> = ({
                         <Button
                           size="small"
                           variant="tertiary"
-                          state="default"
                           leadingIcon={<Icon name="edit" size="sm" opacity={0.6} />}
                         >
                           Edit
@@ -365,7 +362,6 @@ export const TableCellShowcase: React.FC<TableCellShowcaseProps> = ({
                         <Button
                           size="small"
                           variant="tertiary"
-                          state="default"
                           leadingIcon={<Icon name="delete" size="sm" opacity={0.6} />}
                         >
                           Delete
