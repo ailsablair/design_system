@@ -278,7 +278,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
           >
             <span className="team-members-table__column-title">{label}</span>
             <Icon
-              name="arrow-down-thick"
+              name="arrow-downward"
               size="sm"
               className={`team-members-table__column-sort-icon team-members-table__column-sort-icon--${isSorted ? direction : 'inactive'}`}
               aria-hidden
@@ -302,7 +302,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
     return Array.from({ length: 5 }, (_, index) => (
       <Star
         key={index}
-        fill={index < rating ? '100%' : '0%'}
+        fill={index < rating ? '100%' : 'empty'}
         size="small"
       />
     ));
@@ -338,7 +338,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
         return (
           <Icon
             key={`ellipsis-${index}`}
-            name="dots-horizontal"
+            name="more-horiz"
             size="sm"
           />
         );
@@ -364,13 +364,12 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
     onMoreActions ? (
       <Button
         size={size === 'small' ? 'small' : 'default'}
-        variant="ghost"
-        state="default"
-        special="icon-only"
+        variant="tertiary"
+        iconOnly
         onClick={onMoreActions}
         aria-label="Show table actions"
       >
-        <Icon name="dots-vertical" size={size === 'small' ? 'sm' : 'md'} />
+        <Icon name="more-vert" size={size === 'small' ? 'sm' : 'md'} />
       </Button>
     ) : null
   );
@@ -455,7 +454,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
             {renderColumnHeader({
               columnKey: 'company',
               label: 'Company',
-              trailingAccessory: <Icon name="help-circle" size="sm" aria-hidden />,
+              trailingAccessory: <Icon name="help" size="sm" aria-hidden />,
             })}
 
             {data.map((member, index) => {
@@ -494,7 +493,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                       variant="outline-black"
                       shape="rounded"
                       showClose={false}
-                      leadingIcon={<Icon name="alarm-light" size="sm" />}
+                      leadingIcon={<Icon name="alarm" size="sm" />}
                       trailingIcon={<Icon name="close" size="sm" />}
                     />
                     <Tag
@@ -503,7 +502,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                       variant="light-gray"
                       shape="rounded"
                       showClose={false}
-                      leadingIcon={<Icon name="plus" size="sm" />}
+                      leadingIcon={<Icon name="add" size="sm" />}
                     />
                   </div>
                 </div>
@@ -600,7 +599,7 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                       variant="light-gray"
                       shape="rounded"
                       showClose={false}
-                      leadingIcon={<Icon name="plus" size="sm" />}
+                      leadingIcon={<Icon name="add" size="sm" />}
                     />
                   </div>
                 </div>
@@ -625,11 +624,9 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                 >
                   <div className="team-members-table__cell-progress-bar">
                     <ProgressBar
-                      value={member.progress}
+                      progress={member.progress}
                       size="small"
-                      variant="default"
                       showPercentage
-                      labelPosition="outside"
                     />
                   </div>
                 </div>
@@ -652,18 +649,16 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
                   <div className="team-members-table__cell-button-group">
                     <Button
                       size="extra-small"
-                      variant="ghost"
-                      state="default"
-                      leadingIcon={<Icon name="pencil" size="sm" />}
+                      variant="tertiary"
+                      leadingIcon={<Icon name="edit" size="sm" />}
                       onClick={() => onEdit?.(member.id)}
                     >
                       Edit
                     </Button>
                     <Button
                       size="extra-small"
-                      variant="ghost"
-                      state="default"
-                      leadingIcon={<Icon name="trash-can" size="sm" />}
+                      variant="tertiary"
+                      leadingIcon={<Icon name="delete" size="sm" />}
                       onClick={() => onDelete?.(member.id)}
                     >
                       Delete
@@ -683,9 +678,8 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
             <div className="team-members-table__footer-left">
               <Button
                 size={size === 'small' ? 'small' : 'default'}
-                variant="ghost"
-                state="default"
-                leadingIcon={<Icon name="arrow-left" size="sm" />}
+                variant="tertiary"
+                leadingIcon={<Icon name="arrow-back" size="sm" />}
                 onClick={() => currentPage > 1 && onPageChange?.(currentPage - 1)}
                 disabled={currentPage <= 1}
               >
@@ -700,9 +694,8 @@ export const TeamMembersTable: React.FC<TeamMembersTableProps> = ({
             <div className="team-members-table__footer-right">
               <Button
                 size={size === 'small' ? 'small' : 'default'}
-                variant="ghost"
-                state="default"
-                trailingIcon={<Icon name="arrow-right" size="sm" />}
+                variant="tertiary"
+                trailingIcon={<Icon name="arrow-forward" size="sm" />}
                 onClick={() => currentPage < totalPages && onPageChange?.(currentPage + 1)}
                 disabled={currentPage >= totalPages}
               >
