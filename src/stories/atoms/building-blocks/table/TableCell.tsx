@@ -274,11 +274,11 @@ export const TableCell: React.FC<TableCellProps> = ({
           </Button>
           <Button
             size={size === 'small' ? 'extra-small' : 'small'}
-            type="ghost"
+            variant="tertiary"
             state={disabled ? 'disabled' : 'default'}
             disabled={disabled}
             onClick={onDelete}
-            leadingIcon={<Icon name="trash-can" size="sm" color="currentColor" opacity={0.6} />}
+            leadingIcon={<Icon name="delete" size="sm" color="currentColor" opacity={0.6} />}
           >
             Delete
           </Button>
@@ -331,7 +331,7 @@ export const TableCell: React.FC<TableCellProps> = ({
         <div className="table-cell-icon-group">
           <Icon name="email" size={size === 'small' ? 'sm' : 'md'} color="#6D7280" opacity={disabled ? 0.5 : 1} />
           <Icon name="edit" size={size === 'small' ? 'sm' : 'md'} color="#6D7280" opacity={disabled ? 0.5 : 1} />
-          <Icon name="link" size={size === 'small' ? 'sm' : 'md'} color="#6D7280" opacity={disabled ? 0.5 : 1} />
+          <Icon name="attach-file" size={size === 'small' ? 'sm' : 'md'} color="#6D7280" opacity={disabled ? 0.5 : 1} />
           <Icon name="share" size={size === 'small' ? 'sm' : 'md'} color="#6D7280" opacity={disabled ? 0.5 : 1} />
         </div>
       );
@@ -343,7 +343,7 @@ export const TableCell: React.FC<TableCellProps> = ({
         <div className="table-cell-cta-button">
           <Button
             size={size === 'small' ? 'extra-small' : 'small'}
-            type="ghost"
+            variant="tertiary"
             state={disabled ? 'disabled' : (background === 'hover' ? 'hover' : 'default')}
             disabled={disabled}
             onClick={onEdit}
