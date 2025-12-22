@@ -199,7 +199,7 @@ export const TableCell: React.FC<TableCellProps> = ({
                 key={index}
                 label={tag.label}
                 size={size === 'small' ? 'small' : 'default'}
-                variant={tag.variant || 'outline-black'}
+                variant={(tag.variant as any) || 'outline-black'}
                 showClose={tag.showClose !== false}
                 disabled={disabled}
               />
@@ -248,11 +248,9 @@ export const TableCell: React.FC<TableCellProps> = ({
       return (
         <div className="table-cell-progress-bar">
           <ProgressBar
-            value={progress || 0}
+            progress={progress || 0}
             size={size === 'small' ? 'small' : 'default'}
-            variant="default"
             showPercentage={true}
-            labelPosition="outside"
           />
         </div>
       );
@@ -264,8 +262,7 @@ export const TableCell: React.FC<TableCellProps> = ({
         <div className="table-cell-button-group">
           <Button
             size={size === 'small' ? 'extra-small' : 'small'}
-            type="ghost"
-            state={disabled ? 'disabled' : 'default'}
+            variant="tertiary"
             disabled={disabled}
             onClick={onEdit}
             leadingIcon={<Icon name="edit" size="sm" color="currentColor" opacity={0.6} />}
@@ -275,7 +272,6 @@ export const TableCell: React.FC<TableCellProps> = ({
           <Button
             size={size === 'small' ? 'extra-small' : 'small'}
             variant="tertiary"
-            state={disabled ? 'disabled' : 'default'}
             disabled={disabled}
             onClick={onDelete}
             leadingIcon={<Icon name="delete" size="sm" color="currentColor" opacity={0.6} />}
@@ -344,7 +340,6 @@ export const TableCell: React.FC<TableCellProps> = ({
           <Button
             size={size === 'small' ? 'extra-small' : 'small'}
             variant="tertiary"
-            state={disabled ? 'disabled' : (background === 'hover' ? 'hover' : 'default')}
             disabled={disabled}
             onClick={onEdit}
             leadingIcon={<Icon name="edit" size="sm" color="currentColor" opacity={0.6} />}
