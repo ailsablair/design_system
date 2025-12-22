@@ -152,6 +152,9 @@ export const WithCustomIcon: Story = {
 
 // Comprehensive Showcase
 export const AllSizesShowcase: Story = {
+  args: {
+    children: 'Label',
+  },
   render: () => (
     <div style={{ display: 'flex', gap: '16px', alignItems: 'end' }}>
       <Tile size="small" children="Small" />
@@ -169,6 +172,9 @@ export const AllSizesShowcase: Story = {
 };
 
 export const AllAlignmentsShowcase: Story = {
+  args: {
+    children: 'Label',
+  },
   render: () => (
     <div style={{ display: 'flex', gap: '16px' }}>
       <Tile align="left" children="Left" />
@@ -186,6 +192,9 @@ export const AllAlignmentsShowcase: Story = {
 };
 
 export const AllColorsShowcase: Story = {
+  args: {
+    children: 'Label',
+  },
   render: () => (
     <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
       <Tile colour="default" children="Default" />
@@ -207,6 +216,9 @@ export const AllColorsShowcase: Story = {
 
 // Complete Design System Showcase
 export const DesignSystemShowcase: Story = {
+  args: {
+    children: 'Label',
+  },
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       {/* Size variants with center alignment */}
