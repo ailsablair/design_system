@@ -183,14 +183,14 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
               label="Label"
               size={size === 'small' ? 'small' : 'default'}
               variant="outline-sky-blue"
-              leadingIcon={<Icon name="alarm-light" size="sm" />}
+              leadingIcon={<Icon name="alarm" size="sm" />}
               trailingIcon={<Icon name="close" size="sm" />}
             />
             <Tag
               label="+4"
               size={size === 'small' ? 'small' : 'default'}
               variant="light-gray"
-              leadingIcon={<Icon name="plus" size="sm" />}
+              leadingIcon={<Icon name="add" size="sm" />}
             />
           </div>
         );
@@ -247,7 +247,7 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
               label="+4"
               size={size === 'small' ? 'small' : 'default'}
               variant="light-gray"
-              leadingIcon={<Icon name="plus" size="sm" />}
+              leadingIcon={<Icon name="add" size="sm" />}
             />
           </div>
         );
@@ -272,7 +272,7 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
               size="small"
               type="ghost"
               state="default"
-              leadingIcon={<Icon name="pencil" size="sm" opacity={0.6} />}
+              leadingIcon={<Icon name="edit" size="sm" opacity={0.6} />}
               onClick={() => onEdit?.(rowData.id)}
             >
               Edit
@@ -281,7 +281,7 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
               size="small"
               type="ghost"
               state="default"
-              leadingIcon={<Icon name="trash-can" size="sm" opacity={0.6} />}
+              leadingIcon={<Icon name="delete" size="sm" opacity={0.6} />}
               onClick={() => onDelete?.(rowData.id)}
             >
               Delete
@@ -329,7 +329,7 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
         return (
           <Icon 
             key={`ellipsis-${index}`}
-            name="dots-horizontal" 
+            name="more-horiz" 
             size={size === 'small' ? 'sm' : 'md'}
             opacity={0.5}
           />
@@ -374,7 +374,7 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
                 size={size === 'small' ? 'small' : 'default'}
                 type="secondary"
                 state="default"
-                trailingIcon={<Icon name="chevron-down" size="sm" opacity={0.6} />}
+                trailingIcon={<Icon name="expand-more" size="sm" opacity={0.6} />}
                 special="split"
               >
                 Label
@@ -383,7 +383,7 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
                 size={size === 'small' ? 'small' : 'default'}
                 type="ghost"
                 state="default"
-                leadingIcon={<Icon name="alarm-light" size="sm" opacity={0.6} />}
+                leadingIcon={<Icon name="alarm" size="sm" opacity={0.6} />}
                 trailingIcon={<Icon name="arrow-down-circle" size="sm" opacity={0.6} />}
               >
                 Label
@@ -423,7 +423,7 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
                         <span className="figma-table__header-text">{column.title}</span>
                         {column.sortable && column.sortDirection && (
                           <Icon 
-                            name="arrow-down-thick" 
+                            name="arrow-downward" 
                             size="sm" 
                             className={`figma-table__sort-icon ${column.sortDirection === 'asc' ? 'figma-table__sort-icon--asc' : ''}`}
                           />
@@ -480,7 +480,7 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
                 size={size === 'small' ? 'small' : 'default'}
                 type="ghost"
                 state="default"
-                leadingIcon={<Icon name="arrow-left-thick" size="sm" opacity={0.6} />}
+                leadingIcon={<Icon name="arrow-back" size="sm" opacity={0.6} />}
                 onClick={() => currentPage > 1 && onPageChange?.(currentPage - 1)}
                 disabled={currentPage <= 1}
               >
@@ -497,7 +497,7 @@ export const FigmaTable: React.FC<FigmaTableProps> = ({
                 size={size === 'small' ? 'small' : 'default'}
                 type="ghost"
                 state="default"
-                trailingIcon={<Icon name="arrow-right-thick" size="sm" opacity={0.6} />}
+                trailingIcon={<Icon name="arrow-forward" size="sm" opacity={0.6} />}
                 onClick={() => currentPage < totalPages && onPageChange?.(currentPage + 1)}
                 disabled={currentPage >= totalPages}
               >
