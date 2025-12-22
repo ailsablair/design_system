@@ -1,2 +1,2 @@
-export { BuildingBlocksAccordion } from './BuildingBlocksAccordion';
-export type { BuildingBlocksAccordionProps } from './BuildingBlocksAccordion';
+export { Accordion as BuildingBlocksAccordion } from './Accordion';
+export type { AccordionProps as BuildingBlocksAccordionProps } from './Accordion';
