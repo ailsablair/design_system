@@ -5,7 +5,8 @@ import {
   Tooltip,
   Box
 } from '@mui/material';
-import { styled, Theme, SxProps } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
+import type { Theme, SxProps } from '@mui/material/styles';
 
 /**
  * EchoMUIButton Props
