@@ -1,5 +1,6 @@
 import React from 'react';
-import { Input, InputProps } from '../atoms/Input';
+import { Input } from '../atoms/Input';
+import type { InputProps } from '../atoms/Input';
 import { Label } from '../atoms/Label';
 import './formField.css';
 
@@ -57,16 +58,17 @@ export const FormField: React.FC<FormFieldProps> = ({
   ].filter(Boolean).join(' ');
 
   const labelElement = label && (
-    <div 
+    <div
       className="form-field-label"
       style={layout === 'horizontal' ? { width: labelWidth } : undefined}
     >
       <Label
-        text={label}
-        required={required}
         size={inputProps.size}
         htmlFor={fieldId}
-      />
+      >
+        {label}
+        {required && <span className="form-field-required">*</span>}
+      </Label>
       {description && (
         <div className="form-field-description">
           {description}
