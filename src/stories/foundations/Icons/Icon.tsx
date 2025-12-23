@@ -101,6 +101,7 @@ export const Icon: React.FC<IconProps> = ({
   opacity = 'medium',
   className = '',
   'aria-label': ariaLabel,
+  style,
   ...props
 }) => {
   const sizeValue = getSizeValue(size);
