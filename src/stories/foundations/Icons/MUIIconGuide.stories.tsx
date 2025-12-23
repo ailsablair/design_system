@@ -460,7 +460,7 @@ export const MigrationGuide: Story = {
           overflow: 'auto',
           border: '1px solid var(--semantic-success)'
         }}>
-{`import { Icon } from './foundations/Icon';
+{`import { Icon } from './foundations/Icons/Icon';
 
 // Consistent sizing and styling with design tokens
 <Icon name="search" />
