@@ -5,7 +5,7 @@ import { Checkbox } from '../../Checkbox';
 import { AvatarGroup } from '../../AvatarGroup';
 import { Star } from '../Star';
 import { ProgressBar } from '../ProgressBar';
-import { Icon } from '../../../foundations/Icon';
+import { Icon } from '../../../foundations/Icons/Icon';
 import './figmaTable.css';
 
 export interface FigmaTableColumn {

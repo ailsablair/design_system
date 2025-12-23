@@ -1,6 +1,6 @@
 import React from 'react';
 import './building-blocks/table/tableRow.css';
-import { Icon } from '../foundations/Icon';
+import { Icon } from '../foundations/Icons/Icon';
 
 export interface TableRowProps {
   /** Row content */

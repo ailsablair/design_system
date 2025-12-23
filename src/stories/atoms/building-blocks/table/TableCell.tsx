@@ -9,7 +9,7 @@ import { Star } from '../Star';
 import { EchoMUIButton as Button } from '../../EchoMUIButton';
 import { Tag } from '../../Tag';
 import { ProgressBar } from '../ProgressBar';
-import { Icon } from '../../../foundations/Icon';
+import { Icon } from '../../../foundations/Icons/Icon';
 import './tableCell.css';
 
 export interface TableCellProps {

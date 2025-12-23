@@ -7,7 +7,7 @@ import { EchoMUIButton as Button } from '../../EchoMUIButton';
 import { Tag } from '../../Tag';
 import { Star } from '../Star';
 import { FileIcon } from '../FileIcon';
-import { Icon } from '../../../foundations/Icon';
+import { Icon } from '../../../foundations/Icons/Icon';
 import './tableCellShowcase.css';
 
 export type TableCellShowcaseStatus = 'online' | 'offline';
