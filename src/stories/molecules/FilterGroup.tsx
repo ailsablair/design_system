@@ -127,11 +127,12 @@ export const FilterGroup: React.FC<FilterGroupProps> = ({
     <div className={groupClasses}>
       {title && (
         <div className="filter-group-header">
-          <Label 
-            text={title}
+          <Label
             size={size}
             className="filter-group-title"
-          />
+          >
+            {title}
+          </Label>
         </div>
       )}
       

@@ -50,6 +50,8 @@ export interface InputProps {
   onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
   /** onBlur event handler */
   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
+  /** onKeyDown event handler */
+  onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
 const AlarmIcon = ({ size = 'default' }: { size?: 'small' | 'default' | 'large' }) => {
@@ -200,6 +202,7 @@ export const Input: React.FC<InputProps> = ({
                 onChange={onChange}
                 onFocus={onFocus}
                 onBlur={onBlur}
+                onKeyDown={onKeyDown}
               />
             )}
             {isTyping && variant === 'simple' && value?.includes('|') && (

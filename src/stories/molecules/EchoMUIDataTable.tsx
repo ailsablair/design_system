@@ -16,7 +16,8 @@ import {
   Delete as DeleteIcon,
 } from '@mui/icons-material';
 
-import { EchoMUITable, EchoTableColumn, EchoTableAction } from '../atoms/EchoMUITable';
+import { EchoMUITable } from '../atoms/EchoMUITable';
+import type { EchoTableColumn, EchoTableAction } from '../atoms/EchoMUITable';
 import { EchoMUIPagination } from '../atoms/EchoMUIPagination';
 import { EchoMUIButton } from '../atoms/EchoMUIButton';
 
@@ -272,7 +273,7 @@ export function EchoMUIDataTable<T = any>({
             {bulkActions.map((action, index) => (
               <EchoMUIButton
                 key={index}
-                variant={action.color || 'secondary'}
+                variant={(action.color === 'warning' ? 'secondary' : action.color) || 'secondary'}
                 size="small"
                 leadingIcon={action.icon}
                 onClick={() => action.onClick(selectedIds)}

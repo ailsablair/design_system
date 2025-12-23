@@ -84,7 +84,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     }
   };
 
-  const handleKeyPress = (event: React.KeyboardEvent) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
       handleSearch();
     }
@@ -102,15 +102,15 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           showClose={showClear && currentValue.length > 0}
           onChange={handleInputChange}
           onClose={handleClear}
-          onKeyPress={handleKeyPress}
+          onKeyDown={handleKeyDown}
         />
       </div>
-      
+
       {showButton && (
         <div className="search-bar-button">
           <Button
             size={size}
-            type="primary"
+            variant="primary"
             disabled={disabled}
             onClick={handleSearch}
             leadingIcon={<SearchIcon size={size} />}

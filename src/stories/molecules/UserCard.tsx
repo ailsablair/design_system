@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, CardProps } from '../atoms/Card';
+import { Card } from '../atoms/Card';
+import type { CardProps } from '../atoms/Card';
 import { Avatar } from '../atoms/Avatar';
 import { Tag } from '../atoms/Tag';
 import { EchoMUIButton as Button } from '../atoms/EchoMUIButton';
@@ -174,7 +175,7 @@ export const UserCard: React.FC<UserCardProps> = ({
             <Avatar
               src={user.avatar}
               alt={user.name}
-              name={user.name}
+              initial={user.name.charAt(0)}
               size={layout === 'compact' ? 'small' : 'default'}
             />
             {showStatus && (
@@ -241,7 +242,7 @@ export const UserCard: React.FC<UserCardProps> = ({
             {allActions.map((action, index) => (
               <Button
                 key={index}
-                type={action.type || 'secondary'}
+                variant={(action.type === 'ghost' ? 'tertiary' : action.type) || 'secondary'}
                 size={layout === 'compact' ? 'small' : 'default'}
                 leadingIcon={action.icon}
                 onClick={action.onClick}
