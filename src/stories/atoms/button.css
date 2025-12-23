@@ -1,0 +1,104 @@
+/**
+ * Echo Button CSS-only styles
+ * Used by EchoMUIButtonCSS component
+ */
+
+.echo-button-css {
+  text-transform: none !important;
+  font-family: var(--type-typeface-archivo) !important;
+  font-weight: 500 !important;
+  border-radius: var(--spacing-radius-4px) !important;
+  transition: all var(--transition-fast, 0.2s) !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+}
+
+.echo-button-css__content {
+  display: flex;
+  align-items: center;
+}
+
+/* === Variants === */
+
+/* Primary */
+.echo-button-css--primary {
+  background-color: var(--primary-blue-blue) !important;
+  color: var(--base-white) !important;
+}
+
+.echo-button-css--primary:hover {
+  background-color: var(--primary-blue-blue-700) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.echo-button-css--primary.Mui-disabled {
+  background-color: var(--neutral-gray-gray-100) !important;
+  color: var(--neutral-gray-gray-400) !important;
+}
+
+/* Secondary */
+.echo-button-css--secondary {
+  background-color: var(--neutral-gray-gray-100) !important;
+  color: var(--neutral-gray-gray-800) !important;
+  border: 1px solid var(--neutral-gray-gray-300) !important;
+}
+
+.echo-button-css--secondary:hover {
+  background-color: var(--neutral-gray-gray-200) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.echo-button-css--secondary.Mui-disabled {
+  background-color: var(--neutral-gray-gray-50) !important;
+  color: var(--neutral-gray-gray-300) !important;
+  border-color: var(--neutral-gray-gray-200) !important;
+}
+
+/* Tertiary */
+.echo-button-css--tertiary {
+  background-color: transparent !important;
+  color: var(--primary-blue-blue) !important;
+}
+
+.echo-button-css--tertiary:hover {
+  background-color: var(--neutral-gray-gray-50) !important;
+}
+
+.echo-button-css--tertiary.Mui-disabled {
+  color: var(--neutral-gray-gray-400) !important;
+}
+
+/* === Sizes === */
+
+.echo-button-css--small {
+  padding: 6px 12px !important;
+  font-size: var(--type-size-sm, 14px) !important;
+  min-height: 32px !important;
+}
+
+.echo-button-css--default {
+  padding: 10px 16px !important;
+  font-size: var(--type-size-base, 16px) !important;
+  min-height: 40px !important;
+}
+
+.echo-button-css--large {
+  padding: 12px 24px !important;
+  font-size: var(--type-size-lg, 18px) !important;
+  min-height: 48px !important;
+}
+
+/* Icon adjustments */
+.echo-button-css .MuiButton-startIcon {
+  margin-right: 8px !important;
+  margin-left: 0 !important;
+}
+
+.echo-button-css .MuiButton-endIcon {
+  margin-left: 8px !important;
+  margin-right: 0 !important;
+}
