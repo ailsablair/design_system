@@ -32,6 +32,8 @@ export interface SplitButtonProps {
   disabled?: boolean;
   /** Initial open state */
   isOpen?: boolean;
+  /** Leading icon */
+  leadingIcon?: React.ReactNode;
   /** Button content */
   children: React.ReactNode;
 }
@@ -53,6 +55,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
   loading = false,
   disabled = false,
   isOpen = false,
+  leadingIcon,
   children,
 }) => {
   const [open, setOpen] = useState(isOpen);
@@ -83,7 +86,7 @@ export const SplitButton: React.FC<SplitButtonProps> = ({
         aria-label="split button"
         size={muiSize}
       >
-        <Button onClick={() => console.log('Main action clicked')}>
+        <Button onClick={() => console.log('Main action clicked')} startIcon={!loading ? leadingIcon : null}>
           {loading ? <CircularProgress size={20} color="inherit" /> : children}
         </Button>
         <Button
