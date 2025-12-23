@@ -119,12 +119,12 @@ const suppressImmediately = (): void => {
   
   // Override window.onunhandledrejection
   const originalOnUnhandledRejection = window.onunhandledrejection;
-  window.onunhandledrejection = (event) => {
+  (window as any).onunhandledrejection = (event: PromiseRejectionEvent) => {
     if (isResizeObserverRelated(event.reason)) {
       event.preventDefault();
       return;
     }
-    return originalOnUnhandledRejection ? originalOnUnhandledRejection(event) : null;
+    return originalOnUnhandledRejection ? (originalOnUnhandledRejection as any).call(window, event) : null;
   };
   
   // Wrap async functions to catch ResizeObserver errors
@@ -153,24 +153,24 @@ const suppressImmediately = (): void => {
   // Wrap setTimeout, setInterval, requestAnimationFrame
   if (window.setTimeout) {
     const originalSetTimeout = window.setTimeout;
-    window.setTimeout = function(callback: any, delay?: number, ...args: any[]) {
+    (window as any).setTimeout = function(callback: any, delay?: number, ...args: any[]) {
       if (typeof callback === 'function') {
         const wrappedCallback = wrapAsyncFunction(callback, null);
         return originalSetTimeout.call(window, wrappedCallback, delay, ...args);
       }
       return originalSetTimeout.call(window, callback, delay, ...args);
-    };
+    } as any;
   }
-  
+
   if (window.setInterval) {
     const originalSetInterval = window.setInterval;
-    window.setInterval = function(callback: any, delay?: number, ...args: any[]) {
+    (window as any).setInterval = function(callback: any, delay?: number, ...args: any[]) {
       if (typeof callback === 'function') {
         const wrappedCallback = wrapAsyncFunction(callback, null);
         return originalSetInterval.call(window, wrappedCallback, delay, ...args);
       }
       return originalSetInterval.call(window, callback, delay, ...args);
-    };
+    } as any;
   }
   
   if (window.requestAnimationFrame) {

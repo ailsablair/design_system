@@ -211,9 +211,9 @@ export const setupResizeObserverErrorHandler = (): void => {
   // Enhanced requestAnimationFrame wrapping
   const originalRequestAnimationFrame = window.requestAnimationFrame;
   window.requestAnimationFrame = (callback) => {
-    return originalRequestAnimationFrame.call(window, (...args) => {
+    return originalRequestAnimationFrame.call(window, (time) => {
       try {
-        return callback(...args);
+        return callback(time);
       } catch (error) {
         if (error instanceof Error && isResizeObserverError(error.message)) {
           // Silently suppress ResizeObserver errors in animation frames
@@ -226,7 +226,7 @@ export const setupResizeObserverErrorHandler = (): void => {
 
   // Wrap setTimeout and setInterval to catch ResizeObserver errors in async operations
   const originalSetTimeout = window.setTimeout;
-  window.setTimeout = (callback: any, delay?: number, ...args: any[]) => {
+  (window as any).setTimeout = (callback: any, delay?: number, ...args: any[]) => {
     if (typeof callback === 'function') {
       const wrappedCallback = (...callbackArgs: any[]) => {
         try {
