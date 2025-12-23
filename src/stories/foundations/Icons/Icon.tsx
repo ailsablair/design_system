@@ -1,5 +1,9 @@
 import React from 'react';
-import './tokens.css';
+import '../tokens.css';
+
+// Echo-specific Icons
+import { echoIconComponents } from './EchoIcons';
+import type { EchoIconName } from './EchoIcons';
 
 // Material UI Icons - Comprehensive Collection
 import {
@@ -14,20 +18,16 @@ import type {
   MaterialIconTwoToneName
 } from './MaterialUIIcons';
 
-// Material Design Icons from Figma
-import { materialDesignIconComponents } from './MaterialDesignIcons';
-import type { MaterialDesignIconName } from './MaterialDesignIcons';
-
 export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
-export type IconName = AllMaterialIconName | MaterialDesignIconName;
+export type IconName = EchoIconName | AllMaterialIconName;
 
 // Re-export types for stories
 export type { AllMaterialIconName, MaterialIconFilledName, MaterialIconOutlinedName, MaterialIconTwoToneName };
-export type { MaterialDesignIconName };
+export type { EchoIconName };
 
 interface IconProps {
-  /** Icon name from the comprehensive icon library (Material UI or Material Design) */
+  /** Icon name from the Echo library or comprehensive MUI library */
   name: IconName;
   /** Size of the icon */
   size?: IconSize;
@@ -64,7 +64,7 @@ const getOpacityValue = (opacity: 'subtle' | 'medium' | 'strong' | 'full' | numb
     strong: 'var(--icon-opacity-strong)',
     full: 'var(--icon-opacity-full)',
   };
-  return opacityMap[opacity];
+  return opacityMap[opacity as keyof typeof opacityMap] || opacityMap.medium;
 };
 
 
@@ -76,91 +76,20 @@ const allMaterialIconComponents = {
 };
 
 /**
- * Universal Icon component supporting comprehensive icon libraries.
+ * Universal Icon component for the Echo Design System.
+ * Prioritizes Echo-specific icons and falls back to Material UI.
  *
- * ## Icon Libraries Available (400+ total icons):
- * - **Material UI Filled** (130+): Standard solid Material Design icons including navigation, actions, communication, content, user management, system status, analytics, commerce, connectivity, media controls, and design tools
- * - **Material UI Outlined** (130+): Outlined variant of all Material Design icons
- * - **Material UI TwoTone** (130+): Two-color variant of all Material Design icons
- * - **Material Design Icons** (18+): Additional outline icons from Figma collection
- *
- * ## Complete Icon Categories:
- *
- * ### Navigation & Layout
- * - **Navigation**: home, menu, dashboard, arrow-back, arrow-forward, arrow-upward, arrow-downward
- * - **Layout**: expand-more, expand-less, directions, map, place, location-on
- *
- * ### Actions & Controls
- * - **Basic Actions**: search, edit, delete, add, remove, close, refresh, save
- * - **File Operations**: download, upload, share, print, build
- * - **Interface**: settings, check, more-vert, more-horiz, filter-list, sort, get-app, clear
- *
- * ### Communication
- * - **Messaging**: email, phone, notifications, chat, comment, forum, send
- * - **Mail Management**: inbox, drafts, mark-email-read, unsubscribe
- *
- * ### Social & Feedback
- * - **Engagement**: thumb-up, thumb-down, star, favorite, bookmark, trending-up
- *
- * ### Content & Media
- * - **Content**: history, assignment, description, list, view-list, view-module, grid-view, table-chart
- * - **Files**: folder, insert-drive-file, image, photo, photo-library, collections
- * - **Media**: video-library, music-note, attach-file, cloud-upload, cloud-download
- *
- * ### User & Account
- * - **User Management**: person, account-circle, account-box, group, work, exit-to-app
- * - **Security**: lock, lock-open, visibility, visibility-off, security, shield, verified
- *
- * ### System & Status
- * - **Feedback**: info, warning, error, check-circle, help
- * - **Development**: bug-report, code
- *
- * ### Time & Calendar
- * - **Time**: calendar-today, schedule, alarm
- *
- * ### Analytics & Charts
- * - **Charts**: bar-chart, pie-chart, timeline
- *
- * ### Commerce
- * - **Shopping**: shopping-cart, payment
- *
- * ### Network & Connectivity
- * - **Network**: language, public, wifi, bluetooth, battery-full, signal-cellular-alt
- *
- * ### Media Controls
- * - **Playback**: play-arrow, pause, stop, skip-next, skip-previous
- * - **Audio/Video**: volume-up, volume-off, mic, mic-off, videocam, videocam-off, camera-alt
- *
- * ### Design & Creative
- * - **Design Tools**: color-lens, palette, brush, format-paint, content-copy
- *
- * ## Icon Variants:
- * - **Filled**: `home`, `search`, `settings`, etc.
- * - **Outlined**: `home-outlined`, `search-outlined`, `settings-outlined`, etc.
- * - **TwoTone**: `home-two-tone`, `search-two-tone`, `settings-two-tone`, etc.
- *
- * The component automatically detects the icon type and applies consistent sizing,
- * color, and opacity using design tokens.
+ * ## Usage Warning:
+ * Please do not use any MUI Icons unless you have first checked they do not 
+ * exist within the Echo Icon set.
  *
  * @example
  * ```tsx
- * // Material UI Icons - Different Variants
- * <Icon name="home" />                    // Filled (default)
- * <Icon name="home-outlined" />           // Outlined variant
- * <Icon name="home-two-tone" />           // TwoTone variant
+ * // Echo-specific Icons (Preferred)
+ * <Icon name="emoticon-cool-outline" />
  *
- * // Common Interface Icons
- * <Icon name="search" />                  // Search functionality
- * <Icon name="filter-list" />            // Data filtering
- * <Icon name="visibility" />             // Show/hide toggles
- * <Icon name="get-app" />                // Download actions
- *
- * // With styling
- * <Icon name="search-outlined" size="lg" color="var(--primary-blue-blue-500)" />
- *
- * // Material Design Icons
- * <Icon name="rocket-outline" />
- * <Icon name="chat-plus-outline" size="xl" color="var(--semantic-success-500)" />
+ * // MUI Icons (Fallback)
+ * <Icon name="home" />
  * ```
  */
 export const Icon: React.FC<IconProps> = ({
@@ -175,12 +104,12 @@ export const Icon: React.FC<IconProps> = ({
   const sizeValue = getSizeValue(size);
   const opacityValue = getOpacityValue(opacity);
 
-  // Check if it's a Material Design icon from Figma
-  const MaterialDesignIconComponent = materialDesignIconComponents[name as MaterialDesignIconName];
-  if (MaterialDesignIconComponent) {
+  // 1. Check if it's an Echo-specific icon
+  const EchoIconComponent = echoIconComponents[name as EchoIconName];
+  if (EchoIconComponent) {
     return (
       <span
-        className={`echo-icon echo-icon-material-design ${className}`}
+        className={`echo-icon echo-icon-custom ${className}`}
         role="img"
         aria-label={ariaLabel || `${name} icon`}
         style={{
@@ -192,7 +121,7 @@ export const Icon: React.FC<IconProps> = ({
         }}
         {...props}
       >
-        <MaterialDesignIconComponent 
+        <EchoIconComponent 
           size={sizeValue} 
           color={color} 
           opacity={opacityValue}
@@ -201,8 +130,8 @@ export const Icon: React.FC<IconProps> = ({
     );
   }
 
-  // Check if it's a Material UI icon (Filled, Outlined, or TwoTone)
-  const MaterialIconComponent = allMaterialIconComponents[name as AllMaterialIconName];
+  // 2. Fallback to Material UI icons
+  const MaterialIconComponent = (allMaterialIconComponents as any)[name];
   if (MaterialIconComponent) {
     return (
       <span
@@ -232,12 +161,9 @@ export const Icon: React.FC<IconProps> = ({
   }
 
   // Icon not found
-  console.warn(`Icon "${name}" not found. Available icons:`, {
-    materialFilled: Object.keys(materialIconsFilled),
-    materialOutlined: Object.keys(materialIconsOutlined),
-    materialTwoTone: Object.keys(materialIconsTwoTone),
-    materialDesign: Object.keys(materialDesignIconComponents)
-  });
+  if (process.env.NODE_ENV !== 'production') {
+    console.warn(`Icon "${name}" not found in Echo or MUI libraries.`);
+  }
   
   return null;
 };
