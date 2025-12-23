@@ -197,13 +197,13 @@ export const suppressResizeObserverErrors = (): void => {
   // Wrap setTimeout
   if (window.setTimeout) {
     const originalSetTimeout = window.setTimeout;
-    window.setTimeout = function(callback: any, delay?: number, ...args: any[]) {
+    (window as any).setTimeout = function(callback: any, delay?: number, ...args: any[]) {
       if (typeof callback === 'function') {
         const wrappedCallback = wrapAsyncFunction(callback);
         return originalSetTimeout.call(window, wrappedCallback, delay, ...args);
       }
       return originalSetTimeout.call(window, callback, delay, ...args);
-    };
+    } as any;
   }
 
   // Wrap requestAnimationFrame
