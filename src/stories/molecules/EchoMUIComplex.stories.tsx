@@ -422,7 +422,7 @@ export const ComplexShowcase: Story = {
 
             {/* Basic Table Example */}
             <Grid container spacing={4}>
-              <Grid item xs={12} lg={8}>
+              <Grid size={{ xs: 12, lg: 8 }}>
                 <Card>
                   <CardContent>
                     <Typography variant="h5" gutterBottom color="primary">
@@ -457,7 +457,7 @@ export const ComplexShowcase: Story = {
                 </Card>
               </Grid>
 
-              <Grid item xs={12} lg={4}>
+              <Grid size={{ xs: 12, lg: 4 }}>
                 <Stack spacing={3}>
                   {/* Pagination Example */}
                   <Card>
@@ -552,7 +552,7 @@ export const ComplexShowcase: Story = {
                   🎯 Enhanced Complex Components
                 </Typography>
                 <Grid container spacing={3}>
-                  <Grid item xs={12} md={4}>
+                  <Grid size={{ xs: 12, md: 4 }}>
                     <Typography variant="h6" gutterBottom>
                       Advanced Tables
                     </Typography>
@@ -564,7 +564,7 @@ export const ComplexShowcase: Story = {
                       <li>Loading and empty states</li>
                     </ul>
                   </Grid>
-                  <Grid item xs={12} md={4}>
+                  <Grid size={{ xs: 12, md: 4 }}>
                     <Typography variant="h6" gutterBottom>
                       Smart Pagination
                     </Typography>
@@ -576,7 +576,7 @@ export const ComplexShowcase: Story = {
                       <li>Responsive design</li>
                     </ul>
                   </Grid>
-                  <Grid item xs={12} md={4}>
+                  <Grid size={{ xs: 12, md: 4 }}>
                     <Typography variant="h6" gutterBottom>
                       Complete DataTable
                     </Typography>

@@ -19,6 +19,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const FigmaDesignReplication: Story = {
+  args: {
+    children: 'Label'
+  },
   render: () => (
     <div style={{
       padding: '40px',

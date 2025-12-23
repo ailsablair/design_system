@@ -39,6 +39,8 @@ interface IconProps {
   className?: string;
   /** Accessibility label */
   'aria-label'?: string;
+  /** Custom styles */
+  style?: React.CSSProperties;
 }
 
 const getSizeValue = (size: IconSize): string => {
@@ -118,6 +120,7 @@ export const Icon: React.FC<IconProps> = ({
           justifyContent: 'center',
           width: sizeValue,
           height: sizeValue,
+          ...style
         }}
         {...props}
       >
@@ -146,6 +149,7 @@ export const Icon: React.FC<IconProps> = ({
           height: sizeValue,
           color: color,
           opacity: opacityValue,
+          ...style
         }}
         {...props}
       >

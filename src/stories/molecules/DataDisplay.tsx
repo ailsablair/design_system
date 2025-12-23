@@ -1,8 +1,11 @@
 import React, { useState, useMemo, useCallback } from 'react';
-import { Table, TableColumn, TableData, TableProps } from '../atoms/Table';
+import { Table } from '../atoms/Table';
+import type { TableColumn, TableData, TableProps } from '../atoms/Table';
 import { SearchBar } from './SearchBar';
-import { FilterGroup, FilterOption } from './FilterGroup';
-import { ActionBar, ActionItem } from './ActionBar';
+import { FilterGroup } from './FilterGroup';
+import type { FilterOption } from './FilterGroup';
+import { ActionBar } from './ActionBar';
+import type { ActionItem } from './ActionBar';
 import './dataDisplay.css';
 
 export interface DataDisplayProps extends Omit<TableProps, 'data' | 'currentPage' | 'onPageChange'> {
@@ -86,8 +89,8 @@ export const DataDisplay: React.FC<DataDisplayProps> = ({
     if (searchTerm.trim()) {
       result = result.filter(row =>
         fieldsToSearch.some(field => {
-          const value = row[field];
-          return value && 
+          const value = row[field] as any;
+          return value &&
             value.toString().toLowerCase().includes(searchTerm.toLowerCase());
         })
       );
@@ -95,13 +98,13 @@ export const DataDisplay: React.FC<DataDisplayProps> = ({
 
     // Apply filters
     Object.entries(filters).forEach(([filterKey, filterValue]) => {
-      if (!filterValue || 
+      if (!filterValue ||
           (Array.isArray(filterValue) && filterValue.length === 0)) {
         return;
       }
 
       result = result.filter(row => {
-        const rowValue = row[filterKey];
+        const rowValue = row[filterKey] as any;
         if (Array.isArray(filterValue)) {
           return filterValue.includes(rowValue);
         } else {

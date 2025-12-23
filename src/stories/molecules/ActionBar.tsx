@@ -92,9 +92,9 @@ export const ActionBar: React.FC<ActionBarProps> = ({
               <div className="action-bar-item">
                 <Button
                   {...buttonProps}
-                  type={buttonType}
-                  size={size}
-                  width={fullWidth ? 'full' : 'auto'}
+                  variant={buttonType as any}
+                  size={size as any}
+                  fullWidth={fullWidth}
                   onClick={handleClick}
                 >
                   {label}

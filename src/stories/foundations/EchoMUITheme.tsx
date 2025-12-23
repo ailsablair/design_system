@@ -1,5 +1,5 @@
 import { useMemo, type ReactNode } from 'react';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme, Shadows } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 
 /**
@@ -170,7 +170,7 @@ export const createEchoMUITheme = () => {
       borderRadius: borderRadiusMd,
     },
 
-    shadows,
+    shadows: shadows as unknown as Shadows,
 
     transitions: {
       duration: {
