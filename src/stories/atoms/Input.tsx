@@ -131,6 +131,7 @@ export const Input: React.FC<InputProps> = ({
   onDropdownToggle,
   onFocus,
   onBlur,
+  onKeyDown,
 }) => {
   const inputId = id || `input-${Math.random().toString(36).substring(2, 11)}`;
   const isFocused = state === 'focus' || state === 'typing';

@@ -35,6 +35,8 @@ export interface LabelProps {
   onClick?: () => void;
   /** Additional CSS classes */
   className?: string;
+  /** HTML for attribute */
+  htmlFor?: string;
   /** Controlled open state for split variant */
   isOpen?: boolean;
   /** Callback when dropdown state changes */
@@ -88,6 +90,7 @@ export const Label: React.FC<LabelProps> = ({
   menuItems = [],
   onClick,
   className = '',
+  htmlFor,
   isOpen: controlledIsOpen,
   onToggle,
 }) => {
@@ -295,6 +298,7 @@ export const Label: React.FC<LabelProps> = ({
       role="button"
       tabIndex={disabled ? -1 : 0}
       aria-disabled={disabled}
+      id={htmlFor ? `label-for-${htmlFor}` : undefined}
     >
       {iconOnly ? (
         <div className="label-icon-only-content">
