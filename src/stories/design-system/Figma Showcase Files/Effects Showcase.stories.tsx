@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { SplitButton } from '../../atoms/button/SplitButton';
-import type { SplitButtonMenuItem } from '../../atoms/button/SplitButton';
+import { SplitButton } from '../../atoms/SplitButton';
+import type { SplitButtonMenuItem } from '../../atoms/SplitButton';
 
 const meta: Meta<typeof SplitButton> = {
   title: 'Design System/Figma Showcase Files/Effects Showcase',

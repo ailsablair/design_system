@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { SplitButton } from '../../atoms/button/SplitButton';
-import type { SplitButtonMenuItem } from '../../atoms/button/SplitButton';
-import { AlarmIcon } from '../../atoms/Button';
+import { SplitButton } from '../../atoms/SplitButton';
+import type { SplitButtonMenuItem } from '../../atoms/SplitButton';
+import { Alarm as AlarmIcon } from '@mui/icons-material';
 
 const meta: Meta<typeof SplitButton> = {
   title: 'Design System/Figma Showcase Files/Design System Showcase',
