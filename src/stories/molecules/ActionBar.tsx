@@ -66,10 +66,10 @@ export const ActionBar: React.FC<ActionBarProps> = ({
     <div className={actionBarClasses}>
       <div className="action-bar-content">
         {actions.map((action, index) => {
-          const { label, id, onAction, ...buttonProps } = action;
-          
+          const { label, id, onAction, type: actionType, ...buttonProps } = action;
+
           // Determine button type
-          let buttonType = action.type || 'secondary';
+          let buttonType = actionType || 'secondary';
           if (primaryActionIndex === index) {
             buttonType = 'primary';
           }
