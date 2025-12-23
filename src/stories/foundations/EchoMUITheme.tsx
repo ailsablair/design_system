@@ -1,5 +1,6 @@
 import { useMemo, type ReactNode } from 'react';
-import { ThemeProvider, createTheme, Shadows } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import type { Shadows } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 
 /**
