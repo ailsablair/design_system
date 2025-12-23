@@ -162,13 +162,13 @@ export const DesignSystemShowcase: Story = {
       <div>
         <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', fontWeight: '600' }}>With Leading Icons</h3>
         <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
-          <SplitButton size="default" type="primary" leadingIcon={<AlarmIcon size={18} />} menuItems={defaultMenuItems}>
+          <SplitButton size="default" type="primary" leadingIcon={<AlarmIcon sx={{ fontSize: 18 }} />} menuItems={defaultMenuItems}>
             Primary
           </SplitButton>
-          <SplitButton size="default" type="secondary" leadingIcon={<AlarmIcon size={18} />} menuItems={defaultMenuItems}>
+          <SplitButton size="default" type="secondary" leadingIcon={<AlarmIcon sx={{ fontSize: 18 }} />} menuItems={defaultMenuItems}>
             Secondary
           </SplitButton>
-          <SplitButton size="default" type="ghost" leadingIcon={<AlarmIcon size={18} />} menuItems={defaultMenuItems}>
+          <SplitButton size="default" type="ghost" leadingIcon={<AlarmIcon sx={{ fontSize: 18 }} />} menuItems={defaultMenuItems}>
             Ghost
           </SplitButton>
         </div>
