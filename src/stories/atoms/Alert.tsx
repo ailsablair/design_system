@@ -153,7 +153,7 @@ const CloseIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size }) 
   const iconSize = size === 'small' ? '14px' : size === 'default' ? '16px' : '18px';
   const viewBoxSize = size === 'small' ? 14 : size === 'default' ? 16 : 18;
   return (
-    <svg width={iconSize} height={iconSize} viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-close-icon">
+    <svg width="100%" height="100%" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-close-icon">
       <g opacity="var(--icon-opacity-medium)">
         {size === 'small' && (
           <path d="M11.0834 3.73919L10.2609 2.91669L7.00008 6.17752L3.73925 2.91669L2.91675 3.73919L6.17758 7.00002L2.91675 10.2609L3.73925 11.0834L7.00008 7.82252L10.2609 11.0834L11.0834 10.2609L7.82258 7.00002L11.0834 3.73919Z" fill="currentColor"/>
