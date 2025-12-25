@@ -1,7 +1,7 @@
 import type { StatusIconType } from './statusIcon.assets';
 
 export type StatusIconState = 'empty' | 'current' | 'complete' | 'error';
-export type StatusIconSize = 'small' | 'default' | 'large';
+export type StatusIconSize = 'small' | 'default' | 'medium' | 'large' | 'xlarge' | number;
 
 export interface StatusIconTheme {
   ringColor: string;
@@ -16,14 +16,23 @@ export interface StatusIconTheme {
  * Maps sizes to exact screen-pixel equivalents based on a 51x51 viewBox.
  */
 export const getStrokeWidth = (size: StatusIconSize): number => {
+  if (typeof size === 'number') {
+    // Proportional scaling for custom sizes
+    return 2 * (51 / size);
+  }
+
   switch (size) {
     case 'small':
       return 1 * (51 / 26); // 1px on 26px footprint
-    case 'large':
-      return 3 * (51 / 48); // 3px on 48px footprint
+    case 'medium':
     case 'default':
-    default:
       return 2 * (51 / 36); // 2px on 36px footprint
+    case 'large':
+      return 2.5 * (51 / 50); // ~2.5px on 50px footprint
+    case 'xlarge':
+      return 3 * (51 / 64); // 3px on 64px footprint
+    default:
+      return 2 * (51 / 36);
   }
 };
 
@@ -32,7 +41,12 @@ export const getStrokeWidth = (size: StatusIconSize): number => {
  * Pattern: 4px dash, 2px gap on screen.
  */
 export const getDashArray = (size: StatusIconSize): string => {
-  const scale = 51 / (size === 'small' ? 26 : size === 'large' ? 48 : 36);
+  const numericSize = typeof size === 'number' ? size :
+    size === 'small' ? 26 :
+    size === 'large' ? 50 :
+    size === 'xlarge' ? 64 : 36;
+
+  const scale = 51 / numericSize;
   return `${4 * scale} ${2 * scale}`;
 };
 
