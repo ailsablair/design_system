@@ -322,7 +322,7 @@ export const Accordion: React.FC<AccordionProps> = ({
       default:
         return (
           <>
-            {showStatusIcon && <StatusIcon />}
+            {showStatusIcon && <StatusIconComponent />}
             {showIcon && (icon || <BellRingIcon />)}
             <div className="accordion__content">
               <div className="accordion__content-inner">
