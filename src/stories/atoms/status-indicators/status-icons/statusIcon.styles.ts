@@ -41,13 +41,65 @@ export const getStrokeWidth = (size: StatusIconSize): number => {
  * Pattern: 4px dash, 2px gap on screen.
  */
 export const getDashArray = (size: StatusIconSize): string => {
-  const numericSize = typeof size === 'number' ? size :
-    size === 'small' ? 26 :
-    size === 'large' ? 50 :
-    size === 'xlarge' ? 64 : 36;
+  const numericSize = typeof size === 'number'
+    ? size
+    : size === 'small'
+      ? 26
+      : size === 'large'
+        ? 50
+        : size === 'xlarge'
+          ? 64
+          : 36;
 
   const scale = 51 / numericSize;
   return `${4 * scale} ${2 * scale}`;
+};
+
+const TOKENS = {
+  base: {
+    black: 'var(--base-black)',
+    white: 'var(--base-white)',
+  },
+  neutral: {
+    g100: 'var(--neutral-gray-gray-100)',
+    g200: 'var(--neutral-gray-gray-200)',
+    g300: 'var(--neutral-gray-gray-300)',
+    g400: 'var(--neutral-gray-gray-400)',
+    g500: 'var(--neutral-gray-gray-500)',
+  },
+  status: {
+    red: 'var(--status-red)',
+    orange: 'var(--status-orange)',
+    purple: 'var(--status-purple)',
+    darkGreen: 'var(--status-dark-green)',
+  },
+  primary: {
+    skyBlue: 'var(--primary-sky-blue-main)',
+    blue: 'var(--primary-blue-main)',
+  },
+  secondary: {
+    navy: 'var(--secondary-navy-main)',
+  },
+} as const;
+
+const CURRENT_BG_BY_TYPE: Record<StatusIconType, string> = {
+  alert: TOKENS.status.orange,
+  complete: TOKENS.status.darkGreen,
+  locked: TOKENS.secondary.navy,
+  comment: TOKENS.primary.skyBlue,
+  notification: TOKENS.primary.blue,
+  error: TOKENS.status.red,
+  note: TOKENS.status.purple,
+};
+
+const CURRENT_GLYPH_BY_TYPE: Record<StatusIconType, string> = {
+  alert: TOKENS.base.white,
+  complete: TOKENS.base.white,
+  locked: TOKENS.neutral.g200,
+  comment: TOKENS.base.white,
+  notification: TOKENS.base.white,
+  error: TOKENS.base.white,
+  note: TOKENS.base.white,
 };
 
 /**
@@ -60,63 +112,79 @@ export const getStatusIconTheme = (
   size: StatusIconSize
 ): StatusIconTheme => {
   const strokeWidth = getStrokeWidth(size);
-  
-  // Base neutral tokens
-  const neutralRing = 'var(--neutral-gray-gray-300)';
-  const neutralGlyph = 'var(--neutral-gray-gray-400)';
-  const neutralBg = 'var(--neutral-gray-gray-200)';
-  const perimeterColor = 'var(--neutral-gray-gray-200)';
+
+  const defaultPerimeter = TOKENS.neutral.g200;
 
   if (disabled) {
-    const isFullState = state === 'complete' || state === 'error';
+    if (state === 'current') {
+      return {
+        ringColor: TOKENS.neutral.g300,
+        glyphColor: TOKENS.neutral.g500,
+        backgroundColor: TOKENS.neutral.g300,
+        perimeterColor: TOKENS.neutral.g300,
+        strokeWidth,
+      };
+    }
+
+    if (state === 'complete' || state === 'error') {
+      return {
+        ringColor: TOKENS.neutral.g400,
+        glyphColor: TOKENS.neutral.g400,
+        backgroundColor: TOKENS.neutral.g100,
+        perimeterColor: TOKENS.neutral.g400,
+        strokeWidth,
+      };
+    }
+
+    // empty + disabled
     return {
-      ringColor: neutralRing,
-      glyphColor: isFullState ? 'var(--base-white)' : neutralGlyph,
-      backgroundColor: isFullState ? neutralBg : 'transparent',
-      perimeterColor,
-      ringDashArray: state === 'empty' ? getDashArray(size) : undefined,
+      ringColor: TOKENS.neutral.g300,
+      glyphColor: type === 'comment' ? TOKENS.neutral.g300 : TOKENS.neutral.g400,
+      backgroundColor: 'transparent',
+      perimeterColor: TOKENS.neutral.g300,
+      ringDashArray: getDashArray(size),
       strokeWidth,
     };
   }
 
-  // Type-specific tokens
-  const typeColors: Record<StatusIconType, string> = {
-    alert: 'var(--status-orange)',
-    complete: 'var(--status-green)',
-    locked: 'var(--neutral-gray-gray-700)',
-    comment: 'var(--primary-sky-blue-main)',
-    notification: 'var(--primary-blue-main)',
-    error: 'var(--status-red)',
-    note: 'var(--status-purple)',
-  };
-
-  // Notification has a different ring color in 'current' state per plan
-  const ringColors: Record<StatusIconType, string> = {
-    ...typeColors,
-    notification: 'var(--primary-blue-blue-400)',
-  };
-
-  const theme: StatusIconTheme = {
-    ringColor: ringColors[type],
-    glyphColor: typeColors[type],
-    strokeWidth,
-    perimeterColor,
-  };
-
-  if (state === 'empty') {
-    theme.ringColor = neutralRing;
-    theme.glyphColor = neutralGlyph;
-    theme.ringDashArray = getDashArray(size);
-  } else if (state === 'complete' || type === 'complete') {
-    theme.backgroundColor = typeColors[type];
-    theme.glyphColor = 'var(--base-white)';
-    // In complete state, ring matches the background color or is subtle
-    theme.ringColor = typeColors[type];
-  } else if (state === 'error' || type === 'error') {
-    theme.backgroundColor = 'var(--status-red)';
-    theme.glyphColor = 'var(--base-white)';
-    theme.ringColor = 'var(--status-red)';
+  if (state === 'current') {
+    const bg = CURRENT_BG_BY_TYPE[type];
+    return {
+      ringColor: bg,
+      glyphColor: CURRENT_GLYPH_BY_TYPE[type],
+      backgroundColor: bg,
+      perimeterColor: defaultPerimeter,
+      strokeWidth,
+    };
   }
 
-  return theme;
+  if (state === 'complete') {
+    return {
+      ringColor: TOKENS.status.darkGreen,
+      glyphColor: TOKENS.base.white,
+      backgroundColor: TOKENS.status.darkGreen,
+      perimeterColor: defaultPerimeter,
+      strokeWidth,
+    };
+  }
+
+  if (state === 'error') {
+    return {
+      ringColor: TOKENS.status.red,
+      glyphColor: TOKENS.base.white,
+      backgroundColor: TOKENS.status.red,
+      perimeterColor: defaultPerimeter,
+      strokeWidth,
+    };
+  }
+
+  // empty
+  return {
+    ringColor: TOKENS.neutral.g300,
+    glyphColor: type === 'comment' ? TOKENS.base.black : TOKENS.neutral.g400,
+    backgroundColor: 'transparent',
+    perimeterColor: defaultPerimeter,
+    ringDashArray: getDashArray(size),
+    strokeWidth,
+  };
 };
