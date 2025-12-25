@@ -35,6 +35,11 @@ export const StatusIcon: React.FC<StatusIconProps> = ({
   className = '',
   'aria-label': ariaLabel,
 }) => {
+  if (!type || !statusIconPaths[type]) {
+    console.warn(`StatusIcon: Invalid type "${type}" provided.`);
+    return null;
+  }
+
   const theme = getStatusIconTheme(type, state, disabled, size);
   
   // Combine classes
@@ -113,5 +118,3 @@ export const StatusIcon: React.FC<StatusIconProps> = ({
     </div>
   );
 };
-
-export default StatusIcon;
