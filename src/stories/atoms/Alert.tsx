@@ -33,7 +33,7 @@ const BullseyeIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size 
   const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
   const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
-    <svg width={iconSize} height={iconSize} viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
+    <svg width="100%" height="100%" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
       <g opacity="var(--icon-opacity-medium)">
         {size === 'small' && (
           <path d="M9 1.5C8.01509 1.5 7.03982 1.69399 6.12987 2.0709C5.21993 2.44781 4.39314 3.00026 3.6967 3.6967C2.29018 5.10322 1.5 7.01088 1.5 9C1.5 10.9891 2.29018 12.8968 3.6967 14.3033C4.39314 14.9997 5.21993 15.5522 6.12987 15.9291C7.03982 16.306 8.01509 16.5 9 16.5C10.9891 16.5 12.8968 15.7098 14.3033 14.3033C15.7098 12.8968 16.5 10.9891 16.5 9C16.5 8.01509 16.306 7.03982 15.9291 6.12987C15.5522 5.21993 14.9997 4.39314 14.3033 3.6967C13.6069 3.00026 12.7801 2.44781 11.8701 2.0709C10.9602 1.69399 9.98491 1.5 9 1.5ZM9 3C10.5913 3 12.1174 3.63214 13.2426 4.75736C14.3679 5.88258 15 7.4087 15 9C15 10.5913 14.3679 12.1174 13.2426 13.2426C12.1174 14.3679 10.5913 15 9 15C7.4087 15 5.88258 14.3679 4.75736 13.2426C3.63214 12.1174 3 10.5913 3 9C3 7.4087 3.63214 5.88258 4.75736 4.75736C5.88258 3.63214 7.4087 3 9 3ZM9 4.5C7.80653 4.5 6.66193 4.97411 5.81802 5.81802C4.97411 6.66193 4.5 7.80653 4.5 9C4.5 10.1935 4.97411 11.3381 5.81802 12.182C6.66193 13.0259 7.80653 13.5 9 13.5C10.1935 13.5 11.3381 13.0259 12.182 12.182C13.0259 11.3381 13.5 10.1935 13.5 9C13.5 7.80653 13.0259 6.66193 12.182 5.81802C11.3381 4.97411 10.1935 4.5 9 4.5ZM9 6C9.79565 6 10.5587 6.31607 11.1213 6.87868C11.6839 7.44129 12 8.20435 12 9C12 9.79565 11.6839 10.5587 11.1213 11.1213C10.5587 11.6839 9.79565 12 9 12C8.20435 12 7.44129 11.6839 6.87868 11.1213C6.31607 10.5587 6 9.79565 6 9C6 8.20435 6.31607 7.44129 6.87868 6.87868C7.44129 6.31607 8.20435 6 9 6ZM9 7.5C8.60218 7.5 8.22064 7.65804 7.93934 7.93934C7.65804 8.22064 7.5 8.60218 7.5 9C7.5 9.39782 7.65804 9.77936 7.93934 10.0607C8.22064 10.342 8.60218 10.5 9 10.5C9.39782 10.5 9.77936 10.342 10.0607 10.0607C10.342 9.77936 10.5 9.39782 10.5 9C10.5 8.60218 10.342 8.22064 10.0607 7.93934C9.77936 7.65804 9.39782 7.5 9 7.5Z" fill="currentColor"/>
@@ -53,7 +53,7 @@ const AlertTriangleIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ 
   const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
   const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
-    <svg width={iconSize} height={iconSize} viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
+    <svg width="100%" height="100%" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
       <g opacity="var(--icon-opacity-medium)">
         {size === 'small' && (
           <path d="M9.75 10.5H8.25V6.75H9.75M9.75 13.5H8.25V12H9.75M0.75 15.75H17.25L9 1.5L0.75 15.75Z" fill="currentColor"/>
@@ -73,7 +73,7 @@ const InformationIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ si
   const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
   const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
-    <svg width={iconSize} height={iconSize} viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
+    <svg width="100%" height="100%" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
       <g opacity="var(--icon-opacity-medium)">
         {size === 'small' && (
           <path d="M9.75 6.75H8.25V5.25H9.75M9.75 12.75H8.25V8.25H9.75M9 1.5C8.01509 1.5 7.03982 1.69399 6.12987 2.0709C5.21993 2.44781 4.39314 3.00026 3.6967 3.6967C2.29018 5.10322 1.5 7.01088 1.5 9C1.5 10.9891 2.29018 12.8968 3.6967 14.3033C4.39314 14.9997 5.21993 15.5522 6.12987 15.9291C7.03982 16.306 8.01509 16.5 9 16.5C10.9891 16.5 12.8968 15.7098 14.3033 14.3033C15.7098 12.8968 16.5 10.9891 16.5 9C16.5 8.01509 16.306 7.03982 15.9291 6.12987C15.5522 5.21993 14.9997 4.39314 14.3033 3.6967C13.6069 3.00026 12.7801 2.44781 11.8701 2.0709C10.9602 1.69399 9.98491 1.5 9 1.5Z" fill="currentColor"/>
@@ -93,7 +93,7 @@ const CloseThickIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ siz
   const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
   const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
-    <svg width={iconSize} height={iconSize} viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
+    <svg width="100%" height="100%" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
       <g opacity="var(--icon-opacity-medium)">
         {size === 'small' && (
           <path d="M15 5.1825L12.8175 3L9 6.8175L5.1825 3L3 5.1825L6.8175 9L3 12.8175L5.1825 15L9 11.1825L12.8175 15L15 12.8175L11.1825 9L15 5.1825Z" fill="currentColor"/>
@@ -113,7 +113,7 @@ const CheckBoldIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size
   const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
   const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
-    <svg width={iconSize} height={iconSize} viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
+    <svg width="100%" height="100%" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
       <g opacity="var(--icon-opacity-medium)">
         {size === 'small' && (
           <path d="M6.74979 15.315L2.09229 10.6575L4.21479 8.53497L6.74979 11.0775L14.1598 3.65997L16.2823 5.78247L6.74979 15.315Z" fill="currentColor"/>
@@ -133,7 +133,7 @@ const FileDocumentIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ s
   const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
   const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
-    <svg width={iconSize} height={iconSize} viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
+    <svg width="100%" height="100%" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
       <g opacity="var(--icon-opacity-medium)">
         {size === 'small' && (
           <path d="M9.75 6.75H13.875L9.75 2.625V6.75ZM4.5 1.5H10.5L15 6V15C15 15.3978 14.842 15.7794 14.5607 16.0607C14.2794 16.342 13.8978 16.5 13.5 16.5H4.5C3.6675 16.5 3 15.825 3 15V3C3 2.1675 3.6675 1.5 4.5 1.5ZM11.25 13.5V12H4.5V13.5H11.25ZM13.5 10.5V9H4.5V10.5H13.5Z" fill="currentColor"/>
