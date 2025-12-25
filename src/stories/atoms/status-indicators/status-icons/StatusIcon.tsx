@@ -1,11 +1,11 @@
 import React from 'react';
 import { statusIconPaths } from './statusIcon.assets';
 import type { StatusIconType } from './statusIcon.assets';
-import { 
-  StatusIconState, 
-  StatusIconSize, 
-  getStatusIconTheme 
+import type {
+  StatusIconState,
+  StatusIconSize,
 } from './statusIcon.styles';
+import { getStatusIconTheme } from './statusIcon.styles';
 import './statusIcon.css';
 
 export interface StatusIconProps {

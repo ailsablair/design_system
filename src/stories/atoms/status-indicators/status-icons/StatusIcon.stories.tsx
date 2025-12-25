@@ -2,7 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { StatusIcon } from './StatusIcon';
 import type { StatusIconType } from './statusIcon.assets';
-import { StatusIconState, StatusIconSize } from './statusIcon.styles';
+import type { StatusIconState, StatusIconSize } from './statusIcon.styles';
 
 const meta: Meta<typeof StatusIcon> = {
   title: 'Atoms/Status Indicators/Status Icon',
