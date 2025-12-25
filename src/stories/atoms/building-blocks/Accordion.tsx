@@ -1,5 +1,6 @@
 import React, { useState, useId } from 'react';
-import { StatusIcon, StatusIconSize, StatusIconState } from '../status-indicators/status-icons';
+import { StatusIcon } from '../status-indicators/status-icons';
+import type { StatusIconSize, StatusIconState } from '../status-indicators/status-icons';
 import './accordion.css';
 
 export interface AccordionProps {
