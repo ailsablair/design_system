@@ -1,5 +1,6 @@
 import React from 'react';
-import { StatusIconType, statusIconPaths } from './statusIcon.assets';
+import { statusIconPaths } from './statusIcon.assets';
+import type { StatusIconType } from './statusIcon.assets';
 import { 
   StatusIconState, 
   StatusIconSize, 
