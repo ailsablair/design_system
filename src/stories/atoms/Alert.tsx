@@ -150,10 +150,11 @@ const FileDocumentIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ s
 };
 
 const CloseIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size }) => {
-  const iconSize = size === 'small' ? 16 : 18;
+  const iconSize = size === 'small' ? 'var(--icon-size-md)' : 'var(--icon-size-lg)';
+  const viewBoxSize = size === 'small' ? 16 : 18;
   return (
-    <svg width={iconSize} height={iconSize} viewBox={`0 0 ${iconSize} ${iconSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-close-icon">
-      <g opacity="0.5">
+    <svg width={iconSize} height={iconSize} viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-close-icon">
+      <g opacity="var(--icon-opacity-medium)">
         {size === 'small' && (
           <path d="M12.6666 4.27331L11.7266 3.33331L7.99992 7.05998L4.27325 3.33331L3.33325 4.27331L7.05992 7.99998L3.33325 11.7266L4.27325 12.6666L7.99992 8.93998L11.7266 12.6666L12.6666 11.7266L8.93992 7.99998L12.6666 4.27331Z" fill="currentColor"/>
         )}
