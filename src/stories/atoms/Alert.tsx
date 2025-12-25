@@ -30,8 +30,8 @@ export interface AlertProps {
 
 // Icon components based on Figma design
 const BullseyeIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size }) => {
-  const iconSize = size === 'small' ? 'var(--icon-size-lg)' : size === 'default' ? 'var(--icon-size-xl)' : 'var(--icon-size-2xl)';
-  const viewBoxSize = size === 'small' ? 18 : size === 'default' ? 28 : 36;
+  const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
+  const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
     <svg width={iconSize} height={iconSize} viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
       <g opacity="var(--icon-opacity-medium)">
@@ -50,8 +50,8 @@ const BullseyeIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size 
 };
 
 const AlertTriangleIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size }) => {
-  const iconSize = size === 'small' ? 'var(--icon-size-lg)' : size === 'default' ? 'var(--icon-size-xl)' : 'var(--icon-size-2xl)';
-  const viewBoxSize = size === 'small' ? 18 : size === 'default' ? 28 : 36;
+  const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
+  const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
     <svg width={iconSize} height={iconSize} viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
       <g opacity="var(--icon-opacity-medium)">
@@ -70,8 +70,8 @@ const AlertTriangleIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ 
 };
 
 const InformationIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size }) => {
-  const iconSize = size === 'small' ? 'var(--icon-size-lg)' : size === 'default' ? 'var(--icon-size-xl)' : 'var(--icon-size-2xl)';
-  const viewBoxSize = size === 'small' ? 18 : size === 'default' ? 28 : 36;
+  const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
+  const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
     <svg width={iconSize} height={iconSize} viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
       <g opacity="var(--icon-opacity-medium)">
@@ -90,8 +90,8 @@ const InformationIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ si
 };
 
 const CloseThickIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size }) => {
-  const iconSize = size === 'small' ? 'var(--icon-size-lg)' : size === 'default' ? 'var(--icon-size-xl)' : 'var(--icon-size-2xl)';
-  const viewBoxSize = size === 'small' ? 18 : size === 'default' ? 28 : 36;
+  const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
+  const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
     <svg width={iconSize} height={iconSize} viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
       <g opacity="var(--icon-opacity-medium)">
@@ -110,8 +110,8 @@ const CloseThickIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ siz
 };
 
 const CheckBoldIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size }) => {
-  const iconSize = size === 'small' ? 'var(--icon-size-lg)' : size === 'default' ? 'var(--icon-size-xl)' : 'var(--icon-size-2xl)';
-  const viewBoxSize = size === 'small' ? 18 : size === 'default' ? 28 : 36;
+  const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
+  const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
     <svg width={iconSize} height={iconSize} viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
       <g opacity="var(--icon-opacity-medium)">
@@ -130,8 +130,8 @@ const CheckBoldIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size
 };
 
 const FileDocumentIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size }) => {
-  const iconSize = size === 'small' ? 'var(--icon-size-lg)' : size === 'default' ? 'var(--icon-size-xl)' : 'var(--icon-size-2xl)';
-  const viewBoxSize = size === 'small' ? 18 : size === 'default' ? 28 : 36;
+  const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
+  const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
     <svg width={iconSize} height={iconSize} viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
       <g opacity="var(--icon-opacity-medium)">
@@ -150,15 +150,18 @@ const FileDocumentIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ s
 };
 
 const CloseIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size }) => {
-  const iconSize = size === 'small' ? 'var(--icon-size-md)' : 'var(--icon-size-lg)';
-  const viewBoxSize = size === 'small' ? 16 : 18;
+  const iconSize = size === 'small' ? '14px' : size === 'default' ? '16px' : '18px';
+  const viewBoxSize = size === 'small' ? 14 : size === 'default' ? 16 : 18;
   return (
     <svg width={iconSize} height={iconSize} viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-close-icon">
       <g opacity="var(--icon-opacity-medium)">
         {size === 'small' && (
+          <path d="M11.0834 3.73919L10.2609 2.91669L7.00008 6.17752L3.73925 2.91669L2.91675 3.73919L6.17758 7.00002L2.91675 10.2609L3.73925 11.0834L7.00008 7.82252L10.2609 11.0834L11.0834 10.2609L7.82258 7.00002L11.0834 3.73919Z" fill="currentColor"/>
+        )}
+        {size === 'default' && (
           <path d="M12.6666 4.27331L11.7266 3.33331L7.99992 7.05998L4.27325 3.33331L3.33325 4.27331L7.05992 7.99998L3.33325 11.7266L4.27325 12.6666L7.99992 8.93998L11.7266 12.6666L12.6666 11.7266L8.93992 7.99998L12.6666 4.27331Z" fill="currentColor"/>
         )}
-        {(size === 'default' || size === 'large') && (
+        {size === 'large' && (
           <path d="M14.25 4.8075L13.1925 3.75L9 7.9425L4.8075 3.75L3.75 4.8075L7.9425 9L3.75 13.1925L4.8075 14.25L9 10.0575L13.1925 14.25L14.25 13.1925L10.0575 9L14.25 4.8075Z" fill="currentColor"/>
         )}
       </g>
