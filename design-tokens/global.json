@@ -274,6 +274,22 @@
       }
     }
   },
+  "icon": {
+    "size": {
+      "xs": { "$type": "dimension", "$value": "12px" },
+      "sm": { "$type": "dimension", "$value": "14px" },
+      "md": { "$type": "dimension", "$value": "16px" },
+      "lg": { "$type": "dimension", "$value": "20px" },
+      "xl": { "$type": "dimension", "$value": "24px" },
+      "2xl": { "$type": "dimension", "$value": "32px" }
+    },
+    "opacity": {
+      "subtle": { "$type": "number", "$value": 0.4 },
+      "medium": { "$type": "number", "$value": 0.6 },
+      "strong": { "$type": "number", "$value": 0.7 },
+      "full": { "$type": "number", "$value": 1.0 }
+    }
+  },
   "text-styles": {
     "h1": {
       "bold": {
