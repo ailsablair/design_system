@@ -43,14 +43,20 @@ export const StatusIcon: React.FC<StatusIconProps> = ({
   const theme = getStatusIconTheme(type, state, disabled, size);
   
   // Combine classes
+  const isNumericSize = typeof size === 'number';
   const containerClasses = [
     'status-icon',
-    `status-icon--${size}`,
+    !isNumericSize && `status-icon--${size}`,
     `status-icon--type-${type}`,
     `status-icon--state-${state}`,
     disabled && 'status-icon--disabled',
     className,
   ].filter(Boolean).join(' ');
+
+  const style: React.CSSProperties = isNumericSize ? {
+    width: `${size}px`,
+    height: `${size}px`,
+  } : {};
 
   // Determine glyph to render
   const glyphType = type;
@@ -58,14 +64,15 @@ export const StatusIcon: React.FC<StatusIconProps> = ({
   const viewBoxSize = 51;
   const center = viewBoxSize / 2;
   const radius = center - theme.strokeWidth / 2;
-  
+
   // Glyph scaling and centering
   // Glyph paths are 24x24. We center them in the 51x51 viewBox.
   const glyphOffset = (viewBoxSize - 24) / 2;
 
   return (
-    <div 
+    <div
       className={containerClasses}
+      style={style}
       role="img"
       aria-label={ariaLabel || `${state} ${type} status indicator`}
     >
