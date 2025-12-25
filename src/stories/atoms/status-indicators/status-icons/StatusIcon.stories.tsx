@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { StatusIcon } from './StatusIcon';
-import { StatusIconType } from './statusIcon.assets';
+import type { StatusIconType } from './statusIcon.assets';
 import { StatusIconState, StatusIconSize } from './statusIcon.styles';
 
 const meta: Meta<typeof StatusIcon> = {
