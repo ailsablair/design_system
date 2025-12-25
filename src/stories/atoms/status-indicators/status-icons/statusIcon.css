@@ -1,0 +1,52 @@
+.status-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.status-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Size footprints */
+.status-icon--small {
+  width: 26px;
+  height: 26px;
+}
+
+.status-icon--default {
+  width: 36px;
+  height: 36px;
+}
+
+.status-icon--large {
+  width: 48px;
+  height: 48px;
+}
+
+/* Layers */
+.status-icon__perimeter {
+  fill: none;
+}
+
+.status-icon__ring {
+  fill: none;
+  transition: stroke 0.2s ease, stroke-dasharray 0.2s ease;
+}
+
+.status-icon__background {
+  transition: fill 0.2s ease;
+}
+
+.status-icon__glyph {
+  transition: fill 0.2s ease;
+}
+
+/* Type modifiers for extra specificity if needed */
+.status-icon--type-locked .status-icon__glyph {
+  /* Some icons might need slightly different positioning/scaling if not normalized */
+}
