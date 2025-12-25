@@ -81,26 +81,26 @@ export const StatusIcon: React.FC<StatusIconProps> = ({
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Perimeter Layer (Subtle neutral outer ring) */}
-        <circle 
-          cx={center} 
-          cy={center} 
-          r={25} 
-          stroke={theme.perimeterColor} 
-          strokeWidth={0.5} 
-          className="status-icon__perimeter"
-        />
-
-        {/* Background Layer (Solid fill for complete/error) */}
+        {/* Background Layer (Solid fill for current/complete/error) */}
         {theme.backgroundColor && theme.backgroundColor !== 'transparent' && (
-          <circle 
-            cx={center} 
-            cy={center} 
-            r={center} 
-            fill={theme.backgroundColor} 
+          <circle
+            cx={center}
+            cy={center}
+            r={center}
+            fill={theme.backgroundColor}
             className="status-icon__background"
           />
         )}
+
+        {/* Perimeter Layer (Subtle neutral outer ring) */}
+        <circle
+          cx={center}
+          cy={center}
+          r={25}
+          stroke={theme.perimeterColor}
+          strokeWidth={0.5}
+          className="status-icon__perimeter"
+        />
 
         {/* Ring Layer */}
         <circle 

@@ -22,7 +22,7 @@ const meta: Meta<typeof StatusIcon> = {
     },
     size: {
       control: 'select',
-      options: ['small', 'default', 'large'],
+      options: ['small', 'default', 'medium', 'large', 'xlarge'],
     },
     disabled: {
       control: 'boolean',
@@ -44,7 +44,7 @@ export const Playground: Story = {
 
 const types: StatusIconType[] = ['alert', 'complete', 'locked', 'comment', 'notification', 'error', 'note'];
 const states: StatusIconState[] = ['empty', 'current', 'complete', 'error'];
-const sizes: StatusIconSize[] = ['small', 'default', 'large'];
+const sizes: StatusIconSize[] = ['small', 'default', 'medium', 'large', 'xlarge'];
 
 export const AllCombinations: Story = {
   render: () => (
@@ -96,11 +96,27 @@ export const Sizes: Story = {
 
 export const Disabled: Story = {
   render: () => (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-      <StatusIcon type="alert" state="current" size="default" />
-      <StatusIcon type="alert" state="current" size="default" disabled />
-      <StatusIcon type="complete" state="complete" size="default" />
-      <StatusIcon type="complete" state="complete" size="default" disabled />
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+        <StatusIcon type="alert" state="current" size="default" />
+        <StatusIcon type="alert" state="current" size="default" disabled />
+        <StatusIcon type="locked" state="current" size="default" />
+        <StatusIcon type="locked" state="current" size="default" disabled />
+      </div>
+
+      <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+        <StatusIcon type="comment" state="empty" size="default" />
+        <StatusIcon type="comment" state="empty" size="default" disabled />
+        <StatusIcon type="comment" state="current" size="default" />
+        <StatusIcon type="comment" state="current" size="default" disabled />
+      </div>
+
+      <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+        <StatusIcon type="comment" state="complete" size="default" />
+        <StatusIcon type="comment" state="complete" size="default" disabled />
+        <StatusIcon type="comment" state="error" size="default" />
+        <StatusIcon type="comment" state="error" size="default" disabled />
+      </div>
     </div>
   ),
 };
