@@ -30,7 +30,7 @@ export interface AlertProps {
 
 // Icon components based on Figma design
 const BullseyeIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size }) => {
-  const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
+
   const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
     <svg width="100%" height="100%" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
@@ -50,7 +50,7 @@ const BullseyeIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size 
 };
 
 const AlertTriangleIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size }) => {
-  const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
+
   const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
     <svg width="100%" height="100%" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
@@ -70,7 +70,7 @@ const AlertTriangleIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ 
 };
 
 const InformationIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size }) => {
-  const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
+
   const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
     <svg width="100%" height="100%" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
@@ -90,7 +90,7 @@ const InformationIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ si
 };
 
 const CloseThickIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size }) => {
-  const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
+
   const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
     <svg width="100%" height="100%" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
@@ -110,7 +110,7 @@ const CloseThickIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ siz
 };
 
 const CheckBoldIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size }) => {
-  const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
+
   const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
     <svg width="100%" height="100%" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
@@ -130,7 +130,7 @@ const CheckBoldIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size
 };
 
 const FileDocumentIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size }) => {
-  const iconSize = size === 'small' ? '16px' : size === 'default' ? '22px' : '28px';
+
   const viewBoxSize = size === 'small' ? 16 : size === 'default' ? 22 : 28;
   return (
     <svg width="100%" height="100%" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-icon">
@@ -150,7 +150,6 @@ const FileDocumentIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ s
 };
 
 const CloseIcon: React.FC<{ size: 'small' | 'default' | 'large' }> = ({ size }) => {
-  const iconSize = size === 'small' ? '14px' : size === 'default' ? '16px' : '18px';
   const viewBoxSize = size === 'small' ? 14 : size === 'default' ? 16 : 18;
   return (
     <svg width="100%" height="100%" viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} fill="none" xmlns="http://www.w3.org/2000/svg" className="alert-close-icon">
