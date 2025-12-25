@@ -291,12 +291,16 @@
   flex-shrink: 0;
   aspect-ratio: 1/1;
   position: relative;
+  display: block;
+  overflow: visible;
 }
 
 .alert-close-icon {
   flex-shrink: 0;
   aspect-ratio: 1/1;
   position: relative;
+  display: block;
+  overflow: visible;
 }
 
 /* Size-specific icon constraints */
