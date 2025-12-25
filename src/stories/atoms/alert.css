@@ -22,6 +22,14 @@
   width: 100%;
 }
 
+.alert--with-description .alert__content {
+  align-items: flex-start;
+}
+
+.alert--title-only .alert__content {
+  align-items: center;
+}
+
 /* === SIZE VARIANTS === */
 
 .alert--small {
