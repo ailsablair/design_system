@@ -47,10 +47,7 @@ export const StatusIcon: React.FC<StatusIconProps> = ({
   ].filter(Boolean).join(' ');
 
   // Determine glyph to render
-  // 'error' and 'complete' states override the type glyph unless it's already that type
-  let glyphType = type;
-  if (state === 'error') glyphType = 'error';
-  if (state === 'complete') glyphType = 'complete';
+  const glyphType = type;
 
   const viewBoxSize = 51;
   const center = viewBoxSize / 2;

@@ -54,10 +54,11 @@ export const getStatusIconTheme = (
   const perimeterColor = 'var(--neutral-gray-gray-200)';
 
   if (disabled) {
+    const isFullState = state === 'complete' || state === 'error';
     return {
       ringColor: neutralRing,
-      glyphColor: neutralGlyph,
-      backgroundColor: state === 'complete' || state === 'error' ? neutralBg : 'transparent',
+      glyphColor: isFullState ? 'var(--base-white)' : neutralGlyph,
+      backgroundColor: isFullState ? neutralBg : 'transparent',
       perimeterColor,
       ringDashArray: state === 'empty' ? getDashArray(size) : undefined,
       strokeWidth,
