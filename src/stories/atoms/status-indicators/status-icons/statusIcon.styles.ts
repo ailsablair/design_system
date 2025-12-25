@@ -1,4 +1,4 @@
-import { StatusIconType } from './statusIcon.assets';
+import type { StatusIconType } from './statusIcon.assets';
 
 export type StatusIconState = 'empty' | 'current' | 'complete' | 'error';
 export type StatusIconSize = 'small' | 'default' | 'large';
