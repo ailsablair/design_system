@@ -199,9 +199,11 @@ export const Alert: React.FC<AlertProps> = ({
   onClose,
   'aria-label': ariaLabel,
 }) => {
+  const hasDescription = Boolean(subtext && description && description.trim().length > 0);
+
   return (
     <div
-      className={`alert alert--${size} alert--${colour} ${border ? 'alert--border' : 'alert--no-border'} ${className}`}
+      className={`alert alert--${size} alert--${colour} ${border ? 'alert--border' : 'alert--no-border'} ${hasDescription ? 'alert--with-description' : 'alert--title-only'} ${className}`}
       role="alert"
       aria-label={ariaLabel}
     >
@@ -216,7 +218,7 @@ export const Alert: React.FC<AlertProps> = ({
           <div className="alert__title">
             {title}
           </div>
-          {subtext && description && (
+          {hasDescription && (
             <div className="alert__description">
               {description}
             </div>
