@@ -1,4 +1,5 @@
 import React, { useState, useId } from 'react';
+import { StatusIcon, StatusIconSize, StatusIconState } from '../status-indicators/status-icons';
 import './accordion.css';
 
 export interface AccordionProps {
@@ -97,62 +98,26 @@ export const Accordion: React.FC<AccordionProps> = ({
     className
   ].filter(Boolean).join(' ');
 
-  // Status icon component - exact from Figma design
-  const StatusIcon = () => {
-    const getStatusIconSize = () => {
-      switch (size) {
-        case 'small': return { width: 26, height: 26, circle: 22, iconSize: 16, padding: 2 };
-        case 'large': return { width: 64, height: 64, circle: 62, iconSize: 36, padding: 1 };
-        default: return { width: 50, height: 50, circle: 48, iconSize: 36, padding: 1 };
-      }
-    };
-
-    const iconProps = getStatusIconSize();
-
-    return (
-      <div className="accordion__status-icon">
-        <div className="accordion__status-empty">
-          {/* Dashed circle - exact from Figma */}
-          <svg 
-            width={iconProps.width} 
-            height={iconProps.height} 
-            viewBox={`0 0 ${iconProps.width} ${iconProps.height}`} 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
-            className="accordion__status-circle"
-          >
-            <circle 
-              cx={iconProps.width / 2} 
-              cy={iconProps.height / 2} 
-              r={iconProps.circle / 2 - 1} 
-              stroke="currentColor" 
-              strokeDasharray={size === 'small' ? "2 2" : "6 4"} 
-            />
-          </svg>
-          
-          {/* Check icon - exact from Figma */}
-          <svg 
-            width={iconProps.iconSize} 
-            height={iconProps.iconSize} 
-            viewBox={`0 0 ${iconProps.iconSize} ${iconProps.iconSize}`} 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
-            className="accordion__status-check"
-          >
-            <g opacity="0.5">
-              <path 
-                d={iconProps.iconSize === 36 
-                  ? "M13.5001 30.6301L4.18506 21.3151L8.43006 17.0701L13.5001 22.1551L28.3201 7.32007L32.5651 11.5651L13.5001 30.6301Z"
-                  : "M6.00011 13.6134L1.86011 9.47342L3.74677 7.58675L6.00011 9.84675L12.5868 3.25342L14.4734 5.14008L6.00011 13.6134Z"
-                } 
-                fill="currentColor" 
-              />
-            </g>
-          </svg>
-        </div>
-      </div>
-    );
+  const statusIconSizeMap: Record<string, StatusIconSize> = {
+    small: 'small',
+    default: 50,
+    large: 64,
   };
+
+  const statusIconStateMap: Record<string, StatusIconState> = {
+    complete: 'complete',
+    empty: 'empty',
+    current: 'current',
+  };
+
+  const StatusIconComponent = () => (
+    <StatusIcon
+      type="complete"
+      state={statusIconStateMap[statusIconType]}
+      size={statusIconSizeMap[size]}
+      className="accordion__status-icon"
+    />
+  );
 
   // Bell ring icon - exact from Figma design
   const BellRingIcon = () => {
@@ -298,7 +263,7 @@ export const Accordion: React.FC<AccordionProps> = ({
       case 'simple':
         return (
           <>
-            {showStatusIcon && <StatusIcon />}
+            {showStatusIcon && <StatusIconComponent />}
             {showIcon && (icon || <BellRingIcon />)}
             <div className="accordion__content">
               <div className="accordion__content-inner">
