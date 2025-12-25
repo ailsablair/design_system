@@ -115,4 +115,3 @@ export const StatusIcon: React.FC<StatusIconProps> = ({
 };
 
 export default StatusIcon;
-export type { StatusIconType, StatusIconState, StatusIconSize };
