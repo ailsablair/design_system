@@ -8,7 +8,7 @@ const meta: Meta<typeof Alert> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Alert component based on the Echo design system. Supports multiple sizes, colors, and configurations with proper accessibility features.',
+        component: 'Alert component based on the Echo design system. Fully tokenized for white-label support, adopting brand-specific colors, typography, and spacing from design tokens.',
       },
     },
   },
