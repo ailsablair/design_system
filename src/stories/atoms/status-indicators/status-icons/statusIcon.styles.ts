@@ -93,7 +93,7 @@ const CURRENT_BG_BY_TYPE: Record<StatusIconType, string> = {
 };
 
 const CURRENT_GLYPH_BY_TYPE: Record<StatusIconType, string> = {
-  alert: TOKENS.base.white,
+  alert: TOKENS.base.black, // WCAG Accessibility: Black on Yellow/Orange
   complete: TOKENS.base.white,
   locked: TOKENS.neutral.g200,
   comment: TOKENS.base.white,
@@ -161,7 +161,7 @@ export const getStatusIconTheme = (
   if (state === 'complete') {
     return {
       ringColor: TOKENS.status.darkGreen,
-      glyphColor: TOKENS.base.white,
+      glyphColor: TOKENS.base.white, // Accessibility: white on dark green
       backgroundColor: TOKENS.status.darkGreen,
       perimeterColor: defaultPerimeter,
       strokeWidth,
