@@ -2,15 +2,15 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 
 const meta: Meta = {
-  title: 'Design System/Design Principles',
+  title: 'Design System/Visual Design Guidelines',
   parameters: {
     layout: 'fullscreen',
     docs: {
       description: {
         component: `
-# Design Principles & Guidelines
+# Visual Design Guidelines
 
-The Echo Design System is built on foundational principles that guide every design and development decision. These principles ensure consistency, accessibility, and scalability across all products and platforms.
+The Echo Design System is built on foundational visual patterns that guide every design and development decision. These guidelines ensure consistency, accessibility, and scalability across all products and platforms.
         `,
       },
     },
@@ -20,7 +20,7 @@ The Echo Design System is built on foundational principles that guide every desi
 export default meta;
 type Story = StoryObj;
 
-export const DesignPrinciples: Story = {
+export const VisualDesignGuidelines: Story = {
   render: () => (
     <div style={{ 
       padding: '40px', 
@@ -32,127 +32,13 @@ export const DesignPrinciples: Story = {
       <h1 style={{ 
         fontSize: '32px', 
         fontWeight: '700', 
-        marginBottom: '24px',
+        marginBottom: '40px',
         color: '#1a1a1a'
       }}>
-        Design Principles & Guidelines
+        🎨 Visual Design Guidelines
       </h1>
-      
-      <p style={{ 
-        fontSize: '18px', 
-        color: '#666',
-        marginBottom: '32px'
-      }}>
-        The Echo Design System is built on foundational principles that guide every design and development decision. These principles ensure consistency, accessibility, and scalability across all products and platforms.
-      </p>
 
       <div style={{ marginBottom: '40px' }}>
-        <h2 style={{ 
-          fontSize: '24px', 
-          fontWeight: '600', 
-          marginBottom: '24px',
-          color: '#1a1a1a' 
-        }}>
-          🎯 Core Principles
-        </h2>
-
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '24px',
-          marginBottom: '40px'
-        }}>
-          <div style={{ 
-            padding: '24px', 
-            border: '1px solid #e5e7eb',
-            borderRadius: '8px',
-            background: '#f9fafb'
-          }}>
-            <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px' }}>
-              1. Consistency
-            </h3>
-            <p style={{ marginBottom: '12px', fontWeight: '600' }}>
-              Every interaction should feel familiar and predictable.
-            </p>
-            <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '14px', lineHeight: '1.5' }}>
-              <li><strong>Visual Consistency</strong>: Use the same colors, typography, and spacing patterns across all components</li>
-              <li><strong>Behavioral Consistency</strong>: Similar actions should work the same way everywhere</li>
-              <li><strong>Terminology</strong>: Use consistent language and labels throughout the interface</li>
-            </ul>
-          </div>
-
-          <div style={{ 
-            padding: '24px', 
-            border: '1px solid #e5e7eb',
-            borderRadius: '8px',
-            background: '#f9fafb'
-          }}>
-            <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px' }}>
-              2. Accessibility
-            </h3>
-            <p style={{ marginBottom: '12px', fontWeight: '600' }}>
-              Design for everyone, regardless of ability or technology.
-            </p>
-            <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '14px', lineHeight: '1.5' }}>
-              <li><strong>WCAG 2.1 AA Compliance</strong>: Meet or exceed accessibility standards</li>
-              <li><strong>Keyboard Navigation</strong>: Full functionality without a mouse</li>
-              <li><strong>Screen Reader Support</strong>: Proper semantic HTML and ARIA attributes</li>
-              <li><strong>Color Contrast</strong>: Minimum 4.5:1 contrast ratio for text</li>
-            </ul>
-          </div>
-
-          <div style={{ 
-            padding: '24px', 
-            border: '1px solid #e5e7eb',
-            borderRadius: '8px',
-            background: '#f9fafb'
-          }}>
-            <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px' }}>
-              3. Performance
-            </h3>
-            <p style={{ marginBottom: '12px', fontWeight: '600' }}>
-              Fast, efficient, and responsive at any scale.
-            </p>
-            <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '14px', lineHeight: '1.5' }}>
-              <li><strong>Minimal Bundle Size</strong>: Optimize for the smallest possible footprint</li>
-              <li><strong>Lazy Loading</strong>: Load components and assets only when needed</li>
-              <li><strong>Hardware Acceleration</strong>: Use GPU acceleration for smooth animations</li>
-              <li><strong>Efficient Rendering</strong>: Minimize layout thrashing and repaints</li>
-            </ul>
-          </div>
-
-          <div style={{ 
-            padding: '24px', 
-            border: '1px solid #e5e7eb',
-            borderRadius: '8px',
-            background: '#f9fafb'
-          }}>
-            <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px' }}>
-              4. Scalability
-            </h3>
-            <p style={{ marginBottom: '12px', fontWeight: '600' }}>
-              Built to grow with your product and team.
-            </p>
-            <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '14px', lineHeight: '1.5' }}>
-              <li><strong>Token-Based Architecture</strong>: Change themes and styles through design tokens</li>
-              <li><strong>Component Composition</strong>: Build complex interfaces from simple, reusable parts</li>
-              <li><strong>Documentation-First</strong>: Every component is documented before it's used</li>
-              <li><strong>Version Control</strong>: Clear versioning and migration paths</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div style={{ marginBottom: '40px' }}>
-        <h2 style={{ 
-          fontSize: '24px', 
-          fontWeight: '600', 
-          marginBottom: '24px',
-          color: '#1a1a1a' 
-        }}>
-          🎨 Visual Design Guidelines
-        </h2>
-
         <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
@@ -292,7 +178,7 @@ export const DesignPrinciples: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Comprehensive design principles and guidelines for the Echo Design System, covering consistency, accessibility, performance, and scalability.',
+        story: 'Visual design guidelines for the Echo Design System, covering color usage, typography, and responsive design.',
       },
     },
   },
