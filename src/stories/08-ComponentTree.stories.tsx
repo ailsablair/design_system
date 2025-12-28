@@ -37,7 +37,7 @@ const treeData: TreeItem[] = [
     type: 'category',
     children: [
       { name: 'Overview', type: 'story', link: './?path=/story/design-system-overview--overview' },
-      { name: 'Design Principles', type: 'story', link: './?path=/story/design-system-design-principles--design-principles' },
+      { name: 'Visual Design Guidelines', type: 'story', link: './?path=/story/design-system-visual-design-guidelines--visual-design-guidelines' },
       { name: 'Changelog', type: 'story', link: './?path=/story/design-system-changelog--changelog' },
       { name: 'Usage Guide', type: 'story', link: './?path=/story/design-system-usage-guide--usage-guide' },
       { name: 'Color Accessibility Guide', type: 'story', link: './?path=/story/design-system-color-accessibility-guide--color-accessibility-guide' },
