@@ -1,0 +1,96 @@
+.status-iconwlabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--base-black);
+}
+
+.status-iconwlabel--vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.status-iconwlabel__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.status-iconwlabel__icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.status-iconwlabel__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.status-iconwlabel__label {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: var(--base-black);
+}
+
+.status-iconwlabel__description {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--neutral-gray-gray-500);
+}
+
+.status-iconwlabel__icon--size-8 {
+  width: 8px;
+  height: 8px;
+}
+
+.status-iconwlabel__icon--size-16 {
+  width: 16px;
+  height: 16px;
+}
+
+.status-iconwlabel__icon--size-24 {
+  width: 24px;
+  height: 24px;
+}
+
+.status-iconwlabel__icon--size-32 {
+  width: 32px;
+  height: 32px;
+}
+
+.status-iconwlabel__icon--size-40 {
+  width: 40px;
+  height: 40px;
+}
+
+.status-iconwlabel__icon--size-48 {
+  width: 48px;
+  height: 48px;
+}
+
+.status-iconwlabel__icon--size-56 {
+  width: 56px;
+  height: 56px;
+}
+
+.status-iconwlabel__icon--size-64 {
+  width: 64px;
+  height: 64px;
+}
+
+.status-iconwlabel__icon--size-80 {
+  width: 80px;
+  height: 80px;
+}
+
+.status-iconwlabel__icon--size-88 {
+  width: 88px;
+  height: 88px;
+}
