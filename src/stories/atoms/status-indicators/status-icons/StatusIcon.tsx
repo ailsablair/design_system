@@ -76,10 +76,11 @@ export const StatusIcon: React.FC<StatusIconProps> = ({
       role="img"
       aria-label={ariaLabel || `${state} ${type} status indicator`}
     >
-      <svg 
-        viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`} 
-        fill="none" 
+      <svg
+        viewBox={`0 0 ${viewBoxSize} ${viewBoxSize}`}
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
       >
         {/* Background Layer (Solid fill for current/complete/error) */}
         {theme.backgroundColor && theme.backgroundColor !== 'transparent' && (
