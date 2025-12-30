@@ -1,4 +1,4 @@
-import React, useMemo from 'react';
+import React, { useMemo } from 'react';
 import { statusIconPaths } from '../status-icons/statusIcon.assets';
 import { STATUS_ICON_MAP, getSizeConfig, getStepTheme, TOKENS } from './statusIconwLabel.styles';
 import type {
