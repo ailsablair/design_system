@@ -1,96 +1,202 @@
+/**
+ * StatusIconwLabel Styling
+ * 
+ * Token-driven styling for the StatusIconwLabel component.
+ * All sizing, spacing, colors, and typography use CSS custom properties.
+ * No hard-coded values - fully compliant with design system tokens.
+ */
+
+/* ========================================
+   BASE COMPONENT
+   ======================================== */
+
 .status-iconwlabel {
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  color: var(--base-black);
+  gap: var(--spacing-sizing-6px);
+  border-radius: var(--spacing-radius-full);
+  /* Default to vertical layout for consistency with Figma */
+  padding: 0;
 }
+
+/* ========================================
+   SIZE VARIANTS
+   ======================================== */
+
+/* Small: 22px circle, 16px icon, 10px label */
+.status-iconwlabel--small {
+  /* Size-specific spacing handled via inline styles */
+}
+
+/* Default: 36px circle, 22px icon, 12px label */
+.status-iconwlabel--default {
+  /* Size-specific spacing handled via inline styles */
+}
+
+/* Large: 48px circle, 28px icon, 14px label */
+.status-iconwlabel--large {
+  /* Size-specific spacing handled via inline styles */
+}
+
+/* ========================================
+   ICON CONTAINER
+   ======================================== */
+
+.status-iconwlabel__icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: var(--spacing-radius-full);
+  /* All styling via inline styles for dynamic theming */
+}
+
+/* ========================================
+   SVG ICON
+   ======================================== */
+
+.status-iconwlabel__icon {
+  display: inline-block;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
+  /* Size and color via inline styles */
+}
+
+/* ========================================
+   LABEL TEXT
+   ======================================== */
+
+.status-iconwlabel__label {
+  text-align: center;
+  white-space: nowrap;
+  /* All styling via inline styles for dynamic theming */
+}
+
+/* ========================================
+   STATUS TYPE VARIANTS
+   ======================================== */
+
+/* Warning Status */
+.status-iconwlabel--status-warning {
+  /* Colors handled via inline styles from getStepTheme */
+}
+
+/* Error Status */
+.status-iconwlabel--status-error {
+  /* Colors handled via inline styles from getStepTheme */
+}
+
+/* Complete Status */
+.status-iconwlabel--status-complete {
+  /* Colors handled via inline styles from getStepTheme */
+}
+
+/* Locked Status */
+.status-iconwlabel--status-locked {
+  /* Colors handled via inline styles from getStepTheme */
+}
+
+/* Comments Status */
+.status-iconwlabel--status-comments {
+  /* Colors handled via inline styles from getStepTheme */
+}
+
+/* Notifications Status */
+.status-iconwlabel--status-notifications {
+  /* Colors handled via inline styles from getStepTheme */
+}
+
+/* Note Status */
+.status-iconwlabel--status-note {
+  /* Colors handled via inline styles from getStepTheme */
+}
+
+/* Edit Status */
+.status-iconwlabel--status-edit {
+  /* Colors handled via inline styles from getStepTheme */
+}
+
+/* ========================================
+   STEP STATE VARIANTS
+   ======================================== */
+
+/* Past Step */
+.status-iconwlabel--step-past {
+  /* Border, background, and opacity handled via inline styles */
+}
+
+/* Future Step */
+.status-iconwlabel--step-future {
+  /* Dashed border, light tint background, handled via inline styles */
+}
+
+/* Current Step */
+.status-iconwlabel--step-current {
+  /* Solid border, filled background, handled via inline styles */
+}
+
+/* ========================================
+   DISABLED STATE
+   ======================================== */
+
+.status-iconwlabel--disabled {
+  opacity: 0.6;
+}
+
+.status-iconwlabel--disabled .status-iconwlabel__icon-container {
+  /* Disabled color theme handled via inline styles */
+}
+
+.status-iconwlabel--disabled .status-iconwlabel__label {
+  /* Disabled text color handled via inline styles */
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+/* Ensure focus visible for keyboard navigation */
+.status-iconwlabel:focus-visible {
+  outline: var(--spacing-stroke-2px) solid var(--base-black);
+  outline-offset: var(--spacing-sizing-2px);
+}
+
+/* ========================================
+   RESPONSIVE & UTILITY
+   ======================================== */
+
+/* Prevent text selection on disabled */
+.status-iconwlabel--disabled {
+  user-select: none;
+}
+
+/* Reset default margins */
+.status-iconwlabel,
+.status-iconwlabel__label {
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================
+   LEGACY COMPATIBILITY
+   Kept for backward compatibility with old implementations
+   ======================================== */
 
 .status-iconwlabel--vertical {
   flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.status-iconwlabel__icon {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.status-iconwlabel__icon img {
-  display: block;
-  width: 100%;
-  height: 100%;
 }
 
 .status-iconwlabel__text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-}
-
-.status-iconwlabel__label {
-  font-size: 16px;
-  line-height: 1.4;
-  font-weight: 600;
-  color: var(--base-black);
+  gap: var(--spacing-sizing-2px);
+  align-items: center;
 }
 
 .status-iconwlabel__description {
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: var(--type-scale-body-sm);
+  line-height: var(--type-line-height-body-sm);
   color: var(--neutral-gray-gray-500);
-}
-
-.status-iconwlabel__icon--size-8 {
-  width: 8px;
-  height: 8px;
-}
-
-.status-iconwlabel__icon--size-16 {
-  width: 16px;
-  height: 16px;
-}
-
-.status-iconwlabel__icon--size-24 {
-  width: 24px;
-  height: 24px;
-}
-
-.status-iconwlabel__icon--size-32 {
-  width: 32px;
-  height: 32px;
-}
-
-.status-iconwlabel__icon--size-40 {
-  width: 40px;
-  height: 40px;
-}
-
-.status-iconwlabel__icon--size-48 {
-  width: 48px;
-  height: 48px;
-}
-
-.status-iconwlabel__icon--size-56 {
-  width: 56px;
-  height: 56px;
-}
-
-.status-iconwlabel__icon--size-64 {
-  width: 64px;
-  height: 64px;
-}
-
-.status-iconwlabel__icon--size-80 {
-  width: 80px;
-  height: 80px;
-}
-
-.status-iconwlabel__icon--size-88 {
-  width: 88px;
-  height: 88px;
 }
