@@ -23,7 +23,7 @@ export const statusIconPaths: Record<StatusIconType, React.ReactNode> = {
     <path d="M12,22C13.11,22 14,21.11 14,20H10C10,21.11 10.89,22 12,22M18,16V11C18,7.93 16.36,5.36 13.5,4.68V4C13.5,3.17 12.83,2.5 12,2.5C11.17,2.5 10.5,3.17 10.5,4V4.68C7.63,5.36 6,7.92 6,11V16L4,18V19H20V18L18,16Z" fill="currentColor" />
   ),
   error: (
-    <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" fill="currentColor" />
+    <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor" stroke="currentColor" strokeWidth="0.5" vectorEffect="non-scaling-stroke" />
   ),
   note: (
     <path d="M14,2H6C4.89,2 4,2.9 4,4V20C4,21.1 4.89,22 6,22H18C19.1,22 20,21.1 20,20V8L14,2M12,18H6V16H12V18M18,14H6V12H18V14M18,10H6V8H18V10Z" fill="currentColor" />
