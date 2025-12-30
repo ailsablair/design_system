@@ -11,7 +11,7 @@ export const statusIconPaths: Record<StatusIconType, React.ReactNode> = {
     <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" fill="currentColor" />
   ),
   complete: (
-    <path d="M19.1,4.9L19.1,4.9c-0.3-0.3-0.6-0.4-1-0.4c-0.4,0-0.7,0.1-1,0.4l-7.5,7.5l-3.7-3.7c-0.3-0.3-0.6-0.4-1-0.4c-0.4,0-0.7,0.1-1,0.4l0,0c-0.3,0.3-0.4,0.6-0.4,1c0,0.4,0.1,0.7,0.4,1l4.7,4.7c0.3,0.3,0.6,0.4,1,0.4c0.4,0,0.7-0.1,1-0.4l8.5-8.5c0.3-0.3,0.4-0.6,0.4-1C19.5,5.5,19.4,5.2,19.1,4.9z" fill="currentColor" />
+    <path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor" stroke="currentColor" strokeWidth="0.5" vectorEffect="non-scaling-stroke" />
   ),
   locked: (
     <path d="M12,17C10.89,17 10,16.1 10,15C10,13.89 10.89,13 12,13C13.11,13 14,13.89 14,15C14,16.1 13.11,17 12,17M18,20V10C18,8.9 17.1,8 16,8H15V6C15,4.34 13.66,3 12,3C10.34,3 9,4.34 9,6V8H8C6.9,8 6,8.9 6,10V20C6,21.1 6.9,22 8,22H16C17.1,22 18,21.1 18,20M9,6C9,4.34 10.34,3 12,3C13.66,3 15,4.34 15,6V8H9V6Z" fill="currentColor" />
