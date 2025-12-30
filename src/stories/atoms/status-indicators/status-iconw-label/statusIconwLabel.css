@@ -78,8 +78,8 @@
    ======================================== */
 
 /* Warning Status */
-.status-iconwlabel--status-warning {
-  /* Colors handled via inline styles from getStepTheme */
+.status-iconwlabel--status-warning .status-iconwlabel__icon {
+  padding-bottom: 2px;
 }
 
 /* Error Status */
