@@ -88,8 +88,11 @@
 }
 
 /* Complete Status */
-.status-iconwlabel--status-complete {
-  /* Colors handled via inline styles from getStepTheme */
+.status-iconwlabel--status-complete .status-iconwlabel__icon {
+  /* Ensure icon is perfectly centered in the circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Locked Status */
