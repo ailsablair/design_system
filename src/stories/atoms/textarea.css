@@ -68,7 +68,7 @@
 
 .textarea-label__required {
   color: var(--status-red, #CE2031);
-  font-weight: 700;
+  font-weight: var(--type-weight-bold, 700);
 }
 
 /* === TEXTAREA AREA === */
@@ -182,7 +182,7 @@
 .textarea-text {
   font-family: var(--type-typeface-roboto-flex, 'Roboto Flex');
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--type-weight-regular, 400);
   position: relative;
   width: 100%;
   min-height: 16px;
@@ -294,8 +294,8 @@
   font-family: var(--type-typeface-archivo, Archivo);
   font-style: normal;
   font-weight: var(--type-weight-light, 300);
-  line-height: 15px;
-  letter-spacing: 0.2px;
+  line-height: var(--text-styles-footnote-archivo-light-line-height, 15px);
+  letter-spacing: var(--text-styles-footnote-archivo-light-letter-spacing, 0.2px);
   margin-top: 4px;
   width: 300px;
 }
@@ -338,7 +338,7 @@
 
 .textarea-character-count {
   font-family: var(--type-typeface-roboto-flex, 'Roboto Flex');
-  font-weight: 400;
+  font-weight: var(--type-weight-regular, 400);
   color: var(--neutral-gray-gray-500, #6D7280);
   margin-top: 4px;
   text-align: right;
@@ -362,7 +362,7 @@
 
 .textarea-character-count--over-limit {
   color: var(--status-red, #CE2031);
-  font-weight: 500;
+  font-weight: var(--type-weight-medium, 500);
 }
 
 /* === RESPONSIVE DESIGN === */
