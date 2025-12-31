@@ -81,27 +81,30 @@
 
 .figma-table__title {
   color: var(--base-black, #1C1C1C);
-  font-size: 24px;
-  font-family: Archivo;
-  font-weight: 500;
-  line-height: 24px;
+  font-family: var(--text-styles-subtitle-archivo-default-font-family, Archivo);
+  font-size: var(--text-styles-subtitle-archivo-default-font-size, 24px);
+  font-weight: var(--text-styles-subtitle-archivo-default-font-weight, 400);
+  line-height: var(--text-styles-subtitle-archivo-default-line-height, 26px);
   word-wrap: break-word;
   margin: 0;
 }
 
 .figma-table--small .figma-table__title {
-  font-size: 19px;
-  line-height: 24px;
+  font-family: var(--text-styles-h5-archivo-med-font-family, Archivo);
+  font-size: var(--text-styles-h5-archivo-med-font-size, 19px);
+  font-weight: var(--text-styles-h5-archivo-med-font-weight, 500);
+  line-height: var(--text-styles-h5-archivo-med-line-height, 24px);
+  letter-spacing: var(--text-styles-h5-archivo-med-letter-spacing, -0.15px);
 }
 
 .figma-table__subtitle {
   align-self: stretch;
   color: var(--neutral-gray-gray-500, #6D7280);
-  font-size: 16px;
-  font-family: Roboto Flex;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0.05px;
+  font-family: var(--text-styles-body-default-font-family, Roboto Flex);
+  font-size: var(--text-styles-body-default-font-size, 16px);
+  font-weight: var(--text-styles-body-default-font-weight, 400);
+  line-height: var(--text-styles-body-default-line-height, 20px);
+  letter-spacing: var(--text-styles-body-default-letter-spacing, 0.05px);
   word-wrap: break-word;
   margin: 0;
 }
@@ -112,19 +115,19 @@
 
 .figma-table--black .figma-table__subtitle {
   color: var(--primary-blue-blue-200, #C5CAED);
-  font-size: 13px;
-  font-family: Archivo;
-  font-weight: 500;
-  line-height: 15px;
-  letter-spacing: 0.20px;
+  font-family: var(--text-styles-footnote-archivo-default-font-family, Archivo);
+  font-size: var(--text-styles-footnote-archivo-default-font-size, 13px);
+  font-weight: var(--text-styles-footnote-archivo-default-font-weight, 500);
+  line-height: var(--text-styles-footnote-archivo-default-line-height, 15px);
+  letter-spacing: var(--text-styles-footnote-archivo-default-letter-spacing, 0.2px);
 }
 
 .figma-table--small .figma-table__subtitle {
-  font-size: 13px;
-  font-family: Archivo;
-  font-weight: 500;
-  line-height: 15px;
-  letter-spacing: 0.20px;
+  font-family: var(--text-styles-footnote-archivo-default-font-family, Archivo);
+  font-size: var(--text-styles-footnote-archivo-default-font-size, 13px);
+  font-weight: var(--text-styles-footnote-archivo-default-font-weight, 500);
+  line-height: var(--text-styles-footnote-archivo-default-line-height, 15px);
+  letter-spacing: var(--text-styles-footnote-archivo-default-letter-spacing, 0.2px);
 }
 
 .figma-table__header-actions {
@@ -230,11 +233,11 @@
 
 .figma-table__header-text {
   color: var(--base-black, #1C1C1C);
-  font-size: 16px;
-  font-family: Archivo;
-  font-weight: 700;
+  font-family: var(--text-styles-label-bold-font-family, Archivo);
+  font-size: var(--text-styles-label-bold-font-size, 16px);
+  font-weight: var(--text-styles-label-bold-font-weight, 700);
   line-height: 22px;
-  letter-spacing: 0.15px;
+  letter-spacing: var(--text-styles-label-bold-letter-spacing, 0.15px);
   word-wrap: break-word;
 }
 
@@ -325,21 +328,21 @@
 /* Cell Type Styles */
 .figma-table__cell-title {
   color: var(--base-black, #1C1C1C);
-  font-size: 16px;
-  font-family: Archivo;
-  font-weight: 500;
+  font-family: var(--text-styles-label-med-font-family, Archivo);
+  font-size: var(--text-styles-label-med-font-size, 16px);
+  font-weight: var(--text-styles-label-med-font-weight, 500);
   line-height: 22px;
-  letter-spacing: 0.15px;
+  letter-spacing: var(--text-styles-label-med-letter-spacing, 0.15px);
   word-wrap: break-word;
 }
 
 .figma-table__cell-text {
   color: var(--base-black, #1C1C1C);
-  font-size: 16px;
-  font-family: Archivo;
-  font-weight: 300;
+  font-family: var(--text-styles-label-light-font-family, Archivo);
+  font-size: var(--text-styles-label-light-font-size, 16px);
+  font-weight: var(--text-styles-label-light-font-weight, 300);
   line-height: 22px;
-  letter-spacing: 0.15px;
+  letter-spacing: var(--text-styles-label-light-letter-spacing, 0.15px);
   word-wrap: break-word;
 }
 
@@ -361,9 +364,9 @@
   background: none;
   border: none;
   color: var(--primary-blue-blue, #2F42BD);
-  font-size: 18px;
-  font-family: Roboto Flex;
-  font-weight: 600;
+  font-family: var(--text-styles-body-lg-link-font-family, Roboto Flex);
+  font-size: var(--text-styles-body-lg-link-font-size, 18px);
+  font-weight: var(--text-styles-body-lg-link-font-weight, 600);
   text-decoration: underline;
   line-height: 22px;
   cursor: pointer;
@@ -467,20 +470,21 @@
   align-items: center;
   cursor: pointer;
   color: var(--neutral-gray-gray-500, #6D7280);
-  font-size: 19px;
-  font-family: Archivo;
-  font-weight: 500;
-  line-height: 24px;
+  font-family: var(--text-styles-h5-archivo-med-font-family, Archivo);
+  font-size: var(--text-styles-h5-archivo-med-font-size, 19px);
+  font-weight: var(--text-styles-h5-archivo-med-font-weight, 500);
+  line-height: var(--text-styles-h5-archivo-med-line-height, 24px);
   transition: all 0.2s ease;
 }
 
 .figma-table--small .figma-table__page-number {
   width: 32px;
   height: 32px;
-  font-size: 16px;
-  font-weight: 700;
+  font-family: var(--text-styles-label-bold-font-family, Archivo);
+  font-size: var(--text-styles-label-bold-font-size, 16px);
+  font-weight: var(--text-styles-label-bold-font-weight, 700);
   line-height: 22px;
-  letter-spacing: 0.15px;
+  letter-spacing: var(--text-styles-label-bold-letter-spacing, 0.15px);
 }
 
 .figma-table__page-number:hover:not(.figma-table__page-number--active) {
