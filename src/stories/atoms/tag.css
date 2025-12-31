@@ -83,7 +83,7 @@
 }
 
 .tag__close-icon {
-  font-size: 10px;
+  font-size: var(--text-styles-label-xxs-med-font-size, 10px);
   line-height: 1;
 }
 
