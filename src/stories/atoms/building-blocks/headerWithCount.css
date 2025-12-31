@@ -57,9 +57,10 @@
 
 /* Large size title */
 .header-with-count__title--large {
-  font-size: 28px;
-  line-height: 28px;
-  letter-spacing: -0.3px;
+  font-family: var(--text-styles-h3-med-font-family, Archivo);
+  font-size: var(--text-styles-h3-med-font-size, 28px);
+  line-height: var(--text-styles-h3-med-line-height, 28px);
+  letter-spacing: var(--text-styles-h3-med-letter-spacing, -0.5px);
 }
 
 /* === COUNT CONTAINER === */
