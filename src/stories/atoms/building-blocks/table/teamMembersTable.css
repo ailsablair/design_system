@@ -83,18 +83,20 @@
 
 .team-members-table__title {
   color: var(--base-black, #1C1C1C);
-  font-family: Archivo;
-  font-size: 19px;
+  font-family: var(--text-styles-h5-archivo-med-font-family, Archivo);
+  font-size: var(--text-styles-h5-archivo-med-font-size, 19px);
   font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: -0.15px;
+  font-weight: var(--text-styles-h5-archivo-med-font-weight, 500);
+  line-height: var(--text-styles-h5-archivo-med-line-height, 24px);
+  letter-spacing: var(--text-styles-h5-archivo-med-letter-spacing, -0.15px);
   margin: 0;
 }
 
 .team-members-table__title--density-spacious {
-  font-size: 24px;
+  font-family: var(--text-styles-subtitle-archivo-default-font-family, Archivo);
+  font-size: var(--text-styles-subtitle-archivo-default-font-size, 24px);
   line-height: 28px;
+  font-weight: var(--text-styles-subtitle-archivo-default-font-weight, 400);
 }
 
 .team-members-table__title--density-comfortable {
@@ -110,13 +112,13 @@
 .team-members-table__header-description {
   margin: 0;
   color: var(--neutral-gray-gray-500, #6D7280);
-  font-family: 'Roboto Flex', sans-serif;
+  font-family: var(--text-styles-body-default-font-family, Roboto Flex);
 }
 
 .team-members-table__header-description--density-spacious {
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: 0.05px;
+  font-size: var(--text-styles-body-default-font-size, 16px);
+  line-height: var(--text-styles-body-default-line-height, 20px);
+  letter-spacing: var(--text-styles-body-default-letter-spacing, 0.05px);
 }
 
 .team-members-table__header-description--density-comfortable {
@@ -126,9 +128,10 @@
 }
 
 .team-members-table__header-description--density-compact {
-  font-size: 14px;
+  font-family: var(--text-styles-body-sm-default-font-family, Roboto Flex);
+  font-size: var(--text-styles-body-sm-default-font-size, 14px);
   line-height: 17px;
-  letter-spacing: 0.05px;
+  letter-spacing: var(--text-styles-body-sm-default-letter-spacing, -0.15px);
 }
 
 /* Column Container */
@@ -275,12 +278,12 @@
 
 .team-members-table__column-title {
   color: var(--base-black, #1C1C1C);
-  font-family: Archivo;
-  font-size: 16px;
+  font-family: var(--text-styles-label-light-font-family, Archivo);
+  font-size: var(--text-styles-label-light-font-size, 16px);
   font-style: normal;
-  font-weight: 300;
-  line-height: 22px; /* 137.5% */
-  letter-spacing: 0.15px;
+  font-weight: var(--text-styles-label-light-font-weight, 300);
+  line-height: 22px;
+  letter-spacing: var(--text-styles-label-light-letter-spacing, 0.15px);
   transition: font-weight 0.2s ease, color 0.2s ease;
 }
 
@@ -346,22 +349,22 @@
 /* Cell Content Types */
 .team-members-table__cell-title {
   color: var(--base-black, #1C1C1C);
-  font-family: Archivo;
-  font-size: 14px;
+  font-family: var(--text-styles-label-sm-med-font-family, Archivo);
+  font-size: var(--text-styles-label-sm-med-font-size, 14px);
   font-style: normal;
-  font-weight: 500;
-  line-height: 17px; /* 121.429% */
-  letter-spacing: 0.15px;
+  font-weight: var(--text-styles-label-sm-med-font-weight, 500);
+  line-height: 17px;
+  letter-spacing: var(--text-styles-label-sm-med-letter-spacing, 0.15px);
 }
 
 .team-members-table__cell-text {
   color: var(--base-black, #1C1C1C);
-  font-family: Archivo;
-  font-size: 14px;
+  font-family: var(--text-styles-label-sm-light-font-family, Archivo);
+  font-size: var(--text-styles-label-sm-light-font-size, 14px);
   font-style: normal;
-  font-weight: 300;
-  line-height: 17px; /* 121.429% */
-  letter-spacing: 0.15px;
+  font-weight: var(--text-styles-label-sm-light-font-weight, 300);
+  line-height: 17px;
+  letter-spacing: var(--text-styles-label-sm-light-letter-spacing, 0.15px);
 }
 
 .team-members-table__cell-multi-tag {
@@ -378,12 +381,12 @@
 
 .team-members-table__link {
   color: var(--primary-seafoam-dark-seafoam, #4B6D58);
-  font-family: 'Roboto Flex';
-  font-size: 14px;
+  font-family: var(--text-styles-body-sm-link-font-family, Roboto Flex);
+  font-size: var(--text-styles-body-sm-link-font-size, 14px);
   font-style: normal;
-  font-weight: 600;
-  line-height: 16px; /* 114.286% */
-  letter-spacing: -0.15px;
+  font-weight: var(--text-styles-body-sm-link-font-weight, 600);
+  line-height: 16px;
+  letter-spacing: var(--text-styles-body-sm-link-letter-spacing, -0.15px);
   text-decoration-line: underline;
   background: none;
   border: none;
