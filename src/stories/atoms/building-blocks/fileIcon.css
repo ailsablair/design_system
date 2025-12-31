@@ -102,7 +102,7 @@
 
 .file-icon--small .file-icon__label {
   padding: 1px 3px;
-  font-size: 10px;
+  font-size: var(--text-styles-label-xxs-bold-font-size, 10px);
   line-height: 12px;
   min-width: 24px;
   height: 14px;
@@ -128,7 +128,7 @@
 
 .file-icon--medium .file-icon__label {
   padding: 1px 3px;
-  font-size: 10px;
+  font-size: var(--text-styles-label-xxs-bold-font-size, 10px);
   line-height: 12px;
   min-width: 26px;
   height: 14px;
@@ -154,7 +154,7 @@
 
 .file-icon--large .file-icon__label {
   padding: 1px 3px;
-  font-size: 10px;
+  font-size: var(--text-styles-label-xxs-bold-font-size, 10px);
   line-height: 12px;
   min-width: 28px;
   height: 14px;
@@ -189,8 +189,8 @@
 .file-icon__text {
   color: var(--base-white, white);
   font-family: var(--font-family-inter), Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 700;
-  font-size: 10px;
+  font-weight: var(--text-styles-label-xxs-bold-font-weight, 700);
+  font-size: var(--text-styles-label-xxs-bold-font-size, 10px);
   line-height: 12px;
   letter-spacing: 0.02em;
   word-wrap: break-word;
