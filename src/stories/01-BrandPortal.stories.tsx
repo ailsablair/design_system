@@ -12,7 +12,38 @@ const meta: Meta = {
     layout: 'fullscreen',
     options: { showPanel: false },
   },
+  tags: ['autodocs'],
 };
+
+/**
+ * # Brand Portal
+ *
+ * The Brand Portal is a showcase of white-label design systems built with the Echo design system.
+ * It displays:
+ * - **Template Card**: The flagship white-label design system overview
+ * - **Brand Cards**: Examples of existing brand implementations (Bruce Power ECHO, Canadian Nuclear Labs)
+ * - **Empty-State Cards**: Placeholders for future brand additions
+ *
+ * ## Design System Integration
+ * This page uses:
+ * - `Card` component for all card types
+ * - `EchoMUIButton` for action buttons
+ * - `Icon` component for visual indicators
+ * - `Tag` component for metadata (year, status)
+ * - Consolidated `--text-styles-*` typography tokens for all text
+ *
+ * ## Responsiveness
+ * The layout is fully responsive:
+ * - **Desktop (≥1400px)**: Fixed header, horizontal flexbox grid (1 large + 5 small columns)
+ * - **Tablet (768-1399px)**: Fixed header with adjusted padding, wrapping grid
+ * - **Mobile (<768px)**: Responsive header, vertical stack layout
+ *
+ * ## Accessibility
+ * - Proper semantic HTML (header, main, article elements)
+ * - ARIA labels for icon elements
+ * - Keyboard navigation support for all interactive elements
+ * - WCAG AA color contrast compliance
+ */
 
 export default meta;
 type Story = StoryObj;
