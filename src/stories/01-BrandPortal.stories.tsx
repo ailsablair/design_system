@@ -332,7 +332,12 @@ All brand assets are customizable, including:
               >
                 <div className={styles.emptyStateContent}>
                   <PlusIconLarge />
-                  <button className={styles.emptyStateLink}>Add new brand</button>
+                  <button
+                    className={styles.emptyStateLink}
+                    aria-label="Add new brand - Opens form to create a new design system brand"
+                  >
+                    Add new brand
+                  </button>
                 </div>
               </Card>
             </div>
@@ -348,7 +353,12 @@ All brand assets are customizable, including:
               >
                 <div className={styles.emptyStateContent}>
                   <PlusIconLarge />
-                  <button className={styles.emptyStateLink}>Add new brand</button>
+                  <button
+                    className={styles.emptyStateLink}
+                    aria-label="Add new brand - Opens form to create a new design system brand"
+                  >
+                    Add new brand
+                  </button>
                 </div>
               </Card>
             </div>
@@ -364,7 +374,12 @@ All brand assets are customizable, including:
               >
                 <div className={styles.emptyStateContent}>
                   <PlusIconLarge />
-                  <button className={styles.emptyStateLink}>Add new brand</button>
+                  <button
+                    className={styles.emptyStateLink}
+                    aria-label="Add new brand - Opens form to create a new design system brand"
+                  >
+                    Add new brand
+                  </button>
                 </div>
               </Card>
             </div>
