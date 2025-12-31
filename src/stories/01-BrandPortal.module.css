@@ -324,6 +324,31 @@
   }
 }
 
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .brandPortalHeader {
+    padding: 40px 40px;
+  }
+
+  .brandPortalContent {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+  }
+
+  .designSystemPortal {
+    font-size: 28px;
+  }
+
+  .navContent {
+    gap: 20px;
+  }
+
+  .logoHeader {
+    gap: 24px;
+  }
+}
+
 @media (max-width: 768px) {
   .brandPortalHeader {
     height: auto;
