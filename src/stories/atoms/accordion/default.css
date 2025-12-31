@@ -1,0 +1,307 @@
+/**
+ * Default Accordion Component Styles
+ *
+ * Fully responsive accordion with three size variants (small, default, large)
+ * Uses design tokens exclusively - no hard-coded values
+ */
+
+/* ========================================
+   BASE COMPONENT
+   ======================================== */
+
+.accordion-default {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: var(--color-base-white, #ffffff);
+  border-radius: var(--spacing-sizing-8px, 8px);
+  min-width: 360px;
+  max-width: 1280px;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+/* Type Variants */
+.accordion-default--type-simple {
+  border: 1px solid var(--color-neutral-gray-gray-200, #e5e7eb);
+}
+
+.accordion-default--type-no-stroke {
+  border: none;
+}
+
+/* ========================================
+   SIZE VARIANTS
+   ======================================== */
+
+/* Small: 16px 20px 16px 16px padding, 22px status circle, 20px toggle icon */
+.accordion-default--size-small {
+  padding: var(--spacing-sizing-16px, 16px) var(--spacing-sizing-20px, 20px)
+    var(--spacing-sizing-16px, 16px) var(--spacing-sizing-16px, 16px);
+  gap: var(--spacing-sizing-12px, 12px);
+  min-height: 54px;
+}
+
+.accordion-default--size-small .accordion-default__content-wrapper {
+  gap: var(--spacing-sizing-12px, 12px);
+}
+
+.accordion-default--size-small .accordion-default__text-container {
+  gap: var(--spacing-sizing-2px, 2px);
+}
+
+/* Default: 20px 24px 20px 20px padding, 36px status circle, 28px toggle icon */
+.accordion-default--size-default {
+  padding: var(--spacing-sizing-20px, 20px) var(--spacing-sizing-24px, 24px)
+    var(--spacing-sizing-20px, 20px) var(--spacing-sizing-20px, 20px);
+  gap: var(--spacing-sizing-12px, 12px);
+  min-height: 70px;
+}
+
+.accordion-default--size-default .accordion-default__content-wrapper {
+  gap: var(--spacing-sizing-16px, 16px);
+}
+
+.accordion-default--size-default .accordion-default__text-container {
+  gap: var(--spacing-sizing-4px, 4px);
+}
+
+/* Large: 24px 24px 24px 20px padding, 48px status circle, 32px toggle icon */
+.accordion-default--size-large {
+  padding: var(--spacing-sizing-24px, 24px) var(--spacing-sizing-24px, 24px)
+    var(--spacing-sizing-24px, 24px) var(--spacing-sizing-20px, 20px);
+  gap: var(--spacing-sizing-12px, 12px);
+  min-height: 80px;
+}
+
+.accordion-default--size-large .accordion-default__content-wrapper {
+  gap: var(--spacing-sizing-16px, 16px);
+}
+
+.accordion-default--size-large .accordion-default__text-container {
+  gap: var(--spacing-sizing-4px, 4px);
+}
+
+/* ========================================
+   STATUS ICON
+   ======================================== */
+
+.accordion-default__status-icon-wrapper {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--spacing-radius-99999px, 99999px);
+}
+
+.accordion-default__status-icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--spacing-radius-99999px, 99999px);
+  aspect-ratio: 1/1;
+}
+
+/* ========================================
+   BELL ICON
+   ======================================== */
+
+.accordion-default__bell-icon {
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+
+/* ========================================
+   CONTENT WRAPPER
+   ======================================== */
+
+.accordion-default__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+/* ========================================
+   HEADING ROW (Title + Description + Toggle)
+   ======================================== */
+
+.accordion-default__heading-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--spacing-sizing-12px, 12px);
+  align-self: stretch;
+}
+
+/* When open, align center */
+.accordion-default--open .accordion-default__heading-row {
+  align-items: center;
+}
+
+.accordion-default__text-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* ========================================
+   TYPOGRAPHY - SIZE-SPECIFIC
+   ======================================== */
+
+/* Small Size Typography - Uses Label SM and Footnote */
+.accordion-default--size-small .accordion-default__title {
+  font-family: var(--label-label-sm-med-font-family, "Archivo-Medium", sans-serif);
+  font-size: var(--label-label-sm-med-font-size, 14px);
+  line-height: var(--label-label-sm-med-line-height, 16px);
+  letter-spacing: var(--label-label-sm-med-letter-spacing, 0.15px);
+  font-weight: var(--label-label-sm-med-font-weight, 500);
+  color: var(--color-primary-blue-dark-blue, #191e3c);
+  margin: 0;
+}
+
+.accordion-default--size-small .accordion-default__description {
+  font-family: var(--footnote-archivo-footnote-light-font-family, "Archivo-Light", sans-serif);
+  font-size: var(--footnote-archivo-footnote-light-font-size, 13px);
+  line-height: var(--footnote-archivo-footnote-light-line-height, 15px);
+  letter-spacing: var(--footnote-archivo-footnote-light-letter-spacing, 0.2px);
+  font-weight: var(--footnote-archivo-footnote-light-font-weight, 300);
+  color: var(--color-secondary-blue-gray, #61607c);
+  margin: 0;
+}
+
+.accordion-default--size-small .accordion-default__body-text {
+  font-family: var(--footnote-archivo-footnote-light-font-family, "Archivo-Light", sans-serif);
+  font-size: var(--footnote-archivo-footnote-light-font-size, 13px);
+  line-height: var(--footnote-archivo-footnote-light-line-height, 15px);
+  letter-spacing: var(--footnote-archivo-footnote-light-letter-spacing, 0.2px);
+  font-weight: var(--footnote-archivo-footnote-light-font-weight, 300);
+  color: var(--color-neutral-gray-gray-800, #1f2937);
+}
+
+/* Default Size Typography - Uses Label LG and Body */
+.accordion-default--size-default .accordion-default__title {
+  font-family: var(--type-typeface-archivo, Archivo);
+  font-size: var(--type-size-primary-scale-label-lg, 18px);
+  line-height: var(--type-line-height-label-lg, 24px);
+  letter-spacing: var(--type-letter-spacing-archivo-label-lg, 0.15px);
+  font-weight: var(--type-weight-medium, 500);
+  color: var(--color-primary-blue-dark-blue, #191e3c);
+  margin: 0;
+}
+
+.accordion-default--size-default .accordion-default__description {
+  font-family: var(--type-typeface-roboto-flex, "Roboto Flex");
+  font-size: var(--type-size-secondary-scale-body, 16px);
+  line-height: var(--type-line-height-body, 20px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body, 0.05px);
+  font-weight: var(--type-weight-light, 300);
+  color: var(--color-secondary-blue-gray, #61607c);
+  margin: 0;
+}
+
+.accordion-default--size-default .accordion-default__body-text {
+  font-family: var(--type-typeface-roboto-flex, "Roboto Flex");
+  font-size: var(--type-size-secondary-scale-body, 16px);
+  line-height: var(--type-line-height-body, 20px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body, 0.05px);
+  font-weight: var(--type-weight-light, 300);
+  color: var(--color-neutral-gray-gray-800, #1f2937);
+}
+
+/* Large Size Typography - Uses H4/H5 heading tokens */
+.accordion-default--size-large .accordion-default__title {
+  font-family: var(--h4-archivo-h4-med-font-family, Archivo);
+  font-size: var(--h4-archivo-h4-med-font-size, 24px);
+  line-height: var(--h4-archivo-h4-med-line-height, 24px);
+  letter-spacing: var(--h4-archivo-h4-med-letter-spacing, -0.25px);
+  font-weight: var(--h4-archivo-h4-med-font-weight, 500);
+  color: var(--color-primary-blue-dark-blue, #191e3c);
+  margin: 0;
+}
+
+.accordion-default--size-large .accordion-default__description {
+  font-family: var(--h5-archivo-h5-light-font-family, Archivo);
+  font-size: var(--h5-archivo-h5-light-font-size, 19px);
+  line-height: var(--h5-archivo-h5-light-line-height, 24px);
+  letter-spacing: var(--h5-archivo-h5-light-letter-spacing, -0.15px);
+  font-weight: var(--h5-archivo-h5-light-font-weight, 300);
+  color: var(--color-secondary-blue-gray, #61607c);
+  margin: 0;
+}
+
+.accordion-default--size-large .accordion-default__body-text {
+  font-family: var(--h5-roboto-flex-h5-light-font-family, "Roboto Flex");
+  font-size: var(--h5-roboto-flex-h5-light-font-size, 19px);
+  line-height: var(--h5-roboto-flex-h5-light-line-height, 24px);
+  letter-spacing: var(--h5-roboto-flex-h5-light-letter-spacing, 0.5px);
+  font-weight: var(--h5-roboto-flex-h5-light-font-weight, 300);
+  color: var(--color-neutral-gray-gray-800, #1f2937);
+}
+
+/* ========================================
+   TOGGLE BUTTON
+   ======================================== */
+
+.accordion-default__toggle-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.accordion-default__toggle-button:hover {
+  opacity: 0.8;
+}
+
+.accordion-default__toggle-button:focus-visible {
+  outline: var(--spacing-stroke-2px, 2px) solid var(--color-primary-blue-blue, #2f42bd);
+  outline-offset: var(--spacing-sizing-2px, 2px);
+  border-radius: var(--spacing-sizing-4px, 4px);
+}
+
+/* ========================================
+   EXPANDABLE BODY
+   ======================================== */
+
+.accordion-default__body {
+  align-self: stretch;
+  margin: 0;
+}
+
+.accordion-default--closed .accordion-default__body {
+  display: none;
+}
+
+.accordion-default--open .accordion-default__body {
+  display: block;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .accordion-default {
+    min-width: 320px;
+  }
+
+  .accordion-default--size-large {
+    padding: var(--spacing-sizing-20px, 20px);
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion-default {
+    transition: none;
+  }
+}
