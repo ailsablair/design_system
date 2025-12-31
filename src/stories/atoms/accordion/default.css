@@ -150,93 +150,93 @@
    TYPOGRAPHY - SIZE-SPECIFIC
    ======================================== */
 
-/* Small Size Typography - Uses Label SM and Footnote */
+/* Small Size Typography - label-med title, footnote-light description/body */
 .accordion-default--size-small .accordion-default__title {
-  font-family: var(--label-label-sm-med-font-family, "Archivo-Medium", sans-serif);
-  font-size: var(--label-label-sm-med-font-size, 14px);
-  line-height: var(--label-label-sm-med-line-height, 16px);
-  letter-spacing: var(--label-label-sm-med-letter-spacing, 0.15px);
-  font-weight: var(--label-label-sm-med-font-weight, 500);
+  font-family: var(--text-styles-label-med-font-family, Archivo);
+  font-size: var(--text-styles-label-med-font-size, 16px);
+  line-height: var(--text-styles-label-med-line-height, 20px);
+  letter-spacing: var(--text-styles-label-med-letter-spacing, 0.15px);
+  font-weight: var(--text-styles-label-med-font-weight, 500);
   color: var(--color-primary-blue-dark-blue, #191e3c);
   margin: 0;
 }
 
 .accordion-default--size-small .accordion-default__description {
-  font-family: var(--footnote-archivo-footnote-light-font-family, "Archivo-Light", sans-serif);
-  font-size: var(--footnote-archivo-footnote-light-font-size, 13px);
-  line-height: var(--footnote-archivo-footnote-light-line-height, 15px);
-  letter-spacing: var(--footnote-archivo-footnote-light-letter-spacing, 0.2px);
-  font-weight: var(--footnote-archivo-footnote-light-font-weight, 300);
+  font-family: var(--text-styles-footnote-archivo-light-font-family, Archivo);
+  font-size: var(--text-styles-footnote-archivo-light-font-size, 13px);
+  line-height: var(--text-styles-footnote-archivo-light-line-height, 15px);
+  letter-spacing: var(--text-styles-footnote-archivo-light-letter-spacing, 0.2px);
+  font-weight: var(--text-styles-footnote-archivo-light-font-weight, 300);
   color: var(--color-secondary-blue-gray, #61607c);
   margin: 0;
 }
 
 .accordion-default--size-small .accordion-default__body-text {
-  font-family: var(--footnote-archivo-footnote-light-font-family, "Archivo-Light", sans-serif);
-  font-size: var(--footnote-archivo-footnote-light-font-size, 13px);
-  line-height: var(--footnote-archivo-footnote-light-line-height, 15px);
-  letter-spacing: var(--footnote-archivo-footnote-light-letter-spacing, 0.2px);
-  font-weight: var(--footnote-archivo-footnote-light-font-weight, 300);
+  font-family: var(--text-styles-footnote-archivo-light-font-family, Archivo);
+  font-size: var(--text-styles-footnote-archivo-light-font-size, 13px);
+  line-height: var(--text-styles-footnote-archivo-light-line-height, 15px);
+  letter-spacing: var(--text-styles-footnote-archivo-light-letter-spacing, 0.2px);
+  font-weight: var(--text-styles-footnote-archivo-light-font-weight, 300);
   color: var(--color-neutral-gray-gray-800, #1f2937);
 }
 
-/* Default Size Typography - Uses Label LG and Body */
+/* Default Size Typography - subtitle-default title, body-lg-light description/body */
 .accordion-default--size-default .accordion-default__title {
-  font-family: var(--type-typeface-archivo, Archivo);
-  font-size: var(--type-size-primary-scale-label-lg, 18px);
-  line-height: var(--type-line-height-label-lg, 24px);
-  letter-spacing: var(--type-letter-spacing-archivo-label-lg, 0.15px);
-  font-weight: var(--type-weight-medium, 500);
+  font-family: var(--text-styles-subtitle-archivo-default-font-family, Archivo);
+  font-size: var(--text-styles-subtitle-archivo-default-font-size, 24px);
+  line-height: var(--text-styles-subtitle-archivo-default-line-height, 26px);
+  letter-spacing: var(--text-styles-subtitle-archivo-default-letter-spacing, -0.15px);
+  font-weight: var(--text-styles-subtitle-archivo-default-font-weight, 400);
   color: var(--color-primary-blue-dark-blue, #191e3c);
   margin: 0;
 }
 
 .accordion-default--size-default .accordion-default__description {
-  font-family: var(--type-typeface-roboto-flex, "Roboto Flex");
-  font-size: var(--type-size-secondary-scale-body, 16px);
-  line-height: var(--type-line-height-body, 20px);
-  letter-spacing: var(--type-letter-spacing-roboto-flex-body, 0.05px);
-  font-weight: var(--type-weight-light, 300);
+  font-family: var(--text-styles-body-lg-light-font-family, "Roboto Flex");
+  font-size: var(--text-styles-body-lg-light-font-size, 18px);
+  line-height: var(--text-styles-body-lg-light-line-height, 22px);
+  letter-spacing: var(--text-styles-body-lg-light-letter-spacing, -0.15px);
+  font-weight: var(--text-styles-body-lg-light-font-weight, 300);
   color: var(--color-secondary-blue-gray, #61607c);
   margin: 0;
 }
 
 .accordion-default--size-default .accordion-default__body-text {
-  font-family: var(--type-typeface-roboto-flex, "Roboto Flex");
-  font-size: var(--type-size-secondary-scale-body, 16px);
-  line-height: var(--type-line-height-body, 20px);
-  letter-spacing: var(--type-letter-spacing-roboto-flex-body, 0.05px);
-  font-weight: var(--type-weight-light, 300);
+  font-family: var(--text-styles-body-lg-light-font-family, "Roboto Flex");
+  font-size: var(--text-styles-body-lg-light-font-size, 18px);
+  line-height: var(--text-styles-body-lg-light-line-height, 22px);
+  letter-spacing: var(--text-styles-body-lg-light-letter-spacing, -0.15px);
+  font-weight: var(--text-styles-body-lg-light-font-weight, 300);
   color: var(--color-neutral-gray-gray-800, #1f2937);
 }
 
-/* Large Size Typography - Uses H4/H5 heading tokens */
+/* Large Size Typography - h5-med title, body-light description/body */
 .accordion-default--size-large .accordion-default__title {
-  font-family: var(--h4-archivo-h4-med-font-family, Archivo);
-  font-size: var(--h4-archivo-h4-med-font-size, 24px);
-  line-height: var(--h4-archivo-h4-med-line-height, 24px);
-  letter-spacing: var(--h4-archivo-h4-med-letter-spacing, -0.25px);
-  font-weight: var(--h4-archivo-h4-med-font-weight, 500);
+  font-family: var(--text-styles-h5-archivo-med-font-family, Archivo);
+  font-size: var(--text-styles-h5-archivo-med-font-size, 19px);
+  line-height: var(--text-styles-h5-archivo-med-line-height, 24px);
+  letter-spacing: var(--text-styles-h5-archivo-med-letter-spacing, -0.15px);
+  font-weight: var(--text-styles-h5-archivo-med-font-weight, 500);
   color: var(--color-primary-blue-dark-blue, #191e3c);
   margin: 0;
 }
 
 .accordion-default--size-large .accordion-default__description {
-  font-family: var(--h5-archivo-h5-light-font-family, Archivo);
-  font-size: var(--h5-archivo-h5-light-font-size, 19px);
-  line-height: var(--h5-archivo-h5-light-line-height, 24px);
-  letter-spacing: var(--h5-archivo-h5-light-letter-spacing, -0.15px);
-  font-weight: var(--h5-archivo-h5-light-font-weight, 300);
+  font-family: var(--text-styles-body-light-font-family, "Roboto Flex");
+  font-size: var(--text-styles-body-light-font-size, 16px);
+  line-height: var(--text-styles-body-light-line-height, 20px);
+  letter-spacing: var(--text-styles-body-light-letter-spacing, 0.05px);
+  font-weight: var(--text-styles-body-light-font-weight, 300);
   color: var(--color-secondary-blue-gray, #61607c);
   margin: 0;
 }
 
 .accordion-default--size-large .accordion-default__body-text {
-  font-family: var(--h5-roboto-flex-h5-light-font-family, "Roboto Flex");
-  font-size: var(--h5-roboto-flex-h5-light-font-size, 19px);
-  line-height: var(--h5-roboto-flex-h5-light-line-height, 24px);
-  letter-spacing: var(--h5-roboto-flex-h5-light-letter-spacing, 0.5px);
-  font-weight: var(--h5-roboto-flex-h5-light-font-weight, 300);
+  font-family: var(--text-styles-body-light-font-family, "Roboto Flex");
+  font-size: var(--text-styles-body-light-font-size, 16px);
+  line-height: var(--text-styles-body-light-line-height, 20px);
+  letter-spacing: var(--text-styles-body-light-letter-spacing, 0.05px);
+  font-weight: var(--text-styles-body-light-font-weight, 300);
   color: var(--color-neutral-gray-gray-800, #1f2937);
 }
 
