@@ -123,7 +123,7 @@ All brand assets are customizable, including:
                       size="small"
                       variant="light-gray"
                       shape="pill"
-                      leadingIcon={<Icon name="auto-awesome" size="sm" opacity="full" />}
+                      leadingIcon={<Icon name="star" size="sm" opacity="full" />}
                     />
                   </div>
 
