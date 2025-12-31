@@ -1,0 +1,399 @@
+.brandPortal {
+  min-height: 100vh;
+  background: var(--base-white);
+  font-family: var(--text-styles-body-default-font-family, 'Roboto Flex');
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fixed Header */
+.brandPortalHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 298px;
+  padding: 60px 80px;
+  background: var(--base-white);
+  border-bottom: 1px solid var(--neutral-gray-gray-200);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 40px;
+}
+
+.logoHeader {
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+  flex: 1;
+}
+
+.npxLogo {
+  width: 121px;
+  height: 132px;
+  flex-shrink: 0;
+}
+
+.designSystemPortal {
+  font-family: var(--text-styles-h1-med-font-family, 'Archivo');
+  font-size: var(--text-styles-h1-med-font-size, 36px);
+  font-weight: var(--text-styles-h1-med-font-weight, 500);
+  line-height: var(--text-styles-h1-med-line-height, 38px);
+  letter-spacing: var(--text-styles-h1-med-letter-spacing, -1px);
+  color: var(--base-black);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.ctaSection {
+  flex-shrink: 0;
+}
+
+/* Main Content */
+.brandPortalContent {
+  padding-top: 298px;
+  padding-bottom: 80px;
+  padding-left: 80px;
+  padding-right: 80px;
+  flex: 1;
+}
+
+.brandPortalGrid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.columnLarge {
+  flex: 1;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.columnSmall {
+  width: 259px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Template Card Styling */
+.templateCard {
+  background: var(--color-primary-sky-blue-sky-blue-50, #F4FCFF) !important;
+}
+
+.templateCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-self: stretch;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.cardHeadings {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.templateTitle {
+  font-family: var(--text-styles-h2-med-font-family, 'Archivo');
+  font-size: var(--text-styles-h2-med-font-size, 32px);
+  font-weight: var(--text-styles-h2-med-font-weight, 500);
+  line-height: var(--text-styles-h2-med-line-height, 34px);
+  letter-spacing: var(--text-styles-h2-med-letter-spacing, -1px);
+  color: var(--base-black);
+  margin: 0;
+}
+
+.templateSubtitle {
+  font-family: var(--text-styles-h5-archivo-light-font-family, 'Archivo');
+  font-size: var(--text-styles-h5-archivo-light-font-size, 19px);
+  font-weight: var(--text-styles-h5-archivo-light-font-weight, 300);
+  line-height: var(--text-styles-h5-archivo-light-line-height, 24px);
+  letter-spacing: var(--text-styles-h5-archivo-light-letter-spacing, -0.15px);
+  color: var(--neutral-gray-gray-500);
+  margin: 0;
+}
+
+.templateBody {
+  font-family: var(--text-styles-body-lg-light-font-family, 'Roboto Flex');
+  font-size: var(--text-styles-body-lg-light-font-size, 18px);
+  font-weight: var(--text-styles-body-lg-light-font-weight, 300);
+  line-height: var(--text-styles-body-lg-light-line-height, 22px);
+  letter-spacing: var(--text-styles-body-lg-light-letter-spacing, -0.15px);
+  color: var(--base-black);
+  margin: 0;
+  white-space: pre-line;
+}
+
+/* Brand Card Content */
+.brandCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  padding: 24px 40px 60px 40px;
+}
+
+.brandCardHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.brandCardLogo {
+  width: 217px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brandCardLogoWithBorder {
+  border: 1px solid var(--neutral-gray-gray-800);
+  padding: 4px;
+}
+
+.brandCardClient {
+  font-family: var(--text-styles-h5-roboto-flex-default-font-family, 'Roboto Flex');
+  font-size: var(--text-styles-h5-roboto-flex-default-font-size, 19px);
+  font-weight: var(--text-styles-h5-roboto-flex-default-font-weight, 400);
+  line-height: var(--text-styles-h5-roboto-flex-default-line-height, 24px);
+  letter-spacing: var(--text-styles-h5-roboto-flex-default-letter-spacing, 0.5px);
+  text-align: center;
+  color: var(--base-black);
+  margin: 0;
+}
+
+/* Color Palette */
+.brandCardColors {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.colorRow {
+  display: flex;
+  gap: 16px;
+}
+
+.colorSwatch {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.colorLabel {
+  font-family: var(--text-styles-label-med-font-family, 'Archivo');
+  font-size: var(--text-styles-label-med-font-size, 16px);
+  font-weight: var(--text-styles-label-med-font-weight, 500);
+  line-height: var(--text-styles-label-med-line-height, 20px);
+  letter-spacing: var(--text-styles-label-med-letter-spacing, 0.15px);
+  color: var(--base-black);
+  margin: 0;
+}
+
+.colorBox {
+  height: 30px;
+  border: 1px solid var(--base-black);
+  border-radius: 2px;
+}
+
+/* Typography Info */
+.brandCardTypography {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.typographyRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.typographyLabel {
+  font-family: var(--text-styles-label-med-font-family, 'Archivo');
+  font-size: var(--text-styles-label-med-font-size, 16px);
+  font-weight: var(--text-styles-label-med-font-weight, 500);
+  line-height: var(--text-styles-label-med-line-height, 20px);
+  letter-spacing: var(--text-styles-label-med-letter-spacing, 0.15px);
+  color: var(--base-black);
+  margin: 0;
+}
+
+.typographyValue {
+  font-family: var(--text-styles-label-light-font-family, 'Archivo');
+  font-size: var(--text-styles-label-light-font-size, 16px);
+  font-weight: var(--text-styles-label-light-font-weight, 300);
+  line-height: var(--text-styles-label-light-line-height, 20px);
+  letter-spacing: var(--text-styles-label-light-letter-spacing, 0.15px);
+  color: var(--base-black);
+  margin: 0;
+}
+
+/* NPM Command Box */
+.brandCardNpm {
+  padding: 8px 24px;
+  background: var(--neutral-gray-gray-100);
+  border: 1px solid var(--color-secondary-blue-gray-light);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.brandCardNpmText {
+  font-family: var(--text-styles-label-light-font-family, 'Archivo');
+  font-size: var(--text-styles-label-light-font-size, 16px);
+  font-weight: var(--text-styles-label-light-font-weight, 300);
+  line-height: var(--text-styles-label-light-line-height, 20px);
+  letter-spacing: var(--text-styles-label-light-letter-spacing, 0.15px);
+  color: var(--base-black);
+  margin: 0;
+}
+
+/* View Button Wrapper */
+.brandCardButtonWrapper {
+  padding: 0 24px;
+}
+
+/* Empty State Content */
+.emptyStateContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.emptyStateIcon {
+  width: 180px;
+  height: 180px;
+}
+
+.emptyStateLink {
+  font-family: var(--text-styles-body-lg-semibold-font-family, 'Roboto Flex');
+  font-size: var(--text-styles-body-lg-semibold-font-size, 18px);
+  font-weight: var(--text-styles-body-lg-semibold-font-weight, 600);
+  line-height: var(--text-styles-body-lg-semibold-line-height, 22px);
+  letter-spacing: var(--text-styles-body-lg-semibold-letter-spacing, -0.15px);
+  color: var(--color-primary-blue-blue);
+  text-decoration: underline;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.emptyStateLink:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1400px) {
+  .brandPortalGrid {
+    flex-wrap: wrap;
+  }
+
+  .columnLarge {
+    flex-basis: 100%;
+  }
+
+  .columnSmall {
+    width: auto;
+    flex: 1;
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brandPortalHeader {
+    height: auto;
+    padding: 40px 20px;
+    position: relative;
+  }
+
+  .navContent {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .logoHeader {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .npxLogo {
+    width: 80px;
+    height: 88px;
+  }
+
+  .designSystemPortal {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .brandPortalContent {
+    padding-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+  }
+
+  .brandPortalGrid {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .columnSmall {
+    width: 100%;
+  }
+
+  .brandCardContent {
+    padding: 24px 40px 60px 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brandPortalHeader {
+    padding: 24px 16px;
+  }
+
+  .brandPortalContent {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .designSystemPortal {
+    font-size: 24px;
+  }
+
+  .brandCardLogo {
+    width: 150px;
+    height: 56px;
+  }
+
+  .colorRow {
+    flex-direction: column;
+  }
+}
