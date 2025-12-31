@@ -220,20 +220,20 @@
 
 .input-field.small {
   font-size: var(--type-size-sm);
-  line-height: 16px;
-  letter-spacing: -0.15px;
+  line-height: var(--text-styles-body-sm-light-line-height, 16px);
+  letter-spacing: var(--text-styles-body-sm-light-letter-spacing, -0.15px);
 }
 
 .input-field.default {
   font-size: var(--type-size-base);
-  line-height: 20px;
-  letter-spacing: 0.05px;
+  line-height: var(--text-styles-body-default-line-height, 20px);
+  letter-spacing: var(--text-styles-body-default-letter-spacing, 0.05px);
 }
 
 .input-field.large {
   font-size: var(--type-size-lg);
-  line-height: 22px;
-  letter-spacing: -0.15px;
+  line-height: var(--text-styles-body-lg-light-line-height, 22px);
+  letter-spacing: var(--text-styles-body-lg-light-letter-spacing, -0.15px);
 }
 
 .input-field::placeholder {
@@ -264,20 +264,20 @@
 
 .input-cursor.small {
   font-size: var(--type-size-sm);
-  line-height: 16px;
-  letter-spacing: -0.15px;
+  line-height: var(--text-styles-body-sm-light-line-height, 16px);
+  letter-spacing: var(--text-styles-body-sm-light-letter-spacing, -0.15px);
 }
 
 .input-cursor.default {
   font-size: var(--type-size-base);
-  line-height: 20px;
-  letter-spacing: 0.05px;
+  line-height: var(--text-styles-body-default-line-height, 20px);
+  letter-spacing: var(--text-styles-body-default-letter-spacing, 0.05px);
 }
 
 .input-cursor.large {
   font-size: var(--type-size-lg);
-  line-height: 22px;
-  letter-spacing: -0.15px;
+  line-height: var(--text-styles-body-lg-light-line-height, 22px);
+  letter-spacing: var(--text-styles-body-lg-light-letter-spacing, -0.15px);
 }
 
 @keyframes blink {
