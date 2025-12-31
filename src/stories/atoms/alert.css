@@ -119,50 +119,53 @@
 
 /* Small Alert Typography */
 .alert--small .alert__title {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 16px;
-  letter-spacing: 0.15px;
+  font-family: var(--text-styles-label-sm-med-font-family, Archivo);
+  font-size: var(--text-styles-label-sm-med-font-size, 14px);
+  font-weight: var(--text-styles-label-sm-med-font-weight, 500);
+  line-height: var(--text-styles-label-sm-med-line-height, 16px);
+  letter-spacing: var(--text-styles-label-sm-med-letter-spacing, 0.15px);
 }
 
 .alert--small .alert__description {
-  font-family: 'Archivo', sans-serif;
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 15px;
-  letter-spacing: 0.2px;
+  font-family: var(--text-styles-footnote-archivo-light-font-family, Archivo);
+  font-size: var(--text-styles-footnote-archivo-light-font-size, 13px);
+  font-weight: var(--text-styles-footnote-archivo-light-font-weight, 300);
+  line-height: var(--text-styles-footnote-archivo-light-line-height, 15px);
+  letter-spacing: var(--text-styles-footnote-archivo-light-letter-spacing, 0.2px);
 }
 
 /* Default Alert Typography */
 .alert--default .alert__title {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: 0.15px;
+  font-family: var(--text-styles-label-med-font-family, Archivo);
+  font-size: var(--text-styles-label-med-font-size, 16px);
+  font-weight: var(--text-styles-label-med-font-weight, 500);
+  line-height: var(--text-styles-label-med-line-height, 20px);
+  letter-spacing: var(--text-styles-label-med-letter-spacing, 0.15px);
 }
 
 .alert--default .alert__description {
-  font-family: 'Roboto Flex', sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 16px;
-  letter-spacing: -0.15px;
+  font-family: var(--text-styles-body-sm-light-font-family, Roboto Flex);
+  font-size: var(--text-styles-body-sm-light-font-size, 14px);
+  font-weight: var(--text-styles-body-sm-light-font-weight, 300);
+  line-height: var(--text-styles-body-sm-light-line-height, 16px);
+  letter-spacing: var(--text-styles-body-sm-light-letter-spacing, -0.15px);
 }
 
 /* Large Alert Typography */
 .alert--large .alert__title {
-  font-size: 18px;
-  font-weight: 500;
+  font-family: var(--text-styles-label-lg-med-font-family, Archivo);
+  font-size: var(--text-styles-label-lg-med-font-size, 18px);
+  font-weight: var(--text-styles-label-lg-med-font-weight, 500);
   line-height: 24px;
-  letter-spacing: 0.15px;
+  letter-spacing: var(--text-styles-label-lg-med-letter-spacing, 0.15px);
 }
 
 .alert--large .alert__description {
-  font-family: 'Roboto Flex', sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 20px;
-  letter-spacing: 0.05px;
+  font-family: var(--text-styles-body-light-font-family, Roboto Flex);
+  font-size: var(--text-styles-body-light-font-size, 16px);
+  font-weight: var(--text-styles-body-light-font-weight, 300);
+  line-height: var(--text-styles-body-light-line-height, 20px);
+  letter-spacing: var(--text-styles-body-light-letter-spacing, 0.05px);
 }
 
 /* === COLOR VARIANTS === */
@@ -360,13 +363,19 @@
   }
 
   .alert--large .alert__title {
-    font-size: 16px;
-    line-height: 20px;
+    font-family: var(--text-styles-label-med-font-family, Archivo);
+    font-size: var(--text-styles-label-med-font-size, 16px);
+    font-weight: var(--text-styles-label-med-font-weight, 500);
+    line-height: var(--text-styles-label-med-line-height, 20px);
+    letter-spacing: var(--text-styles-label-med-letter-spacing, 0.15px);
   }
 
   .alert--large .alert__description {
-    font-size: 14px;
-    line-height: 16px;
+    font-family: var(--text-styles-body-sm-light-font-family, Roboto Flex);
+    font-size: var(--text-styles-body-sm-light-font-size, 14px);
+    font-weight: var(--text-styles-body-sm-light-font-weight, 300);
+    line-height: var(--text-styles-body-sm-light-line-height, 16px);
+    letter-spacing: var(--text-styles-body-sm-light-letter-spacing, -0.15px);
   }
 }
 
