@@ -53,7 +53,7 @@ export const BrandPortal: Story = {
               <EchoMUIButton
                 variant="primary"
                 size="large"
-                leadingIcon={<Icon name="auto-awesome" size="lg" opacity="full" />}
+                leadingIcon={<Icon name="star" size="lg" opacity="full" />}
               >
                 Create design system
               </EchoMUIButton>
