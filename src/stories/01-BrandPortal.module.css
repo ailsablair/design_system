@@ -287,6 +287,10 @@
   height: 180px;
 }
 
+.emptyStateIconPath {
+  fill: var(--primary-blue-blue-200);
+}
+
 .emptyStateLink {
   font-family: var(--text-styles-body-lg-semibold-font-family, 'Roboto Flex');
   font-size: var(--text-styles-body-lg-semibold-font-size, 18px);
