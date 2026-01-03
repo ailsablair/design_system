@@ -22,7 +22,7 @@ const meta: Meta = {
  * It displays:
  * - **Template Card**: The flagship white-label design system overview
  * - **Brand Cards**: Examples of existing brand implementations (Bruce Power ECHO, Canadian Nuclear Labs)
- * - **Empty-State Cards**: Placeholders for future brand additions
+ * - **Empty-State Card**: Placeholder for future brand additions
  *
  * ## Design System Integration
  * This page uses:
@@ -30,11 +30,15 @@ const meta: Meta = {
  * - `EchoMUIButton` for action buttons
  * - `Icon` component for visual indicators
  * - `Tag` component for metadata (year, status)
- * - Consolidated `--text-styles-*` typography tokens for all text
+ * - **Typography Tokens**: 100% of text using `--text-styles-*` tokens
+ * - **Spacing Tokens**: All padding/gap using `--spacing-sizing-*` tokens
+ * - **Border Radius Tokens**: All border-radius using `--spacing-radius-*` tokens
+ * - **Stroke Tokens**: All border widths using `--spacing-stroke-*` tokens
+ * - **Color Tokens**: All colors using design system color variables
  *
  * ## Responsiveness
  * The layout is fully responsive:
- * - **Desktop (≥1400px)**: Fixed header, horizontal flexbox grid (1 large + 5 small columns)
+ * - **Desktop (≥1400px)**: Fixed compact header (120px), horizontal flexbox grid (1 large + 3 small columns)
  * - **Tablet (768-1399px)**: Fixed header with adjusted padding, wrapping grid
  * - **Mobile (<768px)**: Responsive header, vertical stack layout
  *
@@ -58,7 +62,7 @@ const PlusIconLarge = () => (
     xmlns="http://www.w3.org/2000/svg"
     className={styles.emptyStateIcon}
   >
-    <path d="M142.5 97.5H97.5V142.5H82.5V97.5H37.5V82.5H82.5V37.5H97.5V82.5H142.5V97.5Z" fill="#C5CAED" />
+    <path d="M142.5 97.5H97.5V142.5H82.5V97.5H37.5V82.5H82.5V37.5H97.5V82.5H142.5V97.5Z" className={styles.emptyStateIconPath} />
   </svg>
 );
 
@@ -321,49 +325,7 @@ All brand assets are customizable, including:
               </Card>
             </div>
 
-            {/* Column 4: Empty-State Card 1 */}
-            <div className={styles.columnSmall}>
-              <Card
-                size="small"
-                type="empty-state"
-                align="vertical"
-                dropShadow={false}
-                showButtonGroup={false}
-              >
-                <div className={styles.emptyStateContent}>
-                  <PlusIconLarge />
-                  <button
-                    className={styles.emptyStateLink}
-                    aria-label="Add new brand - Opens form to create a new design system brand"
-                  >
-                    Add new brand
-                  </button>
-                </div>
-              </Card>
-            </div>
-
-            {/* Column 5: Empty-State Card 2 */}
-            <div className={styles.columnSmall}>
-              <Card
-                size="small"
-                type="empty-state"
-                align="vertical"
-                dropShadow={false}
-                showButtonGroup={false}
-              >
-                <div className={styles.emptyStateContent}>
-                  <PlusIconLarge />
-                  <button
-                    className={styles.emptyStateLink}
-                    aria-label="Add new brand - Opens form to create a new design system brand"
-                  >
-                    Add new brand
-                  </button>
-                </div>
-              </Card>
-            </div>
-
-            {/* Column 6: Empty-State Card 3 */}
+            {/* Column 4: Empty-State Card */}
             <div className={styles.columnSmall}>
               <Card
                 size="small"
