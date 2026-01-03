@@ -12,10 +12,10 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 298px;
-  padding: 60px 80px;
+  height: 120px;
+  padding: var(--spacing-sizing-32px) var(--spacing-sizing-40px);
   background: var(--base-white);
-  border-bottom: 1px solid var(--neutral-gray-gray-200);
+  border-bottom: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -26,19 +26,19 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  gap: 40px;
+  gap: var(--spacing-sizing-24px);
 }
 
 .logoHeader {
   display: flex;
-  align-items: flex-end;
-  gap: 40px;
+  align-items: center;
+  gap: var(--spacing-sizing-24px);
   flex: 1;
 }
 
 .npxLogo {
-  width: 121px;
-  height: 132px;
+  width: 100px;
+  height: 108px;
   flex-shrink: 0;
 }
 
@@ -59,16 +59,16 @@
 
 /* Main Content */
 .brandPortalContent {
-  padding-top: 298px;
-  padding-bottom: 80px;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-top: 160px;
+  padding-bottom: var(--spacing-sizing-40px);
+  padding-left: var(--spacing-sizing-40px);
+  padding-right: var(--spacing-sizing-40px);
   flex: 1;
 }
 
 .brandPortalGrid {
   display: flex;
-  gap: 8px;
+  gap: var(--spacing-sizing-16px);
   flex-wrap: nowrap;
   align-items: flex-start;
 }
@@ -78,14 +78,14 @@
   min-width: 350px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--spacing-sizing-16px);
 }
 
 .columnSmall {
-  width: 259px;
+  width: 300px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--spacing-sizing-16px);
   flex-shrink: 0;
 }
 
@@ -97,7 +97,7 @@
 .templateCardContent {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--spacing-sizing-16px);
   align-self: stretch;
   height: 100%;
   justify-content: space-between;
@@ -106,7 +106,7 @@
 .cardHeadings {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--spacing-sizing-4px);
 }
 
 .templateTitle {
@@ -144,18 +144,18 @@
 .brandCardContent {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--spacing-sizing-16px);
   width: 100%;
   height: 100%;
   justify-content: space-between;
-  padding: 24px 40px 60px 40px;
+  padding: var(--spacing-sizing-24px) var(--spacing-sizing-40px) var(--spacing-sizing-24px) var(--spacing-sizing-40px);
 }
 
 .brandCardHeader {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: var(--spacing-sizing-12px);
 }
 
 .brandCardLogo {
@@ -166,8 +166,8 @@
 }
 
 .brandCardLogoWithBorder {
-  border: 1px solid var(--neutral-gray-gray-800);
-  padding: 4px;
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-800);
+  padding: var(--spacing-sizing-4px);
 }
 
 .brandCardClient {
@@ -185,19 +185,19 @@
 .brandCardColors {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--spacing-sizing-16px);
 }
 
 .colorRow {
   display: flex;
-  gap: 16px;
+  gap: var(--spacing-sizing-16px);
 }
 
 .colorSwatch {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--spacing-sizing-4px);
 }
 
 .colorLabel {
@@ -212,15 +212,15 @@
 
 .colorBox {
   height: 30px;
-  border: 1px solid var(--base-black);
-  border-radius: 2px;
+  border: var(--spacing-stroke-1px) solid var(--base-black);
+  border-radius: var(--spacing-radius-2px);
 }
 
 /* Typography Info */
 .brandCardTypography {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--spacing-sizing-4px);
 }
 
 .typographyRow {
@@ -251,10 +251,10 @@
 
 /* NPM Command Box */
 .brandCardNpm {
-  padding: 8px 24px;
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-24px);
   background: var(--neutral-gray-gray-100);
-  border: 1px solid var(--color-secondary-blue-gray-light);
-  border-radius: 4px;
+  border: var(--spacing-stroke-1px) solid var(--color-secondary-blue-gray-light);
+  border-radius: var(--spacing-radius-4px);
   display: flex;
   align-items: center;
 }
@@ -271,7 +271,7 @@
 
 /* View Button Wrapper */
 .brandCardButtonWrapper {
-  padding: 0 24px;
+  padding: 0 var(--spacing-sizing-24px);
 }
 
 /* Empty State Content */
@@ -279,7 +279,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: var(--spacing-sizing-16px);
 }
 
 .emptyStateIcon {
@@ -327,13 +327,14 @@
 /* Tablet adjustments */
 @media (max-width: 1024px) {
   .brandPortalHeader {
-    padding: 40px 40px;
+    padding: var(--spacing-sizing-24px) var(--spacing-sizing-24px);
   }
 
   .brandPortalContent {
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 40px;
+    padding-left: var(--spacing-sizing-24px);
+    padding-right: var(--spacing-sizing-24px);
+    padding-bottom: var(--spacing-sizing-24px);
+    padding-top: 140px;
   }
 
   .designSystemPortal {
@@ -352,19 +353,19 @@
 @media (max-width: 768px) {
   .brandPortalHeader {
     height: auto;
-    padding: 40px 20px;
+    padding: var(--spacing-sizing-24px) var(--spacing-sizing-16px);
     position: relative;
   }
 
   .navContent {
     flex-direction: column;
-    gap: 24px;
+    gap: var(--spacing-sizing-24px);
   }
 
   .logoHeader {
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: var(--spacing-sizing-16px);
     width: 100%;
   }
 
@@ -380,14 +381,14 @@
 
   .brandPortalContent {
     padding-top: 0;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 40px;
+    padding-left: var(--spacing-sizing-16px);
+    padding-right: var(--spacing-sizing-16px);
+    padding-bottom: var(--spacing-sizing-24px);
   }
 
   .brandPortalGrid {
     flex-direction: column;
-    gap: 16px;
+    gap: var(--spacing-sizing-16px);
   }
 
   .columnSmall {
@@ -395,18 +396,18 @@
   }
 
   .brandCardContent {
-    padding: 24px 40px 60px 40px;
+    padding: var(--spacing-sizing-24px) var(--spacing-sizing-40px);
   }
 }
 
 @media (max-width: 480px) {
   .brandPortalHeader {
-    padding: 24px 16px;
+    padding: var(--spacing-sizing-16px);
   }
 
   .brandPortalContent {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: var(--spacing-sizing-16px);
+    padding-right: var(--spacing-sizing-16px);
   }
 
   .designSystemPortal {
