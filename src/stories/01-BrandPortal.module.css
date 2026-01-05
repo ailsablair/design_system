@@ -68,7 +68,7 @@
 
 .brandPortalGrid {
   display: flex;
-  gap: var(--spacing-sizing-16px);
+  gap: var(--spacing-sizing-8px);
   flex-wrap: nowrap;
   align-items: flex-start;
 }
@@ -78,14 +78,14 @@
   min-width: 350px;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sizing-16px);
+  gap: var(--spacing-sizing-8px);
 }
 
 .columnSmall {
   width: 300px;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sizing-16px);
+  gap: var(--spacing-sizing-8px);
   flex-shrink: 0;
 }
 
