@@ -95,6 +95,10 @@
   border-radius: var(--spacing-radius-12px) !important;
 }
 
+.brandPortal :global(.MuiCard-root) {
+  border-radius: var(--spacing-radius-12px) !important;
+}
+
 .templateCardContent {
   display: flex;
   flex-direction: column;
