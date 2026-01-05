@@ -222,6 +222,40 @@
   border-radius: var(--spacing-radius-2px);
 }
 
+/* Bruce Power Brand Colors */
+.colorBoxBrucePrimary {
+  background: var(--primary-blue-blue, #2F42BD);
+}
+
+.colorBoxBruceSecondary {
+  background: var(--primary-sky-blue-sky-blue, #0BA7EA);
+}
+
+.colorBoxBruceTertiary {
+  background: var(--primary-seafoam-seafoam, #8BBF9F);
+}
+
+.colorBoxBruceQuaternary {
+  background: var(--primary-yellow-yellow, #F9C846);
+}
+
+/* CNL Brand Colors */
+.colorBoxCNLPrimary {
+  background: #304047;
+}
+
+.colorBoxCNLSecondary {
+  background: #4780D6;
+}
+
+.colorBoxCNLTertiary {
+  background: #00B2EB;
+}
+
+.colorBoxCNLQuaternary {
+  background: #9EC738;
+}
+
 /* Typography Info */
 .brandCardTypography {
   display: flex;
