@@ -164,10 +164,11 @@
 }
 
 .brandCardLogo {
-  width: 217px;
-  height: 80px;
+  width: var(--spacing-sizing-240px);
+  height: var(--spacing-sizing-80px);
   object-fit: contain;
   flex-shrink: 0;
+  aspect-ratio: 217 / 80;
 }
 
 .brandCardLogoWithBorder {
@@ -216,8 +217,8 @@
 }
 
 .colorBox {
-  height: 30px;
-  border: var(--spacing-stroke-1px) solid var(--base-black);
+  height: var(--spacing-sizing-32px);
+  border: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
   border-radius: var(--spacing-radius-2px);
 }
 
@@ -288,8 +289,8 @@
 }
 
 .emptyStateIcon {
-  width: 180px;
-  height: 180px;
+  width: var(--spacing-sizing-180px);
+  height: var(--spacing-sizing-180px);
 }
 
 .emptyStateIconPath {
