@@ -383,7 +383,7 @@
   }
 
   .designSystemPortal {
-    font-size: 28px;
+    font-size: var(--type-size-primary-scale-heading-3, 28px);
   }
 
   .navContent {
@@ -420,7 +420,7 @@
   }
 
   .designSystemPortal {
-    font-size: 28px;
+    font-size: var(--type-size-primary-scale-heading-3, 28px);
     text-align: center;
   }
 
@@ -456,7 +456,7 @@
   }
 
   .designSystemPortal {
-    font-size: 24px;
+    font-size: var(--type-size-primary-scale-heading-4, 24px);
   }
 
   .brandCardLogo {
