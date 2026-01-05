@@ -92,6 +92,7 @@
 /* Template Card Styling */
 .templateCard {
   background: var(--color-primary-sky-blue-sky-blue-50, #F4FCFF) !important;
+  border-radius: var(--spacing-radius-12px) !important;
 }
 
 .templateCardContent {
