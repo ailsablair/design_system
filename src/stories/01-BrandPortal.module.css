@@ -441,7 +441,7 @@
   }
 
   .brandCardContent {
-    padding: var(--spacing-sizing-24px) var(--spacing-sizing-40px);
+    padding: var(--spacing-sizing-24px) var(--spacing-sizing-40px) var(--spacing-sizing-60px) var(--spacing-sizing-40px);
   }
 }
 
