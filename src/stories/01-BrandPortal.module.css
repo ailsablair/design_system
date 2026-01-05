@@ -460,8 +460,8 @@
   }
 
   .brandCardLogo {
-    width: 150px;
-    height: 56px;
+    width: var(--spacing-sizing-160px);
+    height: var(--spacing-sizing-56px);
   }
 
   .colorRow {
