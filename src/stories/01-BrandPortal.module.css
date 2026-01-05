@@ -12,8 +12,8 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 120px;
-  padding: var(--spacing-sizing-32px) var(--spacing-sizing-40px);
+  height: var(--spacing-sizing-140px);
+  padding: var(--spacing-sizing-40px) var(--spacing-sizing-80px) var(--spacing-sizing-20px) var(--spacing-sizing-80px);
   background: var(--base-white);
   border-bottom: var(--spacing-stroke-1px) solid var(--neutral-gray-gray-200);
   z-index: 1000;
@@ -59,10 +59,10 @@
 
 /* Main Content */
 .brandPortalContent {
-  padding-top: 160px;
-  padding-bottom: var(--spacing-sizing-40px);
-  padding-left: var(--spacing-sizing-40px);
-  padding-right: var(--spacing-sizing-40px);
+  padding-top: var(--spacing-sizing-160px);
+  padding-bottom: var(--spacing-sizing-80px);
+  padding-left: var(--spacing-sizing-80px);
+  padding-right: var(--spacing-sizing-80px);
   flex: 1;
 }
 
