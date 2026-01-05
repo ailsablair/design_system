@@ -331,14 +331,15 @@
 /* Tablet adjustments */
 @media (max-width: 1024px) {
   .brandPortalHeader {
-    padding: var(--spacing-sizing-24px) var(--spacing-sizing-24px);
+    height: var(--spacing-sizing-140px);
+    padding: var(--spacing-sizing-40px) var(--spacing-sizing-40px) var(--spacing-sizing-20px) var(--spacing-sizing-40px);
   }
 
   .brandPortalContent {
-    padding-left: var(--spacing-sizing-24px);
-    padding-right: var(--spacing-sizing-24px);
-    padding-bottom: var(--spacing-sizing-24px);
-    padding-top: 140px;
+    padding-left: var(--spacing-sizing-40px);
+    padding-right: var(--spacing-sizing-40px);
+    padding-bottom: var(--spacing-sizing-40px);
+    padding-top: var(--spacing-sizing-160px);
   }
 
   .designSystemPortal {
