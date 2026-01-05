@@ -167,33 +167,21 @@ All brand assets are customizable, including:
                     <div className={styles.colorRow}>
                       <div className={styles.colorSwatch}>
                         <p className={styles.colorLabel}>Primary</p>
-                        <div
-                          className={styles.colorBox}
-                          style={{ background: '#2F42BD' }}
-                        />
+                        <div className={`${styles.colorBox} ${styles.colorBoxBrucePrimary}`} />
                       </div>
                       <div className={styles.colorSwatch}>
                         <p className={styles.colorLabel}>Secondary</p>
-                        <div
-                          className={styles.colorBox}
-                          style={{ background: '#0BA7EA' }}
-                        />
+                        <div className={`${styles.colorBox} ${styles.colorBoxBruceSecondary}`} />
                       </div>
                     </div>
                     <div className={styles.colorRow}>
                       <div className={styles.colorSwatch}>
                         <p className={styles.colorLabel}>Tertiary</p>
-                        <div
-                          className={styles.colorBox}
-                          style={{ background: '#8BBF9F' }}
-                        />
+                        <div className={`${styles.colorBox} ${styles.colorBoxBruceTertiary}`} />
                       </div>
                       <div className={styles.colorSwatch}>
                         <p className={styles.colorLabel}>Quaternary</p>
-                        <div
-                          className={styles.colorBox}
-                          style={{ background: '#F9C846' }}
-                        />
+                        <div className={`${styles.colorBox} ${styles.colorBoxBruceQuaternary}`} />
                       </div>
                     </div>
                   </div>
@@ -262,33 +250,21 @@ All brand assets are customizable, including:
                     <div className={styles.colorRow}>
                       <div className={styles.colorSwatch}>
                         <p className={styles.colorLabel}>Primary</p>
-                        <div
-                          className={styles.colorBox}
-                          style={{ background: '#304047' }}
-                        />
+                        <div className={`${styles.colorBox} ${styles.colorBoxCNLPrimary}`} />
                       </div>
                       <div className={styles.colorSwatch}>
                         <p className={styles.colorLabel}>Secondary</p>
-                        <div
-                          className={styles.colorBox}
-                          style={{ background: '#4780D6' }}
-                        />
+                        <div className={`${styles.colorBox} ${styles.colorBoxCNLSecondary}`} />
                       </div>
                     </div>
                     <div className={styles.colorRow}>
                       <div className={styles.colorSwatch}>
                         <p className={styles.colorLabel}>Tertiary</p>
-                        <div
-                          className={styles.colorBox}
-                          style={{ background: '#00B2EB' }}
-                        />
+                        <div className={`${styles.colorBox} ${styles.colorBoxCNLTertiary}`} />
                       </div>
                       <div className={styles.colorSwatch}>
                         <p className={styles.colorLabel}>Quaternary</p>
-                        <div
-                          className={styles.colorBox}
-                          style={{ background: '#9EC738' }}
-                        />
+                        <div className={`${styles.colorBox} ${styles.colorBoxCNLQuaternary}`} />
                       </div>
                     </div>
                   </div>
