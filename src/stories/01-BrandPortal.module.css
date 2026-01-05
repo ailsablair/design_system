@@ -43,12 +43,12 @@
 }
 
 .designSystemPortal {
-  font-family: var(--text-styles-h1-med-font-family, 'Archivo');
-  font-size: var(--text-styles-h1-med-font-size, 36px);
-  font-weight: var(--text-styles-h1-med-font-weight, 500);
-  line-height: var(--text-styles-h1-med-line-height, 38px);
-  letter-spacing: var(--text-styles-h1-med-letter-spacing, -1px);
-  color: var(--base-black);
+  font-family: var(--type-typeface-archivo, 'Archivo');
+  font-size: var(--type-size-primary-scale-heading-3, 28px);
+  font-weight: var(--type-weight-medium, 500);
+  line-height: var(--type-line-height-heading-3, 28px);
+  letter-spacing: var(--type-letter-spacing-archivo-heading-3, -0.5px);
+  color: var(--color-primary-blue-blue);
   margin: 0;
   white-space: nowrap;
 }
