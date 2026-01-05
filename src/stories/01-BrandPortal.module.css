@@ -387,11 +387,11 @@
   }
 
   .navContent {
-    gap: 20px;
+    gap: var(--spacing-sizing-20px);
   }
 
   .logoHeader {
-    gap: 24px;
+    gap: var(--spacing-sizing-24px);
   }
 }
 
