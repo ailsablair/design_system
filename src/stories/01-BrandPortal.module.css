@@ -37,8 +37,8 @@
 }
 
 .npxLogo {
-  width: 100px;
-  height: 108px;
+  width: auto;
+  height: var(--spacing-sizing-70px);
   flex-shrink: 0;
 }
 
