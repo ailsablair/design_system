@@ -1,0 +1,173 @@
+.brandCard {
+  background: var(--color-base-white) !important;
+  border-radius: var(--spacing-radius-12px) !important;
+  border: var(--spacing-stroke-1px) solid var(--color-neutral-gray-gray-300);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-8px);
+  height: 100%;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-16px);
+  padding: var(--spacing-sizing-24px) var(--spacing-sizing-40px) var(--spacing-sizing-60px) var(--spacing-sizing-40px);
+  flex: 1;
+  justify-content: space-between;
+}
+
+/* Header Section */
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sizing-12px);
+}
+
+.logo {
+  width: var(--spacing-sizing-240px);
+  height: var(--spacing-sizing-80px);
+  object-fit: contain;
+  flex-shrink: 0;
+  aspect-ratio: 217 / 80;
+}
+
+.logoWithBorder {
+  border: var(--spacing-stroke-1px) solid var(--color-neutral-gray-gray-800);
+  padding: var(--spacing-sizing-4px);
+}
+
+.clientName {
+  font-family: var(--type-typeface-roboto-flex, 'Roboto Flex');
+  font-size: var(--type-size-secondary-scale-heading-5, 19px);
+  font-weight: var(--type-weight-default, 400);
+  line-height: var(--type-line-height-heading-5, 24px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-heading-5, 0.5px);
+  text-align: center;
+  color: var(--color-base-black);
+  margin: 0;
+}
+
+/* Color Palette Section */
+.colorSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-16px);
+}
+
+.colorRow {
+  display: flex;
+  gap: var(--spacing-sizing-16px);
+}
+
+.colorSwatch {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-4px);
+}
+
+.colorLabel {
+  font-family: var(--type-typeface-archivo, 'Archivo');
+  font-size: var(--type-size-primary-scale-label, 16px);
+  font-weight: var(--type-weight-medium, 500);
+  line-height: var(--type-line-height-label, 20px);
+  letter-spacing: var(--type-letter-spacing-archivo-label, 0.15px);
+  color: var(--color-base-black);
+  margin: 0;
+}
+
+.colorBox {
+  height: var(--spacing-sizing-32px);
+  border: var(--spacing-stroke-1px) solid var(--color-base-black);
+  border-radius: var(--spacing-radius-4px);
+}
+
+/* Typography Section */
+.typographySection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-4px);
+}
+
+.typographyRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.typographyLabel {
+  font-family: var(--type-typeface-archivo, 'Archivo');
+  font-size: var(--type-size-primary-scale-label, 16px);
+  font-weight: var(--type-weight-medium, 500);
+  line-height: var(--type-line-height-label, 20px);
+  letter-spacing: var(--type-letter-spacing-archivo-label, 0.15px);
+  color: var(--color-base-black);
+  margin: 0;
+}
+
+.typographyValue {
+  font-family: var(--type-typeface-archivo, 'Archivo');
+  font-size: var(--type-size-primary-scale-label, 16px);
+  font-weight: var(--type-weight-light, 300);
+  line-height: var(--type-line-height-label, 20px);
+  letter-spacing: var(--type-letter-spacing-archivo-label, 0.15px);
+  color: var(--color-base-black);
+  margin: 0;
+}
+
+/* NPM Command Box */
+.npmBox {
+  padding: var(--spacing-sizing-8px) var(--spacing-sizing-24px);
+  background: var(--color-neutral-gray-gray-100);
+  border: var(--spacing-stroke-1px) solid var(--color-secondary-blue-gray-light);
+  border-radius: var(--spacing-radius-4px);
+  display: flex;
+  align-items: center;
+}
+
+.npmText {
+  font-family: var(--type-typeface-archivo, 'Archivo');
+  font-size: var(--type-size-primary-scale-label, 16px);
+  font-weight: var(--type-weight-light, 300);
+  line-height: var(--type-line-height-label, 20px);
+  letter-spacing: var(--type-letter-spacing-archivo-label, 0.15px);
+  color: var(--color-base-black);
+  margin: 0;
+  word-break: break-all;
+}
+
+/* Button Wrapper */
+.buttonWrapper {
+  padding: 0 var(--spacing-sizing-24px) var(--spacing-sizing-24px) var(--spacing-sizing-24px);
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cardContent {
+    padding: var(--spacing-sizing-24px) var(--spacing-sizing-24px) var(--spacing-sizing-40px) var(--spacing-sizing-24px);
+  }
+
+  .logo {
+    width: var(--spacing-sizing-160px);
+    height: var(--spacing-sizing-56px);
+  }
+
+  .colorRow {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: var(--spacing-sizing-120px);
+    height: var(--spacing-sizing-40px);
+  }
+
+  .cardContent {
+    padding: var(--spacing-sizing-16px) var(--spacing-sizing-16px) var(--spacing-sizing-24px) var(--spacing-sizing-16px);
+  }
+}
