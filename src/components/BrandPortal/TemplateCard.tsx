@@ -1,5 +1,5 @@
 import React from 'react';
-import { TemplateCardProps } from './types';
+import type { TemplateCardProps } from './types';
 import { Card } from '../../stories/atoms/Card';
 import { EchoMUIButton } from '../../stories/atoms/EchoMUIButton';
 import { Icon } from '../../stories/foundations/Icons/Icon';

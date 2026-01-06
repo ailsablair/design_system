@@ -1,5 +1,5 @@
 import React from 'react';
-import { AddSystemCardProps } from './types';
+import type { AddSystemCardProps } from './types';
 import { Card } from '../../stories/atoms/Card';
 import styles from './AddSystemCard.module.css';
 

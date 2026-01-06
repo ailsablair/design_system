@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrandPortalProps } from './types';
+import type { BrandPortalProps } from './types';
 import { PortalHeader } from './PortalHeader';
 import { BrandCard } from './BrandCard';
 import { TemplateCard } from './TemplateCard';

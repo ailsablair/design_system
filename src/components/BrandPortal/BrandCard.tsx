@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrandCardProps } from './types';
+import type { BrandCardProps } from './types';
 import { Card } from '../../stories/atoms/Card';
 import { Tag } from '../../stories/atoms/Tag';
 import { EchoMUIButton } from '../../stories/atoms/EchoMUIButton';

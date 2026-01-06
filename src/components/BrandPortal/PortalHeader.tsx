@@ -1,5 +1,5 @@
 import React from 'react';
-import { PortalHeaderProps } from './types';
+import type { PortalHeaderProps } from './types';
 import { EchoMUIButton } from '../../stories/atoms/EchoMUIButton';
 import { Icon } from '../../stories/foundations/Icons/Icon';
 import styles from './PortalHeader.module.css';
