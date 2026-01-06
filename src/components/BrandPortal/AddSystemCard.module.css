@@ -1,0 +1,89 @@
+.addSystemCard {
+  background: var(--color-base-white) !important;
+  border-radius: var(--spacing-radius-12px) !important;
+  border: var(--spacing-stroke-0-5px) solid var(--color-neutral-gray-gray-400) !important;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-8px);
+  height: 100%;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-16px);
+  padding: var(--spacing-sizing-40px) var(--spacing-sizing-24px) var(--spacing-sizing-80px) var(--spacing-sizing-24px);
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+/* Plus Icon */
+.plusIcon {
+  width: var(--spacing-sizing-180px);
+  height: var(--spacing-sizing-180px);
+  flex-shrink: 0;
+}
+
+/* Add New Brand Link */
+.addLink {
+  font-family: var(--type-typeface-roboto-flex, 'Roboto Flex');
+  font-size: var(--type-size-secondary-scale-body-lg, 18px);
+  font-weight: 600;
+  line-height: var(--type-line-height-body-lg, 22px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg, -0.15px);
+  color: var(--color-primary-blue-blue);
+  text-decoration: underline;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.addLink:hover {
+  opacity: 0.8;
+}
+
+.addLink:focus {
+  outline: var(--spacing-stroke-2px) solid var(--color-primary-blue-blue);
+  outline-offset: var(--spacing-sizing-4px);
+  border-radius: var(--spacing-radius-4px);
+}
+
+.addLink:active {
+  opacity: 0.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cardContent {
+    padding: var(--spacing-sizing-32px) var(--spacing-sizing-16px) var(--spacing-sizing-40px) var(--spacing-sizing-16px);
+  }
+
+  .plusIcon {
+    width: var(--spacing-sizing-120px);
+    height: var(--spacing-sizing-120px);
+  }
+
+  .addLink {
+    font-size: var(--type-size-primary-scale-label-lg, 18px);
+  }
+}
+
+@media (max-width: 480px) {
+  .cardContent {
+    padding: var(--spacing-sizing-24px) var(--spacing-sizing-16px) var(--spacing-sizing-32px) var(--spacing-sizing-16px);
+  }
+
+  .plusIcon {
+    width: var(--spacing-sizing-100px);
+    height: var(--spacing-sizing-100px);
+  }
+
+  .addLink {
+    font-size: var(--type-size-primary-scale-label, 16px);
+  }
+}
