@@ -1,0 +1,106 @@
+.portalHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--spacing-sizing-140px);
+  padding: var(--spacing-sizing-40px) var(--spacing-sizing-80px) var(--spacing-sizing-20px) var(--spacing-sizing-80px);
+  background: var(--color-base-white);
+  border-bottom: var(--spacing-stroke-1px) solid var(--color-neutral-gray-gray-200);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: var(--spacing-sizing-24px);
+}
+
+.logoHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sizing-40px);
+  flex: 1;
+}
+
+.logo {
+  width: auto;
+  height: var(--spacing-sizing-65px);
+  flex-shrink: 0;
+  aspect-ratio: 60 / 65;
+}
+
+.title {
+  font-family: var(--type-typeface-archivo, 'Archivo');
+  font-size: var(--type-size-primary-scale-heading-3, 28px);
+  font-weight: var(--type-weight-medium, 500);
+  line-height: var(--type-line-height-heading-3, 28px);
+  letter-spacing: var(--type-letter-spacing-archivo-heading-3, -0.5px);
+  color: var(--color-primary-blue-blue);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.ctaSection {
+  flex-shrink: 0;
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .portalHeader {
+    padding: var(--spacing-sizing-40px) var(--spacing-sizing-40px) var(--spacing-sizing-20px) var(--spacing-sizing-40px);
+  }
+
+  .logoHeader {
+    gap: var(--spacing-sizing-24px);
+  }
+
+  .navContent {
+    gap: var(--spacing-sizing-20px);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .portalHeader {
+    height: auto;
+    padding: var(--spacing-sizing-24px) var(--spacing-sizing-16px);
+    position: relative;
+  }
+
+  .navContent {
+    flex-direction: column;
+    gap: var(--spacing-sizing-24px);
+  }
+
+  .logoHeader {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sizing-16px);
+    width: 100%;
+  }
+
+  .logo {
+    height: var(--spacing-sizing-60px);
+  }
+
+  .title {
+    text-align: center;
+    white-space: normal;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+  .portalHeader {
+    padding: var(--spacing-sizing-16px);
+  }
+
+  .title {
+    font-size: var(--type-size-primary-scale-heading-4, 24px);
+  }
+}
