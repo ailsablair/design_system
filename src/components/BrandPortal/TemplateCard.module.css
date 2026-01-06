@@ -1,0 +1,94 @@
+.templateCard {
+  background: var(--color-primary-sky-blue-sky-blue-50, #F4FCFF) !important;
+  border-radius: var(--spacing-radius-12px) !important;
+  border: var(--spacing-stroke-0-5px) solid var(--color-neutral-gray-gray-400) !important;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-8px);
+  height: 100%;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-32px);
+  padding: var(--spacing-sizing-24px);
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Heading Section */
+.headingSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sizing-4px);
+  align-self: stretch;
+}
+
+.title {
+  font-family: var(--type-typeface-archivo, 'Archivo');
+  font-size: var(--type-primary-scale-heading-2, 32px);
+  font-weight: var(--type-weight-medium, 500);
+  line-height: var(--type-line-height-heading-2, 34px);
+  letter-spacing: var(--type-letter-spacing-archivo-heading-2, -1px);
+  color: var(--color-base-black);
+  margin: 0;
+}
+
+.subtitle {
+  font-family: var(--type-typeface-archivo, 'Archivo');
+  font-size: var(--type-size-secondary-scale-heading-5, 19px);
+  font-weight: var(--type-weight-light, 300);
+  line-height: var(--type-line-height-heading-5, 24px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-heading-5, -0.15px);
+  color: var(--color-neutral-gray-gray-500);
+  margin: 0;
+}
+
+/* Body Text */
+.bodyText {
+  font-family: var(--type-typeface-roboto-flex, 'Roboto Flex');
+  font-size: var(--type-size-secondary-scale-body-lg, 18px);
+  font-weight: var(--type-weight-light, 300);
+  line-height: var(--type-line-height-body-lg, 22px);
+  letter-spacing: var(--type-letter-spacing-roboto-flex-body-lg, -0.15px);
+  color: var(--color-base-black);
+  margin: 0;
+  white-space: pre-line;
+  align-self: stretch;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cardContent {
+    padding: var(--spacing-sizing-20px);
+    gap: var(--spacing-sizing-24px);
+  }
+
+  .title {
+    font-size: var(--type-primary-scale-heading-2, 32px);
+  }
+
+  .bodyText {
+    font-size: var(--type-size-secondary-scale-body-lg, 18px);
+  }
+}
+
+@media (max-width: 480px) {
+  .cardContent {
+    padding: var(--spacing-sizing-16px);
+  }
+
+  .title {
+    font-size: var(--type-size-primary-scale-heading-3, 28px);
+  }
+
+  .subtitle {
+    font-size: var(--type-size-secondary-scale-heading-5, 19px);
+  }
+
+  .bodyText {
+    font-size: var(--type-size-primary-scale-label-lg, 18px);
+  }
+}
