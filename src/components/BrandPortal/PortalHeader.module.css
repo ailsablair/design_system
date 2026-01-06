@@ -20,18 +20,10 @@
   gap: var(--spacing-sizing-24px);
 }
 
-.logoHeader {
+.titleSection {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sizing-40px);
   flex: 1;
-}
-
-.logo {
-  width: auto;
-  height: var(--spacing-sizing-65px);
-  flex-shrink: 0;
-  aspect-ratio: 60 / 65;
 }
 
 .title {
@@ -55,10 +47,6 @@
     padding: var(--spacing-sizing-40px) var(--spacing-sizing-40px) var(--spacing-sizing-20px) var(--spacing-sizing-40px);
   }
 
-  .logoHeader {
-    gap: var(--spacing-sizing-24px);
-  }
-
   .navContent {
     gap: var(--spacing-sizing-20px);
   }
@@ -77,15 +65,10 @@
     gap: var(--spacing-sizing-24px);
   }
 
-  .logoHeader {
-    flex-direction: column;
+  .titleSection {
     align-items: center;
-    gap: var(--spacing-sizing-16px);
+    justify-content: center;
     width: 100%;
-  }
-
-  .logo {
-    height: var(--spacing-sizing-60px);
   }
 
   .title {

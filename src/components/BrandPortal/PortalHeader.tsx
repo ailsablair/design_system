@@ -7,7 +7,7 @@ import styles from './PortalHeader.module.css';
 /**
  * PortalHeader Component
  *
- * Fixed navigation header displaying the NPX logo, "Design System Portal" title,
+ * Fixed navigation header displaying the "Design System Portal" title
  * and a "Create design system" CTA button.
  *
  * Features:
@@ -26,13 +26,8 @@ export const PortalHeader: React.FC<PortalHeaderProps> = ({
   return (
     <header className={styles.portalHeader}>
       <div className={styles.navContent}>
-        {/* Logo + Title Section */}
-        <div className={styles.logoHeader}>
-          <img
-            src={logoSrc}
-            alt={logoAltText}
-            className={styles.logo}
-          />
+        {/* Title Section */}
+        <div className={styles.titleSection}>
           <h1 className={styles.title}>{title}</h1>
         </div>
 
